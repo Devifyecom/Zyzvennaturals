@@ -10,10 +10,10 @@
   assign total_cents = 0
   assign total_units = 0
   assign total_lines = 0
-  assign units_metabolic = 0
-  assign units_women = 0
-  assign units_men = 0
-  assign units_heart = 0
+  comment
+    Category filters, in display order: key:Label
+  endcomment
+  assign category_list = "weight:Weight Management|metabolic:Blood Sugar & Metabolic Wellness|men:Men's Vitality|heart:Heart & Circulation|menopause:Menopause|hormone:Hormone & Reproductive Wellness|uterine:Uterine Wellness" | split: '|'
   for block in section.blocks
     assign q = block.settings.qty | default: 0
     assign unit_usd = 0
@@ -24,16 +24,6 @@
     assign total_cents = total_cents | plus: line_usd
     assign total_units = total_units | plus: q
     assign total_lines = total_lines | plus: 1
-    case block.settings.category
-      when 'metabolic'
-        assign units_metabolic = units_metabolic | plus: q
-      when 'women'
-        assign units_women = units_women | plus: q
-      when 'men'
-        assign units_men = units_men | plus: q
-      when 'heart'
-        assign units_heart = units_heart | plus: q
-    endcase
   endfor
   assign units_str = total_units | append: ''
 
@@ -72,6 +62,10 @@
 
   /* Heart & Circulation tag (not in biab.css) */
   #biab-contents .biab-tag--heart { background: #f7e9e2; color: #8a3b24; }
+  #biab-contents .biab-tag--weight { background: #eef2df; color: #4a5a18; }
+  #biab-contents .biab-tag--menopause { background: #fbefdc; color: #7a4a0c; }
+  #biab-contents .biab-tag--hormone { background: #f6e6ea; color: #8a3a52; }
+  #biab-contents .biab-tag--uterine { background: #ece8f7; color: #4b3a86; }
 
   /* Filtering */
   #biab-contents .biab-product[hidden] { display: none !important; }
@@ -380,18 +374,21 @@
       {%- if s.show_tabs -%}
         <div class="biab-tabs" role="tablist" aria-label="Filter products by category" data-biab-tabs>
           <button type="button" class="biab-tab" role="tab" aria-selected="true" tabindex="0" data-filter="all">{{ all_label }}</button>
-          {%- if units_metabolic > 0 -%}
-            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="metabolic">Metabolic Wellness{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_metabolic }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
-          {%- endif -%}
-          {%- if units_women > 0 -%}
-            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="women">Women's Wellness{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_women }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
-          {%- endif -%}
-          {%- if units_men > 0 -%}
-            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="men">Men's Wellness{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_men }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
-          {%- endif -%}
-          {%- if units_heart > 0 -%}
-            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="heart">Heart &amp; Circulation{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_heart }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
-          {%- endif -%}
+          {%- for entry in category_list -%}
+            {%- liquid
+              assign cat_key = entry | split: ':' | first
+              assign cat_label = entry | split: ':' | last
+              assign cat_units = 0
+              for block in section.blocks
+                if block.settings.category == cat_key
+                  assign cat_units = cat_units | plus: block.settings.qty
+                endif
+              endfor
+            -%}
+            {%- if cat_units > 0 -%}
+              <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="{{ cat_key }}">{{ cat_label | escape }}{% if s.show_tab_counts %}<span class="biab-tab__count">{{ cat_units }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
         <p class="biab-status" role="status" aria-live="polite" data-biab-status>
           Showing all {{ total_lines }} products, {{ total_units }} units in total
@@ -451,12 +448,10 @@
 
             <div class="biab-product__body">
               <span class="biab-tag biab-tag--{{ b.category }}">
-                {%- case b.category -%}
-                  {%- when 'metabolic' -%}Metabolic Wellness
-                  {%- when 'women' -%}Women's Wellness
-                  {%- when 'men' -%}Men's Wellness
-                  {%- when 'heart' -%}Heart &amp; Circulation
-                {%- endcase -%}
+                {%- for entry in category_list -%}
+                  {%- assign cat_key = entry | split: ':' | first -%}
+                  {%- if cat_key == b.category -%}{{ entry | split: ':' | last | escape }}{%- endif -%}
+                {%- endfor -%}
               </span>
               <h3 class="biab-product__name">
                 {%- if product_url != blank -%}
@@ -799,10 +794,13 @@
         {
           "type": "select", "id": "category", "label": "Category", "default": "metabolic",
           "options": [
-            { "value": "metabolic", "label": "Metabolic Wellness" },
-            { "value": "women", "label": "Women's Wellness" },
-            { "value": "men", "label": "Men's Wellness" },
-            { "value": "heart", "label": "Heart & Circulation" }
+            { "value": "weight", "label": "Weight Management" },
+            { "value": "metabolic", "label": "Blood Sugar & Metabolic Wellness" },
+            { "value": "men", "label": "Men's Vitality" },
+            { "value": "heart", "label": "Heart & Circulation" },
+            { "value": "menopause", "label": "Menopause" },
+            { "value": "hormone", "label": "Hormone & Reproductive Wellness" },
+            { "value": "uterine", "label": "Uterine Wellness" }
           ]
         },
         { "type": "url", "id": "link", "label": "Custom product page link", "info": "Optional. By default the card links to the linked product's page, opening in a new tab." },
@@ -814,14 +812,14 @@
     {
       "name": "BIAB — What's inside",
       "blocks": [
-        { "type": "item", "settings": { "name": "GLUKOBALANS", "qty": 6, "price": "69.99", "category": "metabolic" } },
+        { "type": "item", "settings": { "name": "GLUKOBALANS", "qty": 6, "price": "69.99", "category": "weight" } },
         { "type": "item", "settings": { "name": "Blood Sugar", "qty": 5, "price": "49.99", "category": "metabolic" } },
-        { "type": "item", "settings": { "name": "Alki Detox with Moringa", "qty": 5, "price": "39.99", "category": "metabolic" } },
-        { "type": "item", "settings": { "name": "Freja Advance", "qty": 5, "price": "49.99", "category": "women" } },
-        { "type": "item", "settings": { "name": "Freja Balance", "qty": 4, "price": "39.99", "category": "women" } },
-        { "type": "item", "settings": { "name": "Women's Brew", "qty": 4, "price": "39.99", "category": "women" } },
+        { "type": "item", "settings": { "name": "Alki Detox with Moringa", "qty": 5, "price": "39.99", "category": "weight" } },
+        { "type": "item", "settings": { "name": "Freja Advance", "qty": 5, "price": "49.99", "category": "hormone" } },
+        { "type": "item", "settings": { "name": "Freja Balance", "qty": 4, "price": "39.99", "category": "menopause" } },
+        { "type": "item", "settings": { "name": "Women's Brew", "qty": 4, "price": "39.99", "category": "hormone" } },
         { "type": "item", "settings": { "name": "Manthoric Advance", "qty": 4, "price": "69.99", "category": "men" } },
-        { "type": "item", "settings": { "name": "Uterine Tonic Tea", "qty": 4, "price": "39.99", "category": "women" } },
+        { "type": "item", "settings": { "name": "Uterine Tonic Tea", "qty": 4, "price": "39.99", "category": "uterine" } },
         { "type": "item", "settings": { "name": "Pressure Balance", "qty": 3, "price": "49.99", "category": "heart" } }
       ]
     }
