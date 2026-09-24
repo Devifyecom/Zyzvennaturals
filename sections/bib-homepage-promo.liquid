@@ -2,7 +2,7 @@
 
 {%- liquid
   assign s = section.settings
-  assign promo_url = s.cta_link | default: '/products/business-in-a-box'
+  assign promo_url = s.cta_link | default: '/pages/business-in-box'
 
   assign grid_class = 'bib-promo__grid'
   if s.image != blank
@@ -48,7 +48,7 @@
 
 {% schema %}
 {
-  "name": "BIB ‚Äî Homepage promo",
+  "name": "BIB — Homepage promo",
   "tag": "section",
   "class": "bib-promo-section",
   "settings": [
@@ -56,22 +56,22 @@
       "type": "text",
       "id": "heading",
       "label": "Headline",
-      "default": "YOUR WELLNESS BUSINESS. READY IN ONE BOX."
+      "default": "Your Wellness Business. Ready in One Box."
     },
     {
       "type": "textarea",
       "id": "body",
       "label": "Body",
-      "default": "40 ready-to-retail teas and supplements, plus training, marketing materials and monthly support."
+      "default": "40 ready-to-retail Zyzven Naturals products with a combined recommended retail value of over $2,000 for $999 + shipping."
     },
     {
       "type": "text",
       "id": "price_line",
       "label": "Price line",
-      "default": "$999 | Over $2,000 recommended retail value"
+      "default": "Training, marketing toolkit and monthly support included · Wholesale, not MLM"
     },
-    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Explore Business in a Box ‚Üí" },
-    { "type": "url", "id": "cta_link", "label": "CTA link", "info": "Defaults to /products/business-in-a-box" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Explore Business in a Box →" },
+    { "type": "url", "id": "cta_link", "label": "CTA link", "info": "Defaults to /pages/business-in-box" },
     { "type": "image_picker", "id": "image", "label": "Image", "info": "Optional. Without one the text runs full width." },
     {
       "type": "text",
@@ -81,7 +81,7 @@
     },
     { "type": "color", "id": "background_color", "label": "Background", "default": "#F5F4EE" }
   ],
-  "presets": [{ "name": "BIB ‚Äî Homepage promo" }]
+  "presets": [{ "name": "BIB — Homepage promo" }]
 }
 {% endschema %}
 
