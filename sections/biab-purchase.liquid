@@ -307,7 +307,7 @@
             {%- comment -%} 1. Shipping destination {%- endcomment -%}
             <div class="bp-field">
               <label class="bp-label" for="BiabShipTo-{{ sid }}">{{ s.destination_label }}</label>
-              <select class="bp-select" id="BiabShipTo-{{ sid }}" name="properties[Ships to]" form="BiabBuyForm" required data-bp-destination>
+              <select class="bp-select" id="BiabShipTo-{{ sid }}" name="properties[_Ships to]" form="BiabBuyForm" required data-bp-destination>
                 <option value="" selected disabled>Choose your country</option>
                 {%- assign direct_list = s.direct_countries | split: ',' -%}
                 {%- if direct_list.size > 0 -%}
@@ -381,15 +381,15 @@
                 <input type="hidden" name="id" value="{{ biab_variant.id }}">
                 <input type="hidden" name="quantity" value="1">
                 <input type="hidden" name="return_to" value="/checkout">
-                <input type="hidden" name="properties[Reseller Terms version]" value="{{ s.terms_version | escape }}">
+                <input type="hidden" name="properties[_Reseller Terms version]" value="{{ s.terms_version | escape }}">
                 {%- if contents_line != '' -%}
-                  <input type="hidden" name="properties[Box contents]" value="{{ contents_line | escape }}">
+                  <input type="hidden" name="properties[_Box contents]" value="{{ contents_line | escape }}">
                 {%- endif -%}
-                <input type="hidden" name="properties[Reseller Terms accepted at]" value="" data-bp-accepted-at disabled>
+                <input type="hidden" name="properties[_Reseller Terms accepted at]" value="" data-bp-accepted-at disabled>
 
                 <div data-show-for="forwarder">
                   <label class="bp-check">
-                    <input type="checkbox" name="properties[Delivery address is a forwarder]" value="Yes" data-bp-forwarder disabled>
+                    <input type="checkbox" name="properties[_Delivery address is a forwarder]" value="Yes" data-bp-forwarder disabled>
                     <span>My delivery address belongs to a shipping-forwarding company.</span>
                   </label>
                 </div>
@@ -398,7 +398,7 @@
                   <input
                     type="checkbox"
                     id="BiabTerms-{{ sid }}"
-                    name="properties[Reseller Terms]"
+                    name="properties[_Reseller Terms]"
                     value="I have read and agree to the Reseller Terms"
                     required
                     data-bp-terms
@@ -410,16 +410,16 @@
                   <fieldset class="bp-optin">
                     <legend>{{ s.optin_heading }}</legend>
                     <label class="bp-check">
-                      <input type="checkbox" name="properties[Reseller feature opt-in]" value="Yes" data-bp-optin>
+                      <input type="checkbox" name="properties[_Reseller feature opt-in]" value="Yes" data-bp-optin>
                       <span>{{ s.optin_text }}</span>
                     </label>
                     <div class="bp-optin__details" data-bp-optin-details hidden>
                       <p>Details I'm happy for you to publish:</p>
                       <div class="bp-optin__grid">
-                        <label class="bp-check"><input type="checkbox" name="properties[Publish: business location]" value="Yes" disabled><span>Business location</span></label>
-                        <label class="bp-check"><input type="checkbox" name="properties[Publish: phone number]" value="Yes" disabled><span>Phone number</span></label>
-                        <label class="bp-check"><input type="checkbox" name="properties[Publish: social profile]" value="Yes" disabled><span>Social profile</span></label>
-                        <label class="bp-check"><input type="checkbox" name="properties[Publish: photograph]" value="Yes" disabled><span>Photograph</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[_Publish: business location]" value="Yes" disabled><span>Business location</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[_Publish: phone number]" value="Yes" disabled><span>Phone number</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[_Publish: social profile]" value="Yes" disabled><span>Social profile</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[_Publish: photograph]" value="Yes" disabled><span>Photograph</span></label>
                       </div>
                     </div>
                   </fieldset>
