@@ -357,6 +357,62 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {%- if template.name == 'page' and template.suffix == 'business-in-box' -%}
+      {%- comment -%}
+        Business in a Box page only: Golos Text for the page content, the page's dark
+        greens as the brand green #358440, and black headings (white on green panels).
+        Scoped to #MainContent so the header, footer and every other page are unchanged.
+      {%- endcomment -%}
+      <style>
+        #MainContent, #MainContent *:not(svg):not(svg *):not([class*="jdgm-star"]) {
+          font-family: 'Golos Text', sans-serif !important;
+        }
+
+        #MainContent .biab {
+          --biab-green-900: #358440;
+          --biab-green-800: #358440;
+          --biab-green-700: #358440;
+        }
+        #MainContent .znb-numbers { --n-ink: #358440; --n-ink-card: #358440; }
+        #MainContent .znb-contact { --c-ink: #358440; }
+        #MainContent #biab-contents {
+          --bx-ink: #358440;
+          --bx-ink-hover: #2b6b34;
+          --bx-line: rgba(53, 132, 64, 0.14);
+        }
+        #MainContent #biab-contents .biab-breakdown__table thead th { background: #358440; border-color: #358440; }
+        #MainContent #biab-purchase .bp-check input { accent-color: #358440; }
+        #MainContent #biab-purchase .bp-links a,
+        #MainContent #biab-purchase .bp-links a:visited,
+        #MainContent #biab-purchase .bp-check a:visited { color: #358440; }
+        #MainContent #biab-purchase .bp-select {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23358440' stroke-width='1.6'/%3E%3C/svg%3E");
+        }
+        #MainContent .biab-btn--outline { border-color: rgba(53, 132, 64, 0.35); }
+        #MainContent .biab-btn--outline:hover { background: rgba(53, 132, 64, 0.06); }
+        #MainContent .biab-ticks li::before {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23358440' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+        }
+        #MainContent .biab-sticky { background: rgba(53, 132, 64, 0.97); }
+
+        /* Text on the green panels stays readable */
+        #MainContent .biab-total__value { color: #fff; }
+        #MainContent .znb-numbers .znb-n__term--result .znb-n__label,
+        #MainContent .znb-numbers .znb-n__term--result .znb-n__note { color: rgba(255, 255, 255, 0.9); }
+
+        /* Headings in black; white where they sit on a green panel */
+        #MainContent .biab-h1,
+        #MainContent .biab-h2,
+        #MainContent .biab-h3,
+        #MainContent .biab-product__name,
+        #MainContent .biab-product__name a,
+        #MainContent .znb-n__h2,
+        #MainContent .znb-c__h2 { color: #000; }
+        #MainContent .biab--green .biab-h2,
+        #MainContent .biab--green .biab-h3 { color: #fff; }
+      </style>
+    {%- endif -%}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
