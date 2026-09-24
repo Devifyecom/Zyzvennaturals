@@ -1,7 +1,12 @@
 {{ 'biab.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'biab.js' | asset_url }}" defer="defer"></script>
 
-{%- liquid assign s = section.settings -%}
+{%- liquid
+  assign s = section.settings
+  capture box_price
+    render 'biab-money', box: true
+  endcapture
+-%}
 
 <div class="biab biab--white">
   <section class="biab-section" id="biab-faq" aria-labelledby="biab-faq-title">
@@ -28,7 +33,7 @@
               </button>
             </h3>
             <div class="biab-faq__a" id="BiabFaqA-{{ block.id }}" role="region" aria-labelledby="BiabFaqQ-{{ block.id }}">
-              {{ block.settings.answer }}
+              {{ block.settings.answer | replace: '[price]', box_price }}
             </div>
           </div>
         {%- endfor -%}
@@ -51,7 +56,7 @@
       "name": "Question",
       "settings": [
         { "type": "text", "id": "question", "label": "Question", "default": "Question" },
-        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Answer.</p>" }
+        { "type": "richtext", "id": "answer", "label": "Answer", "info": "[price] is replaced with the box price.", "default": "<p>Answer.</p>" }
       ]
     }
   ],

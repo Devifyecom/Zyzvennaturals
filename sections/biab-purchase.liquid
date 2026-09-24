@@ -19,18 +19,21 @@
     assign price_display = biab_variant.price | money
   else
     assign box_cents = s.price | remove: '$' | remove: ',' | strip | times: 100 | round
-    assign price_display = s.price
+    capture price_display
+      render 'biab-money', cents: box_cents
+    endcapture
   endif
   assign button_label = s.button_label | replace: '[price]', price_display
 
   assign terms_url = s.terms_url | default: '/pages/reseller-terms'
-  assign policies_url = s.policies_url | default: '/pages/business-in-a-box-policies'
+  assign policies_url = s.policies_url | default: '/pages/policy-updates-retail-vs-business-in-a-box'
 
   comment
-    Included products: calculated from live product prices when "Box item" blocks are added
+    Included products: calculated from each Box item's approved USD RRP, converted
+    for the shopper's currency at the same rate as the box price
   endcomment
   assign items = section.blocks | where: 'type', 'item'
-  assign rrv_cents = 0
+  assign rrv_usd = 0
   assign total_units = 0
   assign contents_line = ''
   for block in items
@@ -44,19 +47,21 @@
     else
       assign contents_line = contents_line | append: ', ' | append: item_entry
     endif
-    assign unit_cents = 0
-    if block.settings.product != blank
-      assign unit_cents = block.settings.product.selected_or_first_available_variant.price
-    elsif block.settings.price != blank
-      assign unit_cents = block.settings.price | remove: '$' | remove: ',' | strip | times: 100 | round
+    assign unit_usd = 0
+    if block.settings.price != blank
+      assign unit_usd = block.settings.price | remove: '$' | remove: ',' | strip | times: 100 | round
     endif
-    assign line_cents = unit_cents | times: block.settings.qty
-    assign rrv_cents = rrv_cents | plus: line_cents
+    assign line_usd = unit_usd | times: block.settings.qty
+    assign rrv_usd = rrv_usd | plus: line_usd
     assign total_units = total_units | plus: block.settings.qty
   endfor
   if contents_line != ''
     assign contents_line = contents_line | append: ' (' | append: total_units | append: ' units)'
   endif
+  capture rrv_cents
+    render 'biab-money', cents: rrv_usd, raw: true
+  endcapture
+  assign rrv_cents = rrv_cents | plus: 0
   assign profit_cents = rrv_cents | minus: box_cents
   assign auto_figures = false
   if items.size > 0 and s.auto_figures
@@ -301,9 +306,9 @@
                 {%- assign direct_list = s.direct_countries | split: ',' -%}
                 {%- if direct_list.size > 0 -%}
                   <optgroup label="Shipping shown at checkout">
-                    {%- for c in direct_list -%}
+                    {%- for raw_country in direct_list -%}
                       {%- liquid
-                        assign c = c | strip
+                        assign c = raw_country | strip
                         assign region = 'direct'
                         assign cl = c | downcase
                         if cl == 'united states' or cl == 'usa' or cl == 'united states of america'
@@ -321,12 +326,12 @@
                 {%- assign eu_list = s.eu_countries | split: ',' -%}
                 {%- if eu_list.size > 0 -%}
                   <optgroup label="European Union">
-                    {%- for c in eu_list -%}{%- assign c = c | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="eu">{{ c }}</option>{%- endif -%}{%- endfor -%}
+                    {%- for raw_country in eu_list -%}{%- assign c = raw_country | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="eu">{{ c }}</option>{%- endif -%}{%- endfor -%}
                   </optgroup>
                 {%- endif -%}
                 {%- assign me_list = s.me_countries | split: ',' -%}
                 <optgroup label="Middle East">
-                  {%- for c in me_list -%}{%- assign c = c | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="me">{{ c }}</option>{%- endif -%}{%- endfor -%}
+                  {%- for raw_country in me_list -%}{%- assign c = raw_country | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="me">{{ c }}</option>{%- endif -%}{%- endfor -%}
                   <option value="Other Middle Eastern country (quote)" data-mode="quote" data-region="quote">Another Middle Eastern country</option>
                 </optgroup>
                 <optgroup label="Caribbean">
@@ -624,7 +629,7 @@
     { "type": "product", "id": "product", "label": "Business in a Box product", "info": "Required for purchase. On the box's own product template this can be left empty." },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Start Today" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Your Business in a Box" },
-    { "type": "text", "id": "price", "label": "Fallback price", "info": "Only shown if no product is selected. Otherwise the live product price is used.", "default": "$999" },
+    { "type": "text", "id": "price", "label": "Fallback price", "info": "Only shown if no product is selected. Otherwise the checkout price of the box is used.", "default": "$999" },
     { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "+ shipping, shown before you pay" },
     { "type": "textarea", "id": "summary", "label": "Summary", "default": "40 products + training + marketing toolkit + monthly partner support." },
     { "type": "text", "id": "button_label", "label": "Button label", "info": "[price] is replaced with the live box price.", "default": "Start Your Business — [price]" },
@@ -635,7 +640,7 @@
     { "type": "text", "id": "terms_version", "label": "Terms version", "info": "Saved with every order. Update when the terms change.", "default": "Effective 23 September 2026" },
     { "type": "checkbox", "id": "show_policies_link", "label": "Show shipping & returns link", "default": true },
     { "type": "text", "id": "policies_label", "label": "Shipping & returns link text", "default": "Shipping & returns for box orders" },
-    { "type": "url", "id": "policies_url", "label": "Shipping & returns page", "info": "Defaults to /pages/business-in-a-box-policies." },
+    { "type": "url", "id": "policies_url", "label": "Shipping & returns page", "info": "Defaults to /pages/policy-updates-retail-vs-business-in-a-box." },
     { "type": "url", "id": "guidelines_url", "label": "Brand Guidelines link (optional)" },
 
     { "type": "header", "content": "Shipping" },
@@ -647,7 +652,7 @@
     { "type": "textarea", "id": "ship_us", "label": "Message: USA", "default": "US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered within the USA does not incur additional customs duties." },
     { "type": "textarea", "id": "ship_uk", "label": "Message: United Kingdom", "default": "UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered within the UK does not incur additional customs duties." },
     { "type": "textarea", "id": "ship_eu", "label": "Message: European Union", "default": "EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country." },
-    { "type": "textarea", "id": "ship_ca", "label": "Message: Canada", "default": "Most box products are stocked in Canada and dispatched by our Canadian distributor, TK Zyzven Naturals Inc. If a product for your box is unavailable there, we will contact you before shipping to explain whether to expect separate parcels, the delivery estimate and any possible import, clearance or extra shipping charge. We will not send a UK shipment or add an extra charge without your agreement." },
+    { "type": "textarea", "id": "ship_ca", "label": "Message: Canada", "default": "Most products dispatch from TK Zyzven Naturals Inc. in Canada. If an item must ship from the UK, we will explain the proposed delivery, timing and any possible extra charges, and get your agreement before dispatch." },
     { "type": "textarea", "id": "ship_me", "label": "Message: Middle East (served directly)", "default": "We ship the box directly to this destination. The shipping charge and full total are shown at checkout before you pay." },
     { "type": "textarea", "id": "ship_direct", "label": "Message: other checkout destinations", "default": "Your shipping charge and the full total are shown at checkout before you pay. Enter your delivery address there to see the available service." },
     { "type": "textarea", "id": "ship_checkout_note", "label": "Checkout note (all checkout destinations)", "default": "Enter your delivery address at checkout to see the box shipping charge and the full amount payable before you pay. Delivery estimates are not guaranteed arrival dates; we send tracking when your box dispatches." },
@@ -662,7 +667,7 @@
     { "type": "textarea", "id": "optin_text", "label": "Opt-in text", "default": "I'd like to be considered for reseller features in brochures, the website directory, social media or live events. This is optional and doesn't affect my order. You'll ask me again before publishing anything." },
 
     { "type": "header", "content": "Contents and figures" },
-    { "type": "checkbox", "id": "auto_figures", "label": "Calculate figures from Box item blocks", "info": "When Box item blocks are added, products included, retail value and potential gross profit are calculated from live prices.", "default": true },
+    { "type": "checkbox", "id": "auto_figures", "label": "Calculate figures from Box item blocks", "info": "When Box item blocks are added, products included, retail value and potential gross profit are calculated from their approved RRPs.", "default": true },
     { "type": "richtext", "id": "contents_list", "label": "Compact contents list", "info": "Only used when no Box item blocks are added.", "default": "<p><strong>In the box:</strong> GLUKOBALANS ×6 · Blood Sugar ×5 · Alki Detox with Moringa ×5 · Freja Advance ×5 · Freja Balance ×4 · Women's Brew ×4 · Manthoric Advance ×4 · Uterine Tonic Tea ×4 · Pressure Balance ×3 — 40 products, combined recommended retail value $2,029.60.</p>" },
     { "type": "textarea", "id": "buy_note", "label": "Note under the button", "default": "One-time purchase. No subscription, no monthly quota. Purchase does not grant distributor status, territory exclusivity or a territory website." },
     { "type": "image_picker", "id": "image", "label": "Box image" },
@@ -681,10 +686,10 @@
       "type": "item",
       "name": "Box item",
       "settings": [
-        { "type": "product", "id": "product", "label": "Product", "info": "Live price and product page link are used automatically." },
+        { "type": "product", "id": "product", "label": "Product", "info": "Used for the product page link." },
         { "type": "text", "id": "name", "label": "Name", "info": "Leave empty to use the product title." },
         { "type": "number", "id": "qty", "label": "Quantity in box", "default": 4 },
-        { "type": "text", "id": "price", "label": "Manual RRP each", "info": "Only used if no product is linked." },
+        { "type": "text", "id": "price", "label": "Approved RRP each in USD", "info": "Source of truth for this product's price. Converted automatically for other currencies. Agree any change before editing." },
         { "type": "url", "id": "link", "label": "Custom product page link", "info": "Optional. Defaults to the product's page." }
       ]
     },

@@ -16,14 +16,12 @@
   assign units_heart = 0
   for block in section.blocks
     assign q = block.settings.qty | default: 0
-    assign unit_cents = 0
-    if block.settings.product != blank
-      assign unit_cents = block.settings.product.selected_or_first_available_variant.price
-    elsif block.settings.price != blank
-      assign unit_cents = block.settings.price | remove: '$' | remove: ',' | strip | times: 100 | round
+    assign unit_usd = 0
+    if block.settings.price != blank
+      assign unit_usd = block.settings.price | remove: '$' | remove: ',' | strip | times: 100 | round
     endif
-    assign line_cents = unit_cents | times: q
-    assign total_cents = total_cents | plus: line_cents
+    assign line_usd = unit_usd | times: q
+    assign total_cents = total_cents | plus: line_usd
     assign total_units = total_units | plus: q
     assign total_lines = total_lines | plus: 1
     case block.settings.category
@@ -42,7 +40,9 @@
   assign all_label = s.all_tab_label | replace: '[units]', units_str
   assign total_label = s.total_label | replace: '[units]', units_str
 
-  assign total_display = total_cents | money
+  capture total_display
+    render 'biab-money', cents: total_cents
+  endcapture
 
   comment
     The "Start Your Business" button always goes to the Purchase section,
@@ -409,12 +409,16 @@
               endif
             endif
             assign unit_cents = 0
-            if b.product != blank
-              assign unit_cents = b.product.selected_or_first_available_variant.price
-            elsif b.price != blank
+            if b.price != blank
               assign unit_cents = b.price | remove: '$' | remove: ',' | strip | times: 100 | round
             endif
             assign line_cents = unit_cents | times: b.qty
+            capture unit_display
+              render 'biab-money', cents: unit_cents
+            endcapture
+            capture line_display
+              render 'biab-money', cents: line_cents
+            endcapture
             assign product_url = blank
             if b.link != blank
               assign product_url = b.link
@@ -465,10 +469,10 @@
                 <a class="biab-product__view" href="{{ product_url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">{{ s.view_link_label }}</a>
               {%- endif -%}
               {%- if s.show_card_prices and unit_cents > 0 -%}
-                <p class="biab-product__meta">{{ b.qty }} &times; {{ unit_cents | money }} RRP each</p>
+                <p class="biab-product__meta">{{ b.qty }} &times; {{ unit_display }} RRP each</p>
                 <div class="biab-product__total">
                   <span>Retail value</span>
-                  <strong>{{ line_cents | money }}</strong>
+                  <strong>{{ line_display }}</strong>
                 </div>
               {%- else -%}
                 <p class="biab-product__qty">
@@ -512,18 +516,22 @@
                       endif
                     endif
                     assign unit_cents = 0
-                    if b.product != blank
-                      assign unit_cents = b.product.selected_or_first_available_variant.price
-                    elsif b.price != blank
+                    if b.price != blank
                       assign unit_cents = b.price | remove: '$' | remove: ',' | strip | times: 100 | round
                     endif
                     assign line_cents = unit_cents | times: b.qty
+                    capture unit_display
+                      render 'biab-money', cents: unit_cents
+                    endcapture
+                    capture line_display
+                      render 'biab-money', cents: line_cents
+                    endcapture
                   -%}
                   <tr>
                     <th scope="row">{{ pname }}</th>
                     <td>{{ b.qty }}</td>
-                    <td>{{ unit_cents | money }}</td>
-                    <td>{{ line_cents | money }}</td>
+                    <td>{{ unit_display }}</td>
+                    <td>{{ line_display }}</td>
                   </tr>
                 {%- endfor -%}
               </tbody>
@@ -754,7 +762,7 @@
     { "type": "checkbox", "id": "show_view_link", "label": "Show \"View product\" link on cards", "default": true },
     { "type": "text", "id": "view_link_label", "label": "\"View product\" link text", "default": "View product details" },
 
-    { "type": "checkbox", "id": "show_card_prices", "label": "Show price and retail value on cards", "info": "Price comes from the linked product automatically.", "default": true },
+    { "type": "checkbox", "id": "show_card_prices", "label": "Show price and retail value on cards", "info": "Uses each item's approved RRP, converted for the shopper's currency.", "default": true },
 
     { "type": "header", "content": "Breakdown table" },
     { "type": "checkbox", "id": "show_breakdown", "label": "Show breakdown table", "default": true },
@@ -784,10 +792,10 @@
       "type": "item",
       "name": "Product",
       "settings": [
-        { "type": "product", "id": "product", "label": "Product", "info": "Pulls the image and current price automatically. Total = price × quantity." },
+        { "type": "product", "id": "product", "label": "Product", "info": "Used for the image and product page link. Prices come from the approved RRP below." },
         { "type": "text", "id": "name", "label": "Product name", "info": "Leave empty to use the linked product's title." },
         { "type": "number", "id": "qty", "label": "Quantity in box", "default": 6 },
-        { "type": "text", "id": "price", "label": "Manual RRP each (number only)", "info": "Only used if no product is linked above." },
+        { "type": "text", "id": "price", "label": "Approved RRP each in USD (number only)", "info": "Source of truth for this product's price. Converted automatically for other currencies. Agree any change before editing." },
         {
           "type": "select", "id": "category", "label": "Category", "default": "metabolic",
           "options": [

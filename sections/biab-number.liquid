@@ -3,16 +3,32 @@
   assign s = section.settings
 
   comment
-    Bar split is derived from the RRP and box price figures so it can never drift
-    out of sync with the numbers. The "margin override" setting wins if set above 0.
+    Every figure comes from the approved USD retail value and the box's checkout
+    price, in the shopper's currency (see snippets/biab-money.liquid). Profit and
+    percentages are calculated from those, so they can never drift out of sync.
+    The "margin override" setting wins if set above 0.
   endcomment
-  assign rrp_num = s.rrp | remove: '$' | remove: ',' | strip | plus: 0.0
-  assign price_num = s.price | remove: '$' | remove: ',' | strip | plus: 0.0
+  capture price_cents
+    render 'biab-money', box: true, raw: true
+  endcapture
+  capture rrp_cents
+    render 'biab-money', amount: s.rrp, raw: true
+  endcapture
+  assign price_cents = price_cents | plus: 0
+  assign rrp_cents = rrp_cents | plus: 0
+  assign profit_cents = rrp_cents | minus: price_cents
+  if profit_cents < 0
+    assign profit_cents = 0
+  endif
+
+  assign price_display = price_cents | money
+  assign rrp_display = rrp_cents | money
+  assign profit_display = profit_cents | money
 
   if s.margin_override > 0
     assign profit_pct = s.margin_override | times: 1.0
-  elsif rrp_num > 0
-    assign profit_pct = rrp_num | minus: price_num | divided_by: rrp_num | times: 100 | round: 1
+  elsif rrp_cents > 0
+    assign profit_pct = profit_cents | times: 100.0 | divided_by: rrp_cents | round: 1
   else
     assign profit_pct = 50
   endif
@@ -22,7 +38,11 @@
   if profit_pct > 100
     assign profit_pct = 100
   endif
-  assign cost_pct = 100 | minus: profit_pct
+  assign cost_pct = 100 | minus: profit_pct | round: 1
+  assign markup_pct = 0
+  if price_cents > 0
+    assign markup_pct = profit_cents | times: 100.0 | divided_by: price_cents | round
+  endif
 -%}
 
 <style>
@@ -295,12 +315,12 @@
   <div class="znb-n__wrap">
     {%- if s.kicker != blank -%}<p class="znb-n__kicker">{{ s.kicker }}</p>{%- endif -%}
     <h2 class="znb-n__h2">{{ s.heading }}</h2>
-    {%- if s.lede != blank -%}<p class="znb-n__lede">{{ s.lede }}</p>{%- endif -%}
+    {%- if s.lede != blank -%}<p class="znb-n__lede">{{ s.lede | replace: '[price]', price_display | replace: '[rrp]', rrp_display | replace: '[profit]', profit_display | replace: '[margin]', profit_pct | replace: '[cost]', cost_pct | replace: '[markup]', markup_pct }}</p>{%- endif -%}
 
     <div class="znb-n__sum" role="group" aria-label="{{ s.rrp_label | escape }} minus {{ s.price_label | escape }} equals {{ s.profit_label | escape }}">
       <div class="znb-n__term">
         <span class="znb-n__label">{{ s.rrp_label }}</span>
-        <span class="znb-n__figure">{{ s.rrp }}</span>
+        <span class="znb-n__figure">{{ rrp_display }}</span>
         {%- if s.rrp_note != blank -%}<span class="znb-n__note">{{ s.rrp_note }}</span>{%- endif -%}
       </div>
 
@@ -308,7 +328,7 @@
 
       <div class="znb-n__term">
         <span class="znb-n__label">{{ s.price_label }}</span>
-        <span class="znb-n__figure">{{ s.price }}</span>
+        <span class="znb-n__figure">{{ price_display }}</span>
         {%- if s.price_note != blank -%}<span class="znb-n__note">{{ s.price_note }}</span>{%- endif -%}
       </div>
 
@@ -317,7 +337,7 @@
       <div class="znb-n__term znb-n__term--result">
         <span class="znb-n__label">{{ s.profit_label }}</span>
         {%- if s.profit_prefix != blank -%}<span class="znb-n__prefix">{{ s.profit_prefix }}</span>{%- endif -%}
-        <span class="znb-n__figure">{{ s.profit }}</span>
+        <span class="znb-n__figure">{{ profit_display }}</span>
         {%- if s.profit_note != blank -%}<span class="znb-n__note">{{ s.profit_note }}</span>{%- endif -%}
       </div>
     </div>
@@ -328,20 +348,20 @@
         <span class="znb-n__bar-profit" style="width: {{ profit_pct }}%"></span>
       </div>
       <div class="znb-n__legend">
-        <span>{{ s.bar_left }}</span>
-        <strong>{{ s.bar_right }}</strong>
+        <span>{{ s.bar_left | replace: '[price]', price_display | replace: '[rrp]', rrp_display | replace: '[profit]', profit_display | replace: '[margin]', profit_pct | replace: '[cost]', cost_pct | replace: '[markup]', markup_pct }}</span>
+        <strong>{{ s.bar_right | replace: '[price]', price_display | replace: '[rrp]', rrp_display | replace: '[profit]', profit_display | replace: '[margin]', profit_pct | replace: '[cost]', cost_pct | replace: '[markup]', markup_pct }}</strong>
       </div>
     </div>
 
     {%- if s.ratio_1 != blank or s.ratio_2 != blank -%}
       <div class="znb-n__ratios">
-        {%- if s.ratio_1 != blank -%}<p>{{ s.ratio_1 }}</p>{%- endif -%}
-        {%- if s.ratio_2 != blank -%}<p>{{ s.ratio_2 }}</p>{%- endif -%}
+        {%- if s.ratio_1 != blank -%}<p>{{ s.ratio_1 | replace: '[price]', price_display | replace: '[rrp]', rrp_display | replace: '[profit]', profit_display | replace: '[margin]', profit_pct | replace: '[cost]', cost_pct | replace: '[markup]', markup_pct }}</p>{%- endif -%}
+        {%- if s.ratio_2 != blank -%}<p>{{ s.ratio_2 | replace: '[price]', price_display | replace: '[rrp]', rrp_display | replace: '[profit]', profit_display | replace: '[margin]', profit_pct | replace: '[cost]', cost_pct | replace: '[markup]', markup_pct }}</p>{%- endif -%}
       </div>
     {%- endif -%}
 
     {%- if s.disclaimer != blank -%}
-      <p class="znb-n__disclaimer">{{ s.disclaimer }}</p>
+      <p class="znb-n__disclaimer">{{ s.disclaimer | replace: '[price]', price_display | replace: '[rrp]', rrp_display | replace: '[profit]', profit_display | replace: '[margin]', profit_pct | replace: '[cost]', cost_pct | replace: '[markup]', markup_pct }}</p>
     {%- endif -%}
   </div>
 </section>
@@ -353,28 +373,28 @@
   "settings": [
     { "type": "text", "id": "kicker", "label": "Small label", "default": "The opportunity in numbers" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "What One Box Can Return" },
-    { "type": "textarea", "id": "lede", "label": "Plain-language summary", "default": "Sell all 40 products at current recommended retail prices and you recover your $999 investment, with up to $1,030.60 remaining as gross profit before expenses." },
+    { "type": "textarea", "id": "lede", "label": "Plain-language summary", "info": "Tokens: [price], [rrp], [profit], [margin], [cost], [markup].", "default": "Sell all 40 products at current recommended retail prices and you recover your [price] investment, with up to [profit] remaining as gross profit before expenses." },
     { "type": "header", "content": "Combined RRP" },
     { "type": "text", "id": "rrp_label", "label": "Label", "default": "Combined retail value" },
-    { "type": "text", "id": "rrp", "label": "Figure", "default": "$2,029.60" },
+    { "type": "text", "id": "rrp", "label": "Approved figure in USD", "info": "Converted automatically for other currencies.", "default": "$2,029.60" },
     { "type": "text", "id": "rrp_note", "label": "Note", "default": "All 40 products at current recommended retail prices" },
     { "type": "header", "content": "Box price" },
     { "type": "text", "id": "price_label", "label": "Label", "default": "Your box price" },
-    { "type": "text", "id": "price", "label": "Figure", "default": "$999" },
+    { "type": "paragraph", "content": "The box price is the Business in a Box product's checkout price in the shopper's currency." },
     { "type": "text", "id": "price_note", "label": "Note", "default": "Shipping charged separately" },
     { "type": "header", "content": "Potential gross profit" },
     { "type": "text", "id": "profit_label", "label": "Label", "default": "Potential gross profit" },
     { "type": "text", "id": "profit_prefix", "label": "Prefix", "default": "Up to" },
-    { "type": "text", "id": "profit", "label": "Figure", "default": "$1,030.60" },
+    { "type": "paragraph", "content": "Calculated automatically: retail value minus box price." },
     { "type": "text", "id": "profit_note", "label": "Note", "default": "Before shipping, fees, tax, discounts and other expenses" },
     { "type": "header", "content": "Split bar" },
-    { "type": "paragraph", "content": "The bar split is calculated automatically from the retail value and box price. Only set an override if you need a different split." },
+    { "type": "paragraph", "content": "The bar split is calculated automatically from the retail value and box price. Only set an override if you need a different split. Labels accept the tokens [price], [rrp], [profit], [margin], [cost] and [markup]." },
     { "type": "number", "id": "margin_override", "label": "Gross margin override (%)", "info": "Leave at 0 to calculate automatically.", "default": 0 },
-    { "type": "text", "id": "bar_left", "label": "Left label", "default": "49.2% recovers your $999" },
-    { "type": "text", "id": "bar_right", "label": "Right label", "default": "50.8% potential gross profit" },
-    { "type": "text", "id": "ratio_1", "label": "Ratio line 1", "default": "Approximately 103% markup on your investment" },
-    { "type": "text", "id": "ratio_2", "label": "Ratio line 2", "default": "50.8% gross margin on total retail sales" },
-    { "type": "textarea", "id": "disclaimer", "label": "Required disclaimer", "default": "Potential gross profit of up to $1,030.60 if all products are sold at current recommended retail prices. Excludes shipping, taxes, discounts, payment fees, advertising and other business expenses. Individual results vary." }
+    { "type": "text", "id": "bar_left", "label": "Left label", "default": "[cost]% recovers your [price]" },
+    { "type": "text", "id": "bar_right", "label": "Right label", "default": "[margin]% potential gross profit" },
+    { "type": "text", "id": "ratio_1", "label": "Ratio line 1", "default": "Approximately [markup]% markup on your investment" },
+    { "type": "text", "id": "ratio_2", "label": "Ratio line 2", "default": "[margin]% gross margin on total retail sales" },
+    { "type": "textarea", "id": "disclaimer", "label": "Required disclaimer", "default": "Potential gross profit of up to [profit] if all products are sold at current recommended retail prices. Excludes shipping, taxes, discounts, payment fees, advertising and other business expenses. Individual results vary." }
   ],
   "presets": [{ "name": "BIAB v2 Numbers" }]
 }

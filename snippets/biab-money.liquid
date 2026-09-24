@@ -1,0 +1,48 @@
+{%- comment -%}
+  Business in a Box: one approved figure, shown in the shopper's currency.
+
+  Every price on the Business in a Box page comes from the approved USD figures
+  (the $999 box and the agreed RRPs). The box price is whatever checkout charges
+  for the Business in a Box product in the shopper's market. Every other amount is
+  shown as the approved USD value in USD markets, and in other currencies is
+  converted at the same rate Shopify applies to the box, so the headline, product
+  cards, purchase panel and checkout always agree.
+
+  Accepts:
+  - amount: approved USD amount, e.g. '69.99', '$2,029.60' or 999
+  - cents: approved USD amount in cents (used instead of amount)
+  - box: true to output the box price charged at checkout
+  - raw: true to output cents instead of formatted money
+
+  Usage:
+  {% render 'biab-money', amount: '69.99' %}
+  {% capture box_cents %}{% render 'biab-money', box: true, raw: true %}{% endcapture %}
+{%- endcomment -%}
+
+{%- liquid
+  assign approved_box_cents = 99900
+  assign box_variant = all_products['business-in-a-box'].selected_or_first_available_variant
+
+  if box
+    if box_variant != blank
+      assign out_cents = box_variant.price
+    else
+      assign out_cents = approved_box_cents
+    endif
+  else
+    if cents != blank
+      assign out_cents = cents | round
+    else
+      assign out_cents = amount | append: '' | remove: '$' | remove: ',' | strip | times: 100 | round
+    endif
+    if cart.currency.iso_code != 'USD' and box_variant != blank
+      assign out_cents = out_cents | times: 1.0 | times: box_variant.price | divided_by: approved_box_cents | round
+    endif
+  endif
+
+  if raw
+    echo out_cents
+  else
+    echo out_cents | money
+  endif
+-%}

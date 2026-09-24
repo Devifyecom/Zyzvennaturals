@@ -14,6 +14,11 @@
   endif
 -%}
 
+{%- comment -%}
+  Business in a Box is sold at a fixed price plus shipping, so sitewide shipping
+  promotions such as "Free shipping over $100" are not shown on its page or product.
+{%- endcomment -%}
+{%- unless template.suffix == 'business-in-box' or template.suffix == 'business-in-a-box' -%}
 {% if social_icons %}
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
@@ -161,6 +166,7 @@
     </div>
   </div>
 </div>
+{%- endunless -%}
 
 {% schema %}
 {

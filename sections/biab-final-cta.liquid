@@ -1,6 +1,12 @@
 {{ 'biab.css' | asset_url | stylesheet_tag }}
 
-{%- liquid assign s = section.settings -%}
+{%- liquid
+  assign s = section.settings
+  capture box_price
+    render 'biab-money', box: true
+  endcapture
+  assign cta_label = s.cta_label | replace: '[price]', box_price
+-%}
 
 <div class="biab biab--green">
   <section class="biab-section biab-final" id="biab-final" aria-labelledby="biab-final-title">
@@ -8,7 +14,7 @@
       {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
       <h2 class="biab-h2" id="biab-final-title">{{ s.heading }}</h2>
       {%- if s.subheading != blank -%}<p class="biab-final__sub">{{ s.subheading }}</p>{%- endif -%}
-      <a class="biab-btn biab-btn--gold" href="{{ s.cta_anchor | default: '#biab-purchase' }}">{{ s.cta_label }}</a>
+      <a class="biab-btn biab-btn--gold" href="{{ s.cta_anchor | default: '#biab-purchase' }}">{{ cta_label }}</a>
       {%- if s.note != blank -%}
         <p class="biab-small" style="margin-top:24px;color:rgba(255,255,255,.7);">{{ s.note }}</p>
       {%- endif -%}
@@ -24,7 +30,7 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wellness Without Borders" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Ready to Build Something of Your Own?" },
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Start with products customers already know, supported by training and a brand built for long-term wellness." },
-    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Start Your Business in a Box — $999" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "info": "[price] is replaced with the box price.", "default": "Start Your Business in a Box — [price]" },
     { "type": "text", "id": "cta_anchor", "label": "Button target", "default": "#biab-purchase" },
     { "type": "textarea", "id": "note", "label": "Small note", "default": "Shipping charged separately. Earnings are not guaranteed and individual results vary." }
   ],

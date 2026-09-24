@@ -1,6 +1,11 @@
 {{ 'biab.css' | asset_url | stylesheet_tag }}
 
-{%- liquid assign s = section.settings -%}
+{%- liquid
+  assign s = section.settings
+  capture box_price
+    render 'biab-money', box: true
+  endcapture
+-%}
 
 <div class="biab biab--cream">
   <section class="biab-section" id="biab-steps" aria-labelledby="biab-steps-title">
@@ -16,7 +21,7 @@
           <li class="biab-step" {{ block.shopify_attributes }}>
             <div class="biab-step__num">{{ forloop.index }}</div>
             <h3 class="biab-h3">{{ block.settings.title }}</h3>
-            <p class="biab-body">{{ block.settings.text }}</p>
+            <p class="biab-body">{{ block.settings.text | replace: '[price]', box_price }}</p>
           </li>
         {%- endfor -%}
       </ol>
@@ -38,7 +43,7 @@
       "name": "Step",
       "settings": [
         { "type": "text", "id": "title", "label": "Title", "default": "Step title" },
-        { "type": "textarea", "id": "text", "label": "Text", "default": "Step description." }
+        { "type": "textarea", "id": "text", "label": "Text", "info": "[price] is replaced with the box price.", "default": "Step description." }
       ]
     }
   ],

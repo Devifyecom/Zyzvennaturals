@@ -1,14 +1,19 @@
 {{ 'biab.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'biab.js' | asset_url }}" defer="defer"></script>
 
-{%- liquid assign s = section.settings -%}
+{%- liquid
+  assign s = section.settings
+  capture box_price
+    render 'biab-money', box: true
+  endcapture
+-%}
 
 <div class="biab">
   <div class="biab-sticky" data-biab-sticky data-threshold="{{ s.threshold }}">
     <div class="biab-sticky__inner">
       <div class="biab-sticky__text">
         <strong>{{ s.title }}</strong>
-        {{ s.subtitle }}
+        {{ s.subtitle | replace: '[price]', box_price }}
       </div>
       <a class="biab-btn biab-btn--gold" href="{{ s.cta_anchor | default: '#biab-purchase' }}">{{ s.cta_label }}</a>
     </div>
@@ -21,7 +26,7 @@
   "tag": "section",
   "settings": [
     { "type": "text", "id": "title", "label": "Title", "default": "Business in a Box" },
-    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "$999 + shipping · 40 products" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "info": "[price] is replaced with the box price.", "default": "[price] + shipping · 40 products" },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Start Your Business" },
     { "type": "text", "id": "cta_anchor", "label": "Button target", "default": "#biab-purchase" },
     { "type": "range", "id": "threshold", "label": "Show after scrolling (px)", "min": 200, "max": 2000, "step": 100, "default": 700 }

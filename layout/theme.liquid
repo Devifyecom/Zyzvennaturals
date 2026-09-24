@@ -54,6 +54,21 @@
 
     {% render 'meta-tags' %}
 
+    {%- if template.suffix == 'business-in-box' or template.suffix == 'business-in-a-box' -%}
+      {%- comment -%}
+        Business in a Box: keep Klaviyo popup and flyout sign-up forms (e.g. "Subscribe & Save")
+        from covering the page. Embedded forms are unaffected. Also exclude these URLs in
+        each form's Targeting settings in Klaviyo.
+      {%- endcomment -%}
+      <style>
+        div[role="dialog"][aria-label="POPUP Form"],
+        div[role="dialog"][aria-label="FLYOUT Form"],
+        [data-testid="POPUP"],
+        [data-testid="FLYOUT"],
+        [class*="kl-teaser"] { display: none !important; }
+      </style>
+    {%- endif -%}
+
     {%- if bib_page -%}
       {% render 'bib-seo' %}
     {%- endif -%}
