@@ -1,0 +1,57 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--cream">
+  <section class="biab-section" id="biab-steps" aria-labelledby="biab-steps-title">
+    <div class="biab-inner">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-steps-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+      </div>
+
+      <ol class="biab-steps" style="list-style:none;margin:0;padding:0;">
+        {%- for block in section.blocks -%}
+          <li class="biab-step" {{ block.shopify_attributes }}>
+            <div class="biab-step__num">{{ forloop.index }}</div>
+            <h3 class="biab-h3">{{ block.settings.title }}</h3>
+            <p class="biab-body">{{ block.settings.text }}</p>
+          </li>
+        {%- endfor -%}
+      </ol>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — How it works",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How It Works" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From Order to First Sale" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Step title" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Step description." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — How it works",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Order your box", "text": "Buy the Business in a Box for $999 plus shipping and agree to the Reseller Terms." } },
+        { "type": "step", "settings": { "title": "Complete onboarding and training", "text": "Access your product training and digital marketing toolkit within seven days of confirmed payment." } },
+        { "type": "step", "settings": { "title": "Launch locally or online", "text": "Sell in person, through social media, from your own website or in your shop, using approved materials." } },
+        { "type": "step", "settings": { "title": "Reorder your bestsellers", "text": "Restock the lines that move fastest in your market at reseller pricing, without buying another full box." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

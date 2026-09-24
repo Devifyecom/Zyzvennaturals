@@ -1,0 +1,35 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+<div class="bib bib-sticky" data-bib-sticky>
+  <a
+    href="{{ section.settings.cta_anchor | default: '#bib-hero' }}"
+    class="bib-btn bib-btn--block"
+    data-bib-scroll
+    data-bib-cta="sticky-mobile"
+  >
+    {{ section.settings.cta_label }}
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "BIB — Sticky mobile CTA",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Start Your Business in a Box — $999"
+    },
+    {
+      "type": "text",
+      "id": "cta_anchor",
+      "label": "CTA anchor",
+      "default": "#bib-hero",
+      "info": "Scrolls back to the buy form in the hero."
+    }
+  ],
+  "presets": [{ "name": "BIB — Sticky mobile CTA" }]
+}
+{% endschema %}

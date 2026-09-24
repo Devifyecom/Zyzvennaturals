@@ -1,0 +1,273 @@
+{% style %}
+    .section-{{ section.id }} {
+        background: white;
+    }
+
+    .section-{{ section.id }} .cw-home-banner {
+        position: relative;
+    }
+
+    .section-{{ section.id }} .cw-banner video {
+        width: 100%;
+        display: block;
+    }
+
+    .section-{{ section.id }} .cw-product-image {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: auto;
+    }
+
+    .section-{{ section.id }} .cw-content {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .section-{{ section.id }} .cw-content h2 {
+        font-family: "Golos Text", sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        color: #283613;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .section-{{ section.id }} .cw-content p {
+        font-family: "Golos Text", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: #283613;
+        margin: 0;
+    }
+
+    .section-{{ section.id }} .cw-btns {
+        max-width: 700px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .section-{{ section.id }} .cw-btns a {
+        width: 260px;
+        height: 65px;
+        color: white;
+        text-decoration: none;
+        border-radius: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.2;
+        transition: all ease 0.3s;
+    }
+
+    .section-{{ section.id }} .cw-btns a:first-child:hover {
+        color: {{ section.settings.btn_color1 }};
+        background: white !important;
+        border: 1px solid {{ section.settings.btn_color1 }};
+    }
+
+    .section-{{ section.id }} .cw-btns a:last-child:hover {
+        color: {{ section.settings.btn_color2 }};
+        background: white !important;
+        border: 1px solid {{ section.settings.btn_color2 }};
+    }
+
+    @media screen and (max-width: 1300px) {
+        .section-{{ section.id }} .cw-content {
+            width: 60%;
+            padding: 0 30px;
+        }
+
+        .section-{{ section.id }} .cw-content h2 {
+            font-size: 30px;
+        }
+
+        .section-{{ section.id }} .cw-content p {
+            font-size: 15px;
+        }
+
+        .section-{{ section.id }} .cw-btns {
+            max-width: 500px;
+        }
+
+        .section-{{ section.id }} .cw-btns a {
+            width: 200px;
+            height: 50px;
+            font-size: 13px;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-{{ section.id }} .cw-banner {
+            min-height: 80vh;
+            max-height: 80vh;
+            overflow: hidden;
+        }
+
+        .section-{{ section.id }} .cw-banner video {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-{{ section.id }} .cw-product-image {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-{{ section.id }} .cw-content {
+            width: 100%;
+            padding: 20px;
+            gap: 8px;
+            height: fit-content;
+            top: unset;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .section-{{ section.id }} .cw-content h2 {
+            font-size: 20px;
+        }
+
+        .section-{{ section.id }} .cw-content p {
+            font-size: 14px;
+        }
+
+        .section-{{ section.id }} .cw-btns {
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .section-{{ section.id }} .cw-btns a:last-child {
+            display: none;
+        }
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }}">
+    <div class="cw-home-banner{% if section.settings.bg_type == 'video' %} cw-home-banner-video{% else %} cw-home-banner-image{% endif %}">
+        <div class="cw-banner">
+            {% if section.settings.bg_type == 'video' %}
+                <video playsinline autoplay muted loop class="auto-video" poster="{{ section.settings.video.preview_image | image_url: width: 1100 }}">
+                    <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+                    <img src="{{ section.settings.video.preview_image | image_url: width: 1100 }}" alt="{{ section.settings.video.alt | default: 'Promotional video' }}" width="100%" height="100%">
+                </video>
+            {% else %}
+                <img src="{{ section.settings.image | img_url: '1100px' }}" width="100%" height="100%" alt="{{ section.settings.image.alt }}">
+            {% endif %}
+        </div>
+        <img src="{{ section.settings.product_image | img_url: 'master' }}" width="100%" height="100%" alt="{{ section.settings.product_image }}" class="cw-product-image{% if section.settings.product_image_mobile != blank %} desktop{% endif %}">
+        {% if section.settings.product_image_mobile != blank %}
+            <img src="{{ section.settings.product_image_mobile | img_url: 'master' }}" width="100%" height="100%" alt="{{ section.settings.product_image_mobile.alt }}" class="cw-product-image mobile">
+        {% endif %}
+        <div class="cw-content">
+            <h2>{{ section.settings.heading }}</h2>
+            {{ section.settings.content }}
+            <div class="cw-btns">
+                <a href="{{ section.settings.btn_link1 }}" style="background: {{ section.settings.btn_color1 }};">{{ section.settings.btn_text1 }}</a>
+                <a href="{{ section.settings.btn_link2 }}" style="background: {{ section.settings.btn_color2 }};">{{ section.settings.btn_text2 }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Custom Homepage Banner",
+    "settings": [
+        {
+            "type": "select",
+            "id": "bg_type",
+            "label": "Background Type",
+            "options": [
+                {
+                    "value": "video",
+                    "label": "Video"
+                },
+                {
+                    "value": "image",
+                    "label": "Image"
+                }
+            ],
+            "default": "video"
+        },
+        {
+            "type": "video",
+            "id": "video",
+            "label": "Video",
+            "visible_if": "{{ section.settings.bg_type == 'video' }}"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "visible_if": "{{ section.settings.bg_type == 'image' }}"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Product Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_mobile",
+            "label": "Mobile Product Image"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "text",
+            "id": "btn_text1",
+            "label": "Button Text1"
+        },
+        {
+            "type": "url",
+            "id": "btn_link1",
+            "label": "Button Link1"
+        },
+        {
+            "type": "color",
+            "id": "btn_color1",
+            "label": "Button Color1"
+        },
+        {
+            "type": "text",
+            "id": "btn_text2",
+            "label": "Button Text2"
+        },
+        {
+            "type": "url",
+            "id": "btn_link2",
+            "label": "Button Link2"
+        },
+        {
+            "type": "color",
+            "id": "btn_color2",
+            "label": "Button Color2"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Homepage Banner"
+        }
+    ]
+}
+{% endschema %}

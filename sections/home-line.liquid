@@ -1,0 +1,25 @@
+{% style %}
+    .section-{{ section.id }} .home-line {
+        width: 60%;
+        max-width: 500px;
+        height: 3px;
+        background: #d1b08e;
+        display: block;
+        margin: auto;
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+    <div class="home-line"></div>
+</div>
+
+{% schema %}
+{
+    "name": "Home line",
+    "presets": [
+        {
+            "name": "Home line"
+        }
+    ]
+}
+{% endschema %}

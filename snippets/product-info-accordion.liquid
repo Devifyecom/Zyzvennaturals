@@ -1,0 +1,75 @@
+{%- comment -%}
+  Renders the product information accordion under the image gallery.
+
+  Content comes from "Info accordion row" blocks added to the Product
+  information section in the theme editor. Each block is one row, and the
+  merchant controls the title, the rich-text content, the icon and whether
+  the row starts open.
+
+  If no Info accordion row blocks have been added, the snippet falls back to
+  the product metafields the theme used previously, so existing products keep
+  working until the blocks are set up.
+
+  Accepts:
+  - layout: "desktop" or "mobile" (added as a class on the wrapper)
+  - section: the section object, required so the blocks can be read
+
+  Usage:
+  {% render 'product-info-accordion', layout: 'desktop', section: section %}
+{%- endcomment -%}
+
+{%- liquid
+  assign info_rows = section.blocks | where: 'type', 'info_row'
+  assign default_icon = 'https://cdn.shopify.com/s/files/1/0245/2422/6606/files/slider-component_List_Item_revitalisant_monoi_beigebackground_360x.png_1.png?v=1782957659'
+-%}
+
+<div class="product-info-accordion {{ layout | default: 'desktop' }}">
+  {%- if info_rows.size > 0 -%}
+
+    {%- comment -%} Merchant-controlled rows from the theme editor {%- endcomment -%}
+    {%- for block in info_rows -%}
+      {%- if block.settings.heading != blank or block.settings.content != blank -%}
+        <div
+          class="product-info-item{% if block.settings.open_by_default %} is-open{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <button type="button" class="product-info-title">
+            <span class="product-dropdown">
+              {%- if block.settings.icon != blank -%}
+                <img
+                  src="{{ block.settings.icon | image_url: width: 90 }}"
+                  width="45"
+                  height="auto"
+                  loading="lazy"
+                  alt="{{ block.settings.icon.alt | default: block.settings.heading | escape }}"
+                >
+              {%- else -%}
+                <img src="{{ default_icon }}" width="45" height="auto" loading="lazy" alt="">
+              {%- endif -%}
+              {{ block.settings.heading }}
+            </span>
+            <span class="product-info-arrow"></span>
+          </button>
+          <div class="product-info-desc">{{ block.settings.content }}</div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+  {%- else -%}
+
+    {%- comment -%} Fallback: the original metafield-driven rows {%- endcomment -%}
+    {%- if product.metafields.custom.benefits != blank -%}
+      {% render 'product-info', info: product.metafields.custom.benefits.value, info_title: 'Benefits' %}
+    {%- endif -%}
+    {%- if product.metafields.custom.keyingredient != blank -%}
+      {% render 'product-info', info: product.metafields.custom.keyingredient.value, info_title: 'Key Ingredients' %}
+    {%- endif -%}
+    {%- if product.metafields.custom.how_to_use != blank -%}
+      {% render 'product-info', info: product.metafields.custom.how_to_use.value, info_title: 'How to Use' %}
+    {%- endif -%}
+    {%- if product.metafields.custom.faq != blank -%}
+      {% render 'product-info', info: product.metafields.custom.faq.value, info_title: 'FAQ' %}
+    {%- endif -%}
+
+  {%- endif -%}
+</div>

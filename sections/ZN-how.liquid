@@ -1,0 +1,468 @@
+{%- liquid
+  assign uid = section.id | replace: '_', '' | downcase
+  assign cols = section.settings.columns | plus: 0
+-%}
+
+{% style %}
+  #hw-{{ uid }} {
+    --hw-pink: {{ section.settings.accent_color }};
+    --hw-pink-soft: {{ section.settings.callout_bg }};
+    --hw-line: {{ section.settings.card_border }};
+    --hw-body: {{ section.settings.body_color }};
+    --hw-ink: {{ section.settings.heading_color }};
+    --hw-max: {{ section.settings.max_width }}px;
+    --hw-gap: {{ section.settings.gap }}px;
+
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.section_bg }};
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #hw-{{ uid }} *,
+  #hw-{{ uid }} *::before,
+  #hw-{{ uid }} *::after { box-sizing: border-box; }
+
+  #hw-{{ uid }} .hw-inner {
+    max-width: var(--hw-max);
+    margin: 0 auto;
+  }
+
+  /* ---------- header ---------- */
+  #hw-{{ uid }} .hw-eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--hw-pink);
+    text-align: center;
+  }
+
+  #hw-{{ uid }} .hw-title {
+    margin: 0 auto 20px;
+    max-width: 20ch;
+    font-size: clamp(28px, 2.9vw, {{ section.settings.heading_size }}px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -.022em;
+    color: var(--hw-ink);
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  #hw-{{ uid }} .hw-lead {
+    margin: 0 auto 34px;
+    max-width: 620px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--hw-body);
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  #hw-{{ uid }} .hw-lead p { margin: 0; }
+
+  /* ---------- card grid ---------- */
+  #hw-{{ uid }} .hw-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat({{ cols }}, minmax(0, 1fr));
+    gap: var(--hw-gap);
+    align-items: stretch;
+    margin: 0 0 18px;
+    padding: 0;
+  }
+
+  #hw-{{ uid }} .hw-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: {{ section.settings.card_bg }};
+    border: 1px solid var(--hw-line);
+    border-radius: {{ section.settings.card_radius }}px;
+    padding: 28px 20px 26px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+
+  #hw-{{ uid }} .hw-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);
+    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px {{ section.settings.accent_color | color_modify: 'alpha', 0.28 }};
+  }
+
+  #hw-{{ uid }} .hw-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    margin: 0 0 15px;
+    border-radius: 50%;
+    background: var(--hw-pink);
+    color: {{ section.settings.number_text_color }};
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #hw-{{ uid }} .hw-card-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -.012em;
+    color: var(--hw-ink);
+  }
+
+  #hw-{{ uid }} .hw-herbs {
+    margin: 0 0 12px;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .085em;
+    text-transform: uppercase;
+    color: var(--hw-pink);
+  }
+
+  #hw-{{ uid }} .hw-copy {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--hw-body);
+    text-wrap: pretty;
+  }
+
+  /* ---------- callout ---------- */
+  #hw-{{ uid }} .hw-callout {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    border-radius: {{ section.settings.card_radius }}px;
+    background: var(--hw-pink-soft);
+    text-align: center;
+  }
+
+  #hw-{{ uid }} .hw-callout p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--hw-ink);
+    text-wrap: pretty;
+  }
+
+  #hw-{{ uid }} .hw-callout strong { font-weight: 700; }
+
+  /* ---------- CTA ---------- */
+  #hw-{{ uid }} .hw-cta {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #hw-{{ uid }} .hw-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    min-height: 51px;
+    padding: 15px 28px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--hw-pink);
+    color: {{ section.settings.button_text_color }};
+    font-family: inherit;
+    font-size: 15.5px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -6px {{ section.settings.accent_color | color_modify: 'alpha', 0.45 }};
+    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #hw-{{ uid }} .hw-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 14px 30px -8px {{ section.settings.accent_color | color_modify: 'alpha', 0.55 }};
+  }
+
+  #hw-{{ uid }} .hw-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px -6px {{ section.settings.accent_color | color_modify: 'alpha', 0.45 }};
+  }
+
+  #hw-{{ uid }} .hw-btn:focus-visible {
+    outline: 2px solid var(--hw-ink);
+    outline-offset: 3px;
+  }
+
+  #hw-{{ uid }} .hw-btn svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .22s ease;
+  }
+
+  #hw-{{ uid }} .hw-btn:hover svg { transform: translateX(3px); }
+
+  #hw-{{ uid }} .hw-note {
+    margin: 18px auto 0;
+    max-width: 720px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #8A8C90;
+    text-align: center;
+  }
+
+  #hw-{{ uid }} .hw-note p { margin: 0; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1080px) {
+    #hw-{{ uid }} { padding-left: 18px; padding-right: 18px; }
+    #hw-{{ uid }} .hw-grid { gap: 14px; }
+    #hw-{{ uid }} .hw-card { padding: 26px 16px 24px; }
+  }
+
+  @media (max-width: 900px) {
+    #hw-{{ uid }} .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }
+    #hw-{{ uid }} .hw-title { font-size: clamp(28px, 5vw, 32px); }
+    #hw-{{ uid }} .hw-callout { padding: 26px 24px; }
+  }
+
+  @media (max-width: 560px) {
+    #hw-{{ uid }} { --hw-gap: 12px; padding-left: 16px; padding-right: 16px; }
+    #hw-{{ uid }} .hw-eyebrow { font-size: 12.5px; margin-bottom: 15px; }
+    #hw-{{ uid }} .hw-title { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }
+    #hw-{{ uid }} .hw-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }
+
+    #hw-{{ uid }} .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
+    {%- if section.settings.mobile_row_layout %}
+    #hw-{{ uid }} .hw-card {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 20px 21px;
+      text-align: left;
+    }
+    #hw-{{ uid }} .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }
+    {%- endif %}
+    #hw-{{ uid }} .hw-card-title { font-size: 17px; margin-bottom: 6px; }
+    #hw-{{ uid }} .hw-herbs { font-size: 11px; margin-bottom: 9px; }
+    #hw-{{ uid }} .hw-copy { font-size: 14px; line-height: 1.55; }
+
+    #hw-{{ uid }} .hw-callout { padding: 22px 20px; }
+    #hw-{{ uid }} .hw-btn { max-width: none; font-size: 15px; }
+  }
+
+  @media (hover: none) {
+    #hw-{{ uid }} .hw-card:hover {
+      transform: none;
+      border-color: var(--hw-line);
+      box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);
+    }
+    #hw-{{ uid }} .hw-btn:hover { transform: none; }
+    #hw-{{ uid }} .hw-btn:hover svg { transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #hw-{{ uid }} * { transition: none !important; }
+    #hw-{{ uid }} .hw-card:hover,
+    #hw-{{ uid }} .hw-btn:hover { transform: none; }
+  }
+{% endstyle %}
+
+<section id="hw-{{ uid }}" class="hw-section">
+  <div class="hw-inner">
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="hw-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="hw-title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.lead != blank -%}
+      <div class="hw-lead">{{ section.settings.lead }}</div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="hw-grid">
+        {%- for block in section.blocks -%}
+          <li class="hw-card" {{ block.shopify_attributes }}>
+            <div class="hw-num" aria-hidden="true">{{ forloop.index }}</div>
+            <div>
+              {%- if block.settings.title != blank -%}
+                <h3 class="hw-card-title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.herbs != blank -%}
+                <p class="hw-herbs">{{ block.settings.herbs | escape }}</p>
+              {%- endif -%}
+              {%- if block.settings.copy != blank -%}
+                <p class="hw-copy">{{ block.settings.copy | escape }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if section.settings.callout != blank -%}
+      <div class="hw-callout">{{ section.settings.callout }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="hw-cta">
+        {%- if section.settings.button_link != blank -%}
+          <a class="hw-btn" href="{{ section.settings.button_link }}">
+        {%- else -%}
+          <button class="hw-btn" type="button" onclick="hgBuy()">
+        {%- endif -%}
+          <span>{{ section.settings.button_label | escape }}</span>
+          {%- if section.settings.button_arrow -%}
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg>
+          {%- endif -%}
+        {%- if section.settings.button_link != blank -%}
+          </a>
+        {%- else -%}
+          </button>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="hw-note">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ZN How",
+  "tag": "section",
+  "class": "section hw-section-wrapper",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "header", "content": "Text" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why it works" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "One Cup. Four Jobs." },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "Intro text",
+      "default": "<p>Hey Girl isn't another supplement to choke down. It's functional herbs that do four things at once, gently, while you sleep.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "callout",
+      "label": "Callout box",
+      "info": "Leave blank to hide the pink box.",
+      "default": "<p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Hey Girl balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>"
+    },
+    { "type": "richtext", "id": "disclaimer", "label": "Fine print", "info": "Optional. Sits below the button." },
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "button_label", "label": "Label", "default": "Start my relief" },
+    { "type": "url", "id": "button_link", "label": "Link", "info": "Leave blank to keep the existing hgBuy() click handler." },
+    { "type": "checkbox", "id": "button_arrow", "label": "Show arrow", "default": true },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "accent_color", "label": "Pink accent", "default": "#EC3A8C" },
+    { "type": "color", "id": "number_text_color", "label": "Number text", "default": "#FFFFFF" },
+    { "type": "color", "id": "button_text_color", "label": "Button text", "default": "#FFFFFF" },
+    { "type": "color", "id": "heading_color", "label": "Headings", "default": "#17171A" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#6E7075" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#FFFFFF" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#EDEDF0" },
+    { "type": "color", "id": "callout_bg", "label": "Callout background", "default": "#FCE7F1" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "4"
+    },
+    { "type": "checkbox", "id": "mobile_row_layout", "label": "Mobile: number beside text", "info": "Off keeps cards centered and stacked.", "default": true },
+    { "type": "range", "id": "max_width", "label": "Content width", "min": 900, "max": 1500, "step": 20, "unit": "px", "default": 1160 },
+    { "type": "range", "id": "gap", "label": "Gap between cards", "min": 8, "max": 32, "step": 2, "unit": "px", "default": 18 },
+    { "type": "range", "id": "card_radius", "label": "Corner radius", "min": 0, "max": 28, "step": 2, "unit": "px", "default": 16 },
+    { "type": "range", "id": "heading_size", "label": "Heading size (desktop)", "min": 26, "max": 52, "step": 1, "unit": "px", "default": 34 },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "job",
+      "name": "Job",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Calms bloating & gas" },
+        { "type": "text", "id": "herbs", "label": "Ingredients line", "default": "Fennel ¬∑ Ginger ¬∑ Lemongrass" },
+        { "type": "textarea", "id": "copy", "label": "Description", "default": "These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ZN How",
+      "blocks": [
+        {
+          "type": "job",
+          "settings": {
+            "title": "Calms bloating & gas",
+            "herbs": "Fennel ¬∑ Ginger ¬∑ Lemongrass",
+            "copy": "These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals."
+          }
+        },
+        {
+          "type": "job",
+          "settings": {
+            "title": "Eases digestion",
+            "herbs": "Milk Thistle ¬∑ Burdock",
+            "copy": "Milk thistle and burdock support your liver and gut, so food breaks down cleanly and you feel less heavy and off after meals."
+          }
+        },
+        {
+          "type": "job",
+          "settings": {
+            "title": "Gets you regular",
+            "herbs": "Low-dose Senna",
+            "copy": "A gentle, deliberate dose nudges your bowel overnight, so you wake up regular. No cramping, because the soothing herbs balance it."
+          }
+        },
+        {
+          "type": "job",
+          "settings": {
+            "title": "Releases water weight",
+            "herbs": "Dandelion ¬∑ Nettle",
+            "copy": "Natural diuretics that flush the stored water behind the puffiness in your face, fingers, and stomach."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

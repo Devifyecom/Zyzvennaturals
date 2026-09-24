@@ -1,0 +1,476 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+<div class="premium-collection-section color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <h2 class="premium-heading psheadmobile">
+        {{ section.settings.title }}
+      </h2>
+
+      <div class="newsletter-divider">
+        <span></span>
+        <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/logozynn.png?v=1772427108" alt="Logo">
+        <span></span>
+      </div>
+    {% endif %}
+
+    <div class="premium-carousel-wrapper">
+      <button class="carousel-arrow prev">&#8592;</button>
+
+      <ul id="PremiumCarousel-{{ section.id }}" class="premium-carousel">
+        {% for block in section.blocks %}
+          <li class="premium-item" {{ block.shopify_attributes }}>
+            {% comment %}
+              {% render 'card-collection',
+                card_collection: block.settings.collection,
+                media_aspect_ratio: 'square'
+              %}
+            {% endcomment %}
+            {% assign collection = block.settings.collection %}
+            {% assign first_product = collection.products.first %}
+            {% assign hover_image = first_product.featured_image %}
+
+            <div class="premium-card">
+              <!-- Normal View -->
+              <div class="premium-default">
+                <div class="premium-img-box">
+                  <img
+                    src="{{ collection.featured_image | image_url: width: 600 }}"
+                    alt="{{ collection.title }}"
+                  >
+                </div>
+
+                <h3 class="premium-title">
+                  <a
+                    {% if collection == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ collection.url }}"
+                    {% endif %}
+                    class="full-unstyled-link"
+                  >
+                    {{- collection.title }}
+                  </a>
+                </h3>
+              </div>
+
+              <!-- Hover View -->
+              {% if hover_image %}
+                <div class="premium-hover">
+                  <img
+                    src="{{ hover_image | image_url: width: 900 }}"
+                    alt="{{ first_product.title }}"
+                  >
+
+                  <div class="premium-hover-content">
+                    <h3 class="premium-hover-title">
+                      <a
+                        {% if collection == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ collection.url }}"
+                        {% endif %}
+                        class="full-unstyled-link"
+                      >
+                        {{- collection.title }}
+                      </a>
+                    </h3>
+
+                    <p class="premium-desc">
+                      {{ first_product.description | strip_html | truncate: 70 }}
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <button class="carousel-arrow next">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .premium-collection-section {
+    padding: 20px 0;
+  }
+
+  .premium-heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 4px;
+  }
+
+  .premium-heading::after {
+    display: none !important;
+  }
+  .card .icon-wrap {
+      display: none;
+  }
+
+  /* Wrapper */
+  .premium-carousel-wrapper {
+    position: relative;
+  }
+
+  /* Carousel */
+  .premium-carousel {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 40px;
+  }
+
+  /* DESKTOP → 5 items */
+  .premium-item {
+    flex: 0 0 calc((100% - 160px) / 5); /* 4 gaps × 40px */
+  }
+
+  /* TABLET → 3 items */
+  @media (max-width: 1320px) {
+    .premium-item {
+      flex: 0 0 calc((100% - 80px) / 3); /* 2 gaps × 40px */
+    }
+  }
+
+  /* MOBILE → 1 item */
+  @media (max-width: 768px) {
+    {% comment %} .premium-item {
+      flex: 0 0 100%;
+    } {% endcomment %}
+    .premium-item {
+      flex: 0 0 100%;
+    }
+
+    .premium-carousel {
+      gap: 0;
+    }
+  }
+
+  /* Bigger Images */
+  .premium-item .card__media img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .premium-item .card__media img {
+      height: 340px;
+      width: 300px;
+    }
+  }
+
+  /* Arrows Outside Container */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #000;
+    cursor: pointer;
+    padding: 0;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-arrow.prev {
+    left: -50px;
+  }
+
+  .carousel-arrow.next {
+    right: -50px;
+  }
+
+  .carousel-arrow:hover {
+    opacity: 0.6;
+  }
+  /* Smooth hardware acceleration */
+  .premium-carousel {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .premium-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
+  /* card */
+  .premium-collection-section .premium-card{
+    position:relative;
+    background:#f5f5f5;
+    padding:20px;
+    text-align:center;
+    overflow:hidden;
+        height: 310px;
+  }
+
+  /* square image */
+  .premium-collection-section .premium-img-box{
+    aspect-ratio:1/1;
+  }
+
+  .premium-collection-section .premium-img-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+
+  /* title before hover */
+  .premium-collection-section .premium-title{
+    font-family:'Marcellus',serif;
+    font-size:20px;
+    color:#000;
+    margin-top:0px;
+  }
+
+  /* hover layer */
+  .premium-collection-section .premium-hover{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:.35s ease;
+  }
+
+  /* hover image full */
+  .premium-collection-section .premium-hover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  /* hover text */
+  .premium-collection-section .premium-hover-content{
+    position:absolute;
+    bottom:25px;
+    left:20px;
+    right:20px;
+    color:#fff;
+    text-align:center;
+    z-index: 2;
+  }
+
+  /* hover title */
+  .premium-collection-section .premium-hover-title{
+    font-family:'Marcellus',serif;
+    font-size:20px;
+    color:#fff;
+    margin-bottom:6px;
+  }
+
+  /* description */
+  .premium-collection-section .premium-desc{
+    font-size:13px;
+  }
+
+  /* hover trigger */
+  .premium-collection-section .premium-card:hover .premium-hover{
+    opacity:1;
+  }
+
+  .premium-collection-section .premium-card:hover .premium-default{
+    opacity:0;
+  }
+
+  .premium-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.0);
+    transition: background 0.35s ease;
+    z-index: 1;
+  }
+
+  .premium-card:hover .premium-hover::after {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+
+  /* default title */
+  .premium-collection-section .premium-title{
+    font-family:'Marcellus', serif;
+    font-size:16px;
+    color:#000;
+    transition:all .35s ease;
+     font-weight: 400;
+  }
+  }
+
+  /* hover layer */
+  .premium-collection-section .premium-hover{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+
+  /* hover title */
+  .premium-collection-section .premium-hover-title{
+    font-family:'Marcellus', serif;
+    font-size:20px;
+    color:#fff;
+    transform:translateY(20px);
+    opacity:0;
+    transition:all .4s ease;
+    font-weight: 400;
+  }
+
+  /* description animation */
+  .premium-collection-section .premium-desc{
+    font-size:13px;
+    transform:translateY(20px);
+    opacity:0;
+    transition:all .45s ease;
+  }
+
+  /* hover trigger */
+  .premium-collection-section .premium-card:hover .premium-hover{
+    opacity:1;
+  }
+
+  .premium-collection-section .premium-card:hover .premium-default{
+    opacity:0;
+  }
+
+  /* animate text */
+  .premium-collection-section .premium-card:hover .premium-hover-title{
+    transform:translateY(0);
+    opacity:1;
+  }
+
+  .premium-collection-section .premium-card:hover .premium-desc{
+    transform:translateY(0);
+    opacity:1;
+  }
+
+
+  /* Hide arrows on mobile */
+  @media (max-width: 1320px) {
+    .carousel-arrow {
+      display: none;
+    }
+
+    .premium-collection-section .premium-img-box img {
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+  }
+
+  .premium-collection-section .premium-img-box{
+    aspect-ratio: unset;
+  }
+  .premium-default {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between ;
+  }
+
+
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('#PremiumCarousel-{{ section.id }}');
+    const nextBtn = carousel.parentElement.querySelector('.next');
+    const prevBtn = carousel.parentElement.querySelector('.prev');
+
+    let items = Array.from(carousel.children);
+    const originalCount = items.length;
+
+    // Clone items once for seamless loop
+    items.forEach((item) => {
+      carousel.appendChild(item.cloneNode(true));
+    });
+
+    function getItemWidth() {
+      const item = carousel.querySelector('.premium-item');
+      const gap = parseInt(getComputedStyle(carousel).gap) || 0;
+      return item.offsetWidth + gap;
+    }
+
+    let itemWidth = getItemWidth();
+
+    function moveNext() {
+      carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
+    }
+
+    function movePrev() {
+      carousel.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+    }
+
+    nextBtn.addEventListener('click', moveNext);
+    prevBtn.addEventListener('click', movePrev);
+
+    // Infinite reset without visible jump
+    carousel.addEventListener('scroll', function () {
+      if (carousel.scrollLeft >= itemWidth * originalCount) {
+        carousel.scrollLeft = 0;
+      }
+    });
+
+    // 🔥 Auto Slide Every 1.5 Seconds
+    let autoSlide = setInterval(moveNext, 1500);
+
+    // Pause on hover (desktop only)
+    carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    carousel.addEventListener('mouseleave', () => {
+      autoSlide = setInterval(moveNext, 1500);
+    });
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      itemWidth = getItemWidth();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Collection Carousel",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Structured Wellness Categories",
+      "label": "Heading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "Color Scheme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "limit": 15,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Carousel"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "biab-policies",
+      "settings": {
+        "whatsapp_url": "https://wa.me/447460032301"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

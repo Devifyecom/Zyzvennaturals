@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "biab-reseller-terms",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

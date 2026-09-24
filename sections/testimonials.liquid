@@ -1,0 +1,219 @@
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Testimonials"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout Style",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "carousel", "label": "Carousel" }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Number of Columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#00c389"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show Navigation Arrows (Carousel only)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay (Carousel only)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Transition Speed (ms)",
+      "min": 500,
+      "max": 5000,
+      "step": 500,
+      "default": 1000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Belly Fat Gone" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "I have been using this detox tea for about 6 months..." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Charlotte" },
+        { "type": "range", "id": "rating", "label": "Star Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "image_picker", "id": "image", "label": "Author Image" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Custom",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<div class="testimonails-main-sec page-width"><div class="testimonials-section  layout-{{ section.settings.layout_style }} text-{{ section.settings.text_alignment }}">
+  <h2 class="text-3xl font-semibold mb-1 psheadmobile">{{ section.settings.heading }}</h2>
+  <div class="newsletter-divider">
+  <span></span>
+  <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/logozynn.png?v=1772427108" alt="Logo">
+  <span></span>
+</div>
+
+  {% if section.settings.layout_style == 'grid' %}
+    <div class="testimonials-grid columns-{{ section.settings.columns }}">
+      {% for block in section.blocks %}
+        <div class="testimonial-card">
+          {% if block.settings.image != blank %}
+          
+          {% endif %}
+           <div class="stars">
+            {% for i in (1..block.settings.rating) %}
+              <span class="star">★</span>
+            {% endfor %}
+          </div>
+          <h3 class="text-center">{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+
+          <p class="author">{{ block.settings.author }}</p>
+         
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="splide testimonials-carousel">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide testimonial-card">
+              {% if block.settings.image != blank %}
+             
+              {% endif %}  <div class="stars">
+                {% for i in (1..block.settings.rating) %}
+                  <span class="star">★</span>
+                {% endfor %}
+              </div>
+            <div class="testimonial-info"><h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.text }}</p>
+                <p class="author">{{ block.settings.author }}</p>
+            </div>
+              
+              
+            
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% if section.settings.show_arrows %}
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">‹</button>
+          <button class="splide__arrow splide__arrow--next">›</button>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div></div>
+
+
+<style>
+.testimonials-section {
+  background: #fff;
+  border-radius:8px;
+
+}
+.testimonial-card {
+  padding: 20px;
+  text-align: inherit;
+}
+.text-left .testimonial-card { text-align: left; }
+.text-center .testimonial-card { text-align: center; }
+.text-right .testimonial-card { text-align: right; }
+
+.testimonials-grid {
+  display: grid;
+  gap: 20px;
+}
+.testimonials-grid.columns-1 { grid-template-columns: repeat(1, 1fr); }
+.testimonials-grid.columns-2 { grid-template-columns: repeat(2, 1fr); }
+.testimonials-grid.columns-3 { grid-template-columns: repeat(3, 1fr); }
+.testimonials-grid.columns-4 { grid-template-columns: repeat(4, 1fr); }
+
+
+.stars {
+  display:flex;
+  gap:1px;
+
+  font-size: 20px;
+  line-height:22px;
+  justify-content: center;
+  color: {{ section.settings.star_color }};  
+}
+ 
+</style>
+
+{% if section.settings.layout_style == 'carousel' %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('.testimonials-carousel', {
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        arrows: {{ section.settings.show_arrows | json }},
+        autoplay: {{ section.settings.autoplay | json }},
+        pauseOnHover: true,
+        gap: '20px',
+        speed: {{ section.settings.speed }},
+        breakpoints: {
+          768: { perPage: 1, perMove: 1 },
+          1024: { perPage: 2, perMove: 1 },
+          1280: { perPage: 3, perMove: 1 }
+        }
+      }).mount();
+    });
+  </script>
+{% endif %}
+
+

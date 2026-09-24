@@ -1,0 +1,48 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+<section class="bib bib-steps" id="bib-steps">
+  <div class="bib__inner">
+    <h2 class="bib-h2">{{ section.settings.heading }}</h2>
+
+    <ol class="bib-steps__list">
+      {%- for block in section.blocks -%}
+        <li class="bib-step" {{ block.shopify_attributes }}>
+          <span class="bib-step__num" aria-hidden="true">Step {{ forloop.index }}</span>
+          <h3 class="bib-step__title">{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIB — How It Works",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [{ "type": "text", "id": "heading", "label": "Heading", "default": "How It Works" }],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Step title" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Step description." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIB — How It Works",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Order your box", "text": "Purchase securely from ZyzvenNaturals.com." } },
+        { "type": "step", "settings": { "title": "Complete onboarding", "text": "Access product and brand training." } },
+        { "type": "step", "settings": { "title": "Launch locally or online", "text": "Use your approved digital materials." } },
+        { "type": "step", "settings": { "title": "Reorder your bestsellers", "text": "Keep building with reseller pricing." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,188 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'bib.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign s = section.settings
+  assign cta_url = s.cta_url | default: '/products/business-in-a-box'
+-%}
+
+<section class="bib bib-hero" id="bib-hero" data-bib-hero>
+  <div class="bib__inner">
+    <div class="bib-hero__grid">
+      <div class="bib-hero__copy-col">
+        {%- if s.eyebrow != blank -%}
+          <p class="bib-eyebrow">{{ s.eyebrow }}</p>
+        {%- endif -%}
+
+        <h1 class="bib-hero__h1">{{ s.heading }}</h1>
+
+        {%- if s.subheading != blank -%}
+          <p class="bib-hero__sub">{{ s.subheading }}</p>
+        {%- endif -%}
+
+        <div class="bib-hero__pricerow">
+          {%- if s.price_amount != blank -%}
+            <span class="bib-hero__amount">{{ s.price_amount }}</span>
+          {%- endif -%}
+          {%- if s.price_suffix != blank -%}
+            <span class="bib-hero__meta">{{ s.price_suffix }}</span>
+          {%- endif -%}
+          {%- if s.price_value != blank -%}
+            <span class="bib-hero__sep" aria-hidden="true">|</span>
+            <span class="bib-hero__meta">
+              {{ s.price_value_label }} <strong>{{ s.price_value }}</strong>
+            </span>
+          {%- endif -%}
+        </div>
+
+        <div class="bib-hero__cta-block">
+          <a class="bib-hero__cta-link" href="{{ cta_url }}">
+            {{ s.cta_label }}
+          </a>
+
+          {%- if s.secondary_label != blank -%}
+            <a class="bib-hero__cta-secondary" href="{{ s.secondary_anchor | default: '#bib-contents' }}">
+              {{ s.secondary_label }}
+            </a>
+          {%- endif -%}
+
+          {%- if s.buy_disclaimer != blank -%}
+            <p class="bib-hero__cta-note">{{ s.buy_disclaimer }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="bib-hero__media-col">
+        <div class="bib-hero__media">
+          {%- if s.image != blank -%}
+            {{
+              s.image
+              | image_url: width: 1160
+              | image_tag:
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '400, 600, 800, 1160',
+                sizes: '(min-width: 990px) 44vw, 100vw',
+                alt: s.image_alt
+            }}
+          {%- else -%}
+            <div class="bib-hero__placeholder">
+              <span>{{ s.placeholder_text }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    <ul class="bib-trust">
+      {%- for block in section.blocks -%}
+        <li class="bib-trust__item" {{ block.shopify_attributes }}>
+          <svg class="bib-trust__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m5 12 5 5 9-10"/>
+          </svg>
+          <span class="bib-trust__label">{{ block.settings.label }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% style %}
+  #shopify-section-{{ section.id }} .bib-hero__cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-top: 1.75rem;
+  }
+
+  #shopify-section-{{ section.id }} .bib-hero__cta-link {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    padding: 1.1rem 1.75rem;
+    border-radius: 12px;
+    background: #27423a;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .bib-hero__cta-link:hover {
+    background: #1d3029;
+    color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .bib-hero__cta-secondary {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  #shopify-section-{{ section.id }} .bib-hero__cta-note {
+    margin: 0;
+    max-width: 40rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "BIB — Hero",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "READY-TO-RETAIL WHOLESALE STARTER PACKAGE" },
+    { "type": "text", "id": "heading", "label": "Headline", "default": "Your Wellness Business. Already in the Box." },
+    { "type": "textarea", "id": "subheading", "label": "Subheadline", "default": "Launch with 40 ready-to-retail Zyzven Naturals teas and supplements, professional training and ongoing partner support." },
+
+    { "type": "header", "content": "Price line" },
+    { "type": "text", "id": "price_amount", "label": "Price figure", "default": "$999" },
+    { "type": "text", "id": "price_suffix", "label": "After the price", "default": "+ shipping" },
+    { "type": "text", "id": "price_value_label", "label": "Retail value label", "default": "Combined recommended retail value:" },
+    { "type": "text", "id": "price_value", "label": "Retail value figure", "default": "$2,029.60" },
+
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "cta_label", "label": "Button text", "default": "Start Your Business in a Box" },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link (pick the product)",
+      "info": "Pick Products → Business in a Box. Falls back to /products/business-in-a-box."
+    },
+    { "type": "text", "id": "secondary_label", "label": "Secondary link label", "default": "See What's Inside" },
+    { "type": "text", "id": "secondary_anchor", "label": "Secondary link anchor", "default": "#bib-contents" },
+    { "type": "textarea", "id": "buy_disclaimer", "label": "Text under the button", "default": "Shipping is charged separately. Purchase does not grant distributor status, territory exclusivity or a territory website." },
+
+    { "type": "header", "content": "Hero image" },
+    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Zyzven Naturals Business in a Box reseller starter package." },
+    { "type": "text", "id": "placeholder_text", "label": "Placeholder caption", "default": "Hero image: Premium box + product lineup" }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Trust item",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "40 Ready-to-Retail Products" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIB — Hero",
+      "blocks": [
+        { "type": "trust", "settings": { "label": "40 Ready-to-Retail Products" } },
+        { "type": "trust", "settings": { "label": "Product Training Included" } },
+        { "type": "trust", "settings": { "label": "Monthly Partner Check-ins" } },
+        { "type": "trust", "settings": { "label": "Marketing Materials Included" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

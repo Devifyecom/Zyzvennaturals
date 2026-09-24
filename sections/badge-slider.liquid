@@ -1,0 +1,116 @@
+{% style %}
+    .section-{{ section.id }} {
+        padding-top: {{ section.settings.pad_top }}px;
+        padding-bottom: {{ section.settings.pad_bottom }}px;
+        overflow: hidden;
+        background: white;
+        max-width: unset;
+    }
+
+    .section-{{ section.id }} .swiper-slide {
+        width: auto !important;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section-{{ section.id }} .swiper-slide img {
+        width: auto;
+        height: 120px;
+        display: block;
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-{{ section.id }} {
+            padding-top: {{ section.settings.pad_top | divided_by: 2 }}px;
+            padding-bottom: {{ section.settings.pad_bottom | divided_by: 2 }}px;
+        }
+
+        .section-{{ section.id }} .swiper-slide img {
+            height: 70px;
+        }
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+    <div class="cw-badges">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <img src="{{ block.settings.badge | img_url: 'master' }}" width="auto" height="120px" alt="{{ block.settings.badge.alt }}">
+                    <p>{{ block.settings.label }}</p>
+                </div>
+            {% endfor %}
+            {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <img src="{{ block.settings.badge | img_url: 'master' }}" width="auto" height="120px" alt="{{ block.settings.badge.alt }}">
+                    <p>{{ block.settings.label }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new Swiper('.section-{{ section.id }} .cw-badges', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 300,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+        });
+    });
+</script>
+
+{% schema %}
+{
+    "name": "Badge Slider",
+    "settings": [
+        {
+            "type": "range",
+            "id": "pad_top",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "pad_bottom",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "default": 0
+        }
+    ],
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "badge",
+                    "label": "Badge"
+                },
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Badge Slider"
+        }
+    ]
+}
+{% endschema %}

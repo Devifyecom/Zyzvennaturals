@@ -1,0 +1,150 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+<section class="bib bib-contents" id="bib-contents">
+  <div class="bib__inner">
+    <h2 class="bib-h2">{{ s.heading }}</h2>
+    {%- if s.intro != blank -%}
+      <p class="bib-lead">{{ s.intro }}</p>
+    {%- endif -%}
+
+    <div class="bib-tablewrap" tabindex="0" role="region" aria-label="{{ s.heading | escape }}">
+      <table class="bib-table">
+        <caption>{{ s.heading }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col" class="bib-num">Qty</th>
+            <th scope="col" class="bib-num">RRP Each</th>
+            <th scope="col" class="bib-num">Total RRP</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr {{ block.shopify_attributes }}>
+              <td>{{ block.settings.name }}</td>
+              <td class="bib-num">{{ block.settings.qty }}</td>
+              <td class="bib-num">{{ block.settings.rrp }}</td>
+              <td class="bib-num">{{ block.settings.total }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>{{ s.total_label }}</td>
+            <td class="bib-num">{{ s.total_qty }}</td>
+            <td class="bib-num"></td>
+            <td class="bib-num">{{ s.total_rrp }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="bib-scrollhint">Scroll the table sideways to see every column.</p>
+
+    <div class="bib-mix">
+      <h3 class="bib-h2">{{ s.mix_heading }}</h3>
+      <ul class="bib-mix__grid">
+        <li class="bib-mix__col">
+          <h4 class="bib-mix__title">{{ s.col_1_title }}</h4>
+          <ul class="bib-mix__list">
+            {%- assign items_1 = s.col_1_items | newline_to_br | split: '<br />' -%}
+            {%- for item in items_1 -%}
+              {%- assign clean = item | strip -%}
+              {%- if clean != blank -%}<li>{{ clean }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </li>
+        <li class="bib-mix__col">
+          <h4 class="bib-mix__title">{{ s.col_2_title }}</h4>
+          <ul class="bib-mix__list">
+            {%- assign items_2 = s.col_2_items | newline_to_br | split: '<br />' -%}
+            {%- for item in items_2 -%}
+              {%- assign clean = item | strip -%}
+              {%- if clean != blank -%}<li>{{ clean }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </li>
+        <li class="bib-mix__col">
+          <h4 class="bib-mix__title">{{ s.col_3_title }}</h4>
+          <ul class="bib-mix__list">
+            {%- assign items_3 = s.col_3_items | newline_to_br | split: '<br />' -%}
+            {%- for item in items_3 -%}
+              {%- assign clean = item | strip -%}
+              {%- if clean != blank -%}<li>{{ clean }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIB — What's Inside",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What's Inside Your Box" },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro text",
+      "default": "A 40-product range spanning metabolic wellness, women's wellness, men's wellness and everyday herbal support."
+    },
+    { "type": "header", "content": "Table total row" },
+    { "type": "text", "id": "total_label", "label": "Total label", "default": "TOTAL" },
+    { "type": "text", "id": "total_qty", "label": "Total quantity", "default": "40" },
+    { "type": "text", "id": "total_rrp", "label": "Total RRP", "default": "$2,029.60" },
+    { "type": "header", "content": "Why this mix works" },
+    { "type": "text", "id": "mix_heading", "label": "Heading", "default": "Why This Mix Works" },
+    { "type": "text", "id": "col_1_title", "label": "Column 1 title", "default": "Metabolic Wellness" },
+    {
+      "type": "textarea",
+      "id": "col_1_items",
+      "label": "Column 1 products",
+      "default": "GLUKOBALANS\nBlood Sugar\nAlki Detox with Moringa",
+      "info": "One product per line."
+    },
+    { "type": "text", "id": "col_2_title", "label": "Column 2 title", "default": "Women's Wellness" },
+    {
+      "type": "textarea",
+      "id": "col_2_items",
+      "label": "Column 2 products",
+      "default": "Freja Advance\nFreja Balance\nWomen's Brew\nUterine Tonic Tea"
+    },
+    { "type": "text", "id": "col_3_title", "label": "Column 3 title", "default": "Men's Wellness" },
+    { "type": "textarea", "id": "col_3_items", "label": "Column 3 products", "default": "Manthoric Advance" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Product row",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Product", "default": "Product name" },
+        { "type": "text", "id": "qty", "label": "Qty", "default": "1" },
+        { "type": "text", "id": "rrp", "label": "RRP each", "default": "$0.00" },
+        { "type": "text", "id": "total", "label": "Total RRP", "default": "$0.00" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIB — What's Inside",
+      "blocks": [
+        { "type": "row", "settings": { "name": "GLUKOBALANS", "qty": "6", "rrp": "$69.99", "total": "$419.94" } },
+        { "type": "row", "settings": { "name": "Blood Sugar", "qty": "6", "rrp": "$49.99", "total": "$299.94" } },
+        { "type": "row", "settings": { "name": "Alki Detox with Moringa", "qty": "6", "rrp": "$39.99", "total": "$239.94" } },
+        { "type": "row", "settings": { "name": "Freja Advance", "qty": "5", "rrp": "$49.99", "total": "$249.95" } },
+        { "type": "row", "settings": { "name": "Freja Balance", "qty": "4", "rrp": "$39.99", "total": "$159.96" } },
+        { "type": "row", "settings": { "name": "Women's Brew", "qty": "4", "rrp": "$39.99", "total": "$159.96" } },
+        { "type": "row", "settings": { "name": "Manthoric Advance", "qty": "4", "rrp": "$69.99", "total": "$279.96" } },
+        { "type": "row", "settings": { "name": "Uterine Tonic Tea", "qty": "5", "rrp": "$39.99", "total": "$199.95" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

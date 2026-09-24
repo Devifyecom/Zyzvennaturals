@@ -1,0 +1,186 @@
+{%- liquid assign s = section.settings -%}
+<style>
+  #biab-terms-{{ section.id }} {
+    background: {{ s.bg }};
+    color: #2f2f2a;
+    font-family: var(--font-body-family, "Mulish", "Helvetica Neue", Arial, sans-serif);
+  }
+  #biab-terms-{{ section.id }} .bt-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+  #biab-terms-{{ section.id }} .bt-kicker {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #8e6b2e;
+  }
+  #biab-terms-{{ section.id }} h1 {
+    margin: 0 0 24px;
+    font-family: var(--font-heading-family, "Fraunces", Georgia, serif);
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #1f3a30;
+  }
+  #biab-terms-{{ section.id }} h2 {
+    margin: 40px 0 12px;
+    font-family: var(--font-heading-family, "Fraunces", Georgia, serif);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1f3a30;
+    scroll-margin-top: 90px;
+  }
+  #biab-terms-{{ section.id }} p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  #biab-terms-{{ section.id }} a { color: #1f3a30; text-underline-offset: 3px; }
+  #biab-terms-{{ section.id }} .bt-toc {
+    margin: 0 0 8px;
+    padding: 18px 22px;
+    border: 1px solid rgba(31, 58, 48, 0.14);
+    border-radius: 8px;
+    background: #fff;
+  }
+  #biab-terms-{{ section.id }} .bt-toc p { margin: 0 0 8px; font-weight: 700; font-size: 14px; }
+  #biab-terms-{{ section.id }} .bt-toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 32px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  #biab-terms-{{ section.id }} .bt-contact {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(31, 58, 48, 0.14);
+    font-size: 14px;
+  }
+  @media (max-width: 640px) {
+    #biab-terms-{{ section.id }} .bt-wrap { padding: 44px 20px 56px; }
+    #biab-terms-{{ section.id }} .bt-toc ol { columns: 1; }
+    #biab-terms-{{ section.id }} p { font-size: 15px; }
+  }
+</style>
+
+<section id="biab-terms-{{ section.id }}" class="biab-terms">
+  <div class="bt-wrap">
+    {%- if s.kicker != blank -%}<p class="bt-kicker">{{ s.kicker }}</p>{%- endif -%}
+    <h1>{{ s.heading }}</h1>
+
+    {%- if s.show_toc -%}
+      <nav class="bt-toc" aria-label="Contents">
+        <p>Contents</p>
+        <ol>
+          <li><a href="#rt-1">Your independent business</a></li>
+          <li><a href="#rt-2">What the Business in a Box includes</a></li>
+          <li><a href="#rt-3">Box price and retail prices</a></li>
+          <li><a href="#rt-4">Where resellers may join and where boxes ship</a></li>
+          <li><a href="#rt-5">Delivery issues and unsold stock</a></li>
+          <li><a href="#rt-6">Selling channels and marketplaces</a></li>
+          <li><a href="#rt-7">Competing products</a></li>
+          <li><a href="#rt-8">Brand and intellectual property</a></li>
+          <li><a href="#rt-9">Your marketing and product claims</a></li>
+          <li><a href="#rt-10">Marketing support and reseller promotion</a></li>
+          <li><a href="#rt-11">Representing Zyzven at events</a></li>
+          <li><a href="#rt-12">Customers and data</a></li>
+          <li><a href="#rt-13">Insurance</a></li>
+          <li><a href="#rt-14">Reorders and support</a></li>
+          <li><a href="#rt-15">Ending the relationship</a></li>
+          <li><a href="#rt-16">Changes, applicable law and contact</a></li>
+        </ol>
+      </nav>
+    {%- endif -%}
+
+    <p><strong>Effective date: 23 September 2026</strong></p>
+    <p>These terms apply when you purchase a Zyzven Naturals Business in a Box and when you purchase further products through our reseller programme. Please read them before ordering.</p>
+    <p>Your seller is Zyzven Naturals Ltd, company number 13085420, registered at 167-169 Great Portland Street, 5th Floor, London W1W 5PF, United Kingdom. "Zyzven," "we" and "our" refer to that company.</p>
+
+    <h2 id="rt-1">1. Your independent business</h2>
+    <p>You purchase Zyzven products to resell through your own independent business. You are responsible for your customers, business activities, taxes, permits and compliance with the rules that apply where you sell.</p>
+    <p>You are not a Zyzven employee, agent, franchisee or distributor. You cannot make commitments on our behalf. Buying the box does not grant you an exclusive territory, an official Zyzven website or distributor status. There are no recruitment commissions, downlines or required monthly purchases. Your income, if any, comes from selling products to customers.</p>
+
+    <h2 id="rt-2">2. What the Business in a Box includes</h2>
+    <p>Your box contains the product names and quantities shown on the Business in a Box page when you place your order. That list forms part of your order confirmation. We will seek your agreement before making a substitution if an item becomes unavailable.</p>
+    <p>The purchase also includes the product training, digital marketing toolkit and monthly group check-ins described on the Business in a Box page. We will provide access to the initial training and toolkit within seven days of confirmed payment.</p>
+
+    <h2 id="rt-3">3. Box price and retail prices</h2>
+    <p>The box price is displayed before you order. Shipping is charged separately as explained below. Zyzven Naturals publishes its recommended retail prices on ZyzvenNaturals.com. Those prices are used to calculate the box's stated combined retail value and potential gross profit. They may change over time. You set your own selling and advertised prices in accordance with applicable law.</p>
+    <p>A potential gross profit figure assumes that all items sell at the stated recommended prices. It is an illustration, not a guarantee of sales or income. Your actual result depends on what you sell and costs such as shipping, taxes, import charges, discounts, payment fees and advertising.</p>
+
+    <h2 id="rt-4">4. Where resellers may join and where boxes ship</h2>
+    <p>We welcome reseller enquiries worldwide. Direct Business in a Box shipping is currently offered to the USA, Canada, UK, European Union and selected Middle Eastern destinations.</p>
+    <p>For the USA, Canada, UK and EU, the applicable shipping charge will be shown before you pay at checkout. Enter your delivery address to see the available service and total payable. Middle Eastern destinations that we can serve directly will likewise be confirmed before payment.</p>
+    <p>If direct shipping to your destination is unavailable, contact us for a shipping quote before purchasing. We will confirm whether we can fulfil the order, the shipping charge and the amount payable. We will dispatch only after you accept the quote and pay the agreed total. We will not add an unapproved shipping charge after you buy the box.</p>
+    <p><strong>Caribbean buyers:</strong> We recommend arranging a shipping-forwarding company with an eligible delivery address. You choose and pay your forwarder, and arrange its onward delivery to you. Tell us when an address belongs to a forwarder so we can provide accurate shipping information.</p>
+    <p>Unless expressly included in the amount we charge, import duties, customs clearance costs, local taxes and forwarding charges are your responsibility. Check your destination's import and resale requirements before ordering. Shipping and delivery estimates can be affected by customs and carrier delays.</p>
+
+    <h2 id="rt-5">5. Delivery issues and unsold stock</h2>
+    <p>Please inspect your box when it arrives. If anything is missing, damaged or different from your confirmed order, email <a href="mailto:sales@zyzvennaturals.com">sales@zyzvennaturals.com</a> as soon as reasonably possible with your order number and, where available, photographs. Reporting within seven days of delivery helps us investigate quickly; it does not remove rights that cannot lawfully be excluded.</p>
+    <p>We do not buy back unsold stock or provide a general return because a reseller has been unable to sell products. We will address faulty, damaged, missing or incorrectly supplied goods in accordance with applicable law.</p>
+
+    <h2 id="rt-6">6. Selling channels and marketplaces</h2>
+    <p>You may sell genuine, unopened Zyzven products through your independent shop, website, social media and in-person business, subject to these terms and applicable law. You must obtain written approval before listing Zyzven products on Amazon, Walmart, eBay or another third-party marketplace. Approval for one marketplace or seller account does not automatically cover another.</p>
+    <p>Do not sell expired products. Keep products sealed in their original packaging, store them according to their labels and do not alter labels, ingredients, packaging or expiry details. Cooperate promptly with any safety notice or product recall.</p>
+
+    <h2 id="rt-7">7. Competing products while you are an active reseller</h2>
+    <p>While your reseller relationship is active, you agree not to promote or sell directly competing herbal teas or food supplements in the same product categories as the Zyzven products you carry, unless we agree otherwise in writing. This does not restrict unrelated products. This restriction ends when your reseller relationship ends. These terms do not impose a general ban on operating another business after you leave.</p>
+
+    <h2 id="rt-8">8. Zyzven brand and intellectual property</h2>
+    <p>Zyzven retains its rights in its name, logos, trademarks, product designs, photographs, descriptions, training and marketing materials. While you are an active reseller, you may use our approved brand materials to market genuine Zyzven products. Do not alter product labels, register a confusingly similar business name, domain or social account, or imply that your independent business is an official Zyzven office. Do not share or sell confidential reseller training, prices or marketing files.</p>
+    <p>Photographs, videos and other content you create independently remain yours, subject to our rights in the Zyzven brand and materials you incorporate.</p>
+
+    <h2 id="rt-9">9. Your marketing and product claims</h2>
+    <p>You may make your own posts, photographs and videos featuring genuine Zyzven products. Use accurate product information and follow the current Zyzven-approved product claims for the market where you advertise. Do not promise a cure, guaranteed health outcome, guaranteed weight loss, pregnancy or income. Do not suggest that product training qualifies you to give medical advice. Obtain permission before using a customer's photograph, review or personal health story. You are responsible for your own advertising. If we identify material that misrepresents a product or the brand, we may ask you to correct or remove it promptly.</p>
+
+    <h2 id="rt-10">10. Marketing support and reseller promotion</h2>
+    <p>The standard digital marketing toolkit, monthly group check-ins and opportunities for Zyzven to feature resellers are included in the box offer. There is no mandatory recurring marketing fee. We may invite you to appear in a reseller brochure, website listing, social media feature or live event. Participation and the amount of promotion given to any reseller are not guaranteed.</p>
+    <p>We will ask for separate permission before publishing your name, photograph, business location, telephone number or social profile. You can choose which business contact details to make public and can ask us to update or remove a listing. We may still need to retain order and programme records for legitimate business or legal purposes.</p>
+
+    <h2 id="rt-11">11. Representing Zyzven at events</h2>
+    <p>If you attend an event as a Zyzven Naturals reseller or at a Zyzven-branded stand, wear an approved Zyzven Naturals T-shirt or other approved branded clothing so visitors can identify who you represent. Arrange the clothing with us before the event. Any cost to obtain clothing must be disclosed and agreed before you are asked to pay it.</p>
+    <p>This requirement does not apply when you attend an event solely for your independent business without presenting yourself as part of a Zyzven-branded stand. Follow approved product information and event guidance. Do not present yourself as a medical professional or as authorised to make commitments for Zyzven unless you separately hold that qualification or written authority.</p>
+
+    <h2 id="rt-12">12. Customers and data</h2>
+    <p>Zyzven controls leads and customer enquiries collected through Zyzven-operated websites, forms and channels or provided directly by Zyzven to you. Customer contacts you collect independently through your own business remain under your control. Neither party may take or use the other's customer list for an unrelated purpose. Handle customer details lawfully and securely, and provide any privacy information required for your own selling activities.</p>
+
+    <h2 id="rt-13">13. Insurance</h2>
+    <p>Zyzven Naturals maintains product liability insurance for its business. We do not require resellers to purchase their own insurance as a condition of joining. Our policy does not automatically insure every reseller or cover every activity of an independent reseller business. You should consider any insurance, permits or licences required for your particular selling activities and location.</p>
+
+    <h2 id="rt-14">14. Reorders and support</h2>
+    <p>You may request individual products at the reseller prices then available without buying another full box. We will confirm current prices, stock, shipping and any applicable reorder minimum before you commit to a reorder.</p>
+    <p>Training and check-ins provide product and business information. They do not guarantee customers, sales, income or a particular business outcome.</p>
+
+    <h2 id="rt-15">15. Ending the relationship</h2>
+    <p>You may stop ordering at any time. We may suspend or end reseller access for a material breach of these terms, including unsafe product handling, misleading claims, misuse of confidential material or unauthorised marketplace sales. Where appropriate, we will explain the issue and allow a reasonable opportunity to correct it.</p>
+    <p>When the relationship ends, stop describing yourself as an authorised Zyzven reseller and stop using reseller-only training, marketing files and confidential materials. Your obligations concerning existing orders, customer information and product safety continue where applicable. Any further sale of genuine stock you already own remains subject to applicable law.</p>
+
+    <h2 id="rt-16">16. Changes, applicable law and contact</h2>
+    <p>The version you accept when placing an order applies to that order. We may update these terms for future orders. We will communicate material changes affecting an ongoing reseller relationship. These terms are governed by the law of England and Wales, subject to mandatory rules that apply in the buyer's location. Nothing in these terms excludes rights or remedies that cannot lawfully be excluded.</p>
+    <p>For questions about these terms, shipping or an order, contact <a href="mailto:sales@zyzvennaturals.com">sales@zyzvennaturals.com</a>.</p>
+
+    {%- if page.content != blank and s.show_page_content -%}
+      <div class="bt-contact">{{ page.content }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIAB — Reseller Terms",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Zyzven Naturals" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Reseller Terms" },
+    { "type": "checkbox", "id": "show_toc", "label": "Show contents list", "default": true },
+    { "type": "checkbox", "id": "show_page_content", "label": "Also show text typed into the Shopify page", "info": "Optional. Anything written in Online Store > Pages appears after the terms.", "default": false },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#f8f5ef" }
+  ]
+}
+{% endschema %}

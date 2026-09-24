@@ -1,0 +1,452 @@
+{% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+{% style %}
+/* HEADER */
+.benefit-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.benefit-header h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.benefit-header p {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+}
+
+/* WRAPPER FIX */
+.section-{{ section.id }} {
+  overflow: hidden;
+}
+
+/* SLIDER WRAPPER */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* SLIDER TRACK */
+.benefit-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 4rem;
+}
+
+/* HIDE SCROLLBAR */
+.benefit-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* SLIDES */
+.benefit-list li {
+  list-style: none;
+  flex: 0 0 calc(25% - 15px);
+}
+
+/* CARD */
+.benefit-card {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+/* IMAGE */
+.benefit-media {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.benefit-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.benefit-card:hover img {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.benefit-content {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.benefit-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.icon-arrow {
+  width: 1.6rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1199px) {
+  .benefit-list li {
+    flex: 0 0 calc(33.33% - 14px);
+  }
+}
+
+@media (max-width: 989px) {
+  .benefit-list li {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 749px) {
+  .benefit-list {
+    gap: 12px;
+  }
+
+  .benefit-list li {
+    flex: 0 0 100%;
+  }
+}
+/* BUTTONS */
+.slider-buttons {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.slider-button {
+  pointer-events: all;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+{% endstyle %} 
+
+<div class="section-{{ section.id }} page-width">
+
+  <!-- HEADER -->
+  <div class="benefit-header">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="newsletter-divider">
+      <span></span>
+      <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/logozynn.png?v=1772427108" alt="{{ shop.name | escape }} logo" loading="lazy">
+      <span></span>
+    </div>
+    <p>{{ section.settings.subtitle }}</p>
+  </div>
+
+  
+
+ <ul class="benefit-list" id="Slider-{{ section.id }}">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+     
+      {% for block in section.blocks %}
+         <div class="swiper-slide">
+           <li {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.page.url }}" class="benefit-card">
+            <div class="benefit-media">
+              {% if block.settings.image != blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 800
+                  | image_tag: loading: 'lazy'
+                }}
+              {% endif %}
+            </div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">
+                {{ block.settings.custom_title | default: block.settings.page.title }}
+              </h3>
+              <span class="icon-wrap">
+                {{ 'icon-arrow.svg' | inline_asset_content }}
+              </span>
+            </div>
+          </a>
+        </li>
+         </div>
+      {% endfor %}
+    </div>
+  </div>
+  </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "page list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Explore by Benefit",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "default": "Discover the restorative power of herbal blends.",
+      "label": "Subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        { "type": "page", "id": "page", "label": "Select page" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "custom_title", "label": "Custom title" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "page list",
+      "blocks": [{ "type": "page" }]
+    }
+  ]
+}
+{% endschema %} {% endcomment %}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+{% style %}
+/* HEADER */
+.benefit-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.benefit-header h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.benefit-header p {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+}
+
+/* SECTION */
+.section-{{ section.id }} {
+  overflow: hidden;
+}
+
+/* SWIPER */
+.swiper {
+  overflow: visible;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+/* SLIDE */
+.swiper-slide {
+  height: auto;
+}
+
+/* CARD */
+.benefit-card {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  height: 100%;
+}
+
+/* IMAGE */
+.benefit-media {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.benefit-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.benefit-card:hover img {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.benefit-content {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.benefit-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.icon-arrow {
+  width: 1.6rem;
+}
+
+/* MOBILE PEEK EFFECT */
+@media (max-width: 749px) {
+  .swiper {
+    padding-left: 16px;
+  }
+
+  .swiper-slide {
+    max-width: 85%;
+    overflow-x: hidden !important;
+  }
+}
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+
+  <!-- HEADER -->
+  <div class="benefit-header">
+    <h2 class="psheadmobile">{{ section.settings.title }}</h2>
+    <div class="newsletter-divider">
+      <span></span>
+      <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/logozynn.png?v=1772427108" alt="{{ shop.name | escape }} logo" loading="lazy">
+      <span></span>
+    </div>
+    <p>{{ section.settings.subtitle }}</p>
+  </div>
+
+  <!-- SWIPER -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide" {{ block.shopify_attributes }}>
+
+          <a href="{{ block.settings.page.url }}" class="benefit-card">
+            
+            <div class="benefit-media">
+              {% if block.settings.image != blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 800
+                  | image_tag: loading: 'lazy'
+                }}
+              {% endif %}
+            </div>
+
+            <div class="benefit-content">
+              <h3 class="benefit-title">
+                {{ block.settings.custom_title | default: block.settings.page.title }}
+              </h3>
+              <span class="icon-wrap">
+                {{ 'icon-arrow.svg' | inline_asset_content }}
+              </span>
+            </div>
+
+          </a>
+
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 12,
+    loop: false,
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1.15, 
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30
+      }
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "page list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Explore by Benefit",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "default": "Discover the restorative power of herbal blends.",
+      "label": "Subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        { "type": "page", "id": "page", "label": "Select page" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "custom_title", "label": "Custom title" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "page list",
+      "blocks": [{ "type": "page" }]
+    }
+  ]
+}
+{% endschema %}

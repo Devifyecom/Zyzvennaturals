@@ -1,0 +1,361 @@
+{% assign mf = page.metafields.protocol %}
+
+<style>
+    .protocol-page {
+      max-width: 980px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .protocol-page h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .protocol-page > p {
+      text-align: center;
+      max-width: 600px;
+      margin: auto;
+      color: #666;
+    }
+
+    /* SECTION CARD */
+    .section-box {
+      background: transparent;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      margin-top: 30px;
+    }
+
+    .section-box h2 {
+      margin-bottom: 15px;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    /* PRODUCT CARD */
+    .product-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid #eee;
+      padding: 12px;
+      border-radius: 10px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .product-card img {
+      width: 60px;
+      border-radius: 6px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+    .product-title {
+    display: block;
+    font-weight: 500;
+  }
+
+  .product-price {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+    .product-card input {
+      margin-left: auto;
+    }
+
+    /* ACTIVE STATE */
+    .product-card.active {
+      border-color: #000;
+    }
+
+    /* BUTTONS */
+    .protocol-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .protocol-buttons button {
+      font-weight: 600;
+    }
+
+    .btn-secondary {
+      background: #f3f3f3;
+    }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .combo-plus {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+      }
+</style>
+
+<div class="page-width">
+  <div class="protocol-page">
+    <!-- HERO -->
+    <h1>30-Day {{ page.title }}</h1>
+
+    {% if mf.overview %}
+      <p>{{ mf.overview }}</p>
+    {% endif %}
+
+    <!-- HOW IT WORKS -->
+    {% if mf.structured_pathway_works %}
+      <div class="section-box">
+        <h2>How This Structured Pathway Works</h2>
+        {{ mf.structured_pathway_works | metafield_tag }}
+      </div>
+    {% endif %}
+
+    <!-- DAILY STRUCTURE -->
+    {% if mf.daily_structure %}
+      <div class="section-box">
+        <h2>Daily Structure</h2>
+        <ul>
+          {% for item in mf.daily_structure.value %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <!-- STEP 1: CORE -->
+    {% if mf.core_stack.value %}
+      <div class="section-box">
+        <h2>Step 1 – 
+          {%if page.handle == 'protocols-digestive-reset' or page.handle =='protocols-inflammation-joint-support' or page.handle =='protocols-mens-vitality-support' %}
+            Core Stack 
+          {% else %}
+            Foundation 
+          {% endif %} (Auto Included)</h2>
+
+        <div class="product-grid">
+          {% for product in mf.core_stack.value %}
+            <div class="product-card">
+              <img src="{{ product.featured_image | image_url: width: 150 }}" width="" height="">
+              <div class="product-info">
+                <a class="link link--text" href="{{ product.url }}"
+                  ><span class="product-title">{{ product.title }}</span></a
+                >
+                <span class="product-price">
+                  {{ product.price | money }}
+                </span>
+              </div>
+            </div>
+            {% unless forloop.last %}
+              <div class="combo-plus">+</div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- STEP 2: RADIO -->
+    {% if mf.radio_products.value %}
+      <div class="section-box">
+        <h2>Step 2 – Choose ONE</h2>
+
+        <div class="product-grid">
+          {% for product in mf.radio_products.value %}
+            <label class="product-card">
+              <img src="{{ product.featured_image | image_url: width: 150 }}" height="" width="">
+
+              <div class="product-info">
+                <a class="link link--text" href="{{ product.url }}"
+                  ><span class="product-title">{{ product.title }}</span></a
+                >
+                <span class="product-price">
+                  {{ product.price | money }}
+                </span>
+              </div>
+
+              <input
+                type="radio"
+                name="radio_product"
+                value="{{ product.variants.first.id }}"
+                {% if forloop.first %}
+                  checked
+                {% endif %}
+              >
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- STEP 3: CHECKBOX -->
+    {% if mf.checkbox_products.value %}
+      <div class="section-box">
+        <h2>Step 3 – Optional Add-ons</h2>
+
+        <div class="product-grid">
+          {% for product in mf.checkbox_products.value %}
+            <label class="product-card">
+              <img src="{{ product.featured_image | image_url: width: 150 }}" height="" width="">
+
+              <div class="product-info">
+                <a class="link link--text" href="{{ product.url }}"
+                  ><span class="product-title">{{ product.title }}</span></a
+                >
+                <span class="product-price">
+                  {{ product.price | money }}
+                </span>
+              </div>
+
+              <input
+                type="checkbox"
+                class="addon_product"
+                value="{{ product.variants.first.id }}"
+              >
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- EDUCATIONAL -->
+    {% if mf.educational_block %}
+      <div class="section-box">
+        <h2>Educational Block</h2>
+        {{ mf.educational_block | metafield_tag }}
+      </div>
+    {% endif %}
+
+    <!-- BUTTONS -->
+    <div class="protocol-buttons">
+      <button onclick="addProtocol(1)" class="pybtn button button--full-width button--primary pshover">
+        BEGIN 30-DAY PROTOCOL
+      </button>
+
+      <button onclick="addProtocol(3)" class="button button--full-width button--secondary btn-secondary pshover">
+        90-DAY COMMITMENT
+      </button>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      This protocol is for informational purposes only and does not constitute medical advice. Zyzven Naturals products
+      are food supplements and are not intended to diagnose, treat, cure, or prevent any disease. Always consult a
+      qualified healthcare professional regarding medical conditions.
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("change", function(e) {
+    if (e.target.type === "radio") {
+      document.querySelectorAll('input[name="radio_product"]').forEach(input => {
+        input.closest('.product-card').classList.remove('active');
+      });
+      e.target.closest('.product-card').classList.add('active');
+    }
+
+    if (e.target.type === "checkbox") {
+      e.target.closest('.product-card').classList.toggle('active');
+    }
+  });
+
+  window.addProtocol = function(qty) {
+    let items = [];
+
+    // CORE PRODUCTS
+    {% for product in page.metafields.protocol.core_stack.value %}
+      items.push({
+        id: {{ product.selected_or_first_available_variant.id }},
+        quantity: qty
+      });
+    {% endfor %}
+
+    // RADIO
+    let radio = document.querySelector('input[name="radio_product"]:checked');
+
+    if (document.querySelectorAll('input[name="radio_product"]').length > 0 && !radio) {
+      alert("Please select an option");
+      return;
+    }
+
+    if (radio) {
+      items.push({
+        id: parseInt(radio.value),
+        quantity: qty
+      });
+    }
+
+    // CHECKBOX
+    document.querySelectorAll('.addon_product:checked').forEach(el => {
+      items.push({
+        id: parseInt(el.value),
+        quantity: qty
+      });
+    });
+
+  
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items })
+    })
+    .then(() => fetch('/?sections=cart-drawer,cart-icon-bubble'))
+    .then(res => res.json())
+    .then(data => {
+      const parser = new DOMParser();
+
+      const drawer = document.querySelector('cart-drawer');
+
+      // UPDATE DRAWER
+      if (drawer && data['cart-drawer']) {
+        const html = parser.parseFromString(data['cart-drawer'], 'text/html');
+        const newDrawer = html.querySelector('cart-drawer');
+        if (newDrawer) drawer.innerHTML = newDrawer.innerHTML;
+      }
+
+      // UPDATE ICON
+      const bubble = document.querySelector('#cart-icon-bubble');
+      if (bubble && data['cart-icon-bubble']) {
+        const html = parser.parseFromString(data['cart-icon-bubble'], 'text/html');
+        const newBubble = html.querySelector('#cart-icon-bubble');
+        if (newBubble) bubble.innerHTML = newBubble.innerHTML;
+      }
+
+      // OPEN DRAWER
+      if (drawer) {
+        drawer.classList.remove('is-empty');
+
+        if (typeof drawer.open === 'function') {
+          drawer.open();
+        } else {
+          drawer.classList.add('active');
+        }
+      }
+    })
+    .catch(err => console.error(err));
+  };
+</script>
+
+{% schema %}
+{
+  "name": "Protocol Premium",
+  "settings": []
+}
+{% endschema %}

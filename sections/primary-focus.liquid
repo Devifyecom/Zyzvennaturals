@@ -1,0 +1,642 @@
+{% comment %}
+  {% style %}
+
+  .primary-focus-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .primary-focus-title {
+    font-family: Marcellus;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 70px;
+    text-align: center;
+        margin-bottom: 0px !important;
+  }
+
+  .primary-focus-subtitle {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0%;
+  }
+
+  .primary-focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .primary-focus-card {
+    background: #F6F3ED;
+    display: flex;
+    align-items: center;
+  }
+
+  .primary-focus-image {
+    width: 50%;
+    background: #F0DDD0;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .primary-focus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .primary-focus-content {
+    width: 55%;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .primary-focus-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .primary-focus-content li {
+    font-size: 18px;
+    line-height: 50.9px;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+        color: #000;
+  }
+
+  .primary-focus-content li::before {
+    content: "→ ";
+    margin-right: 6px;
+  }
+
+  .primary-focus-button {
+    margin-top: 50px;
+  }
+
+  .primary-focus-button a {
+      background: #000;
+      color: #fff;
+      padding: 8px 23px;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 1px;
+      height: 45px;
+      font-size: 18px;
+      font-family: "poppins";
+      font-weight: 500;
+  }
+  /* Tablet (3 columns same as desktop) */
+  @media (max-width: 1024px) {
+
+    .primary-focus-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .primary-focus-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .primary-focus-image,
+    .primary-focus-content {
+      width: 100%;
+    }
+
+    .primary-focus-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .primary-focus-content li {
+      line-height: 32px;
+      font-size: 16px;
+      white-space: nowrap;   /* keep single line */
+    }
+
+  }
+
+  /* Mobile (1 column) */
+  @media (max-width: 749px) {
+
+    .primary-focus-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .primary-focus-title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .primary-focus-subtitle {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .primary-focus-content li {
+      font-size: 15px;
+      line-height: 28px;
+      white-space: nowrap; /* keep same one-line style */
+    }
+
+    .primary-focus-image {
+      height: 250px;
+    }
+
+
+  }
+  /* Mobile only */
+  /* Mobile only */
+  @media (max-width: 767px) {
+    .primary-focus-image {
+      height: 345px !important;
+
+      width: 100% !important;
+    }
+  }
+  @media (max-width: 1440px) {
+
+    .primary-focus-content li {
+      font-size: 15px;
+      line-height: 28px;
+    }
+
+  }
+  {% endstyle %}
+
+  <section class="primary-focus-section page-width">
+    <div class="primary-focus-container">
+
+      <h2 class="primary-focus-title">
+        {{ section.settings.heading }}
+      </h2>
+       <div class="newsletter-divider">
+    <span></span>
+    <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/logozynn.png?v=1772427108" alt="Logo">
+    <span></span>
+  </div>
+
+      <p class="primary-focus-subtitle">
+        {{ section.settings.subheading }}
+      </p>
+
+      <div class="primary-focus-grid">
+        {% for block in section.blocks %}
+          <div class="primary-focus-card">
+
+            <div class="primary-focus-image">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 600 | image_tag }}
+              {% endif %}
+            </div>
+
+            <div class="primary-focus-content">
+              <ul>
+                {% assign lines = block.settings.points | newline_to_br | split: '<br />' %}
+                {% for line in lines %}
+                  {% if line != blank %}
+                    <li>{{ line }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="primary-focus-button">
+        <a href="{{ section.settings.button_link }}">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  {% schema %}
+  {
+    "name": "Primary Focus Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Select Your Primary Focus"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Identify your primary wellness focus and build a structured botanical protocol"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "BUILD MY PROTOCOL"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "focus",
+        "name": "Focus Card",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "points",
+            "label": "Bullet Points (One per line)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Primary Focus Section",
+        "blocks": [
+          { "type": "focus" },
+          { "type": "focus" },
+          { "type": "focus" }
+        ]
+      }
+    ]
+  }
+  {% endschema %}
+{% endcomment %}
+
+{% style %}
+  .primary-focus-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .primary-focus-title {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 0 !important;
+  }
+
+  .primary-focus-subtitle {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  /* DESKTOP GRID */
+
+  .primary-focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+
+
+  /* CARD */
+
+  .primary-focus-card {
+    background: #F6F3ED;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .primary-focus-image {
+    width: 50%;
+    /* height: 320px; */
+    aspect-ratio: 1 / 1;
+    background: #F0DDD0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .primary-focus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .primary-focus-content {
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .primary-focus-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .primary-focus-content li {
+    font-size: 12px;
+    line-height: 50px;
+    text-transform: capitalize;
+    color: #000;
+  }
+
+  .primary-focus-content li::before {
+    content: "✔";
+    color: #c48a2e;
+    margin-right: 8px;
+  }
+
+  /* BUTTON */
+
+  .card-btn {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card-btn a {
+    /* background: #358440; */
+    color: #fff;
+    padding: 6px 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: .3s;
+    background: linear-gradient(180deg, #6FBF73 0%, #3E8E41 100%);
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+
+  /* .card-btn a:hover {
+    background: #38ab3d;
+  } */
+
+  @media (max-width: 1280px) {
+   .primary-focus-content li {
+      font-size: 10px;
+      line-height: 40px;
+   }
+   .primary-focus-grid {
+      gap: 10px;
+  }
+  }
+  .mobile {
+    display:none;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    /* .primary-focus-grid {
+      grid-template-columns: repeat(2, 1fr);
+    } */
+    
+    .primary-focus-image {
+      width: 100%;
+    }
+    
+      .primary-focus-content {
+        width: 100%;
+        padding: 16px;
+    }
+    .primary-focus-card{
+  background: #F0DDD0;
+  }
+  .primary-focus-content{
+  width:100%;
+  text-align:center;
+  justify-items: center;
+  background: #F6F3ED;
+  border-radius: 50px 50px 0px 0px;
+  }
+    .primary-focus-content li {
+        font-size: 10px;
+        line-height: 30px;
+        text-align: left;
+    }
+      .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+    .card-btn a {
+      font-size: 10px;
+    }
+  }
+  
+
+
+  /* MOBILE SLIDER */
+
+  @media (max-width:767px){
+
+    .primary-focus-grid{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+
+  .primary-focus-grid::-webkit-scrollbar{
+  display:none;
+  }
+
+  .primary-focus-card{
+  min-width:100%;
+  flex-direction:column;
+  scroll-snap-align:start;
+  background: #F0DDD0;
+  }
+
+  .primary-focus-image{
+  width:100%;
+  height:320px;
+  }
+
+  .primary-focus-content{
+  width:100%;
+  text-align:center;
+  justify-items: center;
+  background: #F6F3ED;
+  border-radius: 50px 50px 0px 0px;
+  }
+
+  .primary-focus-content li{
+  line-height:32px;
+  font-size:16px;
+  text-align: left;
+  }
+  .primary-focus-image img {
+      object-fit: contain;
+  }
+  .card-btn {
+    padding: 5px;
+    
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  }
+{% endstyle %}
+
+<section class="primary-focus-section page-width">
+  <div class="primary-focus-container">
+    <h2 class="primary-focus-title psheadmobile">
+      {{ section.settings.heading }}
+    </h2>
+
+    <div class="newsletter-divider">
+      <span></span>
+      <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/logozynn.png?v=1772427108">
+      <span></span>
+    </div>
+
+    <p class="primary-focus-subtitle">
+      {{ section.settings.subheading }}
+    </p>
+
+    <div class="primary-focus-grid" id="focus-slider">
+      {% for block in section.blocks %}
+        <div class="primary-focus-card">
+          <div class="primary-focus-image">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 600 | image_tag }}
+            {% endif %}
+          </div>
+
+          <div class="primary-focus-content">
+            <ul>
+              {% assign lines = block.settings.points | newline_to_br | split: '<br />' %}
+              {% for line in lines %}
+                {% if line != blank %}
+                  <li> {{ line }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            {% if block.settings.button_label != blank %}
+            <div class="card-btn mobile">
+              <a class="pszyenbtn" href="{{ block.settings.button_link }}">
+                {{ block.settings.button_label }}
+              </a>
+            </div>
+          {% endif %}
+          </div>
+
+          {% if block.settings.button_label != blank %}
+            <div class="card-btn desktop">
+              <a class="pszyenbtn" href="{{ block.settings.button_link }}">
+                {{ block.settings.button_label }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth <= 767) {
+      const slider = document.getElementById('focus-slider');
+      const cards = slider.querySelectorAll('.primary-focus-card');
+
+      let index = 0;
+
+      setInterval(function () {
+        index++;
+
+        if (index >= cards.length) {
+          index = 0;
+
+          slider.scrollTo({
+            left: 0,
+            behavior: 'smooth',
+          });
+        } else {
+          slider.scrollTo({
+            left: cards[index].offsetLeft,
+            behavior: 'smooth',
+          });
+        }
+      }, 3000);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Primary Focus Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Select Your Primary Focus"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Identify your primary wellness focus and build a structured botanical protocol"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "focus",
+      "name": "Focus Card",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "points",
+          "label": "Bullet Points (One per line)"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "BUILD MY PROTOCOL"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Primary Focus Section",
+      "blocks": [{ "type": "focus" }, { "type": "focus" }, { "type": "focus" }]
+    }
+  ]
+}
+{% endschema %}

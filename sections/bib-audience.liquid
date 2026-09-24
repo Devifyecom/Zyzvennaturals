@@ -1,0 +1,54 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+<section class="bib bib-audience" id="bib-audience">
+  <div class="bib__inner">
+    <h2 class="bib-h2">{{ section.settings.heading }}</h2>
+
+    <ul class="bib-audience__list">
+      {%- for block in section.blocks -%}
+        <li class="bib-audience__item" {{ block.shopify_attributes }}>
+          <svg class="bib-audience__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5 11-12"/></svg>
+          <span>{{ block.settings.text }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="bib-fineprint">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIB — Who This Is For",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Who This Is For" },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "This offer is not designed for anyone expecting guaranteed income or passive profit. Results depend on sales activity, pricing and business expenses."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "audience",
+      "name": "Audience",
+      "settings": [{ "type": "textarea", "id": "text", "label": "Text", "default": "Audience description." }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIB — Who This Is For",
+      "blocks": [
+        { "type": "audience", "settings": { "text": "Entrepreneurs ready to build a product-based wellness business." } },
+        { "type": "audience", "settings": { "text": "Wellness and beauty professionals, salons, barbershops, gyms and community sellers." } },
+        { "type": "audience", "settings": { "text": "Online retailers and physical stores wanting a curated wellness range." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

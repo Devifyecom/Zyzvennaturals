@@ -1,0 +1,196 @@
+{% comment %}
+  Section: Little Rituals hero (ritual)
+  Full-bleed pouring-tea video with desktop overlay + mobile stacked layout.
+  Font: Golos Text (forced over theme defaults)
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+{%- assign heading_html = section.settings.heading | newline_to_br -%}
+
+<style>
+  #ritual-{{ section.id }}{
+    --pink:{{ section.settings.pink_top }};
+    --magenta:{{ section.settings.cta_text_desktop }};
+    --ink:{{ section.settings.heading_color }};
+    --muted:{{ section.settings.text_color }};
+    --soft-bg:{{ section.settings.mobile_bg }};
+    --font:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    position:relative;width:100%;overflow:hidden;background:var(--soft-bg);
+    font-family:var(--font);
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  #ritual-{{ section.id }} *{box-sizing:border-box;}
+  #ritual-{{ section.id }} h3,
+  #ritual-{{ section.id }} p,
+  #ritual-{{ section.id }} .bt{font-family:var(--font) !important;}
+
+  /* ---------- Media ---------- */
+  #ritual-{{ section.id }} .r-media video,
+  #ritual-{{ section.id }} .r-media img.r-poster{
+    display:block;width:100%;height:min(42vw,500px);
+    object-fit:cover;object-position:right 85%;
+  }
+
+  /* ---------- Legibility veil (darkens left on desktop) ---------- */
+  #ritual-{{ section.id }} .veil{
+    position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(90deg,
+      rgba(0,0,0,.30) 0%,
+      rgba(0,0,0,.14) 32%,
+      rgba(0,0,0,0)   58%);
+  }
+
+  /* ---------- Desktop overlay content ---------- */
+  #ritual-{{ section.id }} .rc{
+    position:absolute;top:50%;left:7%;transform:translateY(-50%);
+    z-index:3;max-width:44%;
+  }
+  #ritual-{{ section.id }} .rc h3{
+    margin:0;color:#fff;font-weight:700;
+    font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-.02em;
+  }
+  #ritual-{{ section.id }} .rc p{
+    margin:20px 0 0;color:rgba(255,255,255,.95);
+    font-size:clamp(15px,1.45vw,21px);line-height:1.45;max-width:29em;font-weight:400;
+  }
+  #ritual-{{ section.id }} .rc .hgcta{
+    display:inline-block;margin-top:30px;background:#fff;border-radius:50px;
+    padding:17px 40px;text-decoration:none;
+    box-shadow:0 8px 22px rgba(0,0,0,.14);
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  #ritual-{{ section.id }} .rc .hgcta .bt{
+    color:var(--magenta);font-weight:700;font-size:19px;letter-spacing:.01em;
+  }
+  #ritual-{{ section.id }} .rc .hgcta:hover{
+    transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.20);
+  }
+  #ritual-{{ section.id }} .rc .hgcta:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+  /* ---------- Mobile-only blocks (hidden on desktop) ---------- */
+  #ritual-{{ section.id }} .r-text-m,
+  #ritual-{{ section.id }} .r-cta-m{display:none;}
+
+  /* ============ MOBILE ============ */
+  @media (max-width:768px){
+    #ritual-{{ section.id }} .rc{display:none;}
+    #ritual-{{ section.id }} .veil{display:none;}
+    #ritual-{{ section.id }} .r-edge{display:none;}
+
+    #ritual-{{ section.id }} .r-text-m{
+      display:block;background:var(--soft-bg);text-align:center;
+      padding:40px 24px 26px;
+    }
+    #ritual-{{ section.id }} .r-text-m h3{
+      margin:0;color:var(--ink);font-weight:700;
+      font-size:clamp(26px,7vw,34px);line-height:1.14;letter-spacing:-.01em;
+    }
+    #ritual-{{ section.id }} .r-text-m p{
+      margin:14px auto 0;color:var(--muted);
+      font-size:17px;line-height:1.5;max-width:440px;font-weight:400;
+    }
+
+    #ritual-{{ section.id }} .r-cta-m{
+      display:block;background:var(--soft-bg);text-align:center;
+      padding:26px 24px 38px;
+    }
+    #ritual-{{ section.id }} .r-cta-m .hgcta{
+      display:inline-block;text-decoration:none;border-radius:50px;padding:17px 46px;
+      background:linear-gradient(180deg,{{ section.settings.pink_top }} 0%,{{ section.settings.pink_bottom }} 100%);
+      box-shadow:0 12px 26px {{ section.settings.pink_bottom | color_modify: 'alpha', 0.38 }};
+    }
+    #ritual-{{ section.id }} .r-cta-m .hgcta .bt{
+      color:#fff;font-weight:700;font-size:18px;letter-spacing:.01em;
+    }
+    #ritual-{{ section.id }} .r-cta-m .hgcta:active{transform:translateY(1px);}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    #ritual-{{ section.id }} .rc .hgcta{transition:none;}
+  }
+</style>
+
+<div id="ritual-{{ section.id }}" class="ritual">
+
+  {%- comment -%} Mobile text (above video) {%- endcomment -%}
+  <div class="r-text-m">
+    <h3>{{ heading_html }}</h3>
+    {% if section.settings.subtitle != blank %}<p>{{ section.settings.subtitle }}</p>{% endif %}
+  </div>
+
+  {%- comment -%} Desktop edge gradients {%- endcomment -%}
+  <span class="r-edge" style="position:absolute;top:0;left:0;right:0;height:40px;z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.14) 40%,rgba(0,0,0,0) 100%);pointer-events:none;"></span>
+  <span class="r-edge" style="position:absolute;bottom:0;left:0;right:0;height:40px;z-index:2;background:linear-gradient(0deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.14) 40%,rgba(0,0,0,0) 100%);pointer-events:none;"></span>
+
+  {%- comment -%} Media: video (preferred) ‚Üí external mp4 ‚Üí poster image {%- endcomment -%}
+  <div class="r-media">
+    {%- if section.settings.video != blank -%}
+      <video autoplay muted loop playsinline preload="auto"
+             {% if section.settings.poster != blank %}poster="{{ section.settings.poster | image_url: width: 1600 }}"{% endif %}>
+        {%- for source in section.settings.video.sources -%}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {%- endfor -%}
+      </video>
+    {%- elsif section.settings.video_url != blank -%}
+      <video autoplay muted loop playsinline preload="auto"
+             {% if section.settings.poster != blank %}poster="{{ section.settings.poster | image_url: width: 1600 }}"{% endif %}>
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {%- elsif section.settings.poster != blank -%}
+      <img class="r-poster" src="{{ section.settings.poster | image_url: width: 1600 }}" alt="{{ section.settings.heading | strip_newlines | escape }}" loading="lazy">
+    {%- endif -%}
+  </div>
+
+  <div class="veil"></div>
+
+  {%- comment -%} Mobile CTA (below video) {%- endcomment -%}
+  <div class="r-cta-m">
+    <a class="hgcta" href="{{ section.settings.button_link | default: '#' }}">
+      <span class="bt">{{ section.settings.button_label }}</span>
+    </a>
+  </div>
+
+  {%- comment -%} Desktop overlay {%- endcomment -%}
+  <div class="rc">
+    <h3>{{ heading_html }}</h3>
+    {% if section.settings.subtitle != blank %}<p>{{ section.settings.subtitle }}</p>{% endif %}
+    <a class="hgcta" href="{{ section.settings.button_link | default: '#' }}">
+      <span class="bt">{{ section.settings.button_label }}</span>
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ritual Hero",
+  "tag": "section",
+  "class": "section-ritual-hero",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "textarea", "id": "heading", "label": "Heading (line breaks respected)", "default": "Little Rituals.\nBig Difference." },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "A cup after dinner, a capsule with breakfast. Hey Girl fits into your day and gives a lot back." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Find Your Ritual" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+
+    { "type": "header", "content": "Media" },
+    { "type": "video", "id": "video", "label": "Background video (upload)" },
+    { "type": "text", "id": "video_url", "label": "‚Ä¶or external MP4 URL", "info": "Used only if no uploaded video is set." },
+    { "type": "image_picker", "id": "poster", "label": "Poster / fallback image" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "heading_color", "label": "Mobile heading text", "default": "#2b2b2b" },
+    { "type": "color", "id": "text_color", "label": "Mobile subtitle text", "default": "#6f6f6f" },
+    { "type": "color", "id": "mobile_bg", "label": "Mobile background", "default": "#fdf4f7" },
+    { "type": "color", "id": "cta_text_desktop", "label": "Desktop button text", "default": "#d12e7b" },
+    { "type": "color", "id": "pink_top", "label": "Mobile button gradient (top)", "default": "#ef5a9b" },
+    { "type": "color", "id": "pink_bottom", "label": "Mobile button gradient (bottom)", "default": "#e73f8c" }
+  ],
+  "presets": [
+    { "name": "Ritual Hero" }
+  ]
+}
+{% endschema %}
+

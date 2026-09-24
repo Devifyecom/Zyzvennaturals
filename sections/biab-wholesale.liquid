@@ -1,0 +1,57 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--cream">
+  <section class="biab-section" id="biab-wholesale" aria-labelledby="biab-wholesale-title">
+    <div class="biab-inner">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-wholesale-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+        {%- if s.subheading != blank -%}<p class="biab-lede">{{ s.subheading }}</p>{%- endif -%}
+      </div>
+
+      <div class="biab-compare">
+        <div class="biab-card biab-compare__col biab-compare__col--yes">
+          <h3 class="biab-h3">{{ s.yes_title }}</h3>
+          <ul class="biab-ticks" style="margin-top:16px;">
+            {%- assign yes_items = s.yes_list | newline_to_br | split: '<br />' -%}
+            {%- for item in yes_items -%}
+              {%- assign clean = item | strip -%}
+              {%- if clean != blank -%}<li>{{ clean }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <div class="biab-card biab-compare__col biab-compare__col--no">
+          <h3 class="biab-h3">{{ s.no_title }}</h3>
+          <ul class="biab-crosses" style="margin-top:16px;">
+            {%- assign no_items = s.no_list | newline_to_br | split: '<br />' -%}
+            {%- for item in no_items -%}
+              {%- assign clean = item | strip -%}
+              {%- if clean != blank -%}<li>{{ clean }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — Wholesale, not MLM",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wholesale, Not MLM" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "You Sell Products. That's It." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "There is no recruitment structure here, and nothing to sign up beneath you. Your income comes from retailing genuine products to real customers." },
+    { "type": "text", "id": "yes_title", "label": "Left column title", "default": "What this is" },
+    { "type": "textarea", "id": "yes_list", "label": "Left column items", "info": "One per line.", "default": "You buy stock at wholesale and retail it at your own prices.\nYour margin comes from the difference, on every unit you sell.\nYou reorder the lines that sell, at reseller pricing.\nYou keep your own customers and your own business." },
+    { "type": "text", "id": "no_title", "label": "Right column title", "default": "What this isn't" },
+    { "type": "textarea", "id": "no_list", "label": "Right column items", "info": "One per line.", "default": "No recruitment commissions.\nNo downline, uplines or team volume targets.\nNo monthly purchase quota to stay active.\nNo earnings from signing anyone else up." }
+  ],
+  "presets": [{ "name": "BIAB — Wholesale, not MLM" }]
+}
+{% endschema %}

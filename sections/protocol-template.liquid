@@ -1,0 +1,469 @@
+{% comment %}
+  {% assign protocol = page.handle %}
+
+  {% style %}
+        .protocol-page {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .primary-btn {
+        text-transform: uppercase;
+      }
+
+      .secondary-btn {
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .disclaimer {
+        font-size: 12px;
+        margin-top: 40px;
+        opacity: 0.7;
+      }
+      .combo-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .combo-item img {
+      width: 150px;
+      height: auto;
+    }
+
+    .combo-item p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .combo-plus {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  {% endstyle %}
+
+  <div class="page-width">
+    <div class="protocol-page">
+      <h1>{{ page.title }}</h1>
+
+      {% if page.metafields.protocol.overview %}
+        <p>{{ page.metafields.protocol.overview }}</p>
+      {% endif %}
+
+      <h2>Daily Structure</h2>
+      {% assign daily = page.metafields.protocol.daily_structure.value %}
+
+      {% if daily %}
+        <ul>
+          {% for item in daily %}
+            {% case forloop.index %}
+              {% when 1 %}
+                <li>Morning – {{ item }}</li>
+              {% when 2 %}
+                {% if item != 'blank' %}
+                  <li>Midday – {{ item }}</li>
+                {% endif %}
+              {% when 3 %}
+                <li>Evening – {{ item }}</li>
+            {% endcase %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <h2>Core Stack</h2>
+
+      {% assign products = page.metafields.protocol.core_stack.value %}
+
+      {% if products %}
+        <div class="combo-wrapper">
+          {% for product in products %}
+            <div class="combo-item">
+              <a href="{{ product.url }}">
+                <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="lazy">
+                {% comment %} <p>{{ product.title }}</p> {% endcomment %}
+              </a>
+            </div>
+
+            {% unless forloop.last %}
+              <div class="combo-plus">+</div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <h2>Optional Add-On</h2>
+      <p>{{ page.metafields.protocol.optional_add_on }}</p>
+
+      <h2>Lifestyle Discipline</h2>
+      <p>{{ page.metafields.protocol.lifestyle }}</p>
+
+      <!-- PRIMARY CTA -->
+      <div class="product-form__buttons">
+        <button
+          type="button"
+          onclick="addProtocolBundle()"
+          class="product-form__submit button button--full-width button--primary primary-btn"
+        >
+          BEGIN {{ page.title }}
+        </button>
+      </div>
+
+      <!-- SECONDARY CTA -->
+      <a
+        href="{{ page.metafields.protocol.secondary_link.value.url }}"
+        class="button button--full-width button--secondary"
+      >
+        VIEW INDIVIDUAL PRODUCTS
+      </a>
+
+      <!-- DISCLAIMER -->
+      <div class="disclaimer">
+        This protocol is for informational purposes only and does not constitute medical advice. Zyzven Naturals products
+        are food supplements and are not intended to diagnose, treat, cure, or prevent any disease. Always consult a
+        qualified healthcare professional regarding medical conditions.
+      </div>
+    </div>
+  </div>
+{% endcomment %}
+
+{% assign mf = page.metafields.protocol %}
+
+<style>
+  .protocol-page {
+    max-width: 980px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  .protocol-page h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  .protocol-page > p {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    color: #666;
+  }
+
+  /* SECTION BOX */
+  .section-box {
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-top: 30px;
+  }
+
+  /* PRODUCT GRID */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* PRODUCT CARD */
+    .product-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid #eee;
+      padding: 12px;
+      border-radius: 10px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .product-card img {
+      width: 60px;
+      border-radius: 6px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+    .product-title {
+    display: block;
+    font-weight: 500;
+  }
+
+  .product-price {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+    .product-card input {
+      margin-left: auto;
+    }
+
+  .combo-plus {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* ACTIVE STATE */
+    .product-card.active {
+      border-color: #000;
+    }
+
+   /* BUTTONS */
+    .protocol-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .protocol-buttons .button {
+      font-weight: 600;
+    }
+
+  .btn-secondary {
+    background: #f3f3f3;
+  }
+
+  .disclaimer {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 40px;
+    text-align: center;
+  }
+  @media (max-width: 940px) {
+    .protocol-buttons {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="page-width">
+  <div class="protocol-page">
+    <!-- HERO -->
+    <h1>{{ page.title }}</h1>
+
+    {% if mf.overview %}
+      <p>{{ mf.overview }}</p>
+    {% endif %}
+
+    <!-- DAILY STRUCTURE -->
+    {% if mf.daily_structure %}
+      <div class="section-box">
+        <h2>Daily Structure</h2>
+        <ul>
+          {% for item in mf.daily_structure.value %}
+            {% case forloop.index %}
+              {% when 1 %}
+                <li><strong>Morning:</strong> {{ item }}</li>
+              {% when 2 %}
+                {% if item != 'blank' %}
+                  <li><strong>Midday:</strong> {{ item }}</li>
+                {% endif %}
+              {% when 3 %}
+                <li><strong>Evening:</strong> {{ item }}</li>
+            {% endcase %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <!-- CORE STACK -->
+    {% if mf.core_stack.value %}
+      <div class="section-box">
+        <h2>Core Stack</h2>
+
+        <div class="product-grid">
+          {% for product in mf.core_stack.value %}
+            <div class="product-card">
+              <img src="{{ product.featured_image | image_url: width: 150 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="lazy">
+              <div class="product-info">
+                <a class="link link--text" href="{{ product.url }}"
+                  ><span class="product-title">{{ product.title }}</span></a
+                >
+                <span class="product-price">
+                  {{ product.price | money }}
+                </span>
+              </div>
+            </div>
+            {% unless forloop.last %}
+              <div class="combo-plus">+</div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- OPTIONAL ADD-ON -->
+    {% comment %} {% if mf.optional_add_on %}
+      <div class="section-box">
+        <h2>Optional Add-On</h2>
+        <p>{{ mf.optional_add_on }}</p>
+      </div>
+    {% endif %} {% endcomment %}
+    {% if mf.checkbox_products.value %}
+      <div class="section-box">
+        <h2>Optional Add-On</h2>
+
+        <div class="product-grid">
+          {% for product in mf.checkbox_products.value %}
+            <label class="product-card">
+              <img src="{{ product.featured_image | image_url: width: 150 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="lazy">
+
+              <div class="product-info">
+                <a class="link link--text" href="{{ product.url }}"
+                  ><span class="product-title">{{ product.title }}</span></a
+                >
+                <span class="product-price">
+                  {{ product.price | money }}
+                </span>
+              </div>
+
+              <input
+                type="checkbox"
+                class="addon_product"
+                value="{{ product.variants.first.id }}"
+              >
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- LIFESTYLE -->
+    {% if mf.lifestyle %}
+      <div class="section-box">
+        <h2>Lifestyle Discipline</h2>
+        <p>{{ mf.lifestyle }}</p>
+      </div>
+    {% endif %}
+
+    <!-- BUTTONS -->
+    <div class="protocol-buttons">
+      <button
+        type="button"
+        onclick="addProtocolBundle()"
+        class="pybtn button button--full-width button--primary pshover"
+      >
+        BEGIN {{ page.title }}
+      </button>
+
+      {% if mf.secondary_link %}
+        <a
+          href="{{ mf.secondary_link.value.url }}"
+          class="button button--full-width button--secondary btn-secondary pshover"
+        >
+          VIEW INDIVIDUAL PRODUCTS
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      This protocol is for informational purposes only and does not constitute medical advice.
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("change", function(e) {
+
+    if (e.target.type === "checkbox") {
+      e.target.closest('.product-card').classList.toggle('active');
+    }
+  });
+
+  window.addProtocolBundle = function() {
+    let items = [];
+
+    // CORE PRODUCTS
+    {% for product in page.metafields.protocol.core_stack.value %}
+      items.push({
+        id: {{ product.selected_or_first_available_variant.id }},
+        quantity: 1
+      });
+    {% endfor %}
+
+    // CHECKBOX
+    document.querySelectorAll('.addon_product:checked').forEach(el => {
+      items.push({
+        id: parseInt(el.value),
+        quantity: 1
+      });
+    });
+
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items })
+    })
+
+    .then(() => fetch('/?sections=cart-drawer,cart-icon-bubble'))
+    .then(res => res.json())
+    .then(data => {
+      const parser = new DOMParser();
+
+      // UPDATE DRAWER
+      const drawer = document.querySelector('cart-drawer');
+      if (drawer && data['cart-drawer']) {
+        const html = parser.parseFromString(data['cart-drawer'], 'text/html');
+        const newDrawer = html.querySelector('cart-drawer');
+
+        if (newDrawer) {
+          drawer.innerHTML = newDrawer.innerHTML;
+        }
+      }
+
+      // UPDATE CART ICON
+      const bubble = document.querySelector('#cart-icon-bubble');
+      if (bubble && data['cart-icon-bubble']) {
+        const html = parser.parseFromString(data['cart-icon-bubble'], 'text/html');
+        const newBubble = html.querySelector('#cart-icon-bubble');
+
+        if (newBubble) {
+          bubble.innerHTML = newBubble.innerHTML;
+        }
+      }
+
+      // OPEN DRAWER
+      if (drawer) {
+        drawer.classList.remove('is-empty');
+
+        if (typeof drawer.open === 'function') {
+          drawer.open();
+        } else {
+          drawer.classList.add('active');
+          document.body.classList.add('overflow-hidden');
+        }
+      }
+    })
+    .catch(err => console.error(err));
+  };
+</script>
+
+<script type="application/json" id="protocol-data">
+  {
+    "products": [
+      {% for product in page.metafields.protocol.core_stack.value %}
+        {
+          "id": {{ product.selected_or_first_available_variant.id }},
+          "title": {{ product.title | json }},
+          "image": "{{ product.featured_image | image_url: width: 300 }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Protocol Template",
+  "settings": []
+}
+{% endschema %}

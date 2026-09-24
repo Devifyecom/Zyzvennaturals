@@ -1,0 +1,85 @@
+{%- comment -%}
+  Business in a Box — buy form
+
+  Renders the add-to-cart form with the required reseller-terms
+  acknowledgement, captured as a line item property so it is stored on the
+  order. Used by the hero and can be reused by any other bib-* section.
+
+  Accepts:
+    product          - {Object} product object (required)
+    button_label     - {String} submit button label
+    terms_label      - {String} acknowledgement text
+    terms_url        - {String} optional link to the reseller terms
+    disclaimer       - {String} small print shown under the button
+    show_dynamic     - {Boolean} show Shop Pay / Apple Pay buttons
+    cta_location     - {String} value sent with the GA4 cta click event
+    id_suffix        - {String} unique suffix so ids stay unique per section
+{%- endcomment -%}
+
+{%- liquid
+  assign bib_variant = product.selected_or_first_available_variant
+  assign bib_suffix = id_suffix | default: 'bib'
+  assign bib_button_label = button_label | default: 'Start Your Business in a Box'
+  assign bib_terms_label = terms_label | default: 'I agree to the Reseller Terms and Brand Guidelines'
+-%}
+
+{%- if product != blank and bib_variant != blank -%}
+  <div class="bib-buy">
+    {%- form 'product', product, id: 'BibBuyForm', class: 'bib-buy__form', data-bib-form: 'true' -%}
+      <input type="hidden" name="id" value="{{ bib_variant.id }}">
+      <input type="hidden" name="quantity" value="1">
+      <input
+        type="hidden"
+        name="properties[Reseller acknowledgement]"
+        value="Agreed to the Reseller Terms and Brand Guidelines"
+      >
+
+      <p class="bib-buy__error" data-bib-error role="alert">
+        Please confirm you agree to the Reseller Terms and Brand Guidelines before continuing.
+      </p>
+
+      <label class="bib-buy__terms" for="BibTerms-{{ bib_suffix }}">
+        <input type="checkbox" id="BibTerms-{{ bib_suffix }}" data-bib-terms required>
+        <span>
+          {%- if terms_url != blank -%}
+            I agree to the <a href="{{ terms_url }}">Reseller Terms and Brand Guidelines</a>
+          {%- else -%}
+            {{ bib_terms_label }}
+          {%- endif -%}
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        name="add"
+        class="bib-btn bib-btn--block"
+        data-bib-cta="{{ cta_location | default: 'hero' }}"
+        {% if bib_variant.available == false %}disabled{% endif %}
+      >
+        {%- if bib_variant.available -%}
+          {{ bib_button_label }}
+        {%- else -%}
+          Currently unavailable
+        {%- endif -%}
+      </button>
+
+      {%- if show_dynamic -%}
+        <div class="bib-buy__dynamic">{{ form | payment_button }}</div>
+      {%- endif -%}
+
+      {%- if disclaimer != blank -%}
+        <p class="bib-buy__note">{{ disclaimer }}</p>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+{%- else -%}
+  {%- comment -%} No product assigned yet — show the CTA as an anchor so the page still previews. {%- endcomment -%}
+  <div class="bib-buy">
+    <a href="{{ routes.all_products_collection_url }}" class="bib-btn bib-btn--block" data-bib-cta="{{ cta_location | default: 'hero' }}">
+      {{ bib_button_label }}
+    </a>
+    {%- if disclaimer != blank -%}
+      <p class="bib-buy__note">{{ disclaimer }}</p>
+    {%- endif -%}
+  </div>
+{%- endif -%}

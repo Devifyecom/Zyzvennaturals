@@ -1,0 +1,171 @@
+.newsletter__wrapper {
+  padding-right: calc(4rem / var(--font-body-scale));
+  padding-left: calc(4rem / var(--font-body-scale));
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__wrapper {
+    padding-right: 9rem;
+    padding-left: 9rem;
+ 
+    border-radius: 8px;    
+    display: block;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+}
+
+.newsletter__wrapper > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.newsletter__wrapper > * + * {
+  margin-top: 2rem;
+}
+
+.newsletter__wrapper > * + .newsletter-form {
+  margin-top: 3rem;
+}
+
+.newsletter__subheading {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter__wrapper .newsletter-form__field-wrapper {
+  max-width: 80rem;
+}
+
+.newsletter-form__field-wrapper .newsletter-form__message {
+  margin-top: 1.5rem;
+}
+
+.newsletter__button {
+  margin-top: 3rem;
+  width: fit-content;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__button {
+    flex-shrink: 0;
+    margin: 0 0 0 1rem;
+  }
+}
+
+.psclass{
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.pssmall{
+  font-size: 18px;
+  font-family : "Inter";
+
+}
+
+/* Flex layout */
+.newsletter-row .field {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+}
+
+/* Input full width */
+.newsletter-row .field__input {
+  flex: 1;
+  height: 60px;
+  border-right: none;
+}
+
+/* Label hide (kyunki placeholder already hai) */
+.newsletter-row .field__label {
+  display: none;
+}
+
+/* Button styling */
+.newsletter-row .newsletter-form__button {
+  position: static;
+  height: 62px;
+  padding: 0 40px;
+  background: #359440;
+  color: #fff;
+  width: auto;
+}
+.newsletter-row .newsletter-form__button:hover{
+   color: #fff;
+   background: #38ab3d;
+}
+
+/* Remove absolute positioning from Dawn */
+.newsletter-row .field__button {
+  position: static;
+}
+
+.newsletter-row .field__input {
+  height: 60px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.newsletter-row .field__input::placeholder {
+  color: #888;
+  font-size: 16px;
+  opacity: 1;
+}
+/* .psbg{
+background: #F9F6F0;
+} */
+
+
+.newsletter-form__field-wrapper.scroll-trigger.animate--slide-in
+ {
+   
+    max-width: 850px !important;
+}
+button#Subscribe {
+    font-size: 19px;
+}
+
+/* Desktop (already yours, keeping clean) */
+.newsletter-form__field-wrapper.scroll-trigger.animate--slide-in {
+  max-width: 850px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .newsletter-form__field-wrapper.scroll-trigger.animate--slide-in {
+    max-width: 650px;
+    padding: 0 20px;
+  }
+
+  button#Subscribe {
+    font-size: 17px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 749px) {
+  .newsletter-form__field-wrapper.scroll-trigger.animate--slide-in {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Stack input & button */
+  .newsletter-row .field {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button#Subscribe {
+    width: 100%;
+    font-size: 16px;
+  }
+  .field:after {
+      box-shadow: none;
+}
+}

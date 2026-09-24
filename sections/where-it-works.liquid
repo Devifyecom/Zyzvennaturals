@@ -1,0 +1,387 @@
+{%- liquid
+  assign brand = section.settings.circle_color
+  assign text_color = section.settings.text_color
+-%}
+
+<style>
+  #WhereWorks-{{ section.id }} {
+    --ww-brand: {{ brand }};
+    --ww-brand-light: {{ brand | color_lighten: 6 }};
+    --ww-text: {{ text_color }};
+    --ww-gap: {{ section.settings.column_gap }}px;
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  #WhereWorks-{{ section.id }} * { box-sizing: border-box; }
+
+  .ww__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ww-gap);
+    align-items: center;
+  }
+
+  {%- if section.settings.reverse_layout -%}
+    .ww__media { order: 2; }
+    .ww__circle-wrap { order: 1; }
+  {%- endif -%}
+
+  /* ---------- Image ---------- */
+  .ww__media { position: relative; }
+
+  .ww__media img,
+  .ww__media svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ section.settings.image_radius }}px;
+  }
+
+  /* ---------- Orange circle ---------- */
+  .ww__circle-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ww__circle {
+    position: relative;
+    width: 100%;
+    max-width: {{ section.settings.circle_size }}px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--ww-brand);
+    color: var(--ww-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12% 13%;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 24px 70px {{ brand | color_modify: 'alpha', 0.22 }};
+  }
+
+  /* the soft lighter arc catching light in the top-right, and a faint one lower-left */
+  .ww__circle::before,
+  .ww__circle::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: var(--ww-brand-light);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .ww__circle::before {
+    width: 62%;
+    height: 62%;
+    top: -22%;
+    right: -14%;
+  }
+
+  .ww__circle::after {
+    width: 34%;
+    height: 34%;
+    bottom: 4%;
+    left: -6%;
+    opacity: .5;
+  }
+
+  .ww__eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: .95;
+    line-height: 1.2;
+  }
+
+  .ww__heading {
+    margin: 0 0 18px;
+    max-width: 14ch;
+    font-size: clamp(22px, 2.3vw, 34px);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .ww__text {
+    margin: 0 0 26px;
+    max-width: 34ch;
+    font-size: clamp(14px, 1.15vw, 16.5px);
+    line-height: 1.7;
+    opacity: .93;
+  }
+
+  /* ---------- Checklist ---------- */
+  .ww__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  .ww__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .ww__list li + li { margin-top: {{ section.settings.list_spacing }}px; }
+
+  .ww__check {
+    flex: 0 0 auto;
+    width: 17px;
+    height: 17px;
+    margin-top: 1px;
+  }
+
+  .ww__check svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .ww__reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  }
+
+  .ww__reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ww__media.ww__reveal { transform: translateY(26px) scale(.985); }
+  .ww__media.ww__reveal.is-in { transform: none; }
+
+  .ww__list li {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+
+  .is-in .ww__list li { opacity: 1; transform: none; }
+  {%- for block in section.blocks -%}
+    .is-in .ww__list li:nth-child({{ forloop.index }}) { transition-delay: {{ forloop.index0 | times: 80 | plus: 220 }}ms; }
+  {%- endfor -%}
+
+  /* ---------- Responsive ---------- */
+  @media screen and (max-width: 989px) {
+    .ww__inner { gap: 36px; }
+    .ww__circle { padding: 11% 11%; }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ww__inner {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 0 18px;
+    }
+
+    /* stack order is controlled here so the layout can swap on small screens */
+    {%- if section.settings.mobile_image_first -%}
+      .ww__media { order: 1; }
+      .ww__circle-wrap { order: 2; }
+    {%- else -%}
+      .ww__media { order: 2; }
+      .ww__circle-wrap { order: 1; }
+    {%- endif -%}
+
+    {%- if section.settings.mobile_shape == 'card' -%}
+      .ww__circle {
+        max-width: none;
+        aspect-ratio: auto;
+        border-radius: 28px;
+        padding: 40px 28px 44px;
+      }
+      .ww__circle::before { width: 55%; height: 40%; top: -12%; right: -12%; }
+      .ww__circle::after { display: none; }
+    {%- else -%}
+      .ww__circle { padding: 14% 12%; }
+    {%- endif -%}
+
+    .ww__heading { max-width: 18ch; font-size: 24px; }
+    .ww__text { max-width: 40ch; font-size: 15px; margin-bottom: 22px; }
+    .ww__list li { font-size: 15px; }
+    .ww__list li + li { margin-top: {{ section.settings.list_spacing | minus: 6 }}px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ww__reveal, .ww__list li {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<section id="WhereWorks-{{ section.id }}" class="ww">
+  <div class="ww__inner">
+    <div class="ww__media ww__reveal" data-ww-reveal>
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 1400 }}"
+          srcset="{{ section.settings.image | image_url: width: 600 }} 600w,
+                  {{ section.settings.image | image_url: width: 900 }} 900w,
+                  {{ section.settings.image | image_url: width: 1400 }} 1400w"
+          sizes="(max-width: 749px) calc(100vw - 36px), {{ section.settings.max_width | divided_by: 2 }}px"
+          alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+          decoding="async"
+        >
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: '' }}
+      {%- endif -%}
+    </div>
+
+    <div class="ww__circle-wrap ww__reveal" data-ww-reveal>
+      <div class="ww__circle">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ww__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ww__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <p class="ww__text">{{ section.settings.text }}</p>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="ww__list">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>
+                <span class="ww__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m4 12.5 5.2 5.2L20 6.8"/></svg>
+                </span>
+                <span>{{ block.settings.text }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('WhereWorks-{{ section.id }}');
+    if (!root || root.dataset.wwReady === 'true') return;
+    root.dataset.wwReady = 'true';
+
+    var targets = Array.prototype.slice.call(root.querySelectorAll('[data-ww-reveal]'));
+    if (!targets.length) return;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    targets.forEach(function (el, i) {
+      el.style.transitionDelay = (i * 120) + 'ms';
+      observer.observe(el);
+    });
+
+    /* Theme editor: reveal instantly so merchants always see the content */
+    document.addEventListener('shopify:section:select', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') {
+        targets.forEach(function (el) { el.classList.add('is-in'); });
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Where it works",
+  "tag": "section",
+  "class": "section-where-works",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Where it works" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "One blend. Support from every angle." },
+    { "type": "textarea", "id": "text", "label": "Body text", "default": "Most cranberry pills stop at one job. Zyzven Naturals D-Mannose works across your whole urinary tract at once, so you get real support right where you feel it." },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "checkbox", "id": "reverse_layout", "label": "Put the circle on the left", "default": false },
+    { "type": "checkbox", "id": "mobile_image_first", "label": "Show image first on mobile", "default": true },
+    {
+      "type": "select",
+      "id": "mobile_shape",
+      "label": "Panel shape on mobile",
+      "options": [
+        { "value": "card", "label": "Rounded card (recommended)" },
+        { "value": "circle", "label": "Keep the circle" }
+      ],
+      "default": "card"
+    },
+    { "type": "range", "id": "max_width", "min": 900, "max": 1500, "step": 20, "label": "Max width", "default": 1120, "unit": "px" },
+    { "type": "range", "id": "column_gap", "min": 16, "max": 120, "step": 4, "label": "Column gap", "default": 48, "unit": "px" },
+    { "type": "range", "id": "circle_size", "min": 360, "max": 760, "step": 10, "label": "Circle size", "default": 620, "unit": "px" },
+    { "type": "range", "id": "image_radius", "min": 0, "max": 40, "step": 2, "label": "Image corner radius", "default": 16, "unit": "px" },
+    { "type": "range", "id": "list_spacing", "min": 8, "max": 40, "step": 2, "label": "Space between list items", "default": 22, "unit": "px" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 160, "step": 4, "label": "Padding top", "default": 64, "unit": "px" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 160, "step": 4, "label": "Padding bottom", "default": 64, "unit": "px" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "circle_color", "label": "Circle", "default": "#E8532B" },
+    { "type": "color", "id": "text_color", "label": "Circle text", "default": "#FFFFFF" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#FFFFFF" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Checklist item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Flushes the bacteria behind UTIs" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Where it works",
+      "blocks": [
+        { "type": "benefit", "settings": { "text": "Flushes the bacteria behind UTIs" } },
+        { "type": "benefit", "settings": { "text": "Soothes an irritated bladder" } },
+        { "type": "benefit", "settings": { "text": "Eases that constant urge to go" } },
+        { "type": "benefit", "settings": { "text": "Supports your kidneys" } },
+        { "type": "benefit", "settings": { "text": "Calms the burning" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

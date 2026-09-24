@@ -1,0 +1,75 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+<section class="bib bib-intro" id="bib-intro">
+  <div class="bib__inner">
+    <h2 class="bib-h2">{{ s.heading }}</h2>
+
+    <div class="bib-prose">
+      {%- if s.para_1 != blank -%}<p class="bib-p">{{ s.para_1 }}</p>{%- endif -%}
+      {%- if s.para_2 != blank -%}<p class="bib-p">{{ s.para_2 }}</p>{%- endif -%}
+    </div>
+
+    {%- if s.callout != blank -%}
+      <div class="bib-callout">
+        <p>{{ s.callout }}</p>
+      </div>
+    {%- endif -%}
+
+    {%- if s.cta_label != blank -%}
+      <a href="{{ s.cta_anchor | default: '#bib-hero' }}" class="bib-btn" data-bib-scroll data-bib-cta="intro">
+        {{ s.cta_label }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIB — Everything You Need",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything You Need to Start Selling"
+    },
+    {
+      "type": "textarea",
+      "id": "para_1",
+      "label": "Paragraph 1",
+      "default": "Business in a Box brings together a carefully balanced range of Zyzven Naturals teas and supplements, giving you a professional product selection to introduce to your customers from day one."
+    },
+    {
+      "type": "textarea",
+      "id": "para_2",
+      "label": "Paragraph 2",
+      "default": "You receive more than inventory. We support you with product and brand training, a digital marketing toolkit, recommended retail pricing, monthly group check-ins and guidance as you build your customer base and reorder your bestsellers."
+    },
+    {
+      "type": "textarea",
+      "id": "callout",
+      "label": "Highlighted callout",
+      "default": "This is wholesale, not MLM. There are no recruitment commissions. Your opportunity comes from retailing genuine Zyzven Naturals products."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Start Your Business in a Box — $999"
+    },
+    {
+      "type": "text",
+      "id": "cta_anchor",
+      "label": "CTA anchor",
+      "default": "#bib-hero"
+    }
+  ],
+  "presets": [{ "name": "BIB — Everything You Need" }]
+}
+{% endschema %}

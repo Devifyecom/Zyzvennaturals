@@ -1,0 +1,822 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'biab.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign s = section.settings
+
+  comment
+    Totals and per-category unit counts, calculated from the product blocks
+  endcomment
+  assign total_cents = 0
+  assign total_units = 0
+  assign total_lines = 0
+  assign units_metabolic = 0
+  assign units_women = 0
+  assign units_men = 0
+  assign units_heart = 0
+  for block in section.blocks
+    assign q = block.settings.qty | default: 0
+    assign unit_cents = 0
+    if block.settings.product != blank
+      assign unit_cents = block.settings.product.selected_or_first_available_variant.price
+    elsif block.settings.price != blank
+      assign unit_cents = block.settings.price | remove: '$' | remove: ',' | strip | times: 100 | round
+    endif
+    assign line_cents = unit_cents | times: q
+    assign total_cents = total_cents | plus: line_cents
+    assign total_units = total_units | plus: q
+    assign total_lines = total_lines | plus: 1
+    case block.settings.category
+      when 'metabolic'
+        assign units_metabolic = units_metabolic | plus: q
+      when 'women'
+        assign units_women = units_women | plus: q
+      when 'men'
+        assign units_men = units_men | plus: q
+      when 'heart'
+        assign units_heart = units_heart | plus: q
+    endcase
+  endfor
+  assign units_str = total_units | append: ''
+
+  assign all_label = s.all_tab_label | replace: '[units]', units_str
+  assign total_label = s.total_label | replace: '[units]', units_str
+
+  assign total_display = total_cents | money
+
+  comment
+    The "Start Your Business" button always goes to the Purchase section,
+    so every buyer passes the destination check and Reseller Terms agreement.
+  endcomment
+  assign box = s.box_product
+  assign box_available = true
+  if box != blank
+    assign box_variant = box.selected_or_first_available_variant
+    assign box_available = box_variant.available
+  endif
+  assign buy_url = '#biab-purchase'
+  if s.cta_url != blank
+    assign buy_url = s.cta_url
+  endif
+-%}
+
+<style>
+  #biab-contents {
+    --bx-ink: #23402c;
+    --bx-ink-hover: #2f5439;
+    --bx-cream: #f7f2e7;
+    --bx-gold: #b8944f;
+    --bx-line: rgba(35, 64, 44, 0.12);
+    scroll-margin-top: {{ s.scroll_offset }}px;
+  }
+
+  /* Heart & Circulation tag (not in biab.css) */
+  #biab-contents .biab-tag--heart { background: #f7e9e2; color: #8a3b24; }
+
+  /* Filtering */
+  #biab-contents .biab-product[hidden] { display: none !important; }
+  #biab-contents .biab-tab__count {
+    margin-left: 6px;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  #biab-contents .biab-status {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+  }
+
+  /* Product links */
+  #biab-contents .biab-product__link { color: inherit; text-decoration: none; }
+  #biab-contents .biab-product__media { position: relative; }
+  #biab-contents .biab-product__media .biab-product__link { display: block; width: 100%; height: 100%; }
+  #biab-contents .biab-product__name .biab-product__link:hover,
+  #biab-contents .biab-product__name .biab-product__link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  #biab-contents .biab-product__link:focus-visible,
+  #biab-contents .biab-cta__btn:focus-visible,
+  #biab-contents .biab-packlist summary:focus-visible {
+    outline: 2px solid var(--bx-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  #biab-contents .biab-product__media img { transition: transform 0.35s ease; }
+  #biab-contents .biab-product__media .biab-product__link:hover img { transform: scale(1.03); }
+  #biab-contents .biab-product__view {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: inherit;
+    opacity: 0.75;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  #biab-contents .biab-product__view:hover { opacity: 1; }
+
+  /* Quantity badge on image + quantity row */
+  #biab-contents .biab-qty-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--bx-ink);
+    color: var(--bx-cream);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    pointer-events: none;
+  }
+  #biab-contents .biab-product__qty {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--bx-line);
+  }
+  #biab-contents .biab-product__qty span { font-size: 11px; letter-spacing: 0.04em; opacity: 0.8; }
+  #biab-contents .biab-product__qty strong { font-size: 15px; font-weight: 700; }
+
+  /* Breakdown table */
+  #biab-contents .biab-breakdown {
+    margin-top: 32px;
+    border-top: 1px solid var(--bx-line);
+    border-bottom: 1px solid var(--bx-line);
+  }
+  #biab-contents .biab-breakdown__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 2px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  #biab-contents .biab-breakdown__toggle::-webkit-details-marker { display: none; }
+  #biab-contents .biab-breakdown__toggle:focus-visible {
+    outline: 2px solid var(--bx-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  #biab-contents .biab-breakdown__title {
+    font-family: var(--font-heading-family, inherit);
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--bx-ink);
+  }
+  #biab-contents .biab-breakdown__hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--bx-ink);
+  }
+  #biab-contents .biab-breakdown__hint-open { display: none; }
+  #biab-contents .biab-breakdown[open] .biab-breakdown__hint-open { display: inline; }
+  #biab-contents .biab-breakdown[open] .biab-breakdown__hint-closed { display: none; }
+  #biab-contents .biab-breakdown__chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.2s ease;
+  }
+  #biab-contents .biab-breakdown[open] .biab-breakdown__chevron { transform: rotate(-135deg) translate(-2px, 0); }
+  #biab-contents .biab-breakdown[open] .biab-breakdown__scroll { padding-bottom: 20px; }
+  #biab-contents .biab-breakdown__toggle:hover .biab-breakdown__hint { text-decoration: underline; text-underline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    #biab-contents .biab-breakdown__chevron { transition: none; }
+  }
+  #biab-contents .biab-breakdown__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #biab-contents .biab-breakdown__table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #222;
+    background: #fff;
+  }
+  #biab-contents .biab-breakdown__table th,
+  #biab-contents .biab-breakdown__table td {
+    padding: 11px 11px;
+    border: 1px solid #d9ddd7;
+    text-align: left;
+    vertical-align: middle;
+  }
+  #biab-contents .biab-breakdown__table th:first-child { width: 48%; }
+  #biab-contents .biab-breakdown__table thead th {
+    background: #1f3b30;
+    border-color: #1f3b30;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  #biab-contents .biab-breakdown__table tbody th { font-weight: 700; }
+  #biab-contents .biab-breakdown__table tbody tr:nth-child(even) { background: #e8eee8; }
+  #biab-contents .biab-breakdown__table tfoot th,
+  #biab-contents .biab-breakdown__table tfoot td {
+    background: #f3efe4;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  #biab-contents .biab-breakdown__scroll:focus-visible { outline: 2px solid var(--bx-gold); outline-offset: 2px; }
+
+  /* Packing list */
+  #biab-contents .biab-packlist {
+    margin-top: 24px;
+    background: #fff;
+    border: 1px solid var(--bx-line);
+    border-radius: 12px;
+  }
+  #biab-contents .biab-packlist summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--bx-ink);
+  }
+  #biab-contents .biab-packlist summary::-webkit-details-marker { display: none; }
+  #biab-contents .biab-packlist summary::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.2s ease;
+  }
+  #biab-contents .biab-packlist[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+  #biab-contents .biab-packlist__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+    margin: 0;
+    padding: 0 22px 18px;
+    list-style: none;
+  }
+  #biab-contents .biab-packlist__list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--bx-line);
+    font-size: 14px;
+  }
+  #biab-contents .biab-packlist__list strong { white-space: nowrap; }
+  #biab-contents .biab-packlist__foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 22px;
+    padding: 14px 0 18px;
+    border-top: 1.5px solid var(--bx-ink);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bx-ink);
+  }
+
+  /* Start Your Business */
+  #biab-contents .biab-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+    text-align: center;
+    scroll-margin-top: {{ s.scroll_offset }}px;
+  }
+  #biab-contents .biab-cta__price { margin: 0; font-size: 15px; letter-spacing: 0.02em; }
+  #biab-contents .biab-cta__price strong { font-size: 18px; color: var(--bx-ink); }
+  #biab-contents .biab-cta form { margin: 0; }
+  #biab-contents .biab-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 38px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--bx-ink);
+    color: var(--bx-cream);
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  #biab-contents .biab-cta__btn:hover { background: var(--bx-ink-hover); }
+  #biab-contents .biab-cta__btn[aria-disabled="true"],
+  #biab-contents .biab-cta__btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  #biab-contents .biab-cta__note { margin: 0; font-size: 13px; opacity: 0.75; }
+  #biab-contents .biab-cta__warn {
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px dashed var(--bx-gold);
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  #biab-contents .biab-visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 749px) {
+    #biab-contents .biab-packlist__list { grid-template-columns: 1fr; }
+    #biab-contents .biab-packlist summary { padding: 16px 18px; }
+    #biab-contents .biab-packlist__list { padding: 0 18px 14px; }
+    #biab-contents .biab-packlist__foot { margin: 0 18px; }
+    #biab-contents .biab-cta__btn { width: 100%; }
+    #biab-contents .biab-cta form { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #biab-contents .biab-product__media img,
+    #biab-contents .biab-packlist summary::after { transition: none; }
+  }
+</style>
+
+<div class="biab biab--cream" data-biab-contents>
+  <section class="biab-section" id="biab-contents" aria-labelledby="biab-contents-title">
+    <div class="biab-inner">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-contents-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+        {%- if s.subheading != blank -%}<p class="biab-lede">{{ s.subheading }}</p>{%- endif -%}
+      </div>
+
+      {%- if s.show_tabs -%}
+        <div class="biab-tabs" role="tablist" aria-label="Filter products by category" data-biab-tabs>
+          <button type="button" class="biab-tab" role="tab" aria-selected="true" tabindex="0" data-filter="all">{{ all_label }}</button>
+          {%- if units_metabolic > 0 -%}
+            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="metabolic">Metabolic Wellness{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_metabolic }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
+          {%- endif -%}
+          {%- if units_women > 0 -%}
+            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="women">Women's Wellness{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_women }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
+          {%- endif -%}
+          {%- if units_men > 0 -%}
+            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="men">Men's Wellness{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_men }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
+          {%- endif -%}
+          {%- if units_heart > 0 -%}
+            <button type="button" class="biab-tab" role="tab" aria-selected="false" tabindex="-1" data-filter="heart">Heart &amp; Circulation{% if s.show_tab_counts %}<span class="biab-tab__count">{{ units_heart }}<span class="biab-visually-hidden"> units</span></span>{% endif %}</button>
+          {%- endif -%}
+        </div>
+        <p class="biab-status" role="status" aria-live="polite" data-biab-status>
+          Showing all {{ total_lines }} products, {{ total_units }} units in total
+        </p>
+      {%- endif -%}
+
+      <div class="biab-grid biab-grid--4" data-biab-grid>
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign b = block.settings
+            assign pname = b.name
+            if b.product != blank
+              if pname == blank or pname == 'Product name'
+                assign pname = b.product.title
+              endif
+            endif
+            assign unit_cents = 0
+            if b.product != blank
+              assign unit_cents = b.product.selected_or_first_available_variant.price
+            elsif b.price != blank
+              assign unit_cents = b.price | remove: '$' | remove: ',' | strip | times: 100 | round
+            endif
+            assign line_cents = unit_cents | times: b.qty
+            assign product_url = blank
+            if b.link != blank
+              assign product_url = b.link
+            elsif b.product != blank
+              assign product_url = b.product.url
+            endif
+          -%}
+          <article class="biab-card biab-product" data-category="{{ b.category }}" data-qty="{{ b.qty }}" {{ block.shopify_attributes }}>
+            <div class="biab-product__media">
+              {%- if s.show_qty_badge -%}
+                <span class="biab-qty-badge" aria-hidden="true">&times;{{ b.qty }}</span>
+              {%- endif -%}
+
+              {%- capture product_image -%}
+                {%- if b.image != blank -%}
+                  {{ b.image | image_url: width: 600 | image_tag: widths: '240, 400, 600', sizes: '(min-width: 990px) 260px, 45vw', loading: 'lazy', alt: pname }}
+                {%- elsif b.product != blank and b.product.featured_image != blank -%}
+                  {{ b.product.featured_image | image_url: width: 600 | image_tag: widths: '240, 400, 600', sizes: '(min-width: 990px) 260px, 45vw', loading: 'lazy', alt: pname }}
+                {%- else -%}
+                  {%- if request.design_mode -%}<span class="biab-small">Link a product or add an image to this block.</span>{%- endif -%}
+                {%- endif -%}
+              {%- endcapture -%}
+
+              {%- if product_url != blank -%}
+                <a class="biab-product__link" href="{{ product_url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">{{ product_image }}</a>
+              {%- else -%}
+                {{ product_image }}
+              {%- endif -%}
+            </div>
+
+            <div class="biab-product__body">
+              <span class="biab-tag biab-tag--{{ b.category }}">
+                {%- case b.category -%}
+                  {%- when 'metabolic' -%}Metabolic Wellness
+                  {%- when 'women' -%}Women's Wellness
+                  {%- when 'men' -%}Men's Wellness
+                  {%- when 'heart' -%}Heart &amp; Circulation
+                {%- endcase -%}
+              </span>
+              <h3 class="biab-product__name">
+                {%- if product_url != blank -%}
+                  <a class="biab-product__link" href="{{ product_url }}" target="_blank" rel="noopener">{{ pname }}<span class="biab-visually-hidden"> (opens in a new tab)</span></a>
+                {%- else -%}
+                  {{ pname }}
+                {%- endif -%}
+              </h3>
+              {%- if product_url != blank and s.show_view_link -%}
+                <a class="biab-product__view" href="{{ product_url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">{{ s.view_link_label }}</a>
+              {%- endif -%}
+              {%- if s.show_card_prices and unit_cents > 0 -%}
+                <p class="biab-product__meta">{{ b.qty }} &times; {{ unit_cents | money }} RRP each</p>
+                <div class="biab-product__total">
+                  <span>Retail value</span>
+                  <strong>{{ line_cents | money }}</strong>
+                </div>
+              {%- else -%}
+                <p class="biab-product__qty">
+                  <span>In your box</span>
+                  <strong>{{ b.qty }} {% if b.qty == 1 %}unit{% else %}units{% endif %}</strong>
+                </p>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+
+      {%- if s.show_breakdown and section.blocks.size > 0 -%}
+        <details class="biab-breakdown"{% if s.breakdown_open %} open{% endif %}>
+          <summary class="biab-breakdown__toggle">
+            <span class="biab-breakdown__title">{{ s.breakdown_heading | default: 'Box breakdown' }}</span>
+            <span class="biab-breakdown__hint">
+              <span class="biab-breakdown__hint-closed">Show prices</span>
+              <span class="biab-breakdown__hint-open">Hide prices</span>
+              <span class="biab-breakdown__chevron" aria-hidden="true"></span>
+            </span>
+          </summary>
+          <div class="biab-breakdown__scroll" tabindex="0" role="region" aria-label="{{ s.breakdown_heading | default: 'Box breakdown' | escape }}">
+            <table class="biab-breakdown__table">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">RRP each</th>
+                  <th scope="col">Total RRP</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for block in section.blocks -%}
+                  {%- liquid
+                    assign b = block.settings
+                    assign pname = b.name
+                    if b.product != blank
+                      if pname == blank or pname == 'Product name'
+                        assign pname = b.product.title
+                      endif
+                    endif
+                    assign unit_cents = 0
+                    if b.product != blank
+                      assign unit_cents = b.product.selected_or_first_available_variant.price
+                    elsif b.price != blank
+                      assign unit_cents = b.price | remove: '$' | remove: ',' | strip | times: 100 | round
+                    endif
+                    assign line_cents = unit_cents | times: b.qty
+                  -%}
+                  <tr>
+                    <th scope="row">{{ pname }}</th>
+                    <td>{{ b.qty }}</td>
+                    <td>{{ unit_cents | money }}</td>
+                    <td>{{ line_cents | money }}</td>
+                  </tr>
+                {%- endfor -%}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Total</th>
+                  <td>{{ total_units }}</td>
+                  <td></td>
+                  <td>{{ total_display }}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </details>
+      {%- endif -%}
+
+      {%- if s.show_packlist and section.blocks.size > 0 -%}
+        <details class="biab-packlist"{% if s.packlist_open %} open{% endif %}>
+          <summary>{{ s.packlist_label }} ({{ total_units }} units)</summary>
+          <ul class="biab-packlist__list" role="list">
+            {%- for block in section.blocks -%}
+              <li><span>{% if block.settings.product != blank and block.settings.name == blank %}{{ block.settings.product.title }}{% else %}{{ block.settings.name }}{% endif %}</span><strong>{{ block.settings.qty }} &times;</strong></li>
+            {%- endfor -%}
+          </ul>
+          <p class="biab-packlist__foot"><span>{{ total_lines }} products</span><span>{{ total_units }} units</span></p>
+        </details>
+      {%- endif -%}
+
+      <div class="biab-total">
+        <p class="biab-total__label">{{ total_label }}</p>
+        <p class="biab-total__value">{{ total_display }}</p>
+      </div>
+
+      {%- if s.mix_note != blank -%}
+        <div class="biab-note" style="margin-top:32px;">{{ s.mix_note }}</div>
+      {%- endif -%}
+
+      {%- if s.show_cta -%}
+        <div class="biab-cta" id="biab-buy" data-biab-buy data-buy-url="{{ buy_url }}">
+          {%- if box != blank -%}
+            {%- if s.show_box_price -%}
+              <p class="biab-cta__price">
+                Box price <strong>{{ box_variant.price | money }}</strong>
+                <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="biab-visually-hidden">, </span>
+                Retail value {{ total_display }}
+              </p>
+            {%- endif -%}
+
+            {%- if box_available -%}
+              <a class="biab-cta__btn" href="{{ buy_url }}">{{ s.cta_label }}</a>
+            {%- else -%}
+              <span class="biab-cta__btn" aria-disabled="true">Sold out</span>
+            {%- endif -%}
+
+            {%- if s.cta_note != blank -%}<p class="biab-cta__note">{{ s.cta_note | replace: '[units]', units_str }}</p>{%- endif -%}
+          {%- else -%}
+            <a class="biab-cta__btn" href="{{ buy_url }}">{{ s.cta_label }}</a>
+            {%- if s.cta_note != blank -%}<p class="biab-cta__note">{{ s.cta_note | replace: '[units]', units_str }}</p>{%- endif -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    var ANCHOR = 'biab-contents';
+    var BUY_ANCHOR = 'biab-buy';
+    // Links to any of these anchors, or any button/link whose text is "See What's Inside",
+    // are sent to the full product list with "All" selected.
+    var SEE_INSIDE_HASHES = ['#biab-contents', '#whats-inside', '#what-s-inside', '#see-whats-inside', '#contents', '#inside', '#products', '#box-contents'];
+    var SEE_INSIDE_TEXT = /see\s+what[\u2019']?s\s+inside/i;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function getSection() { return document.getElementById(ANCHOR); }
+    function getRoot() { var s = getSection(); return s ? (s.closest('[data-biab-contents]') || s) : null; }
+
+    // ---------- Category filter ----------
+    function applyFilter(filter, moveFocus) {
+      var root = getRoot();
+      if (!root) return;
+      var tabs = root.querySelectorAll('[data-biab-tabs] [data-filter]');
+      var cards = root.querySelectorAll('.biab-product');
+      var status = root.querySelector('[data-biab-status]');
+      var lines = 0, units = 0;
+
+      Array.prototype.forEach.call(tabs, function (tab) {
+        var active = tab.getAttribute('data-filter') === filter;
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        tab.setAttribute('tabindex', active ? '0' : '-1');
+        tab.classList.toggle('is-active', active);
+        tab.classList.toggle('active', active);
+        if (active && moveFocus) tab.focus();
+      });
+      Array.prototype.forEach.call(cards, function (card) {
+        var show = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.hidden = !show;
+        card.removeAttribute('aria-hidden');
+        card.classList.remove('is-hidden', 'hidden');
+        card.style.removeProperty('display');
+        if (show) { lines++; units += parseInt(card.getAttribute('data-qty'), 10) || 0; }
+      });
+      root.setAttribute('data-active-filter', filter);
+      if (status) {
+        status.textContent = filter === 'all'
+          ? 'Showing all ' + lines + ' products, ' + units + ' units in total'
+          : 'Showing ' + lines + (lines === 1 ? ' product, ' : ' products, ') + units + ' units';
+      }
+    }
+
+    function showAll() { applyFilter('all'); }
+
+    function goToContents() {
+      var section = getSection();
+      if (!section) return;
+      showAll();
+      section.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      // Re-apply after other scripts (theme or biab.js) have finished reacting to the click
+      setTimeout(showAll, 60);
+      setTimeout(showAll, 700);
+    }
+
+    // ---------- "Start Your Business" ----------
+    function startBusiness() {
+      // Handled by the Purchase section (destination + Reseller Terms). Fall back to the
+      // configured link if that section isn't on this page.
+      var purchase = document.getElementById('biab-purchase');
+      if (purchase) {
+        purchase.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        return true;
+      }
+      var root = getRoot();
+      var buy = root && root.querySelector('[data-biab-buy]');
+      var url = buy && buy.getAttribute('data-buy-url');
+      if (url && url.charAt(0) !== '#') { window.location.href = url; return true; }
+      return false;
+    }
+
+    function isSeeInside(el) {
+      if (el.hasAttribute('data-biab-see-inside')) return true;
+      var href = el.getAttribute('href');
+      if (href) {
+        var url = new URL(el.href, window.location.href);
+        if (url.pathname === window.location.pathname && SEE_INSIDE_HASHES.indexOf(url.hash.toLowerCase()) !== -1) return true;
+      }
+      return SEE_INSIDE_TEXT.test((el.textContent || '').trim());
+    }
+
+    function bindTabs() {
+      var root = getRoot();
+      if (!root || root.hasAttribute('data-biab-bound')) return;
+      root.setAttribute('data-biab-bound', '');
+      var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-biab-tabs] [data-filter]'));
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { applyFilter(tab.getAttribute('data-filter')); });
+        tab.addEventListener('keydown', function (e) {
+          var next = null;
+          if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+          if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+          if (e.key === 'Home') next = tabs[0];
+          if (e.key === 'End') next = tabs[tabs.length - 1];
+          if (next) { e.preventDefault(); applyFilter(next.getAttribute('data-filter'), true); }
+        });
+      });
+      showAll();
+    }
+
+    // Capture phase: runs before any other click handler on the page, so nothing can
+    // send the customer to a category view first.
+    if (!window.__biabSeeInsideBound) {
+      window.__biabSeeInsideBound = true;
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('a, button, [data-biab-see-inside]');
+        if (!el || !getSection()) return;
+        if (getRoot().contains(el) && el.hasAttribute('data-filter')) return; // the tabs themselves
+
+        var href = el.getAttribute('href') || '';
+        if (href.indexOf('#' + BUY_ANCHOR) !== -1) {
+          if (startBusiness()) { e.preventDefault(); e.stopPropagation(); }
+          return;
+        }
+        if (isSeeInside(el)) {
+          e.preventDefault();
+          e.stopPropagation();
+          goToContents();
+          if (history.replaceState) history.replaceState(null, '', '#' + ANCHOR);
+        }
+      }, true);
+
+      function fromUrl() {
+        var h = window.location.hash.toLowerCase();
+        if (SEE_INSIDE_HASHES.indexOf(h) !== -1) setTimeout(goToContents, 150);
+      }
+      window.addEventListener('hashchange', fromUrl);
+      window.addEventListener('pageshow', function () { showAll(); });
+      document.addEventListener('shopify:section:load', bindTabs);
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { bindTabs(); fromUrl(); });
+      } else {
+        bindTabs(); fromUrl();
+      }
+      // Once biab.js (deferred) has run, make sure the page still starts on "All"
+      window.addEventListener('load', showAll);
+    } else {
+      bindTabs();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BIAB — What's inside",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's Inside Your Box" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "40 Products, Ready to Retail" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Nine best-selling lines across the areas customers ask about most. Every unit arrives sealed, labelled and ready to sell from day one." },
+    { "type": "range", "id": "scroll_offset", "label": "Space above section when scrolled to", "info": "Increase if a sticky header covers the heading.", "min": 0, "max": 200, "step": 10, "unit": "px", "default": 90 },
+
+    { "type": "header", "content": "Filter tabs" },
+    { "type": "checkbox", "id": "show_tabs", "label": "Show category filter tabs", "default": true },
+    { "type": "text", "id": "all_tab_label", "label": "\"All\" tab label", "info": "[units] is replaced with the total number of units.", "default": "All [units] Products" },
+    { "type": "checkbox", "id": "show_tab_counts", "label": "Show unit count on each category tab", "default": true },
+
+    { "type": "header", "content": "Product cards" },
+    { "type": "checkbox", "id": "show_qty_badge", "label": "Show quantity badge on product images", "default": true },
+    { "type": "checkbox", "id": "show_view_link", "label": "Show \"View product\" link on cards", "default": true },
+    { "type": "text", "id": "view_link_label", "label": "\"View product\" link text", "default": "View product details" },
+
+    { "type": "checkbox", "id": "show_card_prices", "label": "Show price and retail value on cards", "info": "Price comes from the linked product automatically.", "default": true },
+
+    { "type": "header", "content": "Breakdown table" },
+    { "type": "checkbox", "id": "show_breakdown", "label": "Show breakdown table", "default": true },
+    { "type": "text", "id": "breakdown_heading", "label": "Dropdown title", "default": "Box breakdown" },
+    { "type": "checkbox", "id": "breakdown_open", "label": "Open breakdown by default", "info": "Leave unticked to keep the table hidden until a customer clicks it.", "default": false },
+
+    { "type": "header", "content": "Packing list" },
+    { "type": "checkbox", "id": "show_packlist", "label": "Show full packing list", "default": false },
+    { "type": "checkbox", "id": "packlist_open", "label": "Open packing list by default", "default": false },
+    { "type": "text", "id": "packlist_label", "label": "Packing list title", "default": "View the full packing list" },
+
+    { "type": "header", "content": "Total" },
+    { "type": "text", "id": "total_label", "label": "Total label", "info": "[units] is replaced with the total number of units.", "default": "Total retail value: [units] units at RRP" },
+    { "type": "richtext", "id": "mix_note", "label": "Why this mix works", "default": "<p><strong>Why this mix works.</strong> Metabolic wellness products help you win new customers, because many people are already looking for them. Women's wellness covers four products for different life stages. Men's wellness and heart health mean you can sell to the whole household, not just one person. Stock is weighted towards GLUKOBALANS (6 units) and Blood Sugar, Alki Detox and Freja Advance (5 each).</p>" },
+
+    { "type": "header", "content": "Start Your Business button" },
+    { "type": "paragraph", "content": "This button takes customers to the Purchase section, where they choose their destination and agree to the Reseller Terms before buying. Buttons linked to #biab-contents scroll here with all products shown." },
+    { "type": "checkbox", "id": "show_cta", "label": "Show button below the products", "default": true },
+    { "type": "product", "id": "box_product", "label": "Box product", "info": "Used for the price and sold-out status shown here." },
+    { "type": "url", "id": "cta_url", "label": "Link when the Purchase section is on another page", "info": "Leave empty when the Purchase section is on this page. Must lead to a page with the Reseller Terms agreement, never straight to checkout." },
+    { "type": "text", "id": "cta_label", "label": "Button text", "default": "Start Your Business" },
+    { "type": "checkbox", "id": "show_box_price", "label": "Show box price and retail value", "default": true },
+    { "type": "text", "id": "cta_note", "label": "Note under button", "info": "[units] is replaced with the total number of units.", "default": "One complete box of [units] sealed units. Shipping is shown before you pay." }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product", "info": "Pulls the image and current price automatically. Total = price × quantity." },
+        { "type": "text", "id": "name", "label": "Product name", "info": "Leave empty to use the linked product's title." },
+        { "type": "number", "id": "qty", "label": "Quantity in box", "default": 6 },
+        { "type": "text", "id": "price", "label": "Manual RRP each (number only)", "info": "Only used if no product is linked above." },
+        {
+          "type": "select", "id": "category", "label": "Category", "default": "metabolic",
+          "options": [
+            { "value": "metabolic", "label": "Metabolic Wellness" },
+            { "value": "women", "label": "Women's Wellness" },
+            { "value": "men", "label": "Men's Wellness" },
+            { "value": "heart", "label": "Heart & Circulation" }
+          ]
+        },
+        { "type": "url", "id": "link", "label": "Custom product page link", "info": "Optional. By default the card links to the linked product's page, opening in a new tab." },
+        { "type": "image_picker", "id": "image", "label": "Custom image", "info": "Optional. Overrides the linked product's image." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — What's inside",
+      "blocks": [
+        { "type": "item", "settings": { "name": "GLUKOBALANS", "qty": 6, "price": "69.99", "category": "metabolic" } },
+        { "type": "item", "settings": { "name": "Blood Sugar", "qty": 5, "price": "49.99", "category": "metabolic" } },
+        { "type": "item", "settings": { "name": "Alki Detox with Moringa", "qty": 5, "price": "39.99", "category": "metabolic" } },
+        { "type": "item", "settings": { "name": "Freja Advance", "qty": 5, "price": "49.99", "category": "women" } },
+        { "type": "item", "settings": { "name": "Freja Balance", "qty": 4, "price": "39.99", "category": "women" } },
+        { "type": "item", "settings": { "name": "Women's Brew", "qty": 4, "price": "39.99", "category": "women" } },
+        { "type": "item", "settings": { "name": "Manthoric Advance", "qty": 4, "price": "69.99", "category": "men" } },
+        { "type": "item", "settings": { "name": "Uterine Tonic Tea", "qty": 4, "price": "39.99", "category": "women" } },
+        { "type": "item", "settings": { "name": "Pressure Balance", "qty": 3, "price": "49.99", "category": "heart" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

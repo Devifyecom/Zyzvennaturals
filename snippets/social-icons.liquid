@@ -1,0 +1,111 @@
+{% comment %}
+  Renders social icons.
+  Accepts:
+  - class: {String} a class to be added to the <ul> element (optional).
+
+  Usage:
+  {% render 'social-icons',
+    class: 'my-class'
+  %}
+{% endcomment %}
+
+<ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
+  {%- if settings.social_facebook_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96528 7.69231H6.64352V4.61538C6.64352 3.76615 7.23878 3.84615 7.97222 3.84615H9.30093V0H6.64352C5.58634 0 4.57245 0.486263 3.82491 1.35181C3.07737 2.21737 2.65741 3.39131 2.65741 4.61538V7.69231H0V11.5385H2.65741V20H6.64352V11.5385H8.63657L9.96528 7.69231Z" fill="white"/>
+          </svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_instagram_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_instagram_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M14.9016 5.03594H14.9105M5.48438 1H14.4531C16.9298 1 18.9375 3.00772 18.9375 5.48438V14.4531C18.9375 16.9298 16.9298 18.9375 14.4531 18.9375H5.48438C3.00772 18.9375 1 16.9298 1 14.4531V5.48438C1 3.00772 3.00772 1 5.48438 1ZM13.5563 9.40372C13.6669 10.1501 13.5394 10.9125 13.1919 11.5822C12.8444 12.252 12.2945 12.7952 11.6205 13.1344C10.9464 13.4737 10.1826 13.5918 9.43761 13.4719C8.69261 13.352 8.00438 13.0003 7.47081 12.4667C6.93724 11.9331 6.5855 11.2449 6.46562 10.4999C6.34574 9.75489 6.46382 8.99106 6.80307 8.31704C7.14233 7.64302 7.68547 7.09314 8.35526 6.7456C9.02504 6.39806 9.78736 6.27057 10.5338 6.38125C11.2952 6.49415 12 6.84894 12.5443 7.3932C13.0886 7.93746 13.4433 8.64234 13.5563 9.40372Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_youtube_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_youtube_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="19" viewBox="0 0 27 19" fill="none">
+            <path d="M26.6382 4.09746C26.6382 4.09746 26.3755 2.23594 25.5662 1.41855C24.5414 0.342774 23.3958 0.3375 22.8703 0.274219C19.1076 -1.50874e-07 13.4584 0 13.4584 0H13.4479C13.4479 0 7.79861 -1.50874e-07 4.03594 0.274219C3.51042 0.3375 2.36481 0.342774 1.34006 1.41855C0.530768 2.23594 0.273267 4.09746 0.273267 4.09746C0.273267 4.09746 0 6.28594 0 8.46914V10.5152C0 12.6984 0.268011 14.8869 0.268011 14.8869C0.268011 14.8869 0.530768 16.7484 1.3348 17.5658C2.35955 18.6416 3.70486 18.6047 4.30395 18.7207C6.45855 18.9264 13.4531 18.9896 13.4531 18.9896C13.4531 18.9896 19.1076 18.9791 22.8703 18.7102C23.3958 18.6469 24.5414 18.6416 25.5662 17.5658C26.3755 16.7484 26.6382 14.8869 26.6382 14.8869C26.6382 14.8869 26.9062 12.7037 26.9062 10.5152V8.46914C26.9062 6.28594 26.6382 4.09746 26.6382 4.09746ZM10.6732 12.999V5.41055L17.941 9.21797L10.6732 12.999Z" fill="white"/>
+          </svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tiktok_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_tiktok_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19" fill="none">
+            <path d="M11.7231 0H8.57719V12.942C8.57719 14.4841 7.36726 15.7507 5.86154 15.7507C4.35582 15.7507 3.14587 14.4841 3.14587 12.942C3.14587 11.4276 4.32893 10.1884 5.78089 10.1333V6.88407C2.58123 6.93912 0 9.61015 0 12.942C0 16.3015 2.635 19 5.88844 19C9.14182 19 11.7768 16.2739 11.7768 12.942V6.30578C12.9599 7.18696 14.4118 7.71015 15.9444 7.7377V4.48841C13.5783 4.4058 11.7231 2.42319 11.7231 0Z" fill="white"/>
+          </svg>
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_twitter_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_twitter_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-twitter.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_pinterest_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_pinterest_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-pinterest.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_snapchat_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_snapchat_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-snapchat.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tumblr_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_tumblr_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-tumblr.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_vimeo_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_vimeo_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-vimeo.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+</ul>

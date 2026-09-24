@@ -1,0 +1,410 @@
+/* ==========================================================================
+   Business in a Box — reseller landing page
+   Self-contained design system. Scoped under .biab so it cannot leak into
+   the rest of the theme.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+.biab {
+  /* Palette */
+  --biab-green-900: #12301f;
+  --biab-green-800: #1a4429;
+  --biab-green-700: #235736;
+  --biab-green-100: #e4ede7;
+  --biab-gold: #c39a45;
+  --biab-gold-600: #a8822f;
+  --biab-gold-100: #f6edd9;
+  --biab-cream: #faf6ee;
+  --biab-cream-200: #f2ead9;
+  --biab-white: #ffffff;
+  --biab-ink: #22262b;
+  --biab-ink-600: #4d545c;
+  --biab-line: #e3ddd0;
+
+  /* Type */
+  --biab-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --biab-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* 8px spacing scale */
+  --biab-1: 8px;
+  --biab-2: 16px;
+  --biab-3: 24px;
+  --biab-4: 32px;
+  --biab-5: 40px;
+  --biab-6: 56px;
+  --biab-7: 72px;
+  --biab-8: 96px;
+
+  --biab-radius: 16px;
+  --biab-radius-sm: 10px;
+  --biab-shadow: 0 2px 4px rgba(18, 48, 31, .04), 0 12px 32px rgba(18, 48, 31, .07);
+  --biab-shadow-lg: 0 4px 8px rgba(18, 48, 31, .06), 0 24px 56px rgba(18, 48, 31, .12);
+
+  font-family: var(--biab-sans);
+  color: var(--biab-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.biab *,
+.biab *::before,
+.biab *::after { box-sizing: border-box; }
+
+/* ---------- Layout ---------- */
+.biab-section { padding: var(--biab-7) var(--biab-3); }
+.biab-section--tight { padding-top: var(--biab-5); padding-bottom: var(--biab-5); }
+.biab-inner { max-width: 1180px; margin: 0 auto; }
+.biab-inner--narrow { max-width: 860px; }
+
+.biab--cream { background: var(--biab-cream); }
+.biab--white { background: var(--biab-white); }
+.biab--green { background: var(--biab-green-800); color: #f3f0e8; }
+.biab--green .biab-h2,
+.biab--green .biab-eyebrow { color: #fff; }
+.biab--green .biab-lede { color: rgba(255,255,255,.82); }
+
+/* ---------- Type ---------- */
+.biab-eyebrow {
+  font-family: var(--biab-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--biab-gold-600);
+  margin: 0 0 var(--biab-2);
+}
+.biab--green .biab-eyebrow { color: var(--biab-gold); }
+
+.biab-h1 {
+  font-family: var(--biab-serif);
+  font-weight: 600;
+  font-size: clamp(34px, 5.2vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--biab-green-900);
+  margin: 0 0 var(--biab-3);
+}
+.biab-h2 {
+  font-family: var(--biab-serif);
+  font-weight: 600;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.15;
+  color: var(--biab-green-900);
+  margin: 0 0 var(--biab-2);
+}
+.biab-h3 {
+  font-family: var(--biab-serif);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--biab-green-900);
+  margin: 0 0 var(--biab-1);
+}
+.biab-lede {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--biab-ink-600);
+  margin: 0 0 var(--biab-3);
+}
+.biab-body { font-size: 16px; line-height: 1.7; color: var(--biab-ink-600); margin: 0 0 var(--biab-2); }
+.biab-small { font-size: 13px; line-height: 1.6; color: var(--biab-ink-600); }
+.biab-head { text-align: center; max-width: 720px; margin: 0 auto var(--biab-6); }
+.biab-head .biab-lede { margin-bottom: 0; }
+
+.biab-rule {
+  width: 56px; height: 3px; border: 0; border-radius: 3px;
+  background: var(--biab-gold); margin: 0 0 var(--biab-3);
+}
+.biab-head .biab-rule { margin-left: auto; margin-right: auto; }
+
+/* ---------- Buttons ---------- */
+.biab-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--biab-sans); font-size: 16px; font-weight: 600;
+  padding: 16px 30px; border-radius: 999px; border: 2px solid transparent;
+  text-decoration: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  line-height: 1.2; text-align: center;
+}
+.biab-btn--gold { background: var(--biab-gold); color: #1d1a12; box-shadow: 0 6px 18px rgba(195,154,69,.32); }
+.biab-btn--gold:hover { background: var(--biab-gold-600); transform: translateY(-1px); color: #1d1a12; }
+.biab-btn--outline { background: transparent; color: var(--biab-green-800); border-color: rgba(26,68,41,.3); }
+.biab-btn--outline:hover { border-color: var(--biab-green-800); background: rgba(26,68,41,.05); }
+.biab--green .biab-btn--outline { color: #fff; border-color: rgba(255,255,255,.4); }
+.biab--green .biab-btn--outline:hover { background: rgba(255,255,255,.1); }
+.biab-btn--block { width: 100%; }
+.biab-btn:focus-visible { outline: 3px solid var(--biab-gold); outline-offset: 3px; }
+
+/* ---------- Cards ---------- */
+.biab-card {
+  background: var(--biab-white);
+  border: 1px solid var(--biab-line);
+  border-radius: var(--biab-radius);
+  padding: var(--biab-4);
+  box-shadow: var(--biab-shadow);
+}
+.biab-grid { display: grid; gap: var(--biab-3); }
+.biab-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.biab-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.biab-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ---------- Hero ---------- */
+.biab-hero { background: linear-gradient(180deg, var(--biab-cream) 0%, #fff 100%); }
+.biab-hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--biab-6); align-items: center; }
+.biab-hero__price {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--biab-1) var(--biab-2);
+  padding: var(--biab-2) 0; margin-bottom: var(--biab-3);
+  border-top: 1px solid var(--biab-line); border-bottom: 1px solid var(--biab-line);
+}
+.biab-hero__amount { font-family: var(--biab-serif); font-size: 40px; font-weight: 700; color: var(--biab-green-900); }
+.biab-hero__suffix { font-size: 15px; color: var(--biab-ink-600); }
+.biab-hero__rrp { font-size: 15px; color: var(--biab-ink-600); }
+.biab-hero__rrp strong { color: var(--biab-green-800); }
+.biab-hero__ctas { display: flex; flex-wrap: wrap; gap: var(--biab-2); }
+.biab-hero__media { position: relative; border-radius: var(--biab-radius); overflow: hidden; box-shadow: var(--biab-shadow-lg); }
+.biab-hero__media img { display: block; width: 100%; height: auto; }
+.biab-hero__placeholder {
+  aspect-ratio: 4/3; display: grid; place-items: center; text-align: center; padding: var(--biab-4);
+  background: var(--biab-green-100); color: var(--biab-green-800); font-size: 14px;
+}
+
+/* Trust strip */
+.biab-trustbar { border-top: 1px solid var(--biab-line); background: var(--biab-white); }
+.biab-trustbar__list {
+  list-style: none; margin: 0; padding: var(--biab-3) var(--biab-3);
+  max-width: 1180px; margin-inline: auto;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--biab-2) var(--biab-4);
+}
+.biab-trustbar__list li {
+  font-size: 13.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--biab-green-800); display: flex; align-items: center; gap: 10px;
+}
+.biab-trustbar__list li::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--biab-gold); flex: 0 0 auto;
+}
+
+/* ---------- Stats ---------- */
+.biab-stat { text-align: center; position: relative; }
+.biab-stat__label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--biab-ink-600); margin: 0 0 var(--biab-1); }
+.biab-stat__value { font-family: var(--biab-serif); font-size: clamp(34px, 4.4vw, 50px); font-weight: 700; color: var(--biab-green-900); line-height: 1; margin: 0 0 var(--biab-1); }
+.biab-stat--accent { background: var(--biab-green-800); border-color: var(--biab-green-800); }
+.biab-stat--accent .biab-stat__label { color: rgba(255,255,255,.72); }
+.biab-stat--accent .biab-stat__value { color: var(--biab-gold); }
+.biab-stat--accent .biab-stat__note { color: rgba(255,255,255,.8); }
+.biab-stat__note { font-size: 14px; color: var(--biab-ink-600); margin: 0; }
+
+.biab-plain {
+  margin-top: var(--biab-5); padding: var(--biab-4);
+  background: var(--biab-gold-100); border-left: 4px solid var(--biab-gold);
+  border-radius: var(--biab-radius-sm);
+}
+.biab-plain p { margin: 0 0 var(--biab-1); font-size: 17px; line-height: 1.65; color: var(--biab-ink); }
+.biab-plain p:last-child { margin-bottom: 0; }
+.biab-disclaimer {
+  margin-top: var(--biab-3); font-size: 13px; line-height: 1.65; color: var(--biab-ink-600);
+  padding: var(--biab-2) var(--biab-3); background: var(--biab-white);
+  border: 1px solid var(--biab-line); border-radius: var(--biab-radius-sm);
+}
+
+/* ---------- Founders ---------- */
+.biab-founders__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: var(--biab-6); align-items: center; }
+.biab-founders__media { border-radius: var(--biab-radius); overflow: hidden; box-shadow: var(--biab-shadow-lg); }
+.biab-founders__media img { display: block; width: 100%; height: auto; }
+.biab-quote {
+  margin: var(--biab-4) 0 0; padding-left: var(--biab-3);
+  border-left: 3px solid var(--biab-gold);
+  font-family: var(--biab-serif); font-size: 21px; line-height: 1.45; color: var(--biab-green-900);
+}
+.biab-quote cite { display: block; margin-top: var(--biab-1); font-family: var(--biab-sans); font-size: 13px; font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--biab-ink-600); }
+
+/* ---------- Proof tiles ---------- */
+.biab-proof { text-align: left; }
+.biab-proof__icon { width: 40px; height: 40px; color: var(--biab-gold-600); margin-bottom: var(--biab-2); }
+.biab-proof__icon svg { width: 100%; height: 100%; }
+.biab-flags { display: flex; flex-wrap: wrap; gap: var(--biab-2); margin-top: var(--biab-2); }
+.biab-flag { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--biab-green-800); background: var(--biab-white); border: 1px solid var(--biab-line); border-radius: 999px; padding: 8px 16px; }
+.biab-flag span:first-child { font-size: 19px; line-height: 1; }
+
+/* ---------- Contents ---------- */
+.biab-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--biab-1); margin-bottom: var(--biab-5); }
+.biab-tab {
+  font-family: var(--biab-sans); font-size: 14px; font-weight: 600;
+  padding: 11px 22px; border-radius: 999px; cursor: pointer;
+  background: var(--biab-white); color: var(--biab-green-800);
+  border: 1px solid var(--biab-line); transition: all .15s ease;
+}
+.biab-tab[aria-selected="true"] { background: var(--biab-green-800); color: #fff; border-color: var(--biab-green-800); }
+.biab-tab:focus-visible { outline: 3px solid var(--biab-gold); outline-offset: 2px; }
+
+.biab-product { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.biab-product__media { background: var(--biab-cream); aspect-ratio: 1; display: grid; place-items: center; padding: var(--biab-2); }
+.biab-product__media img { width: 100%; height: 100%; object-fit: contain; }
+.biab-product__body { padding: var(--biab-3); display: flex; flex-direction: column; flex: 1; }
+.biab-tag {
+  align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: 5px 11px; border-radius: 999px; margin-bottom: var(--biab-1);
+}
+.biab-tag--metabolic { background: var(--biab-green-100); color: var(--biab-green-800); }
+.biab-tag--women { background: #f6e6ea; color: #8a3a52; }
+.biab-tag--men { background: #e6ecf5; color: #2f4a77; }
+.biab-product__name { font-family: var(--biab-serif); font-size: 19px; font-weight: 600; color: var(--biab-green-900); margin: 0 0 var(--biab-1); }
+.biab-product__meta { font-size: 14px; color: var(--biab-ink-600); margin: 0 0 var(--biab-2); }
+.biab-product__total { margin-top: auto; padding-top: var(--biab-2); border-top: 1px solid var(--biab-line); display: flex; justify-content: space-between; align-items: baseline; }
+.biab-product__total span { font-size: 13px; color: var(--biab-ink-600); }
+.biab-product__total strong { font-family: var(--biab-serif); font-size: 20px; color: var(--biab-green-900); }
+
+.biab-total {
+  margin-top: var(--biab-4); padding: var(--biab-4);
+  background: var(--biab-green-800); color: #fff; border-radius: var(--biab-radius);
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--biab-2);
+}
+.biab-total__label { font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.8); margin: 0; }
+.biab-total__value { font-family: var(--biab-serif); font-size: 36px; font-weight: 700; color: var(--biab-gold); margin: 0; line-height: 1; }
+
+/* ---------- Support / icon cards ---------- */
+.biab-support__icon {
+  width: 48px; height: 48px; border-radius: 12px; background: var(--biab-green-100);
+  display: grid; place-items: center; color: var(--biab-green-800); margin-bottom: var(--biab-2);
+}
+.biab-support__icon svg { width: 24px; height: 24px; }
+
+/* ---------- Steps ---------- */
+.biab-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--biab-3); position: relative; }
+.biab-step { text-align: center; position: relative; }
+.biab-step__num {
+  width: 56px; height: 56px; border-radius: 50%; margin: 0 auto var(--biab-2);
+  display: grid; place-items: center;
+  background: var(--biab-white); border: 2px solid var(--biab-gold); color: var(--biab-green-900);
+  font-family: var(--biab-serif); font-size: 22px; font-weight: 700; position: relative; z-index: 1;
+}
+.biab-step::after {
+  content: ''; position: absolute; top: 28px; left: 50%; width: 100%; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--biab-line) 0 8px, transparent 8px 16px);
+}
+.biab-step:last-child::after { display: none; }
+
+/* ---------- Lists ---------- */
+.biab-ticks { list-style: none; margin: 0; padding: 0; }
+.biab-ticks li { position: relative; padding-left: 34px; margin-bottom: var(--biab-2); font-size: 16px; line-height: 1.6; color: var(--biab-ink-600); }
+.biab-ticks li::before {
+  content: ''; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--biab-green-100) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a4429' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/12px no-repeat;
+}
+.biab-note {
+  padding: var(--biab-3); border-radius: var(--biab-radius-sm);
+  background: var(--biab-cream-200); font-size: 15px; line-height: 1.65; color: var(--biab-ink);
+}
+
+/* ---------- Compare (wholesale vs MLM) ---------- */
+.biab-compare { display: grid; grid-template-columns: 1fr 1fr; gap: var(--biab-3); }
+.biab-compare__col h3 { display: flex; align-items: center; gap: 10px; }
+.biab-compare__col--yes { border-top: 4px solid var(--biab-gold); }
+.biab-compare__col--no { border-top: 4px solid #c9c2b4; background: var(--biab-cream); }
+.biab-crosses { list-style: none; margin: 0; padding: 0; }
+.biab-crosses li { position: relative; padding-left: 34px; margin-bottom: var(--biab-2); font-size: 16px; line-height: 1.6; color: var(--biab-ink-600); }
+.biab-crosses li::before {
+  content: ''; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
+  background: #eee7dc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8272' stroke-width='3.5' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") center/11px no-repeat;
+}
+
+/* ---------- FAQ ---------- */
+.biab-faq__list { border-top: 1px solid var(--biab-line); }
+.biab-faq__item { border-bottom: 1px solid var(--biab-line); }
+.biab-faq__q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: var(--biab-2);
+  background: none; border: 0; cursor: pointer; text-align: left;
+  padding: var(--biab-3) 0; font-family: var(--biab-sans);
+  font-size: 17px; font-weight: 600; color: var(--biab-green-900); line-height: 1.4;
+}
+.biab-faq__q:focus-visible { outline: 3px solid var(--biab-gold); outline-offset: -3px; }
+.biab-faq__icon { flex: 0 0 auto; width: 22px; height: 22px; position: relative; }
+.biab-faq__icon::before,
+.biab-faq__icon::after { content: ''; position: absolute; background: var(--biab-gold-600); border-radius: 2px; transition: transform .2s ease; }
+.biab-faq__icon::before { top: 10px; left: 0; width: 22px; height: 2px; }
+.biab-faq__icon::after { left: 10px; top: 0; width: 2px; height: 22px; }
+.biab-faq__q[aria-expanded="true"] .biab-faq__icon::after { transform: rotate(90deg); }
+.biab-faq__a { display: none; padding: 0 0 var(--biab-3); font-size: 16px; line-height: 1.7; color: var(--biab-ink-600); max-width: 74ch; }
+.biab-faq__a > *:first-child { margin-top: 0; }
+.biab-faq__a > *:last-child { margin-bottom: 0; }
+.biab-faq__item.is-open .biab-faq__a { display: block; }
+
+/* ---------- Purchase ---------- */
+.biab-buy__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--biab-6); align-items: start; }
+.biab-buy__media { border-radius: var(--biab-radius); overflow: hidden; box-shadow: var(--biab-shadow-lg); }
+.biab-buy__media img { display: block; width: 100%; height: auto; }
+.biab-buy__panel { padding: var(--biab-5); }
+.biab-buy__price { display: flex; align-items: baseline; gap: var(--biab-2); margin-bottom: var(--biab-2); }
+.biab-buy__amount { font-family: var(--biab-serif); font-size: 46px; font-weight: 700; color: var(--biab-green-900); line-height: 1; }
+.biab-buy__summary { list-style: none; margin: 0 0 var(--biab-3); padding: 0; }
+.biab-buy__summary li { display: flex; justify-content: space-between; gap: var(--biab-2); padding: 10px 0; border-bottom: 1px dashed var(--biab-line); font-size: 15px; color: var(--biab-ink-600); }
+.biab-buy__summary li strong { color: var(--biab-green-900); }
+.biab-terms { display: flex; gap: 12px; align-items: flex-start; margin: var(--biab-3) 0; font-size: 14.5px; line-height: 1.55; color: var(--biab-ink-600); cursor: pointer; }
+.biab-terms input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--biab-green-800); flex: 0 0 auto; cursor: pointer; }
+.biab-terms a { color: var(--biab-green-800); }
+.biab-error { display: none; margin: 0 0 var(--biab-2); padding: 12px 16px; border-radius: 8px; background: #fbe9e9; color: #8c2020; font-size: 14px; }
+.biab-error.is-visible { display: block; }
+.biab-contact { display: flex; flex-wrap: wrap; gap: var(--biab-2); margin-top: var(--biab-3); }
+
+/* ---------- Final CTA ---------- */
+.biab-final { text-align: center; }
+.biab-final .biab-h2 { color: #fff; }
+.biab-final__sub { font-size: 19px; line-height: 1.6; color: rgba(255,255,255,.85); max-width: 640px; margin: 0 auto var(--biab-4); }
+
+/* ---------- Footer ---------- */
+.biab-footer__grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--biab-5); }
+.biab-footer a { color: inherit; text-decoration: none; }
+.biab-footer a:hover { text-decoration: underline; }
+.biab-footer__title { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--biab-gold); margin: 0 0 var(--biab-2); }
+.biab-footer__list { list-style: none; margin: 0; padding: 0; }
+.biab-footer__list li { margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,.85); }
+
+/* ---------- Sticky CTA ---------- */
+.biab-sticky {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: rgba(18,48,31,.97); backdrop-filter: blur(8px);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  transform: translateY(110%); transition: transform .25s ease;
+  box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+}
+.biab-sticky.is-visible { transform: translateY(0); }
+.biab-sticky__inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--biab-2); }
+.biab-sticky__text { color: #fff; font-size: 14px; line-height: 1.3; }
+.biab-sticky__text strong { display: block; font-family: var(--biab-serif); font-size: 19px; }
+.biab-sticky .biab-btn { padding: 13px 24px; font-size: 15px; white-space: nowrap; }
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 989px) {
+  .biab-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .biab-steps { grid-template-columns: repeat(2, 1fr); gap: var(--biab-5) var(--biab-3); }
+  .biab-step::after { display: none; }
+  .biab-hero__grid,
+  .biab-founders__grid,
+  .biab-buy__grid { grid-template-columns: 1fr; gap: var(--biab-4); }
+  /* Mobile: copy first (eyebrow, headline, price, CTA), image below it.
+     The DOM is already in that order, so no grid-area override is needed. */
+  .biab-hero__copy { order: 1; }
+  .biab-hero__media-col { order: 2; }
+  .biab-footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media screen and (max-width: 749px) {
+  .biab-section { padding: var(--biab-6) var(--biab-2); }
+  .biab-grid--2,
+  .biab-grid--3,
+  .biab-grid--4,
+  .biab-compare,
+  .biab-footer__grid { grid-template-columns: 1fr; }
+  .biab-steps { grid-template-columns: 1fr; }
+  .biab-card { padding: var(--biab-3); }
+  .biab-buy__panel { padding: var(--biab-3); }
+  .biab-hero__amount { font-size: 34px; }
+  .biab-hero__ctas .biab-btn { width: 100%; }
+  .biab-total { flex-direction: column; align-items: flex-start; }
+  .biab-sticky__text { font-size: 12px; }
+  .biab-sticky__text strong { font-size: 16px; }
+  .biab-trustbar__list { gap: var(--biab-1) var(--biab-3); }
+  .biab-trustbar__list li { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biab * { transition: none !important; }
+}

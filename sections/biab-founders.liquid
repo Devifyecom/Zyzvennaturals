@@ -1,0 +1,62 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--cream">
+  <section class="biab-section" id="biab-founders" aria-labelledby="biab-founders-title">
+    <div class="biab-inner">
+      <div class="biab-founders__grid">
+        <div class="biab-founders__media">
+          {%- if s.image != blank -%}
+            {{
+              s.image
+              | image_url: width: 1000
+              | image_tag:
+                widths: '440, 660, 880, 1000',
+                sizes: '(min-width: 990px) 40vw, 92vw',
+                loading: 'lazy',
+                alt: s.image_alt
+            }}
+          {%- else -%}
+            {%- if request.design_mode -%}<div class="biab-hero__placeholder">
+              <p>Photograph of Shawnafi and Lawrence, the founders of Zyzven Naturals.</p>
+            </div>{%- endif -%}
+          {%- endif -%}
+        </div>
+
+        <div>
+          {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+          <h2 class="biab-h2" id="biab-founders-title">{{ s.heading }}</h2>
+          <hr class="biab-rule">
+          <div class="biab-body">{{ s.story }}</div>
+
+          {%- if s.quote != blank -%}
+            <blockquote class="biab-quote">
+              {{ s.quote }}
+              {%- if s.quote_attribution != blank -%}
+                <cite>{{ s.quote_attribution }}</cite>
+              {%- endif -%}
+            </blockquote>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — Meet the founders",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Meet the Founders" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built From the Ground Up by Shawnafi and Lawrence" },
+    { "type": "richtext", "id": "story", "label": "Story", "default": "<p>Zyzven Naturals began with two people, a conviction that natural wellness should be accessible everywhere, and a great deal of patient work. Shawnafi and Lawrence built the brand from the ground up — formulating, sourcing, packing and shipping, learning every part of the business by doing it themselves.</p><p>Today, Zyzven Naturals serves customers across Jamaica, the USA, the UK, Sweden and Canada. The formulas in this box are the same ones sold on ZyzvenNaturals.com.</p><p>Now we are opening the doors to resellers and distributors: people who want to build something of their own, with products customers already know and ask for by name.</p>" },
+    { "type": "richtext", "id": "quote", "label": "Closing quote", "default": "<p>When you partner with us, you're building with a family-founded brand, not a faceless supplier.</p>" },
+    { "type": "text", "id": "quote_attribution", "label": "Quote attribution", "default": "Shawnafi & Lawrence, Founders" },
+    { "type": "image_picker", "id": "image", "label": "Founders photo" },
+    { "type": "text", "id": "image_alt", "label": "Photo alt text", "default": "Zyzven Naturals founders Shawnafi and Lawrence with the Business in a Box reseller starter package" }
+  ],
+  "presets": [{ "name": "BIAB — Meet the founders" }]
+}
+{% endschema %}

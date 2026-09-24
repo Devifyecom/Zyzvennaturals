@@ -1,0 +1,333 @@
+{%- comment -%}
+  Section: Hero - Metabolism / Hormones / Energy
+  Two-column hero: headline + dual CTA (left) and product lockup (right).
+  Stacks on mobile with the product image on top, matching the reference.
+
+  Background is an animated video by default. It can be overridden in the
+  theme editor with either a pasted MP4 URL or an uploaded Shopify video.
+  The background texture image is kept as the poster/fallback (shown while
+  the video loads, when video is disabled, or for reduced-motion users).
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+  assign uid = section.id
+  assign default_bg = 'https://cdn.shopify.com/s/files/1/0245/2422/6606/files/Background_Texture.png?v=1783438405'
+  assign default_product = 'https://cdn.shopify.com/s/files/1/0245/2422/6606/files/mobile-header_2_1.png?v=1783438432'
+  assign default_video = 'https://cdn.shopify.com/videos/c/o/v/55541bdbfb73429bb3d94bd4356e076c.mp4'
+
+  comment
+    Resolve poster (image shown behind/while the video loads).
+  endcomment
+  if s.background_image != blank
+    assign poster_url = s.background_image | image_url: width: 2400
+  else
+    assign poster_url = default_bg
+  endif
+
+  comment
+    Resolve external video URL: manual URL override, else the default.
+  endcomment
+  if s.background_video_url != blank
+    assign external_video_url = s.background_video_url
+  else
+    assign external_video_url = default_video
+  endif
+-%}
+
+<style>
+  #zn-hero-{{ uid }} {
+    --zn-heading: {{ s.heading_color }};
+    --zn-text: {{ s.text_color }};
+    --zn-green: {{ s.btn1_bg }};
+    --zn-green-text: {{ s.btn1_text }};
+    --zn-tan: {{ s.btn2_bg }};
+    --zn-tan-text: {{ s.btn2_text }};
+    position: relative;
+    overflow: hidden;
+    background-color: {{ s.bg_fallback }};
+    background-image: url({% if s.background_image != blank %}{{ s.background_image | image_url: width: 2400 }}{% else %}{{ default_bg }}{% endif %});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ---------- Animated background video ---------- */
+  #zn-hero-{{ uid }} .zn-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none;
+    border: 0;
+  }
+  {%- if s.video_overlay_opacity > 0 -%}
+  #zn-hero-{{ uid }} .zn-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: {{ s.bg_fallback }};
+    opacity: {{ s.video_overlay_opacity | divided_by: 100.0 }};
+  }
+  {%- endif -%}
+
+  #zn-hero-{{ uid }} .zn-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: {{ s.padding_top }}px 24px {{ s.padding_bottom }}px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 32px;
+  }
+
+  #zn-hero-{{ uid }} .zn-copy { max-width: 560px; }
+
+  #zn-hero-{{ uid }} .zn-title {
+    color: var(--zn-heading);
+    font-family: "Golos Text", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    margin: 0 0 22px;
+    font-size: clamp(30px, 3.4vw, 46px);
+  }
+  #zn-hero-{{ uid }} .zn-title .zn-reg {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  #zn-hero-{{ uid }} .zn-sub {
+    color: var(--zn-text);
+    font-size: clamp(16px, 1.35vw, 19px);
+    line-height: 1.55;
+    margin: 0 0 16px;
+  }
+  #zn-hero-{{ uid }} .zn-body {
+    color: var(--zn-text);
+    font-size: clamp(15px, 1.25vw, 18px);
+    line-height: 1.6;
+    margin: 0 0 32px;
+    max-width: 500px;
+  }
+
+  #zn-hero-{{ uid }} .zn-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  #zn-hero-{{ uid }} .zn-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.25;
+    padding: 15px 28px;
+    border-radius: 40px;
+    border: 0;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+    min-height: 56px;
+    max-width: 240px;
+  }
+  #zn-hero-{{ uid }} .zn-btn--green { background: var(--zn-green); color: var(--zn-green-text); }
+  #zn-hero-{{ uid }} .zn-btn--tan   { background: var(--zn-tan);   color: var(--zn-tan-text); }
+  #zn-hero-{{ uid }} .zn-btn:hover  { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.10); }
+  #zn-hero-{{ uid }} .zn-btn:focus-visible { outline: 3px solid rgba(0,0,0,.35); outline-offset: 3px; }
+
+  #zn-hero-{{ uid }} .zn-media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #zn-hero-{{ uid }} .zn-media img {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 749px) {
+    #zn-hero-{{ uid }} .zn-wrap {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 12px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    #zn-hero-{{ uid }} .zn-media { order: 1; margin-bottom: 6px; }
+    #zn-hero-{{ uid }} .zn-copy  { order: 2; margin: 0 auto; }
+    #zn-hero-{{ uid }} .zn-sub,
+    #zn-hero-{{ uid }} .zn-body { margin-left: auto; margin-right: auto; }
+    #zn-hero-{{ uid }} .zn-cta-row { justify-content: center; }
+    #zn-hero-{{ uid }} .zn-btn { max-width: 320px; width: 100%; }
+    #zn-hero-{{ uid }} .zn-title { font-size: clamp(24px, 7vw, 30px); }
+    #zn-hero-{{ uid }} .zn-media img { max-width: 360px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #zn-hero-{{ uid }} .zn-btn { transition: none; }
+    /* Do not autoplay motion: hide the video so the poster image shows. */
+    #zn-hero-{{ uid }} .zn-video { display: none; }
+  }
+</style>
+
+<section id="zn-hero-{{ uid }}" class="zn-hero">
+  {%- if s.show_video -%}
+    {%- if s.background_video != blank -%}
+      {%- comment -%} Uploaded Shopify-hosted video (highest priority). {%- endcomment -%}
+      <video
+        class="zn-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="{{ poster_url }}"
+        aria-hidden="true"
+        tabindex="-1"
+        disableremoteplayback
+      >
+        {%- for source in s.background_video.sources -%}
+          {%- if source.format == 'mp4' -%}
+            <source src="{{ source.url }}" type="video/mp4">
+          {%- endif -%}
+        {%- endfor -%}
+      </video>
+    {%- else -%}
+      {%- comment -%} External MP4 URL (manual override or default). {%- endcomment -%}
+      <video
+        class="zn-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="{{ poster_url }}"
+        aria-hidden="true"
+        tabindex="-1"
+        disableremoteplayback
+      >
+        <source src="{{ external_video_url }}" type="video/mp4">
+      </video>
+    {%- endif -%}
+    {%- if s.video_overlay_opacity > 0 -%}
+      <div class="zn-video-overlay"></div>
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="zn-wrap">
+    <div class="zn-copy">
+      <h1 class="zn-title">
+        {%- if s.heading_line_1 != blank -%}{{ s.heading_line_1 }}<br>{%- endif -%}
+        {%- if s.heading_line_2 != blank -%}{{ s.heading_line_2 }}<br>{%- endif -%}
+        {%- if s.heading_line_3_bold != blank -%}{{ s.heading_line_3_bold }}{%- endif -%}
+        {%- if s.heading_line_3_regular != blank -%} <span class="zn-reg">{{ s.heading_line_3_regular }}</span>{%- endif -%}
+      </h1>
+
+      {%- if s.subheading != blank -%}
+        <p class="zn-sub">{{ s.subheading }}</p>
+      {%- endif -%}
+
+      {%- if s.body_text != blank -%}
+        <p class="zn-body">{{ s.body_text }}</p>
+      {%- endif -%}
+
+      <div class="zn-cta-row">
+        {%- if s.btn1_label != blank -%}
+          <a class="zn-btn zn-btn--green" href="{{ s.btn1_link | default: '#' }}">{{ s.btn1_label }}</a>
+        {%- endif -%}
+        {%- if s.show_btn2 and s.btn2_label != blank -%}
+          <a class="zn-btn zn-btn--tan" href="{{ s.btn2_link | default: '#' }}">{{ s.btn2_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="zn-media">
+      {%- if s.product_image != blank -%}
+        <img
+          src="{{ s.product_image | image_url: width: 1280 }}"
+          srcset="{{ s.product_image | image_url: width: 640 }} 640w, {{ s.product_image | image_url: width: 1280 }} 1280w"
+          sizes="(max-width: 749px) 360px, 640px"
+          alt="{{ s.product_image.alt | default: 'Product lineup' | escape }}"
+          width="{{ s.product_image.width }}"
+          height="{{ s.product_image.height }}"
+          loading="eager">
+      {%- else -%}
+        <img
+          src="{{ default_product }}"
+          alt="Product lineup"
+          loading="eager">
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "zn-hero-section",
+  "settings": [
+    { "type": "header", "content": "Headline" },
+    { "type": "text", "id": "heading_line_1", "label": "Line 1 (bold)", "default": "Support Metabolism." },
+    { "type": "text", "id": "heading_line_2", "label": "Line 2 (bold)", "default": "Rebalance Hormones." },
+    { "type": "text", "id": "heading_line_3_bold", "label": "Line 3 - bold part", "default": "Restore Energy" },
+    { "type": "text", "id": "heading_line_3_regular", "label": "Line 3 - regular-weight part (italic)", "default": "Naturally." },
+
+    { "type": "header", "content": "Supporting text" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "A targeted supplement system for metabolic and hormonal health." },
+    { "type": "textarea", "id": "body_text", "label": "Body", "default": "Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy." },
+
+    { "type": "header", "content": "Primary button" },
+    { "type": "text", "id": "btn1_label", "label": "Label", "default": "Take Our 60-Second Assessment" },
+    { "type": "url", "id": "btn1_link", "label": "Link" },
+    { "type": "color", "id": "btn1_bg", "label": "Background", "default": "#5c7c4c" },
+    { "type": "color", "id": "btn1_text", "label": "Text", "default": "#ffffff" },
+
+    { "type": "header", "content": "Secondary button" },
+    { "type": "checkbox", "id": "show_btn2", "label": "Show secondary button", "default": true },
+    { "type": "text", "id": "btn2_label", "label": "Label", "default": "Shop the System" },
+    { "type": "url", "id": "btn2_link", "label": "Link" },
+    { "type": "color", "id": "btn2_bg", "label": "Background", "default": "#c3a382" },
+    { "type": "color", "id": "btn2_text", "label": "Text", "default": "#ffffff" },
+
+    { "type": "header", "content": "Background video" },
+    { "type": "paragraph", "content": "An animated video is used as the background by default. To change it, either paste an MP4 URL below or upload a video. Uploaded video takes priority over the URL. The background texture image (in Images) is used as the poster/fallback." },
+    { "type": "checkbox", "id": "show_video", "label": "Use animated video background", "default": true },
+    { "type": "text", "id": "background_video_url", "label": "Background video URL (MP4)", "info": "Paste a direct .mp4 link. Leave blank to use the default video." },
+    { "type": "video", "id": "background_video", "label": "Background video (upload)", "info": "Optional. Overrides the URL above with a Shopify-hosted video." },
+    { "type": "range", "id": "video_overlay_opacity", "label": "Overlay tint over video", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 0, "info": "Increase for better text contrast over busy video." },
+
+    { "type": "header", "content": "Images" },
+    { "type": "paragraph", "content": "Leave these empty to use the supplied default background texture and product image. The background texture also acts as the video poster/fallback." },
+    { "type": "image_picker", "id": "background_image", "label": "Background texture (override / video poster)" },
+    { "type": "image_picker", "id": "product_image", "label": "Product lockup (override)" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_fallback", "label": "Background fallback color", "default": "#f6f1e8" },
+    { "type": "color", "id": "heading_color", "label": "Heading text", "default": "#16181c" },
+    { "type": "color", "id": "text_color", "label": "Body text", "default": "#3c3c3c" },
+
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 20, "max": 160, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 20, "max": 160, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "presets": [
+    { "name": "Hero" }
+  ]
+}
+{% endschema %}
+

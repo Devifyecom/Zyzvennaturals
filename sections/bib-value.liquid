@@ -1,0 +1,81 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+<section class="bib bib-value" id="bib-value">
+  <div class="bib__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="bib-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <h2 class="bib-h2">{{ section.settings.heading }}</h2>
+
+    <ul class="bib-value__grid">
+      {%- for block in section.blocks -%}
+        <li
+          class="bib-value__item{% if block.settings.highlight %} bib-value__item--profit{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <p class="bib-value__label">{{ block.settings.label }}</p>
+          <span class="bib-value__figure">
+            {%- if block.settings.prefix != blank -%}<small>{{ block.settings.prefix }}</small>{%- endif -%}
+            {{ block.settings.figure }}
+          </span>
+          <p class="bib-value__note">{{ block.settings.note }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="bib-fineprint">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIB — Retail Opportunity",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A Clear Retail Opportunity" },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Required disclaimer",
+      "default": "Potential gross profit of up to $1,030.60 if all products are sold at current recommended retail prices. Excludes shipping, taxes, discounts, payment fees, advertising and other business expenses. Individual results vary."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "figure",
+      "name": "Figure",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Box Price" },
+        { "type": "text", "id": "prefix", "label": "Small prefix", "info": "Optional, e.g. \"Up to\"." },
+        { "type": "text", "id": "figure", "label": "Figure", "default": "$999" },
+        { "type": "textarea", "id": "note", "label": "Note", "default": "Shipping charged separately" },
+        { "type": "checkbox", "id": "highlight", "label": "Highlight in gold", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIB — Retail Opportunity",
+      "blocks": [
+        { "type": "figure", "settings": { "label": "Box Price", "figure": "$999", "note": "Shipping charged separately" } },
+        { "type": "figure", "settings": { "label": "Combined Current RRP", "figure": "$2,029.60", "note": "If all 40 products sell at current RRP" } },
+        {
+          "type": "figure",
+          "settings": {
+            "label": "Potential Gross Profit",
+            "prefix": "Up to",
+            "figure": "$1,030.60",
+            "note": "Before shipping, fees, tax, discounts and expenses",
+            "highlight": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

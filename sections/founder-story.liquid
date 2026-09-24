@@ -1,0 +1,794 @@
+{%- comment -%}
+  ============================================================
+  ZYZVEN NATURALS &mdash; FOUNDER STORY
+  Native Shopify section. Drop into /sections and add to any page.
+  All photos are image-pickers; all CTA links are editable in the
+  theme customizer. Copy is baked in (fixed brand story).
+  ============================================================
+{%- endcomment -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<div class="zn-story" id="zn-{{ section.id }}">
+  <style>
+    #zn-{{ section.id }}{
+      --bg:#EFE8DA; --bg2:#E6DDCA; --cream:#FBF7EE;
+      --green:#1F3A2E; --green-deep:#152720; --green-soft:#33523F;
+      --gold:#B0842F; --gold-soft:#D8B877;
+      --ink:#221E17; --ink-soft:#5B5344; --ink-mute:#877D6A;
+      --line:rgba(31,58,46,.16);
+      --serif:"Fraunces",Georgia,"Times New Roman",serif;
+      --sans:"Mulish",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --maxw:1180px;
+      background:var(--bg); color:var(--ink);
+      font-family:var(--sans); line-height:1.7; font-size:17px;
+      -webkit-font-smoothing:antialiased; overflow:hidden;
+    }
+    #zn-{{ section.id }} *{box-sizing:border-box;}
+    #zn-{{ section.id }} p{margin:0 0 1.15em;}
+    #zn-{{ section.id }} .zn-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+    #zn-{{ section.id }} .zn-narrow{max-width:720px;margin:0 auto;}
+    #zn-{{ section.id }} .zn-eyebrow{
+      font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;
+      font-size:.72rem;font-weight:700;color:var(--gold);margin:0 0 1rem;
+    }
+
+    /* ---------------- HERO (split: text + separate portrait) ---------------- */
+    #zn-{{ section.id }} .zn-hero{
+      display:grid;grid-template-columns:1fr 1fr;min-height:82vh;
+      background:var(--green-deep);overflow:hidden;
+    }
+    #zn-{{ section.id }} .zn-hero__text{align-self:center;padding:clamp(2.5rem,5vw,5.5rem);}
+    #zn-{{ section.id }} .zn-hero__text .zn-eyebrow{color:var(--gold-soft);}
+    #zn-{{ section.id }} .zn-hero h1{
+      font-family:var(--serif);font-weight:300;color:#F6EFDF;
+      font-size:clamp(2.1rem,4.4vw,4rem);line-height:1.04;letter-spacing:-.01em;margin:0;
+    }
+    #zn-{{ section.id }} .zn-hero h1 em{font-style:italic;color:var(--gold-soft);}
+    #zn-{{ section.id }} .zn-hero__thread{
+      width:1px;height:56px;background:linear-gradient(var(--gold-soft),transparent);margin-top:2rem;
+    }
+    #zn-{{ section.id }} .zn-hero__media{position:relative;background:var(--green);min-height:52vh;}
+    #zn-{{ section.id }} .zn-hero__img{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;
+    }
+    #zn-{{ section.id }} .zn-ph.zn-ph--hero{
+      position:absolute;inset:0;border:none;border-left:1px solid rgba(216,184,119,.25);
+      background:
+        radial-gradient(circle at 50% 35%, #2b4d3b 0%, transparent 60%),
+        linear-gradient(140deg,#20402f,#152720);
+      color:rgba(246,239,223,.6);
+    }
+    #zn-{{ section.id }} .zn-ph.zn-ph--hero .zn-ph__label{color:rgba(246,239,223,.6);}
+
+    /* ---------------- INTRO ---------------- */
+    #zn-{{ section.id }} .zn-intro{padding:clamp(4rem,9vw,7.5rem) 0 clamp(2rem,5vw,3.5rem);}
+    #zn-{{ section.id }} .zn-lede{
+      font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2.7vw,26px);
+      line-height:1.42;color:var(--green);margin:0 0 1.6em;letter-spacing:-.01em;
+    }
+    #zn-{{ section.id }} .zn-intro .zn-body{font-size:15px;color:var(--ink-soft);}
+    #zn-{{ section.id }} .zn-intro .zn-body strong{color:var(--ink);font-weight:600;}
+    #zn-{{ section.id }} .zn-sign{
+      margin-top:2.4rem;display:flex;align-items:center;gap:1rem;
+      font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--green);
+    }
+    #zn-{{ section.id }} .zn-sign::before{content:"";width:42px;height:1px;background:var(--gold);}
+
+    /* ---------------- PULL QUOTE BAND ---------------- */
+    #zn-{{ section.id }} .zn-band{
+      background:var(--green);color:#EFE8DA;position:relative;overflow:hidden;
+      padding:clamp(4rem,9vw,7rem) 0;
+    }
+    #zn-{{ section.id }} .zn-band::before{
+      content:"\201C";position:absolute;top:-.15em;left:4%;
+      font-family:var(--serif);font-size:22rem;line-height:1;color:rgba(216,184,119,.10);
+      pointer-events:none;
+    }
+    #zn-{{ section.id }} .zn-band q{
+      quotes:none;display:block;position:relative;z-index:2;max-width:24ch;margin:0 auto;
+      font-family:var(--serif);font-weight:300;font-style:italic;
+      font-size:clamp(1.7rem,4vw,3rem);line-height:1.24;letter-spacing:-.01em;text-align:center;
+    }
+    #zn-{{ section.id }} .zn-band q em{font-style:normal;color:var(--gold-soft);}
+
+    /* ---------------- CHAPTERS / THREAD ---------------- */
+    #zn-{{ section.id }} .zn-chapters{padding:clamp(3rem,6vw,5rem) 0;}
+    #zn-{{ section.id }} .zn-chapters__head{text-align:center;margin-bottom:3rem;}
+    #zn-{{ section.id }} .zn-chapters__head h2{
+      font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);
+      color:var(--green);margin:.2em 0 .4em;letter-spacing:-.01em;
+    }
+    #zn-{{ section.id }} .zn-chapters__head p{color:var(--ink-mute);max-width:52ch;margin:0 auto;}
+
+    /* chapter index chips */
+    #zn-{{ section.id }} .zn-index{
+      display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;
+      max-width:900px;margin:2rem auto 0;
+    }
+    #zn-{{ section.id }} .zn-index button{
+      font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;
+      border:1px solid var(--line);background:var(--cream);color:var(--green-soft);
+      padding:.5rem .85rem;border-radius:100px;transition:.2s;line-height:1;
+      display:inline-flex;align-items:center;gap:.5rem;
+    }
+    #zn-{{ section.id }} .zn-index button:hover{background:var(--green);color:#F3ECDC;border-color:var(--green);}
+    #zn-{{ section.id }} .zn-index button span{color:var(--gold);font-variant-numeric:tabular-nums;}
+    #zn-{{ section.id }} .zn-index button:hover span{color:var(--gold-soft);}
+
+    /* the thread column */
+    #zn-{{ section.id }} .zn-thread{position:relative;max-width:840px;margin:3.5rem auto 0;padding-left:64px;}
+    #zn-{{ section.id }} .zn-thread::before{
+      content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;
+      background:linear-gradient(var(--gold-soft),var(--line) 40%,var(--line));
+    }
+    #zn-{{ section.id }} .zn-chapter{
+      position:relative;border-bottom:1px solid var(--line);
+    }
+    #zn-{{ section.id }} .zn-chapter:first-of-type{border-top:1px solid var(--line);}
+    #zn-{{ section.id }} .zn-chapter > summary{
+      list-style:none;cursor:pointer;display:flex;align-items:center;gap:1.4rem;
+      padding:1.35rem 0;user-select:none;position:relative;
+    }
+    #zn-{{ section.id }} .zn-chapter > summary::-webkit-details-marker{display:none;}
+    #zn-{{ section.id }} .zn-chapter__text{flex:1;min-width:0;}
+    #zn-{{ section.id }} .zn-chapter__teaser{
+      display:block;font-family:var(--sans);font-size:.9rem;color:var(--ink-mute);
+      line-height:1.5;margin-top:.35rem;
+    }
+    #zn-{{ section.id }} .zn-node{
+      position:absolute;left:-64px;top:50%;transform:translateY(-50%);
+      width:48px;height:48px;border-radius:50%;background:var(--cream);
+      border:2px solid var(--line);display:flex;align-items:center;justify-content:center;
+      font-family:var(--serif);font-size:1rem;color:var(--gold);font-weight:500;
+      transition:.3s;z-index:2;
+    }
+    #zn-{{ section.id }} .zn-chapter[open] .zn-node,
+    #zn-{{ section.id }} .zn-chapter > summary:hover .zn-node{
+      background:var(--green);border-color:var(--green);color:var(--gold-soft);
+    }
+    #zn-{{ section.id }} .zn-chapter__title{
+      display:block;font-family:var(--serif);font-weight:500;font-size:clamp(18px,2.3vw,20px);
+      color:var(--green);line-height:1.22;letter-spacing:-.01em;
+    }
+    #zn-{{ section.id }} .zn-chevron{
+      flex-shrink:0;width:22px;height:22px;position:relative;transition:transform .35s;color:var(--gold);
+    }
+    #zn-{{ section.id }} .zn-chevron::before,
+    #zn-{{ section.id }} .zn-chevron::after{
+      content:"";position:absolute;top:50%;width:11px;height:2px;background:currentColor;border-radius:2px;
+    }
+    #zn-{{ section.id }} .zn-chevron::before{left:1px;transform:rotate(45deg);}
+    #zn-{{ section.id }} .zn-chevron::after{right:1px;transform:rotate(-45deg);}
+    #zn-{{ section.id }} .zn-chapter[open] .zn-chevron{transform:rotate(180deg);}
+    #zn-{{ section.id }} .zn-chapter__body{
+      padding:0 0 2.5rem;color:var(--ink-soft);font-size:15px;
+      animation:zn-reveal .5s ease both;
+    }
+    @keyframes zn-reveal{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+    #zn-{{ section.id }} .zn-chapter__body strong{color:var(--ink);font-weight:600;}
+    #zn-{{ section.id }} .zn-inlinequote{
+      font-family:var(--serif);font-style:italic;font-weight:400;
+      font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.35;color:var(--green);
+      border-left:3px solid var(--gold);padding:.2em 0 .2em 1.1rem;margin:1.8rem 0;
+    }
+
+    /* ---------------- IMAGE FIGURES ---------------- */
+    #zn-{{ section.id }} figure{margin:1.8rem 0;}
+    #zn-{{ section.id }} .zn-fig img{width:100%;height:auto;display:block;border-radius:4px;}
+    #zn-{{ section.id }} .zn-ph{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;
+      background:var(--bg2);border:1px dashed rgba(31,58,46,.28);border-radius:4px;
+      min-height:220px;text-align:center;padding:2rem;color:var(--ink-mute);
+    }
+    #zn-{{ section.id }} .zn-ph--tall{min-height:320px;}
+    #zn-{{ section.id }} .zn-ph__leaf{font-size:1.6rem;color:var(--gold);}
+    #zn-{{ section.id }} .zn-ph__label{
+      font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;max-width:34ch;line-height:1.5;
+    }
+    #zn-{{ section.id }} .zn-ph__tag{
+      text-transform:uppercase;letter-spacing:.2em;font-size:.62rem;font-weight:700;color:var(--gold);
+    }
+    #zn-{{ section.id }} figcaption{
+      font-size:.82rem;color:var(--ink-mute);margin-top:.7rem;font-style:italic;line-height:1.5;
+    }
+    #zn-{{ section.id }} .zn-split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    #zn-{{ section.id }} .zn-split figcaption{text-align:center;}
+    #zn-{{ section.id }} .zn-then-now-tag{
+      text-align:center;font-family:var(--serif);font-style:italic;color:var(--gold);
+      font-size:1.1rem;margin:.3rem 0 -.4rem;
+    }
+
+    /* ---------------- LOCATIONS BAND ---------------- */
+    #zn-{{ section.id }} .zn-locations{
+      background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      padding:clamp(3rem,6vw,4.5rem) 0;text-align:center;
+    }
+    #zn-{{ section.id }} .zn-locations h3{
+      font-family:var(--serif);font-weight:400;color:var(--green);
+      font-size:clamp(1.4rem,3vw,2rem);margin:.3em 0 1.6rem;
+    }
+    #zn-{{ section.id }} .zn-loc-grid{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:0;max-width:820px;margin:0 auto;
+    }
+    #zn-{{ section.id }} .zn-loc{
+      padding:.6rem 1.6rem;border-right:1px solid var(--line);
+      font-family:var(--serif);font-size:1.15rem;color:var(--green);
+    }
+    #zn-{{ section.id }} .zn-loc:last-child{border-right:none;}
+    #zn-{{ section.id }} .zn-loc small{
+      display:block;font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;
+      font-size:.6rem;color:var(--gold);font-weight:700;margin-top:.2rem;
+    }
+
+    /* ---------------- BROCHURE CTA ---------------- */
+    #zn-{{ section.id }} .zn-brochure{
+      background:var(--green);color:#EFE8DA;padding:clamp(3.5rem,7vw,5.5rem) 0;text-align:center;
+    }
+    #zn-{{ section.id }} .zn-brochure h3{
+      font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.6rem);
+      margin:0 0 1rem;color:#F6EFDF;letter-spacing:-.01em;
+    }
+    #zn-{{ section.id }} .zn-brochure p{max-width:52ch;margin:0 auto 2rem;color:rgba(239,232,218,.82);}
+    #zn-{{ section.id }} .zn-btn{
+      display:inline-flex;align-items:center;gap:.7rem;font-family:var(--sans);
+      font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px;
+      text-decoration:none;padding:1.05rem 2.2rem;border-radius:2px;transition:.25s;
+    }
+    #zn-{{ section.id }} .zn-btn--gold{background:var(--gold);color:#20180A;}
+    #zn-{{ section.id }} .zn-btn--gold:hover{background:var(--gold-soft);transform:translateY(-2px);}
+    #zn-{{ section.id }} .zn-btn__arrow{transition:transform .25s;}
+    #zn-{{ section.id }} .zn-btn:hover .zn-btn__arrow{transform:translateX(4px);}
+
+    /* ---------------- FINALE ---------------- */
+    #zn-{{ section.id }} .zn-finale{padding:clamp(4rem,9vw,7rem) 0 clamp(3rem,6vw,4.5rem);}
+    #zn-{{ section.id }} .zn-finale h2{
+      font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4.4vw,3.2rem);
+      color:var(--green);text-align:center;margin:0 0 .3em;letter-spacing:-.015em;
+    }
+    #zn-{{ section.id }} .zn-finale__kicker{text-align:center;margin-bottom:2.6rem;}
+    #zn-{{ section.id }} .zn-finale .zn-body{color:var(--ink-soft);font-size:15px;}
+    #zn-{{ section.id }} .zn-manifesto{
+      font-family:var(--serif);font-size:clamp(1.3rem,2.7vw,1.8rem);line-height:1.4;
+      color:var(--green);text-align:center;margin:3rem auto 1.4rem;max-width:26ch;font-weight:400;
+    }
+    #zn-{{ section.id }} .zn-wordmark{
+      text-align:center;font-family:var(--serif);letter-spacing:.35em;text-transform:uppercase;
+      font-size:1.05rem;color:var(--gold);margin:.4rem 0;font-weight:500;
+    }
+    #zn-{{ section.id }} .zn-tagline{text-align:center;font-style:italic;font-family:var(--serif);color:var(--ink-mute);}
+
+    /* ---------------- FINAL CTA GRID ---------------- */
+    #zn-{{ section.id }} .zn-cta{background:var(--green-deep);padding:clamp(3.5rem,7vw,5.5rem) 0;}
+    #zn-{{ section.id }} .zn-cta__head{text-align:center;margin-bottom:2.6rem;}
+    #zn-{{ section.id }} .zn-cta__head h3{
+      font-family:var(--serif);font-weight:400;color:#F6EFDF;font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0;
+    }
+    #zn-{{ section.id }} .zn-cta-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;max-width:900px;margin:0 auto;
+    }
+    #zn-{{ section.id }} .zn-card{
+      display:block;text-decoration:none;background:rgba(255,255,255,.04);
+      border:1px solid rgba(216,184,119,.22);border-radius:4px;padding:1.9rem;
+      transition:.25s;position:relative;overflow:hidden;
+    }
+    #zn-{{ section.id }} .zn-card:hover{background:rgba(216,184,119,.10);border-color:var(--gold-soft);transform:translateY(-3px);}
+    #zn-{{ section.id }} .zn-card__num{
+      font-family:var(--serif);font-size:.8rem;color:var(--gold);letter-spacing:.1em;display:block;margin-bottom:.9rem;
+    }
+    #zn-{{ section.id }} .zn-card h4{
+      font-family:var(--serif);font-weight:500;color:#F6EFDF;font-size:1.3rem;margin:0 0 .5rem;letter-spacing:-.01em;
+    }
+    #zn-{{ section.id }} .zn-card p{color:rgba(239,232,218,.68);font-size:.92rem;margin:0;}
+    #zn-{{ section.id }} .zn-card__arrow{
+      color:var(--gold-soft);margin-top:1rem;display:inline-block;transition:transform .25s;font-size:1.1rem;
+    }
+    #zn-{{ section.id }} .zn-card:hover .zn-card__arrow{transform:translateX(5px);}
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width:720px){
+      #zn-{{ section.id }}{font-size:16px;}
+      #zn-{{ section.id }} .zn-thread{padding-left:52px;}
+      #zn-{{ section.id }} .zn-thread::before{left:18px;}
+      #zn-{{ section.id }} .zn-node{left:-52px;width:38px;height:38px;font-size:.85rem;}
+      #zn-{{ section.id }} .zn-chapter > summary{gap:1rem;}
+      #zn-{{ section.id }} .zn-chapter__teaser{font-size:.82rem;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
+      #zn-{{ section.id }} .zn-split{grid-template-columns:1fr;}
+      #zn-{{ section.id }} .zn-cta-grid{grid-template-columns:1fr;}
+      #zn-{{ section.id }} .zn-loc{border-right:none;padding:.5rem 1rem;}
+      #zn-{{ section.id }} .zn-hero{grid-template-columns:1fr;min-height:auto;}
+      #zn-{{ section.id }} .zn-hero__media{order:-1;min-height:56vh;}
+      #zn-{{ section.id }} .zn-hero__text{padding:2.75rem 1.5rem 3rem;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      #zn-{{ section.id }} *{animation:none!important;transition:none!important;}
+    }
+    #zn-{{ section.id }} .zn-reveal-js{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+    #zn-{{ section.id }} .zn-reveal-js.zn-in{opacity:1;transform:none;}
+  </style>
+
+  {%- comment -%} =================== HERO =================== {%- endcomment -%}
+  <header class="zn-hero">
+    <div class="zn-hero__text">
+      <p class="zn-eyebrow">Our Story</p>
+      <h1>Rooted in Heritage.<br>Built Through Experience.<br><em>Ready to Scale.</em></h1>
+      <div class="zn-hero__thread"></div>
+    </div>
+    <div class="zn-hero__media">
+      {%- if section.settings.img_hero != blank -%}
+        <img class="zn-hero__img" src="{{ section.settings.img_hero | image_url: width: 1600 }}" alt="Shawnafi Dynesen, founder of Zyzven Naturals" loading="eager" width="1600">
+      {%- else -%}
+        <div class="zn-ph zn-ph--hero"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_hero</span><span class="zn-ph__label">Founder portrait &mdash; add a strong current photograph of Shawnafi.</span></div>
+      {%- endif -%}
+    </div>
+  </header>
+
+  {%- comment -%} =================== INTRO (always open) =================== {%- endcomment -%}
+  <section class="zn-intro">
+    <div class="zn-wrap zn-narrow zn-reveal-js">
+      <p class="zn-lede">Zyzven Naturals was never born from a perfectly written business plan. It grew from my life, my family, my heritage, and the thousands of conversations we had with people asking the same questions I once asked about myself.</p>
+      <div class="zn-body">
+        <p>I am <strong>Shawnafi Dynesen</strong>, founder and formulator of Zyzven Naturals. I am a Jamaican Maroon from St. Thomas, Jamaica &mdash; an author, a mother, and someone who became deeply interested in botanical wellness because I first needed answers for myself.</p>
+        <p>My husband, <strong>Lawrence Anderson</strong>, has been part of this journey from the early days when we physically made and packed products together, through to the international company we are building today. Even our name is personal: Zyzven Naturals was named after the child Lawrence and I share, <strong>T&yacute;r-Zyzven</strong>. From the beginning, this company has been connected to family, purpose and legacy.</p>
+        <p>Today we formulate botanical supplements, medicinal tea blends, skincare and haircare for customers internationally. Most of our products are professionally contract manufactured, we warehouse across several countries, and our quality systems are far removed from those early handmade days. But to understand Zyzven Naturals, you first need to understand where it came from.</p>
+      </div>
+      <div class="zn-sign">Shawnafi Dynesen</div>
+    </div>
+  </section>
+
+  {%- comment -%} =================== PULL QUOTE BAND 1 =================== {%- endcomment -%}
+  <section class="zn-band">
+    <div class="zn-wrap"><q>They didn&rsquo;t make me a doctor. <em>They made me a student.</em></q></div>
+  </section>
+
+  {%- comment -%} =================== CHAPTERS =================== {%- endcomment -%}
+  <section class="zn-chapters">
+    <div class="zn-wrap">
+      <div class="zn-chapters__head zn-reveal-js">
+        <p class="zn-eyebrow">The Journey</p>
+        <h2>Thirteen chapters, one thread</h2>
+        <p>From a small kitchen in St. Thomas to warehouses across five countries. Tap any chapter to read it.</p>
+        <nav class="zn-index" aria-label="Chapter navigation">
+          <button data-target="ch1"><span>01</span> Roots in St. Thomas</button>
+          <button data-target="ch2"><span>02</span> My Health Journey</button>
+          <button data-target="ch3"><span>03</span> The Shop That Started It</button>
+          <button data-target="ch4"><span>04</span> A Mosquito Bite</button>
+          <button data-target="ch5"><span>05</span> The Onion Oil Breakthrough</button>
+          <button data-target="ch6"><span>06</span> Alki Detox</button>
+          <button data-target="ch7"><span>07</span> Lives, Hormones & Community</button>
+          <button data-target="ch8"><span>08</span> Teas to Supplements</button>
+          <button data-target="ch9"><span>09</span> Professional Manufacturing</button>
+          <button data-target="ch10"><span>10</span> Rebuilding the Brand</button>
+          <button data-target="ch11"><span>11</span> Opportunity & Legacy</button>
+          <button data-target="ch12"><span>12</span> International From Day One</button>
+        </nav>
+      </div>
+
+      <div class="zn-thread">
+
+        <!-- CH 1 -->
+        <details class="zn-chapter" id="ch1">
+          <summary><span class="zn-node">01</span><span class="zn-chapter__text"><span class="zn-chapter__title">Roots in St. Thomas, Jamaica</span><span class="zn-chapter__teaser">A Jamaican Maroon childhood where herbs, roots and barks were simply understood.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>I am a Jamaican Maroon from St. Thomas. The Jamaican Maroons are descendants of Africans who resisted enslavement, established independent communities and preserved important elements of African culture, identity and knowledge across generations.</p>
+            <p>Growing up in rural Jamaica, herbs, roots, leaves, barks and traditional preparations were not something I discovered later through wellness culture. They were part of everyday life. My grandmother had a particularly strong influence on the way I looked at plants and traditional remedies. Knowledge was passed through observation, conversation and experience. Plants were simply something people understood.</p>
+            <p>As an adult, that early foundation was eventually joined by research and studies in Medical Herbalism. But the motivation to study health more deeply came from something much more personal.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_stthomas != blank -%}
+                <img src="{{ section.settings.img_stthomas | image_url: width: 1400 }}" alt="St. Thomas, Jamaica heritage" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_stthomas</span><span class="zn-ph__label">Authentic founder, family or St. Thomas / Jamaica imagery where available.</span></div>
+              {%- endif -%}
+            </figure>
+          </div>
+        </details>
+
+        <!-- CH 2 -->
+        <details class="zn-chapter" id="ch2">
+          <summary><span class="zn-node">02</span><span class="zn-chapter__text"><span class="zn-chapter__title">Before the Brand: My Own Health Journey</span><span class="zn-chapter__teaser">Menopause at twenty, PCOS and alopecia &mdash; the questions that made me a student.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>My hormonal health journey began unusually early. I was diagnosed with menopause in my early twenties and later navigated PCOS, fertility difficulties, significant weight problems, pituitary tumours, alopecia and Type 2 diabetes, which I subsequently brought into remission. All of this began before there was a Zyzven Naturals shop.</p>
+            <p>I was trying to understand why my body was behaving the way it was. That meant reading, researching, questioning, making lifestyle changes and repeatedly returning to the plants and traditional knowledge I had grown up around. Those experiences did not make me a doctor. They made me a student &mdash; and that curiosity became one of the foundations of Zyzven Naturals.</p>
+            <p>Even today, when customers repeatedly bring a particular wellness concern to us, my instinct is to study it. I look at the traditional use of botanicals, available research, ingredient forms, combinations and what a responsible formulation might look like.</p>
+            <p>I hold no formal qualification in food chemistry, and I think transparency about that matters. I develop the original formulation concepts and ingredient combinations using my research, Medical Herbalism knowledge, traditional botanical understanding, lived experience and the needs repeatedly identified within our community. The formulations are then refined with our technical and manufacturing partners before commercial production.</p>
+            <p class="zn-inlinequote">I am the person asking: Why is this ingredient here? What is it supposed to contribute? Does the combination make sense? That remains my role in every formulation we develop.</p>
+            {%- if section.settings.img_health != blank -%}
+            <figure class="zn-fig"><img src="{{ section.settings.img_health | image_url: width: 1400 }}" alt="Shawnafi's health and formulation journey" loading="lazy" width="1400"></figure>
+            {%- endif -%}
+          </div>
+        </details>
+
+        <!-- CH 3 -->
+        <details class="zn-chapter" id="ch3">
+          <summary><span class="zn-node">03</span><span class="zn-chapter__text"><span class="zn-chapter__title">The Shop That Started It</span><span class="zn-chapter__teaser">A 2016 shop in Sweden, and a gap in the market we couldn&rsquo;t ignore.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>In 2016, Lawrence and I opened an ethnic retail shop in Sweden. At first, skincare and haircare became our focus. We were looking closely at some of the products traditionally marketed towards Black and brown consumers and became uncomfortable with some of the ingredient profiles we were seeing. We wanted products we felt comfortable using within our own family and recommending to customers.</p>
+            <p>At the same time, an unexpected group of customers began approaching us. Swedish parents raising adopted and foster children with different skin and hair needs would come into the shop looking for help finding appropriate products for their children. Those conversations made the gap increasingly obvious. People needed better options.</p>
+            <p>And then something happened during a trip to Jamaica that gave us our first product.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_shop2016 != blank -%}
+                <img src="{{ section.settings.img_shop2016 | image_url: width: 1400 }}" alt="The 2016 Zyzven shop in Sweden" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_shop2016</span><span class="zn-ph__label">Any photographs from the original 2016 ethnic shop in Sweden.</span></div>
+              {%- endif -%}
+            </figure>
+          </div>
+        </details>
+
+        <!-- CH 4 -->
+        <details class="zn-chapter" id="ch4">
+          <summary><span class="zn-node">04</span><span class="zn-chapter__text"><span class="zn-chapter__title">A Mosquito Bite &amp; Our First Product</span><span class="zn-chapter__teaser">Made, wrapped and packed by our own hands &mdash; where it truly began.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>Our then four-year-old child was badly affected by mosquito bites during a trip to Jamaica. I wanted a botanical alternative for him, so I began making one. The result was a mosquito-repellent soap. That became our first product.</p>
+            <p>There was no factory. No large formulation team. No sophisticated packaging operation. Lawrence and I made products ourselves, wrapped them and packed them by hand. Some of the early photographs show products literally being wrapped in cling film. Today those pictures make me smile, but I also treasure them because they represent where the company truly started.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_handmade != blank -%}
+                <img src="{{ section.settings.img_handmade | image_url: width: 1400 }}" alt="Early Zyzven products hand-wrapped in cling film" loading="lazy" width="1400">
+                <figcaption>Before professional manufacturing and international warehouses, there were products made, wrapped and packed by our own hands.</figcaption>
+              {%- else -%}
+                <div class="zn-ph zn-ph--tall"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_handmade</span><span class="zn-ph__label">Early products wrapped in cling film / hand-packed. Do not over-edit &mdash; the imperfection is the point. Caption: &ldquo;Before professional manufacturing and international warehouses, there were products made, wrapped and packed by our own hands.&rdquo;</span></div>
+              {%- endif -%}
+            </figure>
+            <figure class="zn-fig">
+              {%- if section.settings.img_mosquito != blank -%}
+                <img src="{{ section.settings.img_mosquito | image_url: width: 1400 }}" alt="Early mosquito-repellent soap" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_mosquito</span><span class="zn-ph__label">Early mosquito-repellent soap product photograph, if available.</span></div>
+              {%- endif -%}
+            </figure>
+          </div>
+        </details>
+
+        <!-- CH 5 -->
+        <details class="zn-chapter" id="ch5">
+          <summary><span class="zn-node">05</span><span class="zn-chapter__text"><span class="zn-chapter__title">Alopecia &amp; the Onion Oil Breakthrough</span><span class="zn-chapter__teaser">A small kitchen in Jamaica, and the onion oil that changed everything.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>During an extended stay in Jamaica in 2017&ndash;2018, I was experiencing alopecia. Once again, I started researching. In a small kitchen in Jamaica, I began producing an onion-based botanical oil as part of my own hair journey.</p>
+            <p>At the same time, I was documenting that journey openly on Facebook. People could actually watch what was happening. They asked what I was using. They followed the progress. Then they started asking if they could buy it. That formulation became <strong>Zyzven Naturals Onion Growth Oil</strong> &mdash; and our breakthrough product.</p>
+            <p>Customers began sharing their experiences and telling others about the oil. Over the years, they have told us about the many ways they incorporate it into their routines, including hair, scalp, skin and nail care. Word travelled. So did the bottles. And Zyzven Naturals began growing because customers kept telling other people about us.</p>
+            <p class="zn-inlinequote">Today, most of our products have transitioned into professional contract manufacturing. The Onion Growth Oil has not. We still make it ourselves &mdash; it remains the product that connects the modern Zyzven Naturals to that small kitchen in Jamaica.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_onion != blank -%}
+                <img src="{{ section.settings.img_onion | image_url: width: 1400 }}" alt="Zyzven Naturals Onion Growth Oil" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_onion</span><span class="zn-ph__label">Early Onion Growth Oil bottle / Jamaica imagery. A discreet alopecia-progress photo may go here only if the founder is comfortable publishing it.</span></div>
+              {%- endif -%}
+            </figure>
+          </div>
+        </details>
+
+        <!-- CH 6 -->
+        <details class="zn-chapter" id="ch6">
+          <summary><span class="zn-node">06</span><span class="zn-chapter__text"><span class="zn-chapter__title">Alki Detox &amp; the Move Into Wellness</span><span class="zn-chapter__teaser">From beauty into metabolic wellness, led by what customers told us.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>My own weight and metabolic journey eventually changed the company again. I had struggled for years with stubborn abdominal weight alongside my hormonal issues. I began researching botanicals for myself and eventually developed a loose-leaf formulation that became <strong>Alki Detox</strong> &mdash; another breakthrough, and one of our most successful products.</p>
+            <p>But the most important part was what customers told us after using it. People would return and talk about their weight-management journeys, digestion and general wellbeing. Some told us about changes in blood pressure or blood sugar readings they were already monitoring. Over the years, some have also told us they achieved Type 2 diabetes remission while incorporating our products into broader, medically supervised lifestyle changes.</p>
+            <p>Those are customer experiences, not promises that a supplement can treat or cure diabetes &mdash; but they encouraged much larger conversations around metabolic wellness. Soon people were asking us about blood sugar, hormones, PCOS, menopause, fertility, fibroids, weight management and men&rsquo;s health. And the company changed.</p>
+            <div class="zn-then-now-tag">Then &amp; now</div>
+            <div class="zn-split">
+              <figure class="zn-fig">
+                {%- if section.settings.img_alki_then != blank -%}
+                  <img src="{{ section.settings.img_alki_then | image_url: width: 900 }}" alt="Early Alki Detox" loading="lazy" width="900">
+                  <figcaption>The early Alki Detox</figcaption>
+                {%- else -%}
+                  <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_alki_then</span><span class="zn-ph__label">Early Alki Detox image</span></div>
+                {%- endif -%}
+              </figure>
+              <figure class="zn-fig">
+                {%- if section.settings.img_alki_now != blank -%}
+                  <img src="{{ section.settings.img_alki_now | image_url: width: 900 }}" alt="Current Alki Detox packaging" loading="lazy" width="900">
+                  <figcaption>Today&rsquo;s packaging</figcaption>
+                {%- else -%}
+                  <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_alki_now</span><span class="zn-ph__label">Current Alki Detox packaging</span></div>
+                {%- endif -%}
+              </figure>
+            </div>
+          </div>
+        </details>
+
+        <!-- CH 7 -->
+        <details class="zn-chapter" id="ch7">
+          <summary><span class="zn-node">07</span><span class="zn-chapter__text"><span class="zn-chapter__title">Facebook Lives, Hormones &amp; Community</span><span class="zn-chapter__teaser">The Lives that became a classroom &mdash; and &ldquo;the baby factory.&rdquo;</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>We did something else that became fundamental to Zyzven Naturals. We educated. I began hosting Facebook Lives around the subjects our customers were asking about: hormones, PCOS, menopause, fertility, weight, metabolic wellness, hair loss &mdash; the conversations people were having privately but often didn&rsquo;t fully understand.</p>
+            <p>Something remarkable happened. The more we educated, the more people recognised themselves in what we were talking about. A woman would hear a conversation about hormonal symptoms and suddenly say, <em>this sounds like me</em>. Someone would share the Live with a sister, friend, partner or parent. Our social media became much more than somewhere to advertise &mdash; it became a community classroom.</p>
+            <p class="zn-inlinequote">Education created conversation. Conversation created trust. Trust created recommendations. And those recommendations built the brand.</p>
+            <p>Zyzven Naturals has never relied on paid advertising to build its customer base. Our growth has come through education, customer recommendations, word of mouth and people sharing their own experiences. Our customers became our strongest ambassadors.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_fblive != blank -%}
+                <img src="{{ section.settings.img_fblive | image_url: width: 1400 }}" alt="Early educational Facebook Live" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_fblive</span><span class="zn-ph__label">Screenshot from an early educational Live &mdash; ensure no private customer information is visible.</span></div>
+              {%- endif -%}
+            </figure>
+            <p><strong>The &ldquo;baby factory&rdquo; &amp; creating space for menopause.</strong> Hormonal wellness gradually became one of the areas our community knew us best for. Women spoke to us about PCOS, irregular cycles, fertility difficulties and menopause. Having experienced fertility difficulties myself, those conversations were particularly close to me.</p>
+            <p>Then customers began returning with pregnancy announcements, and eventually photographs of babies. It happened often enough that our community affectionately began calling Zyzven Naturals &ldquo;the baby factory.&rdquo; We have never promised pregnancy &mdash; fertility is complex and our products are not fertility treatments &mdash; but hearing from so many women who chose our products as part of their wider journey became one of the most meaningful parts of building the brand.</p>
+            <p>At the same time, we deliberately created space for women to talk about menopause. For years women joined our Lives saying, <em>nobody told me this was menopause</em>. Those conversations eventually contributed to my book, <strong>WombWise &ndash; Womb Wisdom &amp; The Works</strong>, a culturally aware guide to menopause and women&rsquo;s wellness &mdash; designed to bring forward experiences Black and Caribbean women did not always see reflected in mainstream resources, while remaining relevant to women from all backgrounds.</p>
+            <p><strong>Formulated for everyone, without forgetting who helped shape us.</strong> Zyzven Naturals products are for everyone, but we are particularly proud of the trust the brand has built within Black and Caribbean communities. Today our customers come from many racial, cultural and national backgrounds. Our roots explain who we are. They do not determine who is welcome.</p>
+          </div>
+        </details>
+
+        <!-- CH 8 -->
+        <details class="zn-chapter" id="ch8">
+          <summary><span class="zn-node">08</span><span class="zn-chapter__text"><span class="zn-chapter__title">From Medicinal Teas to Advanced Supplements</span><span class="zn-chapter__teaser">Where we came from, and where our customers asked us to go.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>For years, medicinal loose-leaf teas were central to Zyzven Naturals. They were close to my Jamaican botanical roots and gave us the ability to create complex blends around specific wellness needs. But customers kept asking us for something else: convenience. They loved the teas, but people were working, travelling and raising families. Not everyone could brew medicinal tea every day.</p>
+            <p>That pushed us into advanced food supplements. But we did not want simply to grind raw herbs into powder, put them in capsules and call the job finished. Our objective became practitioner-strength formulations built around concentrated and standardised botanical extracts where appropriate &mdash; allowing us to work differently from raw powdered herbs, particularly where concentration and consistency in specified plant constituents matter.</p>
+            <p class="zn-inlinequote">Our teas represent where we came from. Our supplements represent where our customers asked us to go.</p>
+            <p>Today, our strongest formulation areas include hormonal wellness, metabolic health, women&rsquo;s wellness, menopause, men&rsquo;s vitality, healthy weight management and everyday wellbeing.</p>
+            <div class="zn-split">
+              <figure class="zn-fig">
+                {%- if section.settings.img_teas != blank -%}
+                  <img src="{{ section.settings.img_teas | image_url: width: 900 }}" alt="Medicinal loose-leaf teas" loading="lazy" width="900">
+                  <figcaption>Where we came from &mdash; loose-leaf teas</figcaption>
+                {%- else -%}
+                  <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_teas</span><span class="zn-ph__label">Medicinal loose-leaf teas</span></div>
+                {%- endif -%}
+              </figure>
+              <figure class="zn-fig">
+                {%- if section.settings.img_supplements != blank -%}
+                  <img src="{{ section.settings.img_supplements | image_url: width: 900 }}" alt="Modern supplement range" loading="lazy" width="900">
+                  <figcaption>Where customers asked us to go &mdash; supplements</figcaption>
+                {%- else -%}
+                  <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_supplements</span><span class="zn-ph__label">Modern advanced supplement range</span></div>
+                {%- endif -%}
+              </figure>
+            </div>
+          </div>
+        </details>
+
+        <!-- CH 9 -->
+        <details class="zn-chapter" id="ch9">
+          <summary><span class="zn-node">09</span><span class="zn-chapter__text"><span class="zn-chapter__title">From Handmade to Professional Manufacturing</span><span class="zn-chapter__teaser">GMP, HACCP and BRCGS &mdash; built to scale, and transparent about it.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>There was a time when Lawrence and I physically made and packed the products ourselves. Growth meant that could not remain the model for everything. Today, most Zyzven Naturals products are professionally contract manufactured through carefully selected partners, giving us greater production capacity, consistency, documentation and quality control as the company expands. Our Onion Growth Oil remains produced by us and continues to carry that direct connection to the handmade beginnings.</p>
+            <p>Our wider manufacturing and quality framework now includes, depending on the product and facility, standards and certifications such as GMP manufacturing, HACCP and BRCGS systems, third-party analytical testing, Vegan and Non-GMO specifications, and Halal and Kosher certification where applicable &mdash; with appropriately registered manufacturing facilities for the markets being served. Not every certification applies to every product, and we believe it is important to be transparent about that distinction. Our products are also covered by product liability insurance across key markets.</p>
+            <p class="zn-inlinequote">We may have started with cling film and a kitchen table. We never intended to stay there.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_manufacturing != blank -%}
+                <img src="{{ section.settings.img_manufacturing | image_url: width: 1400 }}" alt="Current products, testing and manufacturing" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_manufacturing</span><span class="zn-ph__label">Current products, testing/manufacturing imagery and relevant certification badges. Certifications must only appear where actually applicable.</span></div>
+              {%- endif -%}
+            </figure>
+          </div>
+        </details>
+
+        <!-- CH 10 -->
+        <details class="zn-chapter" id="ch10">
+          <summary><span class="zn-node">10</span><span class="zn-chapter__text"><span class="zn-chapter__title">Starting Again &amp; Rebuilding the Brand</span><span class="zn-chapter__teaser">We have had to build this brand more than once.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>I was not naturally a businessperson. I was a formulator with ideas, customers and a strong ability to connect with people. In the early years, Zyzven Naturals began gaining real momentum, including getting products onto retail shelves in Jamaica. Then life changed.</p>
+            <p>Personal circumstances and moving countries meant that much of what we had built could not simply continue in the same way. Our family moved from Sweden to the United Kingdom, and in many respects Zyzven Naturals had to start again. We rebuilt the customer base. We learned new regulations and systems. We developed new manufacturing relationships. We strengthened the products. We built new fulfilment infrastructure. We rebuilt the business itself. London became an important headquarters and international base.</p>
+            <p>Eventually, our family&rsquo;s journey brought us back to Sweden. This time, however, we were not returning with the same small company that had left. We returned with experience, international customers, stronger formulations, professional manufacturing relationships, better systems and a much clearer understanding of the company we wanted to build.</p>
+            <p class="zn-inlinequote">We had built Zyzven Naturals once through instinct. We rebuilt it with experience. And that second foundation is much stronger.</p>
+            {%- if section.settings.img_rebuild != blank -%}
+            <figure class="zn-fig"><img src="{{ section.settings.img_rebuild | image_url: width: 1400 }}" alt="Rebuilding Zyzven Naturals across countries" loading="lazy" width="1400"></figure>
+            {%- endif -%}
+          </div>
+        </details>
+
+        <!-- CH 11 -->
+        <details class="zn-chapter" id="ch11">
+          <summary><span class="zn-node">11</span><span class="zn-chapter__text"><span class="zn-chapter__title">Opportunity, Education &amp; Social Impact</span><span class="zn-chapter__teaser">Growth that creates opportunity &mdash; and a school in rural Gambia.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>When COVID-19 disrupted jobs and livelihoods, I watched women around us lose income. Zyzven Naturals was still growing, but I wanted the company to become useful in another way. We began allowing women to access our products at low wholesale rates, sell them within their communities and keep the profit.</p>
+            <p>That early model gave some women an opportunity during a difficult period, but it also taught us important business lessons. An informal model is difficult to sustain as a company grows. We learned that successful long-term partnerships need clear pricing, professional agreements, structure, boundaries, territory considerations and reliable wholesale and distribution systems. So the model evolved.</p>
+            <p>Today, we are deliberately expanding structured opportunities for retailers, resellers, wellness professionals and distributors to carry Zyzven Naturals. Some already have pharmacies, clinics, salons, health stores, supermarkets or wellness businesses. Others may be starting something of their own. Either way, the principle has remained: when Zyzven Naturals grows, we want that growth to create opportunity for other people too.</p>
+            <p><strong>A legacy beyond our own family.</strong> Lawrence has been part of this story since the shop in Sweden, and our children have grown up alongside Zyzven Naturals. We are not building something purely for today&rsquo;s sales &mdash; we are building something our children can eventually understand, participate in and potentially carry forward. But legacy cannot only mean our own children. A portion of Zyzven Naturals&rsquo; profits supports girls&rsquo; education in rural Gambia, where we are helping to fund the development of a school.</p>
+            <p class="zn-inlinequote">Education can change what becomes possible for a girl. Entrepreneurship can change what becomes possible for a woman. A growing company can create opportunities far beyond the people who own it.</p>
+            <div class="zn-split">
+              <figure class="zn-fig">
+                {%- if section.settings.img_gambia != blank -%}
+                  <img src="{{ section.settings.img_gambia | image_url: width: 900 }}" alt="Girls' education initiative in The Gambia" loading="lazy" width="900">
+                  <figcaption>The girls&rsquo; education initiative, The Gambia</figcaption>
+                {%- else -%}
+                  <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_gambia</span><span class="zn-ph__label">Authentic images from the girls&rsquo; education / school initiative, if available.</span></div>
+                {%- endif -%}
+              </figure>
+              <figure class="zn-fig">
+                {%- if section.settings.img_family != blank -%}
+                  <img src="{{ section.settings.img_family | image_url: width: 900 }}" alt="Shawnafi and Lawrence" loading="lazy" width="900">
+                  <figcaption>Shawnafi &amp; Lawrence</figcaption>
+                {%- else -%}
+                  <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_family</span><span class="zn-ph__label">A second image of Shawnafi and Lawrence for the family / legacy section.</span></div>
+                {%- endif -%}
+              </figure>
+            </div>
+          </div>
+        </details>
+
+        <!-- CH 12 -->
+        <details class="zn-chapter" id="ch12">
+          <summary><span class="zn-node">12</span><span class="zn-chapter__text"><span class="zn-chapter__title">International From Day One</span><span class="zn-chapter__teaser">Warehoused across five countries. International was always the vision.</span></span><span class="zn-chevron"></span></summary>
+          <div class="zn-chapter__body">
+            <p>Even when Zyzven Naturals was small, we did not think of it as a brand that should remain limited to one town or one country. Our online community was already international. Customers shared products with relatives and friends across borders, and from very early on we approached the company with the intention of reaching an international market.</p>
+            <p>Today, Zyzven Naturals warehouses products across five countries, with online orders fulfilled through the location closest to each market &mdash; bringing products nearer to customers and building a more efficient international distribution network.</p>
+            <p>We moved from handmade production to professional manufacturing, from one physical shop to international e-commerce, from local packing to multiple fulfilment locations, and from informal word-of-mouth sales to a growing international retailer and distribution network. We did not suddenly decide to become international because the business became bigger. International was always part of the vision.</p>
+            <figure class="zn-fig">
+              {%- if section.settings.img_international != blank -%}
+                <img src="{{ section.settings.img_international | image_url: width: 1400 }}" alt="International warehousing and fulfilment" loading="lazy" width="1400">
+              {%- else -%}
+                <div class="zn-ph"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_international</span><span class="zn-ph__label">Product cartons, warehouse stock or fulfilment imagery.</span></div>
+              {%- endif -%}
+            </figure>
+          </div>
+        </details>
+
+      </div><!-- /.zn-thread -->
+    </div>
+  </section>
+
+  {%- comment -%} =================== LOCATIONS =================== {%- endcomment -%}
+  <section class="zn-locations">
+    <div class="zn-wrap zn-reveal-js">
+      <p class="zn-eyebrow">International Fulfilment</p>
+      <h3>Warehoused across five countries</h3>
+      <div class="zn-loc-grid">
+        <div class="zn-loc">United States<small>USA</small></div>
+        <div class="zn-loc">United Kingdom<small>UK</small></div>
+        <div class="zn-loc">Canada<small>CA</small></div>
+        <div class="zn-loc">Sweden<small>SE</small></div>
+        <div class="zn-loc">Jamaica<small>JM</small></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} =================== BROCHURE CTA (after reseller section) =================== {%- endcomment -%}
+  <section class="zn-brochure">
+    <div class="zn-wrap zn-reveal-js">
+      <p class="zn-eyebrow" style="color:var(--gold-soft)">Grow With Us</p>
+      <h3>Want to bring Zyzven Naturals to your community?</h3>
+      <p>Whether you are an independent entrepreneur, retailer, wellness professional or distributor, explore the opportunities to grow with us.</p>
+      <a class="zn-btn zn-btn--gold" href="{{ section.settings.url_brochure | default: '#' }}">
+        View Retail &amp; Partner Brochure <span class="zn-btn__arrow">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  {%- comment -%} =================== PULL QUOTE BAND 2 (pre-finale) =================== {%- endcomment -%}
+  <section class="zn-band">
+    <div class="zn-wrap"><q>We are no longer trying to prove that Zyzven Naturals can work. <em>We are preparing to scale what we have already proved can work.</em></q></div>
+  </section>
+
+  {%- comment -%} =================== FINALE (always open) =================== {%- endcomment -%}
+  <section class="zn-finale">
+    <div class="zn-wrap zn-narrow zn-reveal-js">
+      <div class="zn-finale__kicker">
+        <p class="zn-eyebrow">Now We Scale</p>
+        <h2>Ready for the next chapter</h2>
+      </div>
+      <div class="zn-body">
+        <p>The story of Zyzven Naturals has never been perfectly linear. We have gone from a small ethnic shop in Sweden to products made in a kitchen in Jamaica; from hair oil to medicinal teas; from Facebook Lives to conversations about hormones, fertility and menopause that brought thousands of people into our community; from handmade products to professional manufacturing; from building momentum to having to start over in another country. And then we rebuilt.</p>
+        <p>That matters because Zyzven Naturals today is not simply an idea with potential. It is a brand that has been tested by customers, by relocation, by changing markets and by the realities of building a company from the ground up. Our customer base has largely been built organically rather than through paid advertising. Our products have travelled because people talked about them.</p>
+        <p>At the same time, we have spent years strengthening what sits behind that demand: formulations, testing, manufacturing relationships, international fulfilment, brand protection and a more professional retail and distribution structure. We now warehouse across the USA, UK, Canada, Sweden and Jamaica, while continuing to develop our international reach.</p>
+        <p>Our goal now is to place Zyzven Naturals in more communities, more retail environments and more international markets while protecting the trust that built the company in the first place. We want customers to feel confident buying it, entrepreneurs and retailers to see a range they are proud to carry, distributors to see an established story and proven formulations, and strategic partners to see a founder-led company with authentic origins, organic demand, international ambition, established infrastructure and considerable room still to grow.</p>
+        <p>Zyzven Naturals began because I needed answers. It grew because other people recognised themselves in the questions. It survived because Lawrence and I were willing to rebuild it when life changed. And it continues because our customers kept believing in what we were creating strongly enough to tell someone else.</p>
+      </div>
+      <figure class="zn-fig">
+        {%- if section.settings.img_final != blank -%}
+          <img src="{{ section.settings.img_final | image_url: width: 1600 }}" alt="The Zyzven Naturals product range" loading="lazy" width="1600">
+        {%- else -%}
+          <div class="zn-ph zn-ph--tall"><span class="zn-ph__leaf">&#10047;</span><span class="zn-ph__tag">image_final</span><span class="zn-ph__label">Strong modern group shot of the full Zyzven Naturals range.</span></div>
+        {%- endif -%}
+      </figure>
+      <p class="zn-manifesto">Rooted in heritage. Refined by knowledge. Formulated with purpose. Built for legacy.</p>
+      <div class="zn-wordmark">Zyzven Naturals</div>
+      <p class="zn-tagline">From our family to yours &mdash; and from St. Thomas, Jamaica, to the world.</p>
+    </div>
+  </section>
+
+  {%- comment -%} =================== FINAL CTA GRID =================== {%- endcomment -%}
+  <section class="zn-cta">
+    <div class="zn-wrap">
+      <div class="zn-cta__head zn-reveal-js">
+        <p class="zn-eyebrow" style="color:var(--gold-soft)">Where to Next</p>
+        <h3>Four ways to move forward with us</h3>
+      </div>
+      <div class="zn-cta-grid zn-reveal-js">
+        <a class="zn-card" href="{{ section.settings.url_shop | default: '/collections/all' }}">
+          <span class="zn-card__num">01</span>
+          <h4>Shop Our Products</h4>
+          <p>Explore the Zyzven Naturals wellness collection.</p>
+          <span class="zn-card__arrow">&rarr;</span>
+        </a>
+        <a class="zn-card" href="{{ section.settings.url_retailer | default: section.settings.url_brochure | default: '#' }}">
+          <span class="zn-card__num">02</span>
+          <h4>Become a Retailer or Reseller</h4>
+          <p>Carry the range in your shop, clinic, salon or community.</p>
+          <span class="zn-card__arrow">&rarr;</span>
+        </a>
+        <a class="zn-card" href="{{ section.settings.url_wholesale | default: '#' }}">
+          <span class="zn-card__num">03</span>
+          <h4>Wholesale &amp; Distribution</h4>
+          <p>For established commercial partners and volume orders.</p>
+          <span class="zn-card__arrow">&rarr;</span>
+        </a>
+        <a class="zn-card" href="{{ section.settings.url_partnership | default: '#' }}">
+          <span class="zn-card__num">04</span>
+          <h4>Strategic Partnerships</h4>
+          <p>For market expansion, investment interest and aligned strategic relationships.</p>
+          <span class="zn-card__arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('zn-{{ section.id }}');
+  if(!root) return;
+
+  /* Chapter index -> open target chapter + smooth scroll */
+  root.querySelectorAll('.zn-index button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = root.querySelector('#'+btn.getAttribute('data-target'));
+      if(!t) return;
+      t.open = true;
+      var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+    });
+  });
+
+  /* Scroll reveal */
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var items = root.querySelectorAll('.zn-reveal-js');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('zn-in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('zn-in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+
+{%- comment -%} =================== SCHEMA =================== {%- endcomment -%}
+{% schema %}
+{
+  "name": "Founder Story",
+  "tag": "section",
+  "class": "zn-founder-story-section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "image_picker", "id": "img_hero", "label": "Hero &mdash; current founder photo (Shawnafi)" },
+
+    { "type": "header", "content": "Chapter images (archival photos preferred)" },
+    { "type": "image_picker", "id": "img_stthomas", "label": "01 - St. Thomas / Jamaica heritage" },
+    { "type": "image_picker", "id": "img_health", "label": "02 - Health journey (portrait / botanical)" },
+    { "type": "image_picker", "id": "img_shop2016", "label": "03 - 2016 Sweden shop" },
+    { "type": "image_picker", "id": "img_handmade", "label": "04 - Handmade beginnings (cling film / hand-packed)" },
+    { "type": "image_picker", "id": "img_mosquito", "label": "04 - Mosquito-repellent soap (first product)" },
+    { "type": "image_picker", "id": "img_onion", "label": "05 - Onion Growth Oil / Jamaica" },
+    { "type": "image_picker", "id": "img_alki_then", "label": "06 - Alki Detox &mdash; early (then)" },
+    { "type": "image_picker", "id": "img_alki_now", "label": "06 - Alki Detox &mdash; current (now)" },
+    { "type": "image_picker", "id": "img_fblive", "label": "07 - Facebook Live screenshot (no private info)" },
+    { "type": "image_picker", "id": "img_teas", "label": "08 - Medicinal loose-leaf teas" },
+    { "type": "image_picker", "id": "img_supplements", "label": "08 - Modern supplement range" },
+    { "type": "image_picker", "id": "img_manufacturing", "label": "09 - Manufacturing / testing / certifications" },
+    { "type": "image_picker", "id": "img_rebuild", "label": "10 - Rebuilding the brand (London / relocation)" },
+    { "type": "image_picker", "id": "img_gambia", "label": "11 - Gambia girls' education initiative" },
+    { "type": "image_picker", "id": "img_family", "label": "11 - Shawnafi & Lawrence (legacy)" },
+    { "type": "image_picker", "id": "img_international", "label": "12 - Warehouse / fulfilment / cartons" },
+    { "type": "image_picker", "id": "img_final", "label": "Finale - Full product range group shot" },
+
+    { "type": "header", "content": "Links & CTAs" },
+    { "type": "url", "id": "url_brochure", "label": "Retail & Partner Brochure page" },
+    { "type": "url", "id": "url_shop", "label": "Shop / products collection" },
+    { "type": "url", "id": "url_retailer", "label": "Become a retailer / reseller (defaults to brochure)" },
+    { "type": "url", "id": "url_wholesale", "label": "Wholesale & distribution enquiry" },
+    { "type": "url", "id": "url_partnership", "label": "Strategic partnerships enquiry (private routing)" }
+  ],
+  "presets": [
+    { "name": "Founder Story" }
+  ]
+}
+{% endschema %}
+

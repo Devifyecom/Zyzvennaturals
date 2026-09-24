@@ -1,0 +1,123 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'biab.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign s = section.settings
+  assign buy_anchor = s.cta_anchor | default: '#biab-purchase'
+-%}
+
+<div class="biab biab-hero" id="biab-top">
+  <section class="biab-section" aria-labelledby="biab-hero-title">
+    <div class="biab-inner">
+      <div class="biab-hero__grid">
+        <div class="biab-hero__copy">
+          {%- if s.eyebrow != blank -%}
+            <p class="biab-eyebrow">{{ s.eyebrow }}</p>
+          {%- endif -%}
+
+          <h1 class="biab-h1" id="biab-hero-title">{{ s.heading }}</h1>
+
+          {%- if s.subheading != blank -%}
+            <p class="biab-lede">{{ s.subheading }}</p>
+          {%- endif -%}
+
+          <div class="biab-hero__price">
+            <span class="biab-hero__amount">{{ s.price }}</span>
+            {%- if s.price_suffix != blank -%}
+              <span class="biab-hero__suffix">{{ s.price_suffix }}</span>
+            {%- endif -%}
+            {%- if s.rrp != blank -%}
+              <span class="biab-hero__rrp">
+                {{ s.rrp_label }} <strong>{{ s.rrp }}</strong>
+              </span>
+            {%- endif -%}
+          </div>
+
+          <div class="biab-hero__ctas">
+            <a class="biab-btn biab-btn--gold" href="{{ buy_anchor }}">{{ s.cta_label }}</a>
+            {%- if s.secondary_label != blank -%}
+              <a class="biab-btn biab-btn--outline" href="{{ s.secondary_anchor | default: '#biab-contents' }}">
+                {{ s.secondary_label }}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="biab-hero__media-col">
+          <div class="biab-hero__media">
+            {%- if s.image != blank -%}
+              {{
+                s.image
+                | image_url: width: 1200
+                | image_tag:
+                  widths: '480, 720, 960, 1200',
+                  sizes: '(min-width: 990px) 46vw, 92vw',
+                  loading: 'eager',
+                  fetchpriority: 'high',
+                  alt: s.image_alt
+              }}
+            {%- else -%}
+              {%- if request.design_mode -%}<div class="biab-hero__placeholder">
+                <p>Add a photo of Shawnafi and Lawrence with the Business in a Box, or a premium shot of the full box with all 40 products.</p>
+              </div>{%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="biab-trustbar">
+      <ul class="biab-trustbar__list">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>{{ block.settings.label }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — Hero",
+  "tag": "section",
+  "class": "biab-section-wrapper",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Reseller Starter Package" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Start Your Own Wellness Business with Zyzven Naturals" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "One box. 40 ready-to-sell products. Training, marketing tools and ongoing support to help you begin." },
+    { "type": "text", "id": "price", "label": "Price", "default": "$999" },
+    { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "+ shipping" },
+    { "type": "text", "id": "rrp_label", "label": "Retail value label", "default": "Combined recommended retail value" },
+    { "type": "text", "id": "rrp", "label": "Retail value", "default": "$2,029.60" },
+    { "type": "text", "id": "cta_label", "label": "Primary button label", "default": "Start Your Business — $999" },
+    { "type": "text", "id": "cta_anchor", "label": "Primary button target", "default": "#biab-purchase" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "See What's Inside" },
+    { "type": "text", "id": "secondary_anchor", "label": "Secondary button target", "default": "#biab-contents" },
+    { "type": "image_picker", "id": "image", "label": "Hero image", "info": "Real photography only. Shawnafi and Lawrence with the box, or the full 40-product box." },
+    { "type": "text", "id": "image_alt", "label": "Hero image alt text", "default": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements" }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Trust item",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "40 Products" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — Hero",
+      "blocks": [
+        { "type": "trust", "settings": { "label": "40 Products" } },
+        { "type": "trust", "settings": { "label": "Product Training" } },
+        { "type": "trust", "settings": { "label": "Monthly Check-ins" } },
+        { "type": "trust", "settings": { "label": "Marketing Toolkit" } },
+        { "type": "trust", "settings": { "label": "Wholesale, Not MLM" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

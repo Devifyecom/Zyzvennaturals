@@ -1,0 +1,540 @@
+{%- comment -%}
+  ============================================================
+  Hey Girl ‚Äî "Problem / Why we made it" section
+  File: sections/hg-problem.liquid
+  Fully self-contained: no theme CSS variables, no theme classes.
+  Everything is scoped to .hgp-{{ section.id }} so your theme's
+  .section / .atc / h2 rules cannot leak in and break it.
+  ============================================================
+{%- endcomment -%}
+
+{%- liquid
+  assign uid = section.id | replace: '_', '' | replace: '-', ''
+  assign accent = section.settings.accent_color | default: '#E85A34'
+  assign ink = section.settings.ink_color | default: '#1A1A1A'
+  assign body_color = section.settings.body_color | default: '#5F5F5F'
+  assign card_bg = section.settings.card_bg | default: '#FDEFEB'
+  assign band_bg = section.settings.band_bg | default: '#FADDD8'
+-%}
+
+<div class="hgp hgp-{{ uid }}" id="hgp-{{ uid }}">
+  <style>
+    /* ---------- tokens (scoped) ---------- */
+    #hgp-{{ uid }}{
+      --hgp-accent: {{ accent }};
+      --hgp-accent-dark: {{ accent | color_darken: 8 }};
+      --hgp-accent-glow: {{ accent | color_to_rgb | replace: 'rgb(', 'rgba(' | replace: ')', ', .5)' }};
+      --hgp-ink: {{ ink }};
+      --hgp-body: {{ body_color }};
+      --hgp-card: {{ card_bg }};
+      --hgp-band: {{ band_bg }};
+      --hgp-radius: 18px;
+      --hgp-radius-img: 20px;
+      --hgp-font: {{ section.settings.font_stack }};
+    }
+
+    /* ---------- reset inside the section only ---------- */
+    #hgp-{{ uid }}, #hgp-{{ uid }} *, #hgp-{{ uid }} *::before, #hgp-{{ uid }} *::after{
+      box-sizing: border-box;
+    }
+    #hgp-{{ uid }}{
+      font-family: var(--hgp-font);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      background: {{ section.settings.section_bg }};
+      padding: {{ section.settings.pad_top_mobile }}px 20px {{ section.settings.pad_bottom_mobile }}px;
+    }
+    #hgp-{{ uid }} h2,
+    #hgp-{{ uid }} p,
+    #hgp-{{ uid }} div,
+    #hgp-{{ uid }} button{
+      margin: 0;
+      padding: 0;
+      font-family: inherit;
+    }
+    #hgp-{{ uid }} img{ max-width: 100%; }
+
+    #hgp-{{ uid }} .hgp-wrap{
+      max-width: {{ section.settings.max_width }}px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ---------- grid ---------- */
+    #hgp-{{ uid }} .hgp-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    /* ---------- copy ---------- */
+    #hgp-{{ uid }} .hgp-eyebrow{
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      line-height: 1.35;
+      color: var(--hgp-accent);
+      margin-bottom: 14px;
+    }
+
+    #hgp-{{ uid }} .hgp-title{
+      font-size: clamp(30px, 8.2vw, 45px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--hgp-ink);
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+    #hgp-{{ uid }} .hgp-title em{
+      font-style: normal;
+      color: var(--hgp-accent);
+    }
+
+    #hgp-{{ uid }} .hgp-lead{
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--hgp-body);
+      max-width: 60ch;
+      margin-bottom: 18px;
+    }
+    #hgp-{{ uid }} .hgp-lead:last-of-type{ margin-bottom: 0; }
+
+    /* ---------- stat cards ---------- */
+    #hgp-{{ uid }} .hgp-stats{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 26px;
+    }
+    #hgp-{{ uid }} .hgp-stat{
+      background: var(--hgp-card);
+      border: 1px solid rgba(0,0,0,.04);
+      border-radius: var(--hgp-radius);
+      padding: 24px 16px 22px;
+      text-align: center;
+    }
+    #hgp-{{ uid }} .hgp-stat-num{
+      font-size: clamp(38px, 11vw, 46px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--hgp-accent);
+      margin-bottom: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    #hgp-{{ uid }} .hgp-stat-label{
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--hgp-ink);
+    }
+
+    /* ---------- image ---------- */
+    #hgp-{{ uid }} .hgp-media{ position: relative; }
+    #hgp-{{ uid }} .hgp-media img{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--hgp-radius-img);
+      box-shadow: 0 16px 30px -14px rgba(0,0,0,.12);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%);
+              mask-image: linear-gradient(to bottom, transparent 0, #000 16%);
+    }
+
+    /* ---------- pink band ---------- */
+    #hgp-{{ uid }} .hgp-band{
+      background: var(--hgp-band);
+      border-radius: var(--hgp-radius);
+      padding: 30px 24px;
+      text-align: center;
+      margin-top: 38px;
+    }
+    #hgp-{{ uid }} .hgp-band-eyebrow{
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      line-height: 1.45;
+      color: var(--hgp-accent);
+      margin-bottom: 14px;
+    }
+    #hgp-{{ uid }} .hgp-band-copy{
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--hgp-ink);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ---------- kicker + cta ---------- */
+    #hgp-{{ uid }} .hgp-kicker{
+      text-align: center;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--hgp-ink);
+      margin: 34px 0 22px;
+    }
+
+    #hgp-{{ uid }} .hgp-cta{
+      -webkit-appearance: none;
+      appearance: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: {{ section.settings.button_width }}px;
+      margin: 0 auto;
+      padding: 22px 30px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--hgp-accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 14px 26px -10px var(--hgp-accent-glow);
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    #hgp-{{ uid }} .hgp-cta:hover{
+      background: var(--hgp-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px -10px var(--hgp-accent-glow);
+    }
+    #hgp-{{ uid }} .hgp-cta:active{
+      transform: translateY(0);
+      box-shadow: 0 10px 18px -10px var(--hgp-accent-glow);
+    }
+    #hgp-{{ uid }} .hgp-cta:focus-visible{
+      outline: 3px solid var(--hgp-ink);
+      outline-offset: 3px;
+    }
+    #hgp-{{ uid }} .hgp-cta .hgp-arrow{
+      display: inline-block;
+      transition: transform .18s ease;
+    }
+    #hgp-{{ uid }} .hgp-cta:hover .hgp-arrow{ transform: translateX(4px); }
+    #hgp-{{ uid }} .hgp-cta[aria-busy="true"]{
+      opacity: .75;
+      pointer-events: none;
+    }
+
+    /* ---------- reveal animation ---------- */
+    #hgp-{{ uid }} .hgp-reveal{
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    #hgp-{{ uid }}.hgp-in .hgp-reveal{
+      opacity: 1;
+      transform: none;
+    }
+    #hgp-{{ uid }}.hgp-in .hgp-reveal:nth-child(2){ transition-delay: .08s; }
+
+    /* ---------- desktop ---------- */
+    @media (min-width: 820px){
+      #hgp-{{ uid }}{
+        padding: {{ section.settings.pad_top }}px 32px {{ section.settings.pad_bottom }}px;
+      }
+      #hgp-{{ uid }} .hgp-grid{
+        grid-template-columns: 1.05fr .95fr;
+        gap: 56px;
+      }
+      #hgp-{{ uid }} .hgp-title{ font-size: clamp(36px, 3.4vw, 45px); }
+      #hgp-{{ uid }} .hgp-media img{
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%);
+                mask-image: linear-gradient(to bottom, transparent 0, #000 10%);
+      }
+      #hgp-{{ uid }} .hgp-band{ padding: 34px 30px; }
+      #hgp-{{ uid }} .hgp-kicker{ font-size: 24px; }
+    }
+
+    /* ---------- small phones ---------- */
+    @media (max-width: 400px){
+      #hgp-{{ uid }} .hgp-stats{ gap: 12px; }
+      #hgp-{{ uid }} .hgp-stat{ padding: 20px 12px; }
+      #hgp-{{ uid }} .hgp-stat-label{ font-size: 13px; }
+      #hgp-{{ uid }} .hgp-lead{ font-size: 16px; }
+      #hgp-{{ uid }} .hgp-cta{ padding: 20px 22px; letter-spacing: .1em; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      #hgp-{{ uid }} .hgp-reveal{ opacity: 1; transform: none; transition: none; }
+      #hgp-{{ uid }} .hgp-cta,
+      #hgp-{{ uid }} .hgp-cta .hgp-arrow{ transition: none; }
+      #hgp-{{ uid }} .hgp-cta:hover{ transform: none; }
+    }
+  </style>
+
+  <div class="hgp-wrap">
+    <div class="hgp-grid">
+      <div class="hgp-col hgp-reveal">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="hgp-eyebrow">{{ section.settings.eyebrow }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="hgp-title">
+            {{ section.settings.heading }}
+            {%- if section.settings.heading_accent != blank -%}
+              <em>{{ section.settings.heading_accent }}</em>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.para_1 != blank -%}
+          <p class="hgp-lead">{{ section.settings.para_1 }}</p>
+        {%- endif -%}
+        {%- if section.settings.para_2 != blank -%}
+          <p class="hgp-lead">{{ section.settings.para_2 }}</p>
+        {%- endif -%}
+
+        {%- assign stat_blocks = section.blocks | where: 'type', 'stat' -%}
+        {%- if stat_blocks.size > 0 -%}
+          <div class="hgp-stats">
+            {%- for block in stat_blocks -%}
+              <div class="hgp-stat" {{ block.shopify_attributes }}>
+                <div class="hgp-stat-num">{{ block.settings.number }}</div>
+                <div class="hgp-stat-label">{{ block.settings.label }}</div>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="hgp-media hgp-reveal">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              decoding: 'async',
+              sizes: '(min-width: 820px) 45vw, 92vw',
+              widths: '400, 600, 800, 1000, 1200',
+              alt: section.settings.image_alt
+          }}
+        {%- elsif section.settings.image_url != blank -%}
+          <img src="{{ section.settings.image_url }}"
+               alt="{{ section.settings.image_alt | escape }}"
+               loading="lazy" decoding="async">
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.band_heading != blank or section.settings.band_copy != blank -%}
+      <div class="hgp-band hgp-reveal">
+        {%- if section.settings.band_heading != blank -%}
+          <div class="hgp-band-eyebrow">{{ section.settings.band_heading }}</div>
+        {%- endif -%}
+        {%- if section.settings.band_copy != blank -%}
+          <p class="hgp-band-copy">{{ section.settings.band_copy }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.kicker != blank -%}
+      <div class="hgp-kicker hgp-reveal">{{ section.settings.kicker }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      {%- if section.settings.button_action == 'link' -%}
+        <a class="hgp-cta hgp-reveal" href="{{ section.settings.button_link | default: '#' }}">
+          <span>{{ section.settings.button_label }}</span>
+          <span class="hgp-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {%- elsif section.settings.button_action == 'scroll' -%}
+        <button type="button" class="hgp-cta hgp-reveal"
+                data-hgp-scroll="{{ section.settings.scroll_target }}">
+          <span>{{ section.settings.button_label }}</span>
+          <span class="hgp-arrow" aria-hidden="true">&rarr;</span>
+        </button>
+      {%- else -%}
+        {%- assign target_product = section.settings.product -%}
+        {%- if target_product != blank and target_product.available -%}
+          <button type="button" class="hgp-cta hgp-reveal"
+                  data-hgp-atc
+                  data-variant-id="{{ target_product.selected_or_first_available_variant.id }}"
+                  data-label="{{ section.settings.button_label | escape }}">
+            <span class="hgp-cta-text">{{ section.settings.button_label }}</span>
+            <span class="hgp-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        {%- else -%}
+          <a class="hgp-cta hgp-reveal" href="{{ section.settings.button_link | default: '/cart' }}">
+            <span>{{ section.settings.button_label }}</span>
+            <span class="hgp-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('hgp-{{ uid }}');
+    if (!root || root.dataset.hgpInit === '1') return;
+    root.dataset.hgpInit = '1';
+
+    /* --- 1. Reveal on scroll --- */
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      root.classList.add('hgp-in');
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            root.classList.add('hgp-in');
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      io.observe(root);
+    }
+
+    /* --- 2. Smooth scroll button --- */
+    var scrollBtn = root.querySelector('[data-hgp-scroll]');
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', function () {
+        var sel = scrollBtn.getAttribute('data-hgp-scroll');
+        var target = sel ? document.querySelector(sel) : null;
+        if (target) {
+          target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        } else if (typeof window.hgBuy === 'function') {
+          window.hgBuy();
+        }
+      });
+    }
+
+    /* --- 3. Add to cart (AJAX) --- */
+    var atc = root.querySelector('[data-hgp-atc]');
+    if (atc) {
+      atc.addEventListener('click', function () {
+        var textEl = atc.querySelector('.hgp-cta-text');
+        var original = atc.getAttribute('data-label');
+        atc.setAttribute('aria-busy', 'true');
+        if (textEl) textEl.textContent = 'Adding‚Ä¶';
+
+        fetch(window.Shopify && Shopify.routes ? Shopify.routes.cart_add_url : '/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ items: [{ id: Number(atc.dataset.variantId), quantity: 1 }] })
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('cart');
+            return res.json();
+          })
+          .then(function () {
+            if (textEl) textEl.textContent = 'Added ‚úì';
+            document.dispatchEvent(new CustomEvent('hgp:added'));
+            setTimeout(function () {
+              {% if section.settings.go_to_cart %}
+                window.location.href = window.Shopify && Shopify.routes ? Shopify.routes.cart_url : '/cart';
+              {% else %}
+                if (textEl) textEl.textContent = original;
+                atc.removeAttribute('aria-busy');
+              {% endif %}
+            }, 1200);
+          })
+          .catch(function () {
+            if (textEl) textEl.textContent = 'Try again';
+            atc.removeAttribute('aria-busy');
+            setTimeout(function () {
+              if (textEl) textEl.textContent = original;
+            }, 1600);
+          });
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "ZN Problem",
+  "tag": "section",
+  "class": "hgp-section",
+  "settings": [
+    { "type": "header", "content": "Copy" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "You are not imagining it. You're not alone." },
+    { "type": "text", "id": "heading", "label": "Heading (dark part)", "default": "If UTIs run your life." },
+    { "type": "text", "id": "heading_accent", "label": "Heading (accent part)", "default": "They don't have to." },
+    { "type": "textarea", "id": "para_1", "label": "Paragraph 1", "default": "The burning. The constant urge with nothing there. The dread after intimacy. The 2 a.m. trips and the fear of the next flare. It is exhausting, and it is not in your head." },
+    { "type": "textarea", "id": "para_2", "label": "Paragraph 2", "default": "Most women reach for cranberry pills or wait it out. There is a faster, cleaner way to flush and stay ahead of it." },
+
+    { "type": "header", "content": "Image" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_url", "label": "Fallback image URL", "default": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle" },
+
+    { "type": "header", "content": "Pink band" },
+    { "type": "text", "id": "band_heading", "label": "Band eyebrow", "default": "That's why we created Hey Girl D-Mannose" },
+    { "type": "textarea", "id": "band_copy", "label": "Band copy", "default": "A natural sugar studied to flush the bacteria behind UTIs, paired with Cranberry, Hibiscus, and Dandelion to soothe the bladder and support your kidneys. Ingredients that work with your body, not against it." },
+
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "kicker", "label": "Kicker line", "default": "Flush it. Stay ahead of it." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start Flushing" },
+    {
+      "type": "select",
+      "id": "button_action",
+      "label": "Button behaviour",
+      "options": [
+        { "value": "atc", "label": "Add to cart (AJAX)" },
+        { "value": "scroll", "label": "Scroll to element" },
+        { "value": "link", "label": "Open a link" }
+      ],
+      "default": "atc"
+    },
+    { "type": "product", "id": "product", "label": "Product (for add to cart)" },
+    { "type": "checkbox", "id": "go_to_cart", "label": "Go to cart after adding", "default": false },
+    { "type": "text", "id": "scroll_target", "label": "Scroll target selector", "default": "#hg-buy" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "range", "id": "button_width", "label": "Button max width", "min": 240, "max": 560, "step": 10, "unit": "px", "default": 420 },
+
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#E85A34" },
+    { "type": "color", "id": "ink_color", "label": "Headings / dark text", "default": "#1A1A1A" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#5F5F5F" },
+    { "type": "color", "id": "card_bg", "label": "Stat card background", "default": "#FDEFEB" },
+    { "type": "color", "id": "band_bg", "label": "Band background", "default": "#FADDD8" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "text", "id": "font_stack", "label": "Font stack", "default": "'Poppins', 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "max_width", "label": "Content max width", "min": 900, "max": 1500, "step": 20, "unit": "px", "default": 1300 },
+    { "type": "range", "id": "pad_top", "label": "Top padding (desktop)", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "pad_bottom", "label": "Bottom padding (desktop)", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "pad_top_mobile", "label": "Top padding (mobile)", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 44 },
+    { "type": "range", "id": "pad_bottom_mobile", "label": "Bottom padding (mobile)", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 44 }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "number", "label": "Big number", "default": "1 in 2" },
+        { "type": "text", "id": "label", "label": "Label", "default": "women will have a UTI in their lifetime" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ZN Problem",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "1 in 2", "label": "women will have a UTI in their lifetime" } },
+        { "type": "stat", "settings": { "number": "1 in 4", "label": "deal with repeat UTIs within 6 months" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

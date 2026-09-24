@@ -1,0 +1,12 @@
+<div class="product-info-item">
+    <button type="button" class="product-info-title">
+        <span class="product-dropdown">
+        <img src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/slider-component_List_Item_revitalisant_monoi_beigebackground_360x.png_1.png?v=1782957659" width="45" height="auto" alt="icon">
+        {{ info_title }}
+        </span>
+        <span class="product-info-arrow"></span>
+    </button>
+    <div class="product-info-desc">
+  {%- if info.type -%}{{ info }}{%- else -%}{{ info | newline_to_br }}{%- endif -%}
+</div>
+</div>

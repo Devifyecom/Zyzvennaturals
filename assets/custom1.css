@@ -1,0 +1,147 @@
+/* banner */
+@media (min-width: 1440px) {
+  .banner__buttons.ps_banner_btn {
+      flex-wrap: nowrap;
+      max-width: 65rem;
+      margin-right: 30rem;
+      margin-top: 10rem !important;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .banner__buttons.ps_banner_btn {
+      flex-wrap: nowrap;
+      max-width: 65rem;
+      margin-right: 35rem;
+      margin-top: 10rem !important;
+  }
+}
+@media screen and (min-width: 749px) and (max-width: 1024px) {.
+      .banner__content {
+    padding: 4rem 0.5rem;
+    }
+    .banner__buttons.ps_banner_btn {
+        max-width: 25rem;
+        margin-right: 20rem;
+        margin-top: 5rem !important;
+        display: flex;
+        flex-direction: column;
+    }
+}
+  /* .ps_banner .banner__text.rte.subtitle {
+    width: 80%;
+    justify-self: center;
+  } */
+.ps_banner_btn  a.button {
+    border-radius: 25px;
+    font-weight: 600;
+    padding: 0 1rem;
+}
+/* collection list */
+.ps_collection_title {
+    display: block;
+    justify-self: center;
+}
+.ps_collection_title .collection-list-title {
+  justify-self: center;
+}
+
+.ps_colectionlist .collection-subheading {
+  font-size: 16px;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+.ps_colectionlist .card__information.collection-overlay__content {
+    text-align: left;
+}
+
+.ps_colectionlist p.card__caption {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* .title-wrapper-with-link {
+    justify-content: center;
+} */
+.ctm_producttext {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.viewbtn {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 8px;
+}
+.viewbtn a {
+  width: 100%;
+  font-family: Poppins;
+  font-size: 18px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.underline-links-hover:hover a {
+      text-decoration: none !important;
+}
+.ps-collection .card-information {
+    text-align: center;
+}
+.ps-collection .rating-star {
+  --color-rating-star: #FFD600 !important;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #f2f2f2;
+  margin: 10px 0;
+}
+
+/* Tags wrapper */
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* last row center */
+  gap: 6px;
+  padding: 0;
+  margin: 12px auto 10px;
+  list-style: none;
+}
+
+/* Individual tag */
+.product-tag {
+  font-size: 11px;
+  color: #000;
+  background: #D4D4D4;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* 📱 Mobile → 2 tags per row */
+@media (max-width: 480px) {
+  .product-tags {
+    max-width: 100px; /* 👈 2 per row */
+  }
+}
+
+/* 📱 Tablet → 3 tags per row, last one centered */
+@media (min-width: 481px) and (max-width: 768px) {
+  .product-tags {
+    max-width: 120px; /* 👈 3 per row */
+  }
+}
+
+/* 💻 Desktop → same as tablet (3 per row) */
+@media (min-width: 769px) {
+  .product-tags {
+    max-width: 300px;
+  }
+}

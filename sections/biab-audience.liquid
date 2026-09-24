@@ -1,0 +1,57 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--white">
+  <section class="biab-section" id="biab-audience" aria-labelledby="biab-audience-title">
+    <div class="biab-inner biab-inner--narrow">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-audience-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+      </div>
+
+      <ul class="biab-ticks">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if s.honest_note != blank -%}
+        <div class="biab-note" style="margin-top:32px;">{{ s.honest_note }}</div>
+      {%- endif -%}
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — Who this is for",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Who This Is For" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Is This the Right Fit for You?" },
+    { "type": "richtext", "id": "honest_note", "label": "Honest note", "default": "<p><strong>And who it isn't for.</strong> This is not designed for anyone expecting guaranteed income or passive profit. You are buying stock and building a retail business. What you earn depends on what you sell.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Audience item",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Audience description." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — Who this is for",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Entrepreneurs starting a product-based wellness business who want stock, training and materials in one step rather than sourcing everything separately." } },
+        { "type": "item", "settings": { "text": "Salons, barbershops, gyms, spas, and wellness and beauty professionals with an existing client base to retail to." } },
+        { "type": "item", "settings": { "text": "Community sellers who already sell to their network and want a credible, consistent product range behind them." } },
+        { "type": "item", "settings": { "text": "Online retailers and physical stores looking to add a curated wellness range without committing to large minimum orders per line." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

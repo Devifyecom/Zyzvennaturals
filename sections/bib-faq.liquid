@@ -1,0 +1,132 @@
+{{ 'bib.css' | asset_url | stylesheet_tag }}
+
+<section class="bib bib-faq" id="bib-faq">
+  <div class="bib__inner bib__inner--narrow">
+    <h2 class="bib-h2">{{ section.settings.heading }}</h2>
+
+    <div class="bib-faq__list" data-bib-accordion data-single-open="{{ section.settings.single_open }}">
+      {%- for block in section.blocks -%}
+        <div class="bib-faq__item" {{ block.shopify_attributes }}>
+          <h3>
+            <button
+              type="button"
+              class="bib-faq__q"
+              id="BibFaqQ-{{ block.id }}"
+              aria-expanded="false"
+              aria-controls="BibFaqA-{{ block.id }}"
+            >
+              <span>{{ block.settings.question }}</span>
+              <span class="bib-faq__sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="bib-faq__a" id="BibFaqA-{{ block.id }}" role="region" aria-labelledby="BibFaqQ-{{ block.id }}">
+            <div class="bib-faq__a-inner">
+              <p>{{ block.settings.answer }}</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {%- for block in section.blocks -%}
+        {
+          "@type": "Question",
+          "name": {{ block.settings.question | json }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | json }} }
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  }
+</script>
+
+{% schema %}
+{
+  "name": "BIB — FAQ",
+  "tag": "section",
+  "class": "bib-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" },
+    { "type": "checkbox", "id": "single_open", "label": "Only one answer open at a time", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIB — FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is this MLM?",
+            "answer": "No. Business in a Box is a wholesale/resale inventory package. There are no recruitment commissions."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is shipping included?",
+            "answer": "No. Shipping is calculated separately based on destination and fulfilment location."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do I receive my own website?",
+            "answer": "A dedicated territory website is not included with this reseller box. Territory websites are reserved for approved distributors."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I use Zyzven Naturals images and descriptions?",
+            "answer": "Yes—use the approved digital marketing pack supplied after purchase. Brand assets must not be altered or used for unauthorised claims."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I sell on Amazon, Walmart or other marketplaces?",
+            "answer": "Marketplace selling requires prior written approval to protect brand listings, pricing and account integrity."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Are earnings guaranteed?",
+            "answer": "No. Results depend on sales, pricing, discounts and individual business expenses."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I reorder products?",
+            "answer": "Yes. Approved resellers can replenish products at current reseller pricing and subject to availability."
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I customise the box?",
+            "answer": "The box contains a fixed selection of 40 products across the Zyzven Naturals range."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,410 @@
+{% style %}
+  .section-{{ section.id }} {
+      padding-top: {{ section.settings.pad_top }}px;
+      padding-bottom: {{ section.settings.pad_bottom }}px;
+      overflow: hidden;
+  }
+
+  .section-{{ section.id }} h2 {
+      margin: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 40px;
+      color: #283613;
+      font-weight: 600;
+      font-family: "Golos Text", sans-serif;
+  }
+
+  .section-{{ section.id }} .home-slider {
+      position: relative;
+  }
+
+  .section-{{ section.id }} .swiper-slide img {
+      border-radius: 26px;
+      display: block;
+      cursor: pointer;
+      height: 306px;
+      object-fit: contain;
+      object-position: center center;
+  }
+
+  .home-slider .swiper-button-next svg {
+      fill: none !important;
+  }
+
+  .home-slider .swiper-button-prev svg {
+      fill: none !important;
+  }
+
+  @media screen and (min-width: 750px) {
+      .section-{{ section.id }} .swiper-button-prev {
+          transform: translate(-50%, 0);
+          color: #31853C;
+      }
+
+      .section-{{ section.id }} .swiper-button-next {
+          transform: translate(50%, 0);
+          color: #31853C;
+      }
+  }
+
+  .section-{{ section.id }} .product-info {
+      text-align: center;
+  }
+
+  .section-{{ section.id }} .product-info p {
+      margin: 0;
+      line-height: 31px;
+      font-size: 18px;
+      font-weight: 600;
+  }
+
+  .section-{{ section.id }} .product-price span {
+      font-weight: 600;
+      letter-spacing: 0;
+  }
+
+  /* --- Add to Cart CTA --- */
+  .section-{{ section.id }} .add-to-cart-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 28px;
+      border: none;
+      border-radius: 999px;
+      background-color: #31853C;
+      color: #ffffff;
+      font-family: "Golos Text", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+  }
+
+  .section-{{ section.id }} .add-to-cart-btn:hover {
+      background-color: #276b30;
+  }
+
+  .section-{{ section.id }} .add-to-cart-btn:active {
+      transform: scale(0.97);
+  }
+
+  .section-{{ section.id }} .add-to-cart-btn[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+  }
+
+  .section-{{ section.id }} .add-to-cart-btn.sold-out {
+      background-color: #9aa08f;
+      cursor: not-allowed;
+  }
+
+  .section-{{ section.id }} .collection-info {
+      text-align: center;
+      background-color: #31853C;
+      color: white;
+      border-bottom-left-radius: 26px;
+      border-bottom-right-radius: 26px;
+  }
+
+  .section-{{ section.id }} .collection-info p {
+      margin: 0;
+      line-height: 41px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 0 15px;
+  }
+
+  @media screen and (max-width: 750px) {
+      .section-{{ section.id }} h2 {
+          font-size: 24px;
+          line-height: 30px;
+      }
+
+      .section-{{ section.id }} .collection-info p {
+         font-size: 14px;
+         line-height: 35px;
+         letter-spacing: 0;
+      }
+  }
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="home-slider">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% if block.type == 'product' %}
+          <div class="swiper-slide">
+            {% if block.settings.image != blank %}
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                width="100%"
+                height="auto"
+                alt="{{ block.settings.product.title }}"
+                style="background: #fcfbfc;"
+                onclick="location.href='{{ block.settings.product.url }}'"
+              >
+            {% else %}
+              <img
+                src="{{ block.settings.product.featured_image | img_url: 'master' }}"
+                width="100%"
+                height="auto"
+                alt="{{ block.settings.product.title }}"
+                style="background: #fcfbfc;"
+                onclick="location.href='{{ block.settings.product.url }}'"
+              >
+            {% endif %}
+            <div class="product-info">
+              {% comment %} {% if block.settings.title != blank %}
+                <p>{{ block.settings.title }}</p>
+              {% else %} {% endcomment %}
+                <p>{{ block.settings.product.title }}</p>
+              {% comment %} {% endif %} {% endcomment %}
+              <div class="product-price">
+                <span>{{ block.settings.product.price | money_with_currency }}</span>
+              </div>
+              {% comment %} {% if block.settings.description != blank %}
+                <span>{{ block.settings.description }}</span>
+              {% else %}
+                <span>{{ block.settings.product.description }}</span>
+              {% endif %} {% endcomment %}
+
+              {%- assign atc_variant = block.settings.product.selected_or_first_available_variant -%}
+              {% if block.settings.product.available and atc_variant %}
+                <button
+                  type="button"
+                  class="add-to-cart-btn"
+                  data-variant-id="{{ atc_variant.id }}"
+                >
+                  {{ section.settings.button_label | default: 'Add to Cart' }}
+                </button>
+              {% else %}
+                <button type="button" class="add-to-cart-btn sold-out" disabled>
+                  {{ section.settings.sold_out_label | default: 'Sold Out' }}
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        {% else %}
+          <div class="swiper-slide">
+            {% if block.settings.image != blank %}
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                width="100%"
+                height="auto"
+                alt="{{ block.settings.collection.title }}"
+                style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+                onclick="location.href='{{ block.settings.collection.url }}'"
+              >
+            {% else %}
+              <img
+                src="{{ block.settings.collection.featured_image | img_url: 'master' }}"
+                width="100%"
+                height="auto"
+                alt="{{ block.settings.collection.title }}"
+                style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+                onclick="location.href='{{ block.settings.collection.url }}'"
+              >
+            {% endif %}
+            <div class="collection-info">
+              <p>{{ block.settings.title }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+        <circle cx="20.5" cy="20.5" r="20.5" fill="#31853C"/>
+        <path d="M30.9167 20H11.0834M21 10.0834L11.0834 20L21 29.9167" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="swiper-button-next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+        <circle cx="20.5" cy="20.5" r="20.5" transform="rotate(-180 20.5 20.5)" fill="#31853C"/>
+        <path d="M10.0834 21L29.9167 21M20.0001 30.9166L29.9167 21L20.0001 11.0833" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.section-{{ section.id }} .home-slider', {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.section-{{ section.id }} .swiper-button-next',
+        prevEl: '.section-{{ section.id }} .swiper-button-prev',
+      },
+      breakpoints: {
+        1250: {
+          slidesPerView: 4,
+        },
+        900: {
+          slidesPerView: 3,
+        },
+      },
+    });
+
+    // --- Add to Cart handler ---
+    var atcButtons = document.querySelectorAll('.section-{{ section.id }} .add-to-cart-btn:not(.sold-out)');
+
+    atcButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var variantId = btn.dataset.variantId;
+        if (!variantId || btn.disabled) return;
+
+        var originalLabel = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Adding...';
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] })
+        })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Add to cart failed');
+          return res.json();
+        })
+        .then(function () {
+          btn.textContent = 'Added \u2713';
+
+          // Refresh the cart icon bubble (Dawn-compatible themes)
+          fetch('/?sections=cart-icon-bubble')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var bubble = document.getElementById('cart-icon-bubble');
+              if (bubble && data['cart-icon-bubble']) {
+                var tmp = document.createElement('div');
+                tmp.innerHTML = data['cart-icon-bubble'];
+                var fresh = tmp.querySelector('#cart-icon-bubble') || tmp.firstElementChild;
+                if (fresh) bubble.innerHTML = fresh.innerHTML;
+              }
+            })
+            .catch(function () { /* theme cart bubble not present, ignore */ });
+
+          // Let any theme cart drawer know something changed
+          document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+
+          setTimeout(function () {
+            btn.textContent = originalLabel;
+            btn.disabled = false;
+          }, 1500);
+        })
+        .catch(function () {
+          btn.textContent = 'Try again';
+          setTimeout(function () {
+            btn.textContent = originalLabel;
+            btn.disabled = false;
+          }, 1500);
+        });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Homepage Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Add to Cart button label",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "sold_out_label",
+      "label": "Sold out label",
+      "default": "Sold Out"
+    },
+    {
+      "type": "range",
+      "id": "pad_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pad_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Slider"
+    }
+  ]
+}
+{% endschema %}
+

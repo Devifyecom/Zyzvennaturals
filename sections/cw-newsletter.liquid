@@ -1,0 +1,270 @@
+{% style %}
+    .section-{{ section.id }} {
+        background-color: #31853c;
+        max-width: unset;
+    }
+
+    .section-{{ section.id }} .cw-email {
+        padding-top: {{ section.settings.pad_top }}px;
+        padding-bottom: {{ section.settings.pad_bottom }}px;
+        display: flex;
+        border-bottom: 3px solid white;
+        justify-content: center;
+    }
+
+    .section-{{ section.id }} .cw-email h2 {
+        font-size: 40px;
+        line-height: 60px;
+        font-family: "Golos Text", sans-serif;
+        font-weight: 600;
+        margin: 0;
+        color: white;
+    }
+
+    .section-{{ section.id }} .cw-email-left {
+        width: 50%;
+        text-align: center;
+    }
+
+    .section-{{ section.id }} .cw-email-left p {
+        color: white;
+        margin: 20px 0 40px;
+    }
+
+    .section-{{ section.id }} .cw-email-left a {
+        font-size: 16px;
+        font-family: "Golos Text", sans-serif;
+        background: white;
+        border-radius: 30px;
+        padding: 15px 30px;
+        color: black;
+        text-decoration: none;
+        display: block;
+        width: fit-content;
+        margin: auto;
+        font-weight: 600;
+    }
+
+    .section-{{ section.id }} .cw-email-right {
+        width: 50%;
+        text-align: center;
+    }
+    
+    .section-{{ section.id }} .cw-email-right p {
+        color: white;
+    }
+
+    .section-{{ section.id }} button#Subscribe {
+        background: #D1B08E;
+    }
+
+    @media screen and (max-width: 1025px) {
+        .section-{{ section.id }} .cw-email h2 {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        .section-{{ section.id }} .newsletter-form__field-wrapper.scroll-trigger.animate--slide-in {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-{{ section.id }} .cw-email {
+            padding-top: {{ section.settings.pad_top | divided_by: 2 }}px;
+            padding-bottom: 0;
+            flex-direction: column;
+            gap: 30px;
+            border-bottom: 0;
+        }
+
+        .section-{{ section.id }} .cw-email h2 {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .section-{{ section.id }} .cw-email-left {
+            width: 100%;
+        }
+
+        .section-{{ section.id }} .cw-email-left p {
+            margin: 15px 0;
+        }
+
+        .section-{{ section.id }} .cw-email-left a {
+            font-size: 14px;
+            padding: 8px 20px;
+        }
+
+        .section-{{ section.id }} .cw-email-right {
+            width: 100%;
+        }
+
+        .section-{{ section.id }} .cw-email-right p {
+            margin: 15px 0;
+        }
+
+        .section-{{ section.id }} .newsletter-row .field {
+            flex-direction: row;
+            gap: 0;
+        }
+
+        .section-{{ section.id }} .newsletter-row .field__input {
+            height: 44px;
+            margin: 0;
+        }
+
+        .section-{{ section.id }} button#Subscribe {
+            width: auto;
+            padding: 0 20px;
+            height: 44px;
+        }
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+    <div class="cw-email">
+        {% comment %} <div class="cw-email-left">
+            <h2>{{ section.settings.heading1 }}</h2>
+            <p>{{ section.settings.content1 }}</p>
+            <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
+        </div> {% endcomment %}
+        <div class="cw-email-right">
+            <h2>{{ section.settings.heading2 }}</h2>
+            <p>{{ section.settings.content2 }}</p>
+            <div {{ block.shopify_attributes }}>
+                {% form 'customer', class: 'newsletter-form' %}
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <div
+                        class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                        {% if settings.animations_reveal_on_scroll %}
+                            data-cascade
+                        {% endif %}
+                    >
+                        <div class="newsletter-row">
+                            <div class="field">
+                                <input
+                                id="NewsletterForm--{{ section.id }}"
+                                type="email"
+                                name="contact[email]"
+                                class="field__input"
+                                value="{{ form.email }}"
+                                aria-required="true"
+                                autocorrect="off"
+                                autocapitalize="off"
+                                autocomplete="email"
+                                {% if form.errors %}
+                                    autofocus
+                                    aria-invalid="true"
+                                    aria-describedby="Newsletter-error--{{ section.id }}"
+                                {% elsif form.posted_successfully? %}
+                                    aria-describedby="Newsletter-success--{{ section.id }}"
+                                {% endif %}
+                                placeholder="Enter Your Email"
+                                required
+                                >
+                                <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                                {{ 'newsletter.label' | t }}
+                                </label>
+                                <button
+                                type="submit"
+                                class="newsletter-form__button field__button"
+                                name="commit"
+                                id="Subscribe"
+                                aria-label="{{ 'newsletter.button_label' | t }}"
+                                >
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                        {%- if form.errors -%}
+                            <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                                <span class="svg-wrapper">
+                                    {{- 'icon-error.svg' | inline_asset_content -}}
+                                </span>
+                                {{- form.errors.translated_fields.email | capitalize }}
+                                {{ form.errors.messages.email -}}
+                            </small>
+                        {%- endif -%}
+                    </div>
+                    {%- if form.posted_successfully? -%}
+                        <h3
+                            class="newsletter-form__message newsletter-form__message--success form__message"
+                            id="Newsletter-success--{{ section.id }}"
+                            tabindex="-1"
+                            autofocus
+                        >
+                            <span class="svg-wrapper">
+                                {{- 'icon-success.svg' | inline_asset_content -}}
+                            </span>
+                            {{- 'newsletter.success' | t }}
+                        </h3>
+                    {%- endif -%}
+                {% endform %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Custom Email signup",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading1"
+        },
+        {
+            "type": "text",
+            "id": "content1",
+            "label": "Content1"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "text",
+            "id": "heading2",
+            "label": "Heading2"
+        },
+        {
+            "type": "text",
+            "id": "content2",
+            "label": "Content2"
+        },
+        {
+            "type": "range",
+            "id": "pad_top",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "default": 0,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "pad_bottom",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "default": 0,
+            "unit": "px"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Email signup"
+        }
+    ]
+}
+{% endschema %}

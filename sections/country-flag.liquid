@@ -1,0 +1,387 @@
+{%- liquid
+  assign bg = section.settings.color | default: '#FFFFFF'
+
+  assign frame_style = 'style-rounded'
+  if section.settings.flag_style == 'circle'
+    assign frame_style = 'style-circle'
+  endif
+
+  assign switch_on = section.settings.enable_switch
+-%}
+
+{% style %}
+    .section-{{ section.id }} {
+        max-width: unset;
+        background: {{ bg }};
+        padding-top: {{ section.settings.pad_top }}px;
+        padding-bottom: {{ section.settings.pad_bottom }}px;
+    }
+
+    .section-{{ section.id }} .flags-heading {
+        font-size: 24px;
+        line-height: 40px;
+        color: {{ section.settings.text_color }};
+        font-weight: 600;
+        text-align: center;
+        font-family: "Golos Text", sans-serif;
+        margin: 0 0 26px;
+    }
+
+    .section-{{ section.id }} .flags-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 34px 42px;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0;
+    }
+
+    .section-{{ section.id }} .flag-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        text-decoration: none;
+    }
+
+    .section-{{ section.id }} button.flag-item {
+        cursor: pointer;
+    }
+
+    .section-{{ section.id }} .flag-frame {
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(40, 54, 19, 0.10);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .section-{{ section.id }} .flag-frame.style-rounded {
+        width: 94px;
+        height: 63px;
+        border-radius: 14px;
+    }
+
+    .section-{{ section.id }} .flag-frame.style-circle {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+    }
+
+    .section-{{ section.id }} .flag-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .section-{{ section.id }} .flag-item:hover .flag-frame {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+        border-color: {{ section.settings.hover_color }};
+    }
+
+    .section-{{ section.id }} .flag-label {
+        font-family: "Golos Text", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: {{ section.settings.text_color }};
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .section-{{ section.id }} .flag-item:hover .flag-label {
+        color: {{ section.settings.hover_color }};
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-{{ section.id }} {
+            padding-top: {{ section.settings.pad_top | divided_by: 2 }}px;
+            padding-bottom: {{ section.settings.pad_bottom | divided_by: 2 }}px;
+        }
+
+        .section-{{ section.id }} .flags-heading {
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 18px;
+        }
+
+        .section-{{ section.id }} .flags-row {
+            gap: 22px 26px;
+        }
+
+        .section-{{ section.id }} .flag-frame.style-rounded {
+            width: 66px;
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .section-{{ section.id }} .flag-frame.style-circle {
+            width: 54px;
+            height: 54px;
+        }
+
+        .section-{{ section.id }} .flag-label {
+            font-size: 12px;
+        }
+    }
+
+    @media (hover: none) {
+        .section-{{ section.id }} .flag-item:hover .flag-frame {
+            transform: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+            border-color: rgba(40, 54, 19, 0.10);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .section-{{ section.id }} .flag-frame { transition: none; }
+        .section-{{ section.id }} .flag-item:hover .flag-frame { transform: none; }
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+    <div class="flags-div">
+        {% if section.settings.heading != blank %}
+            <h2 class="flags-heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {%- if switch_on -%}
+            <form method="post" action="{{ routes.root_url }}localization" accept-charset="UTF-8" class="flags-row" id="LangCurrency-{{ section.id }}">
+            <input type="hidden" name="form_type" value="localization">
+            <input type="hidden" name="utf8" value="‚úì">
+            <input type="hidden" name="return_to" value="{{ request.path }}">
+        {%- else -%}
+            <div class="flags-row">
+        {%- endif -%}
+
+        {% for block in section.blocks %}
+            {%- comment -%} Resolve ISO code (custom override wins) {%- endcomment -%}
+            {%- assign iso = block.settings.country -%}
+            {%- if block.settings.custom_code != blank -%}
+                {%- assign iso = block.settings.custom_code | downcase | strip -%}
+            {%- endif -%}
+
+            {%- comment -%} Auto country name for label / alt text {%- endcomment -%}
+            {%- case iso -%}
+                {%- when 'us' -%}{%- assign auto_name = 'United States' -%}
+                {%- when 'gb' -%}{%- assign auto_name = 'United Kingdom' -%}
+                {%- when 'au' -%}{%- assign auto_name = 'Australia' -%}
+                {%- when 'ca' -%}{%- assign auto_name = 'Canada' -%}
+                {%- when 'nz' -%}{%- assign auto_name = 'New Zealand' -%}
+                {%- when 'in' -%}{%- assign auto_name = 'India' -%}
+                {%- when 'np' -%}{%- assign auto_name = 'Nepal' -%}
+                {%- when 'sg' -%}{%- assign auto_name = 'Singapore' -%}
+                {%- when 'my' -%}{%- assign auto_name = 'Malaysia' -%}
+                {%- when 'hk' -%}{%- assign auto_name = 'Hong Kong' -%}
+                {%- when 'cn' -%}{%- assign auto_name = 'China' -%}
+                {%- when 'jp' -%}{%- assign auto_name = 'Japan' -%}
+                {%- when 'kr' -%}{%- assign auto_name = 'South Korea' -%}
+                {%- when 'ae' -%}{%- assign auto_name = 'United Arab Emirates' -%}
+                {%- when 'sa' -%}{%- assign auto_name = 'Saudi Arabia' -%}
+                {%- when 'de' -%}{%- assign auto_name = 'Germany' -%}
+                {%- when 'fr' -%}{%- assign auto_name = 'France' -%}
+                {%- when 'it' -%}{%- assign auto_name = 'Italy' -%}
+                {%- when 'es' -%}{%- assign auto_name = 'Spain' -%}
+                {%- when 'nl' -%}{%- assign auto_name = 'Netherlands' -%}
+                {%- when 'ie' -%}{%- assign auto_name = 'Ireland' -%}
+                {%- when 'ch' -%}{%- assign auto_name = 'Switzerland' -%}
+                {%- when 'se' -%}{%- assign auto_name = 'Sweden' -%}
+                {%- when 'za' -%}{%- assign auto_name = 'South Africa' -%}
+                {%- when 'br' -%}{%- assign auto_name = 'Brazil' -%}
+                {%- when 'mx' -%}{%- assign auto_name = 'Mexico' -%}
+                {%- when 'ph' -%}{%- assign auto_name = 'Philippines' -%}
+                {%- when 'id' -%}{%- assign auto_name = 'Indonesia' -%}
+                {%- when 'th' -%}{%- assign auto_name = 'Thailand' -%}
+                {%- when 'vn' -%}{%- assign auto_name = 'Vietnam' -%}
+                {%- when 'eu' -%}{%- assign auto_name = 'European Union' -%}
+                {%- when 'jm' -%}{%- assign auto_name = 'Jamaica' -%}
+                {%- else -%}{%- assign auto_name = iso | upcase -%}
+            {%- endcase -%}
+            {%- assign cname = block.settings.label | default: auto_name -%}
+
+            {%- if switch_on -%}
+                <button type="submit" name="country_code" value="{{ iso | upcase }}" class="flag-item" {{ block.shopify_attributes }}>
+            {%- else -%}
+                <div class="flag-item" {{ block.shopify_attributes }}>
+            {%- endif -%}
+                    <span class="flag-frame {{ frame_style }}">
+                        <img src="https://flagcdn.com/{{ iso }}.svg" width="94" height="63" alt="{{ cname }} flag" loading="lazy">
+                    </span>
+                    {% if section.settings.show_labels %}
+                        <span class="flag-label">{{ cname }}</span>
+                    {% endif %}
+            {%- if switch_on -%}
+                </button>
+            {%- else -%}
+                </div>
+            {%- endif -%}
+        {% endfor %}
+
+        {%- if switch_on -%}
+            </form>
+        {%- else -%}
+            </div>
+        {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Country Flags",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "select",
+            "id": "flag_style",
+            "label": "Flag shape",
+            "options": [
+                { "value": "rounded", "label": "Rounded rectangle (full flag)" },
+                { "value": "circle", "label": "Circle (chip)" }
+            ],
+            "default": "rounded"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_labels",
+            "label": "Show country name under flag",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_switch",
+            "label": "Make flags switch store currency",
+            "info": "Requires Shopify Markets. Each country must be enabled in Settings > Markets. Clicking a flag reloads the page in that country's currency. Note: the EU flag is region-only and cannot be used as a currency switch.",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Colors"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Background color",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Heading and label text",
+            "default": "#283613"
+        },
+        {
+            "type": "color",
+            "id": "hover_color",
+            "label": "Hover accent",
+            "default": "#31853C"
+        },
+        {
+            "type": "header",
+            "content": "Spacing"
+        },
+        {
+            "type": "range",
+            "id": "pad_top",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 100,
+            "default": 40,
+            "step": 5
+        },
+        {
+            "type": "range",
+            "id": "pad_bottom",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "default": 40,
+            "step": 5
+        }
+    ],
+    "blocks": [
+        {
+            "type": "country",
+            "name": "Country",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "country",
+                    "label": "Country",
+                    "options": [
+                        { "value": "us", "label": "United States" },
+                        { "value": "gb", "label": "United Kingdom" },
+                        { "value": "au", "label": "Australia" },
+                        { "value": "ca", "label": "Canada" },
+                        { "value": "nz", "label": "New Zealand" },
+                        { "value": "in", "label": "India" },
+                        { "value": "np", "label": "Nepal" },
+                        { "value": "sg", "label": "Singapore" },
+                        { "value": "my", "label": "Malaysia" },
+                        { "value": "hk", "label": "Hong Kong" },
+                        { "value": "cn", "label": "China" },
+                        { "value": "jp", "label": "Japan" },
+                        { "value": "kr", "label": "South Korea" },
+                        { "value": "ae", "label": "United Arab Emirates" },
+                        { "value": "sa", "label": "Saudi Arabia" },
+                        { "value": "de", "label": "Germany" },
+                        { "value": "fr", "label": "France" },
+                        { "value": "it", "label": "Italy" },
+                        { "value": "es", "label": "Spain" },
+                        { "value": "nl", "label": "Netherlands" },
+                        { "value": "ie", "label": "Ireland" },
+                        { "value": "ch", "label": "Switzerland" },
+                        { "value": "se", "label": "Sweden" },
+                        { "value": "za", "label": "South Africa" },
+                        { "value": "br", "label": "Brazil" },
+                        { "value": "mx", "label": "Mexico" },
+                        { "value": "ph", "label": "Philippines" },
+                        { "value": "id", "label": "Indonesia" },
+                        { "value": "th", "label": "Thailand" },
+                        { "value": "vn", "label": "Vietnam" },
+                        { "value": "eu", "label": "European Union" },
+                        { "value": "jm", "label": "Jamaica" }
+                    ],
+                    "default": "us"
+                },
+                {
+                    "type": "text",
+                    "id": "custom_code",
+                    "label": "Custom country code (optional)",
+                    "info": "2-letter ISO code, e.g. 'pt'. Overrides the dropdown if your country isn't listed."
+                },
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label override (optional)"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Country Flags",
+            "blocks": [
+                { "type": "country", "settings": { "country": "us" } },
+                { "type": "country", "settings": { "country": "au" } },
+                { "type": "country", "settings": { "country": "gb" } },
+                { "type": "country", "settings": { "country": "ca" } }
+            ]
+        }
+    ]
+}
+{% endschema %}
+

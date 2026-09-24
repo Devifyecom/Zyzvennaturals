@@ -1,0 +1,106 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--white">
+  <section class="biab-section" id="biab-trust" aria-labelledby="biab-trust-title">
+    <div class="biab-inner">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-trust-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+        {%- if s.subheading != blank -%}<p class="biab-lede">{{ s.subheading }}</p>{%- endif -%}
+      </div>
+
+      <div class="biab-grid biab-grid--3">
+        {%- for block in section.blocks -%}
+          <div class="biab-card biab-proof" {{ block.shopify_attributes }}>
+            <div class="biab-proof__icon">
+              {%- case block.settings.icon -%}
+                {%- when 'clock' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                {%- when 'globe' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></svg>
+                {%- when 'box' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v10"/></svg>
+                {%- when 'shield' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                {%- when 'star' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 4l2.4 5 5.6.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9 5.6-.8z"/></svg>
+                {%- when 'leaf' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 4C10 4 4 9 4 16c0 2 1 4 1 4s2-8 15-12"/><path d="M5 20c0-8 6-12 15-12 0 8-6 12-15 12z"/></svg>
+                {%- else -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+              {%- endcase -%}
+            </div>
+            <h3 class="biab-h3">{{ block.settings.title }}</h3>
+            <p class="biab-body">{{ block.settings.text }}</p>
+
+            {%- if block.settings.show_flags -%}
+              <div class="biab-flags">
+                {%- assign flag_items = s.flags | split: ',' -%}
+                {%- for item in flag_items -%}
+                  {%- assign parts = item | strip | split: '|' -%}
+                  <span class="biab-flag">
+                    <span aria-hidden="true">{{ parts[0] | strip }}</span>
+                    <span>{{ parts[1] | strip }}</span>
+                  </span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if s.footnote != blank -%}
+        <p class="biab-disclaimer">{{ s.footnote }}</p>
+      {%- endif -%}
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — Why trust us",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Why Trust Zyzven Naturals" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A Family-Founded Brand You Can Build With" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "You are retailing established Zyzven Naturals formulas that customers already buy through ZyzvenNaturals.com." },
+    { "type": "textarea", "id": "flags", "label": "Markets", "info": "One per comma. Format: emoji | country name.", "default": "🇯🇲 | Jamaica, 🇺🇸 | USA, 🇬🇧 | UK, 🇸🇪 | Sweden, 🇨🇦 | Canada" },
+    { "type": "textarea", "id": "footnote", "label": "Footnote", "info": "Optional." }
+  ],
+  "blocks": [
+    {
+      "type": "proof",
+      "name": "Proof tile",
+      "settings": [
+        {
+          "type": "select", "id": "icon", "label": "Icon", "default": "clock",
+          "options": [
+            { "value": "clock", "label": "Years in business" },
+            { "value": "globe", "label": "International" },
+            { "value": "box", "label": "Fulfilment" },
+            { "value": "shield", "label": "Quality" },
+            { "value": "star", "label": "Reviews" },
+            { "value": "leaf", "label": "Natural" }
+          ]
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Years in business" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Short supporting sentence." },
+        { "type": "checkbox", "id": "show_flags", "label": "Show market flags in this tile", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — Why trust us",
+      "blocks": [
+        { "type": "proof", "settings": { "icon": "globe", "title": "Wellness without borders", "text": "Customers in Jamaica, the USA, the UK, Sweden and Canada.", "show_flags": true } },
+        { "type": "proof", "settings": { "icon": "box", "title": "Local fulfilment", "text": "Boxes dispatch from our US, UK and Swedish warehouses, and in Canada through TK Zyzven Naturals Inc." } },
+        { "type": "proof", "settings": { "icon": "leaf", "title": "Established online presence", "text": "An active storefront at ZyzvenNaturals.com, so customers can find the brand." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

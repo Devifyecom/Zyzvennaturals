@@ -1,0 +1,123 @@
+{% comment %}
+  Section: Trust band (trustband)
+  Full-bleed banner image with right-side overlay copy + certification badges.
+  Font: Golos Text (forced over theme defaults)
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  #trustband-{{ section.id }}{
+    --pink:{{ section.settings.bg_color }};
+    --text:{{ section.settings.text_color }};
+    --font:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    position:relative;width:100%;overflow:hidden;background:var(--pink);
+    font-family:var(--font);color:var(--text);
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  #trustband-{{ section.id }} *{box-sizing:border-box;}
+  #trustband-{{ section.id }} h2,
+  #trustband-{{ section.id }} p,
+  #trustband-{{ section.id }} em{font-family:var(--font) !important;}
+
+  /* Banner image defines the band height on desktop */
+  #trustband-{{ section.id }} .tb-bg{display:block;width:100%;height:auto;}
+
+  /* Right-side overlay copy */
+  #trustband-{{ section.id }} .tb-copy{
+    position:absolute;top:50%;left:{{ section.settings.copy_left }}%;right:4%;
+    transform:translateY(-50%);z-index:2;
+  }
+  #trustband-{{ section.id }} .tb-h-d{
+    margin:0;color:var(--text);font-weight:800;letter-spacing:-.02em;line-height:1.02;
+    font-size:clamp(34px,4.6vw,66px);
+  }
+  #trustband-{{ section.id }} .tb-copy p{
+    margin:22px 0 0;color:var(--text);font-weight:600;line-height:1.42;
+    font-size:clamp(17px,1.65vw,25px);max-width:24em;
+  }
+  #trustband-{{ section.id }} .tb-copy p em{font-style:italic;}
+  #trustband-{{ section.id }} .tb-badges{
+    display:block;margin-top:38px;width:100%;max-width:{{ section.settings.badges_max }}px;height:auto;
+  }
+
+  /* ============ MOBILE (keep side-by-side overlay) ============ */
+  @media (max-width:820px){
+    /* image becomes a full cover behind the copy */
+    #trustband-{{ section.id }} .tb-bg{
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;object-position:{{ section.settings.mobile_focus }}% center;z-index:0;
+    }
+    /* copy flows in the right column and defines the band height */
+    #trustband-{{ section.id }} .tb-copy{
+      position:relative;top:auto;left:auto;right:auto;transform:none;z-index:2;
+      margin-left:{{ section.settings.mobile_copy_left }}%;padding:5vw 4% 5vw 0;text-align:left;
+    }
+    #trustband-{{ section.id }} .tb-h-d{font-size:clamp(15px,2.8vw,28px);line-height:1.05;}
+    #trustband-{{ section.id }} .tb-copy p{font-size:clamp(9px,1.55vw,15px);line-height:1.4;margin:1.4vw 0 0;max-width:none;}
+    #trustband-{{ section.id }} .tb-badges{margin-top:3.6vw;max-width:60%;}
+  }
+</style>
+
+<div id="trustband-{{ section.id }}" class="trustband">
+  <span class="r-edge" style="position:absolute;top:0;left:0;right:0;height:40px;z-index:3;background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.14) 40%,rgba(0,0,0,0) 100%);pointer-events:none;"></span>
+  <span class="r-edge" style="position:absolute;bottom:0;left:0;right:0;height:40px;z-index:3;background:linear-gradient(0deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.14) 40%,rgba(0,0,0,0) 100%);pointer-events:none;"></span>
+
+  {%- if section.settings.image != blank -%}
+    <img class="tb-bg"
+         src="{{ section.settings.image | image_url: width: 2400 }}"
+         srcset="{{ section.settings.image | image_url: width: 1200 }} 1200w,
+                 {{ section.settings.image | image_url: width: 1800 }} 1800w,
+                 {{ section.settings.image | image_url: width: 2400 }} 2400w"
+         sizes="100vw"
+         alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+         width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}"
+         loading="lazy">
+  {%- else -%}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'tb-bg' }}
+  {%- endif -%}
+
+  <div class="tb-copy">
+    <h2 class="tb-h-d">{{ section.settings.heading }}</h2>
+    <div>{{ section.settings.body }}</div>
+    {%- if section.settings.badges != blank -%}
+      <img class="tb-badges"
+           src="{{ section.settings.badges | image_url: width: 1120 }}"
+           alt="{{ section.settings.badges.alt | escape }}"
+           loading="lazy">
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust Band",
+  "tag": "section",
+  "class": "section-trust-band",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "So‚Ä¶ why trust us?" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Because we're a little obsessed (in the best way). Every blend is clean, pure, natural and lab-tested by people in white coats who take this <em>very</em> seriously. All the good stuff, zero fillers nobody can pronounce. You're welcome, girl.</p>" },
+
+    { "type": "header", "content": "Images" },
+    { "type": "image_picker", "id": "image", "label": "Banner image (woman + background)" },
+    { "type": "image_picker", "id": "badges", "label": "Badges strip (PNG)" },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "copy_left", "min": 40, "max": 60, "step": 1, "unit": "%", "label": "Copy start (from left)", "default": 52 },
+    { "type": "range", "id": "badges_max", "min": 360, "max": 720, "step": 20, "unit": "px", "label": "Badges max width", "default": 560 },
+    { "type": "range", "id": "mobile_focus", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Mobile image focus (horizontal)", "default": 18, "info": "0% = far left, 100% = far right. Keeps the woman framed on mobile." },
+    { "type": "range", "id": "mobile_copy_left", "min": 25, "max": 50, "step": 1, "unit": "%", "label": "Mobile copy start (from left)", "default": 37, "info": "Where the text column begins next to the photo." },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background (fallback / mobile)", "default": "#e15c84" },
+    { "type": "color", "id": "text_color", "label": "Text & badges area", "default": "#ffffff" }
+  ],
+  "presets": [
+    { "name": "Trust Band" }
+  ]
+}
+{% endschema %}
+

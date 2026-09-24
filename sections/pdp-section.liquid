@@ -1,0 +1,135 @@
+{% style %}
+    .section-{{ section.id }} {
+        max-width: unset;
+        background: {{ section.settings.color }}66;
+        padding-top: {{ section.settings.pad_top }}px;
+        padding-bottom: {{ section.settings.pad_bottom }}px;
+    }
+
+    .section-{{ section.id }} .pdp-info-div h2 {
+        font-size: 24px;
+        line-height: 50px;
+        color: #283613;
+        font-weight: 600;
+        text-align: center;
+        font-family: "Golos Text", sans-serif;
+        margin-top: 0;
+    }
+
+    .section-{{ section.id }} .pdp-infos {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+        column-gap: 30px;
+    }
+
+    .section-{{ section.id }} .pdp-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+    }
+
+    .section-{{ section.id }} .pdp-info p {
+        margin: 10px 0;
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-{{ section.id }} {
+            padding-top: {{ section.settings.pad_top | divided_by: 2 }}px;
+            padding-bottom: {{ section.settings.pad_bottom | divided_by: 2 }}px;
+        }
+
+        .section-{{ section.id }} .pdp-info-div h2 {
+            font-size: 20px;
+            line-height: 27px;
+        }
+
+        .section-{{ section.id }} .pdp-info {
+            width: 100%;
+        }
+
+        .section-{{ section.id }} .pdp-info p {
+            font-size: 13px;
+            margin: 0;
+            letter-spacing: 0;
+        }
+
+        .section-{{ section.id }} .pdp-info svg {
+            width: 23px;
+            height: 26px;
+        }
+    }
+{% endstyle %}
+
+<div class="section-{{ section.id }} page-width">
+    <div class="pdp-info-div">
+        <h2>{{ section.settings.heading }}</h2>
+        <div class="pdp-infos">
+            {% for block in section.blocks %}
+                <div class="pdp-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="33" viewBox="0 0 29 33" fill="none">
+                        <path d="M24.1667 8.25L10.875 23.375L4.83337 16.5" stroke="#31853C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>{{ block.settings.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "PDP Info",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Color"
+        },
+        {
+            "type": "range",
+            "id": "pad_top",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 100,
+            "default": 0,
+            "step": 5
+        },
+        {
+            "type": "range",
+            "id": "pad_bottom",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "default": 0,
+            "step": 5
+        }
+    ],
+    "blocks": [
+        {
+            "type": "info",
+            "name": "Info",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "content",
+                    "label": "Content"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "PDP Info"
+        }
+    ]
+}
+{% endschema %}

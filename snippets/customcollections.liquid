@@ -1,0 +1,30 @@
+<div class="page-width skincare-section">
+{% assign allowed_titles = "Herbal Tea Collection by Wellness,Menopause Support,Men’s Health,Detox & Cleanse" | split: "," %}
+
+  
+  {% for collection in collections %}
+    {% if allowed_titles contains collection.title %}
+      <div class="skincare-single">
+      <div class="skincare-single-inner">
+        <div class="skincare-content">
+          <h2 class="skincare-heading">{{ collection.title }} Products</h2>
+        </div>
+        <div class="skincare-collectionbtn">
+          <a href="{{ collection.url }}" class="skincare-button">
+            View All
+            <span class="button-icon">➔</span>
+          </a>
+        </div>
+      </div>
+        
+        <div class="skincare-image">
+          {% if collection.image %}
+            <img src="{{ collection.image | img_url: 'medium' }}" alt="{{ collection.title }}" />
+          {% else %}
+            <img src="https://via.placeholder.com/300x400?text=No+Image" alt="No image available" />
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

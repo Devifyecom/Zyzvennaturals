@@ -1,0 +1,91 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'biab.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--white">
+  <section class="biab-section" id="biab-faq" aria-labelledby="biab-faq-title">
+    <div class="biab-inner biab-inner--narrow">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-faq-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+      </div>
+
+      <div class="biab-faq__list">
+        {%- for block in section.blocks -%}
+          <div class="biab-faq__item" {{ block.shopify_attributes }}>
+            <h3 style="margin:0;">
+              <button
+                type="button"
+                class="biab-faq__q"
+                id="BiabFaqQ-{{ block.id }}"
+                aria-expanded="false"
+                aria-controls="BiabFaqA-{{ block.id }}"
+              >
+                <span>{{ block.settings.question }}</span>
+                <span class="biab-faq__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="biab-faq__a" id="BiabFaqA-{{ block.id }}" role="region" aria-labelledby="BiabFaqQ-{{ block.id }}">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Questions & Answers" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Everything You'll Want to Ask First" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Answer.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — FAQ",
+      "blocks": [
+        {"type": "faq", "settings": {"question": "What is included in the Business in a Box?", "answer": "<p>You receive 40 sealed Zyzven Naturals products in the names and quantities shown in the “What’s Inside” section of this page. The box also includes initial product training, a digital marketing toolkit and monthly group check-ins.</p><p>Please review the product list before ordering. If a product becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed change.</p>"}},
+        {"type": "faq", "settings": {"question": "Is this an MLM?", "answer": "<p>No. You buy products to sell to customers through your independent business. There are no downlines, recruitment commissions or required monthly purchases.</p>"}},
+        {"type": "faq", "settings": {"question": "Who can become a reseller?", "answer": "<p>We welcome reseller enquiries worldwide. You are responsible for checking the import and resale requirements that apply to your business and location. Where we can ship the Business in a Box directly is explained below.</p>"}},
+        {"type": "faq", "settings": {"question": "Where do you ship Business in a Box orders directly?", "answer": "<p>Direct box shipping is currently available to the USA, Canada, UK, European Union and selected Middle Eastern destinations. Enter your address at checkout to check availability and see the shipping cost before payment.</p><p>For a destination that is not available at checkout, contact us for a complete shipping quote before purchasing.</p>"}},
+        {"type": "faq", "settings": {"question": "Where will my US box ship from?", "answer": "<p>US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered domestically within the USA does not incur additional customs duties.</p>"}},
+        {"type": "faq", "settings": {"question": "Where will my UK box ship from?", "answer": "<p>UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered domestically within the UK does not incur additional customs duties.</p>"}},
+        {"type": "faq", "settings": {"question": "Where will my EU box ship from?", "answer": "<p>EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country.</p>"}},
+        {"type": "faq", "settings": {"question": "How are Business in a Box orders fulfilled in Canada?", "answer": "<p>Most box products are stocked in Canada and can be dispatched by our Canadian distributor, TK Zyzven Naturals Inc.</p><p>If a product needed for your box is unavailable there, we will contact you before shipping to explain the proposed arrangement. With your agreement, the affected products may be sent from our UK warehouse by Royal Mail or UPS.</p><p>We will tell you whether to expect one delivery or separate shipments, the estimated delivery time, and whether a UK shipment could involve additional import or clearance charges. We will not send a UK shipment or add an extra shipping charge without your agreement.</p>"}},
+        {"type": "faq", "settings": {"question": "How much does shipping cost?", "answer": "<p>The box price is $999 plus shipping. For destinations available at checkout, enter your address to see the shipping charge and full amount payable before placing your order.</p><p>If checkout does not offer delivery to your destination, ask us for a complete quote before paying. We will not add an unapproved shipping charge after you purchase.</p>"}},
+        {"type": "faq", "settings": {"question": "I live in the Caribbean. Can I order a box?", "answer": "<p>Yes. We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay the forwarder and arrange onward delivery to your country.</p><p>Please check your country’s import requirements and ask us if you need help confirming whether your forwarding address is eligible before ordering.</p>"}},
+        {"type": "faq", "settings": {"question": "Could I have to pay customs duties or taxes?", "answer": "<p>US, UK and EU boxes dispatched and delivered within their respective regions do not involve an additional customs duty on delivery.</p><p>For Canadian orders, any proposed shipment from the UK and its possible import or clearance charges will be explained to you before that shipment is agreed. For other international destinations and forwarding arrangements, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included.</p>"}},
+        {"type": "faq", "settings": {"question": "How long will delivery take?", "answer": "<p>The regional estimates above are measured in business days after dispatch and are not guaranteed arrival dates. Carrier delays, remote delivery locations and customs processing can affect delivery. We will send tracking information when your box dispatches.</p><p>For Canadian orders involving more than one warehouse, and for quote-only destinations, we will explain the applicable delivery estimate before proceeding with that shipping arrangement.</p>"}},
+        {"type": "faq", "settings": {"question": "When will I receive the training and marketing toolkit?", "answer": "<p>We will provide access to the initial product training and digital marketing toolkit within seven days of confirmed payment. We will contact you using the email address on your order. Monthly group check-ins form part of the ongoing reseller support.</p>"}},
+        {"type": "faq", "settings": {"question": "What marketing support is included? Is there a marketing fee?", "answer": "<p>The digital marketing toolkit and monthly group check-ins are included in the box offer. There is no mandatory recurring marketing fee.</p><p>We may invite resellers to appear in a brochure, website listing, social media feature or live event. These are opportunities rather than guaranteed placements. We will ask separately before publishing your name, photograph, business location, telephone number or social profile.</p>"}},
+        {"type": "faq", "settings": {"question": "Where can I sell the products?", "answer": "<p>You may sell genuine, unopened Zyzven products through your independent shop, website, social media or in person, subject to the <a href=\"/pages/reseller-terms\" title=\"Reseller Terms\">Reseller Terms</a> and the rules in your market.</p>"}},
+        {"type": "faq", "settings": {"question": "Can I sell the products on Amazon, Walmart or eBay?", "answer": "<p>You need prior written approval before listing Zyzven products on Amazon, Walmart, eBay or another third-party marketplace. Contact us with the marketplace and seller account you propose to use.</p>"}},
+        {"type": "faq", "settings": {"question": "Do I receive a Zyzven website or an exclusive territory?", "answer": "<p>No. Buying the box does not include a Zyzven website, an exclusive territory, a franchise or distributor status. You may operate your own independent website in accordance with the <a href=\"/pages/reseller-terms\" title=\"Reseller Terms\">Reseller Terms</a>.</p>"}},
+        {"type": "faq", "settings": {"question": "Who decides the retail prices?", "answer": "<p>Zyzven Naturals publishes its recommended retail prices on ZyzvenNaturals.com. The box’s stated combined retail value and potential gross profit are calculated using those prices.</p><p>You set your own lawful selling prices. The figures on this page are illustrations; sales and earnings are not guaranteed.</p>"}},
+        {"type": "faq", "settings": {"question": "Can I choose different products for my box?", "answer": "<p>The starter box is sold with the product names and quantities listed in “What’s Inside.” It is not a build-your-own box. If an item becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed substitution.</p>"}},
+        {"type": "faq", "settings": {"question": "Can I reorder individual products without buying another box?", "answer": "<p>Yes. You can request individual products at the reseller prices then available. We will confirm the products, stock, current prices, shipping and any applicable reorder minimum before you commit to a reorder.</p>"}},
+        {"type": "faq", "settings": {"question": "Can I return products that I do not sell?", "answer": "<p>We do not buy back unsold stock. If a delivery is faulty, damaged, missing products or different from your confirmed order, contact <a href=\"mailto:sales@zyzvennaturals.com\" title=\"Email Zyzven Naturals\">sales@zyzvennaturals.com</a> as soon as reasonably possible with your order number and photographs where available. Your applicable legal rights remain unaffected.</p>"}},
+        {"type": "faq", "settings": {"question": "Do I need to buy my own insurance?", "answer": "<p>Zyzven Naturals maintains product liability insurance for its business. We do not require resellers to buy insurance as a condition of joining. Our policy does not automatically cover every activity of your independent business.</p>"}},
+        {"type": "faq", "settings": {"question": "Do I need Zyzven clothing for events?", "answer": "<p>If you represent Zyzven at a Zyzven-branded stand or event, please wear an approved Zyzven T-shirt or other approved branded clothing. Arrange this with us before the event. We will disclose and agree any clothing cost with you before asking you to pay it.</p>"}},
+        {"type": "faq", "settings": {"question": "Are payment plans available for the box?", "answer": "<p>Any payment options available for your location will appear at checkout. If you need to discuss payment before ordering, contact us. Do not assume that an instalment option is available unless it is displayed or confirmed to you.</p>"}},
+        {"type": "faq", "settings": {"question": "Who can I speak to before buying?", "answer": "<p>Email <a href=\"mailto:sales@zyzvennaturals.com\" title=\"Email Zyzven Naturals\">sales@zyzvennaturals.com</a> or use the WhatsApp contact link on this page. We are happy to answer questions about the box, shipping or becoming a reseller before you place an order.</p>"}}
+      ]
+    }
+  ]
+}
+{% endschema %}

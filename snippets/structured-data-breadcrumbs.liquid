@@ -1,0 +1,74 @@
+{% comment %}
+  Emits BreadcrumbList structured data (schema.org) so Google can show a
+  breadcrumb trail in search results. Rendered only on product and collection
+  pages, where a meaningful hierarchy exists.
+
+  Product page:    Home > [Collection] > Product
+  Collection page: Home > Collection
+
+  Additive only — does not render any visible markup.
+{% endcomment %}
+
+{%- liquid
+  assign home_name = 'general.breadcrumbs.home' | t | default: 'Home'
+-%}
+
+{%- if request.page_type == 'product' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": {{ home_name | json }},
+        "item": {{ request.origin | append: routes.root_url | json }}
+      }
+      {%- if product.collections.size > 0 -%}
+        {%- assign bc_collection = product.collections.first -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ bc_collection.title | json }},
+          "item": {{ request.origin | append: bc_collection.url | json }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ product.title | json }},
+          "item": {{ request.origin | append: product.url | json }}
+        }
+      {%- else -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ product.title | json }},
+          "item": {{ request.origin | append: product.url | json }}
+        }
+      {%- endif -%}
+    ]
+  }
+  </script>
+{%- elsif request.page_type == 'collection' and collection.handle -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": {{ home_name | json }},
+        "item": {{ request.origin | append: routes.root_url | json }}
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": {{ collection.title | json }},
+        "item": {{ request.origin | append: collection.url | json }}
+      }
+    ]
+  }
+  </script>
+{%- endif -%}

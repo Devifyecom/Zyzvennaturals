@@ -1,0 +1,207 @@
+{%- liquid
+  assign s = section.settings
+  assign sid = section.id
+  assign terms_url = s.terms_url | default: '/pages/reseller-terms'
+  assign retail_shipping_url = s.retail_shipping_url | default: '/policies/shipping-policy'
+  assign retail_refund_url = s.retail_refund_url | default: '/policies/refund-policy'
+-%}
+
+<style>
+  #biab-policies-{{ sid }} {
+    background: {{ s.bg }};
+    color: #2f2f2a;
+    font-family: var(--font-body-family, "Mulish", "Helvetica Neue", Arial, sans-serif);
+  }
+  #biab-policies-{{ sid }} .bpol-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+  #biab-policies-{{ sid }} .bpol-kicker {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #8e6b2e;
+  }
+  #biab-policies-{{ sid }} h1 {
+    margin: 0 0 16px;
+    font-family: var(--font-heading-family, "Fraunces", Georgia, serif);
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #1f3a30;
+  }
+  #biab-policies-{{ sid }} .bpol-updated { margin: 0 0 28px; font-size: 14px; opacity: 0.75; }
+  #biab-policies-{{ sid }} h2 {
+    margin: 44px 0 12px;
+    font-family: var(--font-heading-family, "Fraunces", Georgia, serif);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1f3a30;
+    scroll-margin-top: 90px;
+  }
+  #biab-policies-{{ sid }} h3 {
+    margin: 22px 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f3a30;
+  }
+  #biab-policies-{{ sid }} p,
+  #biab-policies-{{ sid }} li { font-size: 16px; line-height: 1.7; }
+  #biab-policies-{{ sid }} p { margin: 0 0 14px; }
+  #biab-policies-{{ sid }} ul { margin: 0 0 14px; padding-left: 20px; }
+  #biab-policies-{{ sid }} li + li { margin-top: 6px; }
+  #biab-policies-{{ sid }} a { color: #1f3a30; text-underline-offset: 3px; }
+  #biab-policies-{{ sid }} a:visited { color: #1f3a30; }
+
+  #biab-policies-{{ sid }} .bpol-toc {
+    margin: 0 0 8px;
+    padding: 18px 22px;
+    border: 1px solid rgba(31, 58, 48, 0.14);
+    border-radius: 8px;
+    background: #fff;
+  }
+  #biab-policies-{{ sid }} .bpol-toc p { margin: 0 0 8px; font-weight: 700; font-size: 14px; }
+  #biab-policies-{{ sid }} .bpol-toc ol { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.8; }
+
+  /* Side-by-side comparison */
+  #biab-policies-{{ sid }} .bpol-compare {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 18px 0 8px;
+  }
+  #biab-policies-{{ sid }} .bpol-card {
+    padding: 20px 22px;
+    border: 1px solid rgba(31, 58, 48, 0.14);
+    border-radius: 10px;
+    background: #fff;
+  }
+  #biab-policies-{{ sid }} .bpol-card--box { background: #1f3a30; border-color: #1f3a30; color: #f3ede1; }
+  #biab-policies-{{ sid }} .bpol-card--box a,
+  #biab-policies-{{ sid }} .bpol-card--box a:visited { color: #f3ede1; }
+  #biab-policies-{{ sid }} .bpol-card h3 { margin: 0 0 10px; font-size: 17px; }
+  #biab-policies-{{ sid }} .bpol-card--box h3 { color: #d8b36c; }
+  #biab-policies-{{ sid }} .bpol-card ul { margin: 0; padding-left: 18px; }
+  #biab-policies-{{ sid }} .bpol-card li { font-size: 15px; line-height: 1.6; }
+
+  #biab-policies-{{ sid }} .bpol-note {
+    margin: 18px 0 0;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: #f3efe4;
+    font-size: 15px;
+  }
+  #biab-policies-{{ sid }} .bpol-contact {
+    margin-top: 44px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(31, 58, 48, 0.14);
+    font-size: 15px;
+  }
+
+  @media (max-width: 640px) {
+    #biab-policies-{{ sid }} .bpol-wrap { padding: 44px 20px 56px; }
+    #biab-policies-{{ sid }} .bpol-compare { grid-template-columns: 1fr; }
+    #biab-policies-{{ sid }} p,
+    #biab-policies-{{ sid }} li { font-size: 15px; }
+  }
+</style>
+
+<section id="biab-policies-{{ sid }}" class="biab-policies">
+  <div class="bpol-wrap">
+    {%- if s.kicker != blank -%}<p class="bpol-kicker">{{ s.kicker }}</p>{%- endif -%}
+    <h1>{{ s.heading }}</h1>
+    {%- if s.updated != blank -%}<p class="bpol-updated">{{ s.updated }}</p>{%- endif -%}
+
+    <nav class="bpol-toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#bpol-which">Which policy applies to your order?</a></li>
+        <li><a href="#bpol-shipping">Business in a Box shipping</a></li>
+        <li><a href="#bpol-duties">Customs, duties and delivery times</a></li>
+        <li><a href="#bpol-returns">Business in a Box returns and delivery issues</a></li>
+        <li><a href="#bpol-contact">Questions</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="bpol-which">1. Which policy applies to your order?</h2>
+    <p>Ordinary retail orders from ZyzvenNaturals.com and Business in a Box reseller orders are shipped and handled differently. Retail shipping rates, free-shipping thresholds, delivery times and return terms do not apply to Business in a Box orders.</p>
+
+    <div class="bpol-compare">
+      <div class="bpol-card">
+        <h3>Ordinary retail orders</h3>
+        <ul>
+          <li>Individual products bought for your own use.</li>
+          <li>Shipping follows our <a href="{{ retail_shipping_url }}">Shipping Policy</a>.</li>
+          <li>Returns follow our <a href="{{ retail_refund_url }}">Refund Policy</a>.</li>
+        </ul>
+      </div>
+      <div class="bpol-card bpol-card--box">
+        <h3>Business in a Box orders</h3>
+        <ul>
+          <li>The 40-product reseller box, $999 plus shipping.</li>
+          <li>Shipping and returns as set out on this page.</li>
+          <li>Also governed by the <a href="{{ terms_url }}">Reseller Terms</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="bpol-shipping">2. Business in a Box shipping</h2>
+    <p>For destinations available at checkout, the box shipping charge and the full amount payable are shown before you pay. We will not add an unapproved shipping charge after you purchase.</p>
+
+    <h3>USA</h3>
+    <p>Packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. No additional customs duties for delivery within the USA.</p>
+
+    <h3>United Kingdom</h3>
+    <p>Packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. No additional customs duties for delivery within the UK.</p>
+
+    <h3>European Union</h3>
+    <p>Dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. No additional customs duties for delivery from Sweden to another EU country.</p>
+
+    <h3>Canada</h3>
+    <p>Most box products are dispatched by our Canadian distributor, TK Zyzven Naturals Inc. If a product must come from our UK warehouse, we will contact you before it ships to explain whether to expect separate parcels, the delivery estimate and any possible import, clearance or extra shipping charge. We will not send a UK shipment or add an extra charge without your agreement.</p>
+
+    <h3>Selected Middle Eastern destinations</h3>
+    <p>Where we ship directly, the shipping charge and total are shown at checkout before payment.</p>
+
+    <h3>Caribbean</h3>
+    <p>We recommend a shipping-forwarding company with an eligible delivery address. You choose and pay the forwarder and arrange onward delivery. Please tell us when an address belongs to a forwarder.</p>
+
+    <h3>Other destinations</h3>
+    <p>Contact us for a complete shipping quote before purchasing. We dispatch only after you accept the quote and pay the agreed total.</p>
+
+    <h2 id="bpol-duties">3. Customs, duties and delivery times</h2>
+    <p>Delivery estimates are business days after dispatch, not guaranteed arrival dates. Carrier delays, remote locations and customs processing can affect delivery. We send tracking information when your box dispatches.</p>
+    <p>For destinations outside the USA, UK and EU, and for forwarding arrangements, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included.</p>
+
+    <h2 id="bpol-returns">4. Business in a Box returns and delivery issues</h2>
+    <p>We do not buy back unsold stock or provide a general return because a reseller has been unable to sell products.</p>
+    <p>Please inspect your box when it arrives. If anything is faulty, damaged, missing or different from your confirmed order, email <a href="mailto:{{ s.email }}">{{ s.email }}</a> as soon as reasonably possible with your order number and, where available, photographs. Reporting within seven days of delivery helps us investigate quickly; it does not remove rights that cannot lawfully be excluded. We will address faulty, damaged, missing or incorrectly supplied goods in accordance with applicable law.</p>
+    <p>If a product becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed substitution.</p>
+    <p class="bpol-note">Your applicable legal rights remain unaffected. Full details are in the <a href="{{ terms_url }}">Reseller Terms</a>.</p>
+
+    <div class="bpol-contact" id="bpol-contact">
+      <p><strong>Questions?</strong> Email <a href="mailto:{{ s.email }}">{{ s.email }}</a>{% if s.whatsapp_url != blank %} or <a href="{{ s.whatsapp_url }}" target="_blank" rel="noopener">message us on WhatsApp</a>{% endif %}. We're happy to help with shipping or order questions before you buy.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIAB — Shipping & returns",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Zyzven Naturals" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shipping & Returns: Retail vs Business in a Box" },
+    { "type": "text", "id": "updated", "label": "Updated line", "default": "Effective 23 September 2026" },
+    { "type": "url", "id": "terms_url", "label": "Reseller Terms page", "info": "Defaults to /pages/reseller-terms." },
+    { "type": "url", "id": "retail_shipping_url", "label": "Retail shipping policy", "info": "Defaults to /policies/shipping-policy." },
+    { "type": "url", "id": "retail_refund_url", "label": "Retail refund policy", "info": "Defaults to /policies/refund-policy." },
+    { "type": "text", "id": "email", "label": "Contact email", "default": "sales@zyzvennaturals.com" },
+    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp link" },
+    { "type": "color", "id": "bg", "label": "Background", "default": "#f8f5ef" }
+  ]
+}
+{% endschema %}

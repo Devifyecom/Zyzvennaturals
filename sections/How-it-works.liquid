@@ -1,0 +1,329 @@
+{%- liquid
+  assign uid = section.id | replace: '_', '' | downcase
+  assign cols = section.settings.columns | plus: 0
+-%}
+
+{% style %}
+  #hiw-{{ uid }} {
+    --hiw-pink: {{ section.settings.accent_color }};
+    --hiw-ink: {{ section.settings.heading_color }};
+    --hiw-body: {{ section.settings.body_color }};
+    --hiw-max: {{ section.settings.max_width }}px;
+    --hiw-gap: {{ section.settings.gap }}px;
+    --hiw-radius: {{ section.settings.image_radius }}px;
+
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+    {%- if section.settings.use_gradient -%}
+      background: linear-gradient(180deg, {{ section.settings.bg_top }} 0%, {{ section.settings.bg_bottom }} 55%);
+    {%- else -%}
+      background: {{ section.settings.bg_bottom }};
+    {%- endif -%}
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #hiw-{{ uid }} *,
+  #hiw-{{ uid }} *::before,
+  #hiw-{{ uid }} *::after { box-sizing: border-box; }
+
+  /* ---------- header ---------- */
+  #hiw-{{ uid }} .hiw-eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--hiw-pink);
+    text-align: center;
+  }
+
+  #hiw-{{ uid }} .hiw-heading {
+    margin: 0 auto 38px;
+    max-width: 20ch;
+    font-size: clamp(28px, 2.9vw, {{ section.settings.heading_size }}px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -.022em;
+    color: var(--hiw-ink);
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  /* ---------- grid ---------- */
+  #hiw-{{ uid }} .hiw-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat({{ cols }}, minmax(0, 1fr));
+    gap: var(--hiw-gap);
+    align-items: start;
+    max-width: var(--hiw-max);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  #hiw-{{ uid }} .hiw-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ---------- image ---------- */
+  #hiw-{{ uid }} .hiw-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--hiw-radius);
+    overflow: hidden;
+    background: #EFEAE1;
+    box-shadow: 0 2px 4px rgba(23,23,26,.04), 0 14px 34px -16px rgba(23,23,26,.22);
+    transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
+  }
+
+  #hiw-{{ uid }} .hiw-img img,
+  #hiw-{{ uid }} .hiw-img svg {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .8s cubic-bezier(.22,.61,.36,1);
+    will-change: transform;
+  }
+
+  #hiw-{{ uid }} .hiw-step:hover .hiw-img {
+    transform: translateY(-4px);
+    box-shadow: 0 3px 6px rgba(23,23,26,.05), 0 24px 46px -18px rgba(23,23,26,.28);
+  }
+
+  #hiw-{{ uid }} .hiw-step:hover .hiw-img img { transform: scale(1.04); }
+
+  /* ---------- number ---------- */
+  #hiw-{{ uid }} .hiw-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    margin: 18px 0;
+    border-radius: 50%;
+    background: var(--hiw-pink);
+    color: {{ section.settings.number_text_color }};
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 6px 16px -6px {{ section.settings.accent_color | color_modify: 'alpha', 0.55 }};
+  }
+
+  /* ---------- text ---------- */
+  #hiw-{{ uid }} .hiw-title {
+    margin: 0 0 10px;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -.015em;
+    color: var(--hiw-ink);
+  }
+
+  #hiw-{{ uid }} .hiw-desc {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--hiw-body);
+    text-wrap: pretty;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1000px) {
+    #hiw-{{ uid }} { --hiw-gap: 30px; --hiw-radius: 24px; padding-left: 18px; padding-right: 18px; }
+  }
+
+  @media (max-width: 780px) {
+    #hiw-{{ uid }} { --hiw-gap: 24px; }
+    #hiw-{{ uid }} .hiw-heading { margin-bottom: 32px; }
+    #hiw-{{ uid }} .hiw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 16px 0; font-size: 17px; }
+    #hiw-{{ uid }} .hiw-title { font-size: 18px; }
+    #hiw-{{ uid }} .hiw-desc { font-size: 13px; }
+  }
+
+  @media (max-width: 600px) {
+    #hiw-{{ uid }} {
+      --hiw-gap: 34px;
+      --hiw-radius: 22px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    #hiw-{{ uid }} .hiw-eyebrow { font-size: 12.5px; margin-bottom: 15px; }
+    #hiw-{{ uid }} .hiw-heading { font-size: clamp(28px, 8.4vw, 34px); margin-bottom: 30px; }
+    #hiw-{{ uid }} .hiw-grid { grid-template-columns: 1fr; max-width: 380px; }
+    #hiw-{{ uid }} .hiw-num { margin: 16px 0 14px; }
+    #hiw-{{ uid }} .hiw-title { font-size: 19px; }
+    #hiw-{{ uid }} .hiw-desc { font-size: 14.5px; line-height: 1.5; max-width: 32ch; margin-inline: auto; }
+  }
+
+  @media (hover: none) {
+    #hiw-{{ uid }} .hiw-step:hover .hiw-img {
+      transform: none;
+      box-shadow: 0 2px 4px rgba(23,23,26,.04), 0 14px 34px -16px rgba(23,23,26,.22);
+    }
+    #hiw-{{ uid }} .hiw-step:hover .hiw-img img { transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #hiw-{{ uid }} .hiw-img,
+    #hiw-{{ uid }} .hiw-img img { transition: none !important; }
+    #hiw-{{ uid }} .hiw-step:hover .hiw-img { transform: none; }
+    #hiw-{{ uid }} .hiw-step:hover .hiw-img img { transform: none; }
+  }
+{% endstyle %}
+
+<section id="hiw-{{ uid }}" class="hiw-section">
+
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="hiw-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.title != blank -%}
+    <h2 class="hiw-heading">{{ section.settings.title | escape }}</h2>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <ol class="hiw-grid">
+      {%- for block in section.blocks -%}
+        {%- assign alt = block.settings.image_alt | default: block.settings.title -%}
+        <li class="hiw-step" {{ block.shopify_attributes }}>
+
+          <div class="hiw-img">
+            {%- if block.settings.image != blank -%}
+              {%- assign small = block.settings.image | image_url: width: 320, height: 320, crop: 'center' -%}
+              {%- assign large = block.settings.image | image_url: width: 620, height: 620, crop: 'center' -%}
+              <img
+                src="{{ large }}"
+                srcset="{{ small }} 320w, {{ large }} 620w"
+                sizes="(max-width: 600px) 100vw, {{ 940 | divided_by: cols }}px"
+                width="620" height="620"
+                alt="{{ alt | escape }}"
+                loading="lazy" decoding="async">
+            {%- elsif block.settings.image_url != blank -%}
+              <img
+                src="{{ block.settings.image_url }}"
+                width="620" height="620"
+                alt="{{ alt | escape }}"
+                loading="lazy" decoding="async">
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'hiw-placeholder' }}
+            {%- endif -%}
+          </div>
+
+          <div class="hiw-num" aria-hidden="true">{{ forloop.index }}</div>
+
+          {%- if block.settings.title != blank -%}
+            <h3 class="hiw-title">{{ block.settings.title | escape }}</h3>
+          {%- endif -%}
+
+          {%- if block.settings.desc != blank -%}
+            <p class="hiw-desc">{{ block.settings.desc | escape }}</p>
+          {%- endif -%}
+
+        </li>
+      {%- endfor -%}
+    </ol>
+  {%- endif -%}
+
+</section>
+
+{% schema %}
+{
+  "name": "How it works",
+  "tag": "section",
+  "class": "section hiw-section-wrapper",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "header", "content": "Text" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How it works" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Easy as 1. 2. 3." },
+    { "type": "header", "content": "Background" },
+    { "type": "checkbox", "id": "use_gradient", "label": "Fade from top color to bottom color", "default": true },
+    { "type": "color", "id": "bg_top", "label": "Top color", "default": "#FFFFFF" },
+    { "type": "color", "id": "bg_bottom", "label": "Bottom color", "default": "#F8F4EC" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "accent_color", "label": "Pink accent", "default": "#EC3A8C" },
+    { "type": "color", "id": "number_text_color", "label": "Number text", "default": "#FFFFFF" },
+    { "type": "color", "id": "heading_color", "label": "Headings", "default": "#17171A" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#5F6166" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "3"
+    },
+    { "type": "range", "id": "max_width", "label": "Grid width", "min": 700, "max": 1300, "step": 20, "unit": "px", "default": 940 },
+    { "type": "range", "id": "gap", "label": "Gap between steps", "min": 12, "max": 64, "step": 2, "unit": "px", "default": 42 },
+    { "type": "range", "id": "image_radius", "label": "Image corner radius", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 28 },
+    { "type": "range", "id": "heading_size", "label": "Heading size (desktop)", "min": 26, "max": 52, "step": 1, "unit": "px", "default": 34 },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Square crop. Preferred over the external URL below." },
+        { "type": "text", "id": "image_url", "label": "External image URL", "info": "Only used when no image is uploaded." },
+        { "type": "text", "id": "image_alt", "label": "Image alt text" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Steep" },
+        { "type": "textarea", "id": "desc", "label": "Description", "default": "Let the loose leaf tea steep in your mug for 5 minutes." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How it works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Steep",
+            "desc": "Let the loose leaf tea steep in your mug for 5 minutes.",
+            "image_alt": "Steep the loose leaf tea",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Sip",
+            "desc": "Drink before bed. The herbs work gently overnight, no cramps, no urgency.",
+            "image_alt": "Sip before bed",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Reset",
+            "desc": "Wake up flatter, lighter, and more regular. Your overnight reset, no cramping, no rushing.",
+            "image_alt": "Wake up reset, flatter and more regular",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

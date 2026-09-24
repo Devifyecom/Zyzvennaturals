@@ -1,0 +1,67 @@
+{%- comment -%}
+  Business in a Box — structured data and social image metadata.
+
+  Rendered from layout/theme.liquid inside <head>, guarded by
+  template.suffix == 'business-in-a-box', so nothing here reaches any other
+  page. The og:title / og:description overrides live in snippets/meta-tags.liquid
+  so they replace the theme's defaults instead of duplicating them.
+{%- endcomment -%}
+
+{%- liquid
+  assign bib_sku = 'ZN-BIB-40-US'
+  if product.selected_or_first_available_variant.sku != blank
+    assign bib_sku = product.selected_or_first_available_variant.sku
+  endif
+
+  assign bib_price = '999.00'
+  if product.price > 0
+    assign bib_price = product.price | divided_by: 100.0 | round: 2
+  endif
+
+  if product.available
+    assign bib_availability = 'https://schema.org/InStock'
+  else
+    assign bib_availability = 'https://schema.org/OutOfStock'
+  endif
+
+  assign bib_description = 'Start selling Zyzven Naturals with 40 ready-to-retail teas and supplements, training, marketing materials and monthly partner support.'
+  assign bib_alt = 'Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.'
+
+  if product.featured_image != blank
+    assign bib_image = product.featured_image | image_url: width: 1200
+  endif
+-%}
+
+{%- if bib_image != blank -%}
+  <meta property="og:image:alt" content="{{ bib_alt | escape }}">
+{%- endif -%}
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Business in a Box",
+    "description": {{ bib_description | json }},
+    "sku": {{ bib_sku | json }},
+    "mpn": {{ bib_sku | json }},
+    {%- if bib_image != blank %}
+    "image": [{{ bib_image | prepend: 'https:' | json }}],
+    {%- endif %}
+    "brand": {
+      "@type": "Brand",
+      "name": "Zyzven Naturals"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": {{ canonical_url | json }},
+      "priceCurrency": {{ cart.currency.iso_code | default: 'USD' | json }},
+      "price": {{ bib_price | json }},
+      "availability": {{ bib_availability | json }},
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    }
+  }
+</script>

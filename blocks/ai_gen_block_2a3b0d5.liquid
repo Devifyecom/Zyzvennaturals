@@ -1,0 +1,705 @@
+{% doc %}
+  @prompt
+    create this same custom section with responsive
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-responsive-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.mobile_padding }}px {{ block.settings.mobile_padding }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-responsive-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-responsive-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.mobile_gap }}px;
+    align-items: {{ block.settings.mobile_alignment }};
+  }
+
+  .ai-responsive-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    {% if block.settings.mobile_image_first %}
+      order: 1;
+    {% else %}
+      order: 2;
+    {% endif %}
+  }
+
+  .ai-responsive-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-responsive-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-responsive-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-responsive-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-responsive-text-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    {% if block.settings.mobile_image_first %}
+      order: 2;
+    {% else %}
+      order: 1;
+    {% endif %}
+  }
+
+  .ai-responsive-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.mobile_heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.mobile_gap | divided_by: 2 }}px;
+    line-height: 1.2;
+  }
+
+  .ai-responsive-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.mobile_text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0 0 {{ block.settings.mobile_gap }}px;
+  }
+
+  .ai-responsive-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.mobile_button_padding }}px {{ block.settings.mobile_button_padding | times: 2 }}px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.mobile_button_text_size }}px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .ai-responsive-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-responsive-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.tablet_padding }}px {{ block.settings.tablet_padding }}px;
+    }
+
+    .ai-responsive-content-{{ ai_gen_id }} {
+      flex-direction: {{ block.settings.tablet_layout }};
+      gap: {{ block.settings.tablet_gap }}px;
+      align-items: {{ block.settings.tablet_alignment }};
+    }
+
+    .ai-responsive-image-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.tablet_image_width }}%;
+      order: 0;
+    }
+
+    .ai-responsive-text-wrapper-{{ ai_gen_id }} {
+      width: {{ 100 | minus: block.settings.tablet_image_width }}%;
+      order: 0;
+    }
+
+    .ai-responsive-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.tablet_heading_size }}px;
+      margin-bottom: {{ block.settings.tablet_gap | divided_by: 2 }}px;
+    }
+
+    .ai-responsive-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.tablet_text_size }}px;
+      margin-bottom: {{ block.settings.tablet_gap }}px;
+    }
+
+    .ai-responsive-button-{{ ai_gen_id }} {
+      padding: {{ block.settings.tablet_button_padding }}px {{ block.settings.tablet_button_padding | times: 2 }}px;
+      font-size: {{ block.settings.tablet_button_text_size }}px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .ai-responsive-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.desktop_padding }}px {{ block.settings.desktop_padding }}px;
+    }
+
+    .ai-responsive-content-{{ ai_gen_id }} {
+      flex-direction: {{ block.settings.desktop_layout }};
+      gap: {{ block.settings.desktop_gap }}px;
+      align-items: {{ block.settings.desktop_alignment }};
+    }
+
+    .ai-responsive-image-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.desktop_image_width }}%;
+    }
+
+    .ai-responsive-text-wrapper-{{ ai_gen_id }} {
+      width: {{ 100 | minus: block.settings.desktop_image_width }}%;
+    }
+
+    .ai-responsive-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_heading_size }}px;
+      margin-bottom: {{ block.settings.desktop_gap | divided_by: 2 }}px;
+    }
+
+    .ai-responsive-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_text_size }}px;
+      margin-bottom: {{ block.settings.desktop_gap }}px;
+    }
+
+    .ai-responsive-button-{{ ai_gen_id }} {
+      padding: {{ block.settings.desktop_button_padding }}px {{ block.settings.desktop_button_padding | times: 2 }}px;
+      font-size: {{ block.settings.desktop_button_text_size }}px;
+    }
+  }
+{% endstyle %}
+
+<responsive-section-{{ ai_gen_id }} class="ai-responsive-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-responsive-container-{{ ai_gen_id }}">
+    <div class="ai-responsive-content-{{ ai_gen_id }}">
+      <div class="ai-responsive-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 2000 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+            class="ai-responsive-image-{{ ai_gen_id }}"
+          >
+        {% else %}
+          <div class="ai-responsive-image-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+            <div class="ai-responsive-empty-state-{{ ai_gen_id }}">
+              Add an image to get started
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-responsive-text-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-responsive-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+
+        {% if block.settings.text != blank %}
+          <div class="ai-responsive-text-{{ ai_gen_id }}">{{ block.settings.text }}</div>
+        {% endif %}
+
+        {% if block.settings.button_text != blank %}
+          <a
+            href="{{ block.settings.button_link }}"
+            class="ai-responsive-button-{{ ai_gen_id }}"
+          >
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</responsive-section-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ResponsiveSection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupResponsive();
+        window.addEventListener('resize', this.handleResize.bind(this));
+      }
+
+      disconnectedCallback() {
+        window.removeEventListener('resize', this.handleResize.bind(this));
+      }
+
+      setupResponsive() {
+        this.updateLayout();
+      }
+
+      handleResize() {
+        this.updateLayout();
+      }
+
+      updateLayout() {
+        const width = window.innerWidth;
+        const content = this.querySelector('.ai-responsive-content-{{ ai_gen_id }}');
+        
+        if (width < 750) {
+          content.setAttribute('data-viewport', 'mobile');
+        } else if (width < 990) {
+          content.setAttribute('data-viewport', 'tablet');
+        } else {
+          content.setAttribute('data-viewport', 'desktop');
+        }
+      }
+    }
+
+    customElements.define('responsive-section-{{ ai_gen_id }}', ResponsiveSection{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Responsive content",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Responsive section"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>This section adapts beautifully to all screen sizes - mobile, tablet, and desktop.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Learn more"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Layout settings"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 600,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_image_first",
+      "label": "Show image first",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Gap between elements",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Heading size",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding",
+      "label": "Button padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Tablet layout"
+    },
+    {
+      "type": "select",
+      "id": "tablet_layout",
+      "label": "Layout direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "tablet_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "tablet_image_width",
+      "label": "Image width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "tablet_padding",
+      "label": "Padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "tablet_gap",
+      "label": "Gap between elements",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "tablet_heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "tablet_text_size",
+      "label": "Text size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "tablet_button_padding",
+      "label": "Button padding",
+      "min": 10,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tablet_button_text_size",
+      "label": "Button text size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Layout direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Horizontal reversed"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "desktop_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_width",
+      "label": "Image width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding",
+      "label": "Padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Gap between elements",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "Heading size",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_text_size",
+      "label": "Text size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_padding",
+      "label": "Button padding",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_text_size",
+      "label": "Button text size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background",
+      "default": "#8c7050"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Responsive content"
+    }
+  ]
+}
+{% endschema %}

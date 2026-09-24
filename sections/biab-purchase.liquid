@@ -1,0 +1,729 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'biab.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign s = section.settings
+  assign sid = section.id
+
+  comment
+    Box product: the section setting, or the current product when this section is placed on the box's own product template
+  endcomment
+  assign biab_product = s.product
+  if biab_product == blank and product != blank
+    assign biab_product = product
+  endif
+  assign biab_variant = biab_product.selected_or_first_available_variant
+
+  if biab_variant != blank
+    assign box_cents = biab_variant.price
+    assign price_display = biab_variant.price | money
+  else
+    assign box_cents = s.price | remove: '$' | remove: ',' | strip | times: 100 | round
+    assign price_display = s.price
+  endif
+  assign button_label = s.button_label | replace: '[price]', price_display
+
+  assign terms_url = s.terms_url | default: '/pages/reseller-terms'
+  assign policies_url = s.policies_url | default: '/pages/business-in-a-box-policies'
+
+  comment
+    Included products: calculated from live product prices when "Box item" blocks are added
+  endcomment
+  assign items = section.blocks | where: 'type', 'item'
+  assign rrv_cents = 0
+  assign total_units = 0
+  assign contents_line = ''
+  for block in items
+    assign item_name = block.settings.name
+    if item_name == blank and block.settings.product != blank
+      assign item_name = block.settings.product.title
+    endif
+    assign item_entry = item_name | append: ' ×' | append: block.settings.qty
+    if contents_line == ''
+      assign contents_line = item_entry
+    else
+      assign contents_line = contents_line | append: ', ' | append: item_entry
+    endif
+    assign unit_cents = 0
+    if block.settings.product != blank
+      assign unit_cents = block.settings.product.selected_or_first_available_variant.price
+    elsif block.settings.price != blank
+      assign unit_cents = block.settings.price | remove: '$' | remove: ',' | strip | times: 100 | round
+    endif
+    assign line_cents = unit_cents | times: block.settings.qty
+    assign rrv_cents = rrv_cents | plus: line_cents
+    assign total_units = total_units | plus: block.settings.qty
+  endfor
+  if contents_line != ''
+    assign contents_line = contents_line | append: ' (' | append: total_units | append: ' units)'
+  endif
+  assign profit_cents = rrv_cents | minus: box_cents
+  assign auto_figures = false
+  if items.size > 0 and s.auto_figures
+    assign auto_figures = true
+  endif
+-%}
+
+<style>
+  #biab-purchase { scroll-margin-top: {{ s.scroll_offset }}px; }
+  #biab-purchase .bp-field { margin-top: 24px; }
+  #biab-purchase .bp-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+  #biab-purchase .bp-select {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 40px 10px 14px;
+    border: 1px solid var(--biab-line, #d9ddd7);
+    border-radius: 8px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%231f3b30' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 16px center;
+    font: inherit;
+    font-size: 15px;
+    color: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  #biab-purchase .bp-select:focus-visible,
+  #biab-purchase .bp-check input:focus-visible { outline: 2px solid #b8944f; outline-offset: 2px; }
+
+  #biab-purchase .bp-ship {
+    margin-top: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: #f3efe4;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  #biab-purchase .bp-ship p { margin: 0; }
+  #biab-purchase .bp-ship p + p { margin-top: 8px; }
+  #biab-purchase .bp-ship__duties { opacity: 0.8; font-size: 13px; }
+
+  #biab-purchase [data-show-for],
+  #biab-purchase [data-show-region] { display: none; }
+  #biab-purchase [data-region="none"] [data-show-region~="none"],
+  #biab-purchase [data-region="us"] [data-show-region~="us"],
+  #biab-purchase [data-region="uk"] [data-show-region~="uk"],
+  #biab-purchase [data-region="eu"] [data-show-region~="eu"],
+  #biab-purchase [data-region="ca"] [data-show-region~="ca"],
+  #biab-purchase [data-region="me"] [data-show-region~="me"],
+  #biab-purchase [data-region="direct"] [data-show-region~="direct"],
+  #biab-purchase [data-region="forwarder"] [data-show-region~="forwarder"],
+  #biab-purchase [data-region="quote"] [data-show-region~="quote"] { display: block; }
+  #biab-purchase [data-mode="direct"] [data-show-for~="direct"],
+  #biab-purchase [data-mode="forwarder"] [data-show-for~="forwarder"],
+  #biab-purchase [data-mode="quote"] [data-show-for~="quote"],
+  #biab-purchase [data-mode="none"] [data-show-for~="none"] { display: block; }
+
+  #biab-purchase .bp-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  #biab-purchase .bp-check input {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin: 1px 0 0;
+    accent-color: #1f3b30;
+    cursor: pointer;
+  }
+  #biab-purchase .bp-check a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  #biab-purchase .bp-check--terms { font-weight: 700; }
+
+  #biab-purchase .bp-optin {
+    margin: 20px 0 0;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--biab-line, #d9ddd7);
+    border-radius: 8px;
+  }
+  #biab-purchase .bp-optin legend {
+    padding: 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  #biab-purchase .bp-optin .bp-check:first-of-type { margin-top: 4px; }
+  #biab-purchase .bp-optin__details { margin: 10px 0 0 28px; }
+  #biab-purchase .bp-optin__details p { margin: 0 0 4px; font-size: 13px; opacity: 0.85; }
+  #biab-purchase .bp-optin__details .bp-check { margin-top: 8px; }
+  #biab-purchase .bp-optin__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
+
+  #biab-purchase .bp-error {
+    margin: 16px 0 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fbeaea;
+    color: #8a1f1f;
+    font-size: 14px;
+  }
+  #biab-purchase .bp-error[hidden] { display: none; }
+  #biab-purchase .bp-submit { margin-top: 20px; }
+
+  #biab-purchase .bp-quote__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  #biab-purchase .bp-contents a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  #biab-purchase .bp-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin-top: 12px;
+  }
+  #biab-purchase .bp-links a,
+  #biab-purchase .bp-links a:visited,
+  #biab-purchase .bp-check a:visited {
+    color: #1f3b30;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  #biab-purchase .bp-links a:hover { color: #8e6b2e; }
+  #biab-purchase .bp-links__sep { opacity: 0.35; }
+  #biab-purchase .bp-visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  @media (max-width: 560px) {
+    #biab-purchase .bp-optin__grid { grid-template-columns: 1fr; }
+    #biab-purchase .bp-quote__actions .biab-btn { width: 100%; text-align: center; }
+  }
+</style>
+
+<div class="biab biab--white">
+  <section class="biab-section" id="biab-purchase" aria-labelledby="biab-purchase-title">
+    <div class="biab-inner">
+      <div class="biab-head">
+        {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        <h2 class="biab-h2" id="biab-purchase-title">{{ s.heading }}</h2>
+        <hr class="biab-rule">
+      </div>
+
+      <div class="biab-buy__grid">
+        <div>
+          <div class="biab-buy__media">
+            {%- if s.image != blank -%}
+              {{ s.image | image_url: width: 1000 | image_tag: widths: '440, 660, 880, 1000', sizes: '(min-width: 990px) 44vw, 92vw', loading: 'lazy', alt: s.image_alt }}
+            {%- elsif biab_product.featured_image != blank -%}
+              {{ biab_product.featured_image | image_url: width: 1000 | image_tag: widths: '440, 660, 880, 1000', sizes: '(min-width: 990px) 44vw, 92vw', loading: 'lazy', alt: s.image_alt }}
+            {%- else -%}
+              {%- if request.design_mode -%}
+                <div class="biab-hero__placeholder"><p>Add a box image in this section's settings.</p></div>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+
+          {%- comment -%} Contents list: built from Box item blocks (linked, live prices), otherwise the text setting {%- endcomment -%}
+          {%- if items.size > 0 -%}
+            <div class="biab-note bp-contents" style="margin-top:24px;">
+              <p>
+                <strong>In the box:</strong>
+                {% for block in items -%}
+                  {%- liquid
+                    assign pname = block.settings.name
+                    if pname == blank and block.settings.product != blank
+                      assign pname = block.settings.product.title
+                    endif
+                    assign purl = block.settings.link
+                    if purl == blank and block.settings.product != blank
+                      assign purl = block.settings.product.url
+                    endif
+                  -%}
+                  <span {{ block.shopify_attributes }}>
+                    {%- if purl != blank -%}
+                      <a href="{{ purl }}" target="_blank" rel="noopener">{{ pname }}<span class="bp-visually-hidden"> (opens in a new tab)</span></a>
+                    {%- else -%}{{ pname }}{%- endif -%}
+                    &nbsp;&times;{{ block.settings.qty }}</span>{% unless forloop.last %} · {% endunless %}
+                {%- endfor %}
+                — {{ total_units }} products, combined recommended retail value {{ rrv_cents | money }}.
+              </p>
+            </div>
+          {%- elsif s.contents_list != blank -%}
+            <div class="biab-note bp-contents" style="margin-top:24px;">{{ s.contents_list }}</div>
+          {%- endif -%}
+        </div>
+
+        <div class="biab-card biab-buy__panel" data-bp-panel data-mode="none" data-region="none">
+          <div class="biab-buy__price">
+            <span class="biab-buy__amount">{{ price_display }}</span>
+            <span class="biab-hero__suffix">{{ s.price_suffix }}</span>
+          </div>
+
+          <p class="biab-body">{{ s.summary }}</p>
+
+          <ul class="biab-buy__summary">
+            {%- if auto_figures -%}
+              <li><span>Products included</span><strong>{{ total_units }}</strong></li>
+              <li><span>Combined recommended retail value</span><strong>{{ rrv_cents | money }}</strong></li>
+              {%- if profit_cents > 0 -%}
+                <li><span>Potential gross profit</span><strong>Up to {{ profit_cents | money }}</strong></li>
+              {%- endif -%}
+            {%- endif -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'row' -%}
+                {%- liquid
+                  assign lbl = block.settings.label | downcase
+                  assign skip = false
+                  if auto_figures
+                    if lbl contains 'products included' or lbl contains 'retail value'
+                      assign skip = true
+                    elsif lbl contains 'gross profit'
+                      assign skip = true
+                    endif
+                  endif
+                -%}
+                {%- unless skip -%}
+                  <li {{ block.shopify_attributes }}>
+                    <span>{{ block.settings.label }}</span>
+                    <strong>{{ block.settings.value }}</strong>
+                  </li>
+                {%- endunless -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+
+          {%- if biab_product != blank and biab_variant != blank -%}
+            {%- comment -%} 1. Shipping destination {%- endcomment -%}
+            <div class="bp-field">
+              <label class="bp-label" for="BiabShipTo-{{ sid }}">{{ s.destination_label }}</label>
+              <select class="bp-select" id="BiabShipTo-{{ sid }}" name="properties[Ships to]" form="BiabBuyForm" required data-bp-destination>
+                <option value="" selected disabled>Choose your country</option>
+                {%- assign direct_list = s.direct_countries | split: ',' -%}
+                {%- if direct_list.size > 0 -%}
+                  <optgroup label="Shipping shown at checkout">
+                    {%- for c in direct_list -%}
+                      {%- liquid
+                        assign c = c | strip
+                        assign region = 'direct'
+                        assign cl = c | downcase
+                        if cl == 'united states' or cl == 'usa' or cl == 'united states of america'
+                          assign region = 'us'
+                        elsif cl == 'united kingdom' or cl == 'uk'
+                          assign region = 'uk'
+                        elsif cl == 'canada'
+                          assign region = 'ca'
+                        endif
+                      -%}
+                      {%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="{{ region }}">{{ c }}</option>{%- endif -%}
+                    {%- endfor -%}
+                  </optgroup>
+                {%- endif -%}
+                {%- assign eu_list = s.eu_countries | split: ',' -%}
+                {%- if eu_list.size > 0 -%}
+                  <optgroup label="European Union">
+                    {%- for c in eu_list -%}{%- assign c = c | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="eu">{{ c }}</option>{%- endif -%}{%- endfor -%}
+                  </optgroup>
+                {%- endif -%}
+                {%- assign me_list = s.me_countries | split: ',' -%}
+                <optgroup label="Middle East">
+                  {%- for c in me_list -%}{%- assign c = c | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="me">{{ c }}</option>{%- endif -%}{%- endfor -%}
+                  <option value="Other Middle Eastern country (quote)" data-mode="quote" data-region="quote">Another Middle Eastern country</option>
+                </optgroup>
+                <optgroup label="Caribbean">
+                  <option value="Caribbean (forwarding address)" data-mode="forwarder" data-region="forwarder">Jamaica or elsewhere in the Caribbean</option>
+                </optgroup>
+                <optgroup label="Everywhere else">
+                  <option value="Other country (quote)" data-mode="quote" data-region="quote">Another country</option>
+                </optgroup>
+              </select>
+
+              <div class="bp-ship" aria-live="polite">
+                <div data-show-region="none"><p>{{ s.ship_none }}</p></div>
+                <div data-show-region="us"><p>{{ s.ship_us }}</p></div>
+                <div data-show-region="uk"><p>{{ s.ship_uk }}</p></div>
+                <div data-show-region="eu"><p>{{ s.ship_eu }}</p></div>
+                <div data-show-region="ca"><p>{{ s.ship_ca }}</p></div>
+                <div data-show-region="me"><p>{{ s.ship_me }}</p></div>
+                <div data-show-region="direct"><p>{{ s.ship_direct }}</p></div>
+                <div data-show-region="forwarder"><p>{{ s.ship_forwarder }}</p></div>
+                <div data-show-region="quote"><p>{{ s.ship_quote }}</p></div>
+                {%- if s.ship_checkout_note != blank -%}<p class="bp-ship__duties" data-show-region="us uk eu ca me direct">{{ s.ship_checkout_note }}</p>{%- endif -%}
+                {%- if s.ship_duties != blank -%}<p class="bp-ship__duties" data-show-region="me direct forwarder quote">{{ s.ship_duties }}</p>{%- endif -%}
+              </div>
+            </div>
+
+            {%- comment -%} 2a. Quote-only destinations: no payment route, request a quote instead {%- endcomment -%}
+            <div data-show-for="quote">
+              <div class="bp-quote__actions">
+                {%- if s.email != blank -%}
+                  <a class="biab-btn biab-btn--gold" href="mailto:{{ s.email }}?subject={{ 'Shipping quote request: Business in a Box' | url_encode }}" data-bp-quote-email data-email="{{ s.email }}">{{ s.quote_label }}</a>
+                {%- endif -%}
+                {%- if s.whatsapp_url != blank -%}
+                  <a class="biab-btn biab-btn--outline" href="{{ s.whatsapp_url }}" target="_blank" rel="noopener" data-bp-quote-wa data-wa="{{ s.whatsapp_url }}">Ask on WhatsApp</a>
+                {%- endif -%}
+              </div>
+            </div>
+
+            {%- comment -%} 2b. Direct and forwarder destinations: agreement, then buy {%- endcomment -%}
+            <div data-show-for="none direct forwarder">
+              {%- form 'product', biab_product, id: 'BiabBuyForm', class: 'bp-form' -%}
+                <input type="hidden" name="id" value="{{ biab_variant.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="properties[Reseller Terms version]" value="{{ s.terms_version | escape }}">
+                {%- if contents_line != '' -%}
+                  <input type="hidden" name="properties[Box contents]" value="{{ contents_line | escape }}">
+                {%- endif -%}
+                <input type="hidden" name="properties[Reseller Terms accepted at]" value="" data-bp-accepted-at disabled>
+
+                <div data-show-for="forwarder">
+                  <label class="bp-check">
+                    <input type="checkbox" name="properties[Delivery address is a forwarder]" value="Yes" data-bp-forwarder disabled>
+                    <span>My delivery address belongs to a shipping-forwarding company.</span>
+                  </label>
+                </div>
+
+                <label class="bp-check bp-check--terms" for="BiabTerms-{{ sid }}">
+                  <input
+                    type="checkbox"
+                    id="BiabTerms-{{ sid }}"
+                    name="properties[Reseller Terms]"
+                    value="I have read and agree to the Reseller Terms"
+                    required
+                    data-bp-terms
+                  >
+                  <span>I have read and agree to the <a href="{{ terms_url }}" target="_blank" rel="noopener">Reseller Terms<span class="bp-visually-hidden"> (opens in a new tab)</span></a>.</span>
+                </label>
+
+                {%- if s.show_optin -%}
+                  <fieldset class="bp-optin">
+                    <legend>{{ s.optin_heading }}</legend>
+                    <label class="bp-check">
+                      <input type="checkbox" name="properties[Reseller feature opt-in]" value="Yes" data-bp-optin>
+                      <span>{{ s.optin_text }}</span>
+                    </label>
+                    <div class="bp-optin__details" data-bp-optin-details hidden>
+                      <p>Details I'm happy for you to publish:</p>
+                      <div class="bp-optin__grid">
+                        <label class="bp-check"><input type="checkbox" name="properties[Publish: business location]" value="Yes" disabled><span>Business location</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[Publish: phone number]" value="Yes" disabled><span>Phone number</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[Publish: social profile]" value="Yes" disabled><span>Social profile</span></label>
+                        <label class="bp-check"><input type="checkbox" name="properties[Publish: photograph]" value="Yes" disabled><span>Photograph</span></label>
+                      </div>
+                    </div>
+                  </fieldset>
+                {%- endif -%}
+
+                <p class="bp-error" role="alert" data-bp-error hidden></p>
+
+                <button
+                  type="submit"
+                  name="add"
+                  class="biab-btn biab-btn--gold biab-btn--block bp-submit"
+                  {% if biab_variant.available == false %}disabled{% endif %}
+                >
+                  {%- if biab_variant.available -%}{{ button_label }}{%- else -%}Currently unavailable{%- endif -%}
+                </button>
+              {%- endform -%}
+            </div>
+          {%- else -%}
+            {%- if request.design_mode -%}
+              <p class="biab-disclaimer">Select the Business in a Box product in this section's settings to enable purchase.</p>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if s.buy_note != blank -%}
+            <p class="biab-small" style="margin-top:16px;">{{ s.buy_note }}</p>
+          {%- endif -%}
+          <p class="biab-small bp-links">
+            <a href="{{ terms_url }}" target="_blank" rel="noopener">Read the Reseller Terms</a>
+            {%- if s.show_policies_link -%}
+              <span class="bp-links__sep" aria-hidden="true">|</span>
+              <a href="{{ policies_url }}" target="_blank" rel="noopener">{{ s.policies_label }}</a>
+            {%- endif -%}
+            {%- if s.guidelines_url != blank -%}
+              <span class="bp-links__sep" aria-hidden="true">|</span>
+              <a href="{{ s.guidelines_url }}" target="_blank" rel="noopener">Brand Guidelines</a>
+            {%- endif -%}
+          </p>
+
+          {%- assign reassurance = section.blocks | where: 'type', 'reassurance' -%}
+          {%- if reassurance.size > 0 -%}
+            <ul class="biab-ticks" style="margin-top:24px;">
+              {%- for block in reassurance -%}
+                <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
+          {%- if s.contact_heading != blank -%}
+            <hr style="border:0;border-top:1px solid var(--biab-line);margin:24px 0;">
+            <h3 class="biab-h3">{{ s.contact_heading }}</h3>
+            <p class="biab-small">{{ s.contact_text }}</p>
+            <div class="biab-contact">
+              {%- if s.whatsapp_url != blank -%}
+                <a class="biab-btn biab-btn--outline" href="{{ s.whatsapp_url }}" rel="noopener" target="_blank">{{ s.whatsapp_label }}</a>
+              {%- endif -%}
+              {%- if s.email != blank -%}
+                <a class="biab-btn biab-btn--outline" href="mailto:{{ s.email }}">{{ s.email_label }}</a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    var SECTION_ID = 'biab-purchase';
+    var BUY_TEXT = /start\s+your\s+business|buy\s+(the\s+)?business\s+in\s+a\s+box/i;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function init() {
+      var section = document.getElementById(SECTION_ID);
+      if (!section || section.hasAttribute('data-bp-bound')) return;
+      section.setAttribute('data-bp-bound', '');
+
+      var panel = section.querySelector('[data-bp-panel]');
+      var dest = section.querySelector('[data-bp-destination]');
+      var form = section.querySelector('#BiabBuyForm');
+      if (!panel || !dest || !form) return;
+
+      var terms = form.querySelector('[data-bp-terms]');
+      var acceptedAt = form.querySelector('[data-bp-accepted-at]');
+      var forwarder = form.querySelector('[data-bp-forwarder]');
+      var optin = form.querySelector('[data-bp-optin]');
+      var optinDetails = form.querySelector('[data-bp-optin-details]');
+      var error = form.querySelector('[data-bp-error]');
+      var quoteEmail = section.querySelector('[data-bp-quote-email]');
+      var quoteWa = section.querySelector('[data-bp-quote-wa]');
+
+      function currentMode() {
+        var opt = dest.options[dest.selectedIndex];
+        return opt && opt.getAttribute('data-mode') || 'none';
+      }
+
+      function currentRegion() {
+        var opt = dest.options[dest.selectedIndex];
+        return opt && opt.getAttribute('data-region') || 'none';
+      }
+
+      function updateMode() {
+        var mode = currentMode();
+        var country = dest.value;
+        panel.setAttribute('data-mode', mode);
+        panel.setAttribute('data-region', currentRegion());
+        if (forwarder) forwarder.disabled = mode !== 'forwarder';
+        if (error) error.hidden = true;
+
+        var message = 'Hello, I would like a shipping quote for the Zyzven Naturals Business in a Box.\n\nDestination country: ' + country + '\nDelivery city / postcode: \nName: \nPhone: ';
+        if (quoteEmail) {
+          quoteEmail.href = 'mailto:' + quoteEmail.getAttribute('data-email') +
+            '?subject=' + encodeURIComponent('Shipping quote request: Business in a Box (' + country + ')') +
+            '&body=' + encodeURIComponent(message);
+        }
+        if (quoteWa) {
+          var wa = quoteWa.getAttribute('data-wa');
+          if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(wa)) {
+            quoteWa.href = wa + (wa.indexOf('?') === -1 ? '?' : '&') + 'text=' + encodeURIComponent(message);
+          }
+        }
+      }
+
+      function showError(msg, focusEl) {
+        if (!error) return;
+        error.textContent = msg;
+        error.hidden = false;
+        if (focusEl) focusEl.focus();
+      }
+
+      dest.addEventListener('change', updateMode);
+
+      if (terms) terms.addEventListener('change', function () { if (terms.checked && error) error.hidden = true; });
+
+      if (optin && optinDetails) {
+        optin.addEventListener('change', function () {
+          optinDetails.hidden = !optin.checked;
+          optinDetails.querySelectorAll('input').forEach(function (i) {
+            i.disabled = !optin.checked;
+            if (!optin.checked) i.checked = false;
+          });
+        });
+      }
+
+      // Capture phase so no other theme script can add the box before these checks pass
+      form.addEventListener('submit', function (e) {
+        var mode = currentMode();
+        if (!dest.value || mode === 'none') {
+          e.preventDefault(); e.stopImmediatePropagation();
+          showError('Please choose where the box will be delivered.', dest);
+          return;
+        }
+        if (mode === 'quote') {
+          e.preventDefault(); e.stopImmediatePropagation();
+          showError('This destination needs a shipping quote before purchase. Use "Request a shipping quote" above.', dest);
+          return;
+        }
+        if (!terms || !terms.checked) {
+          e.preventDefault(); e.stopImmediatePropagation();
+          showError('Please confirm that you have read and agree to the Reseller Terms.', terms);
+          return;
+        }
+        if (acceptedAt) {
+          acceptedAt.disabled = false;
+          acceptedAt.value = new Date().toISOString();
+        }
+      }, true);
+
+      updateMode();
+    }
+
+    // Every "Start Your Business" button or #biab-buy / #biab-purchase link on the page
+    // comes here first, so no route skips the destination check and the Reseller Terms.
+    function goToPurchase() {
+      var section = document.getElementById(SECTION_ID);
+      if (!section) return false;
+      section.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      var dest = section.querySelector('[data-bp-destination]');
+      if (dest) setTimeout(function () { dest.focus({ preventScroll: true }); }, reduceMotion ? 0 : 600);
+      if (history.replaceState) history.replaceState(null, '', '#' + SECTION_ID);
+      return true;
+    }
+
+    if (!window.__bpRoutesBound) {
+      window.__bpRoutesBound = true;
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('a, button');
+        var section = document.getElementById(SECTION_ID);
+        if (!el || !section || section.contains(el)) return;
+        var href = el.getAttribute('href') || '';
+        var isBuyLink = href.indexOf('#biab-buy') !== -1 || href.indexOf('#' + SECTION_ID) !== -1 || /\/cart\/\d+:\d+/.test(href);
+        var isBuyText = BUY_TEXT.test((el.textContent || '').trim());
+        if ((isBuyLink || isBuyText) && goToPurchase()) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }, true);
+      if (window.location.hash === '#biab-buy' || window.location.hash === '#' + SECTION_ID) {
+        window.addEventListener('load', function () { setTimeout(goToPurchase, 150); });
+      }
+    }
+
+    document.addEventListener('shopify:section:load', init);
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BIAB — Purchase",
+  "tag": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Business in a Box product", "info": "Required for purchase. On the box's own product template this can be left empty." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Start Today" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your Business in a Box" },
+    { "type": "text", "id": "price", "label": "Fallback price", "info": "Only shown if no product is selected. Otherwise the live product price is used.", "default": "$999" },
+    { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "+ shipping, shown before you pay" },
+    { "type": "textarea", "id": "summary", "label": "Summary", "default": "40 products + training + marketing toolkit + monthly partner support." },
+    { "type": "text", "id": "button_label", "label": "Button label", "info": "[price] is replaced with the live box price.", "default": "Start Your Business — [price]" },
+    { "type": "range", "id": "scroll_offset", "label": "Space above section when scrolled to", "min": 0, "max": 200, "step": 10, "unit": "px", "default": 90 },
+
+    { "type": "header", "content": "Reseller Terms agreement" },
+    { "type": "url", "id": "terms_url", "label": "Reseller Terms page", "info": "Defaults to /pages/reseller-terms if left empty." },
+    { "type": "text", "id": "terms_version", "label": "Terms version", "info": "Saved with every order. Update when the terms change.", "default": "Effective 23 September 2026" },
+    { "type": "checkbox", "id": "show_policies_link", "label": "Show shipping & returns link", "default": true },
+    { "type": "text", "id": "policies_label", "label": "Shipping & returns link text", "default": "Shipping & returns for box orders" },
+    { "type": "url", "id": "policies_url", "label": "Shipping & returns page", "info": "Defaults to /pages/business-in-a-box-policies." },
+    { "type": "url", "id": "guidelines_url", "label": "Brand Guidelines link (optional)" },
+
+    { "type": "header", "content": "Shipping" },
+    { "type": "text", "id": "destination_label", "label": "Destination question", "default": "Where will your box be delivered?" },
+    { "type": "textarea", "id": "direct_countries", "label": "Countries with checkout shipping", "info": "Comma separated. Must match your Shopify shipping zones.", "default": "United States, Canada, United Kingdom" },
+    { "type": "textarea", "id": "eu_countries", "label": "EU countries with checkout shipping", "info": "Comma separated. Remove any you cannot ship to.", "default": "Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden" },
+    { "type": "textarea", "id": "me_countries", "label": "Middle Eastern countries served directly", "info": "Comma separated. Add only destinations with a real checkout rate. Every other Middle Eastern country is quote-only." },
+    { "type": "textarea", "id": "ship_none", "label": "Message before a country is chosen", "default": "Choose your country to see how shipping works for you." },
+    { "type": "textarea", "id": "ship_us", "label": "Message: USA", "default": "US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered within the USA does not incur additional customs duties." },
+    { "type": "textarea", "id": "ship_uk", "label": "Message: United Kingdom", "default": "UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered within the UK does not incur additional customs duties." },
+    { "type": "textarea", "id": "ship_eu", "label": "Message: European Union", "default": "EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country." },
+    { "type": "textarea", "id": "ship_ca", "label": "Message: Canada", "default": "Most box products are stocked in Canada and dispatched by our Canadian distributor, TK Zyzven Naturals Inc. If a product for your box is unavailable there, we will contact you before shipping to explain whether to expect separate parcels, the delivery estimate and any possible import, clearance or extra shipping charge. We will not send a UK shipment or add an extra charge without your agreement." },
+    { "type": "textarea", "id": "ship_me", "label": "Message: Middle East (served directly)", "default": "We ship the box directly to this destination. The shipping charge and full total are shown at checkout before you pay." },
+    { "type": "textarea", "id": "ship_direct", "label": "Message: other checkout destinations", "default": "Your shipping charge and the full total are shown at checkout before you pay. Enter your delivery address there to see the available service." },
+    { "type": "textarea", "id": "ship_checkout_note", "label": "Checkout note (all checkout destinations)", "default": "Enter your delivery address at checkout to see the box shipping charge and the full amount payable before you pay. Delivery estimates are not guaranteed arrival dates; we send tracking when your box dispatches." },
+    { "type": "textarea", "id": "ship_forwarder", "label": "Message: Caribbean", "default": "We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay your forwarder and arrange its onward delivery to you. Please tick the box below if your delivery address belongs to a forwarder, so we can give you accurate shipping information." },
+    { "type": "textarea", "id": "ship_quote", "label": "Message: quote-only", "default": "We don't have a checkout shipping rate for this destination. Request a quote and we'll confirm whether we can fulfil your order, the shipping charge and the total. We only take payment after you accept the quote, and we never add unapproved shipping charges." },
+    { "type": "textarea", "id": "ship_duties", "label": "Duties note", "default": "For this destination, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included. Customs and carrier delays can affect delivery times." },
+    { "type": "text", "id": "quote_label", "label": "Quote button label", "default": "Request a shipping quote" },
+
+    { "type": "header", "content": "Optional reseller features" },
+    { "type": "checkbox", "id": "show_optin", "label": "Show publicity opt-in", "default": true },
+    { "type": "text", "id": "optin_heading", "label": "Opt-in heading", "default": "Optional: reseller features" },
+    { "type": "textarea", "id": "optin_text", "label": "Opt-in text", "default": "I'd like to be considered for reseller features in brochures, the website directory, social media or live events. This is optional and doesn't affect my order. You'll ask me again before publishing anything." },
+
+    { "type": "header", "content": "Contents and figures" },
+    { "type": "checkbox", "id": "auto_figures", "label": "Calculate figures from Box item blocks", "info": "When Box item blocks are added, products included, retail value and potential gross profit are calculated from live prices.", "default": true },
+    { "type": "richtext", "id": "contents_list", "label": "Compact contents list", "info": "Only used when no Box item blocks are added.", "default": "<p><strong>In the box:</strong> GLUKOBALANS ×6 · Blood Sugar ×5 · Alki Detox with Moringa ×5 · Freja Advance ×5 · Freja Balance ×4 · Women's Brew ×4 · Manthoric Advance ×4 · Uterine Tonic Tea ×4 · Pressure Balance ×3 — 40 products, combined recommended retail value $2,029.60.</p>" },
+    { "type": "textarea", "id": "buy_note", "label": "Note under the button", "default": "One-time purchase. No subscription, no monthly quota. Purchase does not grant distributor status, territory exclusivity or a territory website." },
+    { "type": "image_picker", "id": "image", "label": "Box image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements" },
+
+    { "type": "header", "content": "Have questions first?" },
+    { "type": "text", "id": "contact_heading", "label": "Contact heading", "default": "Have questions first?" },
+    { "type": "textarea", "id": "contact_text", "label": "Contact text", "default": "Talk to us before you buy. We would rather answer your questions than have you start uncertain." },
+    { "type": "text", "id": "whatsapp_label", "label": "WhatsApp button label", "default": "WhatsApp +44 7460 032301" },
+    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp link", "info": "e.g. https://wa.me/447460032301 — quote requests pre-fill a message." },
+    { "type": "text", "id": "email_label", "label": "Email button label", "default": "Email sales@zyzvennaturals.com" },
+    { "type": "text", "id": "email", "label": "Email address", "default": "sales@zyzvennaturals.com" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Box item",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product", "info": "Live price and product page link are used automatically." },
+        { "type": "text", "id": "name", "label": "Name", "info": "Leave empty to use the product title." },
+        { "type": "number", "id": "qty", "label": "Quantity in box", "default": 4 },
+        { "type": "text", "id": "price", "label": "Manual RRP each", "info": "Only used if no product is linked." },
+        { "type": "url", "id": "link", "label": "Custom product page link", "info": "Optional. Defaults to the product's page." }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Summary row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Label" },
+        { "type": "text", "id": "value", "label": "Value", "default": "Value" }
+      ]
+    },
+    {
+      "type": "reassurance",
+      "name": "Reassurance point",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Reassurance point." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — Purchase",
+      "blocks": [
+        { "type": "item", "settings": { "name": "GLUKOBALANS", "qty": 6, "price": "69.99" } },
+        { "type": "item", "settings": { "name": "Blood Sugar", "qty": 5, "price": "49.99" } },
+        { "type": "item", "settings": { "name": "Alki Detox with Moringa", "qty": 5, "price": "39.99" } },
+        { "type": "item", "settings": { "name": "Freja Advance", "qty": 5, "price": "49.99" } },
+        { "type": "item", "settings": { "name": "Freja Balance", "qty": 4, "price": "39.99" } },
+        { "type": "item", "settings": { "name": "Women's Brew", "qty": 4, "price": "39.99" } },
+        { "type": "item", "settings": { "name": "Manthoric Advance", "qty": 4, "price": "69.99" } },
+        { "type": "item", "settings": { "name": "Uterine Tonic Tea", "qty": 4, "price": "39.99" } },
+        { "type": "item", "settings": { "name": "Pressure Balance", "qty": 3, "price": "49.99" } },
+        { "type": "row", "settings": { "label": "Training and marketing toolkit", "value": "Included" } },
+        { "type": "row", "settings": { "label": "Monthly partner check-ins", "value": "Included" } },
+        { "type": "reassurance", "settings": { "text": "Wholesale, not MLM — no recruitment, no downline, no quota." } },
+        { "type": "reassurance", "settings": { "text": "Reorder individual products at reseller pricing, without buying another box." } },
+        { "type": "reassurance", "settings": { "text": "Earnings are not guaranteed. Figures assume all products sell at current recommended retail prices." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

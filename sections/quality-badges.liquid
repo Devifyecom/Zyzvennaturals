@@ -1,0 +1,211 @@
+
+{% comment %} <style>
+.quality-badges {
+  background: {{ section.settings.bg_color }};
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+/* Desktop (>1130px) */
+.quality-badges-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.badge-item {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+}
+
+.badge-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badge-text {
+  font-size: 14px;
+  color: #5c6b2f;
+  line-height: 1.4;
+}
+
+/* Hide duplicate on desktop */
+.mobile-duplicate {
+  display: none;
+}
+
+/* ========================= */
+/* SLIDER BELOW 1130px */
+/* ========================= */
+
+@media (max-width: 1130px) {
+
+  .quality-badges-wrapper {
+    flex-wrap: nowrap;
+    width: max-content;
+
+    animation: scrollBadges 30s linear infinite;
+  }
+
+  .badge-item {
+    flex: 0 0 auto;
+    width: 150px;
+  }
+
+  .mobile-duplicate {
+    display: flex;
+  }
+
+  @keyframes scrollBadges {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+}
+</style>  {% endcomment %}
+
+<style>
+.quality-badges {
+  background: {{ section.settings.bg_color }};
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+
+.quality-badges-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: scrollBadges 15s linear infinite;
+}
+
+.badge-item {
+  flex: 0 0 auto;
+  min-width: fit-content;
+  text-align: center;
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+}
+
+.badge-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badge-text {
+  font-size: 14px;
+  color: #5c6b2f;
+  line-height: 1.4;
+}
+
+@keyframes scrollBadges {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+</style> 
+
+<div class="quality-badges">
+  <div class="quality-badges-wrapper page-width">
+
+    {% for block in section.blocks %}
+      <div class="badge-item">
+        {% if block.settings.icon %}
+          <div class="badge-icon">
+            <img src="{{ block.settings.icon | image_url }}" alt="badge icon">
+          </div>
+        {% endif %}
+        <div class="badge-text">
+          {{ block.settings.text }}
+        </div>
+      </div>
+    {% endfor %}
+
+    <!-- Duplicate for smooth loop -->
+    {% comment %} <div class="mobile-duplicate"> {% endcomment %}
+      {% for block in section.blocks %}
+        <div class="badge-item">
+          {% if block.settings.icon %}
+            <div class="badge-icon">
+              <img src="{{ block.settings.icon | image_url }}" alt="badge icon">
+            </div>
+          {% endif %}
+          <div class="badge-text">
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {% endfor %}
+    {% comment %} </div> {% endcomment %}
+
+  </div>
+</div> 
+
+{% schema %}
+{
+  "name": "Quality Badges Bar",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#e9e2c8"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Badge text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quality Badges",
+      "blocks": [
+        { "type": "badge" },
+        { "type": "badge" },
+        { "type": "badge" },
+        { "type": "badge" },
+        { "type": "badge" },
+        { "type": "badge" }
+      ]
+    }
+  ]
+}
+{% endschema %}

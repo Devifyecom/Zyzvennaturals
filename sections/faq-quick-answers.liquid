@@ -1,0 +1,414 @@
+{%- liquid
+  assign accent = section.settings.accent_color
+  assign icon_bg = section.settings.icon_bg_color
+-%}
+
+<style>
+  #Faq-{{ section.id }} {
+    --faq-accent: {{ accent }};
+    --faq-icon-bg: {{ icon_bg }};
+    --faq-q: {{ section.settings.question_color }};
+    --faq-a: {{ section.settings.answer_color }};
+    --faq-card: {{ section.settings.card_color }};
+    --faq-radius: {{ section.settings.card_radius }}px;
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  #Faq-{{ section.id }} * { box-sizing: border-box; }
+
+  .faq__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+  .faq__eyebrow {
+    margin: 0 0 10px;
+    text-align: center;
+    color: var(--faq-accent);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .faq__heading {
+    margin: 0 0 44px;
+    text-align: center;
+    color: {{ section.settings.heading_color }};
+    font-size: clamp(34px, 4.4vw, 56px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  /* ---------- List ---------- */
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .faq__item {
+    background: var(--faq-card);
+    border-radius: var(--faq-radius);
+    box-shadow: 0 4px 18px rgba(17, 17, 17, .07);
+    transition: box-shadow .25s ease, transform .25s ease;
+    overflow: hidden;
+  }
+
+  .faq__item:hover {
+    box-shadow: 0 8px 26px rgba(17, 17, 17, .11);
+  }
+
+  .faq__item.is-open {
+    box-shadow: 0 10px 30px {{ accent | color_modify: 'alpha', 0.14 }};
+  }
+
+  .faq__q {
+    width: 100%;
+    margin: 0;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--faq-q);
+    -webkit-tap-highlight-color: transparent;
+    transition: color .2s ease;
+  }
+
+  .faq__q:hover { color: var(--faq-accent); }
+  .faq__q:focus-visible {
+    outline: 3px solid var(--faq-accent);
+    outline-offset: -3px;
+    border-radius: var(--faq-radius);
+  }
+
+  .faq__icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--faq-icon-bg);
+    transition: background .25s ease, transform .35s cubic-bezier(.22,.61,.36,1);
+  }
+
+  .faq__icon::before,
+  .faq__icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--faq-accent);
+    border-radius: 2px;
+    transition: transform .35s cubic-bezier(.22,.61,.36,1), opacity .25s ease;
+  }
+
+  .faq__icon::before {
+    width: 13px;
+    height: 2.5px;
+    transform: translate(-50%, -50%);
+  }
+
+  .faq__icon::after {
+    width: 2.5px;
+    height: 13px;
+    transform: translate(-50%, -50%);
+  }
+
+  .faq__item.is-open .faq__icon { transform: rotate(180deg); }
+  .faq__item.is-open .faq__icon::after { transform: translate(-50%, -50%) scaleY(0); opacity: 0; }
+
+  .faq__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .38s cubic-bezier(.22,.61,.36,1);
+  }
+
+  .faq__item.is-open .faq__panel { grid-template-rows: 1fr; }
+
+  .faq__panel-inner { overflow: hidden; }
+
+  .faq__a {
+    margin: 0;
+    padding: 0 10px 0px 10px;
+    color: var(--faq-a);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .faq__a strong { color: var(--faq-q); font-weight: 700; }
+  .faq__a a { color: var(--faq-accent); }
+
+  /* ---------- Mobile ---------- */
+  @media screen and (max-width: 749px) {
+    .faq__inner { padding: 0 18px; }
+    .faq__heading { margin-bottom: 30px; }
+    .faq__list { gap: 12px; }
+    .faq__q {
+      padding: 20px 20px;
+      gap: 16px;
+      font-size: 16px;
+    }
+    .faq__icon { width: 28px; height: 28px; }
+    .faq__icon::before { width: 12px; }
+    .faq__icon::after { height: 12px; }
+    .faq__a {
+      padding: 0 20px 22px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq__panel, .faq__icon, .faq__icon::before, .faq__icon::after, .faq__item { transition: none !important; }
+  }
+</style>
+
+<section id="Faq-{{ section.id }}" class="faq">
+  <div class="faq__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="faq__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="faq__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="faq__list" data-faq-list>
+      {%- for block in section.blocks -%}
+        {%- assign is_open = false -%}
+        {%- if section.settings.open_first and forloop.first -%}
+          {%- assign is_open = true -%}
+        {%- endif -%}
+
+        <div
+          class="faq__item{% if is_open %} is-open{% endif %}"
+          data-faq-item
+          {{ block.shopify_attributes }}
+        >
+          <button
+            class="faq__q"
+            type="button"
+            data-faq-trigger
+            aria-expanded="{% if is_open %}true{% else %}false{% endif %}"
+            aria-controls="FaqPanel-{{ section.id }}-{{ block.id }}"
+            id="FaqTrigger-{{ section.id }}-{{ block.id }}"
+          >
+            <span>{{ block.settings.question }}</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+
+          <div
+            class="faq__panel"
+            id="FaqPanel-{{ section.id }}-{{ block.id }}"
+            role="region"
+            aria-labelledby="FaqTrigger-{{ section.id }}-{{ block.id }}"
+          >
+            <div class="faq__panel-inner">
+              <div class="faq__a">{{ block.settings.answer }}</div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('Faq-{{ section.id }}');
+    if (!root || root.dataset.faqReady === 'true') return;
+    root.dataset.faqReady = 'true';
+
+    var single = {{ section.settings.single_open | default: false }};
+    var items = Array.prototype.slice.call(root.querySelectorAll('[data-faq-item]'));
+
+    items.forEach(function (item) {
+      var trigger = item.querySelector('[data-faq-trigger]');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function () {
+        var willOpen = !item.classList.contains('is-open');
+
+        if (single && willOpen) {
+          items.forEach(function (other) {
+            if (other === item) return;
+            other.classList.remove('is-open');
+            var t = other.querySelector('[data-faq-trigger]');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+        }
+
+        item.classList.toggle('is-open', willOpen);
+        trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+    });
+  })();
+</script>
+
+{%- capture faq_schema -%}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks -%}
+      {
+        "@type": "Question",
+        "name": {{ block.settings.question | strip_html | json }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | strip_newlines | json }} }
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+{%- endcapture -%}
+<script type="application/ld+json">{{ faq_schema }}</script>
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "tag": "section",
+  "class": "section-faq",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Frequently asked" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Quick answers." },
+
+    { "type": "header", "content": "Behavior" },
+    { "type": "checkbox", "id": "single_open", "label": "Only one answer open at a time", "default": true },
+    { "type": "checkbox", "id": "open_first", "label": "Open the first question by default", "default": false },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "max_width", "min": 800, "max": 1400, "step": 20, "label": "Max width", "default": 1220, "unit": "px" },
+    { "type": "range", "id": "card_radius", "min": 0, "max": 32, "step": 2, "label": "Card corner radius", "default": 16, "unit": "px" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 160, "step": 4, "label": "Padding top", "default": 80, "unit": "px" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 160, "step": 4, "label": "Padding bottom", "default": 80, "unit": "px" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#F0338C" },
+    { "type": "color", "id": "icon_bg_color", "label": "Icon circle", "default": "#FCE4F0" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#121212" },
+    { "type": "color", "id": "question_color", "label": "Question", "default": "#1A1A2E" },
+    { "type": "color", "id": "answer_color", "label": "Answer", "default": "#5C5C6B" },
+    { "type": "color", "id": "card_color", "label": "Card background", "default": "#FFFFFF" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#FFFFFF" }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "How fast will I notice a difference?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Most women feel calmer and less bloated within the first week or two.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How fast will I notice a difference?",
+            "answer": "<p>Most women feel calmer and less bloated within the first week or two. The bigger shift, easier cramps and a steadier cycle, usually shows up over the first full month as you drink it consistently. Hormones move on a monthly rhythm, so give it a cycle or two.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is it really caffeine-free?",
+            "answer": "<p>Yes, 100% caffeine-free. That's why so many women drink it in the evening as a calming wind-down. It won't keep you up, and it won't add to that wired PMS feeling.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can it help with PCOS?",
+            "answer": "<p>Spearmint is the herb most often reached for by women managing PCOS symptoms, and it's a lead ingredient in this blend along with raspberry leaf and nettle. Many of our PCOS customers drink it daily for cycle and mood support. It isn't a treatment for PCOS, so please keep working with your healthcare provider too.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Will it help with perimenopause?",
+            "answer": "<p>Many perimenopausal women use it for the mood swings, irritability, and bloat that come with shifting hormones. It's caffeine-free and calming, which makes it an easy daily ritual during this stage. If you're on hormone replacement therapy, check with your provider first.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How many cups a day should I drink?",
+            "answer": "<p>2 to 3 cups a day is ideal. Pour 8 oz of just-boiled water over one tea bag, steep 8 to 15 minutes, squeeze the bag, and sip. Many women have one in the morning and one in the evening.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What does it taste like?",
+            "answer": "<p>Minty and lightly floral. A fresh spearmint and lemongrass base with soft chamomile and a hint of berry. The licorice root adds a touch of natural sweetness, so no sugar needed. Lovely hot or over ice.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I drink it during my whole cycle, not just before my period?",
+            "answer": "<p>Yes, that's how it works best. Zyzven Naturals is designed as a daily ritual through your whole cycle, not just a quick fix for the bad days. Consistent daily support is what helps things feel steadier month over month.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I drink it while pregnant or breastfeeding?",
+            "answer": "<p>We don't recommend it during pregnancy or breastfeeding. This blend contains raspberry leaf and licorice root, which aren't appropriate for everyone at those stages. Please check with your OB or healthcare provider before adding any herbal product.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Will it affect my birth control or medications?",
+            "answer": "<p>Licorice root and hormone-supporting herbs can interact with some medications, including blood pressure medication and hormonal treatments. If you take any prescription, or have high blood pressure, talk with your provider or pharmacist before starting.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is it vegan, gluten-free, and sugar-free?",
+            "answer": "<p>Yes to all three. Zyzven Naturals Hormone Balance is vegan, gluten-free, sugar-free, caffeine-free, and made in the USA in a GMP-certified facility with nothing artificial.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I cancel my subscription anytime?",
+            "answer": "<p>Absolutely. Skip a month, change your frequency, or cancel, all from your account. No phone calls, no hoops. Our 30-day guarantee means you can request a full refund too.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What's in the welcome gift?",
+            "answer": "<p>When you Subscribe &amp; Save, your first order ships with a <strong>FREE Pink Tea Tumbler + Infuser</strong> (a $45.49 value) plus <strong>FREE shipping</strong>. The insulated tumbler keeps your tea hot for 12 hours or cold for 24, and the built-in infuser lets you brew your Zyzven Naturals tea anywhere.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

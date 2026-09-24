@@ -1,0 +1,785 @@
+{% comment %}
+  Zyzven Naturals - Founder Story
+  Editable Shopify section. Fonts: Golos Text. Colours, copy, chapters, stats,
+  flags, spotlights and CTAs are all editable in the theme customiser.
+  Chapters, Stats, Spotlights, Flags and CTAs are BLOCKS (add / remove / reorder).
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  #zv-{{ section.id }}{
+    --zv-forest:{{ section.settings.color_forest }};
+    --zv-forest-deep:{{ section.settings.color_forest_deep }};
+    --zv-moss:{{ section.settings.color_moss }};
+    --zv-parchment:{{ section.settings.color_parchment }};
+    --zv-parchment-soft:{{ section.settings.color_parchment_soft }};
+    --zv-amber:{{ section.settings.color_amber }};
+    --zv-amber-deep:{{ section.settings.color_amber_deep }};
+    --zv-ink:{{ section.settings.color_ink }};
+    --zv-line:rgba(34,31,26,.14);
+    --zv-line-light:rgba(243,238,224,.22);
+    --zv-cream:#E7D9BC;
+    font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--zv-parchment);color:var(--zv-ink);font-size:16px;line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  #zv-{{ section.id }} *{box-sizing:border-box}
+  #zv-{{ section.id }} img{max-width:100%;display:block}
+  #zv-{{ section.id }} a{color:inherit}
+  #zv-{{ section.id }} ::selection{background:var(--zv-amber);color:var(--zv-forest-deep)}
+  #zv-{{ section.id }} h1,#zv-{{ section.id }} h2,#zv-{{ section.id }} h3{
+    font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em}
+  #zv-{{ section.id }} p{margin:0 0 1.1em;font-size:16px}
+  #zv-{{ section.id }} .zv-wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  #zv-{{ section.id }} .zv-read{max-width:680px}
+  #zv-{{ section.id }} .zv-eyebrow{font-weight:600;font-size:12px;letter-spacing:.28em;text-transform:uppercase}
+  #zv-{{ section.id }} .zv-lede{font-size:1.24rem;line-height:1.6}
+  #zv-{{ section.id }} .zv-sig{font-style:italic}
+
+  /* HERO (split) */
+  #zv-{{ section.id }} .zv-hero{position:relative;background:var(--zv-forest-deep);color:var(--zv-parchment);overflow:hidden}
+  #zv-{{ section.id }} .zv-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;min-height:min(90vh,780px)}
+  #zv-{{ section.id }} .zv-hero-text{display:flex;flex-direction:column;justify-content:center;padding:72px clamp(26px,5.5vw,92px)}
+  #zv-{{ section.id }} .zv-hero .zv-eyebrow{color:var(--zv-amber);margin-bottom:30px}
+  #zv-{{ section.id }} .zv-display{font-size:clamp(2rem,4vw,42px);line-height:1.08}
+  #zv-{{ section.id }} .zv-display span{display:block}
+  #zv-{{ section.id }} .zv-display .l1{color:var(--zv-parchment)}
+  #zv-{{ section.id }} .zv-display .l2{color:var(--zv-cream)}
+  #zv-{{ section.id }} .zv-display .l3{font-style:italic;font-weight:600;color:var(--zv-amber)}
+  #zv-{{ section.id }} .zv-cue{margin-top:46px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(243,238,224,.6);display:flex;align-items:center;gap:12px}
+  #zv-{{ section.id }} .zv-cue::after{content:"";width:46px;height:1px;background:var(--zv-amber)}
+  #zv-{{ section.id }} .zv-hero-media{position:relative;min-height:340px;
+    background:radial-gradient(120% 90% at 60% 25%, rgba(198,146,63,.14), transparent 60%),
+      repeating-linear-gradient(135deg, rgba(46,92,72,.16) 0 2px, transparent 2px 24px),
+      linear-gradient(160deg,#20463A,#12352A)}
+  #zv-{{ section.id }} .zv-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  #zv-{{ section.id }} .zv-hero-media .zv-tag{position:absolute;top:16px;right:16px}
+
+  /* INTRO */
+  #zv-{{ section.id }} .zv-intro{padding:96px 0 40px}
+  #zv-{{ section.id }} .zv-intro .zv-eyebrow{color:var(--zv-amber-deep);margin-bottom:22px}
+  #zv-{{ section.id }} .zv-drop::first-letter{font-size:4.4rem;line-height:.72;float:left;padding:10px 14px 0 0;color:var(--zv-moss);font-weight:700}
+  #zv-{{ section.id }} .zv-namecard{margin:40px 0;padding:26px 30px;border-left:3px solid var(--zv-amber);background:var(--zv-parchment-soft);border-radius:2px}
+  #zv-{{ section.id }} .zv-namecard .who{font-size:1.35rem;font-weight:600;color:var(--zv-forest)}
+  #zv-{{ section.id }} .zv-namecard .role{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--zv-ink);opacity:.6;margin-top:6px;font-weight:600}
+  #zv-{{ section.id }} .zv-namecard p{margin:16px 0 0;font-size:14px}
+  #zv-{{ section.id }} .zv-proof{margin:56px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px}
+  #zv-{{ section.id }} .zv-p{padding:22px 20px;background:var(--zv-parchment-soft);border:1px solid var(--zv-line);border-radius:4px}
+  #zv-{{ section.id }} .zv-n{font-size:2rem;font-weight:600;color:var(--zv-forest);line-height:1}
+  #zv-{{ section.id }} .zv-k{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--zv-ink);opacity:.6;margin-top:10px;font-weight:600}
+
+  /* QUOTE BAND */
+  #zv-{{ section.id }} .zv-quoteband{background:var(--zv-forest);color:var(--zv-parchment);padding:82px 0;margin:72px 0}
+  #zv-{{ section.id }} .zv-quoteband .zv-wrap{max-width:900px}
+  #zv-{{ section.id }} .zv-quoteband .mark{color:var(--zv-amber);font-size:4rem;line-height:.4;display:block;margin-bottom:8px}
+  #zv-{{ section.id }} .zv-quoteband blockquote{margin:0;font-weight:500;font-style:italic;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.2}
+
+  /* CHAPTERS */
+  #zv-{{ section.id }} .zv-chead{padding:14px -1 8px;text-align:center}
+  #zv-{{ section.id }} .zv-chead .zv-eyebrow{color:var(--zv-amber-deep)}
+  #zv-{{ section.id }} .zv-chead h2{margin-top:16px;font-size:28px}
+  #zv-{{ section.id }} .zv-chead p{max-width:560px;margin:16px auto 0;color:var(--zv-ink);opacity:.7;font-size:14px}
+  #zv-{{ section.id }} .zv-index{max-width:900px;margin:38px auto 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  #zv-{{ section.id }} .zv-index a{text-decoration:none;font-size:16px;color:var(--zv-ink);padding:13px 14px;border:1px solid var(--zv-line);
+    border-radius:4px;display:flex;gap:11px;align-items:baseline;transition:background .2s,border-color .2s,transform .2s;background:var(--zv-parchment-soft)}
+  #zv-{{ section.id }} .zv-index a:hover{background:#fff;border-color:var(--zv-amber);transform:translateY(-2px)}
+  #zv-{{ section.id }} .zv-index a .ix{font-size:14px;color:var(--zv-amber-deep);font-weight:600}
+  #zv-{{ section.id }} .zv-timeline{position:relative;max-width:860px;margin:0 auto;padding:8px 0}
+  #zv-{{ section.id }} .zv-timeline::before{content:"";position:absolute;left:37px;top:20px;bottom:20px;width:2px;background:linear-gradient(var(--zv-amber),rgba(198,146,63,.25))}
+  #zv-{{ section.id }} .zv-ch{position:relative;border-bottom:1px solid var(--zv-line)}
+  #zv-{{ section.id }} .zv-ch-head{width:100%;background:none;border:0;cursor:pointer;text-align:left;display:grid;grid-template-columns:76px 1fr 34px;
+    align-items:center;gap:6px;padding:26px 4px 26px 0;font-family:inherit;color:var(--zv-ink)}
+  #zv-{{ section.id }} .zv-node{position:relative;justify-self:center;width:15px;height:15px;border-radius:50%;background:var(--zv-parchment);border:2px solid var(--zv-amber);transition:all .3s}
+  #zv-{{ section.id }} .zv-ch.open .zv-node{background:var(--zv-amber);box-shadow:0 0 0 5px rgba(198,146,63,.18)}
+  #zv-{{ section.id }} .zv-num{position:absolute;left:0;top:26px;font-size:.68rem;letter-spacing:.1em;color:var(--zv-ink);opacity:.5;font-weight:600}
+  #zv-{{ section.id }} .zv-ct{font-size:clamp(16px,2.4vw,1.55rem);color:var(--zv-forest);font-weight:600;line-height:1.15;transition:color .2s}
+  #zv-{{ section.id }} .zv-ch-head:hover .zv-ct{color:var(--zv-moss)}
+  #zv-{{ section.id }} .zv-plus{justify-self:end;font-size:1.5rem;color:var(--zv-amber-deep);line-height:1;transition:transform .35s}
+  #zv-{{ section.id }} .zv-ch.open .zv-plus{transform:rotate(45deg)}
+  #zv-{{ section.id }} .zv-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s ease}
+  #zv-{{ section.id }} .zv-ch.open .zv-panel{grid-template-rows:1fr}
+  #zv-{{ section.id }} .zv-inner{overflow:hidden}
+  #zv-{{ section.id }} .zv-body{padding:4px 6px 40px 76px}
+  #zv-{{ section.id }} .zv-body p{font-size:14px}
+  #zv-{{ section.id }} .zv-mini{border-left:3px solid var(--zv-amber);padding:6px 0 6px 22px;margin:26px 0;font-style:italic;font-weight:500;font-size:1.28rem;color:var(--zv-forest);line-height:1.3}
+
+  /* IMAGE SLOTS */
+  #zv-{{ section.id }} .zv-img{position:relative;border-radius:6px;overflow:hidden;min-height:230px;margin:22px 0;padding:26px;text-align:center;
+    display:flex;align-items:center;justify-content:center;border:1px solid var(--zv-line);
+    background:repeating-linear-gradient(135deg, rgba(46,92,72,.10) 0 2px, transparent 2px 22px),linear-gradient(160deg,#E8E0CE,#DCD3BC)}
+  #zv-{{ section.id }} .zv-img.has-img{min-height:0;padding:0;background:none}
+  #zv-{{ section.id }} .zv-img img{width:100%;border-radius:6px}
+  {% if section.settings.chapter_image_ratio != 'natural' %}
+  /* Landscape crop for chapter images (single + then/now). object-fit:cover trims tall/square uploads to a wide frame. */
+  #zv-{{ section.id }} .zv-body .zv-img.has-img img{aspect-ratio:{{ section.settings.chapter_image_ratio }};object-fit:cover;height:auto;display:block}
+  {% endif %}
+  #zv-{{ section.id }} .zv-tag{position:absolute;top:12px;left:12px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--zv-forest);background:rgba(243,238,224,.85);padding:5px 9px;border-radius:3px;font-weight:600}
+  #zv-{{ section.id }} .zv-ph{max-width:340px}
+  #zv-{{ section.id }} .zv-leaf{font-size:1.5rem;margin-bottom:8px;opacity:.5;display:block}
+  #zv-{{ section.id }} .zv-desc{font-size:.86rem;color:var(--zv-forest);line-height:1.5}
+  #zv-{{ section.id }} .zv-cap{font-size:.82rem;color:var(--zv-ink);opacity:.6;font-style:italic;margin:-8px 0 24px;line-height:1.5}
+  #zv-{{ section.id }} .zv-tn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+  #zv-{{ section.id }} .zv-tn .zv-img{margin:0}
+  #zv-{{ section.id }} .tn-label{position:absolute;bottom:12px;left:12px;font-weight:600;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+    background:var(--zv-forest);color:var(--zv-parchment);padding:5px 10px;border-radius:3px}
+
+  /* BROCHURE CTA */
+  #zv-{{ section.id }} .zv-brochure{padding:80px 0}
+  #zv-{{ section.id }} .zv-brochure .card{background:var(--zv-parchment-soft);border:1px solid var(--zv-line);border-radius:10px;padding:52px 44px;text-align:center;max-width:760px;margin:0 auto;position:relative;overflow:hidden}
+  #zv-{{ section.id }} .zv-brochure .card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--zv-moss),var(--zv-amber))}
+  #zv-{{ section.id }} .zv-brochure .zv-eyebrow{color:var(--zv-amber-deep)}
+  #zv-{{ section.id }} .zv-brochure h2{margin:16px 0 14px;font-size:28px}
+  #zv-{{ section.id }} .zv-brochure p{color:var(--zv-ink);opacity:.7;max-width:520px;margin:0 auto 30px}
+  #zv-{{ section.id }} .zv-btn{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.9rem;letter-spacing:.04em;text-decoration:none;
+    border-radius:50px;padding:16px 32px;background:var(--zv-amber);color:var(--zv-forest-deep);transition:transform .2s,background .2s}
+  #zv-{{ section.id }} .zv-btn:hover{background:var(--zv-amber-deep);color:var(--zv-parchment);transform:translateY(-2px)}
+  #zv-{{ section.id }} .zv-btn .arw{transition:transform .2s}
+  #zv-{{ section.id }} .zv-btn:hover .arw{transform:translateX(4px)}
+
+  /* WOMEN IN BUSINESS / SPOTLIGHT */
+  #zv-{{ section.id }} .zv-spot{padding:20px 0 84px}
+  #zv-{{ section.id }} .zv-spot .zv-head{text-align:center;max-width:660px;margin:0 auto 46px}
+  #zv-{{ section.id }} .zv-spot .zv-eyebrow{color:var(--zv-amber-deep)}
+  #zv-{{ section.id }} .zv-spot h2{margin:16px 0 14px;font-size:28px}
+  #zv-{{ section.id }} .zv-spot .lead{color:var(--zv-ink);opacity:.72;font-size:1.04rem}
+  #zv-{{ section.id }} .zv-spot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:22px}
+  #zv-{{ section.id }} .zv-spot-card{background:var(--zv-parchment-soft);border:1px solid var(--zv-line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+  #zv-{{ section.id }} .zv-spot-card:hover{transform:translateY(-3px);border-color:var(--zv-amber);box-shadow:0 14px 34px rgba(34,31,26,.08)}
+  #zv-{{ section.id }} .zv-spot-media{position:relative;aspect-ratio:4/3;overflow:hidden;text-decoration:none;
+    background:repeating-linear-gradient(135deg, rgba(46,92,72,.10) 0 2px, transparent 2px 22px),linear-gradient(160deg,#E8E0CE,#DCD3BC);
+    display:flex;align-items:center;justify-content:center}
+  #zv-{{ section.id }} .zv-spot-media img{width:100%;height:100%;object-fit:cover}
+  #zv-{{ section.id }} .zv-spot-media .zv-leaf{font-size:1.7rem;opacity:.5;margin:0}
+  #zv-{{ section.id }} .zv-spot-flag{position:absolute;top:12px;left:12px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--zv-forest);background:rgba(243,238,224,.9);padding:5px 10px;border-radius:3px;font-weight:600;z-index:2}
+  #zv-{{ section.id }} .zv-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1}
+  #zv-{{ section.id }} .zv-play em{width:56px;height:56px;border-radius:50%;background:rgba(198,146,63,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(13,41,31,.35);transition:transform .2s,background .2s}
+  #zv-{{ section.id }} .zv-spot-card:hover .zv-play em{transform:scale(1.08);background:var(--zv-amber)}
+  #zv-{{ section.id }} .zv-play svg{width:20px;height:20px;margin-left:3px;fill:var(--zv-forest-deep)}
+  #zv-{{ section.id }} .zv-spot-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+  #zv-{{ section.id }} .zv-spot-body .nm{font-size:1.2rem;font-weight:600;color:var(--zv-forest);line-height:1.2}
+  #zv-{{ section.id }} .zv-spot-body .meta{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--zv-ink);opacity:.6;margin-top:7px;font-weight:600}
+  #zv-{{ section.id }} .zv-spot-body .story{margin:16px 0 0;font-size:.98rem;color:var(--zv-ink)}
+  #zv-{{ section.id }} .zv-spot-body .story p{margin:0 0 .8em}
+  #zv-{{ section.id }} .zv-spot-body .story p:last-child{margin-bottom:0}
+  #zv-{{ section.id }} .zv-watch{margin-top:auto;padding-top:20px;font-weight:600;font-size:.85rem;color:var(--zv-forest);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+  #zv-{{ section.id }} .zv-watch .arw{transition:transform .2s}
+  #zv-{{ section.id }} .zv-spot-card:hover .zv-watch .arw{transform:translateX(4px)}
+  #zv-{{ section.id }} .zv-spot .foot{text-align:center;max-width:660px;margin:46px auto 0;font-style:italic;font-size:1.2rem;color:var(--zv-forest);line-height:1.4}
+
+  /* INTERNATIONAL */
+  #zv-{{ section.id }} .zv-intl{background:var(--zv-forest);color:var(--zv-parchment);padding:86px 0}
+  #zv-{{ section.id }} .zv-intl .zv-eyebrow{color:var(--zv-amber)}
+  #zv-{{ section.id }} .zv-intl h2{color:var(--zv-parchment);margin:18px 0;font-size:28px}
+  #zv-{{ section.id }} .zv-intl p{color:rgba(243,238,224,.82);max-width:640px}
+  #zv-{{ section.id }} .zv-flags{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin:44px 0 10px}
+  #zv-{{ section.id }} .zv-flag{padding:22px 16px;border:1px solid var(--zv-line-light);border-radius:6px;text-align:center}
+  #zv-{{ section.id }} .zv-flag .fl{font-size:1.9rem;line-height:1;min-height:34px;display:flex;align-items:center;justify-content:center}
+  #zv-{{ section.id }} .zv-flag .fl img{height:34px;width:auto;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.28)}
+  #zv-{{ section.id }} .zv-flag .fc{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-top:12px;color:rgba(243,238,224,.7);font-weight:600}
+  #zv-{{ section.id }} .zv-intl .path{margin-top:40px;font-style:italic;font-size:1.28rem;color:var(--zv-cream);max-width:720px;line-height:1.4}
+
+  /* VALUES */
+  #zv-{{ section.id }} .zv-values{padding:84px 0}
+  #zv-{{ section.id }} .zv-values .zv-wrap{max-width:760px;text-align:center}
+  #zv-{{ section.id }} .zv-values .zv-eyebrow{color:var(--zv-amber-deep)}
+  #zv-{{ section.id }} .zv-values h2{margin:18px 0 22px;font-size:28px;line-height:1.12}
+  #zv-{{ section.id }} .zv-values p{font-size:1.08rem}
+
+  /* NOW WE SCALE */
+  #zv-{{ section.id }} .zv-scale{background:var(--zv-forest-deep);color:var(--zv-parchment);padding:100px 0 84px}
+  #zv-{{ section.id }} .zv-scale .zv-eyebrow{color:var(--zv-amber)}
+  #zv-{{ section.id }} .zv-scale h2{color:var(--zv-parchment);margin:20px 0 26px;font-size:28px;line-height:1.05}
+  #zv-{{ section.id }} .zv-scale .zv-read{max-width:720px}
+  #zv-{{ section.id }} .zv-scale p{color:rgba(243,238,224,.85);font-size:1.1rem}
+  #zv-{{ section.id }} .zv-scale .zv-mini{color:var(--zv-cream);border-color:var(--zv-amber)}
+  #zv-{{ section.id }} .zv-scale .stamp{margin-top:46px;font-style:italic;font-size:1.4rem;color:var(--zv-cream);line-height:1.35;border-top:1px solid var(--zv-line-light);padding-top:34px}
+  #zv-{{ section.id }} .zv-scale .stamp b{font-style:normal;font-weight:600;color:var(--zv-amber)}
+
+  /* FINAL CTAs */
+  #zv-{{ section.id }} .zv-finalcta{padding:88px 0}
+  #zv-{{ section.id }} .zv-finalcta .zv-eyebrow{color:var(--zv-amber-deep);text-align:center;display:block;margin-bottom:34px}
+  #zv-{{ section.id }} .zv-grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  #zv-{{ section.id }} .zv-cta{display:block;text-decoration:none;background:var(--zv-parchment-soft);border:1px solid var(--zv-line);border-radius:10px;padding:34px 30px;transition:transform .2s,border-color .2s,box-shadow .2s}
+  #zv-{{ section.id }} .zv-cta:hover{transform:translateY(-3px);border-color:var(--zv-amber);box-shadow:0 14px 34px rgba(34,31,26,.08)}
+  #zv-{{ section.id }} .zv-cta .znum{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--zv-amber-deep);font-weight:600}
+  #zv-{{ section.id }} .zv-cta h3{margin:12px 0 8px;font-size:1.45rem;color:var(--zv-forest)}
+  #zv-{{ section.id }} .zv-cta p{margin:0 0 16px;color:var(--zv-ink);opacity:.7;font-size:.96rem}
+  #zv-{{ section.id }} .zv-cta .go{font-weight:600;font-size:.85rem;color:var(--zv-forest);display:inline-flex;gap:8px;align-items:center}
+  #zv-{{ section.id }} .zv-cta .go .arw{transition:transform .2s}
+  #zv-{{ section.id }} .zv-cta:hover .go .arw{transform:translateX(4px)}
+
+  /* SIGNOFF */
+  #zv-{{ section.id }} .zv-signoff{background:var(--zv-forest);color:var(--zv-parchment);text-align:center;padding:76px 28px}
+  #zv-{{ section.id }} .zv-signoff .brand{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;letter-spacing:.02em;color:var(--zv-parchment)}
+  #zv-{{ section.id }} .zv-signoff .tag{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--zv-amber);margin-top:16px;font-weight:600}
+  #zv-{{ section.id }} .zv-signoff .line{font-style:italic;color:rgba(243,238,224,.8);margin-top:22px;font-size:1.1rem}
+
+  /* reveal + a11y */
+  #zv-{{ section.id }} .zv-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  #zv-{{ section.id }} .zv-reveal.in{opacity:1;transform:none}
+  #zv-{{ section.id }} :focus-visible{outline:3px solid var(--zv-amber);outline-offset:3px;border-radius:3px}
+
+  @media(max-width:820px){
+    #zv-{{ section.id }} .zv-hero-grid{grid-template-columns:1fr;min-height:0}
+    #zv-{{ section.id }} .zv-hero-media{order:-1;min-height:64vw;max-height:460px}
+    #zv-{{ section.id }} .zv-hero-text{padding:52px 26px 58px}
+    #zv-{{ section.id }} .zv-display{font-size:clamp(1.9rem,7vw,2.6rem)}
+    #zv-{{ section.id }} .zv-index{grid-template-columns:1fr}
+    #zv-{{ section.id }} .zv-body{padding:4px 2px 34px 40px}
+    #zv-{{ section.id }} .zv-timeline::before{left:18px}
+    #zv-{{ section.id }} .zv-num{display:none}
+    #zv-{{ section.id }} .zv-ch-head{grid-template-columns:40px 1fr 26px}
+    #zv-{{ section.id }} .zv-tn{grid-template-columns:1fr}
+    #zv-{{ section.id }} .zv-spot-grid{grid-template-columns:1fr}
+    #zv-{{ section.id }} .zv-grid4{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    #zv-{{ section.id }} *{transition:none!important;animation:none!important}
+    #zv-{{ section.id }} .zv-reveal{opacity:1;transform:none}
+  }
+</style>
+
+<div class="zv-story" id="zv-{{ section.id }}">
+
+  {%- assign stats      = section.blocks | where: 'type', 'stat'      -%}
+  {%- assign chapters   = section.blocks | where: 'type', 'chapter'   -%}
+  {%- assign spotlights = section.blocks | where: 'type', 'spotlight' -%}
+  {%- assign flags      = section.blocks | where: 'type', 'flag'      -%}
+  {%- assign ctas       = section.blocks | where: 'type', 'cta'       -%}
+
+  <!-- HERO -->
+  <header class="zv-hero">
+    <div class="zv-hero-grid">
+      <div class="zv-hero-text">
+        {% if section.settings.eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+        <h1 class="zv-display">
+          <span class="l1">{{ section.settings.line1 }}</span>
+          <span class="l2">{{ section.settings.line2 }}</span>
+          <span class="l3">{{ section.settings.line3 }}</span>
+        </h1>
+        {% if section.settings.hero_note != blank %}<div class="zv-cue">{{ section.settings.hero_note }}</div>{% endif %}
+      </div>
+      <div class="zv-hero-media">
+        {% if section.settings.hero_image %}
+          <img src="{{ section.settings.hero_image | image_url: width: 1600 }}" alt="{{ section.settings.hero_image.alt | escape }}" width="{{ section.settings.hero_image.width }}" height="{{ section.settings.hero_image.height }}" loading="eager">
+        {% else %}
+          <span class="zv-tag">Founder photo &middot; add a portrait</span>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="zv-intro">
+    <div class="zv-wrap zv-read zv-reveal">
+      {% if section.settings.intro_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.intro_eyebrow }}</span>{% endif %}
+      <div class="zv-lede zv-drop">{{ section.settings.intro_lede }}</div>
+
+      <div class="zv-namecard">
+        <div class="who">{{ section.settings.founder_name }}</div>
+        <div class="role">{{ section.settings.founder_role }}</div>
+        {{ section.settings.founder_note }}
+      </div>
+
+      {{ section.settings.intro_body }}
+    </div>
+
+    {% if stats.size > 0 %}
+    <div class="zv-wrap zv-reveal">
+      <div class="zv-proof">
+        {% for block in stats %}
+          <div class="zv-p" {{ block.shopify_attributes }}>
+            <div class="zv-n">{{ block.settings.value }}</div>
+            <div class="zv-k">{{ block.settings.label }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
+  <!-- OPENING QUOTE -->
+  {% if section.settings.quote1 != blank %}
+  <div class="zv-quoteband zv-reveal">
+    <div class="zv-wrap">
+      <span class="mark">"</span>
+      <blockquote>{{ section.settings.quote1 }}</blockquote>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- CHAPTERS -->
+  <section>
+    <div class="zv-chead zv-wrap zv-reveal">
+      {% if section.settings.chapters_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.chapters_eyebrow }}</span>{% endif %}
+      {% if section.settings.chapters_title != blank %}<h2>{{ section.settings.chapters_title }}</h2>{% endif %}
+      {% if section.settings.chapters_sub != blank %}<p>{{ section.settings.chapters_sub }}</p>{% endif %}
+    </div>
+
+    {% if section.settings.show_index and chapters.size > 0 %}
+    <nav class="zv-index zv-wrap zv-reveal" aria-label="Chapter index">
+      {% for block in chapters %}
+        <a href="#zv-{{ section.id }}-{{ block.id }}"><span class="ix">{{ block.settings.number }}</span> {{ block.settings.title }}</a>
+      {% endfor %}
+      {% if section.settings.show_intl_in_index %}
+        <a href="#zv-{{ section.id }}-intl"><span class="ix">{{ section.settings.intl_index_number }}</span> {{ section.settings.intl_index_label }}</a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
+    <div class="zv-timeline zv-wrap">
+      {% for block in chapters %}
+        <div class="zv-ch{% if block.settings.open_default %} open{% endif %}" id="zv-{{ section.id }}-{{ block.id }}" {{ block.shopify_attributes }}>
+          <button class="zv-ch-head" aria-expanded="{% if block.settings.open_default %}true{% else %}false{% endif %}" aria-controls="zv-{{ section.id }}-{{ block.id }}-p">
+            <span class="zv-node" aria-hidden="true"></span><span class="zv-num">{{ block.settings.number }}</span>
+            <span class="zv-ct">{{ block.settings.title }}</span><span class="zv-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="zv-panel" id="zv-{{ section.id }}-{{ block.id }}-p" role="region"><div class="zv-inner"><div class="zv-body">
+
+            {% comment %} Optional single image / placeholder {% endcomment %}
+            {% if block.settings.image %}
+              <div class="zv-img has-img">
+                {% if block.settings.image_tag != blank %}<span class="zv-tag">{{ block.settings.image_tag }}</span>{% endif %}
+                <img src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+              </div>
+              {% if block.settings.image_caption != blank %}<p class="zv-cap">{{ block.settings.image_caption }}</p>{% endif %}
+            {% elsif block.settings.image_tag != blank or block.settings.image_caption != blank %}
+              <div class="zv-img">
+                {% if block.settings.image_tag != blank %}<span class="zv-tag">{{ block.settings.image_tag }}</span>{% endif %}
+                <div class="zv-ph"><span class="zv-leaf">&#127807;</span><span class="zv-desc">{{ block.settings.image_caption }}</span></div>
+              </div>
+            {% endif %}
+
+            {{ block.settings.body }}
+
+            {% if block.settings.mini_quote != blank %}<div class="zv-mini">{{ block.settings.mini_quote }}</div>{% endif %}
+
+            {% comment %} Optional then / now pair {% endcomment %}
+            {% if block.settings.then_caption != blank or block.settings.now_caption != blank or block.settings.then_image or block.settings.now_image %}
+            <div class="zv-tn">
+              <div class="zv-img{% if block.settings.then_image %} has-img{% endif %}">
+                {% if block.settings.then_image %}
+                  <img src="{{ block.settings.then_image | image_url: width: 800 }}" alt="{{ block.settings.then_image.alt | escape }}" loading="lazy">
+                {% else %}
+                  <div class="zv-ph"><span class="zv-leaf">&#127793;</span><span class="zv-desc">{{ block.settings.then_caption }}</span></div>
+                {% endif %}
+                <span class="tn-label">{{ block.settings.then_label | default: 'Then' }}</span>
+              </div>
+              <div class="zv-img{% if block.settings.now_image %} has-img{% endif %}">
+                {% if block.settings.now_image %}
+                  <img src="{{ block.settings.now_image | image_url: width: 800 }}" alt="{{ block.settings.now_image.alt | escape }}" loading="lazy">
+                {% else %}
+                  <div class="zv-ph"><span class="zv-leaf">&#128230;</span><span class="zv-desc">{{ block.settings.now_caption }}</span></div>
+                {% endif %}
+                <span class="tn-label">{{ block.settings.now_label | default: 'Now' }}</span>
+              </div>
+            </div>
+            {% endif %}
+
+          </div></div></div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- BROCHURE CTA -->
+  {% if section.settings.brochure_title != blank %}
+  <section class="zv-brochure">
+    <div class="zv-wrap">
+      <div class="card zv-reveal">
+        {% if section.settings.brochure_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.brochure_eyebrow }}</span>{% endif %}
+        <h2>{{ section.settings.brochure_title }}</h2>
+        {{ section.settings.brochure_text }}
+        {% if section.settings.brochure_btn_link != blank %}
+          <a class="zv-btn" href="{{ section.settings.brochure_btn_link }}">{{ section.settings.brochure_btn_label }} <span class="arw">&rarr;</span></a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- WOMEN IN BUSINESS / SPOTLIGHT -->
+  {% if section.settings.spot_title != blank or spotlights.size > 0 %}
+  <section class="zv-spot">
+    <div class="zv-wrap">
+      <div class="zv-head zv-reveal">
+        {% if section.settings.spot_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.spot_eyebrow }}</span>{% endif %}
+        {% if section.settings.spot_title != blank %}<h2>{{ section.settings.spot_title }}</h2>{% endif %}
+        {% if section.settings.spot_lede != blank %}<p class="lead">{{ section.settings.spot_lede }}</p>{% endif %}
+      </div>
+
+      {% if spotlights.size > 0 %}
+      <div class="zv-spot-grid">
+        {% for block in spotlights %}
+          <div class="zv-spot-card zv-reveal" {{ block.shopify_attributes }}>
+
+            {% if block.settings.video_url != blank %}
+              <a class="zv-spot-media" href="{{ block.settings.video_url }}" target="_blank" rel="noopener" aria-label="Watch {{ block.settings.name | escape }}'s story">
+                {% if block.settings.image %}
+                  <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.image.alt | escape | default: block.settings.name }}" loading="lazy">
+                {% else %}
+                  <span class="zv-leaf">&#127807;</span>
+                {% endif %}
+                {% if block.settings.flag != blank %}<span class="zv-spot-flag">{{ block.settings.flag }}</span>{% endif %}
+                <span class="zv-play"><em><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></em></span>
+              </a>
+            {% else %}
+              <div class="zv-spot-media">
+                {% if block.settings.image %}
+                  <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.image.alt | escape | default: block.settings.name }}" loading="lazy">
+                {% else %}
+                  <span class="zv-leaf">&#127807;</span>
+                {% endif %}
+                {% if block.settings.flag != blank %}<span class="zv-spot-flag">{{ block.settings.flag }}</span>{% endif %}
+              </div>
+            {% endif %}
+
+            <div class="zv-spot-body">
+              {% if block.settings.name != blank %}<div class="nm">{{ block.settings.name }}</div>{% endif %}
+              {% if block.settings.meta != blank %}<div class="meta">{{ block.settings.meta }}</div>{% endif %}
+              {% if block.settings.story != blank %}<div class="story">{{ block.settings.story }}</div>{% endif %}
+              {% if block.settings.video_url != blank %}
+                <a class="zv-watch" href="{{ block.settings.video_url }}" target="_blank" rel="noopener">{{ block.settings.watch_label | default: 'Watch her story' }} <span class="arw">&rarr;</span></a>
+              {% endif %}
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if section.settings.spot_foot != blank %}<p class="foot zv-reveal">{{ section.settings.spot_foot }}</p>{% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- INTERNATIONAL -->
+  <section class="zv-intl" id="zv-{{ section.id }}-intl">
+    <div class="zv-wrap zv-reveal">
+      {% if section.settings.intl_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.intl_eyebrow }}</span>{% endif %}
+      {% if section.settings.intl_title != blank %}<h2>{{ section.settings.intl_title }}</h2>{% endif %}
+      {{ section.settings.intl_body }}
+      {% if flags.size > 0 %}
+      <div class="zv-flags">
+        {% for block in flags %}
+          <div class="zv-flag" {{ block.shopify_attributes }}>
+            {% if block.settings.image %}
+              <div class="fl"><img src="{{ block.settings.image | image_url: width: 200 }}" alt="{{ block.settings.image.alt | escape | default: block.settings.label }}" loading="lazy"></div>
+            {% else %}
+              <div class="fl">{{ block.settings.emoji }}</div>
+            {% endif %}
+            <div class="fc">{{ block.settings.label }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if section.settings.intl_image %}
+      <div class="zv-img has-img" style="margin-top:26px">
+        <img src="{{ section.settings.intl_image | image_url: width: 1400 }}" alt="{{ section.settings.intl_image.alt | escape }}" loading="lazy">
+      </div>
+      {% elsif section.settings.intl_image_note != blank %}
+      <div class="zv-img" style="margin-top:26px"><span class="zv-tag">Current &middot; international growth</span><div class="zv-ph"><span class="zv-leaf">&#128230;</span><span class="zv-desc">{{ section.settings.intl_image_note }}</span></div></div>
+      {% endif %}
+      {% if section.settings.intl_path != blank %}<p class="path">{{ section.settings.intl_path }}</p>{% endif %}
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  {% if section.settings.values_title != blank %}
+  <section class="zv-values">
+    <div class="zv-wrap zv-reveal">
+      {% if section.settings.values_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.values_eyebrow }}</span>{% endif %}
+      <h2>{{ section.settings.values_title }}</h2>
+      {{ section.settings.values_body }}
+      {% if section.settings.values_tag != blank %}<p class="zv-sig" style="font-size:1.22rem;color:var(--zv-forest)">{{ section.settings.values_tag }}</p>{% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- NOW WE SCALE -->
+  <section class="zv-scale">
+    <div class="zv-wrap zv-read zv-reveal">
+      {% if section.settings.scale_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.scale_eyebrow }}</span>{% endif %}
+      {% if section.settings.scale_title != blank %}<h2>{{ section.settings.scale_title }}</h2>{% endif %}
+      {{ section.settings.scale_body }}
+      {% if section.settings.scale_quote != blank %}<div class="zv-mini">{{ section.settings.scale_quote }}</div>{% endif %}
+      {{ section.settings.scale_body_2 }}
+      {% if section.settings.scale_stamp != blank %}<div class="stamp">{{ section.settings.scale_stamp }}</div>{% endif %}
+    </div>
+  </section>
+
+  <!-- FINAL CTAs -->
+  {% if ctas.size > 0 %}
+  <section class="zv-finalcta">
+    <div class="zv-wrap">
+      {% if section.settings.finalcta_eyebrow != blank %}<span class="zv-eyebrow">{{ section.settings.finalcta_eyebrow }}</span>{% endif %}
+      <div class="zv-grid4">
+        {% for block in ctas %}
+          <a class="zv-cta zv-reveal" {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% else %}href="#"{% endif %} {{ block.shopify_attributes }}>
+            {% if block.settings.kicker != blank %}<div class="znum">{{ block.settings.kicker }}</div>{% endif %}
+            <h3>{{ block.settings.title }}</h3>
+            {% if block.settings.text != blank %}<p>{{ block.settings.text }}</p>{% endif %}
+            <span class="go">{{ block.settings.link_label | default: 'Learn more' }} <span class="arw">&rarr;</span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- SIGNOFF -->
+  <footer class="zv-signoff">
+    {% if section.settings.brand_name != blank %}<div class="brand">{{ section.settings.brand_name }}</div>{% endif %}
+    {% if section.settings.brand_tag != blank %}<div class="tag">{{ section.settings.brand_tag }}</div>{% endif %}
+    {% if section.settings.signoff_line != blank %}<div class="line">{{ section.settings.signoff_line }}</div>{% endif %}
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('zv-{{ section.id }}');
+  if(!root) return;
+  root.querySelectorAll('.zv-ch-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.zv-ch');
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  root.querySelectorAll('.zv-index a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var id = a.getAttribute('href').slice(1);
+      var t = document.getElementById(id);
+      if(t && t.classList.contains('zv-ch') && !t.classList.contains('open')){
+        t.classList.add('open');
+        var h = t.querySelector('.zv-ch-head'); if(h){ h.setAttribute('aria-expanded','true'); }
+      }
+    });
+  });
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = root.querySelectorAll('.zv-reveal');
+  if(rm || !('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+    els.forEach(function(e){ io.observe(e); });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Founder Story",
+  "tag": "section",
+  "class": "zv-founder-story",
+  "settings": [
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "color_forest", "label": "Forest (primary)", "default": "#12352A" },
+    { "type": "color", "id": "color_forest_deep", "label": "Forest deep", "default": "#0D291F" },
+    { "type": "color", "id": "color_moss", "label": "Moss", "default": "#2E5C48" },
+    { "type": "color", "id": "color_parchment", "label": "Parchment (page)", "default": "#F3EEE0" },
+    { "type": "color", "id": "color_parchment_soft", "label": "Parchment soft (cards)", "default": "#FBF7EE" },
+    { "type": "color", "id": "color_amber", "label": "Amber (accent)", "default": "#C6923F" },
+    { "type": "color", "id": "color_amber_deep", "label": "Amber deep", "default": "#A9772E" },
+    { "type": "color", "id": "color_ink", "label": "Ink (text)", "default": "#221F1A" },
+
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our Story" },
+    { "type": "text", "id": "line1", "label": "Headline line 1", "default": "Rooted in Heritage." },
+    { "type": "text", "id": "line2", "label": "Headline line 2", "default": "Built Through Experience." },
+    { "type": "text", "id": "line3", "label": "Headline line 3 (accent)", "default": "Ready to Scale." },
+    { "type": "image_picker", "id": "hero_image", "label": "Founder photo (right side)" },
+    { "type": "text", "id": "hero_note", "label": "Small note under headline", "default": "The Zyzven Naturals journey" },
+
+    { "type": "header", "content": "Introduction" },
+    { "type": "text", "id": "intro_eyebrow", "label": "Eyebrow", "default": "Where it began" },
+    { "type": "richtext", "id": "intro_lede", "label": "Opening paragraph (with drop cap)", "default": "<p>Zyzven Naturals was never born from a perfectly written business plan. It grew from my life, my family, my heritage, the health challenges that forced me to ask difficult questions - and eventually the thousands of conversations we had with people asking many of those same questions about themselves.</p>" },
+    { "type": "text", "id": "founder_name", "label": "Founder name", "default": "Shawnafi Dynesen" },
+    { "type": "text", "id": "founder_role", "label": "Founder role", "default": "Founder & Formulator" },
+    { "type": "richtext", "id": "founder_note", "label": "Founder note (in the card)", "default": "<p>A Jamaican Maroon from St. Thomas, Jamaica - an author, a mother, and someone who became deeply interested in botanical wellness because I first needed answers for myself. My husband, Lawrence Anderson, has been part of this journey from the early days when we physically made and packed products together, to the international company we are building today.</p>" },
+    { "type": "richtext", "id": "intro_body", "label": "Introduction body", "default": "<p>Even our name is personal. Zyzven Naturals was named after the child Lawrence and I share, Tyr-Zyzven. From the beginning, this company has been connected to family, purpose and legacy.</p><p>Today we formulate botanical supplements, medicinal tea blends, skincare and haircare for customers internationally. Most of our products are professionally contract manufactured, we warehouse across several countries, and our quality systems are far removed from those early handmade days. But to understand Zyzven Naturals, you first need to understand where it came from.</p>" },
+
+    { "type": "header", "content": "Opening quote band" },
+    { "type": "text", "id": "quote1", "label": "Pull-quote", "default": "They didn't make me a doctor. They made me a student." },
+
+    { "type": "header", "content": "Chapters intro" },
+    { "type": "text", "id": "chapters_eyebrow", "label": "Eyebrow", "default": "The chapters" },
+    { "type": "text", "id": "chapters_title", "label": "Title", "default": "Explore the journey, one chapter at a time" },
+    { "type": "textarea", "id": "chapters_sub", "label": "Subtitle", "default": "Eleven moments that shaped Zyzven Naturals - from a grandmother's garden in St. Thomas to warehouses on three continents. Tap any chapter to open it." },
+    { "type": "select", "id": "chapter_image_ratio", "label": "Chapter image shape", "info": "Landscape options crop the image to a wide frame (top/bottom trimmed). Use Natural to show the whole image uncropped.", "options": [
+      { "value": "natural", "label": "Natural (no crop)" },
+      { "value": "16/9", "label": "Landscape - wide (16:9)" },
+      { "value": "3/2", "label": "Landscape - photo (3:2)" },
+      { "value": "4/3", "label": "Landscape - soft (4:3)" },
+      { "value": "1/1", "label": "Square (1:1)" }
+    ], "default": "3/2" },
+    { "type": "checkbox", "id": "show_index", "label": "Show clickable chapter index", "default": true },
+    { "type": "checkbox", "id": "show_intl_in_index", "label": "Add 'International' to the index", "default": true },
+    { "type": "text", "id": "intl_index_number", "label": "International index number", "default": "12" },
+    { "type": "text", "id": "intl_index_label", "label": "International index label", "default": "International From Day One" },
+
+    { "type": "header", "content": "Reseller / Brochure CTA" },
+    { "type": "text", "id": "brochure_eyebrow", "label": "Eyebrow", "default": "Grow with us" },
+    { "type": "text", "id": "brochure_title", "label": "Title", "default": "Want to bring Zyzven Naturals to your community?" },
+    { "type": "richtext", "id": "brochure_text", "label": "Text", "default": "<p>Whether you are an independent entrepreneur, retailer, wellness professional or distributor, explore the opportunities to grow with us.</p>" },
+    { "type": "text", "id": "brochure_btn_label", "label": "Button label", "default": "View Retail & Partner Brochure" },
+    { "type": "url", "id": "brochure_btn_link", "label": "Button link" },
+
+    { "type": "header", "content": "Women in Business spotlight" },
+    { "type": "text", "id": "spot_eyebrow", "label": "Eyebrow", "default": "Real stories ¬∑ Women in business" },
+    { "type": "text", "id": "spot_title", "label": "Title", "default": "The women building businesses with Zyzven Naturals" },
+    { "type": "textarea", "id": "spot_lede", "label": "Intro", "default": "Creating opportunity has been part of Zyzven Naturals from the beginning. These are some of the women turning our products into businesses of their own - starting in Jamaica and growing across the communities we serve." },
+    { "type": "richtext", "id": "spot_foot", "label": "Closing line", "default": "<p>When Zyzven Naturals grows, we want that growth to create opportunity for other people too.</p>" },
+
+    { "type": "header", "content": "International band" },
+    { "type": "text", "id": "intl_eyebrow", "label": "Eyebrow", "default": "Chapter 12 ¬∑ International from day one" },
+    { "type": "text", "id": "intl_title", "label": "Title", "default": "International was always the vision" },
+    { "type": "richtext", "id": "intl_body", "label": "Body", "default": "<p>Even when Zyzven Naturals was small, we never thought of it as a brand limited to one town or one country. Our online community was already international - customers shared products with relatives and friends across borders. Today, we warehouse and fulfil according to the market being served, bringing products closer to customers through a more efficient international network.</p>" },
+    { "type": "image_picker", "id": "intl_image", "label": "International image (optional)" },
+    { "type": "textarea", "id": "intl_image_note", "label": "Image placeholder note", "default": "Product cartons, warehouse stock or fulfilment imagery." },
+    { "type": "richtext", "id": "intl_path", "label": "Closing italic line", "default": "<p>We moved from handmade production to professional manufacturing, from one physical shop to international e-commerce, from local packing to multiple fulfilment locations, and from informal word-of-mouth sales to a growing international retailer and distribution network.</p>" },
+
+    { "type": "header", "content": "Values band" },
+    { "type": "text", "id": "values_eyebrow", "label": "Eyebrow", "default": "Who we're for" },
+    { "type": "text", "id": "values_title", "label": "Title", "default": "Formulated for everyone, without forgetting who helped shape us" },
+    { "type": "richtext", "id": "values_body", "label": "Body", "default": "<p>Zyzven Naturals products are for everyone. But we are particularly proud of the trust the brand has built within Black and Caribbean communities - where conversations around hormone health, fertility, menopause, metabolic wellness, hair loss and culturally familiar botanical traditions were not always being addressed in ways that reflected people's experiences. We created space for those conversations without needing to exclude anyone else.</p>" },
+    { "type": "text", "id": "values_tag", "label": "Closing line", "default": "Our roots explain who we are. They do not determine who is welcome." },
+
+    { "type": "header", "content": "Now we scale" },
+    { "type": "text", "id": "scale_eyebrow", "label": "Eyebrow", "default": "Chapter 13 ¬∑ Now" },
+    { "type": "text", "id": "scale_title", "label": "Title", "default": "Now, we are ready to scale" },
+    { "type": "richtext", "id": "scale_body", "label": "Body (before quote)", "default": "<p>The story of Zyzven Naturals has never been perfectly linear. From a small ethnic shop in Sweden to products made in a kitchen in Jamaica. From hair oil to medicinal teas. From Facebook Lives to conversations about hormones, fertility and menopause that brought thousands of people into our community. From handmade products to professional manufacturing. From building momentum to having to start over in another country - and then rebuilding.</p><p>Zyzven Naturals today is not simply an idea with potential. It is a brand that has been tested by customers, by relocation, by changing markets and by the realities of building a company from the ground up. Our customer base was built largely organically rather than through paid advertising - our products travelled because people talked about them.</p><p>At the same time, we have spent years strengthening what sits behind that demand: formulations, testing, manufacturing relationships, international fulfilment, brand protection and a more professional retail and distribution structure. We now warehouse across the USA, UK, Canada, Sweden and Jamaica, while continuing to develop our international reach.</p>" },
+    { "type": "text", "id": "scale_quote", "label": "Pull-quote", "default": "We are no longer trying to prove that Zyzven Naturals can work. We are preparing to scale what we have already proved can work." },
+    { "type": "richtext", "id": "scale_body_2", "label": "Body (after quote)", "default": "<p>We want customers who discover the brand to feel confident buying it. We want entrepreneurs and established retailers to see a product range they are proud to carry. We want distributors to see an opportunity to take an established story and proven formulations into new markets. And we want strategic partners to see a founder-led company with authentic origins, organic customer demand, international ambition, established infrastructure - and considerable room still left to grow.</p>" },
+    { "type": "richtext", "id": "scale_stamp", "label": "Closing stamp", "default": "<p>Zyzven Naturals began because I needed answers. It grew because other people recognised themselves in the questions. It survived because Lawrence and I were willing to rebuild it when life changed. And it continues because our customers kept believing in what we were creating - strongly enough to tell someone else.</p><p><b>Rooted in heritage. Refined by knowledge. Formulated with purpose. Built for legacy.</b></p>" },
+
+    { "type": "header", "content": "Final CTAs" },
+    { "type": "text", "id": "finalcta_eyebrow", "label": "Eyebrow", "default": "Where would you like to go next?" },
+
+    { "type": "header", "content": "Signoff" },
+    { "type": "text", "id": "brand_name", "label": "Brand name", "default": "Zyzven Naturals" },
+    { "type": "text", "id": "brand_tag", "label": "Tagline", "default": "Rooted in Heritage ¬∑ Built for Legacy" },
+    { "type": "text", "id": "signoff_line", "label": "Signoff line", "default": "From our family to yours - and from St. Thomas, Jamaica, to the world." }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Proof stat",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "5" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Fulfilment countries" }
+      ]
+    },
+    {
+      "type": "chapter",
+      "name": "Chapter",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Chapter title" },
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Chapter text.</p>" },
+        { "type": "text", "id": "mini_quote", "label": "Pull-quote (optional)" },
+        { "type": "checkbox", "id": "open_default", "label": "Open by default", "default": false },
+        { "type": "header", "content": "Image (optional)" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_tag", "label": "Corner label", "default": "Archive" },
+        { "type": "textarea", "id": "image_caption", "label": "Caption / placeholder note" },
+        { "type": "header", "content": "Then / Now (optional)" },
+        { "type": "image_picker", "id": "then_image", "label": "Then image" },
+        { "type": "text", "id": "then_label", "label": "Then label", "default": "Then" },
+        { "type": "text", "id": "then_caption", "label": "Then placeholder note" },
+        { "type": "image_picker", "id": "now_image", "label": "Now image" },
+        { "type": "text", "id": "now_label", "label": "Now label", "default": "Now" },
+        { "type": "text", "id": "now_caption", "label": "Now placeholder note" }
+      ]
+    },
+    {
+      "type": "spotlight",
+      "name": "Woman in business",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo / video thumbnail" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Her name" },
+        { "type": "text", "id": "meta", "label": "Location & business", "default": "St. Thomas, Jamaica ¬∑ Reseller" },
+        { "type": "richtext", "id": "story", "label": "Short story / quote", "default": "<p>A sentence or two in her words about building her business with Zyzven Naturals.</p>" },
+        { "type": "text", "id": "flag", "label": "Corner label (e.g. country + emoji)", "default": "üáØüá≤ Jamaica" },
+        { "type": "header", "content": "Video (optional)" },
+        { "type": "url", "id": "video_url", "label": "Video link (Facebook, YouTube, Instagram, etc.)", "info": "Adds a play badge and a 'Watch her story' link that opens in a new tab." },
+        { "type": "text", "id": "watch_label", "label": "Watch link label", "default": "Watch her story" }
+      ]
+    },
+    {
+      "type": "flag",
+      "name": "Country flag",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Flag image (recommended - PNG, e.g. 120√ó80)" },
+        { "type": "text", "id": "emoji", "label": "Flag emoji (used only if no image)", "default": "üá∫üá∏" },
+        { "type": "text", "id": "label", "label": "Country", "default": "United States" }
+      ]
+    },
+    {
+      "type": "cta",
+      "name": "Final CTA card",
+      "settings": [
+        { "type": "text", "id": "kicker", "label": "Kicker", "default": "For customers" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Shop Our Products" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Explore the Zyzven Naturals wellness collection." },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "Browse the collection" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder Story",
+      "blocks": [
+        { "type": "stat", "settings": { "value": "5", "label": "Fulfilment countries" } },
+        { "type": "stat", "settings": { "value": "Pro", "label": "Contract manufacturing" } },
+        { "type": "stat", "settings": { "value": "0", "label": "Paid ads to build our base" } },
+        { "type": "stat", "settings": { "value": "1", "label": "Product still made by hand" } },
+
+        { "type": "chapter", "settings": { "number": "01", "title": "Roots in St. Thomas, Jamaica", "image_tag": "Archive", "image_caption": "Authentic founder, family or St. Thomas imagery - where available.", "body": "<p>I am a Jamaican Maroon from St. Thomas. The Maroons are descendants of Africans who resisted enslavement, established independent communities and preserved important elements of African culture, identity and knowledge across generations.</p><p>Growing up in rural Jamaica, herbs, roots, leaves, barks and traditional preparations were not something I discovered later through wellness culture. They were part of everyday life. My grandmother had a particularly strong influence on the way I looked at plants and traditional remedies - knowledge passed through observation, conversation and experience. Plants were simply something people understood.</p><p>As an adult, that early foundation was eventually joined by research and studies in Medical Herbalism. But the motivation to study health more deeply came from something much more personal.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "02", "title": "Before the Brand, I Was Trying to Understand Myself", "mini_quote": "Those experiences did not make me a doctor. They made me a student. And that curiosity became one of the foundations of Zyzven Naturals.", "body": "<p>My hormonal health journey began unusually early. I was diagnosed with menopause in my early twenties, and later navigated PCOS, fertility difficulties, significant weight problems, pituitary tumours, alopecia and Type 2 diabetes - which I subsequently brought into remission. All of this began before there was a Zyzven Naturals shop.</p><p>I was trying to understand why my body was behaving the way it was. That meant reading, researching, questioning, making lifestyle changes, and repeatedly returning to the plants and traditional knowledge I had grown up around.</p><p>Even today, when customers repeatedly bring a particular wellness concern to us, my instinct is to study it. I hold no formal qualification in food chemistry, and I think transparency about that matters. I develop the original formulation concepts and ingredient combinations using my research, Medical Herbalism knowledge, traditional botanical understanding, lived experience and the needs repeatedly identified within our community. The formulations are then refined with our technical and manufacturing partners before commercial production.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "03", "title": "The Shop That Started It", "image_tag": "Archive ¬∑ 2016", "image_caption": "Any photographs from the original ethnic shop in Sweden.", "body": "<p><em>Sweden, 2016.</em></p><p>Lawrence and I opened an ethnic retail shop in Sweden. At first, skincare and haircare became our focus. We were looking closely at some of the products traditionally marketed towards Black and brown consumers, and became uncomfortable with some of the ingredient profiles we were seeing. We wanted products we felt comfortable using within our own family and recommending to customers.</p><p>At the same time, an unexpected group of customers began approaching us. Swedish parents raising adopted and foster children with different skin and hair needs would come into the shop looking for help finding appropriate products for their children. Those conversations made the gap increasingly obvious - people needed better options. And then something happened during a trip to Jamaica that gave us our first product.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "04", "title": "A Mosquito Bite & Our First Product", "image_tag": "Archive ¬∑ handmade beginnings", "image_caption": "Early products wrapped in cling film / hand-packed - please don't over-edit these.", "body": "<p>Our then four-year-old child was badly affected by mosquito bites during a trip to Jamaica. I wanted a botanical alternative for him, so I began making one. The result was a mosquito-repellent soap. That became our first product.</p><p>There was no factory. No large formulation team. No sophisticated packaging operation. Lawrence and I made products ourselves, wrapped them and packed them by hand.</p><p><em>Before professional manufacturing and international warehouses, there were products made, wrapped and packed by our own hands.</em></p><p>Today those pictures make me smile, but I also treasure them because they represent where the company truly started. Then came the product that changed everything.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "05", "title": "Alopecia, a Small Kitchen in Jamaica & Our First Breakthrough", "image_tag": "Archive ¬∑ Onion Growth Oil", "image_caption": "Early bottle / Jamaica imagery. If Shawnafi is comfortable publishing an alopecia-progress photo, place one discreetly here.", "mini_quote": "Word travelled. So did the bottles. Zyzven Naturals began growing because customers kept telling other people about us.", "body": "<p><em>Jamaica, 2017-2018.</em></p><p>During an extended stay in Jamaica, I was experiencing alopecia. Once again, I started researching. In a small kitchen, I began producing an onion-based botanical oil as part of my own hair journey - and documenting that journey openly on Facebook. People could actually watch what was happening. They asked what I was using. They followed the progress. Then they started asking if they could buy it.</p><p>That formulation became Zyzven Naturals <strong>Onion Growth Oil</strong> - our breakthrough product. Customers began sharing their experiences and telling others about the oil, and over the years have told us about the many ways they incorporate it into their routines, across hair, scalp, skin and nail care.</p><p>Today, most of our products have transitioned into professional contract manufacturing. The Onion Growth Oil has not - we still make it ourselves. For me, it remains the product that connects the modern Zyzven Naturals to that small kitchen in Jamaica.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "06", "title": "Alki Detox & the Move From Beauty to Wellness", "then_label": "Then", "then_caption": "Early Alki Detox loose-leaf image.", "now_label": "Now", "now_caption": "Current Alki Detox packaging.", "body": "<p>My own weight and metabolic journey eventually changed the company again. I had struggled for years with stubborn abdominal weight alongside my hormonal issues. I began researching botanicals for myself and eventually developed a loose-leaf formulation that became <strong>Alki Detox</strong> - another breakthrough, and one of our most successful products.</p><p>But the most important part was what customers started telling us. People would return and talk about their weight-management journeys, digestion and general wellbeing. Some told us about changes in blood pressure or blood sugar readings they were already monitoring. Over the years, some customers have told us they achieved Type 2 diabetes remission while incorporating our products into broader lifestyle and medically supervised changes.</p><p><em>Those are customer experiences, not promises that a supplement can treat or cure diabetes</em> - but they became important because they encouraged much larger conversations around metabolic wellness. Soon people were asking us about blood sugar, hormones, PCOS, menopause, fertility, fibroids, weight management and men's health. And the company changed.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "07", "title": "Facebook Lives Became Our Classroom", "image_tag": "Archive ¬∑ Facebook Live", "image_caption": "Screenshot from an early educational Live - ensure no private customer information is visible.", "mini_quote": "The more we educated, the more people recognised themselves in the conversation.", "body": "<p>We did something else that became fundamental to Zyzven Naturals. We educated. I began hosting Facebook Lives around the subjects our customers were asking about - hormones, PCOS, menopause, fertility, weight, metabolic wellness, hair loss.</p><p>A woman would hear a conversation about hormonal symptoms and suddenly say, <em>this sounds like me</em>. Someone would share the Live with a sister, a friend, a partner or a parent. Our social media became much more than somewhere to advertise - it became a community classroom. Education created conversation. Conversation created trust. Trust created recommendations. And those recommendations built the brand.</p><p>Zyzven Naturals has never relied on paid advertising to build its customer base. Our customers became our strongest ambassadors.</p><p><strong>Hormone health, the 'baby factory' &amp; creating space for menopause.</strong> Then customers began returning with pregnancy announcements - and eventually photographs of babies. It happened often enough that our community affectionately began calling Zyzven Naturals 'the baby factory.' <em>We have never promised pregnancy. Fertility is complex, and our products are not fertility treatments.</em> But hearing from so many women who chose our products as part of their wider hormonal and fertility journey became one of the most meaningful parts of building the brand.</p><p>Those conversations eventually contributed to my book, <strong>WombWise - Womb Wisdom &amp; The Works</strong>, a culturally aware guide to menopause and women's wellness. <em>We don't only want people to buy our products. We want people to better understand their bodies.</em></p>" } },
+
+        { "type": "chapter", "settings": { "number": "08", "title": "From Medicinal Teas to Advanced Supplements", "then_label": "Where we came from", "then_caption": "Medicinal loose-leaf teas.", "now_label": "Where we went", "now_caption": "Modern supplement range.", "mini_quote": "Our teas represent where we came from. Our supplements represent where our customers asked us to go.", "body": "<p>For years, medicinal loose-leaf teas were central to Zyzven Naturals. They were close to my Jamaican botanical roots and gave us the ability to create complex blends around specific wellness needs. But customers kept asking us for something else: convenience. They loved the teas, but people were working, travelling and raising families. Not everyone could brew medicinal tea every day.</p><p>That pushed us into advanced food supplements. But we did not want simply to grind raw herbs into powder, put them in capsules and call the job finished. Our objective became practitioner-strength formulations built around concentrated and standardised botanical extracts where appropriate - particularly where concentration and consistency in specified plant constituents matter.</p><p>Today, our strongest formulation areas include hormonal wellness, metabolic health, women's wellness, menopause, men's vitality, healthy weight management and everyday wellbeing.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "09", "title": "From Our Hands to Professional Manufacturing", "image_tag": "Current ¬∑ quality & manufacturing", "image_caption": "Current products, testing / manufacturing imagery and relevant certification badges - only where actually applicable.", "mini_quote": "We may have started with cling film and a kitchen table. We never intended to stay there.", "body": "<p>There was a time when Lawrence and I physically made and packed the products ourselves. Growth meant that could not remain the model for everything. Today, most Zyzven Naturals products are professionally contract manufactured through carefully selected partners - giving us greater production capacity, consistency, documentation and quality control. Our Onion Growth Oil remains produced by us, carrying that direct connection to the handmade beginnings.</p><p>Our wider manufacturing and quality framework now includes, depending on the product and facility, standards and certifications such as GMP manufacturing, HACCP and BRCGS systems, third-party analytical testing, Vegan and Non-GMO specifications, and Halal and Kosher certification where applicable - with appropriately registered facilities for the markets being served. <em>Not every certification applies to every product, and we believe it is important to be transparent about that distinction.</em> Our products are also covered by product liability insurance across key markets.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "10", "title": "We Have Had to Build This Brand More Than Once", "mini_quote": "We had built Zyzven Naturals once through instinct. We rebuilt it with experience. And that second foundation is much stronger.", "body": "<p>I was not naturally a businessperson. I was a formulator with ideas, customers and a strong ability to connect with people. In the early years, Zyzven Naturals began gaining real momentum - including getting products onto retail shelves in Jamaica. Then life changed. Personal circumstances and moving countries meant much of what we had built could not simply continue in the same way.</p><p>Our family moved from Sweden to the United Kingdom, and in many respects Zyzven Naturals had to start again. We rebuilt the customer base. We learned new regulations and systems. We developed new manufacturing relationships. We strengthened the products. We built new fulfilment infrastructure. London became an important headquarters and international base.</p><p>Eventually, our family's journey brought us back to Sweden. This time, however, we were not returning with the same small company that had left - we returned with experience, international customers, stronger formulations, professional manufacturing relationships, better systems and a much clearer understanding of the company we wanted to build.</p>" } },
+
+        { "type": "chapter", "settings": { "number": "11", "title": "Using the Brand to Create Opportunity", "image_tag": "Archive ¬∑ Gambia", "image_caption": "Authentic images from the girls' education / school initiative - if available.", "mini_quote": "When Zyzven Naturals grows, we want that growth to create opportunity for other people too.", "body": "<p>When COVID-19 disrupted jobs and livelihoods, I watched women around us lose income. Zyzven Naturals was still growing, but I wanted the company to become useful in another way. We began allowing women to access our products at low wholesale rates, sell them within their communities and keep the profit. That early model gave some women an opportunity during a difficult period - but it also taught us important business lessons. An informal model is difficult to sustain as a company grows.</p><p>We learned that successful long-term partnerships need clear pricing, professional agreements, structure, boundaries, territory considerations and reliable wholesale and distribution systems. So the model evolved. Today, we are deliberately expanding structured opportunities for retailers, resellers, wellness professionals and distributors to carry Zyzven Naturals.</p><p><strong>Building a legacy beyond our own family.</strong> Our children have grown up alongside Zyzven Naturals, and we are building something they can eventually understand, participate in and potentially carry forward. But legacy cannot only mean our own children - a portion of Zyzven Naturals' profits supports girls' education in rural Gambia, where we are helping to fund the development of a school. Education can change what becomes possible for a girl. Entrepreneurship can change what becomes possible for a woman.</p>" } },
+
+        { "type": "spotlight", "settings": { "name": "Add her name", "meta": "St. Thomas, Jamaica ¬∑ Reseller", "flag": "üáØüá≤ Jamaica", "video_url": "https://www.facebook.com/share/r/1Dgp4W1WT8/?mibextid=wwXIfr", "watch_label": "Watch her story", "story": "<p>Replace this with her story in her own words - how she started selling Zyzven Naturals in her community and what it has meant for her family.</p>" } },
+        { "type": "spotlight", "settings": { "name": "Add another woman", "meta": "City, Country ¬∑ Reseller", "flag": "üåç", "watch_label": "Watch her story", "story": "<p>Add a short story or quote, and optionally a photo and a video link.</p>" } },
+
+        { "type": "flag", "settings": { "emoji": "üá∫üá∏", "label": "United States" } },
+        { "type": "flag", "settings": { "emoji": "üá¨üáß", "label": "United Kingdom" } },
+        { "type": "flag", "settings": { "emoji": "üá®üá¶", "label": "Canada" } },
+        { "type": "flag", "settings": { "emoji": "üá∏üá™", "label": "Sweden" } },
+        { "type": "flag", "settings": { "emoji": "üáØüá≤", "label": "Jamaica" } },
+
+        { "type": "cta", "settings": { "kicker": "For customers", "title": "Shop Our Products", "text": "Explore the Zyzven Naturals wellness collection.", "link_label": "Browse the collection" } },
+        { "type": "cta", "settings": { "kicker": "For entrepreneurs", "title": "Become a Retailer or Reseller", "text": "Carry Zyzven Naturals and grow with us in your community.", "link_label": "See the partner route" } },
+        { "type": "cta", "settings": { "kicker": "For commercial partners", "title": "Wholesale & Distribution", "text": "For established commercial partners and distributors.", "link_label": "Discuss wholesale" } },
+        { "type": "cta", "settings": { "kicker": "For aligned partners", "title": "Strategic Partnerships", "text": "Market expansion, investment interest and aligned strategic relationships - handled privately.", "link_label": "Start a conversation" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

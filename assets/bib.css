@@ -1,0 +1,946 @@
+/* ==========================================================================
+   Business in a Box — scoped styles
+   Every selector is prefixed .bib- and this file is only requested by the
+   bib-* sections, so nothing here can affect other templates.
+   Palette matched to the approved hero reference: deep forest green,
+   warm off-white ground, amber highlight.
+   ========================================================================== */
+
+.bib {
+  --bib-green: #1E4634;          /* headline, buttons */
+  --bib-green-deep: #143024;     /* hover, dark bands */
+  --bib-green-mid: #2E5C43;      /* eyebrow, links, trust row */
+  --bib-green-tint: #E8EEE4;     /* media panel, callouts */
+  --bib-green-line: #BCCCB6;     /* dashed panel border */
+  --bib-gold: #B8892B;
+  --bib-gold-tint: #FAF3E4;
+  --bib-bg: #FAFAF7;             /* warm off-white ground */
+  --bib-cream: #F5F4EE;
+  --bib-ink: #1B2420;
+  --bib-body: #454E49;
+  --bib-muted: #7A817C;
+  --bib-line: #E3E3DC;
+  --bib-white: #FFFFFF;
+
+  --bib-max: 1320px;
+  --bib-gutter: 40px;
+  --bib-radius: 12px;
+
+  --bib-head: var(--font-heading-family, 'Marcellus', Georgia, serif);
+  --bib-body-font: var(--font-body-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif);
+
+  font-family: var(--bib-body-font);
+  color: var(--bib-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bib *,
+.bib *::before,
+.bib *::after { box-sizing: border-box; }
+
+.bib__inner {
+  max-width: var(--bib-max);
+  margin: 0 auto;
+  padding: 0 var(--bib-gutter);
+}
+
+.bib__inner--narrow { max-width: 900px; }
+
+/* ---------- shared type ---------- */
+
+.bib-eyebrow {
+  margin: 0 0 22px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--bib-green-mid);
+}
+
+.bib-h2 {
+  margin: 0 0 18px;
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.14;
+  letter-spacing: -0.005em;
+  color: var(--bib-green);
+}
+
+.bib-h3 {
+  margin: 0 0 8px;
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--bib-ink);
+}
+
+.bib-lead {
+  margin: 0 0 32px;
+  max-width: 62ch;
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--bib-body);
+}
+
+.bib-p { margin: 0 0 18px; font-size: 16.5px; line-height: 1.68; max-width: 68ch; }
+.bib-p:last-child { margin-bottom: 0; }
+
+.bib-fineprint {
+  margin: 18px 0 0;
+  max-width: 78ch;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--bib-muted);
+}
+
+/* ---------- buttons ---------- */
+
+.bib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 17px 30px;
+  border: 1px solid var(--bib-green);
+  border-radius: 8px;
+  background: var(--bib-green);
+  color: #fff;
+  font-family: var(--bib-body-font);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: .005em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .22s ease, border-color .22s ease, transform .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bib-btn:hover {
+  background: var(--bib-green-deep);
+  border-color: var(--bib-green-deep);
+  color: #fff;
+}
+
+.bib-btn:active { transform: translateY(1px); }
+.bib-btn:focus-visible { outline: 2px solid var(--bib-gold); outline-offset: 3px; }
+.bib-btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.bib-btn--block { width: 100%; }
+
+.bib-btn--ghost {
+  min-height: auto;
+  padding: 4px 2px;
+  border-color: transparent;
+  background: transparent;
+  color: var(--bib-green-mid);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  transition: color .22s ease;
+}
+
+.bib-btn--ghost:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--bib-green);
+  text-decoration-thickness: 1.5px;
+}
+
+.bib-btn--ghost:active { transform: none; }
+
+/* ==========================================================================
+   1 — Hero
+   ========================================================================== */
+
+.bib-hero {
+  background: var(--bib-bg);
+  padding: 96px 0 72px;
+}
+
+.bib-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 120px;
+  align-items: start;
+}
+
+.bib-hero__h1 {
+  margin: 0 0 26px;
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: clamp(38px, 4.4vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  color: var(--bib-green);
+  max-width: 14ch;
+}
+
+.bib-hero__sub {
+  margin: 0 0 40px;
+  max-width: 46ch;
+  font-size: 18px;
+  line-height: 1.66;
+  color: var(--bib-body);
+}
+
+/* price row — large serif figure, then supporting meta */
+
+.bib-hero__pricerow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 14px;
+  margin: 0 0 34px;
+}
+
+.bib-hero__amount {
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: clamp(34px, 3vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--bib-green);
+}
+
+.bib-hero__meta {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--bib-body);
+}
+
+.bib-hero__sep {
+  color: var(--bib-line);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.bib-hero__meta strong {
+  font-weight: 600;
+  color: var(--bib-gold);
+}
+
+/* actions */
+
+.bib-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 26px;
+}
+
+/* media panel */
+
+.bib-hero__media {
+  position: relative;
+  border-radius: var(--bib-radius);
+  overflow: hidden;
+}
+
+.bib-hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--bib-radius);
+}
+
+.bib-hero__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  aspect-ratio: 5 / 4;
+  padding: 32px;
+  border: 1px dashed var(--bib-green-line);
+  border-radius: var(--bib-radius);
+  background: var(--bib-green-tint);
+  text-align: center;
+  color: var(--bib-green-mid);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.bib-hero__placeholder svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--bib-green-mid);
+  stroke-width: 1.4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* trust row — full width beneath the grid, centred */
+
+.bib-trust {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 88px 0 0;
+  padding: 40px 0 0;
+  border-top: 1px solid var(--bib-line);
+  list-style: none;
+}
+
+.bib-trust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  text-align: center;
+}
+
+.bib-trust__icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--bib-green-mid);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bib-trust__label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--bib-green-mid);
+}
+
+/* ---------- buy form ---------- */
+
+.bib-buy { margin: 0; }
+.bib-buy__form { margin: 0; }
+
+.bib-buy__terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0 0;
+  max-width: 46ch;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--bib-body);
+  cursor: pointer;
+}
+
+.bib-buy__terms input {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin: 1px 0 0;
+  accent-color: var(--bib-green);
+  cursor: pointer;
+}
+
+.bib-buy__terms a { color: var(--bib-green-mid); }
+
+.bib-buy__note {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--bib-muted);
+}
+
+.bib-buy__dynamic { margin-top: 14px; max-width: 360px; }
+
+.bib-buy__error {
+  display: none;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #FDECEC;
+  color: #9B2C2C;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.bib-buy__error.is-visible { display: block; }
+
+/* ==========================================================================
+   1b — Intro prose
+   ========================================================================== */
+
+.bib-intro { background: var(--bib-white); padding: 64px 0; }
+
+.bib-callout {
+  margin: 30px 0 30px;
+  padding: 26px 30px;
+  border: 1px solid var(--bib-green-line);
+  border-radius: var(--bib-radius);
+  background: var(--bib-green-tint);
+}
+
+.bib-callout p {
+  margin: 0;
+  max-width: 66ch;
+  font-size: 16.5px;
+  line-height: 1.62;
+  color: var(--bib-ink);
+}
+
+.bib-callout strong { font-weight: 600; }
+
+/* ==========================================================================
+   2 — Contents table
+   ========================================================================== */
+
+.bib-contents { background: var(--bib-cream); padding: 72px 0; }
+
+.bib-tablewrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--bib-line);
+  border-radius: var(--bib-radius);
+  background: var(--bib-white);
+}
+
+.bib-table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  font-size: 15.5px;
+}
+
+.bib-table caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.bib-table th,
+.bib-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--bib-line);
+  white-space: nowrap;
+}
+
+.bib-table thead th {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bib-muted);
+  background: var(--bib-white);
+}
+
+.bib-table td { color: var(--bib-ink); }
+.bib-table td:first-child { white-space: normal; min-width: 190px; }
+
+.bib-table .bib-num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.bib-table tbody tr:last-child td { border-bottom: 0; }
+
+.bib-table tfoot td {
+  border-top: 2px solid var(--bib-gold);
+  border-bottom: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--bib-ink);
+  background: var(--bib-gold-tint);
+}
+
+.bib-scrollhint {
+  display: none;
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  color: var(--bib-muted);
+}
+
+/* why this mix works */
+
+.bib-mix { margin-top: 52px; }
+
+.bib-mix > .bib-h2 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  margin-bottom: 22px;
+}
+
+.bib-mix__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bib-mix__col {
+  padding: 26px 24px;
+  border-top: 2px solid var(--bib-green);
+  background: var(--bib-white);
+  border-radius: 0 0 var(--bib-radius) var(--bib-radius);
+}
+
+.bib-mix__title {
+  margin: 0 0 14px;
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--bib-ink);
+}
+
+.bib-mix__list { margin: 0; padding: 0; list-style: none; }
+
+.bib-mix__list li {
+  padding: 7px 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--bib-body);
+  border-bottom: 1px solid var(--bib-line);
+}
+
+.bib-mix__list li:last-child { border-bottom: 0; }
+
+/* ==========================================================================
+   3 — Support cards
+   ========================================================================== */
+
+.bib-support { background: var(--bib-white); padding: 72px 0; }
+
+.bib-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bib-card {
+  display: flex;
+  gap: 18px;
+  padding: 28px 26px;
+  border: 1px solid var(--bib-line);
+  border-radius: var(--bib-radius);
+  background: var(--bib-white);
+}
+
+.bib-card__icon {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  stroke: var(--bib-green);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bib-card p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--bib-body); }
+
+/* ==========================================================================
+   3b — Steps
+   ========================================================================== */
+
+.bib-steps { background: var(--bib-cream); padding: 72px 0; }
+
+.bib-steps__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: bibstep;
+}
+
+.bib-step { position: relative; padding-top: 24px; border-top: 1px solid var(--bib-line); }
+
+.bib-step__num {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--bib-head);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--bib-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.bib-step__title { margin: 0 0 8px; font-size: 17px; font-weight: 600; line-height: 1.3; color: var(--bib-ink); }
+.bib-step p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--bib-body); }
+
+/* ==========================================================================
+   3c — Audience
+   ========================================================================== */
+
+.bib-audience { background: var(--bib-white); padding: 72px 0; }
+
+.bib-audience__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.bib-audience__item {
+  display: flex;
+  gap: 14px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--bib-line);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--bib-body);
+}
+
+.bib-audience__mark {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  stroke: var(--bib-green);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==========================================================================
+   4 — Value callout
+   ========================================================================== */
+
+.bib-value { background: var(--bib-green-deep); color: #fff; padding: 72px 0; }
+
+.bib-value .bib-eyebrow { color: #A6D3AE; }
+.bib-value .bib-h2 { color: #fff; }
+
+.bib-value__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+}
+
+.bib-value__item {
+  padding: 30px 30px 30px 0;
+  border-right: 1px solid rgba(255, 255, 255, .22);
+}
+
+.bib-value__item:last-child { border-right: 0; }
+.bib-value__grid .bib-value__item + .bib-value__item { padding-left: 30px; }
+
+.bib-value__label {
+  margin: 0 0 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .72);
+}
+
+.bib-value__figure {
+  display: block;
+  margin: 0 0 12px;
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: clamp(34px, 4.4vw, 50px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.bib-value__item--profit .bib-value__figure { color: #E8C275; }
+
+.bib-value__figure small { display: block; font-size: 15px; letter-spacing: 0; margin-bottom: 6px; color: rgba(255,255,255,.8); font-family: var(--bib-body-font); }
+
+.bib-value__note { margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255, 255, 255, .78); }
+
+.bib-value .bib-fineprint { color: rgba(255, 255, 255, .62); }
+
+/* ==========================================================================
+   5 — FAQ
+   ========================================================================== */
+
+.bib-faq { background: var(--bib-white); padding: 72px 0; }
+
+.bib-faq__list { border-top: 1px solid var(--bib-line); }
+
+.bib-faq__item { border-bottom: 1px solid var(--bib-line); }
+
+.bib-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 0;
+  border: 0;
+  background: none;
+  font-family: var(--bib-body-font);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--bib-ink);
+  cursor: pointer;
+}
+
+.bib-faq__q:hover { color: var(--bib-green); }
+.bib-faq__q:focus-visible { outline: 2px solid var(--bib-green); outline-offset: 2px; }
+
+.bib-faq__sign {
+  position: relative;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+.bib-faq__sign::before,
+.bib-faq__sign::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--bib-green);
+  transform: translate(-50%, -50%);
+  transition: transform .22s ease, opacity .22s ease;
+}
+
+.bib-faq__sign::before { width: 16px; height: 1.5px; }
+.bib-faq__sign::after { width: 1.5px; height: 16px; }
+
+.bib-faq__q[aria-expanded='true'] .bib-faq__sign::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+
+.bib-faq__a {
+  overflow: hidden;
+  height: 0;
+  transition: height .28s ease;
+}
+
+.bib-faq__a-inner { padding: 0 0 24px; max-width: 74ch; }
+
+.bib-faq__a p { margin: 0; font-size: 16px; line-height: 1.65; color: var(--bib-body); }
+
+/* ==========================================================================
+   6 — Final conversion block
+   ========================================================================== */
+
+.bib-final { background: var(--bib-cream); padding: 80px 0; text-align: center; }
+
+.bib-final .bib-h2 { margin-left: auto; margin-right: auto; max-width: 18ch; }
+
+.bib-final__sub {
+  margin: 0 auto 32px;
+  max-width: 56ch;
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: var(--bib-body);
+}
+
+/* ==========================================================================
+   Sticky mobile CTA
+   ========================================================================== */
+
+.bib-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: none;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, .97);
+  border-top: 1px solid var(--bib-line);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, .08);
+  transform: translateY(105%);
+  transition: transform .28s ease;
+}
+
+.bib-sticky.is-visible { transform: translateY(0); }
+
+@media (max-width: 749px) {
+  .bib-sticky { display: block; }
+}
+
+/* ==========================================================================
+   Homepage promotional block
+
+   Mobile first. The media column only exists when an image is set, so the
+   text never has to share the row with an empty track.
+   ========================================================================== */
+
+.bib-promo {
+  background: var(--bib-promo-bg, var(--bib-cream));
+  padding: 48px 0;
+}
+
+.bib-promo__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.bib-promo__content { min-width: 0; }
+
+.bib-promo__h2 {
+  margin: 0 0 16px;
+  font-family: var(--bib-head);
+  font-weight: 400;
+  font-size: clamp(27px, 7.4vw, 42px);
+  line-height: 1.14;
+  letter-spacing: 0.005em;
+  color: var(--bib-green);
+  max-width: 17ch;
+  text-wrap: balance;
+}
+
+.bib-promo__body {
+  margin: 0 0 20px;
+  max-width: 48ch;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--bib-body);
+}
+
+.bib-promo__price {
+  margin: 0 0 26px;
+  padding-left: 14px;
+  border-left: 3px solid var(--bib-gold);
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--bib-ink);
+  max-width: 34ch;
+  text-wrap: balance;
+}
+
+.bib-promo__cta {
+  width: 100%;
+  max-width: 420px;
+  text-transform: none;
+}
+
+.bib-promo__media {
+  order: -1;
+  border-radius: var(--bib-radius);
+  overflow: hidden;
+}
+
+.bib-promo__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--bib-radius);
+}
+
+@media (min-width: 600px) {
+  .bib-promo { padding: 56px 0; }
+  .bib-promo__cta { width: auto; }
+}
+
+@media (min-width: 990px) {
+  .bib-promo { padding: 64px 0; }
+
+  .bib-promo__grid--with-media {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  .bib-promo__grid--with-media .bib-promo__media { order: 0; }
+
+  .bib-promo__h2 { font-size: clamp(30px, 3.2vw, 42px); }
+  .bib-promo__body { font-size: 16.5px; }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .bib-hero__grid { gap: 72px; }
+}
+
+@media (max-width: 989px) {
+  .bib { --bib-gutter: 28px; }
+  .bib-hero { padding: 64px 0 56px; }
+  .bib-hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .bib-hero__h1 { max-width: 18ch; }
+  .bib-trust { margin-top: 56px; padding-top: 32px; }
+  .bib-value__grid { grid-template-columns: 1fr; border-top: 0; }
+  .bib-value__item,
+  .bib-value__grid .bib-value__item + .bib-value__item {
+    padding: 26px 0;
+    border-right: 0;
+    border-top: 1px solid rgba(255, 255, 255, .22);
+  }
+  .bib-steps__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bib-audience__list { grid-template-columns: 1fr; gap: 0; }
+  .bib-audience__item { padding: 20px 0; border-top: 1px solid var(--bib-line); }
+}
+
+@media (max-width: 749px) {
+  .bib__inner { padding: 0 18px; }
+
+  .bib { --bib-gutter: 20px; }
+
+  .bib-hero { padding: 32px 0 44px; }
+  .bib-hero__h1 { font-size: clamp(32px, 8.8vw, 44px); margin-bottom: 18px; max-width: none; }
+  .bib-hero__sub { font-size: 16.5px; line-height: 1.6; margin-bottom: 24px; }
+
+  .bib-hero__pricerow { gap: 0 10px; margin-bottom: 24px; }
+  .bib-hero__amount { font-size: 34px; }
+  .bib-hero__meta, .bib-hero__sep { font-size: 14.5px; }
+
+  /* Price + CTA above the fold on mobile: media follows the buy block */
+  .bib-hero__grid { display: flex; flex-direction: column; }
+  .bib-hero__media-col { order: 2; }
+  .bib-hero__copy-col { order: 1; }
+
+  .bib-hero__actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .bib-hero__actions .bib-btn { width: 100%; }
+  .bib-hero__actions .bib-btn--ghost { min-height: 44px; }
+
+  .bib-trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+    margin-top: 44px;
+    padding-top: 32px;
+  }
+
+  .bib-intro,
+  .bib-contents,
+  .bib-support,
+  .bib-steps,
+  .bib-audience,
+  .bib-value,
+  .bib-faq { padding: 52px 0; }
+
+  .bib-final { padding: 56px 0 74px; }
+
+  .bib-cards { grid-template-columns: 1fr; }
+  .bib-steps__list { grid-template-columns: 1fr; gap: 22px; }
+  .bib-mix__grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .bib-scrollhint { display: block; }
+  .bib-table { min-width: 520px; font-size: 15px; }
+  .bib-table th, .bib-table td { padding: 13px 16px; }
+
+  .bib-callout { padding: 22px 20px; }
+  .bib-faq__q { font-size: 16px; padding: 19px 0; }
+
+  /* room for the sticky bar */
+  .bib-page-end { height: 76px; }
+}
+
+@media (max-width: 400px) {
+  .bib { --bib-gutter: 16px; }
+ /* .bib-trust { grid-template-columns: 1fr; gap: 22px; } */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bib *,
+  .bib-sticky,
+  .bib-faq__a { transition: none !important; }
+}

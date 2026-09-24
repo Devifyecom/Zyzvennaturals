@@ -1,0 +1,687 @@
+{%- liquid
+  assign sec = section.id | replace: '_', '' | replace: '-', ''
+  assign accent = section.settings.accent_color
+  assign band = section.settings.band_color
+  assign heading_color = section.settings.heading_color
+  assign body_color = section.settings.body_color
+-%}
+
+<style>
+  #IngredientRing-{{ section.id }} {
+    --ir-accent: {{ accent }};
+    --ir-accent-dark: {{ accent | color_darken: 8 }};
+    --ir-accent-soft: {{ accent | color_modify: 'alpha', 0.35 }};
+    --ir-band: {{ band }};
+    --ir-heading: {{ heading_color }};
+    --ir-body: {{ body_color }};
+    --ir-card-w: {{ section.settings.card_width }}px;
+    --ir-card-h: {{ section.settings.card_height }}px;
+    --ir-radius: 18px;
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  #IngredientRing-{{ section.id }} * { box-sizing: border-box; }
+
+  .ir__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Header ---------- */
+  .ir__eyebrow {
+    margin: 0 0 14px;
+    text-align: center;
+    color: var(--ir-accent);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .ir__heading {
+    margin: 0 auto;
+    max-width: 20ch;
+    text-align: center;
+    color: var(--ir-heading);
+    font-size: clamp(30px, 5.2vw, 52px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .ir__subheading {
+    margin: 14px auto 0;
+    text-align: center;
+    color: var(--ir-body);
+    font-size: clamp(15px, 1.4vw, 17px);
+    line-height: 1.5;
+  }
+
+  /* ---------- Stage ---------- */
+  .ir__stage {
+    position: relative;
+    margin-top: clamp(32px, 5vw, 56px);
+  }
+
+  .ir__viewport {
+    position: relative;
+    height: var(--ir-card-h);
+    perspective: 1600px;
+    perspective-origin: 50% 50%;
+  }
+
+  .ir__track {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+  }
+
+  .ir__card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--ir-card-w);
+    height: var(--ir-card-h);
+    margin-left: calc(var(--ir-card-w) / -2);
+    background: #fff;
+    border-radius: var(--ir-radius);
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(17, 17, 17, .13);
+    transform-origin: 50% 50%;
+    transition: transform .55s cubic-bezier(.22,.61,.36,1),
+                opacity .45s ease,
+                filter .45s ease;
+    will-change: transform, opacity;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ir__card:focus-visible {
+    outline: 3px solid var(--ir-accent);
+    outline-offset: 4px;
+  }
+
+  .ir__card[data-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ir__media {
+    position: relative;
+    flex: 0 0 auto;
+    height: 44%;
+    background: var(--ir-band);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ir__media-inner {
+    width: 82%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .ir__media img,
+  .ir__media svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .ir__body {
+    flex: 1 1 auto;
+    padding: 0px 10px 10px;
+  }
+
+  .ir__label {
+    margin: 0 0 10px;
+    color: var(--ir-accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .ir__title {
+    margin: 0 0 12px;
+    color: var(--ir-heading);
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .ir__text {
+    margin: 0;
+    color: var(--ir-body);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* Non-active cards read smaller/quieter, like the screenshot */
+  .ir__card[data-pos="0"] .ir__title { font-size: 22px; }
+  .ir__card[data-pos="0"] .ir__text { font-size: 14px; }
+
+  /* ---------- Arrows ---------- */
+  .ir__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 6;
+    width: 58px;
+    height: 58px;
+    margin-top: -29px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--ir-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 6px rgba(255,255,255,.9), 0 10px 26px var(--ir-accent-soft);
+    transition: background .2s ease, transform .2s ease;
+  }
+
+  .ir__arrow:hover { background: var(--ir-accent-dark); }
+  .ir__arrow:active { transform: scale(.94); }
+  .ir__arrow:focus-visible { outline: 3px solid var(--ir-heading); outline-offset: 3px; }
+  .ir__arrow svg { width: 16px; height: 16px; }
+  .ir__arrow--prev { left: max(8px, calc(50% - var(--ir-card-w) * 1.55)); }
+  .ir__arrow--next { right: max(8px, calc(50% - var(--ir-card-w) * 1.55)); }
+
+  /* ---------- Dots ---------- */
+  .ir__dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .ir__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: {{ accent | color_modify: 'alpha', 0.28 }};
+    cursor: pointer;
+    transition: width .25s ease, background .25s ease;
+  }
+
+  .ir__dot[aria-current="true"] {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--ir-accent);
+  }
+
+  /* ---------- CTA ---------- */
+  .ir__cta-wrap { text-align: center; margin-top: clamp(34px, 4vw, 48px); }
+
+  .ir__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 44px;
+    border-radius: 999px;
+    background: var(--ir-accent);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 10px 30px var(--ir-accent-soft);
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+
+  .ir__cta:hover {
+    background: var(--ir-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px var(--ir-accent-soft);
+  }
+
+  .ir__cta:focus-visible { outline: 3px solid var(--ir-heading); outline-offset: 3px; }
+
+  /* ---------- Mobile: snap-scroll with peeking card ---------- */
+  @media screen and (max-width: 749px) {
+    #IngredientRing-{{ section.id }} {
+      --ir-card-h: {{ section.settings.card_height_mobile }}px;
+    }
+
+    .ir__inner { padding: 0; }
+    .ir__eyebrow, .ir__heading, .ir__subheading { padding-inline: 20px; }
+    .ir__heading { max-width: none; }
+
+    .ir__viewport {
+      height: auto;
+      perspective: none;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 6px 0 18px;
+    }
+
+    .ir__viewport::-webkit-scrollbar { display: none; }
+
+    .ir__track {
+      position: relative;
+      inset: auto;
+      display: flex;
+      gap: 16px;
+      padding-inline: 24px;
+      width: max-content;
+      transform: none !important;
+    }
+
+    .ir__card {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-left: 0;
+      flex: 0 0 auto;
+      width: min(78vw, 340px);
+      height: var(--ir-card-h);
+      transform: none !important;
+      opacity: 1 !important;
+      filter: none !important;
+      scroll-snap-align: center;
+      box-shadow: 0 12px 28px rgba(17,17,17,.12);
+    }
+
+    .ir__card[data-hidden="true"] { opacity: 1 !important; pointer-events: auto; }
+    .ir__card .ir__title { font-size: 21px; }
+    .ir__card .ir__text { font-size: 15px; }
+
+    .ir__arrow {
+      width: 46px;
+      height: 46px;
+      margin-top: 0;
+      top: 40%;
+    }
+
+    .ir__arrow--prev { left: 10px; }
+    .ir__arrow--next { right: 10px; }
+
+    .ir__cta { width: calc(100% - 48px); justify-content: center; padding: 20px 24px; font-size: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ir__card, .ir__cta, .ir__arrow { transition: none !important; }
+  }
+</style>
+
+<section
+  id="IngredientRing-{{ section.id }}"
+  class="ir"
+  data-ir-section
+  aria-roledescription="carousel"
+  aria-label="{{ section.settings.heading | escape }}"
+>
+  <div class="ir__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="ir__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ir__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="ir__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ir__stage">
+        <div class="ir__viewport" data-ir-viewport>
+          <div class="ir__track" data-ir-track>
+            {%- for block in section.blocks -%}
+              <article
+                class="ir__card"
+                data-ir-card
+                data-index="{{ forloop.index0 }}"
+                tabindex="0"
+                role="group"
+                aria-label="{{ forloop.index }} of {{ section.blocks.size }}"
+                {{ block.shopify_attributes }}
+              >
+                <div class="ir__media">
+                  <div class="ir__media-inner">
+                    {%- if block.settings.image != blank -%}
+                      <img
+                        src="{{ block.settings.image | image_url: width: 700 }}"
+                        srcset="{{ block.settings.image | image_url: width: 350 }} 350w,
+                                {{ block.settings.image | image_url: width: 700 }} 700w"
+                        sizes="(max-width: 749px) 78vw, {{ section.settings.card_width }}px"
+                        alt="{{ block.settings.image.alt | default: block.settings.title | escape }}"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      {{ 'product-apparel-1' | placeholder_svg_tag: 'ir__placeholder' }}
+                    {%- endif -%}
+                  </div>
+                </div>
+
+                <div class="ir__body">
+                  {%- if block.settings.label != blank -%}
+                    <p class="ir__label">{{ block.settings.label }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="ir__title">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <p class="ir__text">{{ block.settings.text }}</p>
+                  {%- endif -%}
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <button class="ir__arrow ir__arrow--prev" type="button" data-ir-prev aria-label="Previous ingredient">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="ir__arrow ir__arrow--next" type="button" data-ir-next aria-label="Next ingredient">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        {%- if section.settings.show_dots -%}
+          <div class="ir__dots" data-ir-dots role="tablist" aria-label="Choose an ingredient">
+            {%- for block in section.blocks -%}
+              <button
+                class="ir__dot"
+                type="button"
+                role="tab"
+                data-ir-dot
+                data-index="{{ forloop.index0 }}"
+                aria-label="{{ block.settings.title | default: forloop.index | escape }}"
+                aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+              ></button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="ir__cta-wrap">
+        <a class="ir__cta" href="{{ section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label }}
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('IngredientRing-{{ section.id }}');
+    if (!root || root.dataset.irReady === 'true') return;
+    root.dataset.irReady = 'true';
+
+    var viewport = root.querySelector('[data-ir-viewport]');
+    var track = root.querySelector('[data-ir-track]');
+    var cards = Array.prototype.slice.call(root.querySelectorAll('[data-ir-card]'));
+    var dots = Array.prototype.slice.call(root.querySelectorAll('[data-ir-dot]'));
+    var prevBtn = root.querySelector('[data-ir-prev]');
+    var nextBtn = root.querySelector('[data-ir-next]');
+    if (!cards.length) return;
+
+    var total = cards.length;
+    var active = 0;
+    var visible = {{ section.settings.visible_sides }};
+    var spread = {{ section.settings.spread }} / 100;
+    var rotation = {{ section.settings.rotation }};
+    var depth = {{ section.settings.depth }};
+    var mq = window.matchMedia('(min-width: 750px)');
+    var autoplayMs = {{ section.settings.autoplay_speed | times: 1000 }};
+    var timer = null;
+
+    function isDesktop() { return mq.matches; }
+
+    function offsetFor(i) {
+      var d = i - active;
+      if (d > total / 2) d -= total;
+      if (d < -total / 2) d += total;
+      return d;
+    }
+
+    function render() {
+      cards.forEach(function (card, i) {
+        var d = offsetFor(i);
+        var abs = Math.abs(d);
+
+        if (!isDesktop()) {
+          card.removeAttribute('data-hidden');
+          card.setAttribute('data-pos', d === 0 ? '0' : String(d));
+          card.setAttribute('aria-hidden', 'false');
+          return;
+        }
+
+        if (abs > visible) {
+          card.setAttribute('data-hidden', 'true');
+          card.setAttribute('aria-hidden', 'true');
+          card.style.transform = 'translate3d(' + (d * 60) + '%, 0, -700px)';
+          card.style.zIndex = 0;
+          return;
+        }
+
+        card.removeAttribute('data-hidden');
+        card.setAttribute('aria-hidden', 'false');
+        card.setAttribute('data-pos', String(d));
+
+        var x = d * spread * 100;
+        var z = -abs * depth;
+        var ry = -d * rotation;
+        var scale = 1 - abs * 0.06;
+
+        card.style.transform =
+          'translate3d(' + x + '%, 0, ' + z + 'px) rotateY(' + ry + 'deg) scale(' + scale + ')';
+        card.style.opacity = abs === 0 ? 1 : Math.max(0.35, 1 - abs * 0.32);
+        card.style.filter = abs === 0 ? 'none' : 'saturate(.9)';
+        card.style.zIndex = String(100 - abs);
+      });
+
+      dots.forEach(function (dot, i) {
+        dot.setAttribute('aria-current', i === active ? 'true' : 'false');
+      });
+    }
+
+    function goTo(index, fromScroll) {
+      active = ((index % total) + total) % total;
+      render();
+      if (!isDesktop() && !fromScroll) {
+        var target = cards[active];
+        viewport.scrollTo({
+          left: target.offsetLeft - (viewport.clientWidth - target.offsetWidth) / 2,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function next() { goTo(active + 1); }
+    function prev() { goTo(active - 1); }
+
+    nextBtn && nextBtn.addEventListener('click', function () { stopAuto(); next(); });
+    prevBtn && prevBtn.addEventListener('click', function () { stopAuto(); prev(); });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        stopAuto();
+        goTo(parseInt(dot.dataset.index, 10));
+      });
+    });
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        stopAuto();
+        goTo(parseInt(card.dataset.index, 10));
+      });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          stopAuto();
+          goTo(parseInt(card.dataset.index, 10));
+        }
+      });
+    });
+
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { stopAuto(); next(); }
+      if (e.key === 'ArrowLeft') { stopAuto(); prev(); }
+    });
+
+    /* Drag / swipe on desktop */
+    var startX = null;
+    var dragging = false;
+
+    viewport.addEventListener('pointerdown', function (e) {
+      if (!isDesktop()) return;
+      dragging = true;
+      startX = e.clientX;
+    });
+
+    window.addEventListener('pointerup', function (e) {
+      if (!dragging || startX === null) return;
+      var delta = e.clientX - startX;
+      dragging = false;
+      startX = null;
+      if (Math.abs(delta) > 45) {
+        stopAuto();
+        delta < 0 ? next() : prev();
+      }
+    });
+
+    /* Keep the active index in sync while scrolling on mobile */
+    var scrollTimer = null;
+    viewport.addEventListener('scroll', function () {
+      if (isDesktop()) return;
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(function () {
+        var center = viewport.scrollLeft + viewport.clientWidth / 2;
+        var closest = 0;
+        var best = Infinity;
+        cards.forEach(function (card, i) {
+          var mid = card.offsetLeft + card.offsetWidth / 2;
+          var dist = Math.abs(mid - center);
+          if (dist < best) { best = dist; closest = i; }
+        });
+        goTo(closest, true);
+      }, 90);
+    }, { passive: true });
+
+    function startAuto() {
+      if (!autoplayMs) return;
+      stopAuto();
+      timer = window.setInterval(next, autoplayMs);
+    }
+
+    function stopAuto() {
+      if (timer) { window.clearInterval(timer); timer = null; }
+    }
+
+    root.addEventListener('mouseenter', stopAuto);
+    root.addEventListener('focusin', stopAuto);
+
+    (mq.addEventListener ? mq.addEventListener('change', render) : mq.addListener(render));
+    window.addEventListener('resize', render);
+
+    render();
+    startAuto();
+
+    document.addEventListener('shopify:section:unload', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') stopAuto();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Ingredient carousel",
+  "tag": "section",
+  "class": "section-ingredient-ring",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's inside" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "9 ingredients. One balancing ritual." },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Swipe or tap a card to spin the ring." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Bring my balance back" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+
+    { "type": "header", "content": "Carousel" },
+    { "type": "checkbox", "id": "show_dots", "label": "Show dots", "default": false },
+    { "type": "range", "id": "visible_sides", "min": 1, "max": 4, "step": 1, "label": "Cards visible on each side", "default": 2 },
+    { "type": "range", "id": "spread", "min": 40, "max": 110, "step": 5, "label": "Card spacing", "default": 70, "unit": "%" },
+    { "type": "range", "id": "rotation", "min": 0, "max": 60, "step": 5, "label": "3D rotation", "default": 35, "unit": "¬∞" },
+    { "type": "range", "id": "depth", "min": 0, "max": 300, "step": 10, "label": "3D depth", "default": 140 },
+    { "type": "range", "id": "autoplay_speed", "min": 0, "max": 10, "step": 1, "label": "Auto-rotate every (0 = off)", "default": 0, "unit": "s" },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "max_width", "min": 900, "max": 1600, "step": 20, "label": "Max width", "default": 1240, "unit": "px" },
+    { "type": "range", "id": "card_width", "min": 240, "max": 420, "step": 10, "label": "Card width", "default": 340, "unit": "px" },
+    { "type": "range", "id": "card_height", "min": 380, "max": 620, "step": 10, "label": "Card height (desktop)", "default": 500, "unit": "px" },
+    { "type": "range", "id": "card_height_mobile", "min": 380, "max": 700, "step": 10, "label": "Card height (mobile)", "default": 560, "unit": "px" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 140, "step": 4, "label": "Padding top", "default": 72, "unit": "px" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 140, "step": 4, "label": "Padding bottom", "default": 72, "unit": "px" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#E8117F" },
+    { "type": "color", "id": "band_color", "label": "Card side bands", "default": "#FBE3EE" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#161616" },
+    { "type": "color", "id": "body_color", "label": "Body text", "default": "#6B6B6B" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#FFFFFF" }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Use a transparent or white-background PNG." },
+        { "type": "text", "id": "label", "label": "Category", "default": "Cycle & hormone support" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Spearmint ¬∑ Red Raspberry Leaf" },
+        { "type": "textarea", "id": "text", "label": "Description", "default": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient carousel",
+      "blocks": [
+        { "type": "ingredient", "settings": { "label": "Balance & comfort", "title": "Licorice Root", "text": "A traditional women's herb that rounds out the blend and supports you through hormonal shifts." } },
+        { "type": "ingredient", "settings": { "label": "Cycle & hormone support", "title": "Spearmint ¬∑ Red Raspberry Leaf", "text": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle." } },
+        { "type": "ingredient", "settings": { "label": "Calm & mood", "title": "Chamomile ¬∑ Lemon Verbena", "text": "Quiet irritability and that wired PMS feeling for a calm, grounded mindset." } },
+        { "type": "ingredient", "settings": { "label": "Steady energy", "title": "Nettle Leaf", "text": "Mineral-rich support for the weeks when your energy dips before your period." } },
+        { "type": "ingredient", "settings": { "label": "Cramp relief", "title": "Ginger Root", "text": "Warming support for cramps and a settled stomach on the heaviest days." } },
+        { "type": "ingredient", "settings": { "label": "Stress & adrenals", "title": "Ashwagandha", "text": "An adaptogen that helps your body handle stress, the thing that throws cycles off most." } },
+        { "type": "ingredient", "settings": { "label": "Bloat & digestion", "title": "Fennel Seed", "text": "Eases bloating and keeps digestion comfortable through the luteal phase." } },
+        { "type": "ingredient", "settings": { "label": "Skin clarity", "title": "Dandelion Root", "text": "Supports the liver as it clears excess hormones, which shows up in your skin." } },
+        { "type": "ingredient", "settings": { "label": "Restful sleep", "title": "Rose Petal", "text": "A soft, floral finish that helps you wind down at the end of the day." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

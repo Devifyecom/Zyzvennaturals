@@ -1,0 +1,382 @@
+
+{%- liquid
+  assign s = section.settings
+
+  comment
+    Bar split is derived from the RRP and box price figures so it can never drift
+    out of sync with the numbers. The "margin override" setting wins if set above 0.
+  endcomment
+  assign rrp_num = s.rrp | remove: '$' | remove: ',' | strip | plus: 0.0
+  assign price_num = s.price | remove: '$' | remove: ',' | strip | plus: 0.0
+
+  if s.margin_override > 0
+    assign profit_pct = s.margin_override | times: 1.0
+  elsif rrp_num > 0
+    assign profit_pct = rrp_num | minus: price_num | divided_by: rrp_num | times: 100 | round: 1
+  else
+    assign profit_pct = 50
+  endif
+  if profit_pct < 0
+    assign profit_pct = 0
+  endif
+  if profit_pct > 100
+    assign profit_pct = 100
+  endif
+  assign cost_pct = 100 | minus: profit_pct
+-%}
+
+<style>
+  #znb-numbers-{{ section.id }} {
+    --n-ink: #1f3a30;
+    --n-ink-card: #20352e;
+    --n-body: #4a4a42;
+    --n-muted: #6e6c62;
+    --n-soft: #7c7a70;
+    --n-gold: #8e6b2e;
+    --n-gold-bar: #c0934d;
+    --n-gold-light: #d8b36c;
+    --n-cream: #f3ede1;
+    --n-card-note: #a7b0a7;
+    --n-rule: #e4e2db;
+    --n-track: #c3c5b9;
+    --n-serif: var(--znb-font-serif, var(--font-heading-family, "Fraunces", "Georgia", serif));
+    --n-sans: var(--znb-font-sans, var(--font-body-family, "Mulish", "Helvetica Neue", Arial, sans-serif));
+
+    background: #fff;
+    color: var(--n-body);
+    font-family: var(--n-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__wrap {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 40px 0 56px;
+    box-sizing: content-box;
+    padding-inline: 24px;
+  }
+
+  /* ---------- Head ---------- */
+  #znb-numbers-{{ section.id }} .znb-n__kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 24px;
+    font-family: var(--n-sans);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--n-gold);
+  }
+  #znb-numbers-{{ section.id }} .znb-n__kicker::before {
+    content: "";
+    flex: 0 0 28px;
+    height: 1px;
+    background: var(--n-gold);
+    opacity: 0.7;
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__h2 {
+    max-width: 560px;
+    margin: 0;
+    font-family: var(--n-serif);
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: -0.012em;
+    color: var(--n-ink);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__lede {
+    max-width: 640px;
+    margin: 26px 0 0;
+    font-size: 18.5px;
+    font-weight: 400;
+    line-height: 1.64;
+    letter-spacing: 0.018em;
+    color: var(--n-body);
+  }
+
+  /* ---------- Equation ---------- */
+  #znb-numbers-{{ section.id }} .znb-n__sum {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr) 56px minmax(0, 1.15fr);
+    align-items: stretch;
+    margin-top: 54px;
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__term {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 235px;
+    padding: 32px 26px 34px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--n-rule);
+    border-radius: 3px;
+  }
+  #znb-numbers-{{ section.id }} .znb-n__term--result {
+    background: var(--n-ink-card);
+    border-color: var(--n-ink-card);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--n-ink);
+  }
+  #znb-numbers-{{ section.id }} .znb-n__term--result .znb-n__label {
+    color: var(--n-gold-light);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__prefix {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--n-gold-light);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__figure {
+    display: block;
+    margin-top: 14px;
+    font-family: var(--n-serif);
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    font-variant-numeric: lining-nums;
+    white-space: nowrap;
+    color: var(--n-ink);
+  }
+  #znb-numbers-{{ section.id }} .znb-n__prefix + .znb-n__figure {
+    margin-top: 2px;
+  }
+  #znb-numbers-{{ section.id }} .znb-n__term--result .znb-n__figure {
+    color: var(--n-cream);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__note {
+    display: block;
+    max-width: 290px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    color: var(--n-muted);
+  }
+  #znb-numbers-{{ section.id }} .znb-n__term--result .znb-n__note {
+    max-width: 300px;
+    color: var(--n-card-note);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__op {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--n-sans);
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--n-gold);
+    user-select: none;
+  }
+
+  /* ---------- Split bar ---------- */
+  #znb-numbers-{{ section.id }} .znb-n__split {
+    margin-top: 40px;
+  }
+  #znb-numbers-{{ section.id }} .znb-n__bar {
+    display: flex;
+    height: 14px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: var(--n-track);
+  }
+  #znb-numbers-{{ section.id }} .znb-n__bar-cost { background: var(--n-track); }
+  #znb-numbers-{{ section.id }} .znb-n__bar-profit { background: var(--n-gold-bar); }
+
+  #znb-numbers-{{ section.id }} .znb-n__legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    color: var(--n-body);
+  }
+  #znb-numbers-{{ section.id }} .znb-n__legend strong {
+    font-weight: 700;
+    color: var(--n-ink);
+    text-align: right;
+  }
+
+  /* ---------- Ratios + disclaimer ---------- */
+  #znb-numbers-{{ section.id }} .znb-n__ratios {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 8px;
+    margin-top: 38px;
+  }
+  #znb-numbers-{{ section.id }} .znb-n__ratios p {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    color: var(--n-body);
+  }
+
+  #znb-numbers-{{ section.id }} .znb-n__disclaimer {
+    max-width: 756px;
+    margin: 30px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--n-rule);
+    font-size: 13px;
+    line-height: 1.72;
+    letter-spacing: 0.03em;
+    color: var(--n-soft);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    #znb-numbers-{{ section.id }} .znb-n__figure { font-size: clamp(40px, 5.2vw, 62px); }
+    #znb-numbers-{{ section.id }} .znb-n__sum {
+      grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1.15fr);
+    }
+    #znb-numbers-{{ section.id }} .znb-n__term { padding: 28px 22px 30px; }
+  }
+
+  @media (max-width: 860px) {
+    #znb-numbers-{{ section.id }} .znb-n__h2 { font-size: clamp(40px, 7vw, 58px); }
+    #znb-numbers-{{ section.id }} .znb-n__sum {
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+    #znb-numbers-{{ section.id }} .znb-n__term { min-height: 0; }
+    #znb-numbers-{{ section.id }} .znb-n__figure { font-size: 54px; }
+    #znb-numbers-{{ section.id }} .znb-n__note,
+    #znb-numbers-{{ section.id }} .znb-n__term--result .znb-n__note { max-width: none; }
+    #znb-numbers-{{ section.id }} .znb-n__op {
+      height: 44px;
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    #znb-numbers-{{ section.id }} .znb-n__wrap { padding: 32px 20px 44px; }
+    #znb-numbers-{{ section.id }} .znb-n__kicker { margin-bottom: 18px; font-size: 13px; }
+    #znb-numbers-{{ section.id }} .znb-n__h2 { font-size: 40px; line-height: 1; }
+    #znb-numbers-{{ section.id }} .znb-n__lede { margin-top: 20px; font-size: 16.5px; line-height: 1.62; }
+    #znb-numbers-{{ section.id }} .znb-n__term { padding: 24px 20px 26px; }
+    #znb-numbers-{{ section.id }} .znb-n__figure { font-size: 46px; }
+    #znb-numbers-{{ section.id }} .znb-n__note { font-size: 13.5px; line-height: 1.85; }
+    #znb-numbers-{{ section.id }} .znb-n__split { margin-top: 32px; }
+    #znb-numbers-{{ section.id }} .znb-n__bar { height: 10px; }
+    #znb-numbers-{{ section.id }} .znb-n__legend { font-size: 13px; }
+    #znb-numbers-{{ section.id }} .znb-n__ratios { flex-direction: column; margin-top: 28px; }
+    #znb-numbers-{{ section.id }} .znb-n__ratios p { font-size: 14.5px; }
+    #znb-numbers-{{ section.id }} .znb-n__disclaimer { margin-top: 24px; padding-top: 18px; font-size: 12.5px; }
+  }
+</style>
+
+<section class="znb znb-numbers" id="znb-numbers-{{ section.id }}">
+  <div class="znb-n__wrap">
+    {%- if s.kicker != blank -%}<p class="znb-n__kicker">{{ s.kicker }}</p>{%- endif -%}
+    <h2 class="znb-n__h2">{{ s.heading }}</h2>
+    {%- if s.lede != blank -%}<p class="znb-n__lede">{{ s.lede }}</p>{%- endif -%}
+
+    <div class="znb-n__sum" role="group" aria-label="{{ s.rrp_label | escape }} minus {{ s.price_label | escape }} equals {{ s.profit_label | escape }}">
+      <div class="znb-n__term">
+        <span class="znb-n__label">{{ s.rrp_label }}</span>
+        <span class="znb-n__figure">{{ s.rrp }}</span>
+        {%- if s.rrp_note != blank -%}<span class="znb-n__note">{{ s.rrp_note }}</span>{%- endif -%}
+      </div>
+
+      <div class="znb-n__op" aria-hidden="true">&minus;</div>
+
+      <div class="znb-n__term">
+        <span class="znb-n__label">{{ s.price_label }}</span>
+        <span class="znb-n__figure">{{ s.price }}</span>
+        {%- if s.price_note != blank -%}<span class="znb-n__note">{{ s.price_note }}</span>{%- endif -%}
+      </div>
+
+      <div class="znb-n__op" aria-hidden="true">=</div>
+
+      <div class="znb-n__term znb-n__term--result">
+        <span class="znb-n__label">{{ s.profit_label }}</span>
+        {%- if s.profit_prefix != blank -%}<span class="znb-n__prefix">{{ s.profit_prefix }}</span>{%- endif -%}
+        <span class="znb-n__figure">{{ s.profit }}</span>
+        {%- if s.profit_note != blank -%}<span class="znb-n__note">{{ s.profit_note }}</span>{%- endif -%}
+      </div>
+    </div>
+
+    <div class="znb-n__split">
+      <div class="znb-n__bar" aria-hidden="true">
+        <span class="znb-n__bar-cost" style="width: {{ cost_pct }}%"></span>
+        <span class="znb-n__bar-profit" style="width: {{ profit_pct }}%"></span>
+      </div>
+      <div class="znb-n__legend">
+        <span>{{ s.bar_left }}</span>
+        <strong>{{ s.bar_right }}</strong>
+      </div>
+    </div>
+
+    {%- if s.ratio_1 != blank or s.ratio_2 != blank -%}
+      <div class="znb-n__ratios">
+        {%- if s.ratio_1 != blank -%}<p>{{ s.ratio_1 }}</p>{%- endif -%}
+        {%- if s.ratio_2 != blank -%}<p>{{ s.ratio_2 }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if s.disclaimer != blank -%}
+      <p class="znb-n__disclaimer">{{ s.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BIAB v2 Numbers",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "The opportunity in numbers" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What One Box Can Return" },
+    { "type": "textarea", "id": "lede", "label": "Plain-language summary", "default": "Sell all 40 products at current recommended retail prices and you recover your $999 investment, with up to $1,030.60 remaining as gross profit before expenses." },
+    { "type": "header", "content": "Combined RRP" },
+    { "type": "text", "id": "rrp_label", "label": "Label", "default": "Combined retail value" },
+    { "type": "text", "id": "rrp", "label": "Figure", "default": "$2,029.60" },
+    { "type": "text", "id": "rrp_note", "label": "Note", "default": "All 40 products at current recommended retail prices" },
+    { "type": "header", "content": "Box price" },
+    { "type": "text", "id": "price_label", "label": "Label", "default": "Your box price" },
+    { "type": "text", "id": "price", "label": "Figure", "default": "$999" },
+    { "type": "text", "id": "price_note", "label": "Note", "default": "Shipping charged separately" },
+    { "type": "header", "content": "Potential gross profit" },
+    { "type": "text", "id": "profit_label", "label": "Label", "default": "Potential gross profit" },
+    { "type": "text", "id": "profit_prefix", "label": "Prefix", "default": "Up to" },
+    { "type": "text", "id": "profit", "label": "Figure", "default": "$1,030.60" },
+    { "type": "text", "id": "profit_note", "label": "Note", "default": "Before shipping, fees, tax, discounts and other expenses" },
+    { "type": "header", "content": "Split bar" },
+    { "type": "paragraph", "content": "The bar split is calculated automatically from the retail value and box price. Only set an override if you need a different split." },
+    { "type": "number", "id": "margin_override", "label": "Gross margin override (%)", "info": "Leave at 0 to calculate automatically.", "default": 0 },
+    { "type": "text", "id": "bar_left", "label": "Left label", "default": "49.2% recovers your $999" },
+    { "type": "text", "id": "bar_right", "label": "Right label", "default": "50.8% potential gross profit" },
+    { "type": "text", "id": "ratio_1", "label": "Ratio line 1", "default": "Approximately 103% markup on your investment" },
+    { "type": "text", "id": "ratio_2", "label": "Ratio line 2", "default": "50.8% gross margin on total retail sales" },
+    { "type": "textarea", "id": "disclaimer", "label": "Required disclaimer", "default": "Potential gross profit of up to $1,030.60 if all products are sold at current recommended retail prices. Excludes shipping, taxes, discounts, payment fees, advertising and other business expenses. Individual results vary." }
+  ],
+  "presets": [{ "name": "BIAB v2 Numbers" }]
+}
+{% endschema %}
+

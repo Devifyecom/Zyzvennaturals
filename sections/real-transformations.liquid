@@ -1,0 +1,420 @@
+{%- liquid
+  assign uid = section.id | replace: '_', '' | downcase
+-%}
+
+{% style %}
+  #rt-{{ uid }} {
+    --rt-pink: {{ section.settings.accent_color }};
+    --rt-ink: {{ section.settings.heading_color }};
+    --rt-lead: {{ section.settings.lead_color }};
+    --rt-star: {{ section.settings.star_color }};
+    --rt-max: {{ section.settings.max_width }}px;
+    --rt-gap: {{ section.settings.gap }}px;
+    --rt-radius: {{ section.settings.card_radius }}px;
+
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.section_bg }};
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #rt-{{ uid }} *,
+  #rt-{{ uid }} *::before,
+  #rt-{{ uid }} *::after { box-sizing: border-box; }
+
+  /* ---------- header ---------- */
+  #rt-{{ uid }} .rt-eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--rt-pink);
+    text-align: center;
+  }
+
+  #rt-{{ uid }} .rt-title {
+    margin: 0 auto 18px;
+    max-width: 22ch;
+    font-size: clamp(28px, 3vw, {{ section.settings.heading_size }}px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: -.021em;
+    color: var(--rt-ink);
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  #rt-{{ uid }} .rt-lead {
+    margin: 0 auto 40px;
+    max-width: 620px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--rt-lead);
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  #rt-{{ uid }} .rt-lead p { margin: 0; }
+
+  /* ---------- grid ---------- */
+  #rt-{{ uid }} .rt-wrap {
+    max-width: var(--rt-max);
+    margin: 0 auto;
+  }
+
+  #rt-{{ uid }} .rt-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns }}, minmax(0, 1fr));
+    gap: var(--rt-gap);
+  }
+
+  /* ---------- card ---------- */
+  #rt-{{ uid }} .rt-card {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--rt-radius);
+    overflow: hidden;
+    background: #14161a;
+    isolation: isolate;
+    transform: translateZ(0);
+    box-shadow: 0 1px 2px rgba(18,18,18,.05), 0 10px 28px -14px rgba(18,18,18,.18);
+    transition: box-shadow .35s ease, transform .35s ease;
+  }
+
+  #rt-{{ uid }} .rt-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(18,18,18,.06), 0 18px 40px -16px rgba(18,18,18,.26);
+  }
+
+  #rt-{{ uid }} .rt-card img,
+  #rt-{{ uid }} .rt-card svg {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform .8s cubic-bezier(.22,.61,.36,1);
+    will-change: transform;
+  }
+
+  #rt-{{ uid }} .rt-card:hover img { transform: scale(1.035); }
+
+  /* ---------- badge ---------- */
+  #rt-{{ uid }} .rt-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+    padding: 7px 14px 8px;
+    border-radius: 999px;
+    background: var(--rt-pink);
+    color: {{ section.settings.badge_text_color }};
+    font-size: 10.5px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: .085em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,.22);
+  }
+
+  /* ---------- overlay ---------- */
+  #rt-{{ uid }} .rt-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 2;
+    padding: 72px 20px 18px;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,.80) 0%,
+      rgba(0,0,0,.62) 22%,
+      rgba(0,0,0,.30) 50%,
+      rgba(0,0,0,.06) 76%,
+      rgba(0,0,0,0) 100%
+    );
+    pointer-events: none;
+  }
+
+  #rt-{{ uid }} .rt-stars {
+    margin: 0 0 9px;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 2.5px;
+    color: var(--rt-star);
+  }
+
+  #rt-{{ uid }} .rt-quote {
+    margin: 0 0 7px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.38;
+    letter-spacing: -.005em;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,.45);
+    text-wrap: pretty;
+  }
+
+  #rt-{{ uid }} .rt-name {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255,255,255,.84);
+    text-shadow: 0 1px 3px rgba(0,0,0,.45);
+  }
+
+  #rt-{{ uid }} .rt-disclaimer {
+    max-width: var(--rt-max);
+    margin: 26px auto 0;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #8A8C90;
+    text-align: center;
+  }
+
+  #rt-{{ uid }} .rt-disclaimer p { margin: 0; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 940px) {
+    #rt-{{ uid }} { padding-left: 18px; padding-right: 18px; }
+    #rt-{{ uid }} .rt-quote { font-size: 14.5px; }
+  }
+
+  @media (max-width: 860px) {
+    #rt-{{ uid }} {
+      --rt-gap: 16px;
+      --rt-radius: 18px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    #rt-{{ uid }} .rt-eyebrow { font-size: 12.5px; letter-spacing: .2em; margin-bottom: 16px; }
+    #rt-{{ uid }} .rt-title { font-size: clamp(29px, 8vw, 34px); max-width: 18ch; margin-bottom: 20px; }
+    #rt-{{ uid }} .rt-lead { font-size: 17px; line-height: 1.55; max-width: 34ch; margin-bottom: 30px; }
+    #rt-{{ uid }} .rt-grid { grid-template-columns: 1fr; }
+    #rt-{{ uid }} .rt-badge { top: 16px; right: 16px; padding: 9px 17px 10px; font-size: 12px; letter-spacing: .075em; }
+    #rt-{{ uid }} .rt-overlay { padding: 88px 22px 22px; }
+    #rt-{{ uid }} .rt-stars { font-size: 16px; letter-spacing: 3px; margin-bottom: 11px; }
+    #rt-{{ uid }} .rt-quote { font-size: 17px; line-height: 1.36; margin-bottom: 8px; }
+    #rt-{{ uid }} .rt-name { font-size: 14px; }
+  }
+
+  @media (hover: none) {
+    #rt-{{ uid }} .rt-card:hover { transform: none; }
+    #rt-{{ uid }} .rt-card:hover img { transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #rt-{{ uid }} .rt-card,
+    #rt-{{ uid }} .rt-card img { transition: none !important; }
+    #rt-{{ uid }} .rt-card:hover { transform: none; }
+    #rt-{{ uid }} .rt-card:hover img { transform: none; }
+  }
+{% endstyle %}
+
+<section id="rt-{{ uid }}" class="rt-section">
+
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="rt-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.title != blank -%}
+    <h2 class="rt-title">{{ section.settings.title | escape }}</h2>
+  {%- endif -%}
+
+  {%- if section.settings.lead != blank -%}
+    <div class="rt-lead">{{ section.settings.lead }}</div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="rt-wrap">
+      <div class="rt-grid">
+        {%- for block in section.blocks -%}
+          <figure class="rt-card" {{ block.shopify_attributes }}>
+
+            {%- if block.settings.badge != blank -%}
+              <span class="rt-badge">{{ block.settings.badge | escape }}</span>
+            {%- endif -%}
+
+            {%- liquid
+              assign alt = block.settings.image_alt | default: block.settings.quote | strip_html
+            -%}
+
+            {%- if block.settings.image != blank -%}
+              {%- assign small = block.settings.image | image_url: width: 440, height: 440, crop: 'center' -%}
+              {%- assign large = block.settings.image | image_url: width: 880, height: 880, crop: 'center' -%}
+              <img
+                src="{{ large }}"
+                srcset="{{ small }} 440w, {{ large }} 880w"
+                sizes="(max-width: 860px) 100vw, {{ 880 | divided_by: section.settings.columns }}px"
+                width="880" height="880"
+                alt="{{ alt | escape }}"
+                loading="lazy" decoding="async">
+
+            {%- elsif block.settings.image_url != blank -%}
+              <img
+                src="{{ block.settings.image_url }}"
+                width="880" height="880"
+                alt="{{ alt | escape }}"
+                loading="lazy" decoding="async">
+
+            {%- else -%}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'rt-placeholder' }}
+            {%- endif -%}
+
+            <figcaption class="rt-overlay">
+              {%- if block.settings.rating > 0 -%}
+                <div class="rt-stars" role="img" aria-label="{{ block.settings.rating }} out of 5 stars">
+                  {%- for i in (1..block.settings.rating) -%}★{%- endfor -%}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.quote != blank -%}
+                <blockquote class="rt-quote">{{ block.settings.quote | escape }}</blockquote>
+              {%- endif -%}
+
+              {%- if block.settings.name != blank -%}
+                <div class="rt-name">{{ block.settings.name | escape }}</div>
+              {%- endif -%}
+            </figcaption>
+
+          </figure>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.disclaimer != blank -%}
+    <div class="rt-disclaimer">{{ section.settings.disclaimer }}</div>
+  {%- endif -%}
+
+</section>
+
+{% schema %}
+{
+  "name": "Real transformations",
+  "tag": "section",
+  "class": "section rt-section-wrapper",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "header", "content": "Text" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Real Transformations"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "The results speak for themselves."
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "Intro text",
+      "default": "<p>Across every angle, bloating, digestion, constipation, water retention. All using the same gentle ritual.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "info": "Optional. Before-and-after imagery usually needs a 'results vary' line nearby."
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "accent_color", "label": "Accent (eyebrow and badge)", "default": "#E8368F" },
+    { "type": "color", "id": "badge_text_color", "label": "Badge text", "default": "#FFFFFF" },
+    { "type": "color", "id": "star_color", "label": "Stars", "default": "#FF3D93" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#121212" },
+    { "type": "color", "id": "lead_color", "label": "Intro text", "default": "#55565A" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "2"
+    },
+    { "type": "range", "id": "max_width", "label": "Grid width", "min": 700, "max": 1400, "step": 20, "unit": "px", "default": 880 },
+    { "type": "range", "id": "gap", "label": "Gap between cards", "min": 8, "max": 40, "step": 2, "unit": "px", "default": 18 },
+    { "type": "range", "id": "card_radius", "label": "Card corner radius", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 16 },
+    { "type": "range", "id": "heading_size", "label": "Heading size (desktop)", "min": 28, "max": 56, "step": 1, "unit": "px", "default": 36 },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Transformation",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Square crop. Uploading here is preferred over the external URL below." },
+        { "type": "text", "id": "image_url", "label": "External image URL", "info": "Only used when no image is uploaded. Useful for existing Cloudinary assets." },
+        { "type": "text", "id": "image_alt", "label": "Image alt text" },
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Bloating" },
+        { "type": "range", "id": "rating", "label": "Stars", "min": 0, "max": 5, "step": 1, "default": 5 },
+        { "type": "text", "id": "quote", "label": "Quote", "default": "\"My stomach went from puffy to flat. The side profile says it all.\"" },
+        { "type": "text", "id": "name", "label": "Name and location", "default": "Laura K. ¬∑ Los Angeles, CA" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Real transformations",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "badge": "Bloating",
+            "quote": "\"My stomach went from puffy to flat. The side profile says it all.\"",
+            "name": "Laura K. ¬∑ Los Angeles, CA",
+            "image_alt": "Flatter stomach, side profile",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-18_at_5.39.51_PM_ejrog0.png"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "badge": "Digestion",
+            "quote": "\"No more heaviness or gas after meals. My gut finally feels normal.\"",
+            "name": "Hannah O. ¬∑ Phoenix, AZ",
+            "image_alt": "Comfortable after meals, no more heaviness",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/v1777656817/Screenshot_2025-12-08_at_4.12.11_PM_mhjwyq.png"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "badge": "Constipation",
+            "quote": "\"Regular every morning. My stomach feels normal again.\"",
+            "name": "Amanda R. ¬∑ Chicago, IL",
+            "image_alt": "Comfortable, relaxed customer holding cleanse tea",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-05-01_at_12.38.47_PM_wge0mq.png"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "badge": "Water Retention",
+            "quote": "\"My face stopped looking swollen. My cheekbones are back.\"",
+            "name": "Brittany Collins ¬∑ Los Angeles, CA",
+            "image_alt": "Reduced facial puffiness",
+            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-16_at_6.53.03_PM_alhf6p.png"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

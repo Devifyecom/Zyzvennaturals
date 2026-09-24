@@ -1,0 +1,97 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid assign s = section.settings -%}
+
+<div class="biab biab--green biab-footer">
+  <section class="biab-section biab-section--tight" aria-label="Business in a Box contact and links">
+    <div class="biab-inner">
+      <div class="biab-footer__grid">
+        <div>
+          <p class="biab-footer__title">{{ s.brand_title }}</p>
+          <p class="biab-body" style="color:rgba(255,255,255,.82);">{{ s.brand_text }}</p>
+          {%- if s.flags != blank -%}
+            <div class="biab-flags">
+              {%- assign flag_items = s.flags | split: ',' -%}
+              {%- for item in flag_items -%}
+                {%- assign parts = item | strip | split: '|' -%}
+                <span class="biab-flag">
+                  <span aria-hidden="true">{{ parts[0] | strip }}</span>
+                  <span>{{ parts[1] | strip }}</span>
+                </span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div>
+          <p class="biab-footer__title">{{ s.contact_title }}</p>
+          <ul class="biab-footer__list">
+            {%- if s.website != blank -%}<li><a href="https://{{ s.website }}">{{ s.website }}</a></li>{%- endif -%}
+            {%- if s.email != blank -%}<li><a href="mailto:{{ s.email }}">{{ s.email }}</a></li>{%- endif -%}
+            {%- if s.whatsapp != blank -%}<li>WhatsApp {{ s.whatsapp }}</li>{%- endif -%}
+            {%- if s.phone != blank -%}<li>Jamaica {{ s.phone }}</li>{%- endif -%}
+          </ul>
+        </div>
+
+        <div>
+          <p class="biab-footer__title">{{ s.links_title }}</p>
+          <ul class="biab-footer__list">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>
+                <a href="{{ block.settings.url | default: '#' }}">{{ block.settings.label }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+
+      {%- if s.legal != blank -%}
+        <p class="biab-small" style="margin-top:40px;color:rgba(255,255,255,.62);border-top:1px solid rgba(255,255,255,.14);padding-top:24px;">
+          {{ s.legal }}
+        </p>
+      {%- endif -%}
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "BIAB — Footer",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "brand_title", "label": "Brand column title", "default": "Zyzven Naturals" },
+    { "type": "textarea", "id": "brand_text", "label": "Brand column text", "default": "Glowing Inside Out. Wellness without borders — natural teas and supplements, serving customers internationally for almost a decade." },
+    { "type": "textarea", "id": "flags", "label": "Markets", "info": "One per comma. Format: emoji | country name.", "default": "🇯🇲 | Jamaica, 🇺🇸 | USA, 🇬🇧 | UK, 🇸🇪 | Sweden, 🇨🇦 | Canada" },
+    { "type": "text", "id": "contact_title", "label": "Contact column title", "default": "Contact" },
+    { "type": "text", "id": "website", "label": "Website", "default": "ZyzvenNaturals.com" },
+    { "type": "text", "id": "email", "label": "Email", "default": "sales@zyzvennaturals.com" },
+    { "type": "text", "id": "whatsapp", "label": "WhatsApp", "default": "+44 7460 032301" },
+    { "type": "text", "id": "phone", "label": "Phone", "default": "876-288-0806" },
+    { "type": "text", "id": "links_title", "label": "Links column title", "default": "Programme" },
+    { "type": "textarea", "id": "legal", "label": "Legal line", "default": "Nothing on this page is an income guarantee. Purchase does not grant distributor status, territory exclusivity or a territory website. Products are not intended to diagnose, treat, cure or prevent any disease." }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Link" },
+        { "type": "url", "id": "url", "label": "URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BIAB — Footer",
+      "blocks": [
+        { "type": "link", "settings": { "label": "Partner With Us" } },
+        { "type": "link", "settings": { "label": "Reseller Terms" } },
+        { "type": "link", "settings": { "label": "Brand Guidelines" } },
+        { "type": "link", "settings": { "label": "Shipping" } },
+        { "type": "link", "settings": { "label": "Returns" } },
+        { "type": "link", "settings": { "label": "Privacy" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

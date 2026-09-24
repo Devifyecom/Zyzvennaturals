@@ -1,0 +1,329 @@
+{%- comment -%}
+  Section: Shop Our Best Sellers ‚Äî collection product carousel
+  Pulls products from a chosen collection. Each card shows image, title,
+  sale price + compare-at, and a working Add to Cart.
+  Horizontal scroll with prev/next arrows on desktop and mobile.
+
+  Arrows: circular sage buttons, identical on mobile and desktop, and
+  vertically centred on the product image (measured in JS so they never
+  drift as heading/content height changes).
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+  assign uid = section.id
+  assign visible = s.per_view
+-%}
+
+<style>
+  #zn-bs-{{ uid }} {
+    --zn-bg: {{ s.bg_color }};
+    --zn-heading: {{ s.heading_color }};
+    --zn-title: {{ s.title_color }};
+    --zn-sale: {{ s.sale_color }};
+    --zn-compare: {{ s.compare_color }};
+    --zn-card: {{ s.card_bg }};
+    --zn-btn: {{ s.button_bg }};
+    --zn-btn-text: {{ s.button_text_color }};
+    --zn-arrow: {{ s.arrow_bg }};
+    --zn-arrow-icon: {{ s.arrow_icon_color }};
+    --zn-arrow-size: {{ s.arrow_size }}px;
+    --zn-gap: {{ s.gap }}px;
+    --zn-visible: {{ visible }};
+    background-color: var(--zn-bg);
+  }
+
+  #zn-bs-{{ uid }} .zn-bs-inner {
+    max-width: {{ s.max_width }}px;
+    margin: 0 auto;
+    padding: {{ s.padding_top }}px 16px {{ s.padding_bottom }}px;
+    position: relative;
+  }
+
+  #zn-bs-{{ uid }} .zn-bs-title {
+    text-align: center;
+    color: var(--zn-heading);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    font-size: clamp(26px, 3.4vw, 42px);
+    margin: 0 0 40px;
+  }
+
+  #zn-bs-{{ uid }} .zn-track {
+    display: flex;
+    gap: var(--zn-gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+  }
+  #zn-bs-{{ uid }} .zn-track::-webkit-scrollbar { display: none; }
+
+  #zn-bs-{{ uid }} .zn-card {
+    flex: 0 0 calc((100% - (var(--zn-visible) - 1) * var(--zn-gap)) / var(--zn-visible));
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #zn-bs-{{ uid }} .zn-imgbox {
+    background: var(--zn-card);
+    border-radius: 24px;
+    padding: 24px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(20, 25, 15, .06);
+  }
+  #zn-bs-{{ uid }} .zn-imgbox img,
+  #zn-bs-{{ uid }} .zn-imgbox svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  #zn-bs-{{ uid }} .zn-name {
+    color: var(--zn-title);
+    font-weight: 700;
+    font-size: clamp(16px, 1.4vw, 19px);
+    margin: 20px 0 10px;
+    text-decoration: none;
+    display: block;
+  }
+  #zn-bs-{{ uid }} .zn-name:hover { text-decoration: underline; }
+
+  #zn-bs-{{ uid }} .zn-prices { margin-bottom: 20px; font-size: 18px; }
+  #zn-bs-{{ uid }} .zn-price { color: var(--zn-sale); font-weight: 800; }
+  #zn-bs-{{ uid }} .zn-compare { color: var(--zn-compare); text-decoration: line-through; font-weight: 600; margin-left: 8px; }
+
+  #zn-bs-{{ uid }} .zn-atc {
+    align-self: center;
+    background: var(--zn-btn);
+    color: var(--zn-btn-text);
+    border: 0;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 40px;
+    min-width: 200px;
+    cursor: pointer;
+    transition: filter .15s ease, transform .15s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  #zn-bs-{{ uid }} .zn-atc:hover:not([disabled]) { filter: brightness(1.06); transform: translateY(-1px); }
+  #zn-bs-{{ uid }} .zn-atc[disabled] { opacity: .5; cursor: not-allowed; }
+  #zn-bs-{{ uid }} .zn-atc-form { margin: 0; }
+
+  /* ---- Prev/next arrows (identical on mobile + desktop) ---- */
+  #zn-bs-{{ uid }} .zn-nav {
+    position: absolute;
+    top: {{ s.arrow_top }}%;
+    transform: translateY(-50%);
+    width: var(--zn-arrow-size);
+    height: var(--zn-arrow-size);
+    border-radius: 50%;
+    border: 0;
+    padding: 0;
+    background: var(--zn-arrow);
+    color: var(--zn-arrow-icon);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(20, 25, 15, .12);
+    transition: filter .15s ease, transform .15s ease;
+  }
+  #zn-bs-{{ uid }} .zn-nav:hover { filter: brightness(1.05); }
+  #zn-bs-{{ uid }} .zn-nav:active { transform: translateY(-50%) scale(.94); }
+  #zn-bs-{{ uid }} .zn-nav svg {
+    width: calc(var(--zn-arrow-size) * .45);
+    height: calc(var(--zn-arrow-size) * .45);
+    display: block;
+  }
+  #zn-bs-{{ uid }} .zn-prev { left: -6px; }
+  #zn-bs-{{ uid }} .zn-next { right: -6px; }
+
+  @media (max-width: 749px) {
+    #zn-bs-{{ uid }} .zn-card { flex-basis: 78%; }
+    #zn-bs-{{ uid }} .zn-bs-inner { padding-left: 20px; padding-right: 20px; }
+    #zn-bs-{{ uid }} .zn-prev { left: 2px; }
+    #zn-bs-{{ uid }} .zn-next { right: 2px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #zn-bs-{{ uid }} .zn-track { scroll-behavior: auto; }
+  }
+</style>
+
+<section id="zn-bs-{{ uid }}" class="zn-bs">
+  <div class="zn-bs-inner">
+    {%- if s.title != blank -%}
+      <h2 class="zn-bs-title">{{ s.title }}</h2>
+    {%- endif -%}
+
+    <button class="zn-nav zn-prev" type="button" aria-label="Previous" data-dir="-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19.5" y1="12" x2="5" y2="12"/><polyline points="11.5 5 5 12 11.5 19"/></svg>
+    </button>
+    <button class="zn-nav zn-next" type="button" aria-label="Next" data-dir="1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4.5" y1="12" x2="19" y2="12"/><polyline points="12.5 5 19 12 12.5 19"/></svg>
+    </button>
+
+    <div class="zn-track" id="zn-track-{{ uid }}">
+      {%- if s.collection != blank and s.collection.products_count > 0 -%}
+        {%- for product in s.collection.products limit: s.max_products -%}
+          {%- assign v = product.selected_or_first_available_variant -%}
+          <div class="zn-card">
+            <a href="{{ product.url }}" class="zn-imgbox" aria-label="{{ product.title | escape }}">
+              {%- if product.featured_image -%}
+                <img src="{{ product.featured_image | image_url: width: 600 }}"
+                     srcset="{{ product.featured_image | image_url: width: 400 }} 400w, {{ product.featured_image | image_url: width: 700 }} 700w"
+                     sizes="(max-width: 749px) 78vw, 300px"
+                     alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                     width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"
+                     loading="lazy">
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag }}
+              {%- endif -%}
+            </a>
+
+            <a href="{{ product.url }}" class="zn-name">{{ product.title }}</a>
+
+            <div class="zn-prices">
+              <span class="zn-price">{{ v.price | money }}</span>
+              {%- if v.compare_at_price and v.compare_at_price != v.price -%}
+                <span class="zn-compare">{{ v.compare_at_price | money }}</span>
+              {%- endif -%}
+            </div>
+
+            {%- if product.available -%}
+              <form action="{{ routes.cart_add_url }}" method="post" class="zn-atc-form" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{ v.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="zn-atc">{{ s.button_text }}</button>
+              </form>
+            {%- else -%}
+              <button class="zn-atc" disabled>{{ s.sold_out_text }}</button>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="zn-card">
+            <span class="zn-imgbox">{{ 'product-1' | placeholder_svg_tag }}</span>
+            <span class="zn-name">Product title</span>
+            <div class="zn-prices"><span class="zn-price">$49.99</span><span class="zn-compare">$54.38</span></div>
+            <button class="zn-atc" type="button">{{ s.button_text }}</button>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('zn-bs-{{ uid }}');
+    if (!root) return;
+    var track = root.querySelector('#zn-track-{{ uid }}');
+    var inner = root.querySelector('.zn-bs-inner');
+    var buttons = root.querySelectorAll('.zn-nav');
+
+    function step() {
+      var card = track.querySelector('.zn-card');
+      if (!card) return track.clientWidth;
+      var style = getComputedStyle(track);
+      var gap = parseFloat(style.columnGap || style.gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        track.scrollBy({ left: step() * parseInt(b.dataset.dir, 10), behavior: 'smooth' });
+      });
+    });
+
+    function centerArrows() {
+      var box = track.querySelector('.zn-imgbox');
+      if (!box || !inner) return;
+      var innerRect = inner.getBoundingClientRect();
+      var boxRect = box.getBoundingClientRect();
+      var centre = (boxRect.top - innerRect.top) + boxRect.height / 2;
+      buttons.forEach(function (b) { b.style.top = centre + 'px'; });
+    }
+
+    function ready() {
+      centerArrows();
+      var img = track.querySelector('.zn-imgbox img');
+      if (img && !img.complete) img.addEventListener('load', centerArrows, { once: true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ready);
+    } else {
+      ready();
+    }
+
+    var rt;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(centerArrows, 150);
+    });
+
+    document.addEventListener('shopify:section:load', function (e) {
+      if (!e.detail || e.detail.sectionId === '{{ uid }}') centerArrows();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Best Sellers Carousel",
+  "tag": "section",
+  "class": "zn-bs-section",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Shop Our Best Sellers" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "max_products", "label": "Max products to show", "min": 2, "max": 20, "step": 1, "default": 12 },
+
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Add to Cart" },
+    { "type": "text", "id": "sold_out_text", "label": "Sold-out text", "default": "Sold Out" },
+
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "per_view", "label": "Cards visible (desktop)", "min": 2, "max": 5, "step": 1, "default": 4 },
+    { "type": "range", "id": "gap", "label": "Gap between cards", "min": 8, "max": 48, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "max_width", "label": "Max width", "min": 800, "max": 1700, "step": 10, "unit": "px", "default": 1300 },
+
+    { "type": "header", "content": "Arrows" },
+    { "type": "range", "id": "arrow_size", "label": "Arrow size", "min": 32, "max": 56, "step": 2, "unit": "px", "default": 40 },
+    { "type": "range", "id": "arrow_top", "label": "Arrow vertical position (fallback)", "min": 15, "max": 60, "step": 1, "unit": "%", "default": 34, "info": "Used only for the split-second before the arrows snap to the image centre." },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#faf5ec" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#22371f" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#ffffff" },
+    { "type": "color", "id": "title_color", "label": "Product title", "default": "#20281c" },
+    { "type": "color", "id": "sale_color", "label": "Sale price", "default": "#000000" },
+    { "type": "color", "id": "compare_color", "label": "Compare-at price", "default": "#8a8a8a" },
+    { "type": "color", "id": "button_bg", "label": "Button background", "default": "#3f7d34" },
+    { "type": "color", "id": "button_text_color", "label": "Button text", "default": "#ffffff" },
+    { "type": "color", "id": "arrow_bg", "label": "Arrow background", "default": "#9db892" },
+    { "type": "color", "id": "arrow_icon_color", "label": "Arrow icon", "default": "#ffffff" },
+
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 48 }
+  ],
+  "presets": [
+    { "name": "Best Sellers Carousel" }
+  ]
+}
+{% endschema %}
+

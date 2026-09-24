@@ -1,0 +1,398 @@
+{% stylesheet %}
+      .manufacturing-section {
+        position: relative;
+        padding: 50px 0;
+      }
+
+      .manufacturing-wrapper {
+        display: flex;
+        /* grid-template-columns: 1fr 1fr; */
+        /* gap: 60px; */
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .manufacturing-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+      .manufacturing-image {
+      width: 44%;
+  }
+  .manufacturing-content {
+      width: 56%;
+      display: flex;
+      padding-left: 108px;
+      /* justify-content: end; */
+  }
+
+      .manufacturing-content h2 {
+        margin-bottom: 20px;
+      }
+
+      .manufacturing-checklist {
+        margin: 30px 0;
+      }
+
+      .manufacturing-check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .manufacturing-check-icon {
+        color: rgb(var(--color-foreground));
+        flex-shrink: 0;
+        margin-top: 8px;
+      }
+
+    .manufacturing-badges-wrapper {
+      margin-top: 35px;
+      border: 1px solid rgba(var(--color-foreground), 0.15);
+      border-radius: 12px;
+      padding: 25px 10px;
+      background: rgba(var(--color-background), 0.6);
+    }
+
+  .manufacturing-badges {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid #BEBEBE;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+.manufacturing-badge {
+  flex: 1;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
+}
+
+    .manufacturing-badge p {
+      margin: 0;
+      font-weight: 700;
+      color: #000;
+      white-space: nowrap;
+    }
+    .manufacturing-badge:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: rgba(var(--color-foreground), 0.15);
+    }
+
+    .manufacturing-badge img {
+      width: 100%;
+      height: 56px;
+      object-fit: contain;
+      margin-bottom: -10px;
+    }
+
+    .manufacturing-badge div {
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .manufacturing-check-item .para {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 31px;
+        color: black;
+    }
+
+
+      .manufacturing-cta {
+        margin-top: 30px;
+      }
+    .manufacturing-check-icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    .manufacturing-cta .button--text-link {
+      display: inline-block;
+      background: none !important;
+      border: none !important;
+      padding: 4px 12px 5px !important;
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: uppercase;
+    
+      text-decoration: none;
+      /* border-bottom: 1.5px solid #ffffff !important; */
+      border-radius: 0 !important;
+      transition: opacity 0.2s ease;
+    }
+
+    /* .manufacturing-cta .button--text-link:hover {
+      opacity: 0.6;
+    } */
+
+  .manufacturing-inner {
+      width: 100%;
+      max-width: 733px;
+  }
+  @media (max-width:1360px){
+    .manufacturing-content {
+      padding-left: 70px;
+  }
+  }
+
+    /* ===== Tablet ===== */
+    @media screen and (max-width: 990px) {
+      /* .manufacturing-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      } */
+
+      /* .manufacturing-image img {
+        width: 100%;
+        height: auto;
+      } */
+        .manufacturing-image {
+      width: 100%;
+  }
+  .manufacturing-content {
+      width: 100%;
+      padding-left: 0px;
+  }
+
+      .manufacturing-badges {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .manufacturing-badge {
+        /* flex: 0 0 45%; */
+        padding: 15px;
+      }
+
+      .manufacturing-badge:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    /* ===== Mobile ===== */
+    @media screen and (max-width: 600px) {
+      .manufacturing-check-item .para {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .manufacturing-badges {
+        display :grid;
+       
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .manufacturing-badge {
+        /* flex: 0 0 100%;
+        width: 100%; */
+        padding: 15px 10px;
+      }
+
+      .manufacturing-badge img {
+        height: 50px;
+      }
+
+      .manufacturing-badge p {
+        white-space: normal; /* allow wrap on small screens */
+        font-size: 14px;
+      }
+      .manufacturing-cta .button--text-link {
+       font-size: 16px;
+     
+      }
+    }
+{% endstylesheet %}
+
+<section class="manufacturing-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="manufacturing-wrapper">
+      <!-- Left Image -->
+      <div class="manufacturing-image">
+        {% if section.settings.image != blank %}
+          <img
+            src="{{ section.settings.image | image_url: width: 1000 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            loading="lazy"
+            width="" height=""
+          >
+        {% endif %}
+      </div>
+
+      <!-- Right Content -->
+      <div class="manufacturing-content">
+        <div class="manufacturing-inner psheadmobile">
+          {% if section.settings.heading != blank %}
+            <h2 class="h1">{{ section.settings.heading }}</h2>
+          {% endif %}
+
+          <!-- Checklist -->
+          <div class="manufacturing-checklist">
+            {% for block in section.blocks %}
+              {% if block.type == 'check' %}
+                <div class="manufacturing-check-item" {{ block.shopify_attributes }}>
+                  <div class="manufacturing-check-icon">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0245/2422/6606/files/Asset_1_1.png?v=1772182283"
+                      alt="Check icon"
+                      loading="lazy"
+                      width="20"
+                      height="20"
+                    >
+                  </div>
+                  <div class="para">{{ block.settings.text }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <!-- Badges -->
+          <div class="manufacturing-badges">
+            {% for block in section.blocks %}
+              {% if block.type == 'badge' %}
+                <div class="manufacturing-badge" {{ block.shopify_attributes }}>
+                  {% if block.settings.badge_image != blank %}
+                    <img
+                      src="{{ block.settings.badge_image | image_url: width: 200 }}"
+                      alt="{{ block.settings.label | escape }}"
+                      loading="lazy"
+                      height="" width=""
+                    >
+                  {% endif %}
+                  <p>{{ block.settings.label }}</p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if section.settings.button_text != blank %}
+            <div class="pszyenbtn manufacturing-cta button pshover">
+              <a
+                {% if section.settings.button_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.button_link }}"
+                {% endif %}
+                class="button--text-link psbtn"
+              >
+                {{ section.settings.button_text }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Manufacturing Standards",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Manufacturing to global standards"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View Quality & Compliance"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "check",
+      "name": "Checklist item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Add your checklist text here"
+        }
+      ]
+    },
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "badge_image",
+          "label": "Badge image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Badge title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Manufacturing Standards",
+      "blocks": [
+        { "type": "check" },
+        { "type": "check" },
+        { "type": "check" },
+        { "type": "badge" },
+        { "type": "badge" },
+        { "type": "badge" }
+      ]
+    }
+  ]
+}
+{% endschema %}
