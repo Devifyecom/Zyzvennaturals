@@ -10,6 +10,14 @@
   endif
 -%}
 
+{%- comment -%} This promo only: Golos Text and a brand-green (#358440) button {%- endcomment -%}
+<style>
+  #shopify-section-{{ section.id }} .bib-promo,
+  #shopify-section-{{ section.id }} .bib-promo * { font-family: 'Golos Text', sans-serif !important; }
+  #shopify-section-{{ section.id }} .bib-promo__cta { background: #358440; border-color: #358440; color: #fff; }
+  #shopify-section-{{ section.id }} .bib-promo__cta:hover { background: #2b6b34; border-color: #2b6b34; color: #fff; }
+</style>
+
 <section class="bib bib-promo" style="--bib-promo-bg: {{ s.background_color }};">
   <div class="bib__inner">
     <div class="{{ grid_class }}">
