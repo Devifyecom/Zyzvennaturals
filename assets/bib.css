@@ -106,10 +106,10 @@
   gap: 10px;
   min-height: 56px;
   padding: 17px 30px;
-  border: 1px solid var(--zn-cta, #DBB994);
+  border: 1px solid var(--bib-green);
   border-radius: 8px;
-  background: var(--zn-cta, #DBB994);
-  color: var(--zn-cta-text, #1a1a1a);
+  background: var(--bib-green);
+  color: #fff;
   font-family: var(--bib-body-font);
   font-size: 15px;
   font-weight: 600;
@@ -123,9 +123,9 @@
 }
 
 .bib-btn:hover {
-  background: var(--zn-cta-hover, #cfa97f);
-  border-color: var(--zn-cta-hover, #cfa97f);
-  color: var(--zn-cta-text, #1a1a1a);
+  background: var(--bib-green-deep);
+  border-color: var(--bib-green-deep);
+  color: #fff;
 }
 
 .bib-btn:active { transform: translateY(1px); }

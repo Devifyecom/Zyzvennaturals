@@ -298,7 +298,7 @@
         "enable_switch": false,
         "color": "",
         "text_color": "#283613",
-        "hover_color": "#358440",
+        "hover_color": "#31853c",
         "pad_top": 40,
         "pad_bottom": 40
       }
@@ -371,7 +371,7 @@
         "enable_switch": false,
         "color": "#fffbf4",
         "text_color": "#283613",
-        "hover_color": "#358440",
+        "hover_color": "#31853c",
         "pad_top": 40,
         "pad_bottom": 40
       }
