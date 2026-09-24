@@ -396,22 +396,6 @@
     },
     "image_banner_Tr9qmF": {
       "type": "image-banner",
-      "blocks": {
-        "buttons_EERgcc": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "buttons_EERgcc"
-      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/4812fff6-6cf1-4e24-817a-595b623e021b.png",
