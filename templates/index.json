@@ -1,1 +1,1083 @@
-{"sections":{"cw_homepage_banner_zGUxGP":{"type":"cw-homepage-banner","disabled":true,"name":"Custom Homepage Banner","settings":{"bg_type":"image","image":"shopify:\/\/shop_images\/Background_Texture_1.png","product_image":"shopify:\/\/shop_images\/Product-imagery.png","product_image_mobile":"shopify:\/\/shop_images\/WhatsApp_Image_2026-06-01_at_10.33.08_PM.jpg","heading":"Support Metabolism. Rebalance Hormones. Restore Energy Naturally.","content":"<p>A targeted supplement system for metabolic and hormonal health.<br\/>Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy.<\/p>","btn_text1":"Take Our 60-Second Assessment","btn_link1":"shopify:\/\/pages\/assessment","btn_color1":"#31853c","btn_text2":"Shop the System","btn_link2":"shopify:\/\/pages\/protocols","btn_color2":"#d1b08e"}},"hero_bzCJQ6":{"type":"Hero","name":"Hero","settings":{"heading_line_1":"Support Metabolism.","heading_line_2":"Rebalance Hormones.","heading_line_3_bold":"Restore Energy Naturally.","heading_line_3_regular":"","subheading":"A targeted supplement system for metabolic and hormonal health.","body_text":"Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy.","btn1_label":"Take Our 60-Second Assessment","btn1_link":"shopify:\/\/pages\/assessment","btn1_bg":"#31853c","btn1_text":"#ffffff","show_btn2":true,"btn2_label":"Shop the System","btn2_link":"shopify:\/\/pages\/protocols","btn2_bg":"#d1b08e","btn2_text":"#ffffff","show_video":true,"background_video_url":"","background_video":"shopify:\/\/files\/videos\/Neutral-Vid_3a04e71f-3775-4080-817a-d002545708ef.mp4","video_overlay_opacity":0,"bg_fallback":"#f6f1e8","heading_color":"#16181c","text_color":"#3c3c3c","padding_top":72,"padding_bottom":72}},"badge_slider_CVQpP8":{"type":"badge-slider","blocks":{"block_zmxyAL":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/1_3.png","label":""}},"block_WmdUUp":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/2_3.png","label":""}},"block_QLBhXL":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/3_3.png","label":""}},"block_4xCGYA":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/4_3.png","label":""}},"block_PVgG9B":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/5_1_140e75d3-f73d-4b94-bb29-55010c1c621e.png","label":""}},"block_aqXAHX":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/6_1.png","label":""}},"block_i9AhQT":{"type":"block","settings":{"badge":"shopify:\/\/shop_images\/7_1.png","label":""}}},"block_order":["block_zmxyAL","block_WmdUUp","block_QLBhXL","block_4xCGYA","block_PVgG9B","block_aqXAHX","block_i9AhQT"],"name":"Badge Slider","settings":{"pad_top":20,"pad_bottom":20}},"feel_grid_hWEVTL":{"type":"feel-grid","blocks":{"card_gTHcUB":{"type":"card","settings":{"word":"Debloated","category":"Tea","name":"Cleanse Tea","url":"","accent":"#5b8c3e","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_01_06_PM.png","product_image":"shopify:\/\/shop_images\/alki-detox-with-moringa-non-laxative-metabolic-detox-tea1.png"}},"card_eJJmPL":{"type":"card","settings":{"word":"Rested","category":"Tea","name":"Sleep Tea","url":"shopify:\/\/products\/womens-brew-hormone-balance-tea","accent":"#6b7d4a","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_02_57_PM.png","product_image":"shopify:\/\/shop_images\/womens-brew-womens-wellness-herbal-tea-organic-vegan1.png"}},"card_p9mw7K":{"type":"card","settings":{"word":"Energized","category":"Tea","name":"Energize Tea","url":"shopify:\/\/products\/manthoric-advance","accent":"#2d4a2e","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_04_39_PM.png","product_image":"shopify:\/\/shop_images\/manthoric-advance-mens-vitality-performance-support-capsules.jpg"}},"card_4qzmBX":{"type":"card","settings":{"word":"Immune","category":"Tea","name":"Feel Better Tea","url":"shopify:\/\/products\/zyzven-naturals-heart-harmony-loose-leaf-tea-60g","accent":"#c0392b","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_08_18_PM.png","product_image":"shopify:\/\/shop_images\/Harmony_Heart_Cardiovascular_Wellness_Herbal_Tea_Organic_Vegan_GMP_Third-Party_Lab-Tested_2.png"}},"card_fXK9GD":{"type":"card","settings":{"word":"Balanced","category":"Tea","name":"Menopause","url":"shopify:\/\/products\/freja-balance-menopause-wellness-tea","accent":"#d4a837","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_09_59_PM.png","product_image":"shopify:\/\/shop_images\/a4.png"}},"card_9nG6jG":{"type":"card","settings":{"word":"Lighter","category":"Tea","name":"Apple Cider Vinegar","url":"shopify:\/\/products\/zyzven-naturals-clearpath-detox-herbal-tea-60g-loose-leaf","accent":"#1a5c4b","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_11_12_PM.png","product_image":"shopify:\/\/shop_images\/clearpath-detox-loose-leaf-herbal-detox-tea1.png"}},"card_BtRk94":{"type":"card","settings":{"word":"Protected","category":"Supplement","name":"Pressure Balance","url":"shopify:\/\/products\/zyzven-naturals-pressure-balance-capsules-60","accent":"#e8a0a0","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_01_40_27_PM.png","product_image":"shopify:\/\/shop_images\/pressure-balance-cardiovascular-circulation-blood-pressure-support-capsules1.png"}},"card_MDhkWn":{"type":"card","settings":{"word":"Calm","category":"Tea","name":"Blood Sugar","url":"shopify:\/\/products\/sweet-balance-herbal-tea","accent":"#a8c8e8","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_13_55_PM.png","product_image":"shopify:\/\/shop_images\/sweet-balance-blood-sugar-wellness-herbal-tea1.png"}},"card_cEh3c8":{"type":"card","settings":{"word":"Glowing","category":"Supplement","name":"Nice Hair","url":"shopify:\/\/products\/advanced-hormone-balance-pcos-support-capsules","accent":"#b8a0c8","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_15_53_PM.png","product_image":"shopify:\/\/shop_images\/freja-advance-menopause-hormonal-support-capsules.png"}},"card_qkLtLr":{"type":"card","settings":{"word":"In Control","category":"Supplement","name":"Hormone Balance","url":"shopify:\/\/products\/zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply","accent":"#d4735e","lifestyle_image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_02_16_26_PM.png","product_image":"shopify:\/\/shop_images\/a1.png"}}},"block_order":["card_gTHcUB","card_eJJmPL","card_p9mw7K","card_4qzmBX","card_fXK9GD","card_9nG6jG","card_BtRk94","card_MDhkWn","card_cEh3c8","card_qkLtLr"],"disabled":true,"name":"Feel Grid","settings":{"eyebrow":"Start here","heading_pink":"","heading":"How do you want to feel?","subtitle":"Shop by what your body is asking for. A tea and a supplement for every part of your day.","columns":5,"padding_top":76,"padding_bottom":84,"accent_color":"#358440","heading_color":"#2b2b2b","text_color":"#707070"}},"home_slider_chd3xc":{"type":"home-slider","blocks":{"product_pfL68w":{"type":"product","settings":{"product":"womens-brew-hormone-balance-tea","title":"Women's Organic Herbal Tea","description":"Women's Wellness Organic Herbal Tea (60g) | Women's Brew"}},"product_PGhreb":{"type":"product","settings":{"product":"blood-sugar-support-capsules","title":"Blood Sugar Support Capsules","description":"Organic Blood Sugar Support Supplement"}},"product_rMY4RT":{"type":"product","settings":{"product":"alki-detox-moringa-herbal-tea","title":"Alki Detox with Moringa","description":"Advanced Non-Laxative\u2028Metabiolic Detox Tea (80g)"}},"product_rmka8z":{"type":"product","settings":{"product":"zyzven-naturals-heart-harmony-loose-leaf-tea-60g","title":"Heart Harmony","description":"Harmony Heart™ – Advanced Organic Heart & Circulation Tea | Caffeine-Free | 60g"}},"product_JCb79x":{"type":"product","settings":{"product":"zyzven-naturals-pressure-balance-capsules-60","title":"Heart Health Support","description":"Pressure Balance Heart Health Support Capsules."}},"product_k83gz9":{"type":"product","settings":{"product":"zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply","title":"Metabolic Support Capsules","description":"Glukobalans™ Metabolic Support Capsules."}},"product_pYATgB":{"type":"product","settings":{"product":"sweet-balance-herbal-tea","title":"Blood Sugar Wellness","description":"Organic Sweet Balance Wellness Herbal Tea"}},"product_UpPJem":{"type":"product","settings":{"product":"zyzven-naturals-clearpath-detox-herbal-tea-60g-loose-leaf","title":"Detox Organic Herbal","description":"Organic ClearPath Detox Herbal Tea"}},"product_Mw9wPX":{"type":"product","settings":{"product":"advanced-hormone-balance-pcos-support-capsules","title":"PCOS\/pmos, cycle support and fertility","description":"Menopause & Hormonal Support Capsules (60 Count) | Freja Advance"}},"product_yJeUJ4":{"type":"product","settings":{"product":"zyzven-naturals-uterine-tonic-loose-herb-tea-80g","title":"Uterine tonic - fibroids","description":"Women's Reproductive Wellness Organic Herbal Tea (80g) | Uterine Tonic"}},"product_3YQq4Q":{"type":"product","settings":{"product":"freja-balance-menopause-wellness-tea","title":"Freja Balance Organic","description":"Menopause & Hormonal Wellness Organic Herbal Tea (80g) | Freja Balance"}},"product_qbhxR4":{"type":"product","settings":{"product":"manthoric-advance","title":"Manthoric Advance","description":"Men's Vitality & Performance Support Capsules (120 Count) | Manthoric Advance"}}},"block_order":["product_pfL68w","product_PGhreb","product_rMY4RT","product_rmka8z","product_JCb79x","product_k83gz9","product_pYATgB","product_UpPJem","product_Mw9wPX","product_yJeUJ4","product_3YQq4Q","product_qbhxR4"],"name":"Homepage Slider","settings":{"heading":"Shop Our Best Sellers","button_label":"Add to Cart","sold_out_label":"Sold Out","pad_top":50,"pad_bottom":50}},"ritual_hero_9Q8hpe":{"type":"ritual-hero","disabled":true,"name":"Ritual Hero","settings":{"heading":"Little Rituals.\nBig Difference.","subtitle":"A cup after dinner, a capsule with breakfast. Zyzven Naturals fits into your day and gives a lot back.","button_label":"Find Your Ritual","button_link":"","video":"shopify:\/\/files\/videos\/can_you_only_change_the_backgr_gwr_video_mvp.mp4","video_url":"","heading_color":"#2b2b2b","text_color":"#6f6f6f","mobile_bg":"#ffffff","cta_text_desktop":"#050505","pink_top":"#000000","pink_bottom":"#358440"}},"ugc_video_strip_Y7NzGm":{"type":"ugc-video-strip","blocks":{"clip_nMYJ9q":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7519842905381457183_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_dUrh7c":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7529505540699917599_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_d8fy8b":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7531833196401397023_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_r7eNBh":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7378536674613071147_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_WQU9DK":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7519842905381457183_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_N9AnTy":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7531833196401397023_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_Ffx7tt":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7378536674613071147_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}},"clip_gMxE4g":{"type":"clip","settings":{"video":"shopify:\/\/files\/videos\/snaptik_7529505540699917599_v3.mp4","video_url":"","handle":"","tag_label":"","tag_link":""}}},"block_order":["clip_nMYJ9q","clip_dUrh7c","clip_d8fy8b","clip_r7eNBh","clip_WQU9DK","clip_N9AnTy","clip_Ffx7tt","clip_gMxE4g"],"disabled":true,"name":"UGC Video Strip","settings":{"heading":"Loved by thousands of parents","title_size":40,"subheading":"<p>See how families use our products every day.<\/p>","sub_size":16,"title_color":"#2c2420","sub_color":"#6b6258","bg_color":"#faf9f6","clip_width":210,"clip_width_mobile":150,"gap":16,"radius":16,"fade":80,"speed":45,"padding_top":60,"padding_bottom":60,"load_font":true}},"trust_band_bj6Vrk":{"type":"trust-band","disabled":true,"name":"Trust Band","settings":{"heading":"So… why trust us?","body":"<p>Because we're a little obsessed (in the best way). Every blend is clean, pure, natural and lab-tested by people in white coats who take this <em>very<\/em> seriously. All the good stuff, zero fillers nobody can pronounce. You're welcome, girl.<\/p>","image":"shopify:\/\/shop_images\/ChatGPT_Image_Aug_18_2026_12_20_59_PM.png","badges":"shopify:\/\/shop_images\/Zyzvennaturals-made-in-usa-gmp-lab-tested-vegan-badges-hg-home-1.webp","copy_left":52,"badges_max":560,"mobile_focus":25,"mobile_copy_left":37,"bg_color":"#358440","text_color":"#ffffff"}},"faq_image_YAq7kE":{"type":"faq-image","blocks":{"faq_3JmTTh":{"type":"faq","settings":{"question":"What makes Zyzven Naturals different?","answer":"<p>We blend traditional herbal knowledge with modern manufacturing standards. Our formulas use botanical ingredients chosen for a purpose, and we're transparent about how and where they're made — so you know exactly what you're bringing into your routine.<\/p>","open":false}},"faq_jBHKp9":{"type":"faq","settings":{"question":"How are your products made and to what standards?","answer":"<p>Our herbal teas are produced in BRCGS-certified UK facilities operating under HACCP and GMP principles, and our capsule formulations use standardized botanical extracts manufactured in GMP-compliant environments. Select products are independently third-party tested for purity and safety.<\/p>","open":false}},"faq_EtrHgV":{"type":"faq","settings":{"question":"Are your products natural, plant-based, and vegan?","answer":"<p>Yes — our range is built around botanical, plant-based ingredients, and many products (such as our Pressure Balance capsules) are vegan and GMP-certified. Each product page lists its full ingredients so you can check before you buy.<\/p>","open":false}},"faq_XhWk4P":{"type":"faq","settings":{"question":"What kinds of products do you offer?","answer":"<p>Herbal wellness teas, capsule supplements, wellness bundles, and natural skincare and personal care. Everything is organized by goal — women's wellness, metabolic health, heart health, digestion, blood sugar, kidney and urinary, joint and mobility, and more.<\/p>","open":false}},"faq_UNhCUX":{"type":"faq","settings":{"question":"How do I choose the right product for me?","answer":"<p>Start with Shop by Goal, or take our 60-second wellness assessment for a tailored recommendation. If you're still unsure, reach out and we'll help you build a simple routine.<\/p>","open":false}},"faq_AnJiFJ":{"type":"faq","settings":{"question":"Are these products safe, and can I take them with medication?","answer":"<p>Our products are formulated to support everyday wellness and are not intended to diagnose, treat, cure, or prevent any disease. If you're pregnant, nursing, taking medication, or managing a health condition, please consult your healthcare provider before use.<\/p>","open":false}}},"block_order":["faq_3JmTTh","faq_jBHKp9","faq_EtrHgV","faq_XhWk4P","faq_UNhCUX","faq_AnJiFJ"],"disabled":true,"name":"FAQ + Image","settings":{"heading":"Frequently asked questions","image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-07-20_at_5.53.08_PM.jpg","image_position":"right","close_others":true,"background":"#faf9f6","title_color":"#2c2420","question_color":"#2c2420","answer_color":"#5a5147","border_color":"#e6ddcd","icon_color":"#2c2420","link_color":"#a4642a","image_placeholder":"#efe3ce","title_size":38,"title_size_mobile":28,"title_weight":"600","title_gap":28,"question_size":17,"question_size_mobile":15,"question_weight":"500","answer_size":15,"row_padding":20,"icon_size":18,"image_radius":16,"image_ratio":"4 \/ 3","image_ratio_mobile":"4 \/ 3","max_width":1280,"column_gap":56,"column_gap_mobile":48,"padding_top":64,"padding_bottom":64,"padding_inline":40,"padding_top_mobile":48,"padding_bottom_mobile":48,"padding_inline_mobile":16}},"country_flag_6KzCb3":{"type":"country-flag","blocks":{"country_wWJ4gJ":{"type":"country","settings":{"country":"us","custom_code":"","label":""}},"country_kjwEkg":{"type":"country","settings":{"country":"gb","custom_code":"","label":""}},"country_Uin3qQ":{"type":"country","settings":{"country":"se","custom_code":"","label":""}},"country_iXjz8H":{"type":"country","settings":{"country":"ca","custom_code":"","label":""}},"country_KXicpR":{"type":"country","settings":{"country":"eu","custom_code":"","label":""}},"country_YBkjGM":{"type":"country","settings":{"country":"jm","custom_code":"","label":""}}},"block_order":["country_wWJ4gJ","country_kjwEkg","country_Uin3qQ","country_iXjz8H","country_KXicpR","country_YBkjGM"],"name":"Country Flags","settings":{"heading":"Our Products are Fulfilled by Local Warehouses","flag_style":"rounded","show_labels":true,"enable_switch":false,"color":"","text_color":"#283613","hover_color":"#31853c","pad_top":40,"pad_bottom":40}},"best_sellers_carousel_dprD4A":{"type":"Best-Sellers-Carousel","disabled":true,"name":"Best Sellers Carousel","settings":{"title":"Shop Our Best Sellers","collection":"best-sellers","max_products":12,"button_text":"Add to Cart","sold_out_text":"Sold Out","per_view":4,"gap":24,"max_width":1300,"arrow_size":40,"arrow_top":34,"bg_color":"#faf5ec","heading_color":"#22371f","card_bg":"#ffffff","title_color":"#20281c","sale_color":"#000000","compare_color":"#8a8a8a","button_bg":"#3f7d34","button_text_color":"#ffffff","arrow_bg":"#9db892","arrow_icon_color":"#ffffff","padding_top":48,"padding_bottom":48}},"pdp_section_NfWxgf":{"type":"pdp-section","blocks":{"info_KgEVaB":{"type":"info","settings":{"content":"USA orders ship from our USA warehouse"}},"info_Pj3HJR":{"type":"info","settings":{"content":"Canada orders ship from our Canadian warehouse"}},"info_3DeRaq":{"type":"info","settings":{"content":"EU orders ship from Sweden"}},"info_XKqQmn":{"type":"info","settings":{"content":"UK orders ship from our UK warehouse"}},"info_6fR3eb":{"type":"info","settings":{"content":"Canada orders ship from our Canadian warehouse"}}},"block_order":["info_KgEVaB","info_Pj3HJR","info_3DeRaq","info_XKqQmn","info_6fR3eb"],"disabled":true,"name":"PDP Info","settings":{"heading":"Our Products are Fulfilled by Local Warehouses","color":"#d1b08e","pad_top":10,"pad_bottom":10}},"home_line_TfdJRE":{"type":"home-line","disabled":true,"name":"Home line","settings":{}},"home_slider_74TfND":{"type":"home-slider","blocks":{"collection_8Pdp63":{"type":"collection","settings":{"collection":"womens-wellness","title":"Women's Wellness"}},"collection_CVQ7Bw":{"type":"collection","settings":{"collection":"mens-supplements","title":"Men's Wellness"}},"collection_fVczXL":{"type":"collection","settings":{"collection":"heart-blood-pressure-support","title":"Heart Wellness"}},"collection_zmkdEe":{"type":"collection","settings":{"collection":"detox-metabolic-wellness-herbal-teas-supplements","title":"Detox & Metabolic Wellness"}},"collection_gJihkG":{"type":"collection","settings":{"collection":"digestive-wellness-1","title":"Digestive Wellness"}},"collection_F8WXCW":{"type":"collection","settings":{"collection":"blood-sugar-supplements","title":"Blood Sugar Wellness"}},"collection_3jchBX":{"type":"collection","settings":{"collection":"joint-mobility-wellness","title":"Joint & Mobility Wellness"}},"collection_hwNJxj":{"type":"collection","settings":{"collection":"wellness-bundles","title":"Wellness Bundles"}},"collection_AxFDRG":{"type":"collection","settings":{"collection":"natural-skincare-personal-care","title":"Skincare & Personal Care"}}},"block_order":["collection_8Pdp63","collection_CVQ7Bw","collection_fVczXL","collection_zmkdEe","collection_gJihkG","collection_F8WXCW","collection_3jchBX","collection_hwNJxj","collection_AxFDRG"],"name":"Homepage Slider","settings":{"heading":"Shop by Goal","button_label":"Add to Cart","sold_out_label":"Sold Out","pad_top":50,"pad_bottom":70}},"home_image_3zk8rW":{"type":"home-image","blocks":{"block_d3aqph":{"type":"block","settings":{"number":"01","title":"Choose Your Wellness Goal","content":"Find support for digestion, hormones, skin, energy, detox, hair health, or overall balance."}},"block_YKrJMU":{"type":"block","settings":{"number":"02","title":"Select Your Natural Ritual","content":"Choose from herbal teas, supplements, and wellness blends made with\u0003 botanical ingredients."}},"block_pzHDkE":{"type":"block","settings":{"number":"03","title":"Use Consistently","content":"Add your product into your daily routinewith simple, nourishing rituals designed to support your body over time."}},"block_6TJHjb":{"type":"block","settings":{"number":"04","title":"Feel Supported Naturally","content":"Experience plant-based wellness that helps you feel more balanced, refreshed, and connected to your body."}}},"block_order":["block_d3aqph","block_YKrJMU","block_pzHDkE","block_6TJHjb"],"name":"Home Image","settings":{"image":"shopify:\/\/shop_images\/bg.png","image_mobile1":"shopify:\/\/shop_images\/bg_1.png","image_mobile2":"shopify:\/\/shop_images\/bg_2.png","mobile_logo":"shopify:\/\/shop_images\/Leaf_icon_3003bdc0-f2f5-402c-996e-b022414e3fef.png"}},"home_image_text_qUpBXV":{"type":"home-image-text","blocks":{"block_XTUaJG":{"type":"block","settings":{"info":"Herbal teas are produced in BRCGS-certified UK facilities operating under HACCP and GMP principles."}},"block_ygdUML":{"type":"block","settings":{"info":"Capsule formulations use standardized botanical extracts and are manufactured in GMP-compliant environments."}},"block_Mh4QpM":{"type":"block","settings":{"info":"Select products are independently third-party tested for purity and safety."}}},"block_order":["block_XTUaJG","block_ygdUML","block_Mh4QpM"],"name":"Home Image Text","settings":{"heading":"Formulated & Manufactured to International Quality Standards.","image":"shopify:\/\/shop_images\/Manufacturing_1_9f4010ae-525c-4150-9852-f36edc3c45a1.png","icon":"shopify:\/\/shop_images\/Leaf_icon_1.png","marks":"shopify:\/\/shop_images\/Standards_236c53f4-fb8a-4a60-886c-f513bf48076c.png","pad_top":70,"pad_bottom":70}},"wellness_circle_bemrij":{"type":"wellness-circle","disabled":true,"name":"Wellness Circle","settings":{"heading":"The Zyzven Wellness Circle","feature_1":"STRUCTURED ACCESS","feature_2":"FOUNDER-LED EDUCATION","feature_3":"PRIORITY SUPPORT","button_text":"EXPLORE MEMBERSHIP","button_link":""}},"17754565366d5fd155":{"type":"apps","blocks":{"judge_me_reviews_cards_carousel_Xy6j8L":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/cards_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"show_sample_reviews":true,"reviews_selection":"all","products":[],"filter_pinned":false,"filter_featured":false,"filter_custom_tags":"","star_rating":"all","show_review_media":true,"display_order":"media_first","no_image_fallback":"review_text_only","max_reviews":20,"review_length":"medium","text_size":"medium","image_ratio":"1","reviews_shown":4,"show_reviewer_name":true,"show_product_name":true,"hide_arrows_mobile":true,"arrows_position":"sides","max_width":1100,"corner_styling":"soft","header_text_color":"#000000","text_color":"#000000","card_color":"#f9f9f9","stars_color":"#ffd600","arrows_color":"#000000","transition_speed":5,"header_text":"Customers are saying","show_average_rating":true,"rating_display":"default"}}},"block_order":["judge_me_reviews_cards_carousel_Xy6j8L"],"custom_css":[".jdgm-star {color: #ffd600;}"],"settings":{"include_margins":true}},"bib_homepage_promo_Rs7kQ2":{"type":"bib-homepage-promo","name":"Business in a Box promo","settings":{"heading":"Your Wellness Business. Ready in One Box.","body":"40 ready-to-retail Zyzven Naturals products with a combined recommended retail value of over $2,000 for $999 + shipping.","price_line":"Training, marketing toolkit and monthly support included · Wholesale, not MLM","cta_label":"Explore Business in a Box →","cta_link":"\/pages\/business-in-box","image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg","image_alt":"Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.","background_color":"#F5F4EE"}}},"order":["cw_homepage_banner_zGUxGP","hero_bzCJQ6","badge_slider_CVQpP8","feel_grid_hWEVTL","home_slider_chd3xc","ritual_hero_9Q8hpe","ugc_video_strip_Y7NzGm","trust_band_bj6Vrk","faq_image_YAq7kE","country_flag_6KzCb3","best_sellers_carousel_dprD4A","pdp_section_NfWxgf","home_line_TfdJRE","home_slider_74TfND","bib_homepage_promo_Rs7kQ2","home_image_3zk8rW","home_image_text_qUpBXV","wellness_circle_bemrij","17754565366d5fd155"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cw_homepage_banner_zGUxGP": {
+      "type": "cw-homepage-banner",
+      "disabled": true,
+      "name": "Custom Homepage Banner",
+      "settings": {
+        "bg_type": "image",
+        "image": "shopify://shop_images/Background_Texture_1.png",
+        "product_image": "shopify://shop_images/Product-imagery.png",
+        "product_image_mobile": "shopify://shop_images/WhatsApp_Image_2026-06-01_at_10.33.08_PM.jpg",
+        "heading": "Support Metabolism. Rebalance Hormones. Restore Energy Naturally.",
+        "content": "<p>A targeted supplement system for metabolic and hormonal health.<br/>Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy.</p>",
+        "btn_text1": "Take Our 60-Second Assessment",
+        "btn_link1": "shopify://pages/assessment",
+        "btn_color1": "#31853c",
+        "btn_text2": "Shop the System",
+        "btn_link2": "shopify://pages/protocols",
+        "btn_color2": "#d1b08e"
+      }
+    },
+    "hero_bzCJQ6": {
+      "type": "Hero",
+      "name": "Hero",
+      "settings": {
+        "heading_line_1": "Support Metabolism.",
+        "heading_line_2": "Rebalance Hormones.",
+        "heading_line_3_bold": "Restore Energy Naturally.",
+        "heading_line_3_regular": "",
+        "subheading": "A targeted supplement system for metabolic and hormonal health.",
+        "body_text": "Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy.",
+        "btn1_label": "Take Our 60-Second Assessment",
+        "btn1_link": "shopify://pages/assessment",
+        "btn1_bg": "#31853c",
+        "btn1_text": "#ffffff",
+        "show_btn2": true,
+        "btn2_label": "Shop the System",
+        "btn2_link": "shopify://pages/protocols",
+        "btn2_bg": "#d1b08e",
+        "btn2_text": "#ffffff",
+        "show_video": true,
+        "background_video_url": "",
+        "background_video": "shopify://files/videos/Neutral-Vid_3a04e71f-3775-4080-817a-d002545708ef.mp4",
+        "video_overlay_opacity": 0,
+        "bg_fallback": "#f6f1e8",
+        "heading_color": "#16181c",
+        "text_color": "#3c3c3c",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "badge_slider_CVQpP8": {
+      "type": "badge-slider",
+      "blocks": {
+        "block_zmxyAL": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/1_3.png",
+            "label": ""
+          }
+        },
+        "block_WmdUUp": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/2_3.png",
+            "label": ""
+          }
+        },
+        "block_QLBhXL": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/3_3.png",
+            "label": ""
+          }
+        },
+        "block_4xCGYA": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/4_3.png",
+            "label": ""
+          }
+        },
+        "block_PVgG9B": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/5_1_140e75d3-f73d-4b94-bb29-55010c1c621e.png",
+            "label": ""
+          }
+        },
+        "block_aqXAHX": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/6_1.png",
+            "label": ""
+          }
+        },
+        "block_i9AhQT": {
+          "type": "block",
+          "settings": {
+            "badge": "shopify://shop_images/7_1.png",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_zmxyAL",
+        "block_WmdUUp",
+        "block_QLBhXL",
+        "block_4xCGYA",
+        "block_PVgG9B",
+        "block_aqXAHX",
+        "block_i9AhQT"
+      ],
+      "name": "Badge Slider",
+      "settings": {
+        "pad_top": 20,
+        "pad_bottom": 20
+      }
+    },
+    "feel_grid_hWEVTL": {
+      "type": "feel-grid",
+      "blocks": {
+        "card_gTHcUB": {
+          "type": "card",
+          "settings": {
+            "word": "Debloated",
+            "category": "Tea",
+            "name": "Cleanse Tea",
+            "url": "",
+            "accent": "#5b8c3e",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_01_06_PM.png",
+            "product_image": "shopify://shop_images/alki-detox-with-moringa-non-laxative-metabolic-detox-tea1.png"
+          }
+        },
+        "card_eJJmPL": {
+          "type": "card",
+          "settings": {
+            "word": "Rested",
+            "category": "Tea",
+            "name": "Sleep Tea",
+            "url": "shopify://products/womens-brew-hormone-balance-tea",
+            "accent": "#6b7d4a",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_02_57_PM.png",
+            "product_image": "shopify://shop_images/womens-brew-womens-wellness-herbal-tea-organic-vegan1.png"
+          }
+        },
+        "card_p9mw7K": {
+          "type": "card",
+          "settings": {
+            "word": "Energized",
+            "category": "Tea",
+            "name": "Energize Tea",
+            "url": "shopify://products/manthoric-advance",
+            "accent": "#2d4a2e",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_04_39_PM.png",
+            "product_image": "shopify://shop_images/manthoric-advance-mens-vitality-performance-support-capsules.jpg"
+          }
+        },
+        "card_4qzmBX": {
+          "type": "card",
+          "settings": {
+            "word": "Immune",
+            "category": "Tea",
+            "name": "Feel Better Tea",
+            "url": "shopify://products/zyzven-naturals-heart-harmony-loose-leaf-tea-60g",
+            "accent": "#c0392b",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_08_18_PM.png",
+            "product_image": "shopify://shop_images/Harmony_Heart_Cardiovascular_Wellness_Herbal_Tea_Organic_Vegan_GMP_Third-Party_Lab-Tested_2.png"
+          }
+        },
+        "card_fXK9GD": {
+          "type": "card",
+          "settings": {
+            "word": "Balanced",
+            "category": "Tea",
+            "name": "Menopause",
+            "url": "shopify://products/freja-balance-menopause-wellness-tea",
+            "accent": "#d4a837",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_09_59_PM.png",
+            "product_image": "shopify://shop_images/a4.png"
+          }
+        },
+        "card_9nG6jG": {
+          "type": "card",
+          "settings": {
+            "word": "Lighter",
+            "category": "Tea",
+            "name": "Apple Cider Vinegar",
+            "url": "shopify://products/zyzven-naturals-clearpath-detox-herbal-tea-60g-loose-leaf",
+            "accent": "#1a5c4b",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_11_12_PM.png",
+            "product_image": "shopify://shop_images/clearpath-detox-loose-leaf-herbal-detox-tea1.png"
+          }
+        },
+        "card_BtRk94": {
+          "type": "card",
+          "settings": {
+            "word": "Protected",
+            "category": "Supplement",
+            "name": "Pressure Balance",
+            "url": "shopify://products/zyzven-naturals-pressure-balance-capsules-60",
+            "accent": "#e8a0a0",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_01_40_27_PM.png",
+            "product_image": "shopify://shop_images/pressure-balance-cardiovascular-circulation-blood-pressure-support-capsules1.png"
+          }
+        },
+        "card_MDhkWn": {
+          "type": "card",
+          "settings": {
+            "word": "Calm",
+            "category": "Tea",
+            "name": "Blood Sugar",
+            "url": "shopify://products/sweet-balance-herbal-tea",
+            "accent": "#a8c8e8",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_13_55_PM.png",
+            "product_image": "shopify://shop_images/sweet-balance-blood-sugar-wellness-herbal-tea1.png"
+          }
+        },
+        "card_cEh3c8": {
+          "type": "card",
+          "settings": {
+            "word": "Glowing",
+            "category": "Supplement",
+            "name": "Nice Hair",
+            "url": "shopify://products/advanced-hormone-balance-pcos-support-capsules",
+            "accent": "#b8a0c8",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_15_53_PM.png",
+            "product_image": "shopify://shop_images/freja-advance-menopause-hormonal-support-capsules.png"
+          }
+        },
+        "card_qkLtLr": {
+          "type": "card",
+          "settings": {
+            "word": "In Control",
+            "category": "Supplement",
+            "name": "Hormone Balance",
+            "url": "shopify://products/zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply",
+            "accent": "#d4735e",
+            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_16_26_PM.png",
+            "product_image": "shopify://shop_images/a1.png"
+          }
+        }
+      },
+      "block_order": [
+        "card_gTHcUB",
+        "card_eJJmPL",
+        "card_p9mw7K",
+        "card_4qzmBX",
+        "card_fXK9GD",
+        "card_9nG6jG",
+        "card_BtRk94",
+        "card_MDhkWn",
+        "card_cEh3c8",
+        "card_qkLtLr"
+      ],
+      "disabled": true,
+      "name": "Feel Grid",
+      "settings": {
+        "eyebrow": "Start here",
+        "heading_pink": "",
+        "heading": "How do you want to feel?",
+        "subtitle": "Shop by what your body is asking for. A tea and a supplement for every part of your day.",
+        "columns": 5,
+        "padding_top": 76,
+        "padding_bottom": 84,
+        "accent_color": "#358440",
+        "heading_color": "#2b2b2b",
+        "text_color": "#707070"
+      }
+    },
+    "home_slider_chd3xc": {
+      "type": "home-slider",
+      "blocks": {
+        "product_pfL68w": {
+          "type": "product",
+          "settings": {
+            "product": "womens-brew-hormone-balance-tea",
+            "title": "Women's Organic Herbal Tea",
+            "description": "Women's Wellness Organic Herbal Tea (60g) | Women's Brew"
+          }
+        },
+        "product_PGhreb": {
+          "type": "product",
+          "settings": {
+            "product": "blood-sugar-support-capsules",
+            "title": "Blood Sugar Support Capsules",
+            "description": "Organic Blood Sugar Support Supplement"
+          }
+        },
+        "product_rMY4RT": {
+          "type": "product",
+          "settings": {
+            "product": "alki-detox-moringa-herbal-tea",
+            "title": "Alki Detox with Moringa",
+            "description": "Advanced Non-Laxative Metabiolic Detox Tea (80g)"
+          }
+        },
+        "product_rmka8z": {
+          "type": "product",
+          "settings": {
+            "product": "zyzven-naturals-heart-harmony-loose-leaf-tea-60g",
+            "title": "Heart Harmony",
+            "description": "Harmony Heart™ – Advanced Organic Heart & Circulation Tea | Caffeine-Free | 60g"
+          }
+        },
+        "product_JCb79x": {
+          "type": "product",
+          "settings": {
+            "product": "zyzven-naturals-pressure-balance-capsules-60",
+            "title": "Heart Health Support",
+            "description": "Pressure Balance Heart Health Support Capsules."
+          }
+        },
+        "product_k83gz9": {
+          "type": "product",
+          "settings": {
+            "product": "zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply",
+            "title": "Metabolic Support Capsules",
+            "description": "Glukobalans™ Metabolic Support Capsules."
+          }
+        },
+        "product_pYATgB": {
+          "type": "product",
+          "settings": {
+            "product": "sweet-balance-herbal-tea",
+            "title": "Blood Sugar Wellness",
+            "description": "Organic Sweet Balance Wellness Herbal Tea"
+          }
+        },
+        "product_UpPJem": {
+          "type": "product",
+          "settings": {
+            "product": "zyzven-naturals-clearpath-detox-herbal-tea-60g-loose-leaf",
+            "title": "Detox Organic Herbal",
+            "description": "Organic ClearPath Detox Herbal Tea"
+          }
+        },
+        "product_Mw9wPX": {
+          "type": "product",
+          "settings": {
+            "product": "advanced-hormone-balance-pcos-support-capsules",
+            "title": "PCOS/pmos, cycle support and fertility",
+            "description": "Menopause & Hormonal Support Capsules (60 Count) | Freja Advance"
+          }
+        },
+        "product_yJeUJ4": {
+          "type": "product",
+          "settings": {
+            "product": "zyzven-naturals-uterine-tonic-loose-herb-tea-80g",
+            "title": "Uterine tonic - fibroids",
+            "description": "Women's Reproductive Wellness Organic Herbal Tea (80g) | Uterine Tonic"
+          }
+        },
+        "product_3YQq4Q": {
+          "type": "product",
+          "settings": {
+            "product": "freja-balance-menopause-wellness-tea",
+            "title": "Freja Balance Organic",
+            "description": "Menopause & Hormonal Wellness Organic Herbal Tea (80g) | Freja Balance"
+          }
+        },
+        "product_qbhxR4": {
+          "type": "product",
+          "settings": {
+            "product": "manthoric-advance",
+            "title": "Manthoric Advance",
+            "description": "Men's Vitality & Performance Support Capsules (120 Count) | Manthoric Advance"
+          }
+        }
+      },
+      "block_order": [
+        "product_pfL68w",
+        "product_PGhreb",
+        "product_rMY4RT",
+        "product_rmka8z",
+        "product_JCb79x",
+        "product_k83gz9",
+        "product_pYATgB",
+        "product_UpPJem",
+        "product_Mw9wPX",
+        "product_yJeUJ4",
+        "product_3YQq4Q",
+        "product_qbhxR4"
+      ],
+      "name": "Homepage Slider",
+      "settings": {
+        "heading": "Shop Our Best Sellers",
+        "button_label": "Add to Cart",
+        "sold_out_label": "Sold Out",
+        "pad_top": 50,
+        "pad_bottom": 50
+      }
+    },
+    "ritual_hero_9Q8hpe": {
+      "type": "ritual-hero",
+      "disabled": true,
+      "name": "Ritual Hero",
+      "settings": {
+        "heading": "Little Rituals.\nBig Difference.",
+        "subtitle": "A cup after dinner, a capsule with breakfast. Zyzven Naturals fits into your day and gives a lot back.",
+        "button_label": "Find Your Ritual",
+        "button_link": "",
+        "video": "shopify://files/videos/can_you_only_change_the_backgr_gwr_video_mvp.mp4",
+        "video_url": "",
+        "heading_color": "#2b2b2b",
+        "text_color": "#6f6f6f",
+        "mobile_bg": "#ffffff",
+        "cta_text_desktop": "#050505",
+        "pink_top": "#000000",
+        "pink_bottom": "#358440"
+      }
+    },
+    "ugc_video_strip_Y7NzGm": {
+      "type": "ugc-video-strip",
+      "blocks": {
+        "clip_nMYJ9q": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7519842905381457183_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_dUrh7c": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7529505540699917599_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_d8fy8b": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7531833196401397023_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_r7eNBh": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7378536674613071147_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_WQU9DK": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7519842905381457183_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_N9AnTy": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7531833196401397023_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_Ffx7tt": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7378536674613071147_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        },
+        "clip_gMxE4g": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/snaptik_7529505540699917599_v3.mp4",
+            "video_url": "",
+            "handle": "",
+            "tag_label": "",
+            "tag_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "clip_nMYJ9q",
+        "clip_dUrh7c",
+        "clip_d8fy8b",
+        "clip_r7eNBh",
+        "clip_WQU9DK",
+        "clip_N9AnTy",
+        "clip_Ffx7tt",
+        "clip_gMxE4g"
+      ],
+      "disabled": true,
+      "name": "UGC Video Strip",
+      "settings": {
+        "heading": "Loved by thousands of parents",
+        "title_size": 40,
+        "subheading": "<p>See how families use our products every day.</p>",
+        "sub_size": 16,
+        "title_color": "#2c2420",
+        "sub_color": "#6b6258",
+        "bg_color": "#faf9f6",
+        "clip_width": 210,
+        "clip_width_mobile": 150,
+        "gap": 16,
+        "radius": 16,
+        "fade": 80,
+        "speed": 45,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "load_font": true
+      }
+    },
+    "trust_band_bj6Vrk": {
+      "type": "trust-band",
+      "disabled": true,
+      "name": "Trust Band",
+      "settings": {
+        "heading": "So… why trust us?",
+        "body": "<p>Because we're a little obsessed (in the best way). Every blend is clean, pure, natural and lab-tested by people in white coats who take this <em>very</em> seriously. All the good stuff, zero fillers nobody can pronounce. You're welcome, girl.</p>",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_12_20_59_PM.png",
+        "badges": "shopify://shop_images/Zyzvennaturals-made-in-usa-gmp-lab-tested-vegan-badges-hg-home-1.webp",
+        "copy_left": 52,
+        "badges_max": 560,
+        "mobile_focus": 25,
+        "mobile_copy_left": 37,
+        "bg_color": "#358440",
+        "text_color": "#ffffff"
+      }
+    },
+    "faq_image_YAq7kE": {
+      "type": "faq-image",
+      "blocks": {
+        "faq_3JmTTh": {
+          "type": "faq",
+          "settings": {
+            "question": "What makes Zyzven Naturals different?",
+            "answer": "<p>We blend traditional herbal knowledge with modern manufacturing standards. Our formulas use botanical ingredients chosen for a purpose, and we're transparent about how and where they're made — so you know exactly what you're bringing into your routine.</p>",
+            "open": false
+          }
+        },
+        "faq_jBHKp9": {
+          "type": "faq",
+          "settings": {
+            "question": "How are your products made and to what standards?",
+            "answer": "<p>Our herbal teas are produced in BRCGS-certified UK facilities operating under HACCP and GMP principles, and our capsule formulations use standardized botanical extracts manufactured in GMP-compliant environments. Select products are independently third-party tested for purity and safety.</p>",
+            "open": false
+          }
+        },
+        "faq_EtrHgV": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your products natural, plant-based, and vegan?",
+            "answer": "<p>Yes — our range is built around botanical, plant-based ingredients, and many products (such as our Pressure Balance capsules) are vegan and GMP-certified. Each product page lists its full ingredients so you can check before you buy.</p>",
+            "open": false
+          }
+        },
+        "faq_XhWk4P": {
+          "type": "faq",
+          "settings": {
+            "question": "What kinds of products do you offer?",
+            "answer": "<p>Herbal wellness teas, capsule supplements, wellness bundles, and natural skincare and personal care. Everything is organized by goal — women's wellness, metabolic health, heart health, digestion, blood sugar, kidney and urinary, joint and mobility, and more.</p>",
+            "open": false
+          }
+        },
+        "faq_UNhCUX": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right product for me?",
+            "answer": "<p>Start with Shop by Goal, or take our 60-second wellness assessment for a tailored recommendation. If you're still unsure, reach out and we'll help you build a simple routine.</p>",
+            "open": false
+          }
+        },
+        "faq_AnJiFJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Are these products safe, and can I take them with medication?",
+            "answer": "<p>Our products are formulated to support everyday wellness and are not intended to diagnose, treat, cure, or prevent any disease. If you're pregnant, nursing, taking medication, or managing a health condition, please consult your healthcare provider before use.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_3JmTTh",
+        "faq_jBHKp9",
+        "faq_EtrHgV",
+        "faq_XhWk4P",
+        "faq_UNhCUX",
+        "faq_AnJiFJ"
+      ],
+      "disabled": true,
+      "name": "FAQ + Image",
+      "settings": {
+        "heading": "Frequently asked questions",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-07-20_at_5.53.08_PM.jpg",
+        "image_position": "right",
+        "close_others": true,
+        "background": "#faf9f6",
+        "title_color": "#2c2420",
+        "question_color": "#2c2420",
+        "answer_color": "#5a5147",
+        "border_color": "#e6ddcd",
+        "icon_color": "#2c2420",
+        "link_color": "#a4642a",
+        "image_placeholder": "#efe3ce",
+        "title_size": 38,
+        "title_size_mobile": 28,
+        "title_weight": "600",
+        "title_gap": 28,
+        "question_size": 17,
+        "question_size_mobile": 15,
+        "question_weight": "500",
+        "answer_size": 15,
+        "row_padding": 20,
+        "icon_size": 18,
+        "image_radius": 16,
+        "image_ratio": "4 / 3",
+        "image_ratio_mobile": "4 / 3",
+        "max_width": 1280,
+        "column_gap": 56,
+        "column_gap_mobile": 48,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_inline": 40,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "padding_inline_mobile": 16
+      }
+    },
+    "country_flag_6KzCb3": {
+      "type": "country-flag",
+      "blocks": {
+        "country_wWJ4gJ": {
+          "type": "country",
+          "settings": {
+            "country": "us",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_kjwEkg": {
+          "type": "country",
+          "settings": {
+            "country": "gb",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_Uin3qQ": {
+          "type": "country",
+          "settings": {
+            "country": "se",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_iXjz8H": {
+          "type": "country",
+          "settings": {
+            "country": "ca",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_KXicpR": {
+          "type": "country",
+          "settings": {
+            "country": "eu",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_YBkjGM": {
+          "type": "country",
+          "settings": {
+            "country": "jm",
+            "custom_code": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "country_wWJ4gJ",
+        "country_kjwEkg",
+        "country_Uin3qQ",
+        "country_iXjz8H",
+        "country_KXicpR",
+        "country_YBkjGM"
+      ],
+      "name": "Country Flags",
+      "settings": {
+        "heading": "Our Products are Fulfilled by Local Warehouses",
+        "flag_style": "rounded",
+        "show_labels": true,
+        "enable_switch": false,
+        "color": "",
+        "text_color": "#283613",
+        "hover_color": "#31853c",
+        "pad_top": 40,
+        "pad_bottom": 40
+      }
+    },
+    "best_sellers_carousel_dprD4A": {
+      "type": "Best-Sellers-Carousel",
+      "disabled": true,
+      "name": "Best Sellers Carousel",
+      "settings": {
+        "title": "Shop Our Best Sellers",
+        "collection": "best-sellers",
+        "max_products": 12,
+        "button_text": "Add to Cart",
+        "sold_out_text": "Sold Out",
+        "per_view": 4,
+        "gap": 24,
+        "max_width": 1300,
+        "arrow_size": 40,
+        "arrow_top": 34,
+        "bg_color": "#faf5ec",
+        "heading_color": "#22371f",
+        "card_bg": "#ffffff",
+        "title_color": "#20281c",
+        "sale_color": "#000000",
+        "compare_color": "#8a8a8a",
+        "button_bg": "#3f7d34",
+        "button_text_color": "#ffffff",
+        "arrow_bg": "#9db892",
+        "arrow_icon_color": "#ffffff",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "pdp_section_NfWxgf": {
+      "type": "pdp-section",
+      "blocks": {
+        "info_KgEVaB": {
+          "type": "info",
+          "settings": {
+            "content": "USA orders ship from our USA warehouse"
+          }
+        },
+        "info_Pj3HJR": {
+          "type": "info",
+          "settings": {
+            "content": "Canada orders ship from our Canadian warehouse"
+          }
+        },
+        "info_3DeRaq": {
+          "type": "info",
+          "settings": {
+            "content": "EU orders ship from Sweden"
+          }
+        },
+        "info_XKqQmn": {
+          "type": "info",
+          "settings": {
+            "content": "UK orders ship from our UK warehouse"
+          }
+        },
+        "info_6fR3eb": {
+          "type": "info",
+          "settings": {
+            "content": "Canada orders ship from our Canadian warehouse"
+          }
+        }
+      },
+      "block_order": [
+        "info_KgEVaB",
+        "info_Pj3HJR",
+        "info_3DeRaq",
+        "info_XKqQmn",
+        "info_6fR3eb"
+      ],
+      "disabled": true,
+      "name": "PDP Info",
+      "settings": {
+        "heading": "Our Products are Fulfilled by Local Warehouses",
+        "color": "#d1b08e",
+        "pad_top": 10,
+        "pad_bottom": 10
+      }
+    },
+    "home_line_TfdJRE": {
+      "type": "home-line",
+      "disabled": true,
+      "name": "Home line",
+      "settings": {}
+    },
+    "home_slider_74TfND": {
+      "type": "home-slider",
+      "blocks": {
+        "collection_8Pdp63": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-wellness",
+            "title": "Women's Wellness"
+          }
+        },
+        "collection_CVQ7Bw": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-supplements",
+            "title": "Men's Wellness"
+          }
+        },
+        "collection_fVczXL": {
+          "type": "collection",
+          "settings": {
+            "collection": "heart-blood-pressure-support",
+            "title": "Heart Wellness"
+          }
+        },
+        "collection_zmkdEe": {
+          "type": "collection",
+          "settings": {
+            "collection": "detox-metabolic-wellness-herbal-teas-supplements",
+            "title": "Detox & Metabolic Wellness"
+          }
+        },
+        "collection_gJihkG": {
+          "type": "collection",
+          "settings": {
+            "collection": "digestive-wellness-1",
+            "title": "Digestive Wellness"
+          }
+        },
+        "collection_F8WXCW": {
+          "type": "collection",
+          "settings": {
+            "collection": "blood-sugar-supplements",
+            "title": "Blood Sugar Wellness"
+          }
+        },
+        "collection_3jchBX": {
+          "type": "collection",
+          "settings": {
+            "collection": "joint-mobility-wellness",
+            "title": "Joint & Mobility Wellness"
+          }
+        },
+        "collection_hwNJxj": {
+          "type": "collection",
+          "settings": {
+            "collection": "wellness-bundles",
+            "title": "Wellness Bundles"
+          }
+        },
+        "collection_AxFDRG": {
+          "type": "collection",
+          "settings": {
+            "collection": "natural-skincare-personal-care",
+            "title": "Skincare & Personal Care"
+          }
+        }
+      },
+      "block_order": [
+        "collection_8Pdp63",
+        "collection_CVQ7Bw",
+        "collection_fVczXL",
+        "collection_zmkdEe",
+        "collection_gJihkG",
+        "collection_F8WXCW",
+        "collection_3jchBX",
+        "collection_hwNJxj",
+        "collection_AxFDRG"
+      ],
+      "name": "Homepage Slider",
+      "settings": {
+        "heading": "Shop by Goal",
+        "button_label": "Add to Cart",
+        "sold_out_label": "Sold Out",
+        "pad_top": 50,
+        "pad_bottom": 70
+      }
+    },
+    "home_image_3zk8rW": {
+      "type": "home-image",
+      "blocks": {
+        "block_d3aqph": {
+          "type": "block",
+          "settings": {
+            "number": "01",
+            "title": "Choose Your Wellness Goal",
+            "content": "Find support for digestion, hormones, skin, energy, detox, hair health, or overall balance."
+          }
+        },
+        "block_YKrJMU": {
+          "type": "block",
+          "settings": {
+            "number": "02",
+            "title": "Select Your Natural Ritual",
+            "content": "Choose from herbal teas, supplements, and wellness blends made with\u0003 botanical ingredients."
+          }
+        },
+        "block_pzHDkE": {
+          "type": "block",
+          "settings": {
+            "number": "03",
+            "title": "Use Consistently",
+            "content": "Add your product into your daily routinewith simple, nourishing rituals designed to support your body over time."
+          }
+        },
+        "block_6TJHjb": {
+          "type": "block",
+          "settings": {
+            "number": "04",
+            "title": "Feel Supported Naturally",
+            "content": "Experience plant-based wellness that helps you feel more balanced, refreshed, and connected to your body."
+          }
+        }
+      },
+      "block_order": [
+        "block_d3aqph",
+        "block_YKrJMU",
+        "block_pzHDkE",
+        "block_6TJHjb"
+      ],
+      "name": "Home Image",
+      "settings": {
+        "image": "shopify://shop_images/bg.png",
+        "image_mobile1": "shopify://shop_images/bg_1.png",
+        "image_mobile2": "shopify://shop_images/bg_2.png",
+        "mobile_logo": "shopify://shop_images/Leaf_icon_3003bdc0-f2f5-402c-996e-b022414e3fef.png"
+      }
+    },
+    "home_image_text_qUpBXV": {
+      "type": "home-image-text",
+      "blocks": {
+        "block_XTUaJG": {
+          "type": "block",
+          "settings": {
+            "info": "Herbal teas are produced in BRCGS-certified UK facilities operating under HACCP and GMP principles."
+          }
+        },
+        "block_ygdUML": {
+          "type": "block",
+          "settings": {
+            "info": "Capsule formulations use standardized botanical extracts and are manufactured in GMP-compliant environments."
+          }
+        },
+        "block_Mh4QpM": {
+          "type": "block",
+          "settings": {
+            "info": "Select products are independently third-party tested for purity and safety."
+          }
+        }
+      },
+      "block_order": [
+        "block_XTUaJG",
+        "block_ygdUML",
+        "block_Mh4QpM"
+      ],
+      "name": "Home Image Text",
+      "settings": {
+        "heading": "Formulated & Manufactured to International Quality Standards.",
+        "image": "shopify://shop_images/Manufacturing_1_9f4010ae-525c-4150-9852-f36edc3c45a1.png",
+        "icon": "shopify://shop_images/Leaf_icon_1.png",
+        "marks": "shopify://shop_images/Standards_236c53f4-fb8a-4a60-886c-f513bf48076c.png",
+        "pad_top": 70,
+        "pad_bottom": 70
+      }
+    },
+    "wellness_circle_bemrij": {
+      "type": "wellness-circle",
+      "disabled": true,
+      "name": "Wellness Circle",
+      "settings": {
+        "heading": "The Zyzven Wellness Circle",
+        "feature_1": "STRUCTURED ACCESS",
+        "feature_2": "FOUNDER-LED EDUCATION",
+        "feature_3": "PRIORITY SUPPORT",
+        "button_text": "EXPLORE MEMBERSHIP",
+        "button_link": ""
+      }
+    },
+    "17754565366d5fd155": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_cards_carousel_Xy6j8L": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "star_rating": "all",
+            "show_review_media": true,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 20,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": true,
+            "arrows_position": "sides",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#000000",
+            "text_color": "#000000",
+            "card_color": "#f9f9f9",
+            "stars_color": "#ffd600",
+            "arrows_color": "#000000",
+            "transition_speed": 5,
+            "header_text": "Customers are saying",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_cards_carousel_Xy6j8L"
+      ],
+      "custom_css": [
+        ".jdgm-star {color: #ffd600;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "bib_homepage_promo_Rs7kQ2": {
+      "type": "bib-homepage-promo",
+      "name": "Business in a Box promo",
+      "settings": {
+        "heading": "Your Wellness Business. Ready in One Box.",
+        "body": "40 ready-to-retail Zyzven Naturals products with a combined recommended retail value of over $2,000 for $999 + shipping.",
+        "price_line": "Training, marketing toolkit and monthly support included · Wholesale, not MLM",
+        "cta_label": "Explore Business in a Box →",
+        "cta_link": "/pages/business-in-box",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg",
+        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.",
+        "background_color": "#F5F4EE"
+      }
+    }
+  },
+  "order": [
+    "cw_homepage_banner_zGUxGP",
+    "hero_bzCJQ6",
+    "badge_slider_CVQpP8",
+    "feel_grid_hWEVTL",
+    "home_slider_chd3xc",
+    "ritual_hero_9Q8hpe",
+    "ugc_video_strip_Y7NzGm",
+    "trust_band_bj6Vrk",
+    "faq_image_YAq7kE",
+    "country_flag_6KzCb3",
+    "best_sellers_carousel_dprD4A",
+    "pdp_section_NfWxgf",
+    "home_line_TfdJRE",
+    "home_slider_74TfND",
+    "bib_homepage_promo_Rs7kQ2",
+    "home_image_3zk8rW",
+    "home_image_text_qUpBXV",
+    "wellness_circle_bemrij",
+    "17754565366d5fd155"
+  ]
+}
