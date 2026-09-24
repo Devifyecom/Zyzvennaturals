@@ -380,6 +380,7 @@
               {%- form 'product', biab_product, id: 'BiabBuyForm', class: 'bp-form' -%}
                 <input type="hidden" name="id" value="{{ biab_variant.id }}">
                 <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_to" value="/checkout">
                 <input type="hidden" name="properties[Reseller Terms version]" value="{{ s.terms_version | escape }}">
                 {%- if contents_line != '' -%}
                   <input type="hidden" name="properties[Box contents]" value="{{ contents_line | escape }}">
@@ -430,6 +431,7 @@
                   type="submit"
                   name="add"
                   class="biab-btn biab-btn--gold biab-btn--block bp-submit"
+                  data-bp-submit
                   {% if biab_variant.available == false %}disabled{% endif %}
                 >
                   {%- if biab_variant.available -%}{{ button_label }}{%- else -%}Currently unavailable{%- endif -%}
@@ -509,6 +511,9 @@
       var error = form.querySelector('[data-bp-error]');
       var quoteEmail = section.querySelector('[data-bp-quote-email]');
       var quoteWa = section.querySelector('[data-bp-quote-wa]');
+      var submitBtn = form.querySelector('[data-bp-submit]');
+      var variantId = Number((form.querySelector('input[name="id"]') || {}).value);
+      var root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
 
       function currentMode() {
         var opt = dest.options[dest.selectedIndex];
@@ -585,6 +590,48 @@
           acceptedAt.disabled = false;
           acceptedAt.value = new Date().toISOString();
         }
+
+        // Straight to checkout with exactly one box. Any box already in the cart is
+        // replaced so a repeat click never creates a second box. Without JavaScript
+        // the form still posts to /cart/add and return_to sends the buyer to checkout.
+        e.preventDefault(); e.stopImmediatePropagation();
+        if (submitBtn) {
+          if (submitBtn.disabled) return;
+          submitBtn.disabled = true;
+          submitBtn.setAttribute('data-label', submitBtn.textContent);
+          submitBtn.textContent = 'Going to checkout…';
+        }
+        var data = new FormData(form);
+        data.delete('return_to');
+
+        fetch(root + 'cart.js', { headers: { Accept: 'application/json' } })
+          .then(function (r) { return r.json(); })
+          .then(function (cart) {
+            var updates = {};
+            (cart.items || []).forEach(function (item) {
+              if (item.variant_id === variantId) updates[item.key] = 0;
+            });
+            if (!Object.keys(updates).length) return null;
+            return fetch(root + 'cart/update.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify({ updates: updates })
+            });
+          })
+          .then(function () {
+            return fetch(root + 'cart/add.js', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+          })
+          .then(function (r) {
+            if (!r.ok) return r.json().then(function (err) { throw err; });
+            window.location.href = root + 'checkout';
+          })
+          .catch(function (err) {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = submitBtn.getAttribute('data-label');
+            }
+            showError((err && err.description) || 'Sorry, we could not start checkout. Please try again or contact us.');
+          });
       }, true);
 
       updateMode();
