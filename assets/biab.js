@@ -27,7 +27,7 @@
           t.setAttribute('aria-selected', t.dataset.filter === filter ? 'true' : 'false');
         });
         scope.querySelectorAll('[data-category]').forEach(function (card) {
-          var show = filter === 'all' || card.dataset.category === filter;
+          var show = filter === 'all' || (card.dataset.category || '').split(' ').indexOf(filter) !== -1;
           card.style.display = show ? '' : 'none';
         });
       }

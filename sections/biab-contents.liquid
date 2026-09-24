@@ -66,6 +66,7 @@
   #biab-contents .biab-tag--menopause { background: #fbefdc; color: #7a4a0c; }
   #biab-contents .biab-tag--hormone { background: #f6e6ea; color: #8a3a52; }
   #biab-contents .biab-tag--uterine { background: #ece8f7; color: #4b3a86; }
+  #biab-contents .biab-tag + .biab-tag { margin-left: 6px; }
 
   /* Filtering */
   #biab-contents .biab-product[hidden] { display: none !important; }
@@ -380,7 +381,7 @@
               assign cat_label = entry | split: ':' | last
               assign cat_units = 0
               for block in section.blocks
-                if block.settings.category == cat_key
+                if block.settings.category == cat_key or block.settings.category_2 == cat_key
                   assign cat_units = cat_units | plus: block.settings.qty
                 endif
               endfor
@@ -423,7 +424,7 @@
               assign product_url = b.product.url
             endif
           -%}
-          <article class="biab-card biab-product" data-category="{{ b.category }}" data-qty="{{ b.qty }}" {{ block.shopify_attributes }}>
+          <article class="biab-card biab-product" data-category="{{ b.category }}{% if b.category_2 != blank and b.category_2 != 'none' and b.category_2 != b.category %} {{ b.category_2 }}{% endif %}" data-qty="{{ b.qty }}" {{ block.shopify_attributes }}>
             <div class="biab-product__media">
               {%- if s.show_qty_badge -%}
                 <span class="biab-qty-badge" aria-hidden="true">&times;{{ b.qty }}</span>
@@ -447,12 +448,12 @@
             </div>
 
             <div class="biab-product__body">
-              <span class="biab-tag biab-tag--{{ b.category }}">
-                {%- for entry in category_list -%}
-                  {%- assign cat_key = entry | split: ':' | first -%}
-                  {%- if cat_key == b.category -%}{{ entry | split: ':' | last | escape }}{%- endif -%}
-                {%- endfor -%}
-              </span>
+              {%- for entry in category_list -%}
+                {%- assign cat_key = entry | split: ':' | first -%}
+                {%- if cat_key == b.category or cat_key == b.category_2 -%}
+                  <span class="biab-tag biab-tag--{{ cat_key }}">{{ entry | split: ':' | last | escape }}</span>
+                {%- endif -%}
+              {%- endfor -%}
               <h3 class="biab-product__name">
                 {%- if product_url != blank -%}
                   <a class="biab-product__link" href="{{ product_url }}" target="_blank" rel="noopener">{{ pname }}<span class="biab-visually-hidden"> (opens in a new tab)</span></a>
@@ -623,7 +624,7 @@
         if (active && moveFocus) tab.focus();
       });
       Array.prototype.forEach.call(cards, function (card) {
-        var show = filter === 'all' || card.getAttribute('data-category') === filter;
+        var show = filter === 'all' || (card.getAttribute('data-category') || '').split(' ').indexOf(filter) !== -1;
         card.hidden = !show;
         card.removeAttribute('aria-hidden');
         card.classList.remove('is-hidden', 'hidden');
@@ -803,6 +804,19 @@
             { "value": "uterine", "label": "Uterine Wellness" }
           ]
         },
+        {
+          "type": "select", "id": "category_2", "label": "Second category (optional)", "info": "Also show this product under a second filter.", "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "weight", "label": "Weight Management" },
+            { "value": "metabolic", "label": "Blood Sugar & Metabolic Wellness" },
+            { "value": "men", "label": "Men's Vitality" },
+            { "value": "heart", "label": "Heart & Circulation" },
+            { "value": "menopause", "label": "Menopause" },
+            { "value": "hormone", "label": "Hormone & Reproductive Wellness" },
+            { "value": "uterine", "label": "Uterine Wellness" }
+          ]
+        },
         { "type": "url", "id": "link", "label": "Custom product page link", "info": "Optional. By default the card links to the linked product's page, opening in a new tab." },
         { "type": "image_picker", "id": "image", "label": "Custom image", "info": "Optional. Overrides the linked product's image." }
       ]
@@ -812,7 +826,7 @@
     {
       "name": "BIAB — What's inside",
       "blocks": [
-        { "type": "item", "settings": { "name": "GLUKOBALANS", "qty": 6, "price": "69.99", "category": "weight" } },
+        { "type": "item", "settings": { "name": "GLUKOBALANS", "qty": 6, "price": "69.99", "category": "weight", "category_2": "metabolic" } },
         { "type": "item", "settings": { "name": "Blood Sugar", "qty": 5, "price": "49.99", "category": "metabolic" } },
         { "type": "item", "settings": { "name": "Alki Detox with Moringa", "qty": 5, "price": "39.99", "category": "weight" } },
         { "type": "item", "settings": { "name": "Freja Advance", "qty": 5, "price": "49.99", "category": "hormone" } },
