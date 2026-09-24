@@ -981,85 +981,43 @@
         "question_pbgiC8": {
           "type": "question",
           "settings": {
-            "question": "How fast will I notice a difference?",
-            "answer": "<p>Most women feel calmer and less bloated within the first week or two. The bigger shift, easier cramps and a steadier cycle, usually shows up over the first full month as you drink it consistently. Hormones move on a monthly rhythm, so give it a cycle or two.</p>"
+            "question": "What is Manthoric Advance designed for?",
+            "answer": "<p>Manthoric Advance is a men's wellness supplement formulated to support daily vitality, energy, nutritional balance, and overall wellbeing. </p>"
           }
         },
         "question_q9riDW": {
           "type": "question",
           "settings": {
-            "question": "Is it really caffeine-free?",
-            "answer": "<p>Yes, 100% caffeine-free. That's why so many women drink it in the evening as a calming wind-down. It won't keep you up, and it won't add to that wired PMS feeling.</p>"
+            "question": "Does Manthoric Advance contain Zinc?",
+            "answer": "<p>Yes. Manthoric Advance contains Zinc, which contributes to the maintenance of normal testosterone levels in the body. </p>"
           }
         },
         "question_4HF6cx": {
           "type": "question",
           "settings": {
-            "question": "Can it help with PCOS?",
-            "answer": "<p>Spearmint is the herb most often reached for by women managing PCOS symptoms, and it's a lead ingredient in this blend along with raspberry leaf and nettle. Many of our PCOS customers drink it daily for cycle and mood support. It isn't a treatment for PCOS, so please keep working with your healthcare provider too.</p>"
+            "question": "How many capsules are included?",
+            "answer": "<p>Each bottle contains 120 vegan capsules, providing approximately a 60-day supply when taken as directed. </p>"
           }
         },
         "question_jtmUPH": {
           "type": "question",
           "settings": {
-            "question": "Will it help with perimenopause?",
-            "answer": "<p>Many perimenopausal women use it for the mood swings, irritability, and bloat that come with shifting hormones. It's caffeine-free and calming, which makes it an easy daily ritual during this stage. If you're on hormone replacement therapy, check with your provider first.</p>"
+            "question": "Is Manthoric Advance vegan?",
+            "answer": "<p>Yes. The formula is made with vegan capsules and contains no dairy, soy, gluten, or artificial additives. </p>"
           }
         },
         "question_mJkCMq": {
           "type": "question",
           "settings": {
-            "question": "How many cups a day should I drink?",
-            "answer": "<p>2 to 3 cups a day is ideal. Pour 8 oz of just-boiled water over one tea bag, steep 8 to 15 minutes, squeeze the bag, and sip. Many women have one in the morning and one in the evening.</p>"
+            "question": "When should I take Manthoric Advance?",
+            "answer": "<p>Adults should take 2 capsules daily with a meal and water. </p>"
           }
         },
         "question_DgrzGL": {
           "type": "question",
           "settings": {
-            "question": "What does it taste like?",
-            "answer": "<p>Minty and lightly floral. A fresh spearmint and lemongrass base with soft chamomile and a hint of berry. The licorice root adds a touch of natural sweetness, so no sugar needed. Lovely hot or over ice.</p>"
-          }
-        },
-        "question_EWWJWJ": {
-          "type": "question",
-          "settings": {
-            "question": "Can I drink it during my whole cycle, not just before my period?",
-            "answer": "<p>Yes, that's how it works best. Zyzven Naturals is designed as a daily ritual through your whole cycle, not just a quick fix for the bad days. Consistent daily support is what helps things feel steadier month over month.</p>"
-          }
-        },
-        "question_mciNmf": {
-          "type": "question",
-          "settings": {
-            "question": "Can I drink it while pregnant or breastfeeding?",
-            "answer": "<p>We don't recommend it during pregnancy or breastfeeding. This blend contains raspberry leaf and licorice root, which aren't appropriate for everyone at those stages. Please check with your OB or healthcare provider before adding any herbal product.</p>"
-          }
-        },
-        "question_cHCqHm": {
-          "type": "question",
-          "settings": {
-            "question": "Will it affect my birth control or medications?",
-            "answer": "<p>Licorice root and hormone-supporting herbs can interact with some medications, including blood pressure medication and hormonal treatments. If you take any prescription, or have high blood pressure, talk with your provider or pharmacist before starting.</p>"
-          }
-        },
-        "question_G4EJNg": {
-          "type": "question",
-          "settings": {
-            "question": "Is it vegan, gluten-free, and sugar-free?",
-            "answer": "<p>Yes to all three. Zyzven Naturals Hormone Balance is vegan, gluten-free, sugar-free, caffeine-free, and made in the USA in a GMP-certified facility with nothing artificial.</p>"
-          }
-        },
-        "question_bqfDCn": {
-          "type": "question",
-          "settings": {
-            "question": "Can I cancel my subscription anytime?",
-            "answer": "<p>Absolutely. Skip a month, change your frequency, or cancel, all from your account. No phone calls, no hoops. Our 30-day guarantee means you can request a full refund too.</p>"
-          }
-        },
-        "question_BGAyMp": {
-          "type": "question",
-          "settings": {
-            "question": "What's in the welcome gift?",
-            "answer": "<p>When you Subscribe &amp; Save, your first order ships with a <strong>FREE Pink Tea Tumbler + Infuser</strong> (a $45.49 value) plus <strong>FREE shipping</strong>. The insulated tumbler keeps your tea hot for 12 hours or cold for 24, and the built-in infuser lets you brew your Zyzven Naturals tea anywhere.</p>"
+            "question": "Who is this supplement for?",
+            "answer": "<p>Manthoric Advance is ideal for men seeking a plant-based daily wellness supplement featuring traditional botanical ingredients and essential nutrients to support an active lifestyle. </p>"
           }
         }
       },
@@ -1069,13 +1027,7 @@
         "question_4HF6cx",
         "question_jtmUPH",
         "question_mJkCMq",
-        "question_DgrzGL",
-        "question_EWWJWJ",
-        "question_mciNmf",
-        "question_cHCqHm",
-        "question_G4EJNg",
-        "question_bqfDCn",
-        "question_BGAyMp"
+        "question_DgrzGL"
       ],
       "name": "FAQ accordion",
       "settings": {
