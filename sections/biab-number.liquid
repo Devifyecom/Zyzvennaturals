@@ -3,8 +3,8 @@
   assign s = section.settings
 
   comment
-    Every figure comes from the approved USD retail value and the box's checkout
-    price, in the shopper's currency (see snippets/biab-money.liquid). Profit and
+    Every figure comes from the approved USD retail value and the approved $999
+    box price, shown in USD (see snippets/biab-money.liquid). Profit and
     percentages are calculated from those, so they can never drift out of sync.
     The "margin override" setting wins if set above 0.
   endcomment
@@ -21,9 +21,15 @@
     assign profit_cents = 0
   endif
 
-  assign price_display = price_cents | money
-  assign rrp_display = rrp_cents | money
-  assign profit_display = profit_cents | money
+  capture price_display
+    render 'biab-money', cents: price_cents
+  endcapture
+  capture rrp_display
+    render 'biab-money', cents: rrp_cents
+  endcapture
+  capture profit_display
+    render 'biab-money', cents: profit_cents
+  endcapture
 
   if s.margin_override > 0
     assign profit_pct = s.margin_override | times: 1.0
@@ -376,11 +382,11 @@
     { "type": "textarea", "id": "lede", "label": "Plain-language summary", "info": "Tokens: [price], [rrp], [profit], [margin], [cost], [markup].", "default": "Sell all 40 products at current recommended retail prices and you recover your [price] investment, with up to [profit] remaining as gross profit before expenses." },
     { "type": "header", "content": "Combined RRP" },
     { "type": "text", "id": "rrp_label", "label": "Label", "default": "Combined retail value" },
-    { "type": "text", "id": "rrp", "label": "Approved figure in USD", "info": "Converted automatically for other currencies.", "default": "$2,029.60" },
+    { "type": "text", "id": "rrp", "label": "Approved figure in USD", "info": "Shown in USD in every market.", "default": "$2,029.60" },
     { "type": "text", "id": "rrp_note", "label": "Note", "default": "All 40 products at current recommended retail prices" },
     { "type": "header", "content": "Box price" },
     { "type": "text", "id": "price_label", "label": "Label", "default": "Your box price" },
-    { "type": "paragraph", "content": "The box price is the Business in a Box product's checkout price in the shopper's currency." },
+    { "type": "paragraph", "content": "The approved $999.00 box price is shown automatically." },
     { "type": "text", "id": "price_note", "label": "Note", "default": "Shipping charged separately" },
     { "type": "header", "content": "Potential gross profit" },
     { "type": "text", "id": "profit_label", "label": "Label", "default": "Potential gross profit" },

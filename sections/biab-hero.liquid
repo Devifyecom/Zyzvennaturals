@@ -6,8 +6,7 @@
   assign buy_anchor = s.cta_anchor | default: '#biab-purchase'
 
   comment
-    Box price is the checkout price in the shopper's market; the retail value is the
-    approved USD figure, converted at the same rate (see snippets/biab-money.liquid)
+    Box price and retail value are the approved USD figures (see snippets/biab-money.liquid)
   endcomment
   capture box_price
     render 'biab-money', box: true
@@ -99,10 +98,10 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Reseller Starter Package" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Start Your Own Wellness Business with Zyzven Naturals" },
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "One box. 40 ready-to-sell products. Training, marketing tools and ongoing support to help you begin." },
-    { "type": "paragraph", "content": "The box price shown is the Business in a Box product's checkout price in the shopper's currency." },
+    { "type": "paragraph", "content": "The approved $999.00 box price is shown automatically." },
     { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "+ shipping" },
     { "type": "text", "id": "rrp_label", "label": "Retail value label", "default": "Combined recommended retail value" },
-    { "type": "text", "id": "rrp", "label": "Approved retail value in USD", "info": "Converted automatically for other currencies.", "default": "$2,029.60" },
+    { "type": "text", "id": "rrp", "label": "Approved retail value in USD", "info": "Shown in USD in every market.", "default": "$2,029.60" },
     { "type": "text", "id": "cta_label", "label": "Primary button label", "info": "[price] is replaced with the box price.", "default": "Start Your Business — [price]" },
     { "type": "text", "id": "cta_anchor", "label": "Primary button target", "default": "#biab-purchase" },
     { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "See What's Inside" },

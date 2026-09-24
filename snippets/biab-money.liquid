@@ -1,17 +1,15 @@
 {%- comment -%}
-  Business in a Box: one approved figure, shown in the shopper's currency.
+  Business in a Box: one approved figure, always shown in USD.
 
   Every price on the Business in a Box page comes from the approved USD figures
-  (the $999 box and the agreed RRPs). The box price is whatever checkout charges
-  for the Business in a Box product in the shopper's market. Every other amount is
-  shown as the approved USD value in USD markets, and in other currencies is
-  converted at the same rate Shopify applies to the box, so the headline, product
-  cards, purchase panel and checkout always agree.
+  (the $999 box and the agreed RRPs). They are shown exactly as approved, e.g.
+  $999.00 and $2,029.60, whatever market or currency the shopper is browsing in,
+  so the headline, product cards and purchase panel never show competing figures.
 
   Accepts:
   - amount: approved USD amount, e.g. '69.99', '$2,029.60' or 999
   - cents: approved USD amount in cents (used instead of amount)
-  - box: true to output the box price charged at checkout
+  - box: true to output the approved box price
   - raw: true to output cents instead of formatted money
 
   Usage:
@@ -21,28 +19,30 @@
 
 {%- liquid
   assign approved_box_cents = 99900
-  assign box_variant = all_products['business-in-a-box'].selected_or_first_available_variant
 
   if box
-    if box_variant != blank
-      assign out_cents = box_variant.price
-    else
-      assign out_cents = approved_box_cents
-    endif
+    assign out_cents = approved_box_cents
+  elsif cents != blank
+    assign out_cents = cents | round
   else
-    if cents != blank
-      assign out_cents = cents | round
-    else
-      assign out_cents = amount | append: '' | remove: '$' | remove: ',' | strip | times: 100 | round
-    endif
-    if cart.currency.iso_code != 'USD' and box_variant != blank
-      assign out_cents = out_cents | times: 1.0 | times: box_variant.price | divided_by: approved_box_cents | round
-    endif
+    assign out_cents = amount | append: '' | remove: '$' | remove: ',' | strip | times: 100 | round
   endif
 
   if raw
     echo out_cents
   else
-    echo out_cents | money
+    comment
+      Format as $1,234.56 without the store's currency format, which follows the shopper's market
+    endcomment
+    assign dollars = out_cents | divided_by: 100
+    assign cents_part = out_cents | modulo: 100 | prepend: '0' | slice: -2, 2
+    if dollars >= 1000
+      assign thousands = dollars | divided_by: 1000
+      assign hundreds = dollars | modulo: 1000 | prepend: '00' | slice: -3, 3
+      assign dollars_str = thousands | append: ',' | append: hundreds
+    else
+      assign dollars_str = dollars | append: ''
+    endif
+    echo '$' | append: dollars_str | append: '.' | append: cents_part
   endif
 -%}

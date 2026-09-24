@@ -574,7 +574,7 @@
           {%- if box != blank -%}
             {%- if s.show_box_price -%}
               <p class="biab-cta__price">
-                Box price <strong>{{ box_variant.price | money }}</strong>
+                Box price <strong>{%- render 'biab-money', box: true -%}</strong>
                 <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span class="biab-visually-hidden">, </span>
                 Retail value {{ total_display }}
               </p>
@@ -762,7 +762,7 @@
     { "type": "checkbox", "id": "show_view_link", "label": "Show \"View product\" link on cards", "default": true },
     { "type": "text", "id": "view_link_label", "label": "\"View product\" link text", "default": "View product details" },
 
-    { "type": "checkbox", "id": "show_card_prices", "label": "Show price and retail value on cards", "info": "Uses each item's approved RRP, converted for the shopper's currency.", "default": true },
+    { "type": "checkbox", "id": "show_card_prices", "label": "Show price and retail value on cards", "info": "Uses each item's approved USD RRP.", "default": true },
 
     { "type": "header", "content": "Breakdown table" },
     { "type": "checkbox", "id": "show_breakdown", "label": "Show breakdown table", "default": true },
@@ -795,7 +795,7 @@
         { "type": "product", "id": "product", "label": "Product", "info": "Used for the image and product page link. Prices come from the approved RRP below." },
         { "type": "text", "id": "name", "label": "Product name", "info": "Leave empty to use the linked product's title." },
         { "type": "number", "id": "qty", "label": "Quantity in box", "default": 6 },
-        { "type": "text", "id": "price", "label": "Approved RRP each in USD (number only)", "info": "Source of truth for this product's price. Converted automatically for other currencies. Agree any change before editing." },
+        { "type": "text", "id": "price", "label": "Approved RRP each in USD (number only)", "info": "Source of truth for this product's price, shown in USD in every market. Agree any change before editing." },
         {
           "type": "select", "id": "category", "label": "Category", "default": "metabolic",
           "options": [
