@@ -56,11 +56,15 @@
 
     {%- if template.suffix == 'business-in-box' or template.suffix == 'business-in-a-box' -%}
       {%- comment -%}
-        Business in a Box: keep Klaviyo popup and flyout sign-up forms (e.g. "Subscribe & Save")
-        from covering the page. Embedded forms are unaffected. Also exclude these URLs in
-        each form's Targeting settings in Klaviyo.
+        Business in a Box: keep sign-up popups (the EcomSend "Subscribe & Save" popup, and any
+        Klaviyo popup or flyout) from covering the page. Embedded forms are unaffected. Also
+        exclude these URLs in each popup app's display/targeting settings.
       {%- endcomment -%}
       <style>
+        .react-responsive-modal-root:has(.pp-modal),
+        .react-responsive-modal-root:has([class*="ecomsend__Modal"]),
+        .pp-overlay,
+        .pp-modal,
         div[role="dialog"][aria-label="POPUP Form"],
         div[role="dialog"][aria-label="FLYOUT Form"],
         [data-testid="POPUP"],
