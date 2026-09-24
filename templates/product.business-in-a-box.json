@@ -1,1 +1,1349 @@
-{"sections":{"main":{"type":"main-product","blocks":{"content_qNcVi9":{"type":"content","settings":{}},"badges_9cJDUK":{"type":"badges","disabled":true,"settings":{}},"vendor":{"type":"text","disabled":true,"settings":{"text":"{{ product.vendor }}","text_style":"uppercase"}},"title":{"type":"title","settings":{}},"image_wpGrG4":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Standards.png"}},"judge_me_reviews_preview_badge_m38qem":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}},"price":{"type":"price","settings":{}},"description_AEaB8M":{"type":"description","settings":{}},"buy_buttons_t3pRyb":{"type":"buy_buttons","disabled":true,"settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"text_XWEkcD":{"type":"text","disabled":true,"settings":{"text":"With ingredients traditionally used in western herbal medicine shown to:","text_style":"body"}},"text_with_icon_K9Pgbp":{"type":"text_with_icon","disabled":true,"settings":{"icon":"heart","text":"<strong>Ends daily bloating<\/strong>, wake up flat"}},"text_with_icon_tFXRJr":{"type":"text_with_icon","disabled":true,"settings":{"icon":"heart","text":"<strong>Daily regularity<\/strong>, zero cramping"}},"text_with_icon_JNNb37":{"type":"text_with_icon","disabled":true,"settings":{"icon":"heart","text":"<strong>Calms digestion<\/strong>, no post-meal heaviness"}},"text_with_icon_bNyEzm":{"type":"text_with_icon","disabled":true,"settings":{"icon":"heart","text":"<strong>Releases water weight<\/strong>, less puffiness"}},"subscriptions_app_block_LGhKzH":{"type":"shopify:\/\/apps\/subscriptions\/blocks\/app-block\/a3bfe9ec-96f8-4508-a003-df608a36d2ad","disabled":true,"settings":{"widget_style":"card","widget_style_card_selector":"radio_button","subscription_policy_url":"","color_text_body":"#6d7175","dividers_color":"#8f8d8d","background_color":"#ffffff","border_thickness":1,"border_radius":0,"product":"{{product}}"}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"custom_liquid_biabcta":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<a href=\"#biab-purchase\" class=\"button button--full-width button--primary\" style=\"margin-top:12px\">Start Your Business<\/a>\n<p style=\"margin:10px 0 0;font-size:14px;opacity:.8\">Choose your delivery country and agree to the <a href=\"\/pages\/reseller-terms\" target=\"_blank\" rel=\"noopener\">Reseller Terms<\/a> below before purchase.<\/p>"}},"dropdown_kwbfJF":{"type":"dropdown","disabled":true,"settings":{"heading":"Key Ingredients","content":"Tongkat Ali – A traditional botanical widely used to support men's vitality and wellness.  Ashwagandha – An adaptogenic herb traditionally used to support balance, resilience, and overall wellbeing.Black Maca Root – A nutrient-rich botanical commonly included in men's vitality and performance formulas.Panax Ginseng – A traditional herb valued for supporting energy, vitality, and active lifestyles.Cordyceps Mushroom – Widely used in wellness practices to support energy and performance-focused routines.Fenugreek – A botanical traditionally used in men's health and nutritional wellness supplements.Shilajit – A mineral-rich ingredient long used in traditional wellness systems to support vitality.Moringa – A nutrient-dense plant providing naturally occurring vitamins, minerals, and beneficial plant compounds.Zinc – An essential mineral that contributes to the maintenance of normal testosterone levels in the body.Black Pepper Extract – Included to support nutrient absorption and ingredient bioavailability.{{ product.metafields.custom.benefit_3.value }}"}},"dropdown_Pn6Edz":{"type":"dropdown","disabled":true,"settings":{"heading":"How to Use","content":"How to Use How to Use How to Use How to Use How to Use"}},"dropdown_MkwwcT":{"type":"dropdown","disabled":true,"settings":{"heading":"Important Information","content":"Important Information"}},"recommend_widget_bWpkR4":{"type":"recommend_widget","settings":{"heading":"","products":[]}},"custom_liquid_NmcncR":{"type":"custom_liquid","disabled":true,"settings":{"custom_liquid":"<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    \/* ---- brand tokens ---- *\/\n    --brand:#358440;          \/* Zyzven brand green *\/\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  \/* ---------- LEFT: phone \/ video card ---------- *\/\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9\/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  \/* ---------- RIGHT: testimonial wheel ---------- *\/\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  \/* ---------- responsive ---------- *\/\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n<\/style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https:\/\/res.cloudinary.com\/dss9cf62q\/video\/upload\/q_auto\/f_auto\/v1780603239\/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https:\/\/res.cloudinary.com\/dss9cf62q\/video\/upload\/q_auto\/f_auto\/so_0\/v1780603239\/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"><\/video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND<\/button>\n        <\/div>\n        <div class=\"hg-see\">&#9733; See it for yourself<\/div>\n      <\/div>\n    <\/div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"><\/div>\n    <\/div>\n\n  <\/div>\n<\/section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Three days in and my jeans button without a fight. Wild.\", n:\"Priya N.\"},\n    {q:\"I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.\", n:\"Danielle O.\"},\n    {q:\"I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.\", n:\"Bethany C.\"},\n    {q:\"My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.\", n:\"Marisol V.\"},\n    {q:\"Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.\", n:\"Kayleigh S.\"},\n    {q:\"First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.\", n:\"Renata F.\"},\n    {q:\"This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.\", n:\"Simone A.\"},\n    {q:\"Gentle overnight, flatter by morning. That is the whole review.\", n:\"Tovah L.\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;<\/div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;<\/p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified<\/span><\/div>'\n      + '<\/div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)\/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n<\/script>"}},"video_testimonials_9dcyFw":{"type":"video_testimonials","disabled":true,"settings":{"video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6f54340ad1384b73a25d1b5f965e8a24.mp4","sound_button_text":"TAP FOR SOUND","bottom_text":"See it for yourself","review_name_1":"Priya N.","review_text_1":"Three days in and my jeans button without a fight. Wild.","review_name_2":"Danielle O.","review_text_2":"I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.","review_name_3":"Bethany C.","review_text_3":"I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.","review_name_4":"Marisol V.","review_text_4":"My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.","review_name_5":"Kayleigh S.","review_text_5":"Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.","review_name_6":"Renata F.","review_text_6":"First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.","review_name_7":"Simone A.","review_text_7":"This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.","review_name_8":"Tovah L.","review_text_8":"Gentle overnight, flatter by morning. That is the whole review."}}},"block_order":["content_qNcVi9","badges_9cJDUK","vendor","title","image_wpGrG4","judge_me_reviews_preview_badge_m38qem","price","description_AEaB8M","buy_buttons_t3pRyb","text_XWEkcD","text_with_icon_K9Pgbp","text_with_icon_tFXRJr","text_with_icon_JNNb37","text_with_icon_bNyEzm","subscriptions_app_block_LGhKzH","variant_picker","quantity_selector","custom_liquid_biabcta","dropdown_kwbfJF","dropdown_Pn6Edz","dropdown_MkwwcT","recommend_widget_bWpkR4","custom_liquid_NmcncR","video_testimonials_9dcyFw"],"custom_css":[".product-info-title {width: 100%; display: flex; align-items: center; justify-content: space-between; background: none; border: 0; padding: 0px 0px; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer; color: inherit;}"],"settings":{"enable_sticky_info":true,"color_scheme":"scheme-1","media_size":"small","constrain_to_viewport":true,"media_fit":"contain","gallery_layout":"thumbnail_slider","mobile_thumbnails":"hide","media_position":"left","image_zoom":"none","hide_variants":false,"enable_video_looping":false,"trust_icon1":"shopify:\/\/shop_images\/Group_770.png","trust_text1":"Endless Variety & Value","trust_icon2":"shopify:\/\/shop_images\/Group_774.png","trust_text2":"Sustainable Shopping","trust_icon3":"shopify:\/\/shop_images\/Group_166.png","trust_text3":"Confidence Guarantee","trust_icon4":"shopify:\/\/shop_images\/Group_768.png","trust_text4":"Free Shipping Over $99*","padding_top":36,"padding_bottom":12}},"country_flag_WCwtwG":{"type":"country-flag","blocks":{"country_MDLCdP":{"type":"country","settings":{"country":"us","custom_code":"","label":""}},"country_cr9rWf":{"type":"country","settings":{"country":"gb","custom_code":"","label":""}},"country_bAmg8c":{"type":"country","settings":{"country":"se","custom_code":"","label":""}},"country_LQgzHD":{"type":"country","settings":{"country":"ca","custom_code":"","label":""}},"country_zCpmWB":{"type":"country","settings":{"country":"eu","custom_code":"","label":""}},"country_Lr9rGk":{"type":"country","settings":{"country":"jm","custom_code":"","label":""}}},"block_order":["country_MDLCdP","country_cr9rWf","country_bAmg8c","country_LQgzHD","country_zCpmWB","country_Lr9rGk"],"name":"Country Flags","settings":{"heading":"Our Products are Fulfilled by Local Warehouses","flag_style":"rounded","show_labels":true,"enable_switch":false,"color":"#fffbf4","text_color":"#283613","hover_color":"#31853c","pad_top":40,"pad_bottom":40}},"biab_contents_pdp":{"type":"biab-contents","blocks":{"item_8AY7CW":{"type":"item","settings":{"product":"zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply","name":"GLUKOBALANS","qty":6,"price":"69.99","category":"metabolic","link":"","image":"shopify:\/\/shop_images\/glukobalans-advanced-metabolic-support-capsules_6-Tested.png"}},"item_G6NkE8":{"type":"item","settings":{"product":"blood-sugar-support-capsules","name":"Blood Sugar","qty":5,"price":"49.99","category":"metabolic","link":"","image":"shopify:\/\/shop_images\/blood_sugar_support_capsules.png"}},"item_WAfFGn":{"type":"item","settings":{"product":"alki-detox-moringa-herbal-tea","name":"Alki Detox with Moringa","qty":5,"price":"39.99","category":"metabolic","link":"","image":"shopify:\/\/shop_images\/alki-detox-with-moringa-non-laxative-metabolic-detox-tea1.png"}},"item_LtywAp":{"type":"item","settings":{"product":"advanced-hormone-balance-pcos-support-capsules","name":"Freja Advance","qty":5,"price":"49.99","category":"women","link":"","image":"shopify:\/\/shop_images\/freja-advance-menopause-hormonal-support-capsules.png"}},"item_UnUKVK":{"type":"item","settings":{"product":"freja-balance-menopause-wellness-tea","name":"Freja Balance","qty":4,"price":"39.99","category":"women","link":"","image":"shopify:\/\/shop_images\/freja-balance-menopause-hormonal-wellness-herbal-tea.png"}},"item_Nh9KXN":{"type":"item","settings":{"product":"womens-brew-hormone-balance-tea","name":"Women's Brew","qty":4,"price":"39.99","category":"women","link":"","image":"shopify:\/\/shop_images\/womens-brew-womens-wellness-herbal-tea-organic-vegan1.png"}},"item_VNUfy8":{"type":"item","settings":{"product":"manthoric-advance","name":"Manthoric Advance","qty":4,"price":"69.99","category":"men","link":"","image":"shopify:\/\/shop_images\/manthoric-advance-mens-vitality-performance-support-capsules_2-Tested_1.png"}},"item_zQebMq":{"type":"item","settings":{"product":"zyzven-naturals-uterine-tonic-loose-herb-tea-80g","name":"Uterine Tonic Tea","qty":4,"price":"39.99","category":"women","link":"","image":"shopify:\/\/shop_images\/uterine-tonic-womens-wellness-herbal-tea.png"}},"item_x7PcUT":{"type":"item","settings":{"product":"zyzven-naturals-pressure-balance-capsules-60","name":"Pressure Balance","qty":3,"price":"49.99","category":"heart","link":"","image":"shopify:\/\/shop_images\/pressure-balance-cardiovascular-circulation-blood-pressure-support-capsules1.png"}}},"block_order":["item_8AY7CW","item_G6NkE8","item_WAfFGn","item_LtywAp","item_UnUKVK","item_Nh9KXN","item_VNUfy8","item_zQebMq","item_x7PcUT"],"name":"BIAB — What's inside","settings":{"eyebrow":"What's Inside Your Box","heading":"40 Products, Ready to Retail","subheading":"Nine best-selling lines across the areas customers ask about most. Every unit arrives sealed, labelled and ready to sell from day one.","scroll_offset":90,"show_tabs":true,"all_tab_label":"All 40 Products","show_tab_counts":true,"show_qty_badge":true,"show_view_link":true,"view_link_label":"View product details","show_card_prices":true,"show_breakdown":true,"breakdown_heading":"Box breakdown","breakdown_open":false,"show_packlist":false,"packlist_open":false,"packlist_label":"View the full packing list","total_label":"Total retail value: [units] units at RRP","mix_note":"<p><strong>Why this mix works.<\/strong> Metabolic wellness products help you win new customers, because many people are already looking for them. Women's wellness covers four products for different life stages. Men's wellness and heart health mean you can sell to the whole household, not just one person. Stock is weighted towards GLUKOBALANS (6 units) and Blood Sugar, Alki Detox and Freja Advance (5 each).<\/p>","show_cta":true,"box_product":"business-in-a-box","cta_url":"shopify:\/\/products\/business-in-a-box","cta_label":"Start Your Business","show_box_price":true,"cta_note":"One complete box of [units] sealed units. Shipping is shown before you pay."}},"biab_purchase_T1WEMc":{"type":"biab-purchase","blocks":{"item_91PbuI":{"type":"item","settings":{"product":"zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply","name":"GLUKOBALANS","qty":6,"price":"69.99","link":""}},"item_BDj7HZ":{"type":"item","settings":{"product":"blood-sugar-support-capsules","name":"Blood Sugar","qty":5,"price":"49.99","link":""}},"item_jHujwi":{"type":"item","settings":{"product":"alki-detox-moringa-herbal-tea","name":"Alki Detox with Moringa","qty":5,"price":"39.99","link":""}},"item_ldYOdC":{"type":"item","settings":{"product":"advanced-hormone-balance-pcos-support-capsules","name":"Freja Advance","qty":5,"price":"49.99","link":""}},"item_dlVdt6":{"type":"item","settings":{"product":"freja-balance-menopause-wellness-tea","name":"Freja Balance","qty":4,"price":"39.99","link":""}},"item_rOaBNW":{"type":"item","settings":{"product":"womens-brew-hormone-balance-tea","name":"Women's Brew","qty":4,"price":"39.99","link":""}},"item_eoDh8L":{"type":"item","settings":{"product":"manthoric-advance","name":"Manthoric Advance","qty":4,"price":"69.99","link":""}},"item_i73mgI":{"type":"item","settings":{"product":"zyzven-naturals-uterine-tonic-loose-herb-tea-80g","name":"Uterine Tonic Tea","qty":4,"price":"39.99","link":""}},"item_TwRtkB":{"type":"item","settings":{"product":"zyzven-naturals-pressure-balance-capsules-60","name":"Pressure Balance","qty":3,"price":"49.99","link":""}},"row_tk1":{"type":"row","settings":{"label":"Training and marketing toolkit","value":"Included"}},"row_ci1":{"type":"row","settings":{"label":"Monthly partner check-ins","value":"Included"}},"reassurance_w1":{"type":"reassurance","settings":{"text":"Wholesale, not MLM — no recruitment, no downline, no quota."}},"reassurance_r1":{"type":"reassurance","settings":{"text":"Reorder individual products at reseller pricing, without buying another box."}},"reassurance_e1":{"type":"reassurance","settings":{"text":"Earnings are not guaranteed. Figures assume all products sell at current recommended retail prices."}}},"block_order":["item_91PbuI","item_BDj7HZ","item_jHujwi","item_ldYOdC","item_dlVdt6","item_rOaBNW","item_eoDh8L","item_i73mgI","item_TwRtkB","row_tk1","row_ci1","reassurance_w1","reassurance_r1","reassurance_e1"],"disabled":true,"settings":{"product":"","eyebrow":"Start Today","heading":"Your Business in a Box","price":"$999","price_suffix":"+ shipping, shown before you pay","summary":"40 products + training + marketing toolkit + monthly partner support.","button_label":"Start Your Business — [price]","scroll_offset":90,"terms_url":"\/pages\/reseller-terms","terms_version":"Effective 23 September 2026","show_policies_link":true,"policies_label":"Shipping & returns for box orders","policies_url":"","guidelines_url":"","destination_label":"Where will your box be delivered?","direct_countries":"United States, Canada, United Kingdom","eu_countries":"Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden","me_countries":"","ship_none":"Choose your country to see how shipping works for you.","ship_us":"US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered within the USA does not incur additional customs duties.","ship_uk":"UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered within the UK does not incur additional customs duties.","ship_eu":"EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country.","ship_ca":"Most box products are stocked in Canada and dispatched by our Canadian distributor, TK Zyzven Naturals Inc. If a product for your box is unavailable there, we will contact you before shipping to explain whether to expect separate parcels, the delivery estimate and any possible import, clearance or extra shipping charge. We will not send a UK shipment or add an extra charge without your agreement.","ship_me":"We ship the box directly to this destination. The shipping charge and full total are shown at checkout before you pay.","ship_direct":"Your shipping charge and the full total are shown at checkout before you pay. Enter your delivery address there to see the available service.","ship_checkout_note":"Enter your delivery address at checkout to see the box shipping charge and the full amount payable before you pay. Delivery estimates are not guaranteed arrival dates; we send tracking when your box dispatches.","ship_forwarder":"We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay your forwarder and arrange its onward delivery to you. Please tick the box below if your delivery address belongs to a forwarder, so we can give you accurate shipping information.","ship_quote":"We don't have a checkout shipping rate for this destination. Request a quote and we'll confirm whether we can fulfil your order, the shipping charge and the total. We only take payment after you accept the quote, and we never add unapproved shipping charges.","ship_duties":"For this destination, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included. Customs and carrier delays can affect delivery times.","quote_label":"Request a shipping quote","show_optin":true,"optin_heading":"Optional: reseller features","optin_text":"I'd like to be considered for reseller features in brochures, the website directory, social media or live events. This is optional and doesn't affect my order. You'll ask me again before publishing anything.","auto_figures":true,"contents_list":"<p><strong>In the box:<\/strong> GLUKOBALANS ×6 · Blood Sugar ×5 · Alki Detox with Moringa ×5 · Freja Advance ×5 · Freja Balance ×4 · Women's Brew ×4 · Manthoric Advance ×4 · Uterine Tonic Tea ×4 · Pressure Balance ×3 — 40 products, combined recommended retail value $2,029.60.<\/p>","buy_note":"One-time purchase. No subscription, no monthly quota. Purchase does not grant distributor status, territory exclusivity or a territory website.","image_alt":"Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements","contact_heading":"Have questions first?","contact_text":"Talk to us before you buy. We would rather answer your questions than have you start uncertain.","whatsapp_label":"WhatsApp +44 7460 032301","whatsapp_url":"https:\/\/wa.me\/447460032301","email_label":"Email sales@zyzvennaturals.com","email":"sales@zyzvennaturals.com"}},"biab_faq_pdp":{"type":"biab-faq","blocks":{"faq_dIe529":{"type":"faq","settings":{"question":"What is included in the Business in a Box?","answer":"<p>You receive 40 sealed Zyzven Naturals products in the names and quantities shown in the “What’s Inside” section of this page. The box also includes initial product training, a digital marketing toolkit and monthly group check-ins.<\/p><p>Please review the product list before ordering. If a product becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed change.<\/p>"}},"faq_B6slrp":{"type":"faq","settings":{"question":"Is this an MLM?","answer":"<p>No. You buy products to sell to customers through your independent business. There are no downlines, recruitment commissions or required monthly purchases.<\/p>"}},"faq_jg0mV6":{"type":"faq","settings":{"question":"Who can become a reseller?","answer":"<p>We welcome reseller enquiries worldwide. You are responsible for checking the import and resale requirements that apply to your business and location. Where we can ship the Business in a Box directly is explained below.<\/p>"}},"faq_urYv9f":{"type":"faq","settings":{"question":"Where do you ship Business in a Box orders directly?","answer":"<p>Direct box shipping is currently available to the USA, Canada, UK, European Union and selected Middle Eastern destinations. Enter your address at checkout to check availability and see the shipping cost before payment.<\/p><p>For a destination that is not available at checkout, contact us for a complete shipping quote before purchasing.<\/p>"}},"faq_RnbqSn":{"type":"faq","settings":{"question":"Where will my US box ship from?","answer":"<p>US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered domestically within the USA does not incur additional customs duties.<\/p>"}},"faq_PhrTVp":{"type":"faq","settings":{"question":"Where will my UK box ship from?","answer":"<p>UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered domestically within the UK does not incur additional customs duties.<\/p>"}},"faq_p2nEQj":{"type":"faq","settings":{"question":"Where will my EU box ship from?","answer":"<p>EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country.<\/p>"}},"faq_8BAHYH":{"type":"faq","settings":{"question":"How are Business in a Box orders fulfilled in Canada?","answer":"<p>Most box products are stocked in Canada and can be dispatched by our Canadian distributor, TK Zyzven Naturals Inc.<\/p><p>If a product needed for your box is unavailable there, we will contact you before shipping to explain the proposed arrangement. With your agreement, the affected products may be sent from our UK warehouse by Royal Mail or UPS.<\/p><p>We will tell you whether to expect one delivery or separate shipments, the estimated delivery time, and whether a UK shipment could involve additional import or clearance charges. We will not send a UK shipment or add an extra shipping charge without your agreement.<\/p>"}},"faq_LKKccm":{"type":"faq","settings":{"question":"How much does shipping cost?","answer":"<p>The box price is $999 plus shipping. For destinations available at checkout, enter your address to see the shipping charge and full amount payable before placing your order.<\/p><p>If checkout does not offer delivery to your destination, ask us for a complete quote before paying. We will not add an unapproved shipping charge after you purchase.<\/p>"}},"faq_hIsvib":{"type":"faq","settings":{"question":"I live in the Caribbean. Can I order a box?","answer":"<p>Yes. We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay the forwarder and arrange onward delivery to your country.<\/p><p>Please check your country’s import requirements and ask us if you need help confirming whether your forwarding address is eligible before ordering.<\/p>"}},"faq_MbB1Ra":{"type":"faq","settings":{"question":"Could I have to pay customs duties or taxes?","answer":"<p>US, UK and EU boxes dispatched and delivered within their respective regions do not involve an additional customs duty on delivery.<\/p><p>For Canadian orders, any proposed shipment from the UK and its possible import or clearance charges will be explained to you before that shipment is agreed. For other international destinations and forwarding arrangements, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included.<\/p>"}},"faq_VmIDOz":{"type":"faq","settings":{"question":"How long will delivery take?","answer":"<p>The regional estimates above are measured in business days after dispatch and are not guaranteed arrival dates. Carrier delays, remote delivery locations and customs processing can affect delivery. We will send tracking information when your box dispatches.<\/p><p>For Canadian orders involving more than one warehouse, and for quote-only destinations, we will explain the applicable delivery estimate before proceeding with that shipping arrangement.<\/p>"}},"faq_LMboph":{"type":"faq","settings":{"question":"When will I receive the training and marketing toolkit?","answer":"<p>We will provide access to the initial product training and digital marketing toolkit within seven days of confirmed payment. We will contact you using the email address on your order. Monthly group check-ins form part of the ongoing reseller support.<\/p>"}},"faq_cwkFdi":{"type":"faq","settings":{"question":"What marketing support is included? Is there a marketing fee?","answer":"<p>The digital marketing toolkit and monthly group check-ins are included in the box offer. There is no mandatory recurring marketing fee.<\/p><p>We may invite resellers to appear in a brochure, website listing, social media feature or live event. These are opportunities rather than guaranteed placements. We will ask separately before publishing your name, photograph, business location, telephone number or social profile.<\/p>"}},"faq_rnWwRQ":{"type":"faq","settings":{"question":"Where can I sell the products?","answer":"<p>You may sell genuine, unopened Zyzven products through your independent shop, website, social media or in person, subject to the <a href=\"\/pages\/reseller-terms\" title=\"Reseller Terms\">Reseller Terms<\/a> and the rules in your market.<\/p>"}},"faq_o5Pcfc":{"type":"faq","settings":{"question":"Can I sell the products on Amazon, Walmart or eBay?","answer":"<p>You need prior written approval before listing Zyzven products on Amazon, Walmart, eBay or another third-party marketplace. Contact us with the marketplace and seller account you propose to use.<\/p>"}},"faq_Nkoqwf":{"type":"faq","settings":{"question":"Do I receive a Zyzven website or an exclusive territory?","answer":"<p>No. Buying the box does not include a Zyzven website, an exclusive territory, a franchise or distributor status. You may operate your own independent website in accordance with the <a href=\"\/pages\/reseller-terms\" title=\"Reseller Terms\">Reseller Terms<\/a>.<\/p>"}},"faq_nDZ62U":{"type":"faq","settings":{"question":"Who decides the retail prices?","answer":"<p>Zyzven Naturals publishes its recommended retail prices on ZyzvenNaturals.com. The box’s stated combined retail value and potential gross profit are calculated using those prices.<\/p><p>You set your own lawful selling prices. The figures on this page are illustrations; sales and earnings are not guaranteed.<\/p>"}},"faq_d5lvmV":{"type":"faq","settings":{"question":"Can I choose different products for my box?","answer":"<p>The starter box is sold with the product names and quantities listed in “What’s Inside.” It is not a build-your-own box. If an item becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed substitution.<\/p>"}},"faq_pOlpLK":{"type":"faq","settings":{"question":"Can I reorder individual products without buying another box?","answer":"<p>Yes. You can request individual products at the reseller prices then available. We will confirm the products, stock, current prices, shipping and any applicable reorder minimum before you commit to a reorder.<\/p>"}},"faq_yrHmNo":{"type":"faq","settings":{"question":"Can I return products that I do not sell?","answer":"<p>We do not buy back unsold stock. If a delivery is faulty, damaged, missing products or different from your confirmed order, contact <a href=\"mailto:sales@zyzvennaturals.com\" title=\"Email Zyzven Naturals\">sales@zyzvennaturals.com<\/a> as soon as reasonably possible with your order number and photographs where available. Your applicable legal rights remain unaffected.<\/p>"}},"faq_7ujZos":{"type":"faq","settings":{"question":"Do I need to buy my own insurance?","answer":"<p>Zyzven Naturals maintains product liability insurance for its business. We do not require resellers to buy insurance as a condition of joining. Our policy does not automatically cover every activity of your independent business.<\/p>"}},"faq_OpfGTJ":{"type":"faq","settings":{"question":"Do I need Zyzven clothing for events?","answer":"<p>If you represent Zyzven at a Zyzven-branded stand or event, please wear an approved Zyzven T-shirt or other approved branded clothing. Arrange this with us before the event. We will disclose and agree any clothing cost with you before asking you to pay it.<\/p>"}},"faq_2xhib9":{"type":"faq","settings":{"question":"Are payment plans available for the box?","answer":"<p>Any payment options available for your location will appear at checkout. If you need to discuss payment before ordering, contact us. Do not assume that an instalment option is available unless it is displayed or confirmed to you.<\/p>"}},"faq_xcjtfY":{"type":"faq","settings":{"question":"Who can I speak to before buying?","answer":"<p>Email <a href=\"mailto:sales@zyzvennaturals.com\" title=\"Email Zyzven Naturals\">sales@zyzvennaturals.com<\/a> or use the WhatsApp contact link on this page. We are happy to answer questions about the box, shipping or becoming a reseller before you place an order.<\/p>"}}},"block_order":["faq_dIe529","faq_B6slrp","faq_jg0mV6","faq_urYv9f","faq_RnbqSn","faq_PhrTVp","faq_p2nEQj","faq_8BAHYH","faq_LKKccm","faq_hIsvib","faq_MbB1Ra","faq_VmIDOz","faq_LMboph","faq_cwkFdi","faq_rnWwRQ","faq_o5Pcfc","faq_Nkoqwf","faq_nDZ62U","faq_d5lvmV","faq_pOlpLK","faq_yrHmNo","faq_7ujZos","faq_OpfGTJ","faq_2xhib9","faq_xcjtfY"],"name":"BIAB — FAQ","settings":{"eyebrow":"Questions & Answers","heading":"Business in a Box FAQ"}},"bib_hero_ggXbdz":{"type":"bib-hero","blocks":{"trust_Rhqitf":{"type":"trust","settings":{"label":"40 Ready-to-Retail Products"}},"trust_TGNRNr":{"type":"trust","settings":{"label":"Product Training Included"}},"trust_qGDAcW":{"type":"trust","settings":{"label":"Monthly Partner Check-ins"}},"trust_yDNhmX":{"type":"trust","settings":{"label":"Marketing Materials Included"}}},"block_order":["trust_Rhqitf","trust_TGNRNr","trust_qGDAcW","trust_yDNhmX"],"disabled":true,"name":"BIB — Hero","settings":{"eyebrow":"READY-TO-RETAIL WHOLESALE STARTER PACKAGE","heading":"Your Wellness Business. Already in the Box.","subheading":"Launch with 40 ready-to-retail Zyzven Naturals teas and supplements, professional training and ongoing partner support.","price_amount":"$999","price_suffix":"+ shipping","price_value_label":"Combined recommended retail value:","price_value":"$2,029.60","cta_label":"Start Your Business in a Box","cta_url":"","secondary_label":"See What's Inside","secondary_anchor":"#bib-contents","buy_disclaimer":"Shipping is charged separately. Purchase does not grant distributor status, territory exclusivity or a territory website.","image":"shopify:\/\/shop_images\/Gemini_Generated_Image_iiu633iiu633iiu6.jpg","image_alt":"Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.","placeholder_text":"Hero image: Premium box + product lineup"}},"bib_intro_hjDN4e":{"type":"bib-intro","disabled":true,"name":"BIB — Everything You Need","settings":{"heading":"Everything You Need to Start Selling","para_1":"Business in a Box brings together a carefully balanced range of Zyzven Naturals teas and supplements, giving you a professional product selection to introduce to your customers from day one.","para_2":"You receive more than inventory. We support you with product and brand training, a digital marketing toolkit, recommended retail pricing, monthly group check-ins and guidance as you build your customer base and reorder your bestsellers.","callout":"This is wholesale, not MLM. There are no recruitment commissions. Your opportunity comes from retailing genuine Zyzven Naturals products.","cta_label":"Start Your Business in a Box — $999","cta_anchor":"#bib-hero"}},"bib_contents_GGRWKd":{"type":"bib-contents","blocks":{"row_MU7hEV":{"type":"row","settings":{"name":"GLUKOBALANS","qty":"6","rrp":"$69.99","total":"$419.94"}},"row_UK3gWf":{"type":"row","settings":{"name":"Blood Sugar","qty":"5","rrp":"$49.99","total":"$249.95"}},"row_aqacwd":{"type":"row","settings":{"name":"Alki Detox with Moringa","qty":"5","rrp":"$39.99","total":"$199.95"}},"row_Tw8XED":{"type":"row","settings":{"name":"Freja Advance","qty":"5","rrp":"$49.99","total":"$249.95"}},"row_YqQFJ7":{"type":"row","settings":{"name":"Freja Balance","qty":"4","rrp":"$39.99","total":"$159.96"}},"row_xNAgBD":{"type":"row","settings":{"name":"Women's Brew","qty":"4","rrp":"$39.99","total":"$159.96"}},"row_fhVXA9":{"type":"row","settings":{"name":"Manthoric Advance","qty":"4","rrp":"$69.99","total":"$279.96"}},"row_8j7pd6":{"type":"row","settings":{"name":"Uterine Tonic Tea","qty":"4","rrp":"$39.99","total":"$159.96"}},"row_j307NK":{"type":"row","settings":{"name":"Pressure Balance","qty":"3","rrp":"$49.99","total":"$149.97"}}},"block_order":["row_MU7hEV","row_UK3gWf","row_aqacwd","row_Tw8XED","row_YqQFJ7","row_xNAgBD","row_fhVXA9","row_8j7pd6","row_j307NK"],"disabled":true,"name":"BIB — What's Inside","settings":{"heading":"What's Inside Your Box","intro":"A 40-product range spanning metabolic wellness, heart health, women's wellness, men's wellness and everyday herbal support.","total_label":"TOTAL","total_qty":"40","total_rrp":"$2,029.60","mix_heading":"Why This Mix Works","col_1_title":"Metabolic & Heart Wellness","col_1_items":"GLUKOBALANS\nBlood Sugar\nAlki Detox with Moringa\nPressure Balance","col_2_title":"Women's Wellness","col_2_items":"Freja Advance\nFreja Balance\nWomen's Brew\nUterine Tonic Tea","col_3_title":"Men's Wellness","col_3_items":"Manthoric Advance"}},"bib_steps_x9BnWP":{"type":"bib-steps","blocks":{"step_rwWYTW":{"type":"step","settings":{"title":"Order your box","text":"Purchase securely from ZyzvenNaturals.com."}},"step_TYPNg4":{"type":"step","settings":{"title":"Complete onboarding","text":"Access product and brand training."}},"step_fCKdf4":{"type":"step","settings":{"title":"Launch locally or online","text":"Use your approved digital materials."}},"step_bWyEah":{"type":"step","settings":{"title":"Reorder your bestsellers","text":"Keep building with reseller pricing."}}},"block_order":["step_rwWYTW","step_TYPNg4","step_fCKdf4","step_bWyEah"],"disabled":true,"name":"BIB — How It Works","settings":{"heading":"How It Works"}},"bib_audience_GG7gX9":{"type":"bib-audience","blocks":{"audience_HUpwEC":{"type":"audience","settings":{"text":"Entrepreneurs ready to build a product-based wellness business."}},"audience_gRVzLr":{"type":"audience","settings":{"text":"Wellness and beauty professionals, salons, barbershops, gyms and community sellers."}},"audience_tmAGWg":{"type":"audience","settings":{"text":"Online retailers and physical stores wanting a curated wellness range."}}},"block_order":["audience_HUpwEC","audience_gRVzLr","audience_tmAGWg"],"disabled":true,"name":"BIB — Who This Is For","settings":{"heading":"Who This Is For","disclaimer":"This offer is not designed for anyone expecting guaranteed income or passive profit. Results depend on sales activity, pricing and business expenses."}},"bib_value_99phjx":{"type":"bib-value","blocks":{"figure_gJ8kAJ":{"type":"figure","settings":{"label":"Box Price","prefix":"","figure":"$999","note":"Shipping charged separately","highlight":false}},"figure_mqXFze":{"type":"figure","settings":{"label":"Combined Current RRP","prefix":"","figure":"$2,029.60","note":"If all 40 products sell at current RRP","highlight":false}},"figure_AgwNgj":{"type":"figure","settings":{"label":"Potential Gross Profit","prefix":"Up to","figure":"$1,030.60","note":"Before shipping, fees, tax, discounts and expenses","highlight":true}}},"block_order":["figure_gJ8kAJ","figure_mqXFze","figure_AgwNgj"],"disabled":true,"name":"BIB — Retail Opportunity","settings":{"eyebrow":"","heading":"A Clear Retail Opportunity","disclaimer":"Potential gross profit of up to $1,030.60 if all products are sold at current recommended retail prices. Excludes shipping, taxes, discounts, payment fees, advertising and other business expenses. Individual results vary."}},"bib_homepage_promo_n6EfmJ":{"type":"bib-homepage-promo","disabled":true,"name":"BIB — Homepage promo","settings":{"heading":"YOUR WELLNESS BUSINESS. READY IN ONE BOX.","body":"40 ready-to-retail teas and supplements, plus training, marketing materials and monthly support.","price_line":"$999 | Over $2,000 recommended retail value","cta_label":"EXPLORE BUSINESS IN A BOX →","cta_link":"","image":"shopify:\/\/shop_images\/b68ef7db-6bcc-44c0-8f70-1364650f56d5.jpg","image_alt":"Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.","background_color":"#fffbf4"}},"bib_faq_kHjRn8":{"type":"bib-faq","blocks":{"question_TwXiDq":{"type":"question","settings":{"question":"Is this MLM?","answer":"No. Business in a Box is a wholesale\/resale inventory package. There are no recruitment commissions."}},"question_nj3JW8":{"type":"question","settings":{"question":"Is shipping included?","answer":"No. Shipping is calculated separately based on destination and fulfilment location."}},"question_w3EwAz":{"type":"question","settings":{"question":"Do I receive my own website?","answer":"A dedicated territory website is not included with this reseller box. Territory websites are reserved for approved distributors."}},"question_HVWQ7f":{"type":"question","settings":{"question":"Can I use Zyzven Naturals images and descriptions?","answer":"Yes—use the approved digital marketing pack supplied after purchase. Brand assets must not be altered or used for unauthorised claims."}},"question_PdUBkC":{"type":"question","settings":{"question":"Can I sell on Amazon, Walmart or other marketplaces?","answer":"Marketplace selling requires prior written approval to protect brand listings, pricing and account integrity."}},"question_xC3Qew":{"type":"question","settings":{"question":"Are earnings guaranteed?","answer":"No. Results depend on sales, pricing, discounts and individual business expenses."}},"question_HLnEtp":{"type":"question","settings":{"question":"Can I reorder products?","answer":"Yes. Approved resellers can replenish products at current reseller pricing and subject to availability."}},"question_DXiDL7":{"type":"question","settings":{"question":"Can I customise the box?","answer":"The box contains a fixed selection of 40 products across the Zyzven Naturals range."}}},"block_order":["question_TwXiDq","question_nj3JW8","question_w3EwAz","question_HVWQ7f","question_PdUBkC","question_xC3Qew","question_HLnEtp","question_DXiDL7"],"disabled":true,"name":"BIB — FAQ","settings":{"heading":"Frequently Asked Questions","single_open":true}},"bib_final_cta_3pFeNV":{"type":"bib-final-cta","disabled":true,"name":"BIB — Final CTA","settings":{"heading":"Ready to Build Something of Your Own?","subtext":"Start with products customers already know, supported by training and a brand built for long-term wellness.","cta_label":"Buy Business in a Box — $999","cta_anchor":"#biab-purchase"}},"related-products":{"type":"related-products","disabled":true,"custom_css":[],"settings":{"heading":"Related Products","heading_size":"h1","products_to_show":4,"columns_desktop":4,"columns_mobile":"1","color_scheme":"scheme-5","image_ratio":"portrait","image_shape":"default","show_secondary_image":true,"show_vendor":true,"show_rating":true,"padding_top":36,"padding_bottom":0,"quick_add":"none"}},"1782873990e608c78c":{"type":"apps","blocks":{"judge_me_reviews_review_widget_j34BKY":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"review_data":"real_data","max_width":1200,"show_shop_reviews":true,"empty_state":"empty_widget"}}},"block_order":["judge_me_reviews_review_widget_j34BKY"],"settings":{"include_margins":true}}},"order":["main","country_flag_WCwtwG","biab_contents_pdp","biab_purchase_T1WEMc","biab_faq_pdp","bib_hero_ggXbdz","bib_intro_hjDN4e","bib_contents_GGRWKd","bib_steps_x9BnWP","bib_audience_GG7gX9","bib_value_99phjx","bib_homepage_promo_n6EfmJ","bib_faq_kHjRn8","bib_final_cta_3pFeNV","related-products","1782873990e608c78c"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "content_qNcVi9": {
+          "type": "content",
+          "settings": {}
+        },
+        "badges_9cJDUK": {
+          "type": "badges",
+          "disabled": true,
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "image_wpGrG4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Standards.png"
+          }
+        },
+        "judge_me_reviews_preview_badge_m38qem": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description_AEaB8M": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons_t3pRyb": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "text_XWEkcD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "With ingredients traditionally used in western herbal medicine shown to:",
+            "text_style": "body"
+          }
+        },
+        "text_with_icon_K9Pgbp": {
+          "type": "text_with_icon",
+          "disabled": true,
+          "settings": {
+            "icon": "heart",
+            "text": "<strong>Ends daily bloating</strong>, wake up flat"
+          }
+        },
+        "text_with_icon_tFXRJr": {
+          "type": "text_with_icon",
+          "disabled": true,
+          "settings": {
+            "icon": "heart",
+            "text": "<strong>Daily regularity</strong>, zero cramping"
+          }
+        },
+        "text_with_icon_JNNb37": {
+          "type": "text_with_icon",
+          "disabled": true,
+          "settings": {
+            "icon": "heart",
+            "text": "<strong>Calms digestion</strong>, no post-meal heaviness"
+          }
+        },
+        "text_with_icon_bNyEzm": {
+          "type": "text_with_icon",
+          "disabled": true,
+          "settings": {
+            "icon": "heart",
+            "text": "<strong>Releases water weight</strong>, less puffiness"
+          }
+        },
+        "subscriptions_app_block_LGhKzH": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "disabled": true,
+          "settings": {
+            "widget_style": "card",
+            "widget_style_card_selector": "radio_button",
+            "subscription_policy_url": "",
+            "color_text_body": "#6d7175",
+            "dividers_color": "#8f8d8d",
+            "background_color": "#ffffff",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "product": "{{product}}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "custom_liquid_biabcta": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<a href=\"#biab-purchase\" class=\"button button--full-width button--primary\" style=\"margin-top:12px\">Start Your Business</a>\n<p style=\"margin:10px 0 0;font-size:14px;opacity:.8\">Choose your delivery country and agree to the <a href=\"/pages/reseller-terms\" target=\"_blank\" rel=\"noopener\">Reseller Terms</a> below before purchase.</p>"
+          }
+        },
+        "dropdown_kwbfJF": {
+          "type": "dropdown",
+          "disabled": true,
+          "settings": {
+            "heading": "Key Ingredients",
+            "content": "Tongkat Ali – A traditional botanical widely used to support men's vitality and wellness.  Ashwagandha – An adaptogenic herb traditionally used to support balance, resilience, and overall wellbeing.Black Maca Root – A nutrient-rich botanical commonly included in men's vitality and performance formulas.Panax Ginseng – A traditional herb valued for supporting energy, vitality, and active lifestyles.Cordyceps Mushroom – Widely used in wellness practices to support energy and performance-focused routines.Fenugreek – A botanical traditionally used in men's health and nutritional wellness supplements.Shilajit – A mineral-rich ingredient long used in traditional wellness systems to support vitality.Moringa – A nutrient-dense plant providing naturally occurring vitamins, minerals, and beneficial plant compounds.Zinc – An essential mineral that contributes to the maintenance of normal testosterone levels in the body.Black Pepper Extract – Included to support nutrient absorption and ingredient bioavailability.{{ product.metafields.custom.benefit_3.value }}"
+          }
+        },
+        "dropdown_Pn6Edz": {
+          "type": "dropdown",
+          "disabled": true,
+          "settings": {
+            "heading": "How to Use",
+            "content": "How to Use How to Use How to Use How to Use How to Use"
+          }
+        },
+        "dropdown_MkwwcT": {
+          "type": "dropdown",
+          "disabled": true,
+          "settings": {
+            "heading": "Important Information",
+            "content": "Important Information"
+          }
+        },
+        "recommend_widget_bWpkR4": {
+          "type": "recommend_widget",
+          "settings": {
+            "heading": "",
+            "products": []
+          }
+        },
+        "custom_liquid_NmcncR": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Three days in and my jeans button without a fight. Wild.\", n:\"Priya N.\"},\n    {q:\"I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.\", n:\"Danielle O.\"},\n    {q:\"I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.\", n:\"Bethany C.\"},\n    {q:\"My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.\", n:\"Marisol V.\"},\n    {q:\"Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.\", n:\"Kayleigh S.\"},\n    {q:\"First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.\", n:\"Renata F.\"},\n    {q:\"This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.\", n:\"Simone A.\"},\n    {q:\"Gentle overnight, flatter by morning. That is the whole review.\", n:\"Tovah L.\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
+          }
+        },
+        "video_testimonials_9dcyFw": {
+          "type": "video_testimonials",
+          "disabled": true,
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/6f54340ad1384b73a25d1b5f965e8a24.mp4",
+            "sound_button_text": "TAP FOR SOUND",
+            "bottom_text": "See it for yourself",
+            "review_name_1": "Priya N.",
+            "review_text_1": "Three days in and my jeans button without a fight. Wild.",
+            "review_name_2": "Danielle O.",
+            "review_text_2": "I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.",
+            "review_name_3": "Bethany C.",
+            "review_text_3": "I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.",
+            "review_name_4": "Marisol V.",
+            "review_text_4": "My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.",
+            "review_name_5": "Kayleigh S.",
+            "review_text_5": "Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.",
+            "review_name_6": "Renata F.",
+            "review_text_6": "First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.",
+            "review_name_7": "Simone A.",
+            "review_text_7": "This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.",
+            "review_name_8": "Tovah L.",
+            "review_text_8": "Gentle overnight, flatter by morning. That is the whole review."
+          }
+        }
+      },
+      "block_order": [
+        "content_qNcVi9",
+        "badges_9cJDUK",
+        "vendor",
+        "title",
+        "image_wpGrG4",
+        "judge_me_reviews_preview_badge_m38qem",
+        "price",
+        "description_AEaB8M",
+        "buy_buttons_t3pRyb",
+        "text_XWEkcD",
+        "text_with_icon_K9Pgbp",
+        "text_with_icon_tFXRJr",
+        "text_with_icon_JNNb37",
+        "text_with_icon_bNyEzm",
+        "subscriptions_app_block_LGhKzH",
+        "variant_picker",
+        "quantity_selector",
+        "custom_liquid_biabcta",
+        "dropdown_kwbfJF",
+        "dropdown_Pn6Edz",
+        "dropdown_MkwwcT",
+        "recommend_widget_bWpkR4",
+        "custom_liquid_NmcncR",
+        "video_testimonials_9dcyFw"
+      ],
+      "custom_css": [
+        ".product-info-title {width: 100%; display: flex; align-items: center; justify-content: space-between; background: none; border: 0; padding: 0px 0px; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer; color: inherit;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "trust_icon1": "shopify://shop_images/Group_770.png",
+        "trust_text1": "Endless Variety & Value",
+        "trust_icon2": "shopify://shop_images/Group_774.png",
+        "trust_text2": "Sustainable Shopping",
+        "trust_icon3": "shopify://shop_images/Group_166.png",
+        "trust_text3": "Confidence Guarantee",
+        "trust_icon4": "shopify://shop_images/Group_768.png",
+        "trust_text4": "Free Shipping Over $99*",
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "country_flag_WCwtwG": {
+      "type": "country-flag",
+      "blocks": {
+        "country_MDLCdP": {
+          "type": "country",
+          "settings": {
+            "country": "us",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_cr9rWf": {
+          "type": "country",
+          "settings": {
+            "country": "gb",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_bAmg8c": {
+          "type": "country",
+          "settings": {
+            "country": "se",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_LQgzHD": {
+          "type": "country",
+          "settings": {
+            "country": "ca",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_zCpmWB": {
+          "type": "country",
+          "settings": {
+            "country": "eu",
+            "custom_code": "",
+            "label": ""
+          }
+        },
+        "country_Lr9rGk": {
+          "type": "country",
+          "settings": {
+            "country": "jm",
+            "custom_code": "",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "country_MDLCdP",
+        "country_cr9rWf",
+        "country_bAmg8c",
+        "country_LQgzHD",
+        "country_zCpmWB",
+        "country_Lr9rGk"
+      ],
+      "name": "Country Flags",
+      "settings": {
+        "heading": "Our Products are Fulfilled by Local Warehouses",
+        "flag_style": "rounded",
+        "show_labels": true,
+        "enable_switch": false,
+        "color": "#fffbf4",
+        "text_color": "#283613",
+        "hover_color": "#31853c",
+        "pad_top": 40,
+        "pad_bottom": 40
+      }
+    },
+    "biab_contents_pdp": {
+      "type": "biab-contents",
+      "blocks": {
+        "item_8AY7CW": {
+          "type": "item",
+          "settings": {
+            "product": "zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply",
+            "name": "GLUKOBALANS",
+            "qty": 6,
+            "price": "69.99",
+            "category": "metabolic",
+            "link": "",
+            "image": "shopify://shop_images/glukobalans-advanced-metabolic-support-capsules_6-Tested.png"
+          }
+        },
+        "item_G6NkE8": {
+          "type": "item",
+          "settings": {
+            "product": "blood-sugar-support-capsules",
+            "name": "Blood Sugar",
+            "qty": 5,
+            "price": "49.99",
+            "category": "metabolic",
+            "link": "",
+            "image": "shopify://shop_images/blood_sugar_support_capsules.png"
+          }
+        },
+        "item_WAfFGn": {
+          "type": "item",
+          "settings": {
+            "product": "alki-detox-moringa-herbal-tea",
+            "name": "Alki Detox with Moringa",
+            "qty": 5,
+            "price": "39.99",
+            "category": "metabolic",
+            "link": "",
+            "image": "shopify://shop_images/alki-detox-with-moringa-non-laxative-metabolic-detox-tea1.png"
+          }
+        },
+        "item_LtywAp": {
+          "type": "item",
+          "settings": {
+            "product": "advanced-hormone-balance-pcos-support-capsules",
+            "name": "Freja Advance",
+            "qty": 5,
+            "price": "49.99",
+            "category": "women",
+            "link": "",
+            "image": "shopify://shop_images/freja-advance-menopause-hormonal-support-capsules.png"
+          }
+        },
+        "item_UnUKVK": {
+          "type": "item",
+          "settings": {
+            "product": "freja-balance-menopause-wellness-tea",
+            "name": "Freja Balance",
+            "qty": 4,
+            "price": "39.99",
+            "category": "women",
+            "link": "",
+            "image": "shopify://shop_images/freja-balance-menopause-hormonal-wellness-herbal-tea.png"
+          }
+        },
+        "item_Nh9KXN": {
+          "type": "item",
+          "settings": {
+            "product": "womens-brew-hormone-balance-tea",
+            "name": "Women's Brew",
+            "qty": 4,
+            "price": "39.99",
+            "category": "women",
+            "link": "",
+            "image": "shopify://shop_images/womens-brew-womens-wellness-herbal-tea-organic-vegan1.png"
+          }
+        },
+        "item_VNUfy8": {
+          "type": "item",
+          "settings": {
+            "product": "manthoric-advance",
+            "name": "Manthoric Advance",
+            "qty": 4,
+            "price": "69.99",
+            "category": "men",
+            "link": "",
+            "image": "shopify://shop_images/manthoric-advance-mens-vitality-performance-support-capsules_2-Tested_1.png"
+          }
+        },
+        "item_zQebMq": {
+          "type": "item",
+          "settings": {
+            "product": "zyzven-naturals-uterine-tonic-loose-herb-tea-80g",
+            "name": "Uterine Tonic Tea",
+            "qty": 4,
+            "price": "39.99",
+            "category": "women",
+            "link": "",
+            "image": "shopify://shop_images/uterine-tonic-womens-wellness-herbal-tea.png"
+          }
+        },
+        "item_x7PcUT": {
+          "type": "item",
+          "settings": {
+            "product": "zyzven-naturals-pressure-balance-capsules-60",
+            "name": "Pressure Balance",
+            "qty": 3,
+            "price": "49.99",
+            "category": "heart",
+            "link": "",
+            "image": "shopify://shop_images/pressure-balance-cardiovascular-circulation-blood-pressure-support-capsules1.png"
+          }
+        }
+      },
+      "block_order": [
+        "item_8AY7CW",
+        "item_G6NkE8",
+        "item_WAfFGn",
+        "item_LtywAp",
+        "item_UnUKVK",
+        "item_Nh9KXN",
+        "item_VNUfy8",
+        "item_zQebMq",
+        "item_x7PcUT"
+      ],
+      "name": "BIAB — What's inside",
+      "settings": {
+        "eyebrow": "What's Inside Your Box",
+        "heading": "40 Products, Ready to Retail",
+        "subheading": "Nine best-selling lines across the areas customers ask about most. Every unit arrives sealed, labelled and ready to sell from day one.",
+        "scroll_offset": 90,
+        "show_tabs": true,
+        "all_tab_label": "All 40 Products",
+        "show_tab_counts": true,
+        "show_qty_badge": true,
+        "show_view_link": true,
+        "view_link_label": "View product details",
+        "show_card_prices": true,
+        "show_breakdown": true,
+        "breakdown_heading": "Box breakdown",
+        "breakdown_open": false,
+        "show_packlist": false,
+        "packlist_open": false,
+        "packlist_label": "View the full packing list",
+        "total_label": "Total retail value: [units] units at RRP",
+        "mix_note": "<p><strong>Why this mix works.</strong> Metabolic wellness products help you win new customers, because many people are already looking for them. Women's wellness covers four products for different life stages. Men's wellness and heart health mean you can sell to the whole household, not just one person. Stock is weighted towards GLUKOBALANS (6 units) and Blood Sugar, Alki Detox and Freja Advance (5 each).</p>",
+        "show_cta": true,
+        "box_product": "business-in-a-box",
+        "cta_url": "shopify://products/business-in-a-box",
+        "cta_label": "Start Your Business",
+        "show_box_price": true,
+        "cta_note": "One complete box of [units] sealed units. Shipping is shown before you pay."
+      }
+    },
+    "biab_purchase_T1WEMc": {
+      "type": "biab-purchase",
+      "blocks": {
+        "item_91PbuI": {
+          "type": "item",
+          "settings": {
+            "product": "zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply",
+            "name": "GLUKOBALANS",
+            "qty": 6,
+            "price": "69.99",
+            "link": ""
+          }
+        },
+        "item_BDj7HZ": {
+          "type": "item",
+          "settings": {
+            "product": "blood-sugar-support-capsules",
+            "name": "Blood Sugar",
+            "qty": 5,
+            "price": "49.99",
+            "link": ""
+          }
+        },
+        "item_jHujwi": {
+          "type": "item",
+          "settings": {
+            "product": "alki-detox-moringa-herbal-tea",
+            "name": "Alki Detox with Moringa",
+            "qty": 5,
+            "price": "39.99",
+            "link": ""
+          }
+        },
+        "item_ldYOdC": {
+          "type": "item",
+          "settings": {
+            "product": "advanced-hormone-balance-pcos-support-capsules",
+            "name": "Freja Advance",
+            "qty": 5,
+            "price": "49.99",
+            "link": ""
+          }
+        },
+        "item_dlVdt6": {
+          "type": "item",
+          "settings": {
+            "product": "freja-balance-menopause-wellness-tea",
+            "name": "Freja Balance",
+            "qty": 4,
+            "price": "39.99",
+            "link": ""
+          }
+        },
+        "item_rOaBNW": {
+          "type": "item",
+          "settings": {
+            "product": "womens-brew-hormone-balance-tea",
+            "name": "Women's Brew",
+            "qty": 4,
+            "price": "39.99",
+            "link": ""
+          }
+        },
+        "item_eoDh8L": {
+          "type": "item",
+          "settings": {
+            "product": "manthoric-advance",
+            "name": "Manthoric Advance",
+            "qty": 4,
+            "price": "69.99",
+            "link": ""
+          }
+        },
+        "item_i73mgI": {
+          "type": "item",
+          "settings": {
+            "product": "zyzven-naturals-uterine-tonic-loose-herb-tea-80g",
+            "name": "Uterine Tonic Tea",
+            "qty": 4,
+            "price": "39.99",
+            "link": ""
+          }
+        },
+        "item_TwRtkB": {
+          "type": "item",
+          "settings": {
+            "product": "zyzven-naturals-pressure-balance-capsules-60",
+            "name": "Pressure Balance",
+            "qty": 3,
+            "price": "49.99",
+            "link": ""
+          }
+        },
+        "row_tk1": {
+          "type": "row",
+          "settings": {
+            "label": "Training and marketing toolkit",
+            "value": "Included"
+          }
+        },
+        "row_ci1": {
+          "type": "row",
+          "settings": {
+            "label": "Monthly partner check-ins",
+            "value": "Included"
+          }
+        },
+        "reassurance_w1": {
+          "type": "reassurance",
+          "settings": {
+            "text": "Wholesale, not MLM — no recruitment, no downline, no quota."
+          }
+        },
+        "reassurance_r1": {
+          "type": "reassurance",
+          "settings": {
+            "text": "Reorder individual products at reseller pricing, without buying another box."
+          }
+        },
+        "reassurance_e1": {
+          "type": "reassurance",
+          "settings": {
+            "text": "Earnings are not guaranteed. Figures assume all products sell at current recommended retail prices."
+          }
+        }
+      },
+      "block_order": [
+        "item_91PbuI",
+        "item_BDj7HZ",
+        "item_jHujwi",
+        "item_ldYOdC",
+        "item_dlVdt6",
+        "item_rOaBNW",
+        "item_eoDh8L",
+        "item_i73mgI",
+        "item_TwRtkB",
+        "row_tk1",
+        "row_ci1",
+        "reassurance_w1",
+        "reassurance_r1",
+        "reassurance_e1"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "",
+        "eyebrow": "Start Today",
+        "heading": "Your Business in a Box",
+        "price": "$999",
+        "price_suffix": "+ shipping, shown before you pay",
+        "summary": "40 products + training + marketing toolkit + monthly partner support.",
+        "button_label": "Start Your Business — [price]",
+        "scroll_offset": 90,
+        "terms_url": "/pages/reseller-terms",
+        "terms_version": "Effective 23 September 2026",
+        "show_policies_link": true,
+        "policies_label": "Shipping & returns for box orders",
+        "policies_url": "",
+        "guidelines_url": "",
+        "destination_label": "Where will your box be delivered?",
+        "direct_countries": "United States, Canada, United Kingdom",
+        "eu_countries": "Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden",
+        "me_countries": "",
+        "ship_none": "Choose your country to see how shipping works for you.",
+        "ship_us": "US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered within the USA does not incur additional customs duties.",
+        "ship_uk": "UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered within the UK does not incur additional customs duties.",
+        "ship_eu": "EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country.",
+        "ship_ca": "Most box products are stocked in Canada and dispatched by our Canadian distributor, TK Zyzven Naturals Inc. If a product for your box is unavailable there, we will contact you before shipping to explain whether to expect separate parcels, the delivery estimate and any possible import, clearance or extra shipping charge. We will not send a UK shipment or add an extra charge without your agreement.",
+        "ship_me": "We ship the box directly to this destination. The shipping charge and full total are shown at checkout before you pay.",
+        "ship_direct": "Your shipping charge and the full total are shown at checkout before you pay. Enter your delivery address there to see the available service.",
+        "ship_checkout_note": "Enter your delivery address at checkout to see the box shipping charge and the full amount payable before you pay. Delivery estimates are not guaranteed arrival dates; we send tracking when your box dispatches.",
+        "ship_forwarder": "We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay your forwarder and arrange its onward delivery to you. Please tick the box below if your delivery address belongs to a forwarder, so we can give you accurate shipping information.",
+        "ship_quote": "We don't have a checkout shipping rate for this destination. Request a quote and we'll confirm whether we can fulfil your order, the shipping charge and the total. We only take payment after you accept the quote, and we never add unapproved shipping charges.",
+        "ship_duties": "For this destination, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included. Customs and carrier delays can affect delivery times.",
+        "quote_label": "Request a shipping quote",
+        "show_optin": true,
+        "optin_heading": "Optional: reseller features",
+        "optin_text": "I'd like to be considered for reseller features in brochures, the website directory, social media or live events. This is optional and doesn't affect my order. You'll ask me again before publishing anything.",
+        "auto_figures": true,
+        "contents_list": "<p><strong>In the box:</strong> GLUKOBALANS ×6 · Blood Sugar ×5 · Alki Detox with Moringa ×5 · Freja Advance ×5 · Freja Balance ×4 · Women's Brew ×4 · Manthoric Advance ×4 · Uterine Tonic Tea ×4 · Pressure Balance ×3 — 40 products, combined recommended retail value $2,029.60.</p>",
+        "buy_note": "One-time purchase. No subscription, no monthly quota. Purchase does not grant distributor status, territory exclusivity or a territory website.",
+        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements",
+        "contact_heading": "Have questions first?",
+        "contact_text": "Talk to us before you buy. We would rather answer your questions than have you start uncertain.",
+        "whatsapp_label": "WhatsApp +44 7460 032301",
+        "whatsapp_url": "https://wa.me/447460032301",
+        "email_label": "Email sales@zyzvennaturals.com",
+        "email": "sales@zyzvennaturals.com"
+      }
+    },
+    "biab_faq_pdp": {
+      "type": "biab-faq",
+      "blocks": {
+        "faq_dIe529": {
+          "type": "faq",
+          "settings": {
+            "question": "What is included in the Business in a Box?",
+            "answer": "<p>You receive 40 sealed Zyzven Naturals products in the names and quantities shown in the “What’s Inside” section of this page. The box also includes initial product training, a digital marketing toolkit and monthly group check-ins.</p><p>Please review the product list before ordering. If a product becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed change.</p>"
+          }
+        },
+        "faq_B6slrp": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this an MLM?",
+            "answer": "<p>No. You buy products to sell to customers through your independent business. There are no downlines, recruitment commissions or required monthly purchases.</p>"
+          }
+        },
+        "faq_jg0mV6": {
+          "type": "faq",
+          "settings": {
+            "question": "Who can become a reseller?",
+            "answer": "<p>We welcome reseller enquiries worldwide. You are responsible for checking the import and resale requirements that apply to your business and location. Where we can ship the Business in a Box directly is explained below.</p>"
+          }
+        },
+        "faq_urYv9f": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do you ship Business in a Box orders directly?",
+            "answer": "<p>Direct box shipping is currently available to the USA, Canada, UK, European Union and selected Middle Eastern destinations. Enter your address at checkout to check availability and see the shipping cost before payment.</p><p>For a destination that is not available at checkout, contact us for a complete shipping quote before purchasing.</p>"
+          }
+        },
+        "faq_RnbqSn": {
+          "type": "faq",
+          "settings": {
+            "question": "Where will my US box ship from?",
+            "answer": "<p>US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered domestically within the USA does not incur additional customs duties.</p>"
+          }
+        },
+        "faq_PhrTVp": {
+          "type": "faq",
+          "settings": {
+            "question": "Where will my UK box ship from?",
+            "answer": "<p>UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered domestically within the UK does not incur additional customs duties.</p>"
+          }
+        },
+        "faq_p2nEQj": {
+          "type": "faq",
+          "settings": {
+            "question": "Where will my EU box ship from?",
+            "answer": "<p>EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country.</p>"
+          }
+        },
+        "faq_8BAHYH": {
+          "type": "faq",
+          "settings": {
+            "question": "How are Business in a Box orders fulfilled in Canada?",
+            "answer": "<p>Most box products are stocked in Canada and can be dispatched by our Canadian distributor, TK Zyzven Naturals Inc.</p><p>If a product needed for your box is unavailable there, we will contact you before shipping to explain the proposed arrangement. With your agreement, the affected products may be sent from our UK warehouse by Royal Mail or UPS.</p><p>We will tell you whether to expect one delivery or separate shipments, the estimated delivery time, and whether a UK shipment could involve additional import or clearance charges. We will not send a UK shipment or add an extra shipping charge without your agreement.</p>"
+          }
+        },
+        "faq_LKKccm": {
+          "type": "faq",
+          "settings": {
+            "question": "How much does shipping cost?",
+            "answer": "<p>The box price is $999 plus shipping. For destinations available at checkout, enter your address to see the shipping charge and full amount payable before placing your order.</p><p>If checkout does not offer delivery to your destination, ask us for a complete quote before paying. We will not add an unapproved shipping charge after you purchase.</p>"
+          }
+        },
+        "faq_hIsvib": {
+          "type": "faq",
+          "settings": {
+            "question": "I live in the Caribbean. Can I order a box?",
+            "answer": "<p>Yes. We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay the forwarder and arrange onward delivery to your country.</p><p>Please check your country’s import requirements and ask us if you need help confirming whether your forwarding address is eligible before ordering.</p>"
+          }
+        },
+        "faq_MbB1Ra": {
+          "type": "faq",
+          "settings": {
+            "question": "Could I have to pay customs duties or taxes?",
+            "answer": "<p>US, UK and EU boxes dispatched and delivered within their respective regions do not involve an additional customs duty on delivery.</p><p>For Canadian orders, any proposed shipment from the UK and its possible import or clearance charges will be explained to you before that shipment is agreed. For other international destinations and forwarding arrangements, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included.</p>"
+          }
+        },
+        "faq_VmIDOz": {
+          "type": "faq",
+          "settings": {
+            "question": "How long will delivery take?",
+            "answer": "<p>The regional estimates above are measured in business days after dispatch and are not guaranteed arrival dates. Carrier delays, remote delivery locations and customs processing can affect delivery. We will send tracking information when your box dispatches.</p><p>For Canadian orders involving more than one warehouse, and for quote-only destinations, we will explain the applicable delivery estimate before proceeding with that shipping arrangement.</p>"
+          }
+        },
+        "faq_LMboph": {
+          "type": "faq",
+          "settings": {
+            "question": "When will I receive the training and marketing toolkit?",
+            "answer": "<p>We will provide access to the initial product training and digital marketing toolkit within seven days of confirmed payment. We will contact you using the email address on your order. Monthly group check-ins form part of the ongoing reseller support.</p>"
+          }
+        },
+        "faq_cwkFdi": {
+          "type": "faq",
+          "settings": {
+            "question": "What marketing support is included? Is there a marketing fee?",
+            "answer": "<p>The digital marketing toolkit and monthly group check-ins are included in the box offer. There is no mandatory recurring marketing fee.</p><p>We may invite resellers to appear in a brochure, website listing, social media feature or live event. These are opportunities rather than guaranteed placements. We will ask separately before publishing your name, photograph, business location, telephone number or social profile.</p>"
+          }
+        },
+        "faq_rnWwRQ": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I sell the products?",
+            "answer": "<p>You may sell genuine, unopened Zyzven products through your independent shop, website, social media or in person, subject to the <a href=\"/pages/reseller-terms\" title=\"Reseller Terms\">Reseller Terms</a> and the rules in your market.</p>"
+          }
+        },
+        "faq_o5Pcfc": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I sell the products on Amazon, Walmart or eBay?",
+            "answer": "<p>You need prior written approval before listing Zyzven products on Amazon, Walmart, eBay or another third-party marketplace. Contact us with the marketplace and seller account you propose to use.</p>"
+          }
+        },
+        "faq_Nkoqwf": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I receive a Zyzven website or an exclusive territory?",
+            "answer": "<p>No. Buying the box does not include a Zyzven website, an exclusive territory, a franchise or distributor status. You may operate your own independent website in accordance with the <a href=\"/pages/reseller-terms\" title=\"Reseller Terms\">Reseller Terms</a>.</p>"
+          }
+        },
+        "faq_nDZ62U": {
+          "type": "faq",
+          "settings": {
+            "question": "Who decides the retail prices?",
+            "answer": "<p>Zyzven Naturals publishes its recommended retail prices on ZyzvenNaturals.com. The box’s stated combined retail value and potential gross profit are calculated using those prices.</p><p>You set your own lawful selling prices. The figures on this page are illustrations; sales and earnings are not guaranteed.</p>"
+          }
+        },
+        "faq_d5lvmV": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I choose different products for my box?",
+            "answer": "<p>The starter box is sold with the product names and quantities listed in “What’s Inside.” It is not a build-your-own box. If an item becomes unavailable before dispatch, we will contact you and ask you to agree to any proposed substitution.</p>"
+          }
+        },
+        "faq_pOlpLK": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I reorder individual products without buying another box?",
+            "answer": "<p>Yes. You can request individual products at the reseller prices then available. We will confirm the products, stock, current prices, shipping and any applicable reorder minimum before you commit to a reorder.</p>"
+          }
+        },
+        "faq_yrHmNo": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I return products that I do not sell?",
+            "answer": "<p>We do not buy back unsold stock. If a delivery is faulty, damaged, missing products or different from your confirmed order, contact <a href=\"mailto:sales@zyzvennaturals.com\" title=\"Email Zyzven Naturals\">sales@zyzvennaturals.com</a> as soon as reasonably possible with your order number and photographs where available. Your applicable legal rights remain unaffected.</p>"
+          }
+        },
+        "faq_7ujZos": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need to buy my own insurance?",
+            "answer": "<p>Zyzven Naturals maintains product liability insurance for its business. We do not require resellers to buy insurance as a condition of joining. Our policy does not automatically cover every activity of your independent business.</p>"
+          }
+        },
+        "faq_OpfGTJ": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need Zyzven clothing for events?",
+            "answer": "<p>If you represent Zyzven at a Zyzven-branded stand or event, please wear an approved Zyzven T-shirt or other approved branded clothing. Arrange this with us before the event. We will disclose and agree any clothing cost with you before asking you to pay it.</p>"
+          }
+        },
+        "faq_2xhib9": {
+          "type": "faq",
+          "settings": {
+            "question": "Are payment plans available for the box?",
+            "answer": "<p>Any payment options available for your location will appear at checkout. If you need to discuss payment before ordering, contact us. Do not assume that an instalment option is available unless it is displayed or confirmed to you.</p>"
+          }
+        },
+        "faq_xcjtfY": {
+          "type": "faq",
+          "settings": {
+            "question": "Who can I speak to before buying?",
+            "answer": "<p>Email <a href=\"mailto:sales@zyzvennaturals.com\" title=\"Email Zyzven Naturals\">sales@zyzvennaturals.com</a> or use the WhatsApp contact link on this page. We are happy to answer questions about the box, shipping or becoming a reseller before you place an order.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_dIe529",
+        "faq_B6slrp",
+        "faq_jg0mV6",
+        "faq_urYv9f",
+        "faq_RnbqSn",
+        "faq_PhrTVp",
+        "faq_p2nEQj",
+        "faq_8BAHYH",
+        "faq_LKKccm",
+        "faq_hIsvib",
+        "faq_MbB1Ra",
+        "faq_VmIDOz",
+        "faq_LMboph",
+        "faq_cwkFdi",
+        "faq_rnWwRQ",
+        "faq_o5Pcfc",
+        "faq_Nkoqwf",
+        "faq_nDZ62U",
+        "faq_d5lvmV",
+        "faq_pOlpLK",
+        "faq_yrHmNo",
+        "faq_7ujZos",
+        "faq_OpfGTJ",
+        "faq_2xhib9",
+        "faq_xcjtfY"
+      ],
+      "name": "BIAB — FAQ",
+      "settings": {
+        "eyebrow": "Questions & Answers",
+        "heading": "Business in a Box FAQ"
+      }
+    },
+    "bib_hero_ggXbdz": {
+      "type": "bib-hero",
+      "blocks": {
+        "trust_Rhqitf": {
+          "type": "trust",
+          "settings": {
+            "label": "40 Ready-to-Retail Products"
+          }
+        },
+        "trust_TGNRNr": {
+          "type": "trust",
+          "settings": {
+            "label": "Product Training Included"
+          }
+        },
+        "trust_qGDAcW": {
+          "type": "trust",
+          "settings": {
+            "label": "Monthly Partner Check-ins"
+          }
+        },
+        "trust_yDNhmX": {
+          "type": "trust",
+          "settings": {
+            "label": "Marketing Materials Included"
+          }
+        }
+      },
+      "block_order": [
+        "trust_Rhqitf",
+        "trust_TGNRNr",
+        "trust_qGDAcW",
+        "trust_yDNhmX"
+      ],
+      "disabled": true,
+      "name": "BIB — Hero",
+      "settings": {
+        "eyebrow": "READY-TO-RETAIL WHOLESALE STARTER PACKAGE",
+        "heading": "Your Wellness Business. Already in the Box.",
+        "subheading": "Launch with 40 ready-to-retail Zyzven Naturals teas and supplements, professional training and ongoing partner support.",
+        "price_amount": "$999",
+        "price_suffix": "+ shipping",
+        "price_value_label": "Combined recommended retail value:",
+        "price_value": "$2,029.60",
+        "cta_label": "Start Your Business in a Box",
+        "cta_url": "",
+        "secondary_label": "See What's Inside",
+        "secondary_anchor": "#bib-contents",
+        "buy_disclaimer": "Shipping is charged separately. Purchase does not grant distributor status, territory exclusivity or a territory website.",
+        "image": "shopify://shop_images/Gemini_Generated_Image_iiu633iiu633iiu6.jpg",
+        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.",
+        "placeholder_text": "Hero image: Premium box + product lineup"
+      }
+    },
+    "bib_intro_hjDN4e": {
+      "type": "bib-intro",
+      "disabled": true,
+      "name": "BIB — Everything You Need",
+      "settings": {
+        "heading": "Everything You Need to Start Selling",
+        "para_1": "Business in a Box brings together a carefully balanced range of Zyzven Naturals teas and supplements, giving you a professional product selection to introduce to your customers from day one.",
+        "para_2": "You receive more than inventory. We support you with product and brand training, a digital marketing toolkit, recommended retail pricing, monthly group check-ins and guidance as you build your customer base and reorder your bestsellers.",
+        "callout": "This is wholesale, not MLM. There are no recruitment commissions. Your opportunity comes from retailing genuine Zyzven Naturals products.",
+        "cta_label": "Start Your Business in a Box — $999",
+        "cta_anchor": "#bib-hero"
+      }
+    },
+    "bib_contents_GGRWKd": {
+      "type": "bib-contents",
+      "blocks": {
+        "row_MU7hEV": {
+          "type": "row",
+          "settings": {
+            "name": "GLUKOBALANS",
+            "qty": "6",
+            "rrp": "$69.99",
+            "total": "$419.94"
+          }
+        },
+        "row_UK3gWf": {
+          "type": "row",
+          "settings": {
+            "name": "Blood Sugar",
+            "qty": "5",
+            "rrp": "$49.99",
+            "total": "$249.95"
+          }
+        },
+        "row_aqacwd": {
+          "type": "row",
+          "settings": {
+            "name": "Alki Detox with Moringa",
+            "qty": "5",
+            "rrp": "$39.99",
+            "total": "$199.95"
+          }
+        },
+        "row_Tw8XED": {
+          "type": "row",
+          "settings": {
+            "name": "Freja Advance",
+            "qty": "5",
+            "rrp": "$49.99",
+            "total": "$249.95"
+          }
+        },
+        "row_YqQFJ7": {
+          "type": "row",
+          "settings": {
+            "name": "Freja Balance",
+            "qty": "4",
+            "rrp": "$39.99",
+            "total": "$159.96"
+          }
+        },
+        "row_xNAgBD": {
+          "type": "row",
+          "settings": {
+            "name": "Women's Brew",
+            "qty": "4",
+            "rrp": "$39.99",
+            "total": "$159.96"
+          }
+        },
+        "row_fhVXA9": {
+          "type": "row",
+          "settings": {
+            "name": "Manthoric Advance",
+            "qty": "4",
+            "rrp": "$69.99",
+            "total": "$279.96"
+          }
+        },
+        "row_8j7pd6": {
+          "type": "row",
+          "settings": {
+            "name": "Uterine Tonic Tea",
+            "qty": "4",
+            "rrp": "$39.99",
+            "total": "$159.96"
+          }
+        },
+        "row_j307NK": {
+          "type": "row",
+          "settings": {
+            "name": "Pressure Balance",
+            "qty": "3",
+            "rrp": "$49.99",
+            "total": "$149.97"
+          }
+        }
+      },
+      "block_order": [
+        "row_MU7hEV",
+        "row_UK3gWf",
+        "row_aqacwd",
+        "row_Tw8XED",
+        "row_YqQFJ7",
+        "row_xNAgBD",
+        "row_fhVXA9",
+        "row_8j7pd6",
+        "row_j307NK"
+      ],
+      "disabled": true,
+      "name": "BIB — What's Inside",
+      "settings": {
+        "heading": "What's Inside Your Box",
+        "intro": "A 40-product range spanning metabolic wellness, heart health, women's wellness, men's wellness and everyday herbal support.",
+        "total_label": "TOTAL",
+        "total_qty": "40",
+        "total_rrp": "$2,029.60",
+        "mix_heading": "Why This Mix Works",
+        "col_1_title": "Metabolic & Heart Wellness",
+        "col_1_items": "GLUKOBALANS\nBlood Sugar\nAlki Detox with Moringa\nPressure Balance",
+        "col_2_title": "Women's Wellness",
+        "col_2_items": "Freja Advance\nFreja Balance\nWomen's Brew\nUterine Tonic Tea",
+        "col_3_title": "Men's Wellness",
+        "col_3_items": "Manthoric Advance"
+      }
+    },
+    "bib_steps_x9BnWP": {
+      "type": "bib-steps",
+      "blocks": {
+        "step_rwWYTW": {
+          "type": "step",
+          "settings": {
+            "title": "Order your box",
+            "text": "Purchase securely from ZyzvenNaturals.com."
+          }
+        },
+        "step_TYPNg4": {
+          "type": "step",
+          "settings": {
+            "title": "Complete onboarding",
+            "text": "Access product and brand training."
+          }
+        },
+        "step_fCKdf4": {
+          "type": "step",
+          "settings": {
+            "title": "Launch locally or online",
+            "text": "Use your approved digital materials."
+          }
+        },
+        "step_bWyEah": {
+          "type": "step",
+          "settings": {
+            "title": "Reorder your bestsellers",
+            "text": "Keep building with reseller pricing."
+          }
+        }
+      },
+      "block_order": [
+        "step_rwWYTW",
+        "step_TYPNg4",
+        "step_fCKdf4",
+        "step_bWyEah"
+      ],
+      "disabled": true,
+      "name": "BIB — How It Works",
+      "settings": {
+        "heading": "How It Works"
+      }
+    },
+    "bib_audience_GG7gX9": {
+      "type": "bib-audience",
+      "blocks": {
+        "audience_HUpwEC": {
+          "type": "audience",
+          "settings": {
+            "text": "Entrepreneurs ready to build a product-based wellness business."
+          }
+        },
+        "audience_gRVzLr": {
+          "type": "audience",
+          "settings": {
+            "text": "Wellness and beauty professionals, salons, barbershops, gyms and community sellers."
+          }
+        },
+        "audience_tmAGWg": {
+          "type": "audience",
+          "settings": {
+            "text": "Online retailers and physical stores wanting a curated wellness range."
+          }
+        }
+      },
+      "block_order": [
+        "audience_HUpwEC",
+        "audience_gRVzLr",
+        "audience_tmAGWg"
+      ],
+      "disabled": true,
+      "name": "BIB — Who This Is For",
+      "settings": {
+        "heading": "Who This Is For",
+        "disclaimer": "This offer is not designed for anyone expecting guaranteed income or passive profit. Results depend on sales activity, pricing and business expenses."
+      }
+    },
+    "bib_value_99phjx": {
+      "type": "bib-value",
+      "blocks": {
+        "figure_gJ8kAJ": {
+          "type": "figure",
+          "settings": {
+            "label": "Box Price",
+            "prefix": "",
+            "figure": "$999",
+            "note": "Shipping charged separately",
+            "highlight": false
+          }
+        },
+        "figure_mqXFze": {
+          "type": "figure",
+          "settings": {
+            "label": "Combined Current RRP",
+            "prefix": "",
+            "figure": "$2,029.60",
+            "note": "If all 40 products sell at current RRP",
+            "highlight": false
+          }
+        },
+        "figure_AgwNgj": {
+          "type": "figure",
+          "settings": {
+            "label": "Potential Gross Profit",
+            "prefix": "Up to",
+            "figure": "$1,030.60",
+            "note": "Before shipping, fees, tax, discounts and expenses",
+            "highlight": true
+          }
+        }
+      },
+      "block_order": [
+        "figure_gJ8kAJ",
+        "figure_mqXFze",
+        "figure_AgwNgj"
+      ],
+      "disabled": true,
+      "name": "BIB — Retail Opportunity",
+      "settings": {
+        "eyebrow": "",
+        "heading": "A Clear Retail Opportunity",
+        "disclaimer": "Potential gross profit of up to $1,030.60 if all products are sold at current recommended retail prices. Excludes shipping, taxes, discounts, payment fees, advertising and other business expenses. Individual results vary."
+      }
+    },
+    "bib_homepage_promo_n6EfmJ": {
+      "type": "bib-homepage-promo",
+      "disabled": true,
+      "name": "BIB — Homepage promo",
+      "settings": {
+        "heading": "YOUR WELLNESS BUSINESS. READY IN ONE BOX.",
+        "body": "40 ready-to-retail teas and supplements, plus training, marketing materials and monthly support.",
+        "price_line": "$999 | Over $2,000 recommended retail value",
+        "cta_label": "EXPLORE BUSINESS IN A BOX →",
+        "cta_link": "",
+        "image": "shopify://shop_images/b68ef7db-6bcc-44c0-8f70-1364650f56d5.jpg",
+        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.",
+        "background_color": "#fffbf4"
+      }
+    },
+    "bib_faq_kHjRn8": {
+      "type": "bib-faq",
+      "blocks": {
+        "question_TwXiDq": {
+          "type": "question",
+          "settings": {
+            "question": "Is this MLM?",
+            "answer": "No. Business in a Box is a wholesale/resale inventory package. There are no recruitment commissions."
+          }
+        },
+        "question_nj3JW8": {
+          "type": "question",
+          "settings": {
+            "question": "Is shipping included?",
+            "answer": "No. Shipping is calculated separately based on destination and fulfilment location."
+          }
+        },
+        "question_w3EwAz": {
+          "type": "question",
+          "settings": {
+            "question": "Do I receive my own website?",
+            "answer": "A dedicated territory website is not included with this reseller box. Territory websites are reserved for approved distributors."
+          }
+        },
+        "question_HVWQ7f": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use Zyzven Naturals images and descriptions?",
+            "answer": "Yes—use the approved digital marketing pack supplied after purchase. Brand assets must not be altered or used for unauthorised claims."
+          }
+        },
+        "question_PdUBkC": {
+          "type": "question",
+          "settings": {
+            "question": "Can I sell on Amazon, Walmart or other marketplaces?",
+            "answer": "Marketplace selling requires prior written approval to protect brand listings, pricing and account integrity."
+          }
+        },
+        "question_xC3Qew": {
+          "type": "question",
+          "settings": {
+            "question": "Are earnings guaranteed?",
+            "answer": "No. Results depend on sales, pricing, discounts and individual business expenses."
+          }
+        },
+        "question_HLnEtp": {
+          "type": "question",
+          "settings": {
+            "question": "Can I reorder products?",
+            "answer": "Yes. Approved resellers can replenish products at current reseller pricing and subject to availability."
+          }
+        },
+        "question_DXiDL7": {
+          "type": "question",
+          "settings": {
+            "question": "Can I customise the box?",
+            "answer": "The box contains a fixed selection of 40 products across the Zyzven Naturals range."
+          }
+        }
+      },
+      "block_order": [
+        "question_TwXiDq",
+        "question_nj3JW8",
+        "question_w3EwAz",
+        "question_HVWQ7f",
+        "question_PdUBkC",
+        "question_xC3Qew",
+        "question_HLnEtp",
+        "question_DXiDL7"
+      ],
+      "disabled": true,
+      "name": "BIB — FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "single_open": true
+      }
+    },
+    "bib_final_cta_3pFeNV": {
+      "type": "bib-final-cta",
+      "disabled": true,
+      "name": "BIB — Final CTA",
+      "settings": {
+        "heading": "Ready to Build Something of Your Own?",
+        "subtext": "Start with products customers already know, supported by training and a brand built for long-term wellness.",
+        "cta_label": "Buy Business in a Box — $999",
+        "cta_anchor": "#biab-purchase"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "heading": "Related Products",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-5",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "quick_add": "none"
+      }
+    },
+    "1782873990e608c78c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_j34BKY": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": true,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_j34BKY"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "country_flag_WCwtwG",
+    "biab_contents_pdp",
+    "biab_purchase_T1WEMc",
+    "biab_faq_pdp",
+    "bib_hero_ggXbdz",
+    "bib_intro_hjDN4e",
+    "bib_contents_GGRWKd",
+    "bib_steps_x9BnWP",
+    "bib_audience_GG7gX9",
+    "bib_value_99phjx",
+    "bib_homepage_promo_n6EfmJ",
+    "bib_faq_kHjRn8",
+    "bib_final_cta_3pFeNV",
+    "related-products",
+    "1782873990e608c78c"
+  ]
+}

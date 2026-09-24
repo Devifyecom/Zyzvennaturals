@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -474,7 +483,7 @@
         "heading_accent": "every angle",
         "para_1": "Your heart, circulation and metabolic wellness are closely connected. Pressure Balance brings together eight carefully selected botanicals to create an easy daily routine for cardiovascular support helping you care for healthy blood pressure, blood flow, cholesterol balance and antioxidant protection in one formula.",
         "para_2": "",
-        "image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_01_40_27_PM.png",
+        "image": "shopify://shop_images/Pressure_Balance_cardiovascular_circulation_and_blood_pressure_support_capsules_60_count_vegan_supplement_GMP_manufactured_and_lab_tested_7.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
         "image_alt": "",
         "band_heading": "",
@@ -545,6 +554,7 @@
     },
     "balance_banner_qHw9B9": {
       "type": "balance-banner",
+      "disabled": true,
       "name": "Balance banner",
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_Sep_14_2026_12_02_12_PM.png",
@@ -608,6 +618,7 @@
         "job_qDbFcE",
         "job_ybcJnK"
       ],
+      "disabled": true,
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
@@ -635,8 +646,7 @@
         "heading_size": 34,
         "padding_top": 64,
         "padding_bottom": 32
-      },
-      "disabled": true
+      }
     },
     "custom_liquid_YfBRhU": {
       "type": "custom-liquid",
@@ -706,6 +716,7 @@
         "testimonial_HUkF3p",
         "testimonial_YkCAxe"
       ],
+      "disabled": true,
       "name": "Real transformations",
       "settings": {
         "eyebrow": "Real Transformations",
@@ -725,8 +736,7 @@
         "heading_size": 36,
         "padding_top": 64,
         "padding_bottom": 32
-      },
-      "disabled": true
+      }
     },
     "custom_liquid_NrNWWX": {
       "type": "custom-liquid",
@@ -795,6 +805,7 @@
         "ingredient_WhXVx9",
         "ingredient_VK6bah"
       ],
+      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
@@ -819,8 +830,7 @@
         "heading_color": "#161616",
         "body_color": "#6b6b6b",
         "background_color": "#ffffff"
-      },
-      "disabled": true
+      }
     },
     "how_it_works_CzV4dj": {
       "type": "How-it-works",
