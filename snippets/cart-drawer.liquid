@@ -80,7 +80,19 @@
           </span>
         </button>
       </div>
-      {%- if cart != empty and settings.gift_value > 0 -%}
+      {%- liquid
+        comment
+          Business in a Box ships at its own charge, so the free-shipping / free-gift bar is hidden when it is in the cart
+        endcomment
+        assign cart_has_biab = false
+        for item in cart.items
+          if item.product.handle == 'business-in-a-box'
+            assign cart_has_biab = true
+            break
+          endif
+        endfor
+      -%}
+      {%- if cart != empty and settings.gift_value > 0 and cart_has_biab == false -%}
         {%- liquid
           assign message = settings.shipping_message
           assign total_price = cart.total_price | divided_by: 100.00
