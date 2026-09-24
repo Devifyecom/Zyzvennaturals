@@ -90,13 +90,13 @@
   position: static;
   height: 62px;
   padding: 0 40px;
-  background: #359440;
-  color: #fff;
+  background: var(--zn-cta, #DBB994);
+  color: var(--zn-cta-text, #1a1a1a);
   width: auto;
 }
 .newsletter-row .newsletter-form__button:hover{
-   color: #fff;
-   background: #38ab3d;
+   color: var(--zn-cta-text, #1a1a1a);
+   background: var(--zn-cta-hover, #cfa97f);
 }
 
 /* Remove absolute positioning from Dawn */

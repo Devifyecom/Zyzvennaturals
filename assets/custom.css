@@ -287,8 +287,8 @@ width: 50px !important;
 .related-products .form .button,
 .collection .form .button{
   font-size: 12px;
-  background-color: #8c7050;
-  color: white;
+  background-color: var(--zn-cta, #DBB994);
+  color: var(--zn-cta-text, #1a1a1a);
   padding: 5px 10px;
 }
 #shopify-section-template--24857690767745__featured_collection_fzpUcD .form .button:after,
@@ -383,7 +383,8 @@ display: none;
   border-radius: 8px;
 }
 #shopify-section-sections--24857691226497__newsletter_hzRXcy .newsletter-form__field-wrapper .newsletter-form__button{
-  background-color: #8c7050 !important;
+  background-color: var(--zn-cta, #DBB994) !important;
+  color: var(--zn-cta-text, #1a1a1a) !important;
   border-top-right-radius:8px;
   border-bottom-right-radius: 8px;
 }
@@ -601,8 +602,8 @@ display: none;
     }
 
     .alki-button {
-      background-color: #8c7050;
-      color: white;
+      background-color: var(--zn-cta, #DBB994);
+      color: var(--zn-cta-text, #1a1a1a);
       padding: 14px 30px;
       border: none;
       border-radius: 50px;
@@ -613,7 +614,7 @@ display: none;
     }
 
     .alki-button:hover {
-      background-color: #1e9e64;
+      background-color: var(--zn-cta-hover, #cfa97f);
     }
 
 .health-row {
@@ -1256,12 +1257,12 @@ span.badge.price__badge-sold-out.color-scheme-3 {
 
 .pshhover:hover{
   color: #fff;
-  background: #38ab3d;
+  background: #358440;
 }
 
 .pshover:hover {
   color: #fff;
-  background: #38ab3d;
+  background: #358440;
   border: none !important;
   box-shadow: none !important;
 }
@@ -1273,17 +1274,17 @@ span.badge.price__badge-sold-out.color-scheme-3 {
 
 /* a.button.psshover:hover {
     color: #fff;
-    background: #38ab3d;
+    background: #358440;
 } */
 /* .viewbtn .button--primary:hover {
     color: #fff;
-    background: #38ab3d;
+    background: #358440;
     text-decoration: none;
 } */
 
 a.psbtn:hover {
     color: #000;
-    /* background: #38ab3d; */
+    /* background: #358440; */
 }
 
 /* .card__information {
@@ -1324,8 +1325,8 @@ a.psbtn:hover {
   text-decoration: none;
 
   background: transparent;
-  color: #3E8E41;
-  border: 2px solid #3E8E41;
+  color: #358440;
+  border: 2px solid #358440;
   border-radius: 999px;
 
   transition: all 0.3s ease;
@@ -1338,7 +1339,7 @@ a.psbtn:hover {
 
 /* HOVER */
 .psssbtn:hover {
-  /* background: linear-gradient(180deg, #6FBF73 0%, #3E8E41 100%); */
+  /* background: linear-gradient(180deg, #6FBF73 0%, #358440 100%); */
   /* color: #ffffff; */
   background: #fff;
   color: #000;
@@ -1348,11 +1349,12 @@ a.psbtn:hover {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15) !important;
 }
 .pybtn {
- background: linear-gradient(180deg, #6FBF73 0%, #3E8E41 100%) !important;
+ background: var(--zn-cta, #DBB994) !important;
+ color: var(--zn-cta-text, #1a1a1a) !important;
 }
 
 .pybtn:hover {
-  /* background: linear-gradient(180deg, #6FBF73 0%, #3E8E41 100%); */
+  /* background: linear-gradient(180deg, #6FBF73 0%, #358440 100%); */
   /* color: #ffffff; */
   background: #fff !important;
   color: #000;
@@ -1369,14 +1371,14 @@ a.psbtn:hover {
 
   .pszyenbtn {
     /* background: #358440; */
-    color: #fff;
+    color: var(--zn-cta-text, #1a1a1a);
     padding: 4px 12px;
     text-decoration: none;
   
     font-size: 16px;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    background: linear-gradient(180deg, #6FBF73 0%, #3E8E41 100%);
+    background: var(--zn-cta, #DBB994);
     border-radius: 999px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
@@ -1405,7 +1407,8 @@ a.psbtn:hover {
 }
 
 #klaviyo-bis-button-container button {
-  background: linear-gradient(180deg, #6fbf73, #3e8e41) !important;
+  background: var(--zn-cta, #DBB994) !important;
+  color: var(--zn-cta-text, #1a1a1a) !important;
   width: 100%;
   padding: 0;
   border-radius: 25px;

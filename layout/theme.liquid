@@ -357,6 +357,26 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {%- comment -%}
+      Brand typography and colours, applied across the whole theme (including custom
+      sections and app widgets). Golos Text is loaded from Google Fonts above.
+      The #zn-brand-guard ID only raises specificity so section-level !important fonts
+      can't override it; icon fonts (Judge.me stars, SVG icons) are left alone.
+    {%- endcomment -%}
+    <style>
+      :root {
+        --font-body-family: 'Golos Text', sans-serif;
+        --font-heading-family: 'Golos Text', sans-serif;
+        --zn-brand: #358440;
+        --zn-cta: #DBB994;
+        --zn-cta-hover: #cfa97f;
+        --zn-cta-text: #1a1a1a;
+      }
+      html body *:not(#zn-brand-guard):not(svg):not(svg *):not([class*="jdgm-star"]):not([class*="icon"]):not(.fa):not([class^="fa-"]) {
+        font-family: 'Golos Text', sans-serif !important;
+      }
+    </style>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

@@ -136,8 +136,8 @@
   #zv-{{ section.id }} .zv-brochure h2{margin:16px 0 14px;font-size:28px}
   #zv-{{ section.id }} .zv-brochure p{color:var(--zv-ink);opacity:.7;max-width:520px;margin:0 auto 30px}
   #zv-{{ section.id }} .zv-btn{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.9rem;letter-spacing:.04em;text-decoration:none;
-    border-radius:50px;padding:16px 32px;background:var(--zv-amber);color:var(--zv-forest-deep);transition:transform .2s,background .2s}
-  #zv-{{ section.id }} .zv-btn:hover{background:var(--zv-amber-deep);color:var(--zv-parchment);transform:translateY(-2px)}
+    border-radius:50px;padding:16px 32px;background:var(--zn-cta, #DBB994);color:var(--zn-cta-text, #1a1a1a);transition:transform .2s,background .2s}
+  #zv-{{ section.id }} .zv-btn:hover{background:var(--zn-cta-hover, #cfa97f);color:var(--zn-cta-text, #1a1a1a);transform:translateY(-2px)}
   #zv-{{ section.id }} .zv-btn .arw{transition:transform .2s}
   #zv-{{ section.id }} .zv-btn:hover .arw{transform:translateX(4px)}
 
@@ -352,7 +352,7 @@
             {% elsif block.settings.image_tag != blank or block.settings.image_caption != blank %}
               <div class="zv-img">
                 {% if block.settings.image_tag != blank %}<span class="zv-tag">{{ block.settings.image_tag }}</span>{% endif %}
-                <div class="zv-ph"><span class="zv-leaf">&#127807;</span><span class="zv-desc">{{ block.settings.image_caption }}</span></div>
+                <div class="zv-ph"><span class="zv-leaf">&#358440;</span><span class="zv-desc">{{ block.settings.image_caption }}</span></div>
               </div>
             {% endif %}
 
@@ -375,7 +375,7 @@
                 {% if block.settings.now_image %}
                   <img src="{{ block.settings.now_image | image_url: width: 800 }}" alt="{{ block.settings.now_image.alt | escape }}" loading="lazy">
                 {% else %}
-                  <div class="zv-ph"><span class="zv-leaf">&#128230;</span><span class="zv-desc">{{ block.settings.now_caption }}</span></div>
+                  <div class="zv-ph"><span class="zv-leaf">&#358440;</span><span class="zv-desc">{{ block.settings.now_caption }}</span></div>
                 {% endif %}
                 <span class="tn-label">{{ block.settings.now_label | default: 'Now' }}</span>
               </div>
@@ -424,7 +424,7 @@
                 {% if block.settings.image %}
                   <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.image.alt | escape | default: block.settings.name }}" loading="lazy">
                 {% else %}
-                  <span class="zv-leaf">&#127807;</span>
+                  <span class="zv-leaf">&#358440;</span>
                 {% endif %}
                 {% if block.settings.flag != blank %}<span class="zv-spot-flag">{{ block.settings.flag }}</span>{% endif %}
                 <span class="zv-play"><em><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></em></span>
@@ -434,7 +434,7 @@
                 {% if block.settings.image %}
                   <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.image.alt | escape | default: block.settings.name }}" loading="lazy">
                 {% else %}
-                  <span class="zv-leaf">&#127807;</span>
+                  <span class="zv-leaf">&#358440;</span>
                 {% endif %}
                 {% if block.settings.flag != blank %}<span class="zv-spot-flag">{{ block.settings.flag }}</span>{% endif %}
               </div>
@@ -484,7 +484,7 @@
         <img src="{{ section.settings.intl_image | image_url: width: 1400 }}" alt="{{ section.settings.intl_image.alt | escape }}" loading="lazy">
       </div>
       {% elsif section.settings.intl_image_note != blank %}
-      <div class="zv-img" style="margin-top:26px"><span class="zv-tag">Current &middot; international growth</span><div class="zv-ph"><span class="zv-leaf">&#128230;</span><span class="zv-desc">{{ section.settings.intl_image_note }}</span></div></div>
+      <div class="zv-img" style="margin-top:26px"><span class="zv-tag">Current &middot; international growth</span><div class="zv-ph"><span class="zv-leaf">&#358440;</span><span class="zv-desc">{{ section.settings.intl_image_note }}</span></div></div>
       {% endif %}
       {% if section.settings.intl_path != blank %}<p class="path">{{ section.settings.intl_path }}</p>{% endif %}
     </div>
