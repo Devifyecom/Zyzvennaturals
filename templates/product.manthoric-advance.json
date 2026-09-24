@@ -708,6 +708,7 @@
         "testimonial_HUkF3p",
         "testimonial_YkCAxe"
       ],
+      "disabled": true,
       "name": "Real transformations",
       "settings": {
         "eyebrow": "Real Transformations",
@@ -796,6 +797,7 @@
         "ingredient_WhXVx9",
         "ingredient_VK6bah"
       ],
+      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
@@ -861,6 +863,7 @@
         "step_nmNcqE",
         "step_gwthJd"
       ],
+      "disabled": true,
       "name": "How it works",
       "settings": {
         "eyebrow": "How it works",
