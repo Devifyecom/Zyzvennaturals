@@ -179,6 +179,7 @@
             "qty": 5,
             "price": "49.99",
             "category": "metabolic",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/blood_sugar_support_capsules.png"
           }
@@ -191,6 +192,7 @@
             "qty": 5,
             "price": "39.99",
             "category": "weight",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/alki-detox-with-moringa-non-laxative-metabolic-detox-tea1.png"
           }
@@ -203,6 +205,7 @@
             "qty": 5,
             "price": "49.99",
             "category": "hormone",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/freja-advance-menopause-hormonal-support-capsules.png"
           }
@@ -215,6 +218,7 @@
             "qty": 4,
             "price": "39.99",
             "category": "menopause",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/freja-balance-menopause-hormonal-wellness-herbal-tea.png"
           }
@@ -227,6 +231,7 @@
             "qty": 4,
             "price": "39.99",
             "category": "hormone",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/womens-brew-womens-wellness-herbal-tea-organic-vegan1.png"
           }
@@ -239,6 +244,7 @@
             "qty": 4,
             "price": "69.99",
             "category": "men",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/manthoric-advance-mens-vitality-performance-support-capsules_2-Tested_1.png"
           }
@@ -251,6 +257,7 @@
             "qty": 4,
             "price": "39.99",
             "category": "uterine",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/uterine-tonic-womens-wellness-herbal-tea.png"
           }
@@ -263,6 +270,7 @@
             "qty": 3,
             "price": "49.99",
             "category": "heart",
+            "category_2": "none",
             "link": "",
             "image": "shopify://shop_images/pressure-balance-cardiovascular-circulation-blood-pressure-support-capsules1.png"
           }
@@ -940,7 +948,7 @@
           "type": "link",
           "settings": {
             "label": "Partner With Us",
-            "url": "/pages/business-in-box"
+            "url": "shopify://pages/partner-with-us"
           }
         },
         "link_L48Cd7": {
