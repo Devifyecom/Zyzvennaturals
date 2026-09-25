@@ -503,6 +503,7 @@
         "stat_4ec7XL",
         "stat_dMwcXL"
       ],
+      "disabled": true,
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
@@ -645,6 +646,7 @@
         "job_qDbFcE",
         "job_ybcJnK"
       ],
+      "disabled": true,
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
@@ -829,6 +831,7 @@
         "ingredient_WhXVx9",
         "ingredient_VK6bah"
       ],
+      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
