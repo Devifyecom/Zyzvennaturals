@@ -296,14 +296,6 @@
             "description": "Organic Blood Sugar Support Supplement"
           }
         },
-        "product_ik8QhU": {
-          "type": "product",
-          "settings": {
-            "product": "blood-sugar-support-capsules-1",
-            "title": "Blood Sugar Support Capsules",
-            "description": "Organic Blood Sugar Support Supplement"
-          }
-        },
         "product_rMY4RT": {
           "type": "product",
           "settings": {
@@ -388,7 +380,6 @@
       "block_order": [
         "product_pfL68w",
         "product_PGhreb",
-        "product_ik8QhU",
         "product_rMY4RT",
         "product_rmka8z",
         "product_JCb79x",
