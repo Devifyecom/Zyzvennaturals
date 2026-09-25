@@ -1,6 +1,15 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    {%- comment -%}
+      Business in a Box is bought only on /pages/business-in-box, behind the Reseller Terms
+      agreement. Any link to the box product page (search, cards, cart, old bookmarks) is sent there.
+    {%- endcomment -%}
+    {%- if request.page_type == 'product' and product.handle == 'business-in-a-box' and request.design_mode == false -%}
+      <meta name="robots" content="noindex">
+      <meta http-equiv="refresh" content="0; url={{ routes.root_url | append: '/pages/business-in-box' | replace: '//', '/' }}">
+      <script>window.location.replace({{ routes.root_url | append: '/pages/business-in-box' | replace: '//', '/' | json }});</script>
+    {%- endif -%}
 
    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCEWXF0PQM"></script>
@@ -29,15 +38,15 @@
 
     {%- comment -%} Business in a Box uses its own approved SEO strings. {%- endcomment -%}
     {%- assign bib_page = false -%}
-    {%- if template.suffix == 'business-in-a-box' -%}
+    {%- if template.suffix == 'business-in-a-box' or template.suffix == 'business-in-box' -%}
       {%- assign bib_page = true -%}
     {%- endif -%}
 
     <title>
       {%- if bib_page -%}
-        Business in a Box | Zyzven Naturals Reseller Starter Package
+        Business in a Box | 40-Product Reseller Starter Kit | Zyzven Naturals
       {%- else -%}
-        {{ page_title }}
+        {{ page_title | replace: 'Fibroad', 'Fibroid' | replace: 'fibroad', 'fibroid' }}
         {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
         {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
         {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}

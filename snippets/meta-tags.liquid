@@ -1,5 +1,5 @@
 {%- liquid
-  assign og_title = page_title | default: shop.name
+  assign og_title = page_title | default: shop.name | replace: 'Fibroad', 'Fibroid' | replace: 'fibroad', 'fibroid'
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'
   assign og_description = page_description | default: shop.description | default: shop.name
@@ -15,7 +15,7 @@
   comment
     Business in a Box uses its own approved social copy.
   endcomment
-  if template.suffix == 'business-in-a-box'
+  if template.suffix == 'business-in-a-box' or template.suffix == 'business-in-box'
     assign og_title = 'Your Wellness Business. Ready in One Box.'
     assign og_description = 'Start selling Zyzven Naturals with 40 ready-to-retail teas and supplements, training, marketing materials and monthly partner support.'
   endif

@@ -3,7 +3,7 @@
 
 {%- liquid
   assign s = section.settings
-  assign cta_url = s.cta_url | default: '/products/business-in-a-box'
+  assign cta_url = s.cta_url | default: '/pages/business-in-box'
 -%}
 
 <section class="bib bib-hero" id="bib-hero" data-bib-hero>
@@ -152,7 +152,7 @@
       "type": "url",
       "id": "cta_url",
       "label": "Button link (pick the product)",
-      "info": "Pick Products → Business in a Box. Falls back to /products/business-in-a-box."
+      "info": "Falls back to /pages/business-in-box. Do not link to the product page, which has no Reseller Terms agreement."
     },
     { "type": "text", "id": "secondary_label", "label": "Secondary link label", "default": "See What's Inside" },
     { "type": "text", "id": "secondary_anchor", "label": "Secondary link anchor", "default": "#bib-contents" },

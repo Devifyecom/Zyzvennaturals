@@ -492,7 +492,7 @@
           "type": "faq",
           "settings": {
             "question": "Where do you ship Business in a Box orders directly?",
-            "answer": "<p>Direct box shipping is currently available to the USA, Canada, UK, European Union and selected Middle Eastern destinations. Enter your address at checkout to check availability and see the shipping cost before payment.</p><p>For a destination that is not available at checkout, contact us for a complete shipping quote before purchasing.</p>"
+            "answer": "<p>We currently ship Business in a Box directly to the USA, UK, European Union and Canada. If you live elsewhere, you may arrange a shipping forwarder with an eligible delivery address in one of those regions. You are responsible for the forwarder’s onward charges and your destination’s import requirements.</p><p>Enter your delivery address at checkout to see the shipping charge and full amount payable before you pay.</p>"
           }
         },
         "faq_RnbqSn": {
@@ -527,28 +527,28 @@
           "type": "faq",
           "settings": {
             "question": "How much does shipping cost?",
-            "answer": "<p>The box price is [price] plus shipping. For destinations available at checkout, enter your address to see the shipping charge and full amount payable before placing your order.</p><p>If checkout does not offer delivery to your destination, ask us for a complete quote before paying. We will not add an unapproved shipping charge after you purchase.</p>"
+            "answer": "<p>The box price is [price] plus shipping. For destinations available at checkout, enter your address to see the shipping charge and full amount payable before placing your order.</p><p>If you use a shipping forwarder, enter its eligible address at checkout. The forwarder’s onward charges are separate and payable to the forwarder. We will not add an unapproved shipping charge after you purchase.</p>"
           }
         },
         "faq_hIsvib": {
           "type": "faq",
           "settings": {
             "question": "I live in the Caribbean. Can I order a box?",
-            "answer": "<p>Yes. We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay the forwarder and arrange onward delivery to your country.</p><p>Please check your country’s import requirements and ask us if you need help confirming whether your forwarding address is eligible before ordering.</p>"
+            "answer": "<p>Yes, through a shipping forwarder. We ship the box directly only to the USA, UK, European Union and Canada, so you would use a forwarder with an eligible delivery address in one of those regions. You choose and pay the forwarder and arrange onward delivery to your country.</p><p>Please check your country’s import requirements before ordering, and ask us if you need help confirming whether your forwarding address is eligible.</p>"
           }
         },
         "faq_MbB1Ra": {
           "type": "faq",
           "settings": {
             "question": "Could I have to pay customs duties or taxes?",
-            "answer": "<p>US, UK and EU boxes dispatched and delivered within their respective regions do not involve an additional customs duty on delivery.</p><p>For Canadian orders, any proposed shipment from the UK and its possible import or clearance charges will be explained to you before that shipment is agreed. For other international destinations and forwarding arrangements, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included.</p>"
+            "answer": "<p>US, UK and EU boxes dispatched and delivered within their respective regions do not involve an additional customs duty on delivery.</p><p>For Canadian orders, any proposed shipment from the UK and its possible import or clearance charges will be explained to you before that shipment is agreed. For boxes sent on by a shipping forwarder, import duties, local taxes and clearance fees at your final destination are your responsibility.</p>"
           }
         },
         "faq_VmIDOz": {
           "type": "faq",
           "settings": {
             "question": "How long will delivery take?",
-            "answer": "<p>The regional estimates above are measured in business days after dispatch and are not guaranteed arrival dates. Carrier delays, remote delivery locations and customs processing can affect delivery. We will send tracking information when your box dispatches.</p><p>For Canadian orders involving more than one warehouse, and for quote-only destinations, we will explain the applicable delivery estimate before proceeding with that shipping arrangement.</p>"
+            "answer": "<p>The regional estimates above are measured in business days after dispatch and are not guaranteed arrival dates. Carrier delays, remote delivery locations and customs processing can affect delivery. We will send tracking information when your box dispatches.</p><p>For Canadian orders involving more than one warehouse, we will explain the applicable delivery estimate before proceeding with that shipping arrangement. If you use a shipping forwarder, onward delivery time depends on the service you arrange with it.</p>"
           }
         },
         "faq_LMboph": {
@@ -861,19 +861,15 @@
         "destination_label": "Where will your box be delivered?",
         "direct_countries": "United States, Canada, United Kingdom",
         "eu_countries": "Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden",
-        "me_countries": "",
         "ship_none": "Choose your country to see how shipping works for you.",
         "ship_us": "US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered within the USA does not incur additional customs duties.",
         "ship_uk": "UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered within the UK does not incur additional customs duties.",
         "ship_eu": "EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country.",
         "ship_ca": "Most products dispatch from TK Zyzven Naturals Inc. in Canada. If an item must ship from the UK, we will explain the proposed delivery, timing and any possible extra charges, and get your agreement before dispatch.",
-        "ship_me": "We ship the box directly to this destination. The shipping charge and full total are shown at checkout before you pay.",
         "ship_direct": "Your shipping charge and the full total are shown at checkout before you pay. Enter your delivery address there to see the available service.",
         "ship_checkout_note": "Enter your delivery address at checkout to see the box shipping charge and the full amount payable before you pay. Delivery estimates are not guaranteed arrival dates; we send tracking when your box dispatches.",
-        "ship_forwarder": "We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay your forwarder and arrange its onward delivery to you. Please tick the box below if your delivery address belongs to a forwarder, so we can give you accurate shipping information.",
-        "ship_quote": "We don't have a checkout shipping rate for this destination. Request a quote and we'll confirm whether we can fulfil your order, the shipping charge and the total. We only take payment after you accept the quote, and we never add unapproved shipping charges.",
-        "ship_duties": "For this destination, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included. Customs and carrier delays can affect delivery times.",
-        "quote_label": "Request a shipping quote",
+        "ship_forwarder": "We ship the box directly to the USA, UK, European Union and Canada only. To order from elsewhere, use a shipping forwarder with an eligible delivery address in one of those regions and enter that address at checkout. You arrange and pay for the forwarder’s onward shipping and are responsible for your destination’s import requirements.",
+        "ship_duties": "Import duties, local taxes and clearance fees at your final destination are your responsibility. Customs and carrier delays can affect delivery times.",
         "show_optin": true,
         "optin_heading": "Optional: reseller features",
         "optin_text": "I'd like to be considered for reseller features in brochures, the website directory, social media or live events. This is optional and doesn't affect my order. You'll ask me again before publishing anything.",
@@ -944,7 +940,7 @@
           "type": "link",
           "settings": {
             "label": "Partner With Us",
-            "url": "/products/business-in-a-box"
+            "url": "/pages/business-in-box"
           }
         },
         "link_L48Cd7": {

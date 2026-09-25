@@ -120,13 +120,10 @@
   #biab-purchase [data-region="uk"] [data-show-region~="uk"],
   #biab-purchase [data-region="eu"] [data-show-region~="eu"],
   #biab-purchase [data-region="ca"] [data-show-region~="ca"],
-  #biab-purchase [data-region="me"] [data-show-region~="me"],
   #biab-purchase [data-region="direct"] [data-show-region~="direct"],
-  #biab-purchase [data-region="forwarder"] [data-show-region~="forwarder"],
-  #biab-purchase [data-region="quote"] [data-show-region~="quote"] { display: block; }
+  #biab-purchase [data-region="forwarder"] [data-show-region~="forwarder"] { display: block; }
   #biab-purchase [data-mode="direct"] [data-show-for~="direct"],
   #biab-purchase [data-mode="forwarder"] [data-show-for~="forwarder"],
-  #biab-purchase [data-mode="quote"] [data-show-for~="quote"],
   #biab-purchase [data-mode="none"] [data-show-for~="none"] { display: block; }
 
   #biab-purchase .bp-check {
@@ -177,12 +174,6 @@
   #biab-purchase .bp-error[hidden] { display: none; }
   #biab-purchase .bp-submit { margin-top: 20px; }
 
-  #biab-purchase .bp-quote__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 16px;
-  }
   #biab-purchase .bp-contents a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   #biab-purchase .bp-links {
     display: flex;
@@ -207,7 +198,6 @@
 
   @media (max-width: 560px) {
     #biab-purchase .bp-optin__grid { grid-template-columns: 1fr; }
-    #biab-purchase .bp-quote__actions .biab-btn { width: 100%; text-align: center; }
   }
 </style>
 
@@ -335,16 +325,8 @@
                     {%- for raw_country in eu_list -%}{%- assign c = raw_country | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="eu">{{ c }}</option>{%- endif -%}{%- endfor -%}
                   </optgroup>
                 {%- endif -%}
-                {%- assign me_list = s.me_countries | split: ',' -%}
-                <optgroup label="Middle East">
-                  {%- for raw_country in me_list -%}{%- assign c = raw_country | strip -%}{%- if c != blank -%}<option value="{{ c | escape }}" data-mode="direct" data-region="me">{{ c }}</option>{%- endif -%}{%- endfor -%}
-                  <option value="Other Middle Eastern country (quote)" data-mode="quote" data-region="quote">Another Middle Eastern country</option>
-                </optgroup>
-                <optgroup label="Caribbean">
-                  <option value="Caribbean (forwarding address)" data-mode="forwarder" data-region="forwarder">Jamaica or elsewhere in the Caribbean</option>
-                </optgroup>
                 <optgroup label="Everywhere else">
-                  <option value="Other country (quote)" data-mode="quote" data-region="quote">Another country</option>
+                  <option value="Other country (via shipping forwarder)" data-mode="forwarder" data-region="forwarder">Another country (via a shipping forwarder)</option>
                 </optgroup>
               </select>
 
@@ -354,28 +336,15 @@
                 <div data-show-region="uk"><p>{{ s.ship_uk }}</p></div>
                 <div data-show-region="eu"><p>{{ s.ship_eu }}</p></div>
                 <div data-show-region="ca"><p>{{ s.ship_ca }}</p></div>
-                <div data-show-region="me"><p>{{ s.ship_me }}</p></div>
                 <div data-show-region="direct"><p>{{ s.ship_direct }}</p></div>
                 <div data-show-region="forwarder"><p>{{ s.ship_forwarder }}</p></div>
-                <div data-show-region="quote"><p>{{ s.ship_quote }}</p></div>
-                {%- if s.ship_checkout_note != blank -%}<p class="bp-ship__duties" data-show-region="us uk eu ca me direct">{{ s.ship_checkout_note }}</p>{%- endif -%}
-                {%- if s.ship_duties != blank -%}<p class="bp-ship__duties" data-show-region="me direct forwarder quote">{{ s.ship_duties }}</p>{%- endif -%}
+                {%- if s.ship_checkout_note != blank -%}<p class="bp-ship__duties" data-show-region="us uk eu ca direct forwarder">{{ s.ship_checkout_note }}</p>{%- endif -%}
+                {%- if s.ship_duties != blank -%}<p class="bp-ship__duties" data-show-region="forwarder">{{ s.ship_duties }}</p>{%- endif -%}
               </div>
             </div>
 
-            {%- comment -%} 2a. Quote-only destinations: no payment route, request a quote instead {%- endcomment -%}
-            <div data-show-for="quote">
-              <div class="bp-quote__actions">
-                {%- if s.email != blank -%}
-                  <a class="biab-btn biab-btn--gold" href="mailto:{{ s.email }}?subject={{ 'Shipping quote request: Business in a Box' | url_encode }}" data-bp-quote-email data-email="{{ s.email }}">{{ s.quote_label }}</a>
-                {%- endif -%}
-                {%- if s.whatsapp_url != blank -%}
-                  <a class="biab-btn biab-btn--outline" href="{{ s.whatsapp_url }}" target="_blank" rel="noopener" data-bp-quote-wa data-wa="{{ s.whatsapp_url }}">Ask on WhatsApp</a>
-                {%- endif -%}
-              </div>
-            </div>
 
-            {%- comment -%} 2b. Direct and forwarder destinations: agreement, then buy {%- endcomment -%}
+            {%- comment -%} 2. Agreement, then buy {%- endcomment -%}
             <div data-show-for="none direct forwarder">
               {%- form 'product', biab_product, id: 'BiabBuyForm', class: 'bp-form' -%}
                 <input type="hidden" name="id" value="{{ biab_variant.id }}">
@@ -390,7 +359,7 @@
                 <div data-show-for="forwarder">
                   <label class="bp-check">
                     <input type="checkbox" name="properties[_Delivery address is a forwarder]" value="Yes" data-bp-forwarder disabled>
-                    <span>My delivery address belongs to a shipping-forwarding company.</span>
+                    <span>My delivery address belongs to a shipping forwarder in the USA, UK, European Union or Canada.</span>
                   </label>
                 </div>
 
@@ -509,8 +478,6 @@
       var optin = form.querySelector('[data-bp-optin]');
       var optinDetails = form.querySelector('[data-bp-optin-details]');
       var error = form.querySelector('[data-bp-error]');
-      var quoteEmail = section.querySelector('[data-bp-quote-email]');
-      var quoteWa = section.querySelector('[data-bp-quote-wa]');
       var submitBtn = form.querySelector('[data-bp-submit]');
       var variantId = Number((form.querySelector('input[name="id"]') || {}).value);
       var root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
@@ -527,24 +494,10 @@
 
       function updateMode() {
         var mode = currentMode();
-        var country = dest.value;
         panel.setAttribute('data-mode', mode);
         panel.setAttribute('data-region', currentRegion());
         if (forwarder) forwarder.disabled = mode !== 'forwarder';
         if (error) error.hidden = true;
-
-        var message = 'Hello, I would like a shipping quote for the Zyzven Naturals Business in a Box.\n\nDestination country: ' + country + '\nDelivery city / postcode: \nName: \nPhone: ';
-        if (quoteEmail) {
-          quoteEmail.href = 'mailto:' + quoteEmail.getAttribute('data-email') +
-            '?subject=' + encodeURIComponent('Shipping quote request: Business in a Box (' + country + ')') +
-            '&body=' + encodeURIComponent(message);
-        }
-        if (quoteWa) {
-          var wa = quoteWa.getAttribute('data-wa');
-          if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(wa)) {
-            quoteWa.href = wa + (wa.indexOf('?') === -1 ? '?' : '&') + 'text=' + encodeURIComponent(message);
-          }
-        }
       }
 
       function showError(msg, focusEl) {
@@ -576,9 +529,9 @@
           showError('Please choose where the box will be delivered.', dest);
           return;
         }
-        if (mode === 'quote') {
+        if (mode === 'forwarder' && (!forwarder || !forwarder.checked)) {
           e.preventDefault(); e.stopImmediatePropagation();
-          showError('This destination needs a shipping quote before purchase. Use "Request a shipping quote" above.', dest);
+          showError('Please confirm that your delivery address belongs to a shipping forwarder in the USA, UK, European Union or Canada.', forwarder);
           return;
         }
         if (!terms || !terms.checked) {
@@ -700,19 +653,15 @@
     { "type": "text", "id": "destination_label", "label": "Destination question", "default": "Where will your box be delivered?" },
     { "type": "textarea", "id": "direct_countries", "label": "Countries with checkout shipping", "info": "Comma separated. Must match your Shopify shipping zones.", "default": "United States, Canada, United Kingdom" },
     { "type": "textarea", "id": "eu_countries", "label": "EU countries with checkout shipping", "info": "Comma separated. Remove any you cannot ship to.", "default": "Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden" },
-    { "type": "textarea", "id": "me_countries", "label": "Middle Eastern countries served directly", "info": "Comma separated. Add only destinations with a real checkout rate. Every other Middle Eastern country is quote-only." },
     { "type": "textarea", "id": "ship_none", "label": "Message before a country is chosen", "default": "Choose your country to see how shipping works for you." },
     { "type": "textarea", "id": "ship_us", "label": "Message: USA", "default": "US boxes are packed and dispatched from our US warehouse by UPS. Estimated delivery is 3–5 business days after dispatch. A box delivered within the USA does not incur additional customs duties." },
     { "type": "textarea", "id": "ship_uk", "label": "Message: United Kingdom", "default": "UK boxes are packed and dispatched from our UK warehouse by Royal Mail or UPS. Estimated delivery is 2–3 business days after dispatch. A box delivered within the UK does not incur additional customs duties." },
     { "type": "textarea", "id": "ship_eu", "label": "Message: European Union", "default": "EU boxes are dispatched from our Swedish warehouse. Estimated delivery is 3–5 business days after dispatch. There are no additional customs duties for delivery from Sweden to another EU country." },
     { "type": "textarea", "id": "ship_ca", "label": "Message: Canada", "default": "Most products dispatch from TK Zyzven Naturals Inc. in Canada. If an item must ship from the UK, we will explain the proposed delivery, timing and any possible extra charges, and get your agreement before dispatch." },
-    { "type": "textarea", "id": "ship_me", "label": "Message: Middle East (served directly)", "default": "We ship the box directly to this destination. The shipping charge and full total are shown at checkout before you pay." },
     { "type": "textarea", "id": "ship_direct", "label": "Message: other checkout destinations", "default": "Your shipping charge and the full total are shown at checkout before you pay. Enter your delivery address there to see the available service." },
     { "type": "textarea", "id": "ship_checkout_note", "label": "Checkout note (all checkout destinations)", "default": "Enter your delivery address at checkout to see the box shipping charge and the full amount payable before you pay. Delivery estimates are not guaranteed arrival dates; we send tracking when your box dispatches." },
-    { "type": "textarea", "id": "ship_forwarder", "label": "Message: Caribbean", "default": "We recommend using a shipping-forwarding company with an eligible delivery address. You choose and pay your forwarder and arrange its onward delivery to you. Please tick the box below if your delivery address belongs to a forwarder, so we can give you accurate shipping information." },
-    { "type": "textarea", "id": "ship_quote", "label": "Message: quote-only", "default": "We don't have a checkout shipping rate for this destination. Request a quote and we'll confirm whether we can fulfil your order, the shipping charge and the total. We only take payment after you accept the quote, and we never add unapproved shipping charges." },
-    { "type": "textarea", "id": "ship_duties", "label": "Duties note", "default": "For this destination, import duties, local taxes or clearance fees may apply unless we expressly tell you they are included. Customs and carrier delays can affect delivery times." },
-    { "type": "text", "id": "quote_label", "label": "Quote button label", "default": "Request a shipping quote" },
+    { "type": "textarea", "id": "ship_forwarder", "label": "Message: other countries (shipping forwarder)", "default": "We ship the box directly to the USA, UK, European Union and Canada only. To order from elsewhere, use a shipping forwarder with an eligible delivery address in one of those regions and enter that address at checkout. You arrange and pay for the forwarder’s onward shipping and are responsible for your destination’s import requirements." },
+    { "type": "textarea", "id": "ship_duties", "label": "Duties note (shipping forwarder)", "default": "Import duties, local taxes and clearance fees at your final destination are your responsibility. Customs and carrier delays can affect delivery times." },
 
     { "type": "header", "content": "Optional reseller features" },
     { "type": "checkbox", "id": "show_optin", "label": "Show publicity opt-in", "default": true },
@@ -730,7 +679,7 @@
     { "type": "text", "id": "contact_heading", "label": "Contact heading", "default": "Have questions first?" },
     { "type": "textarea", "id": "contact_text", "label": "Contact text", "default": "Talk to us before you buy. We would rather answer your questions than have you start uncertain." },
     { "type": "text", "id": "whatsapp_label", "label": "WhatsApp button label", "default": "WhatsApp +44 7460 032301" },
-    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp link", "info": "e.g. https://wa.me/447460032301 — quote requests pre-fill a message." },
+    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp link", "info": "e.g. https://wa.me/447460032301" },
     { "type": "text", "id": "email_label", "label": "Email button label", "default": "Email sales@zyzvennaturals.com" },
     { "type": "text", "id": "email", "label": "Email address", "default": "sales@zyzvennaturals.com" }
   ],
