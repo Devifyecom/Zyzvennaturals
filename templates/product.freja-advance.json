@@ -793,6 +793,7 @@
         "ingredient_WhXVx9",
         "ingredient_VK6bah"
       ],
+      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
