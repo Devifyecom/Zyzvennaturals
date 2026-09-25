@@ -296,6 +296,14 @@
             "description": "Organic Blood Sugar Support Supplement"
           }
         },
+        "product_ik8QhU": {
+          "type": "product",
+          "settings": {
+            "product": "blood-sugar-support-capsules-1",
+            "title": "Blood Sugar Support Capsules",
+            "description": "Organic Blood Sugar Support Supplement"
+          }
+        },
         "product_rMY4RT": {
           "type": "product",
           "settings": {
@@ -380,6 +388,7 @@
       "block_order": [
         "product_pfL68w",
         "product_PGhreb",
+        "product_ik8QhU",
         "product_rMY4RT",
         "product_rmka8z",
         "product_JCb79x",
@@ -895,6 +904,20 @@
         "pad_bottom": 70
       }
     },
+    "bib_homepage_promo_Rs7kQ2": {
+      "type": "bib-homepage-promo",
+      "name": "Business in a Box promo",
+      "settings": {
+        "heading": "Your Wellness Business. Ready in One Box.",
+        "body": "40 ready-to-retail Zyzven Naturals products with a combined recommended retail value of over $2,000 for $999 + shipping.",
+        "price_line": "Training, marketing toolkit and monthly support included · Wholesale, not MLM",
+        "cta_label": "Explore Business in a Box →",
+        "cta_link": "/pages/business-in-box",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg",
+        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.",
+        "background_color": "#f5f4ee"
+      }
+    },
     "home_image_3zk8rW": {
       "type": "home-image",
       "blocks": {
@@ -1042,20 +1065,6 @@
       ],
       "settings": {
         "include_margins": true
-      }
-    },
-    "bib_homepage_promo_Rs7kQ2": {
-      "type": "bib-homepage-promo",
-      "name": "Business in a Box promo",
-      "settings": {
-        "heading": "Your Wellness Business. Ready in One Box.",
-        "body": "40 ready-to-retail Zyzven Naturals products with a combined recommended retail value of over $2,000 for $999 + shipping.",
-        "price_line": "Training, marketing toolkit and monthly support included · Wholesale, not MLM",
-        "cta_label": "Explore Business in a Box →",
-        "cta_link": "/pages/business-in-box",
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg",
-        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with 40 teas and supplements.",
-        "background_color": "#F5F4EE"
       }
     }
   },
