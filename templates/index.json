@@ -285,7 +285,8 @@
           "settings": {
             "product": "womens-brew-hormone-balance-tea",
             "title": "Women's Organic Herbal Tea",
-            "description": "Women's Wellness Organic Herbal Tea (60g) | Women's Brew"
+            "description": "Women's Wellness Organic Herbal Tea (60g) | Women's Brew",
+            "usd_price": "39.99"
           }
         },
         "product_PGhreb": {
@@ -293,7 +294,8 @@
           "settings": {
             "product": "blood-sugar-support-capsules",
             "title": "Blood Sugar Support Capsules",
-            "description": "Organic Blood Sugar Support Supplement"
+            "description": "Organic Blood Sugar Support Supplement",
+            "usd_price": "49.99"
           }
         },
         "product_rMY4RT": {
@@ -301,7 +303,8 @@
           "settings": {
             "product": "alki-detox-moringa-herbal-tea",
             "title": "Alki Detox with Moringa",
-            "description": "Advanced Non-Laxative Metabiolic Detox Tea (80g)"
+            "description": "Advanced Non-Laxative Metabiolic Detox Tea (80g)",
+            "usd_price": "39.99"
           }
         },
         "product_rmka8z": {
@@ -317,7 +320,8 @@
           "settings": {
             "product": "zyzven-naturals-pressure-balance-capsules-60",
             "title": "Heart Health Support",
-            "description": "Pressure Balance Heart Health Support Capsules."
+            "description": "Pressure Balance Heart Health Support Capsules.",
+            "usd_price": "49.99"
           }
         },
         "product_k83gz9": {
@@ -325,7 +329,8 @@
           "settings": {
             "product": "zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply",
             "title": "Metabolic Support Capsules",
-            "description": "Glukobalans™ Metabolic Support Capsules."
+            "description": "Glukobalans™ Metabolic Support Capsules.",
+            "usd_price": "69.99"
           }
         },
         "product_pYATgB": {
@@ -349,7 +354,8 @@
           "settings": {
             "product": "advanced-hormone-balance-pcos-support-capsules",
             "title": "PCOS/pmos, cycle support and fertility",
-            "description": "Menopause & Hormonal Support Capsules (60 Count) | Freja Advance"
+            "description": "Menopause & Hormonal Support Capsules (60 Count) | Freja Advance",
+            "usd_price": "49.99"
           }
         },
         "product_yJeUJ4": {
@@ -357,7 +363,8 @@
           "settings": {
             "product": "zyzven-naturals-uterine-tonic-loose-herb-tea-80g",
             "title": "Uterine tonic - fibroids",
-            "description": "Women's Reproductive Wellness Organic Herbal Tea (80g) | Uterine Tonic"
+            "description": "Women's Reproductive Wellness Organic Herbal Tea (80g) | Uterine Tonic",
+            "usd_price": "39.99"
           }
         },
         "product_3YQq4Q": {
@@ -365,7 +372,8 @@
           "settings": {
             "product": "freja-balance-menopause-wellness-tea",
             "title": "Freja Balance Organic",
-            "description": "Menopause & Hormonal Wellness Organic Herbal Tea (80g) | Freja Balance"
+            "description": "Menopause & Hormonal Wellness Organic Herbal Tea (80g) | Freja Balance",
+            "usd_price": "39.99"
           }
         },
         "product_qbhxR4": {
@@ -373,7 +381,8 @@
           "settings": {
             "product": "manthoric-advance",
             "title": "Manthoric Advance",
-            "description": "Men's Vitality & Performance Support Capsules (120 Count) | Manthoric Advance"
+            "description": "Men's Vitality & Performance Support Capsules (120 Count) | Manthoric Advance",
+            "usd_price": "69.99"
           }
         }
       },
