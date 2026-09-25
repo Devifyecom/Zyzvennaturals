@@ -107,7 +107,7 @@
           "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<p>Uterine Tonic is a caffeine-free loose-leaf herbal blend created as a supportive daily ritual for women living with fibroids, painful periods or adenomyosis.<br/><br/>Its 14-botanical formula is designed to support:<br/><br/>• Menstrual and pelvic comfort<br/> Comfort during occasional cramps and period-related tension<br/>• Everyday uterine wellness<br/>• Digestive comfort and healthy fluid balance<br/>• Whole-body balance throughout the menstrual cycle<br/>• A consistent, caffeine-free self-care ritual<br/><br/>Simmer the botanicals slowly to create a full-bodied herbal infusion and follow the serving directions on the pouch.</p>",
+            "content": "<p>Uterine Tonic is a caffeine-free loose-leaf herbal blend created as a supportive daily ritual for women living with fibroids, painful periods or adenomyosis.<br/><br/>Its 14-botanical formula is designed to support:<br/><br/>• Menstrual and pelvic comfort<br/>&nbsp;Comfort during occasional cramps and period-related tension<br/>• Everyday uterine wellness<br/>• Digestive comfort and healthy fluid balance<br/>• Whole-body balance throughout the menstrual cycle<br/>• A consistent, caffeine-free self-care ritual<br/><br/>Simmer the botanicals slowly to create a full-bodied herbal infusion and follow the serving directions on the pouch.</p>",
             "open_by_default": false
           }
         },
@@ -620,6 +620,7 @@
         "job_qDbFcE",
         "job_ybcJnK"
       ],
+      "disabled": true,
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
