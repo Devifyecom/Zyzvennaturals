@@ -1,0 +1,207 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign s = section.settings
+  assign sid = section.id
+  assign types = s.enquiry_types | newline_to_br | split: '<br />'
+  assign wa_ok = false
+  if s.whatsapp_url contains 'https://wa.me/' or s.whatsapp_url contains 'https://api.whatsapp.com/'
+    assign wa_ok = true
+  endif
+-%}
+
+<style>
+  #partner-enquiry-{{ sid }} .pe__grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: var(--biab-6); align-items: start; }
+  #partner-enquiry-{{ sid }} .pe__intro .biab-rule { margin-left: 0; }
+  #partner-enquiry-{{ sid }} .pe__contact { list-style: none; margin: var(--biab-4) 0 0; padding: 0; display: grid; gap: var(--biab-2); }
+  #partner-enquiry-{{ sid }} .pe__contact a {
+    display: flex; align-items: center; gap: 14px; padding: var(--biab-2) var(--biab-3);
+    border: 1px solid rgba(255,255,255,.22); border-radius: var(--biab-radius-sm);
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; word-break: break-word;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  #partner-enquiry-{{ sid }} .pe__contact a:hover { background: rgba(255,255,255,.08); border-color: var(--biab-gold); }
+  #partner-enquiry-{{ sid }} .pe__contact svg { flex: 0 0 22px; width: 22px; height: 22px; color: var(--biab-gold); }
+  #partner-enquiry-{{ sid }} .pe__contact small { display: block; font-weight: 400; font-size: 13px; color: rgba(255,255,255,.7); }
+  #partner-enquiry-{{ sid }} .pe__aside { margin-top: var(--biab-4); font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.75); }
+  #partner-enquiry-{{ sid }} .pe__aside a { color: #fff; text-underline-offset: 3px; }
+
+  #partner-enquiry-{{ sid }} .pe__form { color: var(--biab-ink); }
+  #partner-enquiry-{{ sid }} .pe__form h3 { margin-bottom: var(--biab-3); }
+  #partner-enquiry-{{ sid }} .pe__fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--biab-2) var(--biab-3); }
+  #partner-enquiry-{{ sid }} .pe__field--full { grid-column: 1 / -1; }
+  #partner-enquiry-{{ sid }} .pe__field label { display: block; font-size: 14px; font-weight: 600; color: var(--biab-green-900); margin-bottom: 6px; }
+  #partner-enquiry-{{ sid }} .pe__field label span { font-weight: 400; color: var(--biab-ink-600); }
+  #partner-enquiry-{{ sid }} .pe__field input,
+  #partner-enquiry-{{ sid }} .pe__field select,
+  #partner-enquiry-{{ sid }} .pe__field textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--biab-ink);
+    padding: 13px 14px; border: 1px solid #cfc7b6; border-radius: var(--biab-radius-sm); background: #fff;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  #partner-enquiry-{{ sid }} .pe__field textarea { min-height: 140px; resize: vertical; }
+  #partner-enquiry-{{ sid }} .pe__field input:focus,
+  #partner-enquiry-{{ sid }} .pe__field select:focus,
+  #partner-enquiry-{{ sid }} .pe__field textarea:focus { outline: none; border-color: var(--biab-green-700); box-shadow: 0 0 0 3px rgba(35,87,54,.15); }
+  #partner-enquiry-{{ sid }} .pe__submit { margin-top: var(--biab-3); }
+  #partner-enquiry-{{ sid }} .pe__privacy { margin: var(--biab-2) 0 0; font-size: 13px; line-height: 1.6; color: var(--biab-ink-600); }
+  #partner-enquiry-{{ sid }} .pe__privacy a { color: inherit; text-underline-offset: 3px; }
+  #partner-enquiry-{{ sid }} .pe__status { padding: var(--biab-2) var(--biab-3); border-radius: var(--biab-radius-sm); margin-bottom: var(--biab-3); font-size: 15px; line-height: 1.6; }
+  #partner-enquiry-{{ sid }} .pe__status--ok { background: var(--biab-green-100); color: var(--biab-green-900); }
+  #partner-enquiry-{{ sid }} .pe__status--error { background: #fbeaea; color: #8a1f1f; }
+  #partner-enquiry-{{ sid }} .pe__status ul { margin: 6px 0 0; padding-left: 18px; }
+
+  #partner-enquiry-{{ sid }} .pe__sr { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  @media screen and (max-width: 989px) {
+    #partner-enquiry-{{ sid }} .pe__grid { grid-template-columns: 1fr; gap: var(--biab-5); }
+  }
+  @media screen and (max-width: 749px) {
+    #partner-enquiry-{{ sid }} .pe__fields { grid-template-columns: 1fr; }
+    #partner-enquiry-{{ sid }} .pe__submit { width: 100%; }
+  }
+</style>
+
+<div class="biab biab--green" id="partner-enquiry-{{ sid }}">
+  <section class="biab-section" id="partner-enquiry" aria-labelledby="PartnerEnquiryTitle-{{ sid }}">
+    <div class="biab-inner">
+      <div class="pe__grid">
+        <div class="pe__intro">
+          {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+          <h2 class="biab-h2" id="PartnerEnquiryTitle-{{ sid }}">{{ s.heading }}</h2>
+          <hr class="biab-rule">
+          {%- if s.subheading != blank -%}<p class="biab-lede">{{ s.subheading }}</p>{%- endif -%}
+
+          <ul class="pe__contact">
+            {%- if s.email != blank -%}
+              <li>
+                <a href="mailto:{{ s.email }}?subject={{ 'Partnership enquiry' | url_encode }}">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                  <span><small>Email</small>{{ s.email }}</span>
+                </a>
+              </li>
+            {%- endif -%}
+            {%- if wa_ok -%}
+              <li>
+                <a href="{{ s.whatsapp_url }}" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 01-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1120 11.5z"/></svg>
+                  <span><small>WhatsApp</small>{{ s.whatsapp_label | default: 'Message us on WhatsApp' }}<span class="pe__sr"> (opens in a new tab)</span></span>
+                </a>
+              </li>
+            {%- endif -%}
+          </ul>
+
+          {%- if s.aside != blank -%}<div class="pe__aside">{{ s.aside }}</div>{%- endif -%}
+        </div>
+
+        <div class="biab-card pe__form">
+          {%- form 'contact', id: 'PartnerEnquiryForm' -%}
+            {%- if form.posted_successfully? -%}
+              <div class="pe__status pe__status--ok" role="status" tabindex="-1" data-pe-status>{{ s.success_message }}</div>
+            {%- elsif form.errors -%}
+              <div class="pe__status pe__status--error" role="alert" tabindex="-1" data-pe-status>
+                Please check the highlighted details and try again.
+                <ul>
+                  {%- for field in form.errors -%}
+                    <li>{% if field == 'form' %}{{ form.errors.messages[field] }}{% else %}{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}{% endif %}</li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
+
+            <h3 class="biab-h3">{{ s.form_heading }}</h3>
+            <input type="hidden" name="contact[Enquiry]" value="Partner With Us page">
+
+            <div class="pe__fields">
+              <div class="pe__field">
+                <label for="PeName-{{ sid }}">Full name</label>
+                <input type="text" id="PeName-{{ sid }}" name="contact[Name]" autocomplete="name" required value="{{ form.name }}">
+              </div>
+              <div class="pe__field">
+                <label for="PeEmail-{{ sid }}">Email</label>
+                <input type="email" id="PeEmail-{{ sid }}" name="contact[email]" autocomplete="email" spellcheck="false" autocapitalize="off" required value="{{ form.email }}"{% if form.errors contains 'email' %} aria-invalid="true"{% endif %}>
+              </div>
+              <div class="pe__field">
+                <label for="PePhone-{{ sid }}">Phone / WhatsApp <span>(optional)</span></label>
+                <input type="tel" id="PePhone-{{ sid }}" name="contact[Phone]" autocomplete="tel" value="{{ form.phone }}">
+              </div>
+              <div class="pe__field">
+                <label for="PeCountry-{{ sid }}">Country</label>
+                <input type="text" id="PeCountry-{{ sid }}" name="contact[Country]" autocomplete="country-name" required>
+              </div>
+              <div class="pe__field">
+                <label for="PeBusiness-{{ sid }}">Business name <span>(optional)</span></label>
+                <input type="text" id="PeBusiness-{{ sid }}" name="contact[Business name]" autocomplete="organization">
+              </div>
+              <div class="pe__field">
+                <label for="PeType-{{ sid }}">I'm interested in</label>
+                <select id="PeType-{{ sid }}" name="contact[Partnership type]" required data-pe-type>
+                  <option value="" selected disabled>Choose one</option>
+                  {%- for raw in types -%}
+                    {%- assign t = raw | strip -%}
+                    {%- if t != blank -%}<option value="{{ t | escape }}">{{ t }}</option>{%- endif -%}
+                  {%- endfor -%}
+                </select>
+              </div>
+              <div class="pe__field pe__field--full">
+                <label for="PeWebsite-{{ sid }}">Website or social profile <span>(optional)</span></label>
+                <input type="text" id="PeWebsite-{{ sid }}" name="contact[Website or social]" autocomplete="url" inputmode="url">
+              </div>
+              <div class="pe__field pe__field--full">
+                <label for="PeMessage-{{ sid }}">Tell us about your business</label>
+                <textarea id="PeMessage-{{ sid }}" name="contact[body]" required placeholder="{{ s.message_placeholder | escape }}">{{ form.body }}</textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="biab-btn biab-btn--gold pe__submit">{{ s.submit_label }}</button>
+            {%- if s.privacy_note != blank -%}<div class="pe__privacy">{{ s.privacy_note }}</div>{%- endif -%}
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('partner-enquiry-{{ sid }}');
+    if (!root) return;
+    var select = root.querySelector('[data-pe-type]');
+    var status = root.querySelector('[data-pe-status]');
+    if (status) {
+      root.querySelector('#partner-enquiry').scrollIntoView({ block: 'start' });
+      status.focus({ preventScroll: true });
+    }
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('[data-partner-type]');
+      if (!link || !select) return;
+      var wanted = link.getAttribute('data-partner-type');
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === wanted) { select.selectedIndex = i; break; }
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Partner — Enquiry form",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Get in Touch" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Let's Talk About Working Together" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Tell us about your business and how you'd like to partner. We'll reply with the options available for your location." },
+    { "type": "text", "id": "email", "label": "Email", "default": "sales@zyzvennaturals.com" },
+    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp link", "info": "e.g. https://wa.me/447460032301" },
+    { "type": "text", "id": "whatsapp_label", "label": "WhatsApp label", "default": "Message us on WhatsApp" },
+    { "type": "richtext", "id": "aside", "label": "Note under contact details" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Partnership enquiry" },
+    { "type": "textarea", "id": "enquiry_types", "label": "Partnership options", "info": "One per line. Card links can preselect one of these by name.", "default": "Business in a Box reseller\nRetail stockist\nPractitioner or wellness professional\nCreator or collaboration\nSomething else" },
+    { "type": "text", "id": "message_placeholder", "label": "Message placeholder", "default": "Where you sell, who your customers are, and which products interest you." },
+    { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Send Enquiry" },
+    { "type": "textarea", "id": "success_message", "label": "Success message", "default": "Thank you. Your enquiry has been sent, and our partnerships team will reply by email." },
+    { "type": "richtext", "id": "privacy_note", "label": "Privacy note", "default": "<p>We use your details only to reply to this enquiry. See our <a href=\"/policies/privacy-policy\">Privacy Policy</a>.</p>" }
+  ],
+  "presets": [{ "name": "Partner — Enquiry form" }]
+}
+{% endschema %}

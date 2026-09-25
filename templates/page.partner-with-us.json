@@ -1,0 +1,291 @@
+{
+  "sections": {
+    "hero": {
+      "type": "partner-hero",
+      "settings": {
+        "eyebrow": "Partner With Us",
+        "heading": "Grow a Wellness Business with Zyzven Naturals",
+        "subheading": "Family-founded herbal teas and supplements that customers already look for. Resell them with our Business in a Box, or tell us how you'd like to work together.",
+        "primary_label": "Explore Business in a Box",
+        "primary_url": "/pages/business-in-box",
+        "secondary_label": "Send a Partnership Enquiry",
+        "secondary_url": "#partner-enquiry",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg",
+        "image_alt": "Zyzven Naturals Business in a Box reseller starter package with teas and supplements",
+        "trust_list": "Family-founded brand\nNo MLM, no recruitment\nTraining and monthly support\nShips to USA, UK, EU and Canada"
+      }
+    },
+    "ways": {
+      "type": "partner-cards",
+      "blocks": {
+        "way_1": {
+          "type": "card",
+          "settings": {
+            "icon": "box",
+            "title": "Business in a Box",
+            "text": "<p>Start reselling with 40 sealed, ready-to-retail products, product training, a digital marketing toolkit and monthly group check-ins.</p><p>A one-time purchase of [price] plus shipping. No subscription and no monthly quota.</p>",
+            "badge": "Start today",
+            "featured": true,
+            "link_label": "Explore Business in a Box",
+            "link_url": "/pages/business-in-box"
+          }
+        },
+        "way_2": {
+          "type": "card",
+          "settings": {
+            "icon": "store",
+            "title": "Retail stockists",
+            "text": "<p>Health stores, pharmacies, beauty salons and independent shops that would like to stock Zyzven Naturals teas and supplements.</p>",
+            "link_label": "Enquire about stocking",
+            "enquiry_type": "Retail stockist"
+          }
+        },
+        "way_3": {
+          "type": "card",
+          "settings": {
+            "icon": "leaf",
+            "title": "Practitioners",
+            "text": "<p>Herbalists, nutritionists, doulas and other wellness professionals who want to recommend or supply our products to their clients.</p>",
+            "link_label": "Enquire as a practitioner",
+            "enquiry_type": "Practitioner or wellness professional"
+          }
+        },
+        "way_4": {
+          "type": "card",
+          "settings": {
+            "icon": "star",
+            "title": "Creators & collaborations",
+            "text": "<p>Content creators, community groups and event organisers interested in product education, features or collaborations.</p>",
+            "link_label": "Propose a collaboration",
+            "enquiry_type": "Creator or collaboration"
+          }
+        }
+      },
+      "block_order": [
+        "way_1",
+        "way_2",
+        "way_3",
+        "way_4"
+      ],
+      "settings": {
+        "anchor": "ways-to-partner",
+        "eyebrow": "Ways to Partner",
+        "heading": "Find the Right Way to Work with Us",
+        "subheading": "Most partners start with the Business in a Box. If you run a store, a practice or a community, send us an enquiry and we'll talk through what fits.",
+        "columns": "4",
+        "background": "white",
+        "plain_cards": false
+      }
+    },
+    "why": {
+      "type": "partner-cards",
+      "blocks": {
+        "why_1": {
+          "type": "card",
+          "settings": {
+            "icon": "heart",
+            "title": "Family-founded, not faceless",
+            "text": "<p>Zyzven Naturals was built by founders Shawnafi and Lawrence, from a small shop in Sweden to herbal teas and supplements for customers in several countries.</p>"
+          }
+        },
+        "why_2": {
+          "type": "card",
+          "settings": {
+            "icon": "tag",
+            "title": "Products people already look for",
+            "text": "<p>Blood sugar and metabolic support, women's wellness for different life stages, men's wellness and heart health, so you can serve the whole household.</p>"
+          }
+        },
+        "why_3": {
+          "type": "card",
+          "settings": {
+            "icon": "book",
+            "title": "Education-led selling",
+            "text": "<p>Our community grew through education. Product training helps you talk about each product clearly and responsibly with your customers.</p>"
+          }
+        },
+        "why_4": {
+          "type": "card",
+          "settings": {
+            "icon": "globe",
+            "title": "Stock close to your customers",
+            "text": "<p>Boxes dispatch from our US, UK and Swedish warehouses, and from our Canadian distributor, TK Zyzven Naturals Inc.</p>"
+          }
+        },
+        "why_5": {
+          "type": "card",
+          "settings": {
+            "icon": "people",
+            "title": "Support that continues",
+            "text": "<p>Business in a Box resellers get a digital marketing toolkit and monthly group check-ins, not just a delivery.</p>"
+          }
+        },
+        "why_6": {
+          "type": "card",
+          "settings": {
+            "icon": "check",
+            "title": "Your business, your way",
+            "text": "<p>Set your own selling prices and keep your own customers. There are no downlines, recruitment commissions or required monthly purchases.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "why_1",
+        "why_2",
+        "why_3",
+        "why_4",
+        "why_5",
+        "why_6"
+      ],
+      "settings": {
+        "anchor": "why-zyzven",
+        "eyebrow": "Why Zyzven Naturals",
+        "heading": "A Brand You Can Build On",
+        "columns": "3",
+        "background": "cream",
+        "plain_cards": true
+      }
+    },
+    "steps": {
+      "type": "biab-steps",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Review the box and terms",
+            "text": "See exactly what's inside the Business in a Box and read the Reseller Terms before you order."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Order your box",
+            "text": "Choose your delivery country, agree to the Reseller Terms and pay [price] plus the shipping shown at checkout."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Get trained",
+            "text": "Receive your product training and digital marketing toolkit within seven days of confirmed payment."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Start selling",
+            "text": "Sell in person, on social media, from your own website or in your shop, and reorder the lines that sell."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "settings": {
+        "eyebrow": "How It Works",
+        "heading": "Becoming a Reseller in Four Steps"
+      }
+    },
+    "wholesale": {
+      "type": "biab-wholesale",
+      "settings": {
+        "eyebrow": "Wholesale, Not MLM",
+        "heading": "You Sell Products. That's It.",
+        "subheading": "There is no recruitment structure here, and nothing to sign up beneath you. Your income comes from retailing genuine products to real customers.",
+        "yes_title": "What this is",
+        "yes_list": "You buy stock and retail it at your own prices.\nYour margin comes from the difference, on every unit you sell.\nYou reorder the lines that sell.\nYou keep your own customers and your own business.",
+        "no_title": "What this isn't",
+        "no_list": "No recruitment commissions.\nNo downline, uplines or team volume targets.\nNo monthly purchase quota to stay active.\nNo earnings from signing anyone else up."
+      }
+    },
+    "faq": {
+      "type": "biab-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the quickest way to become a partner?",
+            "answer": "<p>Order the <a href=\"/pages/business-in-box\">Business in a Box</a>. It includes 40 sealed products, product training, a digital marketing toolkit and monthly group check-ins, so you can start selling as soon as your box arrives.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this an MLM?",
+            "answer": "<p>No. You buy products to sell to customers through your independent business. There are no downlines, recruitment commissions or required monthly purchases.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I get an exclusive territory or distributor status?",
+            "answer": "<p>No. Buying the box does not grant an exclusive territory, an official Zyzven website or distributor status. You run your own independent business and set your own selling prices.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I sell on Amazon, eBay or other marketplaces?",
+            "answer": "<p>You may sell through your own shop, website, social media and in person. You need our written approval before listing Zyzven products on Amazon, Walmart, eBay or another third-party marketplace. See the <a href=\"/pages/reseller-terms\">Reseller Terms</a> for details.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do you ship Business in a Box orders?",
+            "answer": "<p>We currently ship Business in a Box directly to the USA, UK, European Union and Canada. If you live elsewhere, you may arrange a shipping forwarder with an eligible delivery address in one of those regions. You are responsible for the forwarder’s onward charges and your destination’s import requirements.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "I run a shop or clinic. Can I work with you without buying the box?",
+            "answer": "<p>Yes, send us an enquiry using the form on this page. Tell us about your business, where you are based and which products interest you, and we'll reply with the options available to you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Partner FAQs"
+      }
+    },
+    "enquiry": {
+      "type": "partner-enquiry",
+      "settings": {
+        "eyebrow": "Get in Touch",
+        "heading": "Let's Talk About Working Together",
+        "subheading": "Tell us about your business and how you'd like to partner. We'll reply with the options available for your location.",
+        "email": "sales@zyzvennaturals.com",
+        "whatsapp_url": "https://wa.me/447460032301",
+        "whatsapp_label": "Message us on WhatsApp",
+        "aside": "<p>Ready to start as a reseller? Go straight to the <a href=\"/pages/business-in-box\">Business in a Box</a> page.</p>",
+        "form_heading": "Partnership enquiry",
+        "enquiry_types": "Business in a Box reseller\nRetail stockist\nPractitioner or wellness professional\nCreator or collaboration\nSomething else",
+        "message_placeholder": "Where you sell, who your customers are, and which products interest you.",
+        "submit_label": "Send Enquiry",
+        "success_message": "Thank you. Your enquiry has been sent, and our partnerships team will reply by email.",
+        "privacy_note": "<p>We use your details only to reply to this enquiry. See our <a href=\"/policies/privacy-policy\">Privacy Policy</a>.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "ways",
+    "why",
+    "steps",
+    "wholesale",
+    "faq",
+    "enquiry"
+  ]
+}

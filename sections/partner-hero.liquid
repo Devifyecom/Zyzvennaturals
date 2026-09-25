@@ -1,0 +1,85 @@
+{{ 'biab.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign s = section.settings
+  assign sid = section.id
+  assign trust_items = s.trust_list | newline_to_br | split: '<br />'
+-%}
+
+<style>
+  #partner-hero-{{ sid }} .ph__grid--solo { grid-template-columns: 1fr; max-width: 820px; margin: 0 auto; text-align: center; }
+  #partner-hero-{{ sid }} .ph__grid--solo .biab-hero__ctas { justify-content: center; }
+  #partner-hero-{{ sid }} .ph__grid--solo .biab-rule { margin-left: auto; margin-right: auto; }
+  #partner-hero-{{ sid }} .biab-h1 { margin-bottom: var(--biab-2); }
+  #partner-hero-{{ sid }} .biab-lede { max-width: 620px; }
+  #partner-hero-{{ sid }} .ph__grid--solo .biab-lede { margin-left: auto; margin-right: auto; }
+  #partner-hero-{{ sid }} .biab-hero__media img { aspect-ratio: 4 / 3; object-fit: cover; }
+</style>
+
+<div class="biab" id="partner-hero-{{ sid }}">
+  <section class="biab-section biab-hero" aria-labelledby="PartnerHeroTitle-{{ sid }}">
+    <div class="biab-inner">
+      <div class="biab-hero__grid{% if s.image == blank %} ph__grid--solo{% endif %}">
+        <div class="biab-hero__copy">
+          {%- if s.eyebrow != blank -%}<p class="biab-eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+          <h1 class="biab-h1" id="PartnerHeroTitle-{{ sid }}">{{ s.heading }}</h1>
+          <hr class="biab-rule">
+          {%- if s.subheading != blank -%}<p class="biab-lede">{{ s.subheading }}</p>{%- endif -%}
+
+          <div class="biab-hero__ctas">
+            {%- if s.primary_label != blank -%}
+              <a class="biab-btn biab-btn--gold" href="{{ s.primary_url | default: '/pages/business-in-box' }}">{{ s.primary_label }}</a>
+            {%- endif -%}
+            {%- if s.secondary_label != blank -%}
+              <a class="biab-btn biab-btn--outline" href="{{ s.secondary_url | default: '#partner-enquiry' }}">{{ s.secondary_label }}</a>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- if s.image != blank -%}
+          <div class="biab-hero__media-col">
+            <div class="biab-hero__media">
+              {{ s.image | image_url: width: 1400 | image_tag:
+                widths: '480, 720, 960, 1200, 1400',
+                sizes: '(min-width: 990px) 560px, 100vw',
+                alt: s.image_alt,
+                fetchpriority: 'high'
+              }}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  {%- if s.trust_list != blank -%}
+    <div class="biab-trustbar">
+      <ul class="biab-trustbar__list">
+        {%- for item in trust_items -%}
+          {%- assign clean = item | strip -%}
+          {%- if clean != blank -%}<li>{{ clean }}</li>{%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Partner — Hero",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Partner With Us" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Grow a Wellness Business with Zyzven Naturals" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Family-founded herbal teas and supplements that customers already look for. Resell them with our Business in a Box, or tell us how you'd like to work together." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Explore Business in a Box" },
+    { "type": "url", "id": "primary_url", "label": "Primary button link", "info": "Defaults to /pages/business-in-box. Do not link to the box product page." },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Send a Partnership Enquiry" },
+    { "type": "text", "id": "secondary_url", "label": "Secondary button link", "info": "Defaults to #partner-enquiry (the enquiry form on this page)." },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Leave empty for a centred, text-only hero." },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Zyzven Naturals Business in a Box reseller starter package with teas and supplements" },
+    { "type": "textarea", "id": "trust_list", "label": "Trust strip items", "info": "One per line. Leave empty to hide.", "default": "Family-founded brand\nNo MLM, no recruitment\nTraining and monthly support\nShips to USA, UK, EU and Canada" }
+  ],
+  "presets": [{ "name": "Partner — Hero" }]
+}
+{% endschema %}
