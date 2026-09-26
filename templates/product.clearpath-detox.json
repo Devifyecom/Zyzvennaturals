@@ -171,7 +171,7 @@
           "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p>• What is ClearPath Detox Herbal Tea?<br/>ClearPath Detox is a premium loose-leaf herbal tea formulated with traditional botanical ingredients commonly used to support digestive wellness and natural cleansing routines.<br/><br/>• What does ClearPath Detox taste like?<br/>ClearPath Detox offers a refreshing herbal flavor with cooling peppermint, warming ginger, aromatic fennel, and subtle citrus notes.<br/><br/>• Does this tea contain caffeine?<br/>No. ClearPath Detox is naturally caffeine-free and can be enjoyed any time of day.<br/><br/>• How often should I drink ClearPath Detox?<br/>Many customers enjoy 1–2 cups per week or as needed as part of their digestive wellness and self-care routine.<br/><br/>• Is ClearPath Detox vegan?<br/>Yes. It is made entirely from plant-based ingredients and is suitable for vegan lifestyles.<br/><br/>• Who is this tea for?<br/>ClearPath Detox is ideal for adults seeking a natural herbal tea to support digestive wellness, occasional bloating, and natural detoxification.</p>",
+            "content": "<p>• What is ClearPath Detox Herbal Tea?<br/>ClearPath Detox is a premium loose-leaf herbal tea formulated with traditional botanical ingredients commonly used to support digestive wellness and natural cleansing routines.<br/><br/>• What does ClearPath Detox taste like?<br/>ClearPath Detox offers a refreshing herbal flavor with cooling peppermint, warming ginger and aromatic fennel.<br/><br/>• Does this tea contain caffeine?<br/>No. ClearPath Detox is naturally caffeine-free and can be enjoyed any time of day.<br/><br/>• How often should I drink ClearPath Detox?<br/>Many customers enjoy 1–2 cups per week or as needed as part of their digestive wellness and self-care routine.<br/><br/>• Is ClearPath Detox vegan?<br/>Yes. It is made entirely from plant-based ingredients and is suitable for vegan lifestyles.<br/><br/>• Who is this tea for?<br/>ClearPath Detox is ideal for adults seeking a natural herbal tea to support digestive wellness, occasional bloating, and natural detoxification.</p>",
             "open_by_default": false
           }
         },
@@ -563,32 +563,32 @@
           "type": "job",
           "settings": {
             "title": "Calms bloating & gas",
-            "herbs": "Fennel · Ginger · Lemongrass",
-            "copy": "These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals."
+            "herbs": "Fennel · Peppermint",
+            "copy": "Traditionally used for gas and bloating, these two support digestive comfort when you feel heavy after meals."
           }
         },
         "job_B47xCK": {
           "type": "job",
           "settings": {
             "title": "Eases digestion",
-            "herbs": "Milk Thistle · Burdock",
-            "copy": "Milk thistle and burdock support your liver and gut, so food breaks down cleanly and you feel less heavy and off after meals."
+            "herbs": "Ginger",
+            "copy": "Traditionally used to support digestion and ease occasional digestive discomfort."
           }
         },
         "job_qDbFcE": {
           "type": "job",
           "settings": {
             "title": "Gets you regular",
-            "herbs": "Low-dose Senna",
-            "copy": "A gentle, deliberate dose nudges your bowel overnight, so you wake up regular. No cramping, because the soothing herbs balance it."
+            "herbs": "Senna · Rhubarb Root",
+            "copy": "Senna provides short-term relief of occasional constipation, and rhubarb root is a traditional cleansing herb. For occasional use only, not daily."
           }
         },
         "job_ybcJnK": {
           "type": "job",
           "settings": {
-            "title": "Releases water weight",
-            "herbs": "Dandelion · Nettle",
-            "copy": "Natural diuretics that flush the stored water behind the puffiness in your face, fingers, and stomach."
+            "title": "Adds gentle fiber",
+            "herbs": "Psyllium Husk",
+            "copy": "A fiber-rich botanical that supports stool bulk and regularity. Drink plenty of fluid with every cup."
           }
         }
       },
@@ -602,8 +602,8 @@
       "settings": {
         "eyebrow": "Why it works",
         "title": "One Cup. Four Jobs.",
-        "lead": "<p>Zyzven Naturals isn't another supplement to choke down. It's functional herbs that do four things at once, gently, while you sleep.</p>",
-        "callout": "<p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Zyzven Naturals balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>",
+        "lead": "<p>ClearPath is six traditional herbs doing four jobs, for occasional, short-term support.</p>",
+        "callout": "<p><strong>The difference:</strong> ClearPath doesn't rely on senna alone. It pairs senna and rhubarb root with psyllium fiber and the traditionally soothing herbs fennel, ginger and peppermint. Follow the directions on the pack and don't use it more often than directed.</p>",
         "disclaimer": "",
         "button_label": "Start my relief",
         "button_link": "#",
@@ -841,54 +841,54 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/1_pkfqfo.webp",
-            "label": "The Bloat Soothers",
-            "title": "Fennel Seed · Ginger Root · Lemongrass",
-            "text": "These three calm the digestive tract. Fennel is one of the oldest remedies for gas and bloating, ginger settles the stomach and eases nausea, lemongrass relaxes the gut muscles. They're the reason you wake up flat instead of puffy, and they keep the cleanse herbs from feeling harsh."
+            "label": "The Regularity Herb",
+            "title": "Senna Leaf",
+            "text": "A stimulant-laxative herb for short-term relief of occasional constipation. It's the ingredient that gets things moving, which is why ClearPath is for occasional use, not daily or prolonged use."
           }
         },
         "ingredient_qwFktm": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/2_k1fucg.webp",
-            "label": "The Cleanse Engine",
-            "title": "Senna Leaf · Black Walnut Leaf",
-            "text": "Senna is the gentle nudge that gets things moving overnight, our solution to constipation that doesn't involve a 3 a.m. emergency. We use it in a low, deliberate dose, paired with Black Walnut, a softer intestinal cleanser, so you're regular in the morning without cramping or urgency."
+            "label": "The Fiber",
+            "title": "Psyllium Husk",
+            "text": "A fiber-rich botanical that absorbs water to support stool bulk and bowel regularity. Drink plenty of fluid with every cup so it can do its job safely."
           }
         },
         "ingredient_NiRVGc": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/3_tiagnm.webp",
-            "label": "Water Weight Release",
-            "title": "Dandelion Leaf · Nettle Leaf",
-            "text": "Two of the most studied natural diuretics. They help your body release the stored water that makes your stomach, fingers, and face look puffy, without dehydrating you. Most of the visible \"flatter\" feeling on day one comes from these two."
+            "label": "The Traditional Cleanser",
+            "title": "Rhubarb Root",
+            "text": "A traditional cleansing herb that may have a mild laxative effect. Paired with senna, it supports ClearPath's short-term reset."
           }
         },
         "ingredient_z4dHxj": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/4_y6tzcr.webp",
-            "label": "Liver + Digestion Support",
-            "title": "Milk Thistle Leaf · Burdock Root",
-            "text": "Your liver and gut work together to process everything you eat. Milk thistle has decades of research behind it for liver support; burdock root assists clearance through the lymph and blood. A liver that's running clean makes digestion easier across the board."
+            "label": "The Bloat Soother",
+            "title": "Fennel Seed",
+            "text": "One of the oldest traditional remedies for gas and bloating, used to support digestive comfort after heavy meals."
           }
         },
         "ingredient_PVbWRy": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/5_csxq8m.webp",
-            "label": "The Nutrient Layer",
-            "title": "Alfalfa Leaf · Rose Hips · Honey Bush · Sarsaparilla",
-            "text": "These aren't doing the cleansing, they're keeping you nourished while it happens. Rich in vitamins, minerals, and antioxidants so you feel light, not drained."
+            "label": "The Stomach Settler",
+            "title": "Ginger Root",
+            "text": "Traditionally used to support digestion and ease occasional digestive discomfort. It also gives the blend its gentle warmth."
           }
         },
         "ingredient_qWCGE8": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/6_xlhaec.webp",
-            "label": "Citrus + Metabolic Boost",
-            "title": "Grapefruit Peel · Orange Peel · Ginger Root",
-            "text": "Grapefruit and orange peel add antioxidants and help with digestion after rich meals. Ginger doubles as a gentle thermogenic, supporting natural metabolism while it soothes the gut."
+            "label": "The Cooling Finish",
+            "title": "Peppermint",
+            "text": "Adds a cooling, aromatic flavor and supports digestive comfort, rounding out the blend so every cup tastes fresh."
           }
         }
       },
@@ -904,7 +904,7 @@
       "settings": {
         "eyebrow": "What's inside",
         "heading": "6 ingredients. One delicious ritual.",
-        "subheading": "Every herb was chosen for one job, to calm your gut, soothe the bloat, and get things moving, softly, slowly, while you sleep.Each herb plays a specific role, three target bloat and digestion directly; the rest balance them so you get the relief without the cramp.",
+        "subheading": "Six herbs, each with one job: senna, rhubarb root and psyllium husk support regularity, while fennel, ginger and peppermint support digestive comfort. These are the same six ingredients listed on the pouch.",
         "button_label": "Bring my balance back",
         "button_link": "",
         "show_dots": false,
