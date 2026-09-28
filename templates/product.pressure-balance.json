@@ -163,9 +163,8 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
-          "disabled": true,
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/6f54340ad1384b73a25d1b5f965e8a24.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/4389f9ccc4634e1cb1feb21263b2a8bd.mp4",
             "sound_button_text": "TAP FOR SOUND",
             "bottom_text": "See it for yourself",
             "review_name_1": "Priya N.",
