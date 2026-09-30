@@ -107,7 +107,7 @@
           "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<p>Uterine Tonic is a caffeine-free loose-leaf herbal blend created as a supportive daily ritual for women living with fibroids, painful periods or adenomyosis.<br/><br/>Its 14-botanical formula is designed to support:<br/><br/>• Menstrual and pelvic comfort<br/>&nbsp;Comfort during occasional cramps and period-related tension<br/>• Everyday uterine wellness<br/>• Digestive comfort and healthy fluid balance<br/>• Whole-body balance throughout the menstrual cycle<br/>• A consistent, caffeine-free self-care ritual<br/><br/>Simmer the botanicals slowly to create a full-bodied herbal infusion and follow the serving directions on the pouch.</p>",
+            "content": "<p>• Naturally caffeine-free<br/><br/>• Made with 100% plant-based botanicals<br/><br/>• Supports your daily herbal wellness routine<br/><br/>• Traditional blend inspired by Caribbean and European herbal practices<br/><br/>• Smooth, earthy flavor<br/><br/>• Delicious served hot or iced<br/><br/>• Vegan-friendly<br/><br/>• Loose-leaf premium herbal tea</p>",
             "open_by_default": false
           }
         },
@@ -115,7 +115,7 @@
           "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<p>• Cramp Bark (Traditional menstrual comfort)<br/>A classic women's wellness botanical traditionally used in formulas for occasional menstrual cramping and tension.<br/><br/>• Red Raspberry Leaf (Traditional uterine support)<br/>A long-used women's herb traditionally included in teas for uterine tone, menstrual wellness and cycle comfort.<br/><br/>•Ginger + Turmeric(Warming comfort support)<br/>Two warming roots traditionally used to support digestion, everyday comfort and a balanced wellness routine.<br/><br/>• Chaste Berry(Women's hormonal wellness)<br/>Also known as vitex, chaste berry has a long history of use in women's cycle and hormonal-wellness formulas.<br/><br/>• Shatavari + Nettle (Nourishing women's wellness)<br/>Traditional botanicals used in women's formulas to support nourishment, vitality and whole-body balance.<br/><br/>•Dandelion + Cleavers (Fluid-balance support)<br/>Botanicals traditionally used to support digestion, lymphatic wellness and healthy fluid balance.</p>",
+            "content": "<p>• Dandelion Leaf: Traditionally used in herbal wellness practices and valued for its refreshing botanical properties.<br/><br/>• Nettle Leaf: A mineral-rich herb commonly enjoyed in traditional herbal teas.<br/><br/>• Cranberry: A naturally flavorful botanical widely used in wellness tea blends.<br/><br/>• Marshmallow Root: Traditionally used to create smooth, soothing herbal infusions.<br/><br/>• Parsley Leaf: Adds freshness and complements traditional botanical tea formulations.<br/><br/>• Horsetail: A classic herb frequently included in herbal wellness blends.<br/><br/>• Goldenrod: Traditionally used in European herbal practices.<br/><br/>• Uva Ursi: A well-known botanical in traditional herbal preparations.<br/><br/>• Gravel Root: Traditionally valued as part of herbal wellness formulas.<br/><br/>• Cat's Claw: A rainforest botanical commonly used in traditional herbal practices.<br/><br/>• Cleavers: Traditionally included in botanical cleansing tea blends.<br/><br/>• Marjoram: Adds a gentle herbal aroma and balanced flavor.</p>",
             "open_by_default": false
           }
         },
@@ -123,24 +123,17 @@
           "type": "info_row",
           "settings": {
             "heading": "How to Use",
-            "content": "<p>1) Boil:<br/>Bring 500 mL (16.5 fl oz) of water to a boil.<br/><br/>2) Add:<br/>Add 1 tablespoon of the herbal blend.<br/><br/>3) Simmer:<br/>Reduce the heat and simmer on low for 15 minutes.<br/><br/>4) Strain:<br/>Strain the tea and allow it to cool to a comfortable temperature.<br/><br/>5) Enjoy:<br/>Drink 1/2 cup twice daily, following the pouch directions.<br/><br/>Prepare as directed and use consistently only if it suits your individual health needs. Do not exceed the labeled serving.</p>",
+            "content": "<p>Steep 1 tablespoon of loose tea in 8 oz (240 ml) of freshly boiled water for 10 to 15 minutes.<br/><br/>Strain before drinking.<br/><br/>Enjoy 1 to 2 cups daily.<br/><br/>Serve hot or chilled over ice.<br/><br/>Add fresh lemon or honey if desired.</p>",
             "open_by_default": false
           }
         },
         "info_row_XW4ALN": {
           "type": "info_row",
+          "disabled": true,
           "settings": {
             "heading": "FAQ",
             "content": "<p>• What is Uterine Tonic Herbal Tea used for?<br/>This herbal tea is traditionally used to support uterine wellness, menstrual comfort, hormone balance, and overall reproductive health.<br/><br/>• Can this tea help with painful periods?<br/>Cramp Bark and other traditional herbs have long been used to support comfort during the menstrual cycle as part of a healthy lifestyle.<br/><br/>• Is this tea intended for fibroids or adenomyosis?<br/>The herbs in this blend have traditionally been used to support women seeking natural uterine wellness. This product is not intended to diagnose, treat, cure, or prevent any disease.<br/><br/>• Does this tea contain caffeine?<br/>No. Uterine Tonic Herbal Tea is naturally caffeine free.<br/><br/>• Can I drink this every day?<br/>Many people choose to enjoy this tea daily as part of their wellness routine. If you are pregnant, nursing, taking medication, or have a medical condition, consult your healthcare provider before use.<br/><br/>• Is this tea vegan?<br/>Yes. It is made with 100% plant-based ingredients and contains no animal products.<br/><br/>• Does this tea contain artificial ingredients?<br/>No. It contains only carefully selected herbal ingredients with no artificial colors or flavors.</p>",
             "open_by_default": false
-          }
-        },
-        "dropdown_MkwwcT": {
-          "type": "dropdown",
-          "disabled": true,
-          "settings": {
-            "heading": "Important Information",
-            "content": "Important Information"
           }
         },
         "recommend_widget_X6bNrg": {
@@ -205,7 +198,6 @@
         "info_row_9RwLmL",
         "info_row_JaTHHK",
         "info_row_XW4ALN",
-        "dropdown_MkwwcT",
         "recommend_widget_X6bNrg",
         "custom_liquid_NmcncR",
         "video_testimonials_9dcyFw"
@@ -480,9 +472,9 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "Uterine Tonic formulated",
-        "heading_accent": "for.",
-        "para_1": "Uterine Tonic is a targeted women's wellness tea created to support uterine health, menstrual comfort and cycle wellbeing. It is especially suited to women navigating fibroids, adenomyosis, painful periods, pelvic tension, monthly bloating and heavy or uncomfortable cycles.",
+        "heading": "Caffeine-Free Botanical",
+        "heading_accent": "Wellness Tea ",
+        "para_1": "Support your daily wellness routine with Zyzven Naturals Kidney & UTI Herbal Tea Blend. This premium caffeine-free loose leaf tea combines traditional botanicals including cranberry, dandelion, nettle, marshmallow root, and uva ursi in a smooth, natural herbal infusion. Perfect for holistic wellness, gentle daily cleansing, and mindful self-care.",
         "para_2": "",
         "image": "shopify://shop_images/uterine-tonic-womens-wellness-herbal-tea_5.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
