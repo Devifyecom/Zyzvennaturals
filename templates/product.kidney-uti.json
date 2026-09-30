@@ -476,7 +476,7 @@
         "heading_accent": "Wellness Tea ",
         "para_1": "Support your daily wellness routine with Zyzven Naturals Kidney & UTI Herbal Tea Blend. This premium caffeine-free loose leaf tea combines traditional botanicals including cranberry, dandelion, nettle, marshmallow root, and uva ursi in a smooth, natural herbal infusion. Perfect for holistic wellness, gentle daily cleansing, and mindful self-care.",
         "para_2": "",
-        "image": "shopify://shop_images/uterine-tonic-womens-wellness-herbal-tea_5.png",
+        "image": "shopify://shop_images/0A93BBA9-49DD-4882-8189-90D61F89348E.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
         "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
         "band_heading": "",
@@ -806,6 +806,7 @@
         "ingredient_yWNzr3",
         "ingredient_pzhR4B"
       ],
+      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
