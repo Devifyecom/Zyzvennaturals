@@ -1069,6 +1069,7 @@
         "question_cHCqHm",
         "question_G4EJNg"
       ],
+      "disabled": true,
       "name": "FAQ accordion",
       "settings": {
         "eyebrow": "Frequently asked",
