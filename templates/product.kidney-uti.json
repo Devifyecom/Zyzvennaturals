@@ -43,13 +43,6 @@
             "image": "shopify://shop_images/Standards.png"
           }
         },
-        "text_with_icon_K9Pgbp": {
-          "type": "text_with_icon",
-          "settings": {
-            "icon": "heart",
-            "text": "Caffeine-free herbal tea blend for everyday&nbsp;wellness"
-          }
-        },
         "text_with_icon_tFXRJr": {
           "type": "text_with_icon",
           "settings": {
@@ -69,6 +62,13 @@
           "settings": {
             "icon": "heart",
             "text": "Ideal for a&nbsp;mindful, holistic self-care routine"
+          }
+        },
+        "text_with_icon_K9Pgbp": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "heart",
+            "text": "Caffeine-free herbal tea blend for everyday&nbsp;wellness"
           }
         },
         "price": {
@@ -186,10 +186,10 @@
         "title",
         "text_XWEkcD",
         "image_wpGrG4",
-        "text_with_icon_K9Pgbp",
         "text_with_icon_tFXRJr",
         "text_with_icon_JNNb37",
         "text_with_icon_bNyEzm",
+        "text_with_icon_K9Pgbp",
         "price",
         "subscriptions_app_block_LGhKzH",
         "variant_picker",
