@@ -120,6 +120,34 @@
     height: 16px;
   }
 
+  /* Optional Wellness Circle membership panel (side by side with the signup) */
+  .zn-newsletter-{{ section.id }}.zn-newsletter--split {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .zn-newsletter-{{ section.id }}.zn-newsletter--split .zn-newsletter__inner {
+    flex: 1 1 50%;
+    margin: 0;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__membership-link {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #000000;
+    font-family: "Golos Text", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__membership-link:hover {
+    filter: brightness(0.95);
+  }
+
   @media screen and (max-width: 1025px) {
     .zn-newsletter-{{ section.id }} .zn-newsletter__heading {
       font-size: 30px;
@@ -136,6 +164,17 @@
     .zn-newsletter-{{ section.id }} .zn-newsletter__heading {
       font-size: 26px;
       line-height: 34px;
+    }
+
+    .zn-newsletter-{{ section.id }}.zn-newsletter--split {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 36px;
+    }
+
+    .zn-newsletter-{{ section.id }} .zn-newsletter__membership-link {
+      padding: 10px 22px;
+      font-size: 14px;
     }
 
     .zn-newsletter-{{ section.id }} .zn-newsletter__text {
@@ -157,7 +196,29 @@
   }
 {% endstyle %}
 
-<div class="zn-newsletter zn-newsletter-{{ section.id }}">
+<div class="zn-newsletter zn-newsletter-{{ section.id }}{% if section.settings.show_membership %} zn-newsletter--split{% endif %}">
+  {%- if section.settings.show_membership -%}
+    <div class="zn-newsletter__inner zn-newsletter__membership">
+      {%- if section.settings.membership_heading != blank -%}
+        <h2 class="zn-newsletter__heading">{{ section.settings.membership_heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.membership_text != blank -%}
+        <div class="zn-newsletter__text"><p>{{ section.settings.membership_text | escape }}</p></div>
+      {%- endif -%}
+      {%- if section.settings.membership_button_label != blank -%}
+        <a
+          class="zn-newsletter__membership-link"
+          {% if section.settings.membership_button_link != blank %}
+            href="{{ section.settings.membership_button_link }}"
+          {% else %}
+            role="link" aria-disabled="true"
+          {% endif %}
+        >
+          {{- section.settings.membership_button_label | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
   <div class="zn-newsletter__inner">
     {%- if section.settings.heading != blank -%}
       <h2 class="zn-newsletter__heading">{{ section.settings.heading | escape }}</h2>
@@ -215,7 +276,7 @@
 
 {% schema %}
 {
-  "name": "Zyzven newsletter",
+  "name": "Email signup",
   "tag": "section",
   "class": "section zn-newsletter-section",
   "settings": [
@@ -236,6 +297,18 @@
       "default": "newsletter",
       "info": "Added to the Shopify customer record so Klaviyo can pick up the signup."
     },
+    { "type": "header", "content": "Wellness Circle membership (optional)" },
+    {
+      "type": "checkbox",
+      "id": "show_membership",
+      "label": "Show membership panel",
+      "default": false,
+      "info": "Shows the Wellness Circle panel beside the signup form (formerly the \"Custom Email signup\" section)."
+    },
+    { "type": "text", "id": "membership_heading", "label": "Membership heading", "default": "The Zyzven Wellness Circle" },
+    { "type": "text", "id": "membership_text", "label": "Membership text", "default": "Structured Access | Founder-Led Education | Priority Support" },
+    { "type": "text", "id": "membership_button_label", "label": "Membership button label", "default": "Explore Membership" },
+    { "type": "url", "id": "membership_button_link", "label": "Membership button link" },
     { "type": "header", "content": "Colors" },
     { "type": "color", "id": "background", "label": "Background", "default": "#4e7f51" },
     { "type": "color", "id": "text_color", "label": "Text", "default": "#ffffff" },
@@ -274,6 +347,6 @@
       "unit": "px"
     }
   ],
-  "presets": [{ "name": "Zyzven newsletter" }]
+  "presets": [{ "name": "Email signup" }]
 }
 {% endschema %}

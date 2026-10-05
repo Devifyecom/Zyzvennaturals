@@ -11,45 +11,9 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "newsletter_hzRXcy": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_Nr7N8X": {
-          "type": "heading",
-          "settings": {
-            "heading": "Join the Zyzven Wellness Community",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_CDJjXe": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Join the Zyzven Wellness Community and stay connected with nature-powered wellness, exclusive updates, and expert tips.</p>"
-          }
-        },
-        "email_form_dFUpWk": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_Nr7N8X",
-        "paragraph_CDJjXe",
-        "email_form_dFUpWk"
-      ],
-      "disabled": true,
-      "custom_css": [],
-      "name": "t:sections.newsletter.presets.name",
-      "settings": {
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "zn_newsletter_LQf4nY": {
       "type": "zn-newsletter",
-      "name": "Zyzven newsletter",
+      "name": "Email signup",
       "settings": {
         "heading": "Sign Up for Our Newsletter",
         "text": "<p>Join the Zyzven Wellness Community and stay connected with nature-powered wellness, exclusive updates, and expert tips.</p>",
@@ -63,22 +27,12 @@
         "button_text_color": "#ffffff",
         "content_width": 560,
         "padding_top": 60,
-        "padding_bottom": 56
-      }
-    },
-    "cw_newsletter_hMgaKp": {
-      "type": "cw-newsletter",
-      "disabled": true,
-      "name": "Custom Email signup",
-      "settings": {
-        "heading1": "The Zyzven Wellness Circle",
-        "content1": "Structured Access | Founder-Led Education | Priority Support",
-        "btn_text": "Explore Membership",
-        "btn_link": "",
-        "heading2": "Sign Up for Our Newsletter",
-        "content2": "Join the Zyzven Wellness Community and stay connected with nature-powered wellness, exclusive updates, and expert tips.",
-        "pad_top": 70,
-        "pad_bottom": 70
+        "padding_bottom": 56,
+        "show_membership": false,
+        "membership_heading": "The Zyzven Wellness Circle",
+        "membership_text": "Structured Access | Founder-Led Education | Priority Support",
+        "membership_button_label": "Explore Membership",
+        "membership_button_link": ""
       }
     },
     "footer": {
@@ -208,9 +162,7 @@
     }
   },
   "order": [
-    "newsletter_hzRXcy",
     "zn_newsletter_LQf4nY",
-    "cw_newsletter_hMgaKp",
     "footer"
   ]
 }
