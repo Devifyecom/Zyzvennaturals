@@ -1,0 +1,748 @@
+{%- liquid
+  assign s = section.settings
+
+  assign c_title = s.title
+  if c_title == blank
+    assign c_title = collection.title | default: 'Collection title'
+  endif
+
+  assign c_desc = s.description
+  if c_desc == blank
+    assign c_desc = collection.description
+  endif
+
+  assign c_image = s.image
+  if c_image == blank and s.use_collection_image
+    assign c_image = collection.image
+  endif
+
+  assign img_alt = c_image.alt | default: c_title | escape
+  assign count = collection.products_count | default: 0
+  assign layout = s.layout
+  if c_image == blank
+    assign layout = 'split'
+  endif
+
+  assign badge_count = 0
+  assign link_count = 0
+  for block in section.blocks
+    if block.type == 'badge'
+      assign badge_count = badge_count | plus: 1
+    elsif block.type == 'link'
+      assign link_count = link_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section
+  class="znc znc--{{ layout }}{% if c_image == blank %} znc--no-image{% endif %}"
+  aria-labelledby="znc-title-{{ section.id }}"
+>
+  {%- if layout == 'overlay' -%}
+    <div class="znc__bg" aria-hidden="true">
+      {{
+        c_image
+        | image_url: width: 2400
+        | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          widths: '750, 1100, 1500, 1920, 2400',
+          sizes: '100vw',
+          alt: ''
+      }}
+    </div>
+  {%- else -%}
+    <svg class="znc__leaf" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M100 8C52 40 30 86 38 132c6 34 30 56 62 60 32-4 56-26 62-60 8-46-14-92-62-124Z"/>
+      <path d="M100 30v160M100 70l-30-22M100 70l30-22M100 104l-40-28M100 104l40-28M100 138l-44-30M100 138l44-30"/>
+    </svg>
+  {%- endif -%}
+
+  <div class="znc__inner page-width">
+    <div class="znc__copy">
+      {%- if s.show_breadcrumb -%}
+        <nav class="znc__crumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="{{ routes.root_url }}">Home</a></li>
+            <li><a href="{{ routes.collections_url }}">Shop</a></li>
+            <li aria-current="page">{{ c_title | escape }}</li>
+          </ol>
+        </nav>
+      {%- endif -%}
+
+      {%- if s.eyebrow != blank or s.show_count -%}
+        <p class="znc__eyebrow znc__reveal">
+          {%- if s.eyebrow != blank -%}<span>{{ s.eyebrow }}</span>{%- endif -%}
+          {%- if s.show_count and count > 0 -%}
+            <span class="znc__count">{{ count }} {% if count == 1 %}product{% else %}products{% endif %}</span>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      <h1 id="znc-title-{{ section.id }}" class="znc__title znc__reveal">{{ c_title | escape }}</h1>
+
+      {%- if s.show_description and c_desc != blank -%}
+        <div class="znc__desc-wrap znc__reveal">
+          <input type="checkbox" id="znc-more-{{ section.id }}" class="znc__more-toggle" hidden>
+          <div class="znc__desc rte">{{ c_desc }}</div>
+          {%- if s.clamp_description -%}
+            <label for="znc-more-{{ section.id }}" class="znc__more" aria-hidden="true">
+              <span class="znc__more-open">Read more</span>
+              <span class="znc__more-close">Show less</span>
+            </label>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if s.cta_label != blank or s.secondary_label != blank -%}
+        <div class="znc__actions znc__reveal">
+          {%- if s.cta_label != blank -%}
+            <a class="znc__btn" href="{{ s.cta_url | default: '#ProductGridContainer' }}">
+              {{ s.cta_label }}
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12m0 0-5-5m5 5 5-5"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if s.secondary_label != blank and s.secondary_url != blank -%}
+            <a class="znc__link" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if badge_count > 0 -%}
+        <ul class="znc__badges znc__reveal" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'badge' -%}
+              <li class="znc__badge" {{ block.shopify_attributes }}>
+                <span class="znc__badge-icon" aria-hidden="true">
+                  {%- case block.settings.icon -%}
+                    {%- when 'leaf' -%}
+                      <svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19 13 11"/></svg>
+                    {%- when 'shield' -%}
+                      <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    {%- when 'flask' -%}
+                      <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>
+                    {%- when 'truck' -%}
+                      <svg viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+                    {%- when 'heart' -%}
+                      <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>
+                  {%- endcase -%}
+                </span>
+                <span>{{ block.settings.label }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- if layout == 'split' -%}
+      <div class="znc__media znc__reveal">
+        <div class="znc__frame">
+          {%- if c_image != blank -%}
+            {{
+              c_image
+              | image_url: width: 1400
+              | image_tag:
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '500, 750, 1000, 1400',
+                sizes: '(min-width: 990px) 44vw, 92vw',
+                alt: img_alt
+            }}
+          {%- else -%}
+            <div class="znc__placeholder">
+              {{ 'collection-1' | placeholder_svg_tag: 'znc__placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- if s.card_value != blank -%}
+          <div class="znc__card">
+            <span class="znc__stars" aria-hidden="true">★★★★★</span>
+            <span class="znc__card-value">{{ s.card_value }}</span>
+            {%- if s.card_label != blank -%}
+              <span class="znc__card-label">{{ s.card_label }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if link_count > 0 -%}
+    <div class="znc__pills-wrap page-width">
+      {%- if s.links_heading != blank -%}
+        <p class="znc__pills-heading">{{ s.links_heading }}</p>
+      {%- endif -%}
+      <ul class="znc__pills" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'link' -%}
+            {%- assign lc = block.settings.collection -%}
+            {%- assign label = block.settings.label | default: lc.title | default: 'Collection' -%}
+            {%- assign href = lc.url | default: block.settings.url | default: '#' -%}
+            <li {{ block.shopify_attributes }}>
+              <a
+                class="znc__pill{% if lc != blank and lc.id == collection.id %} is-active{% endif %}"
+                href="{{ href }}"
+                {% if lc != blank and lc.id == collection.id %}aria-current="page"{% endif %}
+              >
+                {{- label | escape -}}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</section>
+
+{% style %}
+  #shopify-section-{{ section.id }} .znc {
+    --znc-bg: {{ s.bg_color }};
+    --znc-text: {{ s.text_color }};
+    --znc-accent: {{ s.accent_color }};
+    --znc-btn: {{ s.button_color }};
+    --znc-btn-text: {{ s.button_text_color }};
+    --znc-overlay: {{ s.overlay_color }};
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 85% 10%, rgba(255, 255, 255, 0.55), transparent 60%),
+      var(--znc-bg);
+    color: var(--znc-text);
+    padding: {{ s.padding_top | times: 0.6 | round }}px 0 {{ s.padding_bottom | times: 0.6 | round }}px;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .znc {
+      padding: {{ s.padding_top }}px 0 {{ s.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .znc__inner {
+    position: relative;
+    display: grid;
+    gap: 3.2rem;
+    align-items: center;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .znc--split .znc__inner {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(4rem, 6vw, 9rem);
+    }
+    #shopify-section-{{ section.id }} .znc--no-image .znc__inner {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  /* decorative watermark */
+  #shopify-section-{{ section.id }} .znc__leaf {
+    position: absolute;
+    z-index: -1;
+    left: -6rem;
+    bottom: -8rem;
+    width: 34rem;
+    height: 34rem;
+    fill: none;
+    stroke: var(--znc-accent);
+    stroke-width: 0.8;
+    opacity: 0.22;
+    transform: rotate(-24deg);
+    pointer-events: none;
+  }
+
+  /* breadcrumb */
+  #shopify-section-{{ section.id }} .znc__crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 2.4rem;
+    padding: 0;
+    list-style: none;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  #shopify-section-{{ section.id }} .znc__crumbs li { opacity: 0.6; }
+  #shopify-section-{{ section.id }} .znc__crumbs li[aria-current] { opacity: 1; }
+  #shopify-section-{{ section.id }} .znc__crumbs li + li::before {
+    content: '/';
+    margin-right: 0.4rem;
+    opacity: 0.6;
+  }
+  #shopify-section-{{ section.id }} .znc__crumbs a {
+    color: inherit;
+    text-decoration: none;
+  }
+  #shopify-section-{{ section.id }} .znc__crumbs a:hover { text-decoration: underline; }
+
+  /* eyebrow */
+  #shopify-section-{{ section.id }} .znc__eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0 0 1.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--znc-accent);
+  }
+  #shopify-section-{{ section.id }} .znc__eyebrow > span:first-child::before {
+    content: '';
+    display: inline-block;
+    width: 2.8rem;
+    height: 1px;
+    margin-right: 1.2rem;
+    vertical-align: middle;
+    background: currentColor;
+  }
+  #shopify-section-{{ section.id }} .znc__count {
+    padding: 0.35rem 1rem;
+    border: 1px solid currentColor;
+    border-radius: 99px;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* title */
+  #shopify-section-{{ section.id }} .znc__title {
+    margin: 0;
+    max-width: 16ch;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(3.4rem, 5.4vw, {{ s.title_size }}px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    color: inherit;
+    text-wrap: balance;
+  }
+
+  /* description with optional clamp */
+  #shopify-section-{{ section.id }} .znc__desc-wrap { margin-top: 2rem; max-width: 54ch; }
+  #shopify-section-{{ section.id }} .znc__desc {
+    font-size: 1.65rem;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+  #shopify-section-{{ section.id }} .znc__desc > *:first-child { margin-top: 0; }
+  #shopify-section-{{ section.id }} .znc__desc > *:last-child { margin-bottom: 0; }
+  {%- if s.clamp_description -%}
+    #shopify-section-{{ section.id }} .znc__desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    #shopify-section-{{ section.id }} .znc__more-toggle:checked ~ .znc__desc {
+      display: block;
+      -webkit-line-clamp: unset;
+    }
+    #shopify-section-{{ section.id }} .znc__more {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+    }
+    #shopify-section-{{ section.id }} .znc__more-close,
+    #shopify-section-{{ section.id }} .znc__more-toggle:checked ~ .znc__more .znc__more-open { display: none; }
+    #shopify-section-{{ section.id }} .znc__more-toggle:checked ~ .znc__more .znc__more-close { display: inline; }
+  {%- endif -%}
+
+  /* actions */
+  #shopify-section-{{ section.id }} .znc__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem 2.4rem;
+    margin-top: 3.2rem;
+  }
+  #shopify-section-{{ section.id }} .znc__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2.8rem;
+    border-radius: 99px;
+    background: var(--znc-btn);
+    color: var(--znc-btn-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    box-shadow: 0 10px 24px -12px rgba(20, 35, 30, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  }
+  #shopify-section-{{ section.id }} .znc__btn svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease;
+  }
+  #shopify-section-{{ section.id }} .znc__btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 16px 30px -14px rgba(20, 35, 30, 0.6);
+  }
+  #shopify-section-{{ section.id }} .znc__btn:hover svg { transform: translateY(2px); }
+  #shopify-section-{{ section.id }} .znc__link {
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--znc-accent);
+    text-underline-offset: 5px;
+  }
+
+  /* badges */
+  #shopify-section-{{ section.id }} .znc__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2.4rem;
+    margin: 3.6rem 0 0;
+    padding: 2.4rem 0 0;
+    list-style: none;
+    border-top: 1px solid color-mix(in srgb, var(--znc-text) 14%, transparent);
+  }
+  #shopify-section-{{ section.id }} .znc__badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+  #shopify-section-{{ section.id }} .znc__badge-icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--znc-accent) 18%, transparent);
+    color: var(--znc-text);
+  }
+  #shopify-section-{{ section.id }} .znc__badge-icon svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* split media */
+  #shopify-section-{{ section.id }} .znc__media {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 56rem);
+    padding: 0 1.6rem 1.6rem 0;
+  }
+  #shopify-section-{{ section.id }} .znc__media::before {
+    content: '';
+    position: absolute;
+    inset: 1.6rem 0 0 1.6rem;
+    border: 1px solid var(--znc-accent);
+    border-radius: 999px 999px 2.4rem 2.4rem;
+    z-index: -1;
+  }
+  #shopify-section-{{ section.id }} .znc__frame {
+    position: relative;
+    aspect-ratio: {{ s.image_ratio }};
+    overflow: hidden;
+    border-radius: 999px 999px 2.4rem 2.4rem;
+    background: color-mix(in srgb, var(--znc-accent) 22%, var(--znc-bg));
+    box-shadow: 0 30px 60px -30px rgba(20, 35, 30, 0.45);
+  }
+  #shopify-section-{{ section.id }} .znc__frame img,
+  #shopify-section-{{ section.id }} .znc__placeholder-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  #shopify-section-{{ section.id }} .znc__media:hover .znc__frame img { transform: scale(1.04); }
+
+  #shopify-section-{{ section.id }} .znc__card {
+    position: absolute;
+    left: -1.6rem;
+    bottom: 12%;
+    display: grid;
+    gap: 0.2rem;
+    min-width: 15rem;
+    padding: 1.6rem 2rem;
+    border-radius: 1.6rem;
+    background: rgba(255, 255, 255, 0.88);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: #1f2a26;
+    box-shadow: 0 18px 40px -18px rgba(20, 35, 30, 0.45);
+  }
+  #shopify-section-{{ section.id }} .znc__stars {
+    color: var(--znc-accent);
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+  }
+  #shopify-section-{{ section.id }} .znc__card-value {
+    font-family: var(--font-heading-family);
+    font-size: 2.6rem;
+    line-height: 1.1;
+  }
+  #shopify-section-{{ section.id }} .znc__card-label {
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .znc__card { left: -4rem; }
+  }
+
+  /* overlay layout */
+  #shopify-section-{{ section.id }} .znc--overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: {{ s.overlay_height | times: 0.75 | round }}px;
+    background: var(--znc-overlay);
+    color: #ffffff;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .znc--overlay { min-height: {{ s.overlay_height }}px; }
+  }
+  #shopify-section-{{ section.id }} .znc__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  #shopify-section-{{ section.id }} .znc__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} .znc__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg,
+        color-mix(in srgb, var(--znc-overlay) {{ s.overlay_opacity }}%, transparent) 0%,
+        color-mix(in srgb, var(--znc-overlay) {{ s.overlay_opacity | times: 0.55 | round }}%, transparent) 55%,
+        transparent 100%),
+      linear-gradient(0deg, color-mix(in srgb, var(--znc-overlay) 45%, transparent), transparent 45%);
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .znc__bg::after {
+      background: color-mix(in srgb, var(--znc-overlay) {{ s.overlay_opacity }}%, transparent);
+    }
+  }
+  #shopify-section-{{ section.id }} .znc--overlay .znc__copy { max-width: 64rem; }
+  #shopify-section-{{ section.id }} .znc--overlay .znc__badges { border-top-color: rgba(255, 255, 255, 0.22); }
+  #shopify-section-{{ section.id }} .znc--overlay .znc__badge-icon {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+  }
+  #shopify-section-{{ section.id }} .znc--overlay .znc__btn { box-shadow: none; }
+
+  /* quick-link pills */
+  #shopify-section-{{ section.id }} .znc__pills-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-top: 4.8rem;
+  }
+  #shopify-section-{{ section.id }} .znc__pills-heading {
+    flex: none;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  #shopify-section-{{ section.id }} .znc__pills {
+    display: flex;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0.2rem;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+  #shopify-section-{{ section.id }} .znc__pills::-webkit-scrollbar { display: none; }
+  #shopify-section-{{ section.id }} .znc__pill {
+    display: block;
+    padding: 0.9rem 1.8rem;
+    border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+    border-radius: 99px;
+    color: inherit;
+    font-size: 1.35rem;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  #shopify-section-{{ section.id }} .znc__pill:hover { border-color: currentColor; }
+  #shopify-section-{{ section.id }} .znc__pill.is-active {
+    background: var(--znc-btn);
+    border-color: var(--znc-btn);
+    color: var(--znc-btn-text);
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .znc__pills-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 3.2rem;
+    }
+    #shopify-section-{{ section.id }} .znc__pills { width: 100%; }
+  }
+
+  /* entrance motion */
+  @media (prefers-reduced-motion: no-preference) {
+    #shopify-section-{{ section.id }} .znc__reveal {
+      animation: znc-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+    #shopify-section-{{ section.id }} .znc__title { animation-delay: 0.08s; }
+    #shopify-section-{{ section.id }} .znc__desc-wrap { animation-delay: 0.16s; }
+    #shopify-section-{{ section.id }} .znc__actions { animation-delay: 0.24s; }
+    #shopify-section-{{ section.id }} .znc__badges { animation-delay: 0.32s; }
+    #shopify-section-{{ section.id }} .znc__media { animation-delay: 0.12s; }
+  }
+  @keyframes znc-rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: none; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "ZN — Collection banner",
+  "tag": "div",
+  "class": "zn-collection-banner",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Title, description and image come from the collection automatically. Fill the fields below only to override them."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "split", "label": "Split — text + arched image" },
+        { "value": "overlay", "label": "Full-width image with overlay" }
+      ],
+      "default": "split"
+    },
+
+    { "type": "header", "content": "Content" },
+    { "type": "checkbox", "id": "show_breadcrumb", "label": "Show breadcrumb", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "Zyzven Naturals" },
+    { "type": "checkbox", "id": "show_count", "label": "Show product count", "default": true },
+    { "type": "text", "id": "title", "label": "Title override", "info": "Leave blank to use the collection title." },
+    { "type": "range", "id": "title_size", "label": "Max title size", "min": 40, "max": 96, "step": 2, "unit": "px", "default": 68 },
+    { "type": "checkbox", "id": "show_description", "label": "Show description", "default": true },
+    { "type": "richtext", "id": "description", "label": "Description override", "info": "Leave blank to use the collection description." },
+    { "type": "checkbox", "id": "clamp_description", "label": "Shorten long descriptions with \"Read more\"", "default": true },
+
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "cta_label", "label": "Button text", "default": "Shop the collection" },
+    { "type": "url", "id": "cta_url", "label": "Button link", "info": "Leave blank to scroll down to the products." },
+    { "type": "text", "id": "secondary_label", "label": "Secondary link text", "default": "Take the wellness quiz" },
+    { "type": "url", "id": "secondary_url", "label": "Secondary link" },
+
+    { "type": "header", "content": "Image" },
+    { "type": "checkbox", "id": "use_collection_image", "label": "Use collection image", "default": true },
+    { "type": "image_picker", "id": "image", "label": "Image override" },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image shape (split layout)",
+      "options": [
+        { "value": "4 / 5", "label": "Portrait" },
+        { "value": "1 / 1", "label": "Square" },
+        { "value": "3 / 4", "label": "Tall" }
+      ],
+      "default": "4 / 5"
+    },
+    { "type": "text", "id": "card_value", "label": "Floating card headline", "default": "4.9 / 5", "info": "Split layout only. Leave blank to hide the card." },
+    { "type": "text", "id": "card_label", "label": "Floating card caption", "default": "Loved by 2,000+ customers" },
+
+    { "type": "header", "content": "Overlay layout" },
+    { "type": "range", "id": "overlay_height", "label": "Banner height", "min": 400, "max": 800, "step": 20, "unit": "px", "default": 560 },
+    { "type": "color", "id": "overlay_color", "label": "Overlay colour", "default": "#1d3029" },
+    { "type": "range", "id": "overlay_opacity", "label": "Overlay strength", "min": 20, "max": 95, "step": 5, "unit": "%", "default": 80 },
+
+    { "type": "header", "content": "Quick links" },
+    { "type": "text", "id": "links_heading", "label": "Quick links heading", "default": "Browse" },
+
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#f6f1e8" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1f2f29" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#b08f6c" },
+    { "type": "color", "id": "button_color", "label": "Button", "default": "#27423a" },
+    { "type": "color", "id": "button_text_color", "label": "Button text", "default": "#ffffff" },
+
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Trust badge",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "flask", "label": "Lab flask" },
+            { "value": "truck", "label": "Delivery" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "text", "id": "label", "label": "Label", "default": "100% natural herbs" }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Quick link",
+      "limit": 12,
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "label", "label": "Label override" },
+        { "type": "url", "id": "url", "label": "Custom link", "info": "Used only when no collection is picked." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ZN — Collection banner",
+      "blocks": [
+        { "type": "badge", "settings": { "icon": "leaf", "label": "100% natural herbs" } },
+        { "type": "badge", "settings": { "icon": "flask", "label": "Lab tested" } },
+        { "type": "badge", "settings": { "icon": "truck", "label": "Fast delivery" } }
+      ]
+    }
+  ],
+  "enabled_on": { "templates": ["collection", "list-collections", "page"] }
+}
+{% endschema %}
