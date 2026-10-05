@@ -11,11 +11,26 @@
   @example
   {% render 'unit-price', price: line_item.unit_price | money_with_currency, measurement: line_item.unit_price_measurement }
 {%- enddoc -%}
+{%- comment -%}
+  The amount and the measurement label are kept in separate spans: the currency converter app
+  rewrites anything inside .price-item, and used to drop the "each" label, so the unit price
+  looked like a second product price.
+{%- endcomment -%}
+{%- liquid
+  if measurement.reference_unit == 'item' and measurement.reference_value == 1
+    assign unit_label = 'each'
+  else
+    assign unit_label = 'accessibility.unit_price_separator' | t | append: ' '
+    if measurement.reference_value != 1
+      assign unit_label = unit_label | append: measurement.reference_value | append: ' '
+    endif
+    assign unit_label = unit_label | append: measurement.reference_unit
+  endif
+-%}
 <small class="unit-price caption">
   {%- unless hide_accessibility_label -%}
     <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
   {%- endunless -%}
-  <span class="price-item price-item--last">
-    {{ price | unit_price_with_measurement: measurement }}
-  </span>
+  <span class="price-item price-item--last unit-price__amount">{{ price | money }}</span>
+  <span class="unit-price__measure">{{ unit_label }}</span>
 </small>

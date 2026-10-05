@@ -93,9 +93,20 @@
   font-size: 1.3rem;
 }
 
+/* Unit price ("$0.79 each") is a caption, not a second product price */
+.price .unit-price .price-item,
+.unit-price .price-item {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
 .unit-price {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: 0.04rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
   margin-top: 0.2rem;
