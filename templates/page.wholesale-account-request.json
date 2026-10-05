@@ -39,10 +39,12 @@
         "questions": {
           "type": "questions",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_7kac2o7kac2o7kac.jpg",
             "heading": "Any Questions?",
             "text": "Please reach out to us at",
             "email": "sales@zyzvennaturals.com",
-            "button_label": "Get in touch"
+            "button_label": "Get in touch",
+            "button_link": ""
           }
         },
         "faire": {
@@ -55,17 +57,58 @@
             "rating": "4.9",
             "items": "50% off your first order (up to $150)*\n1 year of free shipping with us*\n60-day payment terms for eligible retailers\nFree returns on your first order",
             "button_label": "Shop wholesale prices",
+            "button_link": "",
             "footnote": "*Available for retailers who are new to Faire"
           }
         }
       },
-      "block_order": ["step_order", "step_form", "step_contact", "questions", "faire"],
+      "block_order": [
+        "step_order",
+        "step_form",
+        "step_contact",
+        "questions",
+        "faire"
+      ],
       "settings": {
+        "eyebrow": "Wholesale",
+        "title": "Wholesale Account Request",
+        "intro": "<p>If you already have a wholesale account, please <a href=\"/account/login\" title=\"Login\">login here</a>. Please <a href=\"/pages/contact\" title=\"Contact Us\">Contact Us</a> if you have any issues accessing any part of our website.</p>",
+        "login_label": "Login",
+        "login_link": "",
+        "contact_label": "Contact",
+        "contact_link": "",
+        "sidebar_heading": "Become a Wholesale Partner",
         "submission_method": "external",
         "form_endpoint_url": "",
-        "recipient_email": "sales@zyzvennaturals.com"
+        "recipient_email": "sales@zyzvennaturals.com",
+        "max_file_mb": 10,
+        "form_heading": "Register",
+        "email_helper": "A link to set a new password will be sent to your email address.",
+        "resell_options": "Physical location\nYour Website\nEtsy\nEbay\nWalmart\nAmazon",
+        "privacy_text": "<p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href=\"/policies/privacy-policy\" title=\"Privacy policy\">privacy policy</a>. By creating an account you agree to our <a href=\"/policies/terms-of-service\" title=\"Terms and Conditions\">Terms and Conditions</a>.</p>",
+        "submit_label": "Register",
+        "success_message": "Thank you! Your wholesale application has been submitted. Our team will review it and get back to you soon.",
+        "error_message": "Sorry, something went wrong sending your application. Please try again, or email us at sales@zyzvennaturals.com.",
+        "page_bg": "#f6f6f2",
+        "text_color": "#1c1c1c",
+        "brand_color": "#358440",
+        "brand_tint": "#e8f3ea",
+        "brand_shade": "#2a6a33",
+        "on_brand_text": "#ffffff",
+        "card_bg": "#ffffff",
+        "dark_button_bg": "#1c1c1c",
+        "dark_button_text": "#ffffff",
+        "login_button_bg": "#358440",
+        "login_button_text": "#ffffff",
+        "border_color": "#d9d9d4",
+        "badge_bg": "#f1f1ec",
+        "error_color": "#c62828",
+        "padding_top": 24,
+        "padding_bottom": 80
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
