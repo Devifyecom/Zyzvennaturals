@@ -312,7 +312,8 @@
           "settings": {
             "product": "zyzven-naturals-heart-harmony-loose-leaf-tea-60g",
             "title": "Heart Harmony",
-            "description": "Harmony Heart™ – Advanced Organic Heart & Circulation Tea | Caffeine-Free | 60g"
+            "description": "Harmony Heart™ – Advanced Organic Heart & Circulation Tea | Caffeine-Free | 60g",
+            "usd_price": ""
           }
         },
         "product_JCb79x": {
@@ -338,7 +339,8 @@
           "settings": {
             "product": "sweet-balance-herbal-tea",
             "title": "Blood Sugar Wellness",
-            "description": "Organic Sweet Balance Wellness Herbal Tea"
+            "description": "Organic Sweet Balance Wellness Herbal Tea",
+            "usd_price": ""
           }
         },
         "product_UpPJem": {
@@ -346,7 +348,8 @@
           "settings": {
             "product": "zyzven-naturals-clearpath-detox-herbal-tea-60g-loose-leaf",
             "title": "Detox Organic Herbal",
-            "description": "Organic ClearPath Detox Herbal Tea"
+            "description": "Organic ClearPath Detox Herbal Tea",
+            "usd_price": ""
           }
         },
         "product_Mw9wPX": {
@@ -942,7 +945,7 @@
           "settings": {
             "number": "03",
             "title": "Use Consistently",
-            "content": "Add your product into your daily routinewith simple, nourishing rituals designed to support your body over time."
+            "content": "Add your product into your daily routine with simple, nourishing rituals designed to support your body over time."
           }
         },
         "block_6TJHjb": {
