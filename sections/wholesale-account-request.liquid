@@ -1,0 +1,966 @@
+{%- comment -%}
+  Wholesale Account Request page
+  Centered header, a sidebar of blocks (steps, "Any Questions?" card, Faire card) and a
+  registration form card. Every submission is meant to arrive at the recipient email
+  (default sales@zyzvennaturals.com). There are two ways to send it, picked with the
+  "Submission method" setting:
+
+  A) External form endpoint (recommended: the only option that can carry the file upload)
+     1. Create a form at Formspree, Basin or Getform. The file upload needs a plan that
+        allows uploads (Formspree: paid plans; Basin/Getform: check your plan).
+     2. In that form's settings, set the notification / target email to
+        sales@zyzvennaturals.com and confirm the address from the verification email.
+     3. Turn on the provider's spam filtering. This form also sends a "_gotcha" honeypot
+        field, which Formspree and Getform drop automatically; on Basin, set the honeypot
+        field name to "_gotcha".
+     4. Paste the endpoint URL (e.g. https://formspree.io/f/xxxxxxx) into
+        "Form endpoint URL" in the theme editor.
+     The form posts multipart/form-data with fetch() and adds _subject
+     ("New Wholesale Account Request – {Company Name}") and _replyto (the applicant's email).
+     While the endpoint is empty, the section falls back to option B automatically.
+
+  B) Shopify contact form (fallback, no file upload)
+     Shopify emails contact-form submissions to the store's sender email. Set it in
+     Admin → Settings → Notifications → Customer notifications → "Sender email"
+     (older admins: Settings → Store details → "Store contact email") to
+     sales@zyzvennaturals.com and verify it. Every field is named contact[Label] so it
+     appears in that email; the file input is swapped for a note asking applicants to
+     email their document. Shopify adds hCaptcha to this form automatically.
+{%- endcomment -%}
+
+{%- liquid
+  assign s = section.settings
+  assign sel = '#WholesaleRequest-' | append: section.id
+  assign form_id = 'WholesaleForm-' | append: section.id
+  assign recipient = s.recipient_email | strip | default: 'sales@zyzvennaturals.com'
+  assign endpoint = s.form_endpoint_url | strip
+
+  assign use_shopify = false
+  if s.submission_method == 'shopify' or endpoint == blank
+    assign use_shopify = true
+  endif
+
+  assign login_link = s.login_link | default: '/account/login'
+  assign contact_link = s.contact_link | default: '/pages/contact'
+  assign allowed_types = 'jpg,jpeg,png,txt,pdf,doc,docx'
+  assign accept_types = '.' | append: allowed_types | replace: ',', ',.'
+
+  comment
+    Rows: key | label | type | placeholder | required | autocomplete
+    The key is the field name in the submission email.
+  endcomment
+  assign fields_before_upload = 'First Name|First Name|text|Enter your first name here...|true|given-name~Last Name|Last Name|text|Enter your last name here...|true|family-name~Company Name|Company Name|text|Enter your company name here...|true|organization~Sales Tax ID Number|Enter your Sales Tax ID Number|text|Enter your Sales Tax ID Number|true|off' | split: '~'
+  assign fields_after_resell = 'Websites|List all the websites you are planning to list our products.|text||false|url~Street Address|Physical Address - Street Address|text|Enter your address here...|true|address-line1~Address Line 2|Address Line 2|text|Address line 2...|false|address-line2~Town or City|Town / City|text|Enter your town / city here...|true|address-level2~State|State|text|Enter your state here...|true|address-level1~Postcode or ZIP|Postcode / ZIP|text|Enter your postcode / ZIP here...|true|postal-code~Phone Number|Phone Number|tel|Enter your phone number here...|true|tel' | split: '~'
+-%}
+
+{%- style -%}
+  {{ sel }} {
+    --wsr-bg: {{ s.page_bg }};
+    --wsr-text: {{ s.text_color }};
+    --wsr-brand: {{ s.brand_color }};
+    --wsr-brand-tint: {{ s.brand_tint }};
+    --wsr-brand-shade: {{ s.brand_shade }};
+    --wsr-brand-ring: {{ s.brand_color | color_modify: 'alpha', 0.25 }};
+    --wsr-on-brand: {{ s.on_brand_text }};
+    --wsr-card-bg: {{ s.card_bg }};
+    --wsr-dark: {{ s.dark_button_bg }};
+    --wsr-on-dark: {{ s.dark_button_text }};
+    --wsr-login-bg: {{ s.login_button_bg }};
+    --wsr-login-text: {{ s.login_button_text }};
+    --wsr-border: {{ s.border_color }};
+    --wsr-badge-bg: {{ s.badge_bg }};
+    --wsr-error: {{ s.error_color }};
+    --wsr-muted: {{ s.text_color | color_modify: 'alpha', 0.75 }};
+    --wsr-divider: {{ s.text_color | color_modify: 'alpha', 0.14 }};
+    --wsr-placeholder: {{ s.text_color | color_modify: 'alpha', 0.45 }};
+    background: var(--wsr-bg);
+    color: var(--wsr-text);
+    padding-top: {{ s.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ s.padding_bottom | times: 0.75 | round: 0 }}px;
+    font-family: var(--font-body-family);
+  }
+
+  {{ sel }} .wsr__inner { max-width: 104rem; margin: 0 auto; }
+
+  {{ sel }} h1, {{ sel }} h2, {{ sel }} h3 {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    color: inherit;
+    letter-spacing: 0;
+  }
+
+  {{ sel }} a:focus-visible,
+  {{ sel }} button:focus-visible {
+    outline: 2px solid var(--wsr-brand);
+    outline-offset: 3px;
+    box-shadow: none;
+  }
+
+  {{ sel }} .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Header */
+  {{ sel }} .wsr__header { text-align: center; max-width: 58rem; margin: 0 auto 4rem; }
+  {{ sel }} .wsr__eyebrow { font-size: 1.3rem; line-height: 1.4; margin: 0 0 0.8rem; }
+  {{ sel }} .wsr__title { font-size: 2.6rem; font-weight: 700; line-height: 1.2; margin: 0 0 1.4rem; }
+  {{ sel }} .wsr__intro { font-size: 1.4rem; line-height: 1.6; }
+  {{ sel }} .wsr__intro p { margin: 0; }
+  {{ sel }} .wsr__rte a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
+  {{ sel }} .wsr__rte a:hover { text-decoration-thickness: 2px; }
+  {{ sel }} .wsr__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 2rem; }
+
+  /* Buttons */
+  {{ sel }} .wsr__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.2rem;
+    padding: 0.9rem 2.2rem;
+    border: 0;
+    border-radius: 0.6rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  {{ sel }} .wsr__btn--login { background: var(--wsr-login-bg); color: var(--wsr-login-text); }
+  {{ sel }} .wsr__btn--login:hover { background: var(--wsr-brand-shade); color: var(--wsr-on-brand); }
+  {{ sel }} .wsr__btn--dark { background: var(--wsr-dark); color: var(--wsr-on-dark); }
+  {{ sel }} .wsr__btn--dark:hover { background: var(--wsr-brand); color: var(--wsr-on-brand); }
+  {{ sel }} .wsr__btn--block { display: flex; width: 100%; }
+  {{ sel }} .wsr__btn[disabled] { opacity: 0.7; cursor: progress; }
+
+  /* Layout: form is first in the DOM (first on mobile), right column on desktop */
+  {{ sel }} .wsr__layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4rem; align-items: start; }
+
+  /* Sidebar */
+  {{ sel }} .wsr__sidebar-title { font-size: 2rem; font-weight: 700; line-height: 1.25; margin: 0 0 2rem; }
+  {{ sel }} .wsr__steps { list-style: none; margin: 0 0 1.6rem; padding: 0; border-bottom: 1px solid var(--wsr-divider); }
+  {{ sel }} .wsr__step { padding: 2rem 0; border-top: 1px solid var(--wsr-divider); }
+  {{ sel }} .wsr__step-head { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.8rem; }
+  {{ sel }} .wsr__step-icon { flex: 0 0 auto; width: 1.8rem; height: 1.8rem; color: var(--wsr-brand); margin-top: 0.1rem; }
+  {{ sel }} .wsr__step-icon svg,
+  {{ sel }} .wsr__step-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  {{ sel }} .wsr__step-title { font-size: 1.4rem; font-weight: 700; line-height: 1.4; margin: 0; }
+  {{ sel }} .wsr__step-text { font-size: 1.3rem; line-height: 1.6; color: var(--wsr-muted); margin: 0; }
+
+  {{ sel }} .wsr__questions {
+    background: var(--wsr-brand);
+    color: var(--wsr-on-brand);
+    border-radius: 1.6rem;
+    padding: 1.6rem 1.6rem 2rem;
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+  {{ sel }} .wsr__questions-media { border-radius: 1.6rem; overflow: hidden; aspect-ratio: 1.57; margin-bottom: 1.6rem; background: rgba(255, 255, 255, 0.15); }
+  {{ sel }} .wsr__questions-media img,
+  {{ sel }} .wsr__questions-media svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+  {{ sel }} .wsr__questions-title { font-size: 2.2rem; font-weight: 700; line-height: 1.25; margin: 0 0 0.8rem; }
+  {{ sel }} .wsr__questions-text { font-size: 1.3rem; line-height: 1.6; margin: 0; }
+  {{ sel }} .wsr__questions-text a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; word-break: break-word; }
+  {{ sel }} .wsr__questions .wsr__btn { margin-top: 2rem; }
+  {{ sel }} .wsr__questions .wsr__btn--dark:hover { background: var(--wsr-on-brand); color: var(--wsr-dark); }
+  {{ sel }} .wsr__questions a:focus-visible { outline-color: var(--wsr-on-brand); }
+
+  {{ sel }} .wsr__faire {
+    background: var(--wsr-card-bg);
+    border-radius: 1.6rem;
+    box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.07);
+    padding: 3rem 2.4rem 2.4rem;
+    margin-bottom: 3.2rem;
+  }
+  {{ sel }} .wsr__faire-brand { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1.4rem; font-size: 1.4rem; }
+  {{ sel }} .wsr__faire-brand-name { font-family: Georgia, 'Times New Roman', serif; }
+  {{ sel }} .wsr__faire-x { opacity: 0.5; font-size: 1.2rem; }
+  {{ sel }} .wsr__faire-partner { font-size: 1.1rem; letter-spacing: 0.4em; text-transform: uppercase; }
+  {{ sel }} .wsr__faire-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 0 1.6rem;
+  }
+  {{ sel }} .wsr__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    border-radius: 99rem;
+    background: var(--wsr-badge-bg);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  {{ sel }} .wsr__badge svg { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; }
+  {{ sel }} .wsr__badge-rating { display: inline-flex; align-items: center; gap: 0.3rem; }
+  {{ sel }} .wsr__checklist { list-style: none; margin: 1.8rem 0 2.4rem; padding: 0; }
+  {{ sel }} .wsr__checklist li { display: flex; align-items: flex-start; gap: 1rem; font-size: 1.2rem; line-height: 1.5; padding: 0.5rem 0; }
+  {{ sel }} .wsr__checklist svg { flex: 0 0 auto; width: 1.2rem; height: 1.2rem; margin-top: 0.3rem; opacity: 0.7; }
+  {{ sel }} .wsr__faire .wsr__btn { font-size: 1.3rem; }
+  {{ sel }} .wsr__footnote { font-size: 1.1rem; line-height: 1.5; color: var(--wsr-muted); margin: 1.6rem 0 0; }
+
+  /* Form card */
+  {{ sel }} .wsr__form-card { background: var(--wsr-card-bg); border-radius: 1.6rem; padding: 2.8rem 2rem; }
+  {{ sel }} .wsr__form-title { font-size: 2.6rem; font-weight: 700; line-height: 1.2; margin: 0 0 2.4rem; }
+  {{ sel }} .wsr__notice { font-size: 1.3rem; line-height: 1.5; padding: 1.2rem 1.4rem; border-radius: 0.6rem; background: var(--wsr-brand-tint); margin: 0 0 2rem; }
+  {{ sel }} .wsr__field { margin: 0 0 2rem; padding: 0; border: 0; min-width: 0; }
+  {{ sel }} .wsr__label { display: block; font-size: 1.3rem; font-weight: 700; line-height: 1.4; margin: 0 0 0.6rem; padding: 0; }
+  {{ sel }} .wsr__req { color: inherit; }
+  {{ sel }} .wsr__input {
+    display: block;
+    width: 100%;
+    min-height: 4.2rem;
+    margin: 0;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--wsr-border);
+    border-radius: 0.6rem;
+    background: #fff;
+    color: var(--wsr-text);
+    font-family: inherit;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    box-shadow: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  {{ sel }} .wsr__input::placeholder { color: var(--wsr-placeholder); opacity: 1; }
+  {{ sel }} .wsr__input:focus,
+  {{ sel }} .wsr__input:focus-visible {
+    outline: none;
+    border-color: var(--wsr-brand);
+    box-shadow: 0 0 0 3px var(--wsr-brand-ring);
+  }
+  {{ sel }} .wsr__input:user-invalid { border-color: var(--wsr-error); }
+  {{ sel }} .wsr__input--file { min-height: 0; padding: 0.6rem; font-size: 1.3rem; cursor: pointer; }
+  {{ sel }} .wsr__input--file::file-selector-button {
+    margin-right: 1rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--wsr-border);
+    border-radius: 0.4rem;
+    background: var(--wsr-brand-tint);
+    color: var(--wsr-text);
+    font-family: inherit;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  {{ sel }} .wsr__help { font-size: 1.3rem; line-height: 1.5; color: var(--wsr-muted); margin: 0.8rem 0 0; }
+  {{ sel }} .wsr__help a { color: inherit; text-decoration: underline; }
+  {{ sel }} .wsr__field-error { font-size: 1.3rem; line-height: 1.5; color: var(--wsr-error); margin: 0.6rem 0 0; }
+  {{ sel }} .wsr__options { display: grid; gap: 0.6rem; }
+  {{ sel }} .wsr__option { display: flex; align-items: center; gap: 1rem; font-size: 1.3rem; font-weight: 600; line-height: 1.4; cursor: pointer; padding: 0.4rem 0; }
+  {{ sel }} .wsr__option input { width: 1.6rem; height: 1.6rem; margin: 0; flex: 0 0 auto; accent-color: var(--wsr-brand); cursor: pointer; }
+  {{ sel }} .wsr__option input:focus-visible { outline: 2px solid var(--wsr-brand); outline-offset: 2px; box-shadow: none; }
+  {{ sel }} .wsr__privacy { font-size: 1.2rem; line-height: 1.6; color: var(--wsr-muted); margin: 2.4rem 0 2rem; }
+  {{ sel }} .wsr__privacy p { margin: 0; }
+  {{ sel }} .wsr__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  {{ sel }} .wsr__msg { font-size: 1.4rem; line-height: 1.5; padding: 1.2rem 1.6rem; border-radius: 0.6rem; margin: 0 0 1.6rem; }
+  {{ sel }} .wsr__msg:focus { outline: none; }
+  {{ sel }} .wsr__msg--success { background: var(--wsr-brand); color: var(--wsr-on-brand); }
+  {{ sel }} .wsr__msg--error { background: var(--wsr-error); color: #fff; }
+  {{ sel }} .wsr__msg ul { margin: 0.4rem 0 0; padding-left: 2rem; }
+  {{ sel }} .wsr__msg a { color: inherit; text-decoration: underline; }
+
+  @media screen and (min-width: 750px) {
+    {{ sel }} {
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+    }
+    {{ sel }} .wsr__header { margin-bottom: 4.8rem; }
+    {{ sel }} .wsr__title { font-size: 3rem; }
+    {{ sel }} .wsr__layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: 3.2rem; }
+    {{ sel }} .wsr__sidebar { grid-column: 1; grid-row: 1; }
+    {{ sel }} .wsr__form-card { grid-column: 2; grid-row: 1; padding: 3.2rem 2.8rem; }
+  }
+
+  @media screen and (min-width: 990px) {
+    {{ sel }} .wsr__layout { grid-template-columns: minmax(0, 1fr) minmax(0, 2.15fr); gap: 6rem; }
+    {{ sel }} .wsr__form-card { padding: 4rem 4rem 4.8rem; }
+    {{ sel }} .wsr__form-title { font-size: 2.8rem; }
+  }
+{%- endstyle -%}
+
+<div id="WholesaleRequest-{{ section.id }}" class="wsr">
+  <div class="page-width">
+    <div class="wsr__inner">
+      <header class="wsr__header">
+        {%- if s.eyebrow != blank -%}
+          <p class="wsr__eyebrow">{{ s.eyebrow | escape }}</p>
+        {%- endif -%}
+        <h1 class="wsr__title">{{ s.title | escape }}</h1>
+        {%- if s.intro != blank -%}
+          <div class="wsr__intro wsr__rte">{{ s.intro }}</div>
+        {%- endif -%}
+        {%- if s.login_label != blank or s.contact_label != blank -%}
+          <div class="wsr__actions">
+            {%- if s.login_label != blank -%}
+              <a class="wsr__btn wsr__btn--login" href="{{ login_link }}">{{ s.login_label | escape }}</a>
+            {%- endif -%}
+            {%- if s.contact_label != blank -%}
+              <a class="wsr__btn wsr__btn--dark" href="{{ contact_link }}">{{ s.contact_label | escape }}</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </header>
+
+      <div class="wsr__layout">
+        {%- comment -%} Form card: first in the DOM so it leads on mobile {%- endcomment -%}
+        <div class="wsr__form-card">
+          <h2 class="wsr__form-title" id="{{ form_id }}-title">{{ s.form_heading | escape }}</h2>
+
+          {%- if request.design_mode and s.submission_method == 'external' and endpoint == blank -%}
+            <p class="wsr__notice">
+              Editor note (hidden from customers): no form endpoint URL is set, so this form uses the
+              Shopify contact form fallback and has no file upload.
+            </p>
+          {%- endif -%}
+
+          <wholesale-request-form
+            data-mode="{% if use_shopify %}shopify{% else %}external{% endif %}"
+            data-endpoint="{{ endpoint | escape }}"
+            data-max-mb="{{ s.max_file_mb }}"
+            data-allowed-types="{{ allowed_types }}"
+            data-subject-prefix="New Wholesale Account Request"
+            data-success-message="{{ s.success_message | escape }}"
+            data-error-message="{{ s.error_message | escape }}"
+            data-submitting-label="Submitting…"
+            data-resell-error="Please select at least one place where you resell."
+            data-file-type-error="Please upload a jpg, jpeg, png, txt, pdf, doc or docx file."
+            data-file-size-error="That file is too large. The maximum size is {{ s.max_file_mb }}MB."
+          >
+            {%- capture form_fields -%}
+              {%- liquid
+                if use_shopify
+                  assign email_name = 'contact[email]'
+                else
+                  assign email_name = 'email'
+                endif
+              -%}
+              <div class="wsr__field">
+                <label class="wsr__label" for="{{ form_id }}-email">
+                  Email address <span class="wsr__req" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="wsr__input"
+                  type="email"
+                  id="{{ form_id }}-email"
+                  name="{{ email_name }}"
+                  autocomplete="email"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  required
+                  aria-describedby="{{ form_id }}-email-help"
+                  data-wsr-email
+                >
+                <p class="wsr__help" id="{{ form_id }}-email-help">{{ s.email_helper | escape }}</p>
+              </div>
+
+              {%- for row in fields_before_upload -%}
+                {%- assign f = row | split: '|' -%}
+                {%- assign field_id = form_id | append: '-' | append: f[0] | handleize -%}
+                {%- if use_shopify -%}
+                  {%- assign field_name = 'contact[' | append: f[0] | append: ']' -%}
+                {%- else -%}
+                  {%- assign field_name = f[0] -%}
+                {%- endif -%}
+                <div class="wsr__field">
+                  <label class="wsr__label" for="{{ field_id }}">
+                    {{ f[1] }}
+                    {%- if f[4] == 'true' %} <span class="wsr__req" aria-hidden="true">*</span>{% endif %}
+                  </label>
+                  <input
+                    class="wsr__input"
+                    type="{{ f[2] }}"
+                    id="{{ field_id }}"
+                    name="{{ field_name }}"
+                    {% if f[3] != blank %}placeholder="{{ f[3] }}"{% endif %}
+                    autocomplete="{{ f[5] }}"
+                    {% if f[4] == 'true' %}required{% endif %}
+                    {% if f[0] == 'Company Name' %}data-wsr-company{% endif %}
+                  >
+                </div>
+              {%- endfor -%}
+
+              {%- if use_shopify -%}
+                <div class="wsr__field">
+                  <p class="wsr__label">Tax ID or Business document</p>
+                  <p class="wsr__help">
+                    Please email your Tax ID / business document to
+                    <a href="mailto:{{ recipient }}">{{ recipient }}</a>.
+                  </p>
+                </div>
+              {%- else -%}
+                <div class="wsr__field">
+                  <label class="wsr__label" for="{{ form_id }}-document">
+                    Upload your Tax ID or Business document <span class="wsr__req" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="wsr__input wsr__input--file"
+                    type="file"
+                    id="{{ form_id }}-document"
+                    name="Tax ID or Business document"
+                    accept="{{ accept_types }}"
+                    required
+                    aria-describedby="{{ form_id }}-document-help {{ form_id }}-document-error"
+                    data-wsr-file
+                  >
+                  <p class="wsr__help" id="{{ form_id }}-document-help">
+                    Supported file types: {{ allowed_types | replace: ',', ', ' }}. Max {{ s.max_file_mb }}MB.
+                  </p>
+                  <p class="wsr__field-error" id="{{ form_id }}-document-error" data-wsr-file-error hidden></p>
+                </div>
+              {%- endif -%}
+
+              {%- assign resell_options = s.resell_options | newline_to_br | split: '<br />' -%}
+              <fieldset class="wsr__field" aria-describedby="{{ form_id }}-resell-error" data-wsr-resell-group>
+                <legend class="wsr__label">
+                  Where do you resell? <span class="wsr__req" aria-hidden="true">*</span>
+                  <span class="visually-hidden">(select at least one)</span>
+                </legend>
+                <div class="wsr__options">
+                  {%- for option in resell_options -%}
+                    {%- assign opt = option | strip -%}
+                    {%- if opt != blank -%}
+                      {%- if use_shopify -%}
+                        {%- assign opt_name = 'contact[Where do you resell - ' | append: opt | append: ']' -%}
+                        {%- assign opt_value = 'Yes' -%}
+                      {%- else -%}
+                        {%- assign opt_name = 'Where do you resell' -%}
+                        {%- assign opt_value = opt -%}
+                      {%- endif -%}
+                      <label class="wsr__option" for="{{ form_id }}-resell-{{ forloop.index }}">
+                        <input
+                          type="checkbox"
+                          id="{{ form_id }}-resell-{{ forloop.index }}"
+                          name="{{ opt_name | escape }}"
+                          value="{{ opt_value | escape }}"
+                          data-wsr-resell
+                        >
+                        {{ opt | escape }}
+                      </label>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+                <p class="wsr__field-error" id="{{ form_id }}-resell-error" data-wsr-resell-error hidden></p>
+              </fieldset>
+
+              {%- for row in fields_after_resell -%}
+                {%- assign f = row | split: '|' -%}
+                {%- assign field_id = form_id | append: '-' | append: f[0] | handleize -%}
+                {%- if use_shopify -%}
+                  {%- assign field_name = 'contact[' | append: f[0] | append: ']' -%}
+                {%- else -%}
+                  {%- assign field_name = f[0] -%}
+                {%- endif -%}
+                <div class="wsr__field">
+                  <label class="wsr__label" for="{{ field_id }}">
+                    {{ f[1] }}
+                    {%- if f[4] == 'true' %} <span class="wsr__req" aria-hidden="true">*</span>{% endif %}
+                  </label>
+                  <input
+                    class="wsr__input"
+                    type="{{ f[2] }}"
+                    id="{{ field_id }}"
+                    name="{{ field_name }}"
+                    {% if f[3] != blank %}placeholder="{{ f[3] }}"{% endif %}
+                    autocomplete="{{ f[5] }}"
+                    {% if f[4] == 'true' %}required{% endif %}
+                  >
+                </div>
+              {%- endfor -%}
+
+              {%- if use_shopify -%}
+                <input type="hidden" name="contact[tags]" value="wholesale-request">
+              {%- else -%}
+                <input type="hidden" name="_subject" value="New Wholesale Account Request">
+                <input type="hidden" name="_replyto" value="">
+                <div class="wsr__hp" aria-hidden="true">
+                  <label for="{{ form_id }}-hp">Leave this field empty</label>
+                  <input type="text" id="{{ form_id }}-hp" name="_gotcha" tabindex="-1" autocomplete="off" data-wsr-honeypot>
+                </div>
+              {%- endif -%}
+
+              {%- if s.privacy_text != blank -%}
+                <div class="wsr__privacy wsr__rte">{{ s.privacy_text }}</div>
+              {%- endif -%}
+            {%- endcapture -%}
+
+            {%- capture form_submit -%}
+              <button type="submit" class="wsr__btn wsr__btn--dark" data-wsr-submit>
+                {{- s.submit_label | escape -}}
+              </button>
+            {%- endcapture -%}
+
+            {%- if use_shopify -%}
+              {%- form 'contact', id: form_id, class: 'wsr__form' -%}
+                {{ form_fields }}
+                <div class="wsr__status" aria-live="polite" data-wsr-status>
+                  {%- if form.posted_successfully? -%}
+                    <div class="wsr__msg wsr__msg--success" role="status" tabindex="-1" autofocus>
+                      {{ s.success_message | escape }}
+                    </div>
+                  {%- elsif form.errors -%}
+                    <div class="wsr__msg wsr__msg--error" role="alert" tabindex="-1" autofocus>
+                      {{ form.errors | default_errors }}
+                    </div>
+                  {%- endif -%}
+                </div>
+                {{ form_submit }}
+              {%- endform -%}
+            {%- else -%}
+              <form
+                id="{{ form_id }}"
+                class="wsr__form"
+                action="{{ endpoint | escape }}"
+                method="post"
+                enctype="multipart/form-data"
+                aria-labelledby="{{ form_id }}-title"
+              >
+                {{ form_fields }}
+                <div class="wsr__status" aria-live="polite" data-wsr-status></div>
+                {{ form_submit }}
+              </form>
+            {%- endif -%}
+          </wholesale-request-form>
+        </div>
+
+        <aside class="wsr__sidebar" aria-label="{{ s.sidebar_heading | escape }}">
+          {%- if s.sidebar_heading != blank -%}
+            <h2 class="wsr__sidebar-title">{{ s.sidebar_heading | escape }}</h2>
+          {%- endif -%}
+
+          {%- assign step_blocks = section.blocks | where: 'type', 'step' -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'step' -%}
+                {%- comment -%} All steps render as one list where the first step sits {%- endcomment -%}
+                {%- if block.id != step_blocks.first.id -%}{%- continue -%}{%- endif -%}
+                <ol class="wsr__steps" role="list">
+                {%- for step in step_blocks -%}
+                <li class="wsr__step" {{ step.shopify_attributes }}>
+                  <div class="wsr__step-head">
+                    {%- if step.settings.icon_image != blank or step.settings.icon != 'none' -%}
+                      <span class="wsr__step-icon">
+                        {%- if step.settings.icon_image != blank -%}
+                          {{ step.settings.icon_image | image_url: width: 72 | image_tag: loading: 'lazy', alt: '' }}
+                        {%- else -%}
+                          {%- case step.settings.icon -%}
+                            {%- when 'cart' -%}
+                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M2 3.5A1 1 0 0 1 3 2.5h1.6a1.5 1.5 0 0 1 1.46 1.15L6.3 4.5H20a1 1 0 0 1 .97 1.24l-1.6 6.5A2 2 0 0 1 17.43 13.8H8.1l.3 1.2h9.6a1 1 0 1 1 0 2H8a1.5 1.5 0 0 1-1.46-1.15L4.3 4.5H3a1 1 0 0 1-1-1Z"/><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/></svg>
+                            {%- when 'document' -%}
+                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 2h7.6a2 2 0 0 1 1.4.6l3.4 3.4a2 2 0 0 1 .6 1.4V20a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm1.5 8a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5h-7Zm0 3.5a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5h-7Zm0 3.5a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5H8.5Z"/></svg>
+                            {%- when 'chat' -%}
+                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.5c5.25 0 9.5 3.9 9.5 8.75S17.25 20 12 20c-1.1 0-2.15-.17-3.13-.48L4.4 21.4a.75.75 0 0 1-1-.88l1.05-3.84A8.4 8.4 0 0 1 2.5 11.25C2.5 6.4 6.75 2.5 12 2.5Zm-4 7.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm4 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm4 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/></svg>
+                          {%- endcase -%}
+                        {%- endif -%}
+                      </span>
+                    {%- endif -%}
+                    <h3 class="wsr__step-title">{{ step.settings.title | escape }}</h3>
+                  </div>
+                  {%- if step.settings.text != blank -%}
+                    <p class="wsr__step-text">{{ step.settings.text | escape | newline_to_br }}</p>
+                  {%- endif -%}
+                </li>
+                {%- endfor -%}
+                </ol>
+
+              {%- when 'questions' -%}
+                {%- liquid
+                  assign q_email = block.settings.email | strip | default: recipient
+                  assign q_link = block.settings.button_link | default: '/pages/contact'
+                -%}
+                <div class="wsr__questions" {{ block.shopify_attributes }}>
+                  <div class="wsr__questions-media">
+                    {%- if block.settings.image != blank -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 800
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '400, 600, 800',
+                          sizes: '(min-width: 990px) 320px, (min-width: 750px) 34vw, 100vw',
+                          alt: block.settings.image.alt
+                      }}
+                    {%- else -%}
+                      {{ 'lifestyle-2' | placeholder_svg_tag }}
+                    {%- endif -%}
+                  </div>
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="wsr__questions-title">{{ block.settings.heading | escape }}</h3>
+                  {%- endif -%}
+                  <p class="wsr__questions-text">
+                    {{ block.settings.text | escape }}<br>
+                    <a href="mailto:{{ q_email }}">{{ q_email }}</a>
+                  </p>
+                  {%- if block.settings.button_label != blank -%}
+                    <a class="wsr__btn wsr__btn--dark wsr__btn--block" href="{{ q_link }}">
+                      {{- block.settings.button_label | escape -}}
+                    </a>
+                  {%- endif -%}
+                </div>
+
+              {%- when 'faire_card' -%}
+                {%- liquid
+                  assign faire_items = block.settings.items | newline_to_br | split: '<br />'
+                  assign faire_link = block.settings.button_link | default: 'https://www.faire.com'
+                -%}
+                <div class="wsr__faire" {{ block.shopify_attributes }}>
+                  <p class="wsr__faire-brand">
+                    <span class="wsr__faire-brand-name">{{ block.settings.brand_name | escape }}</span>
+                    <span class="wsr__faire-x" aria-hidden="true">×</span>
+                    <span class="visually-hidden">and</span>
+                    <span class="wsr__faire-partner">{{ block.settings.partner_name | escape }}</span>
+                  </p>
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="wsr__faire-title">{{ block.settings.heading | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.badge_text != blank or block.settings.rating != blank -%}
+                    <span class="wsr__badge">
+                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6.1c0 5 3.4 9.6 8 10.9 4.6-1.3 8-5.9 8-10.9V5l-8-3Zm-1.2 13.6-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6Z"/></svg>
+                      {{ block.settings.badge_text | escape }}
+                      {%- if block.settings.rating != blank -%}
+                        <span class="wsr__badge-rating">
+                          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8L12 2.5Z"/></svg>
+                          <span class="visually-hidden">Rated</span>
+                          {{ block.settings.rating | escape }}
+                        </span>
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                  <ul class="wsr__checklist" role="list">
+                    {%- for item in faire_items -%}
+                      {%- assign clean = item | strip -%}
+                      {%- if clean != blank -%}
+                        <li>
+                          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2.5 8.5 3.5 3.5 7.5-8"/></svg>
+                          <span>{{ clean | escape }}</span>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                  {%- if block.settings.button_label != blank -%}
+                    <a class="wsr__btn wsr__btn--dark wsr__btn--block" href="{{ faire_link }}" target="_blank" rel="noopener">
+                      {{- block.settings.button_label | escape -}}
+                      <span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.footnote != blank -%}
+                    <p class="wsr__footnote">{{ block.settings.footnote | escape }}</p>
+                  {%- endif -%}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  if (!customElements.get('wholesale-request-form')) {
+    class WholesaleRequestForm extends HTMLElement {
+      connectedCallback() {
+        this.form = this.querySelector('form');
+        if (!this.form || this.form.dataset.wsrReady) return;
+        this.form.dataset.wsrReady = 'true';
+
+        this.mode = this.dataset.mode;
+        this.endpoint = this.dataset.endpoint;
+        this.maxBytes = Number(this.dataset.maxMb || 10) * 1024 * 1024;
+        this.allowedTypes = (this.dataset.allowedTypes || '').split(',').map((t) => t.trim().toLowerCase());
+        this.button = this.form.querySelector('[data-wsr-submit]');
+        this.buttonLabel = this.button.textContent;
+        this.status = this.form.querySelector('[data-wsr-status]');
+        this.checkboxes = Array.from(this.form.querySelectorAll('[data-wsr-resell]'));
+        this.resellError = this.form.querySelector('[data-wsr-resell-error]');
+        this.fileInput = this.form.querySelector('[data-wsr-file]');
+        this.fileError = this.form.querySelector('[data-wsr-file-error]');
+
+        this.checkboxes.forEach((checkbox) => checkbox.addEventListener('change', () => this.validateResell(true)));
+        // The custom validity lives on the first checkbox, so its native "invalid" event is
+        // the cue to show the group's inline message.
+        this.checkboxes[0]?.addEventListener('invalid', () => this.validateResell(true));
+        this.fileInput?.addEventListener('change', () => this.validateFile());
+        this.validateResell(false);
+        this.form.addEventListener('submit', (event) => this.onSubmit(event));
+      }
+
+      validateResell(showMessage) {
+        if (!this.checkboxes.length) return true;
+        const valid = this.checkboxes.some((checkbox) => checkbox.checked);
+        const message = valid ? '' : this.dataset.resellError;
+        this.checkboxes[0].setCustomValidity(message);
+        this.checkboxes.forEach((checkbox) => checkbox.setAttribute('aria-invalid', String(!valid && showMessage)));
+        if (this.resellError) {
+          this.resellError.textContent = message;
+          this.resellError.hidden = valid || !showMessage;
+        }
+        return valid;
+      }
+
+      validateFile() {
+        if (!this.fileInput) return true;
+        const file = this.fileInput.files[0];
+        let message = '';
+        if (file) {
+          const extension = file.name.split('.').pop().toLowerCase();
+          if (!this.allowedTypes.includes(extension)) message = this.dataset.fileTypeError;
+          else if (file.size > this.maxBytes) message = this.dataset.fileSizeError;
+        }
+        this.fileInput.setCustomValidity(message);
+        this.fileInput.setAttribute('aria-invalid', String(Boolean(message)));
+        if (this.fileError) {
+          this.fileError.textContent = message;
+          this.fileError.hidden = !message;
+        }
+        return !message;
+      }
+
+      setBusy(busy) {
+        this.button.disabled = busy;
+        this.button.setAttribute('aria-busy', String(busy));
+        this.button.textContent = busy ? this.dataset.submittingLabel : this.buttonLabel;
+      }
+
+      showMessage(type, text) {
+        this.status.innerHTML = '';
+        const message = document.createElement('div');
+        message.className = `wsr__msg wsr__msg--${type}`;
+        message.setAttribute('role', type === 'error' ? 'alert' : 'status');
+        message.tabIndex = -1;
+        message.textContent = text;
+        this.status.appendChild(message);
+        message.focus({ preventScroll: true });
+        message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      onSubmit(event) {
+        const resellValid = this.validateResell(true);
+        const fileValid = this.validateFile();
+        if (!resellValid || !fileValid || !this.form.checkValidity()) {
+          event.preventDefault();
+          this.form.reportValidity();
+          return;
+        }
+
+        // Shopify contact form: let the native POST go through; Shopify renders the result.
+        if (this.mode === 'shopify') {
+          this.setBusy(true);
+          return;
+        }
+
+        event.preventDefault();
+        this.submitExternal();
+      }
+
+      async submitExternal() {
+        const honeypot = this.form.querySelector('[data-wsr-honeypot]');
+        if (honeypot && honeypot.value) {
+          this.form.reset();
+          this.showMessage('success', this.dataset.successMessage);
+          return;
+        }
+
+        const data = new FormData(this.form);
+        const company = (this.form.querySelector('[data-wsr-company]')?.value || '').trim();
+        const email = (this.form.querySelector('[data-wsr-email]')?.value || '').trim();
+        data.set('_subject', company ? `${this.dataset.subjectPrefix} – ${company}` : this.dataset.subjectPrefix);
+        data.set('_replyto', email);
+
+        // Send the resale channels as one readable line instead of repeated keys.
+        const resellName = this.checkboxes[0]?.name;
+        if (resellName) {
+          const channels = data.getAll(resellName);
+          data.delete(resellName);
+          data.append(resellName, channels.join(', '));
+        }
+
+        this.setBusy(true);
+        this.status.innerHTML = '';
+        try {
+          const response = await fetch(this.endpoint, {
+            method: 'POST',
+            body: data,
+            headers: { Accept: 'application/json' },
+          });
+          let json = null;
+          try {
+            json = await response.json();
+          } catch (error) {
+            json = null;
+          }
+
+          const failed = !response.ok || (json && (json.ok === false || json.success === false));
+          if (!failed) {
+            this.form.reset();
+            this.validateResell(false);
+            this.validateFile();
+            this.showMessage('success', this.dataset.successMessage);
+            return;
+          }
+
+          let errorText = this.dataset.errorMessage;
+          if (json && Array.isArray(json.errors) && json.errors.length) {
+            errorText = json.errors.map((item) => item.message || item).join(' ');
+          } else if (json && (json.error || json.message)) {
+            errorText = json.error || json.message;
+          }
+          this.showMessage('error', errorText);
+        } catch (error) {
+          this.showMessage('error', this.dataset.errorMessage);
+        } finally {
+          this.setBusy(false);
+        }
+      }
+    }
+
+    customElements.define('wholesale-request-form', WholesaleRequestForm);
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Wholesale account request",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "header", "content": "Page header" },
+    { "type": "text", "id": "eyebrow", "label": "Label", "default": "Wholesale" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Wholesale Account Request" },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text",
+      "default": "<p>If you already have a wholesale account, please <a href=\"/account/login\" title=\"Login\">login here</a>. Please <a href=\"/pages/contact\" title=\"Contact Us\">Contact Us</a> if you have any issues accessing any part of our website.</p>"
+    },
+    { "type": "text", "id": "login_label", "label": "Login button label", "default": "Login" },
+    { "type": "url", "id": "login_link", "label": "Login button link", "info": "Defaults to /account/login when empty." },
+    { "type": "text", "id": "contact_label", "label": "Contact button label", "default": "Contact" },
+    { "type": "url", "id": "contact_link", "label": "Contact button link", "info": "Defaults to /pages/contact when empty." },
+    { "type": "header", "content": "Sidebar" },
+    { "type": "text", "id": "sidebar_heading", "label": "Sidebar heading", "default": "Become a Wholesale Partner" },
+    { "type": "header", "content": "Form submission" },
+    {
+      "type": "select",
+      "id": "submission_method",
+      "label": "Submission method",
+      "options": [
+        { "value": "external", "label": "External form endpoint (recommended)" },
+        { "value": "shopify", "label": "Shopify contact form" }
+      ],
+      "default": "external",
+      "info": "External supports the file upload. Shopify sends to the store's sender email and has no file upload. External falls back to Shopify while the endpoint URL is empty."
+    },
+    { "type": "text", "id": "form_endpoint_url", "label": "Form endpoint URL", "info": "Formspree / Basin / Getform endpoint set to deliver to the recipient email, e.g. https://formspree.io/f/xxxxxxx" },
+    { "type": "text", "id": "recipient_email", "label": "Recipient email", "default": "sales@zyzvennaturals.com", "info": "Shown in helper text and mailto links. Delivery itself is set in your endpoint or Shopify admin." },
+    { "type": "range", "id": "max_file_mb", "label": "Max upload size", "min": 1, "max": 25, "step": 1, "unit": "MB", "default": 10 },
+    { "type": "header", "content": "Form content" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Register" },
+    { "type": "text", "id": "email_helper", "label": "Email helper text", "default": "A link to set a new password will be sent to your email address." },
+    { "type": "textarea", "id": "resell_options", "label": "\"Where do you resell?\" options", "info": "One per line.", "default": "Physical location\nYour Website\nEtsy\nEbay\nWalmart\nAmazon" },
+    {
+      "type": "richtext",
+      "id": "privacy_text",
+      "label": "Privacy text",
+      "default": "<p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href=\"/policies/privacy-policy\" title=\"Privacy policy\">privacy policy</a>. By creating an account you agree to our <a href=\"/policies/terms-of-service\" title=\"Terms and Conditions\">Terms and Conditions</a>.</p>"
+    },
+    { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Register" },
+    { "type": "textarea", "id": "success_message", "label": "Success message", "default": "Thank you! Your wholesale application has been submitted. Our team will review it and get back to you soon." },
+    { "type": "textarea", "id": "error_message", "label": "Error message", "default": "Sorry, something went wrong sending your application. Please try again, or email us at sales@zyzvennaturals.com." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "page_bg", "label": "Page background", "default": "#F6F6F2" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1C1C1C" },
+    { "type": "color", "id": "brand_color", "label": "Brand", "default": "#358440" },
+    { "type": "color", "id": "brand_tint", "label": "Brand light tint", "default": "#E8F3EA" },
+    { "type": "color", "id": "brand_shade", "label": "Brand dark shade", "default": "#2A6A33" },
+    { "type": "color", "id": "on_brand_text", "label": "Text on brand", "default": "#FFFFFF" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#FFFFFF" },
+    { "type": "color", "id": "dark_button_bg", "label": "Dark button background", "default": "#1C1C1C" },
+    { "type": "color", "id": "dark_button_text", "label": "Dark button text", "default": "#FFFFFF" },
+    { "type": "color", "id": "login_button_bg", "label": "Login button background", "default": "#358440" },
+    { "type": "color", "id": "login_button_text", "label": "Login button text", "default": "#FFFFFF" },
+    { "type": "color", "id": "border_color", "label": "Input border", "default": "#D9D9D4" },
+    { "type": "color", "id": "badge_bg", "label": "Faire badge background", "default": "#F1F1EC" },
+    { "type": "color", "id": "error_color", "label": "Error", "default": "#C62828" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "cart", "label": "Cart" },
+            { "value": "document", "label": "Document" },
+            { "value": "chat", "label": "Chat bubble" },
+            { "value": "none", "label": "None" }
+          ],
+          "default": "cart"
+        },
+        { "type": "image_picker", "id": "icon_image", "label": "Custom icon image", "info": "Replaces the icon above." },
+        { "type": "text", "id": "title", "label": "Title", "default": "1. Order directly from Zyzven Naturals" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Gain exclusive access to our complete range of premium products at unbeatable wholesale prices." }
+      ]
+    },
+    {
+      "type": "questions",
+      "name": "Any Questions card",
+      "limit": 1,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Any Questions?" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Please reach out to us at" },
+        { "type": "text", "id": "email", "label": "Email", "info": "Defaults to the section's recipient email when empty." },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Get in touch" },
+        { "type": "url", "id": "button_link", "label": "Button link", "info": "Defaults to /pages/contact when empty." }
+      ]
+    },
+    {
+      "type": "faire_card",
+      "name": "Faire card",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "brand_name", "label": "Brand name", "default": "Zyzven Naturals" },
+        { "type": "text", "id": "partner_name", "label": "Partner name", "default": "FAIRE" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Unlock our wholesale catalog" },
+        { "type": "text", "id": "badge_text", "label": "Badge text", "default": "We're a Top Shop!" },
+        { "type": "text", "id": "rating", "label": "Badge rating", "default": "4.9" },
+        { "type": "textarea", "id": "items", "label": "Checklist", "info": "One item per line.", "default": "50% off your first order (up to $150)*\n1 year of free shipping with us*\n60-day payment terms for eligible retailers\nFree returns on your first order" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop wholesale prices" },
+        { "type": "url", "id": "button_link", "label": "Button link", "info": "Your Faire shop link. Defaults to faire.com when empty." },
+        { "type": "text", "id": "footnote", "label": "Footnote", "default": "*Available for retailers who are new to Faire" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wholesale account request",
+      "blocks": [
+        { "type": "step", "settings": { "icon": "cart", "title": "1. Order directly from Zyzven Naturals", "text": "Gain exclusive access to our complete range of premium products at unbeatable wholesale prices. Ordering directly from us means streamlined communication, fast and reliable order processing, and profit margins designed to help your business flourish." } },
+        { "type": "step", "settings": { "icon": "document", "title": "2. Fill out the form with your details", "text": "Getting started is easy! Simply fill out the form with your business information, and our team will quickly review your application to provide you with access to exclusive wholesale pricing and benefits." } },
+        { "type": "step", "settings": { "icon": "chat", "title": "3. We will get in touch with you", "text": "Once approved, a member of our wholesale team will reach out with your account details, pricing, and next steps." } },
+        { "type": "questions" },
+        { "type": "faire_card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

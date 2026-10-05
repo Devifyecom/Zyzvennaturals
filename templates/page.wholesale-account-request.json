@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "wholesale-account-request",
+      "blocks": {
+        "step_order": {
+          "type": "step",
+          "settings": {
+            "icon": "cart",
+            "title": "1. Order directly from Zyzven Naturals",
+            "text": "Gain exclusive access to our complete range of premium products at unbeatable wholesale prices. Ordering directly from us means streamlined communication, fast and reliable order processing, and profit margins designed to help your business flourish."
+          }
+        },
+        "step_form": {
+          "type": "step",
+          "settings": {
+            "icon": "document",
+            "title": "2. Fill out the form with your details",
+            "text": "Getting started is easy! Simply fill out the form with your business information, and our team will quickly review your application to provide you with access to exclusive wholesale pricing and benefits."
+          }
+        },
+        "step_contact": {
+          "type": "step",
+          "settings": {
+            "icon": "chat",
+            "title": "3. We will get in touch with you",
+            "text": "Once approved, a member of our wholesale team will reach out with your account details, pricing, and next steps."
+          }
+        },
+        "questions": {
+          "type": "questions",
+          "settings": {
+            "heading": "Any Questions?",
+            "text": "Please reach out to us at",
+            "email": "sales@zyzvennaturals.com",
+            "button_label": "Get in touch"
+          }
+        },
+        "faire": {
+          "type": "faire_card",
+          "settings": {
+            "brand_name": "Zyzven Naturals",
+            "partner_name": "FAIRE",
+            "heading": "Unlock our wholesale catalog",
+            "badge_text": "We're a Top Shop!",
+            "rating": "4.9",
+            "items": "50% off your first order (up to $150)*\n1 year of free shipping with us*\n60-day payment terms for eligible retailers\nFree returns on your first order",
+            "button_label": "Shop wholesale prices",
+            "footnote": "*Available for retailers who are new to Faire"
+          }
+        }
+      },
+      "block_order": ["step_order", "step_form", "step_contact", "questions", "faire"],
+      "settings": {
+        "submission_method": "external",
+        "form_endpoint_url": "",
+        "recipient_email": "sales@zyzvennaturals.com"
+      }
+    }
+  },
+  "order": ["main"]
+}
