@@ -37,6 +37,7 @@
         "paragraph_CDJjXe",
         "email_form_dFUpWk"
       ],
+      "disabled": true,
       "custom_css": [],
       "name": "t:sections.newsletter.presets.name",
       "settings": {
@@ -46,8 +47,28 @@
         "padding_bottom": 52
       }
     },
+    "zn_newsletter_LQf4nY": {
+      "type": "zn-newsletter",
+      "name": "Zyzven newsletter",
+      "settings": {
+        "heading": "Sign Up for Our Newsletter",
+        "text": "<p>Join the Zyzven Wellness Community and stay connected with nature-powered wellness, exclusive updates, and expert tips.</p>",
+        "placeholder": "Enter Your Email",
+        "button_label": "Subscribe",
+        "customer_tag": "newsletter",
+        "background": "#4e7f51",
+        "text_color": "#ffffff",
+        "input_background": "#f7f9fd",
+        "button_background": "#c5b19c",
+        "button_text_color": "#ffffff",
+        "content_width": 560,
+        "padding_top": 60,
+        "padding_bottom": 56
+      }
+    },
     "cw_newsletter_hMgaKp": {
       "type": "cw-newsletter",
+      "disabled": true,
       "name": "Custom Email signup",
       "settings": {
         "heading1": "The Zyzven Wellness Circle",
@@ -188,6 +209,7 @@
   },
   "order": [
     "newsletter_hzRXcy",
+    "zn_newsletter_LQf4nY",
     "cw_newsletter_hMgaKp",
     "footer"
   ]
