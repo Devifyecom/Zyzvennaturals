@@ -1,0 +1,279 @@
+{%- comment -%}
+  Zyzven newsletter signup: green band, centred heading + intro, joined email field and button.
+  This is the single site-wide newsletter form (footer group). Do not add a second signup section
+  to the footer group or customers will see two forms.
+{%- endcomment -%}
+{%- assign zn_form_id = 'ZnNewsletterForm-' | append: section.id -%}
+
+{% style %}
+  .zn-newsletter-{{ section.id }} {
+    background-color: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__inner {
+    max-width: {{ section.settings.content_width }}px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__heading {
+    max-width: 440px;
+    margin: 0 auto;
+    font-family: "Golos Text", sans-serif;
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: {{ section.settings.text_color }};
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__text {
+    margin: 15px 0 16px;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.06rem;
+    color: {{ section.settings.text_color }};
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__text p {
+    margin: 0;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    max-width: 412px;
+    margin: 0 auto;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 60px;
+    margin: 0;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 10px 0 0 10px;
+    background: {{ section.settings.input_background }};
+    color: #1a1a1a;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 0.04rem;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__input::placeholder {
+    color: #85878b;
+    opacity: 1;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__input:focus-visible {
+    outline: 2px solid {{ section.settings.button_background }};
+    outline-offset: 2px;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__button {
+    flex: 0 0 165px;
+    height: 62px;
+    margin: 0;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    background: {{ section.settings.button_background }};
+    color: {{ section.settings.button_text_color }};
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__button:hover {
+    filter: brightness(0.95);
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__button:focus-visible {
+    outline: 2px solid {{ section.settings.text_color }};
+    outline-offset: 2px;
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 14px 0 0;
+    font-size: 15px;
+    color: {{ section.settings.text_color }};
+  }
+
+  .zn-newsletter-{{ section.id }} .zn-newsletter__message .svg-wrapper {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media screen and (max-width: 1025px) {
+    .zn-newsletter-{{ section.id }} .zn-newsletter__heading {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .zn-newsletter-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | times: 0.6 | round }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.6 | round }}px;
+    }
+
+    .zn-newsletter-{{ section.id }} .zn-newsletter__heading {
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    .zn-newsletter-{{ section.id }} .zn-newsletter__text {
+      margin: 14px 0 18px;
+      font-size: 15px;
+    }
+
+    .zn-newsletter-{{ section.id }} .zn-newsletter__input {
+      height: 50px;
+      padding: 0 16px;
+      font-size: 15px;
+    }
+
+    .zn-newsletter-{{ section.id }} .zn-newsletter__button {
+      flex-basis: 120px;
+      height: 52px;
+      font-size: 16px;
+    }
+  }
+{% endstyle %}
+
+<div class="zn-newsletter zn-newsletter-{{ section.id }}">
+  <div class="zn-newsletter__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="zn-newsletter__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="zn-newsletter__text">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    {%- form 'customer', id: zn_form_id, class: 'zn-newsletter__form' -%}
+      <input type="hidden" name="contact[tags]" value="{{ section.settings.customer_tag | default: 'newsletter' | escape }}">
+      <div class="zn-newsletter__row">
+        <label class="visually-hidden" for="ZnNewsletterEmail-{{ section.id }}">
+          {{- 'newsletter.label' | t -}}
+        </label>
+        <input
+          id="ZnNewsletterEmail-{{ section.id }}"
+          class="zn-newsletter__input"
+          type="email"
+          name="contact[email]"
+          value="{{ form.email }}"
+          placeholder="{{ section.settings.placeholder | escape }}"
+          autocomplete="email"
+          autocorrect="off"
+          autocapitalize="off"
+          required
+          aria-required="true"
+          {% if form.errors %}
+            autofocus
+            aria-invalid="true"
+            aria-describedby="ZnNewsletterError-{{ section.id }}"
+          {% elsif form.posted_successfully? %}
+            aria-describedby="ZnNewsletterSuccess-{{ section.id }}"
+          {% endif %}
+        >
+        <button type="submit" class="zn-newsletter__button" name="commit">
+          {{- section.settings.button_label | escape -}}
+        </button>
+      </div>
+
+      {%- if form.errors -%}
+        <p class="zn-newsletter__message" id="ZnNewsletterError-{{ section.id }}" role="alert">
+          <span class="svg-wrapper">{{- 'icon-error.svg' | inline_asset_content -}}</span>
+          {{- form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email -}}
+        </p>
+      {%- elsif form.posted_successfully? -%}
+        <p class="zn-newsletter__message" id="ZnNewsletterSuccess-{{ section.id }}" tabindex="-1" autofocus>
+          <span class="svg-wrapper">{{- 'icon-success.svg' | inline_asset_content -}}</span>
+          {{- 'newsletter.success' | t -}}
+        </p>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Zyzven newsletter",
+  "tag": "section",
+  "class": "section zn-newsletter-section",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Sign Up for Our Newsletter" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Join the Zyzven Wellness Community and stay connected with nature-powered wellness, exclusive updates, and expert tips.</p>"
+    },
+    { "type": "text", "id": "placeholder", "label": "Email placeholder", "default": "Enter Your Email" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Subscribe" },
+    {
+      "type": "text",
+      "id": "customer_tag",
+      "label": "Customer tag",
+      "default": "newsletter",
+      "info": "Added to the Shopify customer record so Klaviyo can pick up the signup."
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#4e7f51" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#ffffff" },
+    { "type": "color", "id": "input_background", "label": "Email field background", "default": "#f7f9fd" },
+    { "type": "color", "id": "button_background", "label": "Button background", "default": "#c5b19c" },
+    { "type": "color", "id": "button_text_color", "label": "Button text", "default": "#ffffff" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Content width",
+      "min": 360,
+      "max": 900,
+      "step": 10,
+      "default": 560,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 56,
+      "unit": "px"
+    }
+  ],
+  "presets": [{ "name": "Zyzven newsletter" }]
+}
+{% endschema %}
