@@ -76,7 +76,7 @@
         "login_label": "Login",
         "login_link": "",
         "contact_label": "Contact",
-        "contact_link": "",
+        "contact_link": "shopify://pages/contact-us",
         "sidebar_heading": "Become a Wholesale Partner",
         "submission_method": "external",
         "form_endpoint_url": "",
