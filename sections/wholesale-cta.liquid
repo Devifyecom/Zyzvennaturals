@@ -2,7 +2,7 @@
   Wholesale CTA ("Apply for Wholesale" banner)
   A rounded brand-colored card with an image either side of a centered heading, a richtext
   body (with an editable inline link) and a button. Every color is a section setting.
-  Mobile stacks image / text / image, and can hide the right image.
+  Mobile shows one image above the text (right image by default), or both around it.
   The button link falls back to /pages/wholesale-account-request when left empty.
 {%- endcomment -%}
 
@@ -28,10 +28,10 @@
     background: var(--wsc-bg);
     color: var(--wsc-text);
     border-radius: 1.6rem;
-    padding: {{ s.card_padding | times: 0.6 | round: 0 }}px 2rem;
+    padding: {{ s.card_padding | times: 0.5 | round: 0 }}px 2.8rem;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 2.8rem;
+    gap: 3rem;
     align-items: center;
   }
 
@@ -115,11 +115,19 @@
     box-shadow: none;
   }
 
-  {%- if s.hide_right_mobile -%}
-    @media screen and (max-width: 749px) {
-      {{ sel }} .wsc__media--right { display: none; }
-    }
-  {%- endif -%}
+  @media screen and (max-width: 749px) {
+    {{ sel }} .wsc__media { aspect-ratio: 16 / 9; }
+    {{ sel }} .wsc__heading { margin-bottom: 2rem; }
+    {{ sel }} .wsc__body { line-height: 1.45; }
+    {{ sel }} .wsc__button { margin-top: 2.8rem; min-height: 4.8rem; padding: 1rem 3.2rem; }
+    {%- case s.mobile_images -%}
+      {%- when 'right' -%}
+        {{ sel }} .wsc__media--left { display: none; }
+        {{ sel }} .wsc__media--right { order: -1; }
+      {%- when 'left' -%}
+        {{ sel }} .wsc__media--right { display: none; }
+    {%- endcase -%}
+  }
 
   @media screen and (min-width: 750px) {
     {{ sel }} {
@@ -208,7 +216,17 @@
     { "type": "header", "content": "Images" },
     { "type": "image_picker", "id": "image_left", "label": "Left image", "info": "Alt text comes from the image's alt text in Files." },
     { "type": "image_picker", "id": "image_right", "label": "Right image" },
-    { "type": "checkbox", "id": "hide_right_mobile", "label": "Hide right image on mobile", "default": false },
+    {
+      "type": "select",
+      "id": "mobile_images",
+      "label": "Mobile images",
+      "options": [
+        { "value": "right", "label": "Right image only, above text" },
+        { "value": "left", "label": "Left image only, above text" },
+        { "value": "both", "label": "Both, above and below text" }
+      ],
+      "default": "right"
+    },
     { "type": "header", "content": "Content" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Apply for Wholesale" },
     {
