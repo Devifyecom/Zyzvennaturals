@@ -733,7 +733,7 @@
         "heading": "Apply for Wholesale",
         "body": "<p>We welcome partnerships with retailers who share our passion for natural wellness. To apply for wholesale, visit our <a href=\"/pages/wholesale-account-request\" title=\"Wholesale Application Page\">Wholesale Application Page</a> and complete the form with your business details. Once your application is reviewed and approved, you’ll gain access to exclusive pricing, bulk ordering, and dedicated support.</p>",
         "button_label": "Start now",
-        "button_link": "",
+        "button_link": "shopify://pages/wholesale-account-request",
         "background_color": "#358440",
         "text_color": "#FFFFFF",
         "button_bg": "#1C1C1C",
