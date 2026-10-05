@@ -9,71 +9,6 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "zn-collection-banner",
-      "blocks": {
-        "badge-1": {
-          "type": "badge",
-          "disabled": true,
-          "settings": {
-            "icon": "leaf",
-            "label": "100% natural herbs"
-          }
-        },
-        "badge-2": {
-          "type": "badge",
-          "disabled": true,
-          "settings": {
-            "icon": "flask",
-            "label": "Lab tested"
-          }
-        },
-        "badge-3": {
-          "type": "badge",
-          "disabled": true,
-          "settings": {
-            "icon": "truck",
-            "label": "Fast delivery"
-          }
-        }
-      },
-      "block_order": [
-        "badge-1",
-        "badge-2",
-        "badge-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "overlay",
-        "show_breadcrumb": false,
-        "eyebrow": "Zyzven Naturals",
-        "show_count": false,
-        "title": "",
-        "title_size": 68,
-        "show_description": false,
-        "description": "",
-        "clamp_description": false,
-        "cta_label": "Shop the collection",
-        "cta_url": "",
-        "secondary_label": "Take the wellness quiz",
-        "secondary_url": "",
-        "use_collection_image": false,
-        "image_ratio": "4 / 5",
-        "card_value": "4.9 / 5",
-        "card_label": "Loved by 2,000+ customers",
-        "overlay_height": 560,
-        "overlay_color": "#1d3029",
-        "overlay_opacity": 80,
-        "links_heading": "Browse",
-        "bg_color": "#f6f1e8",
-        "text_color": "#1f2f29",
-        "accent_color": "#b08f6c",
-        "button_color": "#27423a",
-        "button_text_color": "#ffffff",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -99,7 +34,6 @@
     }
   },
   "order": [
-    "banner",
     "product-grid"
   ]
 }
