@@ -126,157 +126,6 @@
         "pad_bottom": 20
       }
     },
-    "feel_grid_hWEVTL": {
-      "type": "feel-grid",
-      "blocks": {
-        "card_gTHcUB": {
-          "type": "card",
-          "settings": {
-            "word": "Debloated",
-            "category": "Tea",
-            "name": "Cleanse Tea",
-            "url": "",
-            "accent": "#5b8c3e",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_01_06_PM.png",
-            "product_image": "shopify://shop_images/alki-detox-with-moringa-non-laxative-metabolic-detox-tea1.png"
-          }
-        },
-        "card_eJJmPL": {
-          "type": "card",
-          "settings": {
-            "word": "Rested",
-            "category": "Tea",
-            "name": "Sleep Tea",
-            "url": "shopify://products/womens-brew-hormone-balance-tea",
-            "accent": "#6b7d4a",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_02_57_PM.png",
-            "product_image": "shopify://shop_images/womens-brew-womens-wellness-herbal-tea-organic-vegan1.png"
-          }
-        },
-        "card_p9mw7K": {
-          "type": "card",
-          "settings": {
-            "word": "Energized",
-            "category": "Tea",
-            "name": "Energize Tea",
-            "url": "shopify://products/manthoric-advance",
-            "accent": "#2d4a2e",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_04_39_PM.png",
-            "product_image": "shopify://shop_images/manthoric-advance-mens-vitality-performance-support-capsules.jpg"
-          }
-        },
-        "card_4qzmBX": {
-          "type": "card",
-          "settings": {
-            "word": "Immune",
-            "category": "Tea",
-            "name": "Feel Better Tea",
-            "url": "shopify://products/zyzven-naturals-heart-harmony-loose-leaf-tea-60g",
-            "accent": "#c0392b",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_08_18_PM.png",
-            "product_image": "shopify://shop_images/Harmony_Heart_Cardiovascular_Wellness_Herbal_Tea_Organic_Vegan_GMP_Third-Party_Lab-Tested_2.png"
-          }
-        },
-        "card_fXK9GD": {
-          "type": "card",
-          "settings": {
-            "word": "Balanced",
-            "category": "Tea",
-            "name": "Menopause",
-            "url": "shopify://products/freja-balance-menopause-wellness-tea",
-            "accent": "#d4a837",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_09_59_PM.png",
-            "product_image": "shopify://shop_images/a4.png"
-          }
-        },
-        "card_9nG6jG": {
-          "type": "card",
-          "settings": {
-            "word": "Lighter",
-            "category": "Tea",
-            "name": "Apple Cider Vinegar",
-            "url": "shopify://products/zyzven-naturals-clearpath-detox-herbal-tea-60g-loose-leaf",
-            "accent": "#1a5c4b",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_11_12_PM.png",
-            "product_image": "shopify://shop_images/clearpath-detox-loose-leaf-herbal-detox-tea1.png"
-          }
-        },
-        "card_BtRk94": {
-          "type": "card",
-          "settings": {
-            "word": "Protected",
-            "category": "Supplement",
-            "name": "Pressure Balance",
-            "url": "shopify://products/zyzven-naturals-pressure-balance-capsules-60",
-            "accent": "#e8a0a0",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_01_40_27_PM.png",
-            "product_image": "shopify://shop_images/pressure-balance-cardiovascular-circulation-blood-pressure-support-capsules1.png"
-          }
-        },
-        "card_MDhkWn": {
-          "type": "card",
-          "settings": {
-            "word": "Calm",
-            "category": "Tea",
-            "name": "Blood Sugar",
-            "url": "shopify://products/sweet-balance-herbal-tea",
-            "accent": "#a8c8e8",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_13_55_PM.png",
-            "product_image": "shopify://shop_images/sweet-balance-blood-sugar-wellness-herbal-tea1.png"
-          }
-        },
-        "card_cEh3c8": {
-          "type": "card",
-          "settings": {
-            "word": "Glowing",
-            "category": "Supplement",
-            "name": "Nice Hair",
-            "url": "shopify://products/advanced-hormone-balance-pcos-support-capsules",
-            "accent": "#b8a0c8",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_15_53_PM.png",
-            "product_image": "shopify://shop_images/freja-advance-menopause-hormonal-support-capsules.png"
-          }
-        },
-        "card_qkLtLr": {
-          "type": "card",
-          "settings": {
-            "word": "In Control",
-            "category": "Supplement",
-            "name": "Hormone Balance",
-            "url": "shopify://products/zyzven-naturals-glukobalans-120-vegan-capsules-40-day-supply",
-            "accent": "#d4735e",
-            "lifestyle_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_02_16_26_PM.png",
-            "product_image": "shopify://shop_images/a1.png"
-          }
-        }
-      },
-      "block_order": [
-        "card_gTHcUB",
-        "card_eJJmPL",
-        "card_p9mw7K",
-        "card_4qzmBX",
-        "card_fXK9GD",
-        "card_9nG6jG",
-        "card_BtRk94",
-        "card_MDhkWn",
-        "card_cEh3c8",
-        "card_qkLtLr"
-      ],
-      "disabled": true,
-      "name": "Feel Grid",
-      "settings": {
-        "eyebrow": "Start here",
-        "heading_pink": "",
-        "heading": "How do you want to feel?",
-        "subtitle": "Shop by what your body is asking for. A tea and a supplement for every part of your day.",
-        "columns": 5,
-        "padding_top": 76,
-        "padding_bottom": 84,
-        "accent_color": "#358440",
-        "heading_color": "#2b2b2b",
-        "text_color": "#707070"
-      }
-    },
     "home_slider_chd3xc": {
       "type": "home-slider",
       "blocks": {
@@ -410,140 +259,6 @@
         "sold_out_label": "Sold Out",
         "pad_top": 50,
         "pad_bottom": 50
-      }
-    },
-    "ritual_hero_9Q8hpe": {
-      "type": "ritual-hero",
-      "disabled": true,
-      "name": "Ritual Hero",
-      "settings": {
-        "heading": "Little Rituals.\nBig Difference.",
-        "subtitle": "A cup after dinner, a capsule with breakfast. Zyzven Naturals fits into your day and gives a lot back.",
-        "button_label": "Find Your Ritual",
-        "button_link": "",
-        "video": "shopify://files/videos/can_you_only_change_the_backgr_gwr_video_mvp.mp4",
-        "video_url": "",
-        "heading_color": "#2b2b2b",
-        "text_color": "#6f6f6f",
-        "mobile_bg": "#ffffff",
-        "cta_text_desktop": "#050505",
-        "pink_top": "#000000",
-        "pink_bottom": "#358440"
-      }
-    },
-    "ugc_video_strip_Y7NzGm": {
-      "type": "ugc-video-strip",
-      "blocks": {
-        "clip_nMYJ9q": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7519842905381457183_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_dUrh7c": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7529505540699917599_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_d8fy8b": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7531833196401397023_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_r7eNBh": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7378536674613071147_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_WQU9DK": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7519842905381457183_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_N9AnTy": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7531833196401397023_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_Ffx7tt": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7378536674613071147_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        },
-        "clip_gMxE4g": {
-          "type": "clip",
-          "settings": {
-            "video": "shopify://files/videos/snaptik_7529505540699917599_v3.mp4",
-            "video_url": "",
-            "handle": "",
-            "tag_label": "",
-            "tag_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "clip_nMYJ9q",
-        "clip_dUrh7c",
-        "clip_d8fy8b",
-        "clip_r7eNBh",
-        "clip_WQU9DK",
-        "clip_N9AnTy",
-        "clip_Ffx7tt",
-        "clip_gMxE4g"
-      ],
-      "disabled": true,
-      "name": "UGC Video Strip",
-      "settings": {
-        "heading": "Loved by thousands of parents",
-        "title_size": 40,
-        "subheading": "<p>See how families use our products every day.</p>",
-        "sub_size": 16,
-        "title_color": "#2c2420",
-        "sub_color": "#6b6258",
-        "bg_color": "#faf9f6",
-        "clip_width": 210,
-        "clip_width_mobile": 150,
-        "gap": 16,
-        "radius": 16,
-        "fade": 80,
-        "speed": 45,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "load_font": true
       }
     },
     "trust_band_bj6Vrk": {
@@ -1008,17 +723,26 @@
         "pad_bottom": 70
       }
     },
-    "wellness_circle_bemrij": {
-      "type": "wellness-circle",
-      "disabled": true,
-      "name": "Wellness Circle",
+    "wholesale_cta_E4wrWg": {
+      "type": "wholesale-cta",
+      "name": "Wholesale CTA",
       "settings": {
-        "heading": "The Zyzven Wellness Circle",
-        "feature_1": "STRUCTURED ACCESS",
-        "feature_2": "FOUNDER-LED EDUCATION",
-        "feature_3": "PRIORITY SUPPORT",
-        "button_text": "EXPLORE MEMBERSHIP",
-        "button_link": ""
+        "image_left": "shopify://shop_images/b68ef7db-6bcc-44c0-8f70-1364650f56d5.jpg",
+        "image_right": "shopify://shop_images/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg",
+        "hide_right_mobile": false,
+        "heading": "Apply for Wholesale",
+        "body": "<p>We welcome partnerships with retailers who share our passion for natural wellness. To apply for wholesale, visit our <a href=\"/pages/wholesale-account-request\" title=\"Wholesale Application Page\">Wholesale Application Page</a> and complete the form with your business details. Once your application is reviewed and approved, you’ll gain access to exclusive pricing, bulk ordering, and dedicated support.</p>",
+        "button_label": "Start now",
+        "button_link": "",
+        "background_color": "#358440",
+        "text_color": "#FFFFFF",
+        "button_bg": "#1C1C1C",
+        "button_text": "#FFFFFF",
+        "button_hover_bg": "#2A6A33",
+        "button_hover_text": "#FFFFFF",
+        "card_padding": 60,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "17754565366d5fd155": {
@@ -1075,10 +799,7 @@
     "cw_homepage_banner_zGUxGP",
     "hero_bzCJQ6",
     "badge_slider_CVQpP8",
-    "feel_grid_hWEVTL",
     "home_slider_chd3xc",
-    "ritual_hero_9Q8hpe",
-    "ugc_video_strip_Y7NzGm",
     "trust_band_bj6Vrk",
     "faq_image_YAq7kE",
     "country_flag_6KzCb3",
@@ -1089,7 +810,7 @@
     "bib_homepage_promo_Rs7kQ2",
     "home_image_3zk8rW",
     "home_image_text_qUpBXV",
-    "wellness_circle_bemrij",
+    "wholesale_cta_E4wrWg",
     "17754565366d5fd155"
   ]
 }
