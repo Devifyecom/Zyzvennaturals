@@ -34,11 +34,11 @@
       "name": "Collection banner",
       "settings": {
         "collection": "",
-        "image": "shopify://shop_images/WhatsApp_Image_2026-07-20_at_5.53.08_PM.jpg",
+        "image": "shopify://shop_images/5c2a49ea-f6a3-467d-8393-438db748403e.jpg",
         "height": 380,
         "overlay": 100,
         "overlay_color": "#000000",
-        "overlay_style": "gradient",
+        "overlay_style": "solid",
         "align": "center",
         "show_count": true,
         "show_description": true,
