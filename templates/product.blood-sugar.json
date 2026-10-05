@@ -194,6 +194,7 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/058f93efcee04c998872c22883c77856.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -543,7 +544,7 @@
         "para_2": "PCOS and perimenopause push the scales even further. It is exhausting, and far more common than anyone talks about.",
         "image": "shopify://shop_images/6e48c814-c12c-4f43-a037-aea47f0b80a2.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
+        "image_alt": "",
         "band_heading": "That's why we created Zyzven Naturals Cleanse",
         "band_copy": "9 herbs traditionally used to support a steadier cycle, calmer moods, and easier months. Ingredients that work with your body, in one cup you look forward to.",
         "kicker": "BRING YOUR BALANCE BACK.",

@@ -156,6 +156,7 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/dae1086371b246218128895dd45791e5.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -478,7 +479,7 @@
         "para_2": "",
         "image": "shopify://shop_images/0A93BBA9-49DD-4882-8189-90D61F89348E.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
+        "image_alt": "",
         "band_heading": "",
         "band_copy": "",
         "kicker": "",
@@ -843,7 +844,7 @@
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
             "image_alt": "Steep the loose leaf tea",
             "title": "Steep",
-            "desc": "Pour 8 oz of just-boiled water over one tea bag and steep for 8 to 15 minutes."
+            "desc": "Pour 8 oz of just-boiled water over one serving of the loose-leaf blend and steep for 8 to 15 minutes."
           }
         },
         "step_nmNcqE": {
@@ -851,7 +852,7 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Sip before bed",
+            "image_alt": "Sip and enjoy",
             "title": "Sip",
             "desc": "Enjoy 2 to 3 cups a day, hot or over ice. A few calm minutes that are just yours."
           }
@@ -861,9 +862,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Wake up reset, flatter and more regular",
-            "title": "Balance",
-            "desc": "Stay consistent through your cycle and feel steadier moods, easier periods, and less bloat."
+            "image_alt": "Stay consistent",
+            "title": "Routine",
+            "desc": "Stay consistent and make it part of your daily wellness routine."
           }
         }
       },

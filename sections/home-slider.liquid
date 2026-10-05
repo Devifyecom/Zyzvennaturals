@@ -162,10 +162,11 @@
                 <p>{{ block.settings.product.title }}</p>
               {% comment %} {% endif %} {% endcomment %}
               {%- assign atc_variant = block.settings.product.selected_or_first_available_variant -%}
+              {%- comment -%}
+                Always show the real variant price so the homepage matches the product page and
+                checkout. The old "Display price (USD)" override is intentionally ignored.
+              {%- endcomment -%}
               {%- assign display_price = atc_variant.price | default: block.settings.product.price -%}
-              {%- if block.settings.usd_price != blank and cart.currency.iso_code == 'USD' -%}
-                {%- assign display_price = block.settings.usd_price | times: 100 | round -%}
-              {%- endif -%}
               <div class="product-price">
                 <span>{{ display_price | money_with_currency }}</span>
               </div>
@@ -383,8 +384,8 @@
         {
           "type": "text",
           "id": "usd_price",
-          "label": "Display price (USD)",
-          "info": "Optional. Shown instead of the product price when the shopper is viewing in USD. Number only, e.g. 49.99"
+          "label": "Display price (USD) – not used",
+          "info": "No longer displayed. The card always shows the product's real price so it matches the product page and checkout. Change prices in Shopify admin (Products or Markets)."
         }
       ]
     },

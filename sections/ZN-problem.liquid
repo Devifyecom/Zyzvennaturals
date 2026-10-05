@@ -312,6 +312,7 @@
       </div>
 
       <div class="hgp-media hgp-reveal">
+        {%- assign hgp_image_alt = section.settings.image_alt | default: section.settings.image.alt | default: product.title -%}
         {%- if section.settings.image != blank -%}
           {{
             section.settings.image
@@ -321,11 +322,11 @@
               decoding: 'async',
               sizes: '(min-width: 820px) 45vw, 92vw',
               widths: '400, 600, 800, 1000, 1200',
-              alt: section.settings.image_alt
+              alt: hgp_image_alt
           }}
         {%- elsif section.settings.image_url != blank -%}
           <img src="{{ section.settings.image_url }}"
-               alt="{{ section.settings.image_alt | escape }}"
+               alt="{{ hgp_image_alt | escape }}"
                loading="lazy" decoding="async">
         {%- endif -%}
       </div>
@@ -473,11 +474,11 @@
     { "type": "header", "content": "Image" },
     { "type": "image_picker", "id": "image", "label": "Image" },
     { "type": "text", "id": "image_url", "label": "Fallback image URL", "default": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png" },
-    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "info": "Leave blank to use the image's alt text or the product title." },
 
     { "type": "header", "content": "Pink band" },
-    { "type": "text", "id": "band_heading", "label": "Band eyebrow", "default": "That's why we created Hey Girl D-Mannose" },
-    { "type": "textarea", "id": "band_copy", "label": "Band copy", "default": "A natural sugar studied to flush the bacteria behind UTIs, paired with Cranberry, Hibiscus, and Dandelion to soothe the bladder and support your kidneys. Ingredients that work with your body, not against it." },
+    { "type": "text", "id": "band_heading", "label": "Band eyebrow", "default": "Why we made it" },
+    { "type": "textarea", "id": "band_copy", "label": "Band copy", "info": "Product-specific copy only. Do not reuse another product's claims." },
 
     { "type": "header", "content": "Call to action" },
     { "type": "text", "id": "kicker", "label": "Kicker line", "default": "Flush it. Stay ahead of it." },

@@ -159,6 +159,7 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/e5474c1abf674f88b0f2d8c8534a74cc.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -492,15 +493,15 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "Targeted daily support for pmos/pcos and",
+        "heading": "Targeted daily support for PMOS/PCOS and",
         "heading_accent": "preconception wellness",
         "para_1": "One week you feel like yourself, the next you are tipped off balance: cramps, mood swings, bloating, breakouts, and energy that crashes out of nowhere.",
         "para_2": "PCOS and perimenopause push the scales even further. It is exhausting, and far more common than anyone talks about.",
         "image": "shopify://shop_images/freja-advance-menopause-hormonal-support-capsules-5.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
-        "band_heading": "That's why we created Zyzven Naturals Cleanse",
-        "band_copy": "9 herbs traditionally used to support a steadier cycle, calmer moods, and easier months. Ingredients that work with your body, in one cup you look forward to.",
+        "image_alt": "",
+        "band_heading": "That's why we created Freja Advance",
+        "band_copy": "Myo-inositol, vitex, shatavari, NAC, turmeric, zinc and chromium, ingredients traditionally used to support regular menstrual cycles, metabolic wellness and reproductive health, in one simple daily capsule routine.",
         "kicker": "BRING YOUR BALANCE BACK.",
         "button_label": "BRING YOUR BALANCE BACK",
         "button_action": "link",
@@ -567,6 +568,7 @@
     },
     "zn_how_PJG4fY": {
       "type": "ZN-how",
+      "disabled": true,
       "blocks": {
         "job_Lqx6dg": {
           "type": "job",

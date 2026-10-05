@@ -13,6 +13,7 @@
   "sections": {
     "newsletter_hzRXcy": {
       "type": "newsletter",
+      "disabled": true,
       "blocks": {
         "heading_Nr7N8X": {
           "type": "heading",

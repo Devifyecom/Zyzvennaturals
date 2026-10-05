@@ -167,6 +167,7 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c2dc967b341d4806a08cd96c56672515.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -489,7 +490,7 @@
         "para_2": "Sixteen organic herbs. One warm cup. Mild enough that you'll actually keep drinking it which is the only reason any herbal ritual has ever worked for anyone.",
         "image": "shopify://shop_images/ChatGPT_Image_Sep_16_2026_11_55_19_AM.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
+        "image_alt": "",
         "band_heading": "WHY WE MADE IT",
         "band_copy": "Sixteen botanicals with long histories in traditional wellness, balanced into something genuinely pleasant to drink. No jitters. No urgency. No dread.",
         "kicker": "WAKE UP FEELING LIGHTER",
@@ -619,6 +620,7 @@
     },
     "real_transformations_gBRGrd": {
       "type": "real-transformations",
+      "disabled": true,
       "blocks": {
         "testimonial_fMR7em": {
           "type": "testimonial",

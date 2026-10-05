@@ -167,6 +167,7 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/ac4be22776cb47fd825e881e2c7d1961.mp4",
             "poster_image": "shopify://shop_images/Glukobalans_Metabolic_Support_Capsules_Vegan_GMP_Lab-Tested.png",
@@ -461,6 +462,7 @@
     },
     "zn_problem_qrpzwU": {
       "type": "ZN-problem",
+      "disabled": true,
       "blocks": {
         "stat_4ec7XL": {
           "type": "stat",
@@ -490,7 +492,7 @@
         "para_2": "No wonder so many of us struggle with bloating, constipation, and feeling off.",
         "image": "shopify://shop_images/glukobalans-advanced-metabolic-support-capsules_6-Tested_2.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
+        "image_alt": "",
         "band_heading": "That's why we created Zyzven Naturals Cleanse",
         "band_copy": "Herbs traditionally used to ease bloating, promote regularity, and help you wake up feeling lighter. Ingredients that work with your body, not against it.",
         "kicker": "WAKE UP FEELING LIGHTER.",

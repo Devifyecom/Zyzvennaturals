@@ -163,6 +163,7 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
+          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/75d81acafb6947709358bcdbfa18e2bf.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -498,13 +499,13 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "So many women suffer from bloating and digestion issues. ",
-        "heading_accent": "You don't have to.",
+        "heading": "Menopause is not one symptom. ",
+        "heading_accent": "Every woman's experience is different.",
         "para_1": "Freja Balance is designed for adult women experiencing perimenopause, menopause or postmenopause who want caffeine-free botanical support for temperature comfort, mood, rest and everyday balance.",
         "para_2": "Freja Balance is a wellness tea. It is not hormone replacement therapy and is not intended to diagnose, treat, cure or prevent any disease.",
         "image": "shopify://shop_images/ChatGPT_Image_Sep_16_2026_08_16_25_PM.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
+        "image_alt": "",
         "band_heading": "",
         "band_copy": "",
         "kicker": "",
@@ -679,6 +680,7 @@
     },
     "real_transformations_gBRGrd": {
       "type": "real-transformations",
+      "disabled": true,
       "blocks": {
         "testimonial_fMR7em": {
           "type": "testimonial",
@@ -866,7 +868,7 @@
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
             "image_alt": "Steep the loose leaf tea",
             "title": "Steep",
-            "desc": "Pour 8 oz of just-boiled water over one tea bag and steep for 8 to 15 minutes."
+            "desc": "Pour 8 oz of just-boiled water over one serving of the loose-leaf blend and steep for 8 to 15 minutes."
           }
         },
         "step_nmNcqE": {
@@ -874,7 +876,7 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Sip before bed",
+            "image_alt": "Sip and enjoy",
             "title": "Sip",
             "desc": "Enjoy 2 to 3 cups a day, hot or over ice. A few calm minutes that are just yours."
           }
@@ -884,9 +886,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Wake up reset, flatter and more regular",
+            "image_alt": "Stay consistent",
             "title": "Balance",
-            "desc": "Stay consistent through your cycle and feel steadier moods, easier periods, and less bloat."
+            "desc": "Stay consistent and make it part of your daily routine through perimenopause, menopause and beyond."
           }
         }
       },

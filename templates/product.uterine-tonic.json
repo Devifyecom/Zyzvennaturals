@@ -486,7 +486,7 @@
         "para_2": "",
         "image": "shopify://shop_images/uterine-tonic-womens-wellness-herbal-tea_5.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "Woman holding Hey Girl D-Mannose, hands in a heart shape around the bottle",
+        "image_alt": "",
         "band_heading": "",
         "band_copy": "",
         "kicker": "",
@@ -850,7 +850,7 @@
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
             "image_alt": "Steep the loose leaf tea",
             "title": "Steep",
-            "desc": "Pour 8 oz of just-boiled water over one tea bag and steep for 8 to 15 minutes."
+            "desc": "Pour 8 oz of just-boiled water over one serving of the loose-leaf blend and steep for 8 to 15 minutes."
           }
         },
         "step_nmNcqE": {
@@ -858,7 +858,7 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Sip before bed",
+            "image_alt": "Sip and enjoy",
             "title": "Sip",
             "desc": "Enjoy 2 to 3 cups a day, hot or over ice. A few calm minutes that are just yours."
           }
@@ -868,7 +868,7 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Wake up reset, flatter and more regular",
+            "image_alt": "Stay consistent through your cycle",
             "title": "Balance",
             "desc": "Stay consistent through your cycle and feel steadier moods, easier periods, and less bloat."
           }

@@ -84,11 +84,23 @@
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
+          {%- unless product.available -%}
+            {%- comment -%} Fallback: never show Subscribe & Save options on a sold-out product. {%- endcomment -%}
+            <style>
+              #ProductInfo-{{ section.id }} [id*="subscriptions_app_block"] { display: none !important; }
+            </style>
+          {%- endunless -%}
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
-                {% render block %}
+                {%- comment -%}
+                  A sold-out product must not offer Subscribe & Save, so the Shopify Subscriptions
+                  app block is skipped when nothing can be bought. Other app blocks (reviews) still render.
+                {%- endcomment -%}
+                {%- unless product.available == false and block.id contains 'subscriptions_app_block' -%}
+                  {% render block %}
+                {%- endunless -%}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -145,13 +157,15 @@
                     {%- endif -%}
                   </div>
                 {%- endif -%}
-                <div {{ block.shopify_attributes }}>
-                  {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                  {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    {{ form | payment_terms }}
-                  {%- endform -%}
-                </div>
+                {%- if product.available -%}
+                  <div {{ block.shopify_attributes }}>
+                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      {{ form | payment_terms }}
+                    {%- endform -%}
+                  </div>
+                {%- endif -%}
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -252,6 +266,8 @@
                   class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                   {{ block.shopify_attributes }}
                 >
+                  {%- comment -%} Sold-out products show only the disabled "Sold out" button, no quantity stepper. {%- endcomment -%}
+                  {%- if product.available -%}
                   {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
                   {% # theme-check-disable %}
                   {%- assign cart_qty = cart
@@ -471,6 +487,7 @@
                         {%- endif -%}
                       {%- endif -%}
                     </volume-pricing>
+                  {%- endif -%}
                   {%- endif -%}
                   {%- render 'buy-buttons',
                     block: block,
