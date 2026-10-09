@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "scheme-4"
+      }
+    },
+    "custom_liquid_4DDkmA": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>Collection Banner Preview</title>\n<style>\n  :root{--zcb-accent:#5a7a4a;--zcb-overlay:.55}\n  *{box-sizing:border-box}\n  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,sans-serif;background:#fff}\n  .zcb__hero{position:relative;display:flex;align-items:center;overflow:hidden;background:#2f3d2c;min-height:460px}\n  .zcb__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}\n  .zcb__overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,var(--zcb-overlay)) 0%,rgba(0,0,0,calc(var(--zcb-overlay) * .4)) 60%,rgba(0,0,0,0) 100%)}\n  .zcb__content{position:relative;z-index:1;color:#fff;padding:48px 5vw;max-width:760px;width:100%}\n  .zcb__eyebrow{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;margin-bottom:14px}\n  .zcb__title{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:0 0 12px}\n  .zcb__desc{font-size:16px;line-height:1.6;opacity:.92;margin-bottom:20px}\n  .zcb__btn{display:inline-block;background:var(--zcb-accent);color:#fff;padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:600;transition:transform .2s,opacity .2s}\n  .zcb__btn:hover{transform:translateY(-2px);opacity:.92}\n  @media (max-width:749px){.zcb__hero{min-height:360px}.zcb__content{padding:32px 16px}.zcb__overlay{background:rgba(0,0,0,var(--zcb-overlay))}}\n</style>\n</head>\n<body>\n\n<!-- Sample text below stands in for what Shopify fills in automatically -->\n<section class=\"zcb\">\n  <div class=\"zcb__hero\">\n    <img class=\"zcb__img\" src=\"https://zyzvennaturals.com/cdn/shop/files/WhatsApp_Image_2026-09-23_at_1.02.05_PM.jpg?v=1790147980&width=2400\" alt=\"Collection banner\">\n    <div class=\"zcb__overlay\"></div>\n    <div class=\"zcb__content\">\n      <span class=\"zcb__eyebrow\">12 products</span>\n      <h1 class=\"zcb__title\">Natural Skincare Essentials</h1>\n      <div class=\"zcb__desc\">Gentle, plant-powered formulas made with organic botanicals and cold-pressed oils. Clean ingredients your skin will thank you for, every single day.</div>\n      <a href=\"#\" class=\"zcb__btn\">Shop the collection</a>\n    </div>\n  </div>\n</section>\n\n</body>\n</html>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "zn_collection_banner_wipBxW": {
+      "type": "zn-Collection-banner",
+      "name": "Collection banner",
+      "settings": {
+        "collection": "",
+        "image": "shopify://shop_images/5c2a49ea-f6a3-467d-8393-438db748403e.jpg",
+        "height": 380,
+        "overlay": 100,
+        "overlay_color": "#000000",
+        "overlay_style": "solid",
+        "align": "center",
+        "show_count": true,
+        "show_description": true,
+        "button_label": "Shop the collection",
+        "accent": "#5a7a4a"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".button--secondary {border: 1px solid rgb(var(--color-button-text));}"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-5",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "custom_liquid_4DDkmA",
+    "zn_collection_banner_wipBxW",
+    "product-grid"
+  ]
+}
