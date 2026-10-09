@@ -98,7 +98,7 @@ class CartItems extends HTMLElement {
           if (cartDrawer && sourceCartDrawer) {
             cartDrawer.classList.toggle('is-empty', sourceCartDrawer.classList.contains('is-empty'));
           }
-          const selectors = ['.drawer__shipping', 'cart-drawer-items', '.cart-drawer__footer'];
+          const selectors = ['.drawer__shipping', 'cart-drawer-items', '.drawer__recommend', '.cart-drawer__footer'];
           for (const selector of selectors) {
             const targetElement = document.querySelector(selector);
             const sourceElement = html.querySelector(selector);
@@ -110,8 +110,11 @@ class CartItems extends HTMLElement {
               const drawerInner = document.querySelector('#CartDrawer .drawer__inner');
               if (!drawerInner) continue;
               const itemsAnchor = drawerInner.querySelector('cart-drawer-items');
+              const footerAnchor = drawerInner.querySelector('.cart-drawer__footer');
               if (selector === '.drawer__shipping' && itemsAnchor) {
                 drawerInner.insertBefore(sourceElement, itemsAnchor);
+              } else if (selector === '.drawer__recommend' && footerAnchor) {
+                drawerInner.insertBefore(sourceElement, footerAnchor);
               } else {
                 drawerInner.appendChild(sourceElement);
               }

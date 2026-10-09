@@ -546,7 +546,21 @@
         </form>
       </cart-drawer-items>
       {% comment %} {% if cart.items.size > 0 and cart.items.first.product.metafields.custom.recommend_products.value != blank %} {% endcomment %}
-      {% if cart.items.size > 0 %}
+      {%- liquid
+        assign cart_has_skincare = false
+        for item in cart.items
+          for collection in item.product.collections
+            if collection.handle == 'skincare'
+              assign cart_has_skincare = true
+              break
+            endif
+          endfor
+          if cart_has_skincare
+            break
+          endif
+        endfor
+      -%}
+      {% if cart.items.size > 0 and cart_has_skincare == false %}
         <div class="drawer__recommend">
           <h2>Recommend Products</h2>
           {% comment %} {% for product in cart.items.first.product.metafields.custom.recommend_products.value %} {% endcomment %}
