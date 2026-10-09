@@ -72,7 +72,7 @@
       "custom_css": [],
       "settings": {
         "auto_rotate": true,
-        "change_slides_speed": 5,
+        "change_slides_speed": 3,
         "color_scheme": "scheme-2",
         "show_line_separator": false,
         "show_social": false,
