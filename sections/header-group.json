@@ -88,12 +88,20 @@
           "type": "announcement",
           "settings": {
             "text": "✨ FLAT 50% OFF ON ALL SKINCARE PRODUCTS! ✨",
+            "link": "shopify://collections/skincare"
+          }
+        },
+        "announcement_zALJ4p": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping for purchases over $100",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement_U4QjPY"
+        "announcement_U4QjPY",
+        "announcement_zALJ4p"
       ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
