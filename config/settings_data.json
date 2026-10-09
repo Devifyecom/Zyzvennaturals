@@ -131,7 +131,10 @@
     "gift_message": "<p>Only <strong>{PRICE}</strong> left for an exclusive free product!</p>",
     "complete_message": "<p>Congratulations! Free shipping and Free product has been activated.</p>",
     "gift_value": 300,
-    "products": [],
+    "products": [
+      "facial-cream-scrubs-100g-orange-peppermint",
+      "anti-bacterial-lemon-soap-200g"
+    ],
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
     "sections": {
