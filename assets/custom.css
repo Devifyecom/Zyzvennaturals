@@ -1520,7 +1520,7 @@ a.psbtn:hover {
 }
 
 @media screen and (max-width: 750px) {
-  .slider-buttons {
+  .slider-buttons:not(.announcement-bar-slider) {
     display: none !important;
   }
 
