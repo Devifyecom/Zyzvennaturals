@@ -93,6 +93,7 @@
         },
         "announcement_zALJ4p": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Free shipping for purchases over $100",
             "link": ""
