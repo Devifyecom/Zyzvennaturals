@@ -98,7 +98,7 @@
         "padding_bottom": 72,
         "slide_autoplay": true,
         "slide_interval": 3,
-        "slide_transition_ms": 600,
+        "slide_transition_ms": 500,
         "slide_show_arrows": true,
         "slide_show_dots": true
       }
