@@ -807,6 +807,7 @@
         "ingredient_mkJGrn": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design-156_1_767a8ba0-a782-4851-8887-00ccd19ff5b3.webp",
             "label": "Glucose metabolism",
             "title": "Berberine HCl · 600 mg",
             "text": "The most researched plant compound for healthy glucose metabolism, and the backbone of the formula."
@@ -873,6 +874,7 @@
         "ingredient_cPcJpV": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Chromium.jpg",
             "label": "Normal blood glucose",
             "title": "Chromium · 200 mcg",
             "text": "Contributes to normal macronutrient metabolism and the maintenance of normal blood glucose levels."
