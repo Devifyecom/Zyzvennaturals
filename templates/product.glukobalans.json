@@ -834,6 +834,7 @@
         "ingredient_FgnaRT": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/6195HhJWpGL._AC_UF1000_1000_QL80.jpg",
             "label": "Sweet-tooth support",
             "title": "Gymnema Sylvestre · 180 mg",
             "text": "Known in Ayurveda as gurmar, the \"sugar destroyer\", traditionally used to help curb sugar cravings."
@@ -842,6 +843,7 @@
         "ingredient_kQXBn7": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/images_82812367-d672-437f-afde-0e13d36c7b0f.jpg",
             "label": "Gut support",
             "title": "Inulin · 135 mg",
             "text": "A prebiotic chicory root fibre that feeds the beneficial bacteria in your gut."
@@ -850,6 +852,7 @@
         "ingredient_CmRT87": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/10b989ddc181c9d0512603c6000f7244.jpg_720x720q80.jpg",
             "label": "Mood & eating habits",
             "title": "Saffron · 30 mg",
             "text": "Traditionally used to support emotional wellbeing and more balanced eating habits."
