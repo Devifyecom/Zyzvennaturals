@@ -855,6 +855,7 @@
         "ingredient_CYPVLT": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/images.webp",
             "label": "Classic glucose botanical",
             "title": "Ceylon Cinnamon · 9 mg",
             "text": "\"True\" cinnamon, a long-standing favourite in glucose and metabolic wellness formulas."
@@ -863,6 +864,7 @@
         "ingredient_TJnKeV": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Black-Pepper-1757827696607-160839.jpg",
             "label": "Better absorption",
             "title": "Black Pepper · 6 mg",
             "text": "95% piperine to help your body absorb the botanicals in every capsule."
