@@ -33,6 +33,17 @@
   else
     assign external_video_url = default_video
   endif
+
+  comment
+    Slider: the section's own content is always slide 1. Each "Slide" block
+    adds another slide. With no blocks the hero renders exactly as before.
+  endcomment
+  assign slide_blocks = section.blocks | where: 'type', 'slide'
+  assign is_slider = false
+  if slide_blocks.size > 0
+    assign is_slider = true
+    assign slide_total = slide_blocks.size | plus: 1
+  endif
 -%}
 
 <style>
@@ -177,7 +188,89 @@
     #zn-hero-{{ uid }} .zn-media img { max-width: 360px; }
   }
 
+  /* ---------- Slider ---------- */
+  #zn-hero-{{ uid }} .zn-slider {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  #zn-hero-{{ uid }} .zn-track {
+    display: flex;
+    transition: transform {{ s.slide_transition_ms }}ms ease;
+    will-change: transform;
+  }
+  #zn-hero-{{ uid }} .zn-slide {
+    position: relative;
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #zn-hero-{{ uid }} .zn-slide > .zn-wrap { width: 100%; }
+  #zn-hero-{{ uid }} .zn-slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #zn-hero-{{ uid }} .zn-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255,255,255,.85);
+    color: var(--zn-heading);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+    transition: background .15s ease;
+  }
+  #zn-hero-{{ uid }} .zn-arrow:hover { background: #fff; }
+  #zn-hero-{{ uid }} .zn-arrow:focus-visible { outline: 3px solid rgba(0,0,0,.35); outline-offset: 3px; }
+  #zn-hero-{{ uid }} .zn-arrow--prev { left: 16px; }
+  #zn-hero-{{ uid }} .zn-arrow--next { right: 16px; }
+  #zn-hero-{{ uid }} .zn-arrow svg { width: 18px; height: 18px; }
+  #zn-hero-{{ uid }} .zn-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  #zn-hero-{{ uid }} .zn-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border-radius: 50%;
+    border: 0;
+    background: var(--zn-heading);
+    opacity: .25;
+    cursor: pointer;
+    transition: opacity .2s ease, width .2s ease;
+  }
+  #zn-hero-{{ uid }} .zn-dot[aria-current="true"] { opacity: .85; width: 26px; border-radius: 10px; }
+  #zn-hero-{{ uid }} .zn-dot:focus-visible { outline: 3px solid rgba(0,0,0,.35); outline-offset: 3px; }
+
+  @media (max-width: 749px) {
+    #zn-hero-{{ uid }} .zn-arrow { display: none; }
+    #zn-hero-{{ uid }} .zn-dots { bottom: 12px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
+    #zn-hero-{{ uid }} .zn-track { transition: none; }
     #zn-hero-{{ uid }} .zn-btn { transition: none; }
     /* Do not autoplay motion: hide the video so the poster image shows. */
     #zn-hero-{{ uid }} .zn-video { display: none; }
@@ -228,6 +321,18 @@
     {%- endif -%}
   {%- endif -%}
 
+  {%- if is_slider -%}
+  <div
+    class="zn-slider"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="{{ 'Featured banners' | escape }}"
+    data-autoplay="{{ s.slide_autoplay }}"
+    data-interval="{{ s.slide_interval | times: 1000 }}"
+  >
+    <div class="zn-track">
+    <div class="zn-slide is-active" role="group" aria-roledescription="slide" aria-label="1 / {{ slide_total }}">
+  {%- endif -%}
   <div class="zn-wrap">
     <div class="zn-copy">
       <h1 class="zn-title">
@@ -273,7 +378,187 @@
       {%- endif -%}
     </div>
   </div>
+  {%- if is_slider -%}
+    </div>
+
+    {%- for block in slide_blocks -%}
+      {%- assign b = block.settings -%}
+      <div
+        class="zn-slide"
+        role="group"
+        aria-roledescription="slide"
+        aria-label="{{ forloop.index | plus: 1 }} / {{ slide_total }}"
+        aria-hidden="true"
+        inert
+        data-block-id="{{ block.id }}"
+        {{ block.shopify_attributes }}
+      >
+        {%- if b.background_image != blank -%}
+          <img
+            class="zn-slide-bg"
+            src="{{ b.background_image | image_url: width: 2400 }}"
+            srcset="{{ b.background_image | image_url: width: 1200 }} 1200w, {{ b.background_image | image_url: width: 2400 }} 2400w"
+            sizes="100vw"
+            alt=""
+            width="{{ b.background_image.width }}"
+            height="{{ b.background_image.height }}"
+            loading="lazy">
+        {%- endif -%}
+        <div class="zn-wrap">
+          <div class="zn-copy">
+            <h2 class="zn-title">
+              {%- if b.heading_line_1 != blank -%}{{ b.heading_line_1 }}<br>{%- endif -%}
+              {%- if b.heading_line_2 != blank -%}{{ b.heading_line_2 }}<br>{%- endif -%}
+              {%- if b.heading_line_3_bold != blank -%}{{ b.heading_line_3_bold }}{%- endif -%}
+              {%- if b.heading_line_3_regular != blank -%} <span class="zn-reg">{{ b.heading_line_3_regular }}</span>{%- endif -%}
+            </h2>
+
+            {%- if b.subheading != blank -%}
+              <p class="zn-sub">{{ b.subheading }}</p>
+            {%- endif -%}
+
+            {%- if b.body_text != blank -%}
+              <p class="zn-body">{{ b.body_text }}</p>
+            {%- endif -%}
+
+            <div class="zn-cta-row">
+              {%- if b.btn1_label != blank -%}
+                <a class="zn-btn zn-btn--green" href="{{ b.btn1_link | default: '#' }}">{{ b.btn1_label }}</a>
+              {%- endif -%}
+              {%- if b.show_btn2 and b.btn2_label != blank -%}
+                <a class="zn-btn zn-btn--tan" href="{{ b.btn2_link | default: '#' }}">{{ b.btn2_label }}</a>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="zn-media">
+            {%- if b.product_image != blank -%}
+              <img
+                src="{{ b.product_image | image_url: width: 1280 }}"
+                srcset="{{ b.product_image | image_url: width: 640 }} 640w, {{ b.product_image | image_url: width: 1280 }} 1280w"
+                sizes="(max-width: 749px) 360px, 640px"
+                alt="{{ b.product_image.alt | default: 'Product lineup' | escape }}"
+                width="{{ b.product_image.width }}"
+                height="{{ b.product_image.height }}"
+                loading="lazy">
+            {%- else -%}
+              <img
+                src="{{ default_product }}"
+                alt="Product lineup"
+                loading="lazy">
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+    </div>
+
+    {%- if s.slide_show_arrows -%}
+      <button type="button" class="zn-arrow zn-arrow--prev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="zn-arrow zn-arrow--next" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    {%- endif -%}
+
+    {%- if s.slide_show_dots -%}
+      <div class="zn-dots">
+        {%- for i in (1..slide_total) -%}
+          <button type="button" class="zn-dot" aria-label="Go to slide {{ i }}"{% if forloop.first %} aria-current="true"{% endif %}></button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
 </section>
+
+{%- if is_slider -%}
+<script>
+  (function () {
+    var root = document.getElementById('zn-hero-{{ uid }}');
+    if (!root) return;
+    var slider = root.querySelector('.zn-slider');
+    var track = slider.querySelector('.zn-track');
+    var slides = Array.prototype.slice.call(track.children);
+    var dots = Array.prototype.slice.call(slider.querySelectorAll('.zn-dot'));
+    var prev = slider.querySelector('.zn-arrow--prev');
+    var next = slider.querySelector('.zn-arrow--next');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var autoplay = slider.dataset.autoplay === 'true' && !reduceMotion;
+    var interval = parseInt(slider.dataset.interval, 10) || 6000;
+    var current = 0;
+    var timer = null;
+    var paused = false;
+
+    function goTo(index) {
+      var count = slides.length;
+      current = ((index % count) + count) % count;
+      track.style.transform = 'translateX(' + (-100 * current) + '%)';
+      slides.forEach(function (slide, i) {
+        var active = i === current;
+        slide.classList.toggle('is-active', active);
+        if (active) {
+          slide.removeAttribute('aria-hidden');
+          slide.removeAttribute('inert');
+        } else {
+          slide.setAttribute('aria-hidden', 'true');
+          slide.setAttribute('inert', '');
+        }
+      });
+      dots.forEach(function (dot, i) {
+        if (i === current) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    }
+
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() {
+      stop();
+      if (autoplay && !paused) timer = setInterval(function () { goTo(current + 1); }, interval);
+    }
+    function userGo(index) { goTo(index); start(); }
+
+    if (prev) prev.addEventListener('click', function () { userGo(current - 1); });
+    if (next) next.addEventListener('click', function () { userGo(current + 1); });
+    dots.forEach(function (dot, i) { dot.addEventListener('click', function () { userGo(i); }); });
+
+    slider.addEventListener('mouseenter', function () { paused = true; stop(); });
+    slider.addEventListener('mouseleave', function () { paused = false; start(); });
+    slider.addEventListener('focusin', function () { paused = true; stop(); });
+    slider.addEventListener('focusout', function () { paused = false; start(); });
+
+    var startX = null, startY = null;
+    track.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      stop();
+    }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) userGo(current + (dx < 0 ? 1 : -1));
+      else start();
+      startX = startY = null;
+    }, { passive: true });
+
+    // Theme editor: jump to a slide block when it is selected.
+    document.addEventListener('shopify:block:select', function (e) {
+      if (e.detail.sectionId !== '{{ uid }}') return;
+      var idx = slides.findIndex(function (s) { return s.dataset.blockId === e.detail.blockId; });
+      if (idx > -1) { paused = true; stop(); goTo(idx); }
+    });
+    document.addEventListener('shopify:block:deselect', function (e) {
+      if (e.detail.sectionId !== '{{ uid }}') return;
+      paused = false; start();
+    });
+
+    goTo(0);
+    start();
+  })();
+</script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -323,7 +608,46 @@
 
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "label": "Padding top", "min": 20, "max": 160, "step": 4, "unit": "px", "default": 72 },
-    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 20, "max": 160, "step": 4, "unit": "px", "default": 72 }
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 20, "max": 160, "step": 4, "unit": "px", "default": 72 },
+
+    { "type": "header", "content": "Slider" },
+    { "type": "paragraph", "content": "The content above is always slide 1. Add \"Slide\" blocks to turn this hero into a banner slider. With no blocks it stays a single hero." },
+    { "type": "checkbox", "id": "slide_autoplay", "label": "Auto-rotate slides", "default": true },
+    { "type": "range", "id": "slide_interval", "label": "Time per slide", "min": 3, "max": 15, "step": 1, "unit": "s", "default": 6 },
+    { "type": "range", "id": "slide_transition_ms", "label": "Slide animation speed", "min": 200, "max": 1200, "step": 100, "unit": "ms", "default": 600 },
+    { "type": "checkbox", "id": "slide_show_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "slide_show_dots", "label": "Show dots", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 9,
+      "settings": [
+        { "type": "header", "content": "Headline" },
+        { "type": "text", "id": "heading_line_1", "label": "Line 1 (bold)", "default": "Support Metabolism." },
+        { "type": "text", "id": "heading_line_2", "label": "Line 2 (bold)", "default": "Rebalance Hormones." },
+        { "type": "text", "id": "heading_line_3_bold", "label": "Line 3 - bold part", "default": "Restore Energy" },
+        { "type": "text", "id": "heading_line_3_regular", "label": "Line 3 - regular-weight part (italic)", "default": "Naturally." },
+
+        { "type": "header", "content": "Supporting text" },
+        { "type": "text", "id": "subheading", "label": "Subheading" },
+        { "type": "textarea", "id": "body_text", "label": "Body" },
+
+        { "type": "header", "content": "Primary button" },
+        { "type": "text", "id": "btn1_label", "label": "Label", "default": "Shop Now" },
+        { "type": "url", "id": "btn1_link", "label": "Link" },
+
+        { "type": "header", "content": "Secondary button" },
+        { "type": "checkbox", "id": "show_btn2", "label": "Show secondary button", "default": false },
+        { "type": "text", "id": "btn2_label", "label": "Label" },
+        { "type": "url", "id": "btn2_link", "label": "Link" },
+
+        { "type": "header", "content": "Images" },
+        { "type": "image_picker", "id": "product_image", "label": "Product / banner image", "info": "Leave empty to use the default product lockup." },
+        { "type": "image_picker", "id": "background_image", "label": "Slide background (optional)", "info": "Covers the shared video/texture background for this slide only." }
+      ]
+    }
   ],
   "presets": [
     { "name": "Hero" }
