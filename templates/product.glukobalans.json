@@ -485,10 +485,10 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "So many women suffer from bloating and digestion issues. ",
-        "heading_accent": "You don't have to.",
-        "para_1": "Modern life is hard on digestion. More processed food. More stress. Less movement. And for women, monthly hormone shifts slow everything down even more.",
-        "para_2": "No wonder so many of us struggle with bloating, constipation, and feeling off.",
+        "heading": "Stop Letting Afternoon Slumps and Sugar Cravings",
+        "heading_accent": "Run Your Day",
+        "para_1": "Fluctuating blood sugar levels don't just affect your internal health they dictate how you feel every single hour.",
+        "para_2": "When your metabolic health is out of sync, you are more likely to experience energy crashes, persistent brain fog, and relentless food cravings that derail your wellness goals. It is time to step off the glucose rollercoaster.",
         "image": "shopify://shop_images/glukobalans-advanced-metabolic-support-capsules_6-Tested_2.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
         "image_alt": "",
@@ -796,6 +796,119 @@
         "padding_bottom": 72
       }
     },
+    "ingredient_carousel_7tFPYz": {
+      "type": "ingredient-carousel",
+      "blocks": {
+        "ingredient_mkJGrn": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Balance & comfort",
+            "title": "Licorice Root",
+            "text": "A traditional women's herb that rounds out the blend and supports you through hormonal shifts."
+          }
+        },
+        "ingredient_3QTnGe": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Cycle & hormone support",
+            "title": "Spearmint ¬∑ Red Raspberry Leaf",
+            "text": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle."
+          }
+        },
+        "ingredient_yzagea": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Calm & mood",
+            "title": "Chamomile ¬∑ Lemon Verbena",
+            "text": "Quiet irritability and that wired PMS feeling for a calm, grounded mindset."
+          }
+        },
+        "ingredient_FgnaRT": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Steady energy",
+            "title": "Nettle Leaf",
+            "text": "Mineral-rich support for the weeks when your energy dips before your period."
+          }
+        },
+        "ingredient_kQXBn7": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Cramp relief",
+            "title": "Ginger Root",
+            "text": "Warming support for cramps and a settled stomach on the heaviest days."
+          }
+        },
+        "ingredient_CmRT87": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Stress & adrenals",
+            "title": "Ashwagandha",
+            "text": "An adaptogen that helps your body handle stress, the thing that throws cycles off most."
+          }
+        },
+        "ingredient_CYPVLT": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Bloat & digestion",
+            "title": "Fennel Seed",
+            "text": "Eases bloating and keeps digestion comfortable through the luteal phase."
+          }
+        },
+        "ingredient_TJnKeV": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Skin clarity",
+            "title": "Dandelion Root",
+            "text": "Supports the liver as it clears excess hormones, which shows up in your skin."
+          }
+        },
+        "ingredient_cPcJpV": {
+          "type": "ingredient",
+          "settings": {
+            "label": "Restful sleep",
+            "title": "Rose Petal",
+            "text": "A soft, floral finish that helps you wind down at the end of the day."
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_mkJGrn",
+        "ingredient_3QTnGe",
+        "ingredient_yzagea",
+        "ingredient_FgnaRT",
+        "ingredient_kQXBn7",
+        "ingredient_CmRT87",
+        "ingredient_CYPVLT",
+        "ingredient_TJnKeV",
+        "ingredient_cPcJpV"
+      ],
+      "name": "Ingredient carousel",
+      "settings": {
+        "eyebrow": "What's inside",
+        "heading": "9 ingredients. One balancing ritual.",
+        "subheading": "Swipe or tap a card to spin the ring.",
+        "button_label": "Bring my balance back",
+        "button_link": "",
+        "show_dots": false,
+        "visible_sides": 2,
+        "spread": 70,
+        "rotation": 35,
+        "depth": 140,
+        "autoplay_speed": 0,
+        "max_width": 1240,
+        "card_width": 340,
+        "card_height": 500,
+        "card_height_mobile": 560,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "accent_color": "#358440",
+        "band_color": "#FFFFFF",
+        "heading_color": "#161616",
+        "body_color": "#6B6B6B",
+        "background_color": "#FFFFFF"
+      }
+    },
     "custom_liquid_NrNWWX": {
       "type": "custom-liquid",
       "disabled": true,
@@ -983,6 +1096,7 @@
     "real_transformations_gBRGrd",
     "where_it_works_UgDkqP",
     "how_it_works_CzV4dj",
+    "ingredient_carousel_7tFPYz",
     "custom_liquid_NrNWWX",
     "pdp_section_M7d6YD",
     "related-products",
