@@ -31,6 +31,22 @@
     "hero_bzCJQ6": {
       "type": "Hero",
       "blocks": {
+        "slide_A9DLTc": {
+          "type": "slide",
+          "settings": {
+            "heading_line_1": "Support Metabolism.",
+            "heading_line_2": "Rebalance Hormones.",
+            "heading_line_3_bold": "Restore Energy",
+            "heading_line_3_regular": "Naturally.",
+            "subheading": "A targeted supplement system for metabolic and hormonal health.",
+            "body_text": "Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy.",
+            "btn1_label": "Take Our 60-Second Assessment",
+            "btn1_link": "shopify://pages/assessment",
+            "show_btn2": true,
+            "btn2_label": "Shop the System",
+            "btn2_link": "shopify://pages/protocols"
+          }
+        },
         "slide_qjjNex": {
           "type": "slide",
           "settings": {
@@ -39,7 +55,7 @@
             "heading_line_3_bold": "",
             "heading_line_3_regular": "",
             "subheading": "",
-            "body_text": "Clinically-informed botanical formulas designed to nourish,\n\nbalance, and rejuvenate your skin. Enjoy a special 50% OFF\n\non all skincare products. Grab your favorites before the\n\nsale ends on October 31. Big savings, while stocks last.",
+            "body_text": "High-performance natural formulas designed to restore, hydrate,\n\nand protect your skin’s natural barrier. Elevate your self-care\n\nroutine with up to 50% OFF on every single product.\n\nOffer ends October 31. Shop now—while stocks last.",
             "btn1_label": "✨ FLAT 50% OFF  ✨",
             "btn1_link": "shopify://collections/skincare",
             "show_btn2": false,
@@ -50,6 +66,7 @@
         }
       },
       "block_order": [
+        "slide_A9DLTc",
         "slide_qjjNex"
       ],
       "name": "Hero",
