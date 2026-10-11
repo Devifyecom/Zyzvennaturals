@@ -40,11 +40,12 @@
             "heading_line_3_regular": "Naturally.",
             "subheading": "",
             "body_text": "",
-            "btn1_label": "Shop Now",
-            "btn1_link": "",
+            "btn1_label": "✨ FLAT 50% OFF  ✨",
+            "btn1_link": "shopify://collections/skincare",
             "show_btn2": false,
             "btn2_label": "",
-            "btn2_link": ""
+            "btn2_link": "",
+            "product_image": "shopify://shop_images/Gemini_Generated_Image_gknsemgknsemgkns_fa173cd6-4b28-4576-a3c0-63e0ad26ea90.jpg"
           }
         }
       },
