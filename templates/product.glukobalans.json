@@ -816,6 +816,7 @@
         "ingredient_3QTnGe": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/ImageForArticle_27541_17787934490531799.webp",
             "label": "Fullness & satisfaction",
             "title": "Glucomannan · 570 mg",
             "text": "A soluble konjac root fibre that swells with water to add bulk to meals and help you feel satisfied."
@@ -824,6 +825,7 @@
         "ingredient_yzagea": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/FenugreekSeeds.webp",
             "label": "Metabolic wellness",
             "title": "Fenugreek Seed · 300 mg",
             "text": "A traditional seed used for generations to support metabolic and digestive wellness."
