@@ -33,6 +33,7 @@
       "blocks": {
         "slide_A9DLTc": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "heading_line_1": "Support Metabolism.",
             "heading_line_2": "Rebalance Hormones.",
