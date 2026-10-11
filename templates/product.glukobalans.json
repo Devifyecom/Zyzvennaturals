@@ -462,7 +462,6 @@
     },
     "zn_problem_qrpzwU": {
       "type": "ZN-problem",
-      "disabled": true,
       "blocks": {
         "stat_4ec7XL": {
           "type": "stat",
@@ -559,7 +558,6 @@
         "job_qDbFcE",
         "job_ybcJnK"
       ],
-      "disabled": true,
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
@@ -657,7 +655,6 @@
         "testimonial_HUkF3p",
         "testimonial_YkCAxe"
       ],
-      "disabled": true,
       "name": "Real transformations",
       "settings": {
         "eyebrow": "Real Transformations",
@@ -779,7 +776,6 @@
         "step_nmNcqE",
         "step_gwthJd"
       ],
-      "disabled": true,
       "name": "How it works",
       "settings": {
         "eyebrow": "How it works",
