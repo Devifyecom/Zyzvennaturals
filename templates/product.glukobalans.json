@@ -41,7 +41,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "With ingredients traditionally used in western herbal medicine shown to:",
+            "text": "Berberine, gymnema, chromium and plant fibres, combined to support:",
             "text_style": "body"
           }
         },
@@ -55,28 +55,28 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Supports healthy </strong>metabolism"
+            "text": "<strong>Supports healthy</strong> glucose metabolism"
           }
         },
         "text_with_icon_tFXRJr": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Supports blood</strong> sugar wellness"
+            "text": "<strong>Helps manage</strong> sugar & carb cravings"
           }
         },
         "text_with_icon_JNNb37": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Promotes daily</strong> vitality"
+            "text": "<strong>Steady, stimulant-free</strong> daily energy"
           }
         },
         "text_with_icon_bNyEzm": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Vegan-friendly</strong> & GMP certified"
+            "text": "<strong>Vegan, non-GMO</strong> & GMP certified"
           }
         },
         "price": {
@@ -115,28 +115,28 @@
           "type": "dropdown",
           "settings": {
             "heading": "Benefits",
-            "content": "test"
+            "content": "<ul><li><strong>Supports healthy glucose metabolism</strong>, led by 600 mg berberine HCl per serving</li><li><strong>Supports blood sugar levels already within the normal range</strong></li><li><strong>Helps manage sugar and carb cravings</strong> with gymnema and saffron</li><li><strong>Chromium contributes to normal macronutrient metabolism</strong> and the maintenance of normal blood glucose levels</li><li><strong>Adds soluble and prebiotic fibre</strong> from konjac root and chicory root</li><li><strong>Stimulant-free.</strong> No caffeine, no jitters, no crash</li><li><strong>Clean label:</strong> 100% vegan, non-GMO, no artificial ingredients, no proprietary blends</li><li><strong>Quality you can check:</strong> made in a GMP-certified facility, third-party lab tested, heavy-metal tested, COA available</li></ul>"
           }
         },
         "dropdown_kwbfJF": {
           "type": "dropdown",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "Tongkat Ali – A traditional botanical widely used to support men's vitality and wellness.  Ashwagandha – An adaptogenic herb traditionally used to support balance, resilience, and overall wellbeing.Black Maca Root – A nutrient-rich botanical commonly included in men's vitality and performance formulas.Panax Ginseng – A traditional herb valued for supporting energy, vitality, and active lifestyles.Cordyceps Mushroom – Widely used in wellness practices to support energy and performance-focused routines.Fenugreek – A botanical traditionally used in men's health and nutritional wellness supplements.Shilajit – A mineral-rich ingredient long used in traditional wellness systems to support vitality.Moringa – A nutrient-dense plant providing naturally occurring vitamins, minerals, and beneficial plant compounds.Zinc – An essential mineral that contributes to the maintenance of normal testosterone levels in the body.Black Pepper Extract – Included to support nutrient absorption and ingredient bioavailability.{{ product.metafields.custom.benefit_3.value }}"
+            "content": "<p>Per 3-capsule serving. Every dose is on the label, with no proprietary blends.</p><ul><li><strong>Berberine HCl (600 mg)</strong>: the most researched plant compound for healthy glucose metabolism.</li><li><strong>Glucomannan, konjac root fibre (570 mg)</strong>: a soluble fibre that swells with water to add bulk and help you feel satisfied.</li><li><strong>Fenugreek seed extract (300 mg)</strong>: a traditional seed used to support metabolic and digestive wellness.</li><li><strong>Gymnema sylvestre extract (180 mg)</strong>: known in Ayurveda as <em>gurmar</em>, the \"sugar destroyer\", traditionally used to help curb a sweet tooth.</li><li><strong>Inulin, chicory root fibre (135 mg)</strong>: a prebiotic fibre that feeds beneficial gut bacteria.</li><li><strong>Saffron extract (30 mg)</strong>: traditionally used to support mood and balanced eating habits.</li><li><strong>Ceylon cinnamon extract (9 mg)</strong>: \"true\" cinnamon, a classic in glucose wellness formulas.</li><li><strong>Black pepper extract, 95% piperine (6 mg)</strong>: helps your body absorb the botanicals.</li><li><strong>Chromium picolinate (200 mcg, 571% DV)</strong>: contributes to the maintenance of normal blood glucose levels.</li></ul><p><em>Other ingredients: vegetable capsule (HPMC).</em></p>"
           }
         },
         "dropdown_Pn6Edz": {
           "type": "dropdown",
           "settings": {
             "heading": "How to Use",
-            "content": "How to Use How to Use How to Use How to Use How to Use"
+            "content": "<p><strong>Take 3 capsules a day</strong> with a full glass of water. For best results, take one capsule before each main meal.</p><p>Take it every day. Most people judge it after 4 to 6 weeks of daily use alongside a balanced diet and regular movement.</p><p>One bottle = 120 capsules = 40-day supply.</p><p>Do not exceed the recommended daily serving.</p>"
           }
         },
         "dropdown_MnLgFG": {
           "type": "dropdown",
           "settings": {
             "heading": "FAQ",
-            "content": "FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ"
+            "content": "<p><strong>How many capsules do I take?</strong><br>3 per day, ideally one before each main meal.</p><p><strong>How long does a bottle last?</strong><br>40 days (120 capsules at 3 per day).</p><p><strong>Does it contain caffeine or stimulants?</strong><br>No. Glukobalans is completely stimulant-free.</p><p><strong>Is it vegan?</strong><br>Yes. 100% plant-based, non-GMO, in vegetable (HPMC) capsules.</p><p><strong>Can I take it with medication?</strong><br>Berberine can interact with some medications, including glucose-lowering medicines. Speak to your doctor first.</p>"
           }
         },
         "dropdown_MkwwcT": {
@@ -144,13 +144,13 @@
           "disabled": true,
           "settings": {
             "heading": "Important Information",
-            "content": "Important Information"
+            "content": "<p>Food supplements should not replace a varied, balanced diet and a healthy lifestyle.</p><p>Not suitable for children, or during pregnancy or breastfeeding. If you take any medication (especially for blood sugar or blood pressure) or have a medical condition, consult your doctor before use. Stop use and seek advice if you experience digestive discomfort.</p><p>Take with plenty of water. Store in a cool, dry place out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
           }
         },
         "recommend_widget_X6bNrg": {
           "type": "recommend_widget",
           "settings": {
-            "heading": "Complete the System",
+            "heading": "Build Your Daily Balance Routine",
             "products": [
               "anti-bacterial-lemon-soap-200g",
               "brightening-night-cream",
@@ -162,7 +162,7 @@
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Three days in and my jeans button without a fight. Wild.\", n:\"Priya N.\"},\n    {q:\"I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.\", n:\"Danielle O.\"},\n    {q:\"I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.\", n:\"Bethany C.\"},\n    {q:\"My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.\", n:\"Marisol V.\"},\n    {q:\"Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.\", n:\"Kayleigh S.\"},\n    {q:\"First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.\", n:\"Renata F.\"},\n    {q:\"This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.\", n:\"Simone A.\"},\n    {q:\"Gentle overnight, flatter by morning. That is the whole review.\", n:\"Tovah L.\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
+            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Glukobalans customer review here.\", n:\"Customer name\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
           }
         },
         "video_testimonials_9dcyFw": {
@@ -172,23 +172,23 @@
             "video_url": "https://cdn.shopify.com/videos/c/o/v/ac4be22776cb47fd825e881e2c7d1961.mp4",
             "poster_image": "shopify://shop_images/Glukobalans_Metabolic_Support_Capsules_Vegan_GMP_Lab-Tested.png",
             "sound_button_text": "TAP FOR SOUND",
-            "bottom_text": "See it for yourself",
-            "review_name_1": "Priya N.",
-            "review_text_1": "Three days in and my jeans button without a fight. Wild.",
-            "review_name_2": "Danielle O.",
-            "review_text_2": "I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.",
-            "review_name_3": "Bethany C.",
-            "review_text_3": "I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.",
-            "review_name_4": "Marisol V.",
-            "review_text_4": "My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.",
-            "review_name_5": "Kayleigh S.",
-            "review_text_5": "Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.",
-            "review_name_6": "Renata F.",
-            "review_text_6": "First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.",
-            "review_name_7": "Simone A.",
-            "review_text_7": "This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.",
-            "review_name_8": "Tovah L.",
-            "review_text_8": "Gentle overnight, flatter by morning. That is the whole review."
+            "bottom_text": "Real routines, real results",
+            "review_name_1": "Customer name",
+            "review_text_1": "Add a verified Glukobalans customer review here.",
+            "review_name_2": "Customer name",
+            "review_text_2": "Add a verified Glukobalans customer review here.",
+            "review_name_3": "Customer name",
+            "review_text_3": "Add a verified Glukobalans customer review here.",
+            "review_name_4": "Customer name",
+            "review_text_4": "Add a verified Glukobalans customer review here.",
+            "review_name_5": "Customer name",
+            "review_text_5": "Add a verified Glukobalans customer review here.",
+            "review_name_6": "Customer name",
+            "review_text_6": "Add a verified Glukobalans customer review here.",
+            "review_name_7": "Customer name",
+            "review_text_7": "Add a verified Glukobalans customer review here.",
+            "review_name_8": "Customer name",
+            "review_text_8": "Add a verified Glukobalans customer review here."
           }
         }
       },
@@ -467,16 +467,16 @@
           "type": "stat",
           "disabled": true,
           "settings": {
-            "number": "61%",
-            "label": "of adults have digestive discomfort every week"
+            "number": "17 tsp",
+            "label": "of added sugar the average American eats every day (American Heart Association)"
           }
         },
         "stat_dMwcXL": {
           "type": "stat",
           "disabled": true,
           "settings": {
-            "number": "1 in 3",
-            "label": "deal with occasional constipation, and it hits women hardest"
+            "number": "Nearly 3x",
+            "label": "the daily added-sugar limit the AHA recommends for women"
           }
         }
       },
@@ -486,18 +486,18 @@
       ],
       "name": "ZN Problem",
       "settings": {
-        "eyebrow": "You are not imagining it.",
-        "heading": "Stop Letting Afternoon Slumps and Sugar Cravings",
-        "heading_accent": "Run Your Day",
-        "para_1": "Fluctuating blood sugar levels don't just affect your internal health they dictate how you feel every single hour.",
-        "para_2": "When your metabolic health is out of sync, you are more likely to experience energy crashes, persistent brain fog, and relentless food cravings that derail your wellness goals. It is time to step off the glucose rollercoaster.",
+        "eyebrow": "It's not a willpower problem.",
+        "heading": "The 3pm crash. The sugar cravings. The energy that never lasts. ",
+        "heading_accent": "Your metabolism deserves better support.",
+        "para_1": "Busy days, skipped meals, refined carbs and stress all push your energy up and down. The more it swings, the harder the cravings hit, and the harder it is to stay on track.",
+        "para_2": "It isn't about trying harder. It's about giving your body steadier support from meal to meal.",
         "image": "shopify://shop_images/glukobalans-advanced-metabolic-support-capsules_6-Tested_2.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "",
-        "band_heading": "That's why we created Zyzven Naturals Cleanse",
-        "band_copy": "Herbs traditionally used to ease bloating, promote regularity, and help you wake up feeling lighter. Ingredients that work with your body, not against it.",
-        "kicker": "WAKE UP FEELING LIGHTER.",
-        "button_label": "Start My Relief →",
+        "image_alt": "Glukobalans Metabolic Support Capsules",
+        "band_heading": "That's why we created Glukobalans™",
+        "band_copy": "Berberine, gymnema, chromium and two plant fibres in one clean, stimulant-free capsule. Made to support healthy glucose metabolism, take the edge off cravings and keep your energy steady through the day.",
+        "kicker": "STEADY ENERGY. FEWER CRAVINGS. EVERY DAY.",
+        "button_label": "Start My Balance →",
         "button_action": "link",
         "product": "",
         "go_to_cart": false,
@@ -524,33 +524,33 @@
         "job_Lqx6dg": {
           "type": "job",
           "settings": {
-            "title": "Calms bloating & gas",
-            "herbs": "Fennel · Ginger · Lemongrass",
-            "copy": "These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals."
+            "title": "Supports glucose metabolism",
+            "herbs": "Berberine HCl · Chromium",
+            "copy": "600 mg of berberine, the most studied plant compound for metabolic health, with chromium, which contributes to the maintenance of normal blood glucose levels."
           }
         },
         "job_B47xCK": {
           "type": "job",
           "settings": {
-            "title": "Eases digestion",
-            "herbs": "Milk Thistle · Burdock",
-            "copy": "Milk thistle and burdock support your liver and gut, so food breaks down cleanly and you feel less heavy and off after meals."
+            "title": "Takes the edge off cravings",
+            "herbs": "Gymnema · Saffron",
+            "copy": "Gymnema, the Ayurvedic \"sugar destroyer\", is traditionally used to quiet a sweet tooth. Saffron is traditionally used to support mood and balanced eating."
           }
         },
         "job_qDbFcE": {
           "type": "job",
           "settings": {
-            "title": "Gets you regular",
-            "herbs": "Low-dose Senna",
-            "copy": "A gentle, deliberate dose nudges your bowel overnight, so you wake up regular. No cramping, because the soothing herbs balance it."
+            "title": "Keeps you satisfied",
+            "herbs": "Glucomannan · Inulin",
+            "copy": "Konjac and chicory root fibres add bulk to your meals so you feel fuller for longer, and give your gut bacteria prebiotic support."
           }
         },
         "job_ybcJnK": {
           "type": "job",
           "settings": {
-            "title": "Releases water weight",
-            "herbs": "Dandelion · Nettle",
-            "copy": "Natural diuretics that flush the stored water behind the puffiness in your face, fingers, and stomach."
+            "title": "Supports digestion & absorption",
+            "herbs": "Fenugreek · Ceylon Cinnamon · Black Pepper",
+            "copy": "Traditional metabolic botanicals, plus piperine from black pepper to help your body absorb the whole formula."
           }
         }
       },
@@ -564,11 +564,11 @@
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
-        "title": "One Cup. Four Jobs.",
-        "lead": "<p>Zyzven Naturals isn't another supplement to choke down. It's functional herbs that do four things at once, gently, while you sleep.</p>",
-        "callout": "<p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Zyzven Naturals balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>",
-        "disclaimer": "",
-        "button_label": "Start my relief",
+        "title": "3 Capsules. 4 Jobs.",
+        "lead": "<p>Glukobalans isn't a single-ingredient pill. It's 9 ingredients chosen to work together, so every serving supports your metabolism from more than one angle.</p>",
+        "callout": "<p><strong>The difference:</strong> many blood sugar formulas hide behind proprietary blends and tiny doses. Glukobalans prints every dose on the label, leads with 600 mg of berberine, and is <em>completely stimulant-free</em>. You get steady support without the jitters.</p>",
+        "disclaimer": "<p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+        "button_label": "Start my balance",
         "button_link": "#",
         "button_arrow": true,
         "accent_color": "#358440",
@@ -595,7 +595,7 @@
       "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>One Cup. Four Jobs. — preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHY IT WORKS / One Cup. Four Jobs.\n     Scoped to #hg-how so nothing leaks into other .section blocks.\n     Theme variables are used with fallbacks, so if --pink etc. are\n     defined on :root the theme values win.\n     ============================================================ */\n  #hg-how {\n    --hw-pink: var(--pink, #EC3A8C);\n    --hw-pink-soft: var(--pink-soft, #FCE7F1);\n    --hw-line: var(--gray-light, #EDEDF0);\n    --hw-body: var(--gray-text, #6E7075);\n    --hw-ink: var(--charcoal, #17171A);\n    --hw-max: 1160px;\n    --hw-gap: 18px;\n\n    padding: 64px 20px 72px;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  #hg-how .hw-inner {\n    max-width: var(--hw-max);\n    margin: 0 auto;\n  }\n\n  /* ---------- header ---------- */\n  #hg-how .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n    text-align: center;\n  }\n\n  #hg-how .section-h2 {\n    margin: 0 auto 20px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-how .section-lead {\n    margin: 0 auto 34px;\n    max-width: 620px;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: var(--hw-body);\n    text-align: center;\n    text-wrap: pretty;\n  }\n\n  /* ---------- card grid ---------- */\n  #hg-how .hw-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: var(--hw-gap);\n    align-items: stretch;\n    margin: 0 0 18px;\n  }\n\n  #hg-how .hw-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background: #fff;\n    border: 1px solid var(--hw-line);\n    border-radius: 16px;\n    padding: 28px 20px 26px;\n    text-align: center;\n    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);\n    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;\n  }\n\n  #hg-how .hw-card:hover {\n    transform: translateY(-3px);\n    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);\n    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px rgba(236,58,140,.28);\n  }\n\n  #hg-how .hw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 0 0 15px;\n    border-radius: 50%;\n    background: var(--hw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n  }\n\n  #hg-how .hw-card-title {\n    margin: 0 0 8px;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1.3;\n    letter-spacing: -.012em;\n    color: var(--hw-ink);\n  }\n\n  #hg-how .hw-herbs {\n    margin: 0 0 12px;\n    font-size: 11px;\n    font-weight: 800;\n    line-height: 1.4;\n    letter-spacing: .085em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n  }\n\n  #hg-how .hw-copy {\n    margin: 0;\n    font-size: 13px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- callout ---------- */\n  #hg-how .hw-callout {\n    max-width: 720px;\n    margin: 0 auto;\n    padding: 28px 32px;\n    border-radius: 16px;\n    background: var(--hw-pink-soft);\n    text-align: center;\n  }\n\n  #hg-how .hw-callout p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--hw-ink);\n    text-wrap: pretty;\n  }\n\n  #hg-how .hw-callout strong { font-weight: 700; }\n  #hg-how .hw-callout em { font-style: italic; }\n\n  /* ---------- CTA ---------- */\n  #hg-how .hw-cta {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #hg-how .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 300px;\n    min-height: 51px;\n    padding: 15px 28px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--hw-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 8px 24px -6px rgba(236,58,140,.45);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-how .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 14px 30px -8px rgba(236,58,140,.55);\n  }\n\n  #hg-how .atc:active {\n    transform: translateY(0);\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.45);\n  }\n\n  #hg-how .atc:focus-visible {\n    outline: 2px solid var(--hw-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-how .atc svg {\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2.2;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-how .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1080px) {\n    #hg-how { padding: 56px 18px 64px; }\n    #hg-how .hw-grid { gap: 14px; }\n    #hg-how .hw-card { padding: 26px 16px 24px; }\n  }\n\n  @media (max-width: 900px) {\n    #hg-how .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 5vw, 32px); }\n    #hg-how .hw-callout { padding: 26px 24px; }\n  }\n\n  @media (max-width: 560px) {\n    #hg-how {\n      padding: 48px 16px 56px;\n      --hw-gap: 12px;\n    }\n    #hg-how .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }\n    #hg-how .section-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }\n\n    #hg-how .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }\n    #hg-how .hw-card {\n      flex-direction: row;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 20px 20px 21px;\n      text-align: left;\n    }\n    #hg-how .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }\n    #hg-how .hw-card-title { font-size: 17px; margin-bottom: 6px; }\n    #hg-how .hw-herbs { font-size: 11px; margin-bottom: 9px; }\n    #hg-how .hw-copy { font-size: 14px; line-height: 1.55; }\n\n    #hg-how .hw-callout { padding: 22px 20px; border-radius: 14px; }\n    #hg-how .hw-callout p { font-size: 15px; }\n    #hg-how .atc { max-width: none; font-size: 15px; }\n  }\n\n  @media (hover: none) {\n    #hg-how .hw-card:hover { transform: none; border-color: var(--hw-line); box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16); }\n    #hg-how .atc:hover { transform: none; }\n    #hg-how .atc:hover svg { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-how * { transition: none !important; }\n    #hg-how .hw-card:hover, #hg-how .atc:hover { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section\" id=\"hg-how\">\n  <div class=\"hw-inner\">\n\n    <p class=\"section-eyebrow\">Why it works</p>\n    <h2 class=\"section-h2\">One Cup. Four Jobs.</h2>\n    <p class=\"section-lead\">Hey Girl isn't another supplement to choke down. It's functional herbs that do four things at once, gently, while you sleep.</p>\n\n    <ol class=\"hw-grid\" style=\"list-style:none;margin:0 0 18px;padding:0;\">\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">1</div>\n        <div>\n          <h3 class=\"hw-card-title\">Calms bloating &amp; gas</h3>\n          <p class=\"hw-herbs\">Fennel · Ginger · Lemongrass</p>\n          <p class=\"hw-copy\">These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">2</div>\n        <div>\n          <h3 class=\"hw-card-title\">Eases digestion</h3>\n          <p class=\"hw-herbs\">Milk Thistle · Burdock</p>\n          <p class=\"hw-copy\">Milk thistle and burdock support your liver and gut, so food breaks down cleanly and you feel less heavy and off after meals.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">3</div>\n        <div>\n          <h3 class=\"hw-card-title\">Gets you regular</h3>\n          <p class=\"hw-herbs\">Low-dose Senna</p>\n          <p class=\"hw-copy\">A gentle, deliberate dose nudges your bowel overnight, so you wake up regular. No cramping, because the soothing herbs balance it.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">4</div>\n        <div>\n          <h3 class=\"hw-card-title\">Releases water weight</h3>\n          <p class=\"hw-herbs\">Dandelion · Nettle</p>\n          <p class=\"hw-copy\">Natural diuretics that flush the stored water behind the puffiness in your face, fingers, and stomach.</p>\n        </div>\n      </li>\n    </ol>\n\n    <div class=\"hw-callout\">\n      <p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Hey Girl balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>\n    </div>\n\n    <div class=\"hw-cta\">\n      <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n        <span>Start my relief</span>\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n      </button>\n    </div>\n\n  </div>\n</section>\n\n<script>function hgBuy(){ /* theme handler */ }</script>\n\n</body>\n</html>",
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>3 Capsules. 4 Jobs.</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHY IT WORKS / One Cup. Four Jobs.\n     Scoped to #hg-how so nothing leaks into other .section blocks.\n     Theme variables are used with fallbacks, so if --pink etc. are\n     defined on :root the theme values win.\n     ============================================================ */\n  #hg-how {\n    --hw-pink: var(--pink, #EC3A8C);\n    --hw-pink-soft: var(--pink-soft, #FCE7F1);\n    --hw-line: var(--gray-light, #EDEDF0);\n    --hw-body: var(--gray-text, #6E7075);\n    --hw-ink: var(--charcoal, #17171A);\n    --hw-max: 1160px;\n    --hw-gap: 18px;\n\n    padding: 64px 20px 72px;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  #hg-how .hw-inner {\n    max-width: var(--hw-max);\n    margin: 0 auto;\n  }\n\n  /* ---------- header ---------- */\n  #hg-how .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n    text-align: center;\n  }\n\n  #hg-how .section-h2 {\n    margin: 0 auto 20px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-how .section-lead {\n    margin: 0 auto 34px;\n    max-width: 620px;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: var(--hw-body);\n    text-align: center;\n    text-wrap: pretty;\n  }\n\n  /* ---------- card grid ---------- */\n  #hg-how .hw-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: var(--hw-gap);\n    align-items: stretch;\n    margin: 0 0 18px;\n  }\n\n  #hg-how .hw-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background: #fff;\n    border: 1px solid var(--hw-line);\n    border-radius: 16px;\n    padding: 28px 20px 26px;\n    text-align: center;\n    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);\n    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;\n  }\n\n  #hg-how .hw-card:hover {\n    transform: translateY(-3px);\n    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);\n    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px rgba(236,58,140,.28);\n  }\n\n  #hg-how .hw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 0 0 15px;\n    border-radius: 50%;\n    background: var(--hw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n  }\n\n  #hg-how .hw-card-title {\n    margin: 0 0 8px;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1.3;\n    letter-spacing: -.012em;\n    color: var(--hw-ink);\n  }\n\n  #hg-how .hw-herbs {\n    margin: 0 0 12px;\n    font-size: 11px;\n    font-weight: 800;\n    line-height: 1.4;\n    letter-spacing: .085em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n  }\n\n  #hg-how .hw-copy {\n    margin: 0;\n    font-size: 13px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- callout ---------- */\n  #hg-how .hw-callout {\n    max-width: 720px;\n    margin: 0 auto;\n    padding: 28px 32px;\n    border-radius: 16px;\n    background: var(--hw-pink-soft);\n    text-align: center;\n  }\n\n  #hg-how .hw-callout p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--hw-ink);\n    text-wrap: pretty;\n  }\n\n  #hg-how .hw-callout strong { font-weight: 700; }\n  #hg-how .hw-callout em { font-style: italic; }\n\n  /* ---------- CTA ---------- */\n  #hg-how .hw-cta {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #hg-how .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 300px;\n    min-height: 51px;\n    padding: 15px 28px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--hw-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 8px 24px -6px rgba(236,58,140,.45);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-how .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 14px 30px -8px rgba(236,58,140,.55);\n  }\n\n  #hg-how .atc:active {\n    transform: translateY(0);\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.45);\n  }\n\n  #hg-how .atc:focus-visible {\n    outline: 2px solid var(--hw-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-how .atc svg {\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2.2;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-how .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1080px) {\n    #hg-how { padding: 56px 18px 64px; }\n    #hg-how .hw-grid { gap: 14px; }\n    #hg-how .hw-card { padding: 26px 16px 24px; }\n  }\n\n  @media (max-width: 900px) {\n    #hg-how .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 5vw, 32px); }\n    #hg-how .hw-callout { padding: 26px 24px; }\n  }\n\n  @media (max-width: 560px) {\n    #hg-how {\n      padding: 48px 16px 56px;\n      --hw-gap: 12px;\n    }\n    #hg-how .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }\n    #hg-how .section-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }\n\n    #hg-how .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }\n    #hg-how .hw-card {\n      flex-direction: row;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 20px 20px 21px;\n      text-align: left;\n    }\n    #hg-how .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }\n    #hg-how .hw-card-title { font-size: 17px; margin-bottom: 6px; }\n    #hg-how .hw-herbs { font-size: 11px; margin-bottom: 9px; }\n    #hg-how .hw-copy { font-size: 14px; line-height: 1.55; }\n\n    #hg-how .hw-callout { padding: 22px 20px; border-radius: 14px; }\n    #hg-how .hw-callout p { font-size: 15px; }\n    #hg-how .atc { max-width: none; font-size: 15px; }\n  }\n\n  @media (hover: none) {\n    #hg-how .hw-card:hover { transform: none; border-color: var(--hw-line); box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16); }\n    #hg-how .atc:hover { transform: none; }\n    #hg-how .atc:hover svg { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-how * { transition: none !important; }\n    #hg-how .hw-card:hover, #hg-how .atc:hover { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section\" id=\"hg-how\">\n  <div class=\"hw-inner\">\n\n    <p class=\"section-eyebrow\">Why it works</p>\n    <h2 class=\"section-h2\">3 Capsules. 4 Jobs.</h2>\n    <p class=\"section-lead\">Glukobalans isn't a single-ingredient pill. It's 9 ingredients chosen to work together, so every serving supports your metabolism from more than one angle.</p>\n\n    <ol class=\"hw-grid\" style=\"list-style:none;margin:0 0 18px;padding:0;\">\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">1</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports glucose metabolism</h3>\n          <p class=\"hw-herbs\">Berberine HCl · Chromium</p>\n          <p class=\"hw-copy\">600 mg of berberine, the most studied plant compound for metabolic health, with chromium, which contributes to the maintenance of normal blood glucose levels.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">2</div>\n        <div>\n          <h3 class=\"hw-card-title\">Takes the edge off cravings</h3>\n          <p class=\"hw-herbs\">Gymnema · Saffron</p>\n          <p class=\"hw-copy\">Gymnema, the Ayurvedic \"sugar destroyer\", is traditionally used to quiet a sweet tooth. Saffron is traditionally used to support mood and balanced eating.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">3</div>\n        <div>\n          <h3 class=\"hw-card-title\">Keeps you satisfied</h3>\n          <p class=\"hw-herbs\">Glucomannan · Inulin</p>\n          <p class=\"hw-copy\">Konjac and chicory root fibres add bulk to your meals so you feel fuller for longer, and give your gut bacteria prebiotic support.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">4</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports digestion &amp; absorption</h3>\n          <p class=\"hw-herbs\">Fenugreek · Ceylon Cinnamon · Black Pepper</p>\n          <p class=\"hw-copy\">Traditional metabolic botanicals, plus piperine from black pepper to help your body absorb the whole formula.</p>\n        </div>\n      </li>\n    </ol>\n\n    <div class=\"hw-callout\">\n      <p><strong>The difference:</strong> many blood sugar formulas hide behind proprietary blends and tiny doses. Glukobalans prints every dose on the label, leads with 600 mg of berberine, and is <em>completely stimulant-free</em>. You get steady support without the jitters.</p>\n    </div>\n\n    <div class=\"hw-cta\">\n      <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n        <span>Start my balance</span>\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n      </button>\n    </div>\n\n  </div>\n</section>\n\n<script>function hgBuy(){ /* theme handler */ }</script>\n\n</body>\n</html>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -609,11 +609,11 @@
           "disabled": true,
           "settings": {
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-18_at_5.39.51_PM_ejrog0.png",
-            "image_alt": "Flatter stomach, side profile",
-            "badge": "Bloating",
+            "image_alt": "Glukobalans customer: cravings",
+            "badge": "Cravings",
             "rating": 5,
-            "quote": "\"My stomach went from puffy to flat. The side profile says it all.\"",
-            "name": "Laura K. · Los Angeles, CA"
+            "quote": "Add a verified Glukobalans customer review here.",
+            "name": "Customer name · City, State"
           }
         },
         "testimonial_xF7GgV": {
@@ -621,11 +621,11 @@
           "settings": {
             "image": "shopify://shop_images/glukobalans-advanced-metabolic-support-capsules.png",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/v1777656817/Screenshot_2025-12-08_at_4.12.11_PM_mhjwyq.png",
-            "image_alt": "Comfortable after meals, no more heaviness",
-            "badge": "Digestion",
+            "image_alt": "Glukobalans customer: energy",
+            "badge": "Energy",
             "rating": 5,
-            "quote": "\"No more heaviness or gas after meals. My gut finally feels normal.\"",
-            "name": "Hannah O. · Phoenix, AZ"
+            "quote": "Add a verified Glukobalans customer review here.",
+            "name": "Customer name · City, State"
           }
         },
         "testimonial_HUkF3p": {
@@ -633,22 +633,22 @@
           "disabled": true,
           "settings": {
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-05-01_at_12.38.47_PM_wge0mq.png",
-            "image_alt": "Comfortable, relaxed customer holding cleanse tea",
-            "badge": "Constipation",
+            "image_alt": "Glukobalans customer: routine",
+            "badge": "Routine",
             "rating": 5,
-            "quote": "\"Regular every morning. My stomach feels normal again.\"",
-            "name": "Amanda R. · Chicago, IL"
+            "quote": "Add a verified Glukobalans customer review here.",
+            "name": "Customer name · City, State"
           }
         },
         "testimonial_YkCAxe": {
           "type": "testimonial",
           "settings": {
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-16_at_6.53.03_PM_alhf6p.png",
-            "image_alt": "Reduced facial puffiness",
-            "badge": "Water Retention",
+            "image_alt": "Glukobalans customer: metabolism",
+            "badge": "Metabolism",
             "rating": 5,
-            "quote": "\"My face stopped looking swollen. My cheekbones are back.\"",
-            "name": "Brittany Collins · Los Angeles, CA"
+            "quote": "Add a verified Glukobalans customer review here.",
+            "name": "Customer name · City, State"
           }
         }
       },
@@ -661,10 +661,10 @@
       "disabled": true,
       "name": "Real transformations",
       "settings": {
-        "eyebrow": "Real Transformations",
-        "title": "A Small Daily Habit, Built Into Your Routine",
-        "lead": "<p>One capsule, taken consistently, as part of a routine you already believe in.</p>",
-        "disclaimer": "",
+        "eyebrow": "Real Routines",
+        "title": "What steady feels like.",
+        "lead": "<p>Fewer cravings, steadier energy, a routine that sticks. Here's what customers say about their daily Glukobalans habit.</p>",
+        "disclaimer": "<p>Individual results vary. Glukobalans works best alongside a balanced diet and an active lifestyle.</p>",
         "accent_color": "#358440",
         "badge_text_color": "#ffffff",
         "star_color": "#358440",
@@ -686,31 +686,31 @@
         "benefit_FmjmTE": {
           "type": "benefit",
           "settings": {
-            "text": "Flushes the bacteria behind UTIs"
+            "text": "Supports healthy glucose metabolism"
           }
         },
         "benefit_R7wza9": {
           "type": "benefit",
           "settings": {
-            "text": "Soothes an irritated bladder"
+            "text": "Supports blood sugar already in the normal range"
           }
         },
         "benefit_HhJjAh": {
           "type": "benefit",
           "settings": {
-            "text": "Eases that constant urge to go"
+            "text": "Helps manage sugar & carb cravings"
           }
         },
         "benefit_TKFi8j": {
           "type": "benefit",
           "settings": {
-            "text": "Supports your kidneys"
+            "text": "Helps you feel fuller after meals"
           }
         },
         "benefit_FNty6F": {
           "type": "benefit",
           "settings": {
-            "text": "Calms the burning"
+            "text": "Supports steady energy, no stimulants"
           }
         }
       },
@@ -726,8 +726,8 @@
       "settings": {
         "image": "shopify://shop_images/WhatsApp_Image_2026-09-04_at_0.16.06_PM_3.jpg",
         "eyebrow": "Where it works",
-        "heading": "One blend. Support from every angle.",
-        "text": "Most cranberry pills stop at one job. Zyzven Naturals D-Mannose works across your whole urinary tract at once, so you get real support right where you feel it.",
+        "heading": "One capsule. Support from every angle.",
+        "text": "Most metabolic supplements do one job. Glukobalans combines berberine, botanicals, chromium and fibre, so it supports your glucose metabolism, your cravings and your fullness at the same time.",
         "reverse_layout": false,
         "mobile_image_first": true,
         "mobile_shape": "card",
@@ -751,9 +751,9 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_z1r9cuz1r9cuz1r9.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
-            "image_alt": "Steep the loose leaf tea",
-            "title": "Follow the Label",
-            "desc": "Take Glukobalans™ as directed on the product label with a glass of water."
+            "image_alt": "Glukobalans capsules with a glass of water",
+            "title": "Take",
+            "desc": "Take 1 capsule with a glass of water before each main meal. That's 3 a day."
           }
         },
         "step_nmNcqE": {
@@ -761,9 +761,9 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_ptd6yaptd6yaptd6.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Build Around Balanced Habits",
-            "title": "Build Around Balanced Habits",
-            "desc": "Pair your daily capsule with a balanced diet and regular activity for a routine that supports itself."
+            "image_alt": "Balanced meal with Glukobalans",
+            "title": "Eat",
+            "desc": "Enjoy balanced meals. The fibres and botanicals work alongside your food to keep you satisfied."
           }
         },
         "step_gwthJd": {
@@ -771,9 +771,9 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c3xa9rc3xa9rc3xa.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Stay Consistent",
-            "title": "Stay Consistent",
-            "desc": "Like most wellness habits, consistency over time matters more than any single day."
+            "image_alt": "Steady energy through the day",
+            "title": "Stay consistent",
+            "desc": "Make it a daily habit. Steadier energy and fewer cravings come from consistency, not a quick fix."
           }
         }
       },
@@ -784,7 +784,7 @@
       ],
       "name": "How it works",
       "settings": {
-        "eyebrow": "How it works",
+        "eyebrow": "How to use",
         "title": "Easy as 1. 2. 3.",
         "use_gradient": true,
         "bg_top": "#ffffff",
@@ -808,73 +808,73 @@
         "ingredient_mkJGrn": {
           "type": "ingredient",
           "settings": {
-            "label": "Balance & comfort",
-            "title": "Licorice Root",
-            "text": "A traditional women's herb that rounds out the blend and supports you through hormonal shifts."
+            "label": "Glucose metabolism",
+            "title": "Berberine HCl · 600 mg",
+            "text": "The most researched plant compound for healthy glucose metabolism, and the backbone of the formula."
           }
         },
         "ingredient_3QTnGe": {
           "type": "ingredient",
           "settings": {
-            "label": "Cycle & hormone support",
-            "title": "Spearmint ¬∑ Red Raspberry Leaf",
-            "text": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle."
+            "label": "Fullness & satisfaction",
+            "title": "Glucomannan · 570 mg",
+            "text": "A soluble konjac root fibre that swells with water to add bulk to meals and help you feel satisfied."
           }
         },
         "ingredient_yzagea": {
           "type": "ingredient",
           "settings": {
-            "label": "Calm & mood",
-            "title": "Chamomile ¬∑ Lemon Verbena",
-            "text": "Quiet irritability and that wired PMS feeling for a calm, grounded mindset."
+            "label": "Metabolic wellness",
+            "title": "Fenugreek Seed · 300 mg",
+            "text": "A traditional seed used for generations to support metabolic and digestive wellness."
           }
         },
         "ingredient_FgnaRT": {
           "type": "ingredient",
           "settings": {
-            "label": "Steady energy",
-            "title": "Nettle Leaf",
-            "text": "Mineral-rich support for the weeks when your energy dips before your period."
+            "label": "Sweet-tooth support",
+            "title": "Gymnema Sylvestre · 180 mg",
+            "text": "Known in Ayurveda as gurmar, the \"sugar destroyer\", traditionally used to help curb sugar cravings."
           }
         },
         "ingredient_kQXBn7": {
           "type": "ingredient",
           "settings": {
-            "label": "Cramp relief",
-            "title": "Ginger Root",
-            "text": "Warming support for cramps and a settled stomach on the heaviest days."
+            "label": "Gut support",
+            "title": "Inulin · 135 mg",
+            "text": "A prebiotic chicory root fibre that feeds the beneficial bacteria in your gut."
           }
         },
         "ingredient_CmRT87": {
           "type": "ingredient",
           "settings": {
-            "label": "Stress & adrenals",
-            "title": "Ashwagandha",
-            "text": "An adaptogen that helps your body handle stress, the thing that throws cycles off most."
+            "label": "Mood & eating habits",
+            "title": "Saffron · 30 mg",
+            "text": "Traditionally used to support emotional wellbeing and more balanced eating habits."
           }
         },
         "ingredient_CYPVLT": {
           "type": "ingredient",
           "settings": {
-            "label": "Bloat & digestion",
-            "title": "Fennel Seed",
-            "text": "Eases bloating and keeps digestion comfortable through the luteal phase."
+            "label": "Classic glucose botanical",
+            "title": "Ceylon Cinnamon · 9 mg",
+            "text": "\"True\" cinnamon, a long-standing favourite in glucose and metabolic wellness formulas."
           }
         },
         "ingredient_TJnKeV": {
           "type": "ingredient",
           "settings": {
-            "label": "Skin clarity",
-            "title": "Dandelion Root",
-            "text": "Supports the liver as it clears excess hormones, which shows up in your skin."
+            "label": "Better absorption",
+            "title": "Black Pepper · 6 mg",
+            "text": "95% piperine to help your body absorb the botanicals in every capsule."
           }
         },
         "ingredient_cPcJpV": {
           "type": "ingredient",
           "settings": {
-            "label": "Restful sleep",
-            "title": "Rose Petal",
-            "text": "A soft, floral finish that helps you wind down at the end of the day."
+            "label": "Normal blood glucose",
+            "title": "Chromium · 200 mcg",
+            "text": "Contributes to normal macronutrient metabolism and the maintenance of normal blood glucose levels."
           }
         }
       },
@@ -892,9 +892,9 @@
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
-        "heading": "9 ingredients. One balancing ritual.",
-        "subheading": "Swipe or tap a card to spin the ring.",
-        "button_label": "Bring my balance back",
+        "heading": "9 ingredients. Every dose on the label.",
+        "subheading": "Swipe or tap a card to explore the formula.",
+        "button_label": "Start my balance",
         "button_link": "",
         "show_dots": false,
         "visible_sides": 2,
@@ -920,7 +920,7 @@
       "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Easy as 1. 2. 3. — preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     HOW IT WORKS / Easy as 1. 2. 3.\n     Scoped to #hiw so nothing leaks into other .section blocks.\n     Theme tokens are read with fallbacks so --pink / --cream win\n     when they exist.\n     ============================================================ */\n  #hiw {\n    --hiw-pink: var(--pink, #EC3A8C);\n    --hiw-cream: var(--cream, #F8F4EC);\n    --hiw-ink: var(--charcoal, #17171A);\n    --hiw-body: var(--gray-text, #5F6166);\n    --hiw-max: 940px;\n    --hiw-gap: 42px;\n    --hiw-radius: 28px;\n\n    padding: 56px 20px 72px;\n    background: linear-gradient(180deg, #FFFFFF 0%, var(--hiw-cream) 55%);\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  /* ---------- header ---------- */\n  #hiw .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hiw-pink);\n    text-align: center;\n  }\n\n  #hiw .section-h2 {\n    margin: 0 auto 38px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hiw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  /* ---------- grid ---------- */\n  #hiw .hiw-grid {\n    list-style: none;\n    display: grid;\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: var(--hiw-gap);\n    align-items: start;\n    max-width: var(--hiw-max);\n    margin: 0 auto;\n    padding: 0;\n  }\n\n  #hiw .hiw-step {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    text-align: center;\n  }\n\n  /* ---------- image ---------- */\n  #hiw .hiw-img {\n    position: relative;\n    width: 100%;\n    aspect-ratio: 1 / 1;\n    border-radius: var(--hiw-radius);\n    overflow: hidden;\n    background: #EFEAE1;\n    box-shadow: 0 2px 4px rgba(23,23,26,.04), 0 14px 34px -16px rgba(23,23,26,.22);\n    transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;\n  }\n\n  #hiw .hiw-img img {\n    position: absolute;\n    inset: 0;\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n    transition: transform .8s cubic-bezier(.22,.61,.36,1);\n    will-change: transform;\n  }\n\n  #hiw .hiw-step:hover .hiw-img {\n    transform: translateY(-4px);\n    box-shadow: 0 3px 6px rgba(23,23,26,.05), 0 24px 46px -18px rgba(23,23,26,.28);\n  }\n\n  #hiw .hiw-step:hover .hiw-img img { transform: scale(1.04); }\n\n  /* ---------- number ---------- */\n  #hiw .hiw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 18px 0 18px;\n    border-radius: 50%;\n    background: var(--hiw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.55);\n  }\n\n  /* ---------- text ---------- */\n  #hiw .hiw-title {\n    margin: 0 0 10px;\n    font-size: 19px;\n    font-weight: 800;\n    line-height: 1.25;\n    letter-spacing: -.015em;\n    color: var(--hiw-ink);\n  }\n\n  #hiw .hiw-desc {\n    margin: 0;\n    font-size: 13.5px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hiw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1000px) {\n    #hiw { --hiw-gap: 30px; --hiw-radius: 24px; padding: 52px 18px 64px; }\n  }\n\n  @media (max-width: 780px) {\n    #hiw { --hiw-gap: 24px; }\n    #hiw .section-h2 { margin-bottom: 32px; }\n    #hiw .hiw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 16px 0 16px; font-size: 17px; }\n    #hiw .hiw-title { font-size: 18px; }\n    #hiw .hiw-desc { font-size: 13px; }\n  }\n\n  @media (max-width: 600px) {\n    #hiw {\n      --hiw-gap: 34px;\n      --hiw-radius: 22px;\n      padding: 44px 16px 56px;\n    }\n    #hiw .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hiw .section-h2 { font-size: clamp(28px, 8.4vw, 34px); margin-bottom: 30px; }\n\n    #hiw .hiw-grid { grid-template-columns: 1fr; max-width: 380px; }\n    #hiw .hiw-num { margin: 16px 0 14px; }\n    #hiw .hiw-title { font-size: 19px; }\n    #hiw .hiw-desc { font-size: 14.5px; line-height: 1.5; max-width: 32ch; margin-inline: auto; }\n  }\n\n  @media (hover: none) {\n    #hiw .hiw-step:hover .hiw-img {\n      transform: none;\n      box-shadow: 0 2px 4px rgba(23,23,26,.04), 0 14px 34px -16px rgba(23,23,26,.22);\n    }\n    #hiw .hiw-step:hover .hiw-img img { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hiw .hiw-img, #hiw .hiw-img img { transition: none !important; }\n    #hiw .hiw-step:hover .hiw-img { transform: none; }\n    #hiw .hiw-step:hover .hiw-img img { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section section-cream\" id=\"hiw\">\n  <p class=\"section-eyebrow\">How it works</p>\n  <h2 class=\"section-h2\">Easy as 1. 2. 3.</h2>\n\n  <ol class=\"hiw-grid\">\n\n    <li class=\"hiw-step\">\n      <div class=\"hiw-img\">\n        <img src=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png\"\n             srcset=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_320,h_320/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png 320w,\n                     https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png 620w\"\n             sizes=\"(max-width: 600px) 100vw, 285px\"\n             alt=\"Steep the loose leaf tea\" width=\"620\" height=\"620\" loading=\"lazy\" decoding=\"async\">\n      </div>\n      <div class=\"hiw-num\" aria-hidden=\"true\">1</div>\n      <h3 class=\"hiw-title\">Steep</h3>\n      <p class=\"hiw-desc\">Let the loose leaf tea steep in your mug for 5 minutes.</p>\n    </li>\n\n    <li class=\"hiw-step\">\n      <div class=\"hiw-img\">\n        <img src=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png\"\n             srcset=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_320,h_320/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png 320w,\n                     https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png 620w\"\n             sizes=\"(max-width: 600px) 100vw, 285px\"\n             alt=\"Sip before bed\" width=\"620\" height=\"620\" loading=\"lazy\" decoding=\"async\">\n      </div>\n      <div class=\"hiw-num\" aria-hidden=\"true\">2</div>\n      <h3 class=\"hiw-title\">Sip</h3>\n      <p class=\"hiw-desc\">Drink before bed. The herbs work gently overnight, no cramps, no urgency.</p>\n    </li>\n\n    <li class=\"hiw-step\">\n      <div class=\"hiw-img\">\n        <img src=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png\"\n             srcset=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_320,h_320/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png 320w,\n                     https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png 620w\"\n             sizes=\"(max-width: 600px) 100vw, 285px\"\n             alt=\"Wake up reset, flatter and more regular\" width=\"620\" height=\"620\" loading=\"lazy\" decoding=\"async\">\n      </div>\n      <div class=\"hiw-num\" aria-hidden=\"true\">3</div>\n      <h3 class=\"hiw-title\">Reset</h3>\n      <p class=\"hiw-desc\">Wake up flatter, lighter, and more regular. Your overnight reset, no cramping, no rushing.</p>\n    </li>\n\n  </ol>\n</section>\n\n</body>\n</html>",
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Easy as 1. 2. 3.</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     HOW IT WORKS / Easy as 1. 2. 3.\n     Scoped to #hiw so nothing leaks into other .section blocks.\n     Theme tokens are read with fallbacks so --pink / --cream win\n     when they exist.\n     ============================================================ */\n  #hiw {\n    --hiw-pink: var(--pink, #EC3A8C);\n    --hiw-cream: var(--cream, #F8F4EC);\n    --hiw-ink: var(--charcoal, #17171A);\n    --hiw-body: var(--gray-text, #5F6166);\n    --hiw-max: 940px;\n    --hiw-gap: 42px;\n    --hiw-radius: 28px;\n\n    padding: 56px 20px 72px;\n    background: linear-gradient(180deg, #FFFFFF 0%, var(--hiw-cream) 55%);\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  /* ---------- header ---------- */\n  #hiw .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hiw-pink);\n    text-align: center;\n  }\n\n  #hiw .section-h2 {\n    margin: 0 auto 38px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hiw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  /* ---------- grid ---------- */\n  #hiw .hiw-grid {\n    list-style: none;\n    display: grid;\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: var(--hiw-gap);\n    align-items: start;\n    max-width: var(--hiw-max);\n    margin: 0 auto;\n    padding: 0;\n  }\n\n  #hiw .hiw-step {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    text-align: center;\n  }\n\n  /* ---------- image ---------- */\n  #hiw .hiw-img {\n    position: relative;\n    width: 100%;\n    aspect-ratio: 1 / 1;\n    border-radius: var(--hiw-radius);\n    overflow: hidden;\n    background: #EFEAE1;\n    box-shadow: 0 2px 4px rgba(23,23,26,.04), 0 14px 34px -16px rgba(23,23,26,.22);\n    transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;\n  }\n\n  #hiw .hiw-img img {\n    position: absolute;\n    inset: 0;\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n    transition: transform .8s cubic-bezier(.22,.61,.36,1);\n    will-change: transform;\n  }\n\n  #hiw .hiw-step:hover .hiw-img {\n    transform: translateY(-4px);\n    box-shadow: 0 3px 6px rgba(23,23,26,.05), 0 24px 46px -18px rgba(23,23,26,.28);\n  }\n\n  #hiw .hiw-step:hover .hiw-img img { transform: scale(1.04); }\n\n  /* ---------- number ---------- */\n  #hiw .hiw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 18px 0 18px;\n    border-radius: 50%;\n    background: var(--hiw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.55);\n  }\n\n  /* ---------- text ---------- */\n  #hiw .hiw-title {\n    margin: 0 0 10px;\n    font-size: 19px;\n    font-weight: 800;\n    line-height: 1.25;\n    letter-spacing: -.015em;\n    color: var(--hiw-ink);\n  }\n\n  #hiw .hiw-desc {\n    margin: 0;\n    font-size: 13.5px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hiw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1000px) {\n    #hiw { --hiw-gap: 30px; --hiw-radius: 24px; padding: 52px 18px 64px; }\n  }\n\n  @media (max-width: 780px) {\n    #hiw { --hiw-gap: 24px; }\n    #hiw .section-h2 { margin-bottom: 32px; }\n    #hiw .hiw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 16px 0 16px; font-size: 17px; }\n    #hiw .hiw-title { font-size: 18px; }\n    #hiw .hiw-desc { font-size: 13px; }\n  }\n\n  @media (max-width: 600px) {\n    #hiw {\n      --hiw-gap: 34px;\n      --hiw-radius: 22px;\n      padding: 44px 16px 56px;\n    }\n    #hiw .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hiw .section-h2 { font-size: clamp(28px, 8.4vw, 34px); margin-bottom: 30px; }\n\n    #hiw .hiw-grid { grid-template-columns: 1fr; max-width: 380px; }\n    #hiw .hiw-num { margin: 16px 0 14px; }\n    #hiw .hiw-title { font-size: 19px; }\n    #hiw .hiw-desc { font-size: 14.5px; line-height: 1.5; max-width: 32ch; margin-inline: auto; }\n  }\n\n  @media (hover: none) {\n    #hiw .hiw-step:hover .hiw-img {\n      transform: none;\n      box-shadow: 0 2px 4px rgba(23,23,26,.04), 0 14px 34px -16px rgba(23,23,26,.22);\n    }\n    #hiw .hiw-step:hover .hiw-img img { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hiw .hiw-img, #hiw .hiw-img img { transition: none !important; }\n    #hiw .hiw-step:hover .hiw-img { transform: none; }\n    #hiw .hiw-step:hover .hiw-img img { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section section-cream\" id=\"hiw\">\n  <p class=\"section-eyebrow\">How it works</p>\n  <h2 class=\"section-h2\">Easy as 1. 2. 3.</h2>\n\n  <ol class=\"hiw-grid\">\n\n    <li class=\"hiw-step\">\n      <div class=\"hiw-img\">\n        <img src=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png\"\n             srcset=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_320,h_320/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png 320w,\n                     https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png 620w\"\n             sizes=\"(max-width: 600px) 100vw, 285px\"\n             alt=\"Glukobalans capsules with a glass of water\" width=\"620\" height=\"620\" loading=\"lazy\" decoding=\"async\">\n      </div>\n      <div class=\"hiw-num\" aria-hidden=\"true\">1</div>\n      <h3 class=\"hiw-title\">Take</h3>\n      <p class=\"hiw-desc\">Take 1 capsule with a glass of water before each main meal. That's 3 a day.</p>\n    </li>\n\n    <li class=\"hiw-step\">\n      <div class=\"hiw-img\">\n        <img src=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png\"\n             srcset=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_320,h_320/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png 320w,\n                     https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png 620w\"\n             sizes=\"(max-width: 600px) 100vw, 285px\"\n             alt=\"Balanced meal with Glukobalans\" width=\"620\" height=\"620\" loading=\"lazy\" decoding=\"async\">\n      </div>\n      <div class=\"hiw-num\" aria-hidden=\"true\">2</div>\n      <h3 class=\"hiw-title\">Eat</h3>\n      <p class=\"hiw-desc\">Enjoy balanced meals. The fibres and botanicals work alongside your food to keep you satisfied.</p>\n    </li>\n\n    <li class=\"hiw-step\">\n      <div class=\"hiw-img\">\n        <img src=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png\"\n             srcset=\"https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_320,h_320/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png 320w,\n                     https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png 620w\"\n             sizes=\"(max-width: 600px) 100vw, 285px\"\n             alt=\"Steady energy through the day\" width=\"620\" height=\"620\" loading=\"lazy\" decoding=\"async\">\n      </div>\n      <div class=\"hiw-num\" aria-hidden=\"true\">3</div>\n      <h3 class=\"hiw-title\">Stay consistent</h3>\n      <p class=\"hiw-desc\">Make it a daily habit. Steadier energy and fewer cravings come from consistency, not a quick fix.</p>\n    </li>\n\n  </ol>\n</section>\n\n</body>\n</html>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -1024,52 +1024,68 @@
           "type": "question",
           "settings": {
             "question": "How fast will I notice a difference?",
-            "answer": "<p>Glukobalans is an advanced plant-based metabolic support supplement formulated to complement healthy lifestyle habits, metabolic wellness, and nutritional balance. <br/><br/><br/></p>"
+            "answer": "<p>Everyone is different. Some customers notice fewer cravings in the first couple of weeks. For the full benefits, take Glukobalans daily for at least 4 to 6 weeks alongside a balanced diet and regular activity. Consistency matters more than any single day.</p>"
           }
         },
         "question_763NjP": {
           "type": "question",
           "settings": {
-            "question": "How many capsules are included?",
-            "answer": "<p>Each bottle contains 120 vegan capsules, providing a 60-day supply when taken as directed. </p>"
-          }
-        },
-        "question_3X6eWL": {
-          "type": "question",
-          "settings": {
-            "question": "Is Glukobalans vegan?",
-            "answer": "<p>Yes. Glukobalans is made with vegan capsules and plant-based ingredients. </p>"
-          }
-        },
-        "question_JmN4pK": {
-          "type": "question",
-          "settings": {
-            "question": "Does this supplement contain stimulants?",
-            "answer": "<p>No. Glukobalans is a stimulant-free formula designed for daily use. </p>"
+            "question": "How many capsules are in a bottle, and how long does it last?",
+            "answer": "<p>Each bottle has 120 vegan capsules. At 3 capsules a day, that's a 40-day supply.</p>"
           }
         },
         "question_Ph3mWC": {
           "type": "question",
           "settings": {
-            "question": "When should I take Glukobalans?",
-            "answer": "<p>Take 2 capsules daily with water, preferably before meals.</p>"
+            "question": "How and when should I take Glukobalans?",
+            "answer": "<p>Take 3 capsules a day with a full glass of water. For best results, take one capsule before each main meal (breakfast, lunch and dinner). Don't exceed the recommended daily serving.</p>"
+          }
+        },
+        "question_3X6eWL": {
+          "type": "question",
+          "settings": {
+            "question": "What's in it?",
+            "answer": "<p>Per 3-capsule serving: berberine HCl 600 mg, glucomannan (konjac root fibre) 570 mg, fenugreek seed extract 300 mg, gymnema sylvestre extract 180 mg, inulin (chicory root fibre) 135 mg, saffron extract 30 mg, Ceylon cinnamon extract 9 mg, black pepper extract (95% piperine) 6 mg and chromium (as chromium picolinate) 200 mcg. Every dose is on the label, with no proprietary blends.</p>"
+          }
+        },
+        "question_JmN4pK": {
+          "type": "question",
+          "settings": {
+            "question": "Does it contain caffeine or stimulants?",
+            "answer": "<p>No. Glukobalans is completely stimulant-free: no caffeine, no green tea extract, no jitters. You can take it with your evening meal without affecting your sleep.</p>"
           }
         },
         "question_tqcgny": {
           "type": "question",
           "settings": {
+            "question": "Is Glukobalans vegan and clean-label?",
+            "answer": "<p>Yes. It's 100% vegan and non-GMO, with no artificial ingredients, in vegetable (HPMC) capsules. It's made in a GMP-certified facility and third-party tested, including for heavy metals, and a COA is available.</p>"
+          }
+        },
+        "question_med01": {
+          "type": "question",
+          "settings": {
+            "question": "Can I take Glukobalans with medication?",
+            "answer": "<p>Berberine can interact with some medications, including glucose-lowering and blood pressure medicines. If you take any prescription medication or have a medical condition, talk to your doctor before starting Glukobalans. It isn't suitable during pregnancy or breastfeeding, or for children.</p>"
+          }
+        },
+        "question_who01": {
+          "type": "question",
+          "settings": {
             "question": "Who is Glukobalans for?",
-            "answer": "<p>Glukobalans is ideal for adults seeking a plant-based metabolic support supplement featuring berberine, gymnema, moringa, and other traditional wellness ingredients.<br/><br/>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.<br/><br/></p>"
+            "answer": "<p>Adults who want plant-based support for healthy glucose metabolism, steadier energy and fewer cravings, as part of a balanced diet and active lifestyle.<br/><br/><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
           }
         }
       },
       "block_order": [
         "question_WrtqwH",
         "question_763NjP",
+        "question_Ph3mWC",
         "question_3X6eWL",
         "question_JmN4pK",
-        "question_Ph3mWC",
-        "question_tqcgny"
+        "question_tqcgny",
+        "question_med01",
+        "question_who01"
       ],
       "name": "FAQ accordion",
       "settings": {
