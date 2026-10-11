@@ -31,6 +31,23 @@
     "hero_bzCJQ6": {
       "type": "Hero",
       "blocks": {
+        "slide_qjjNex": {
+          "type": "slide",
+          "settings": {
+            "heading_line_1": "Take 50% Off All Skincare.",
+            "heading_line_2": "Half Price. Full Glow. The Big Skincare Sale is Here.",
+            "heading_line_3_bold": "",
+            "heading_line_3_regular": "",
+            "subheading": "High-performance natural formulas designed to restore, hydrate, and protect your skin’s natural barrier.",
+            "body_text": "Elevate your self-care\n\nroutine with up to 50% OFF on every single product.\n\nOffer ends October 31. Shop now while stocks last.",
+            "btn1_label": "✨ FLAT 50% OFF  ✨",
+            "btn1_link": "shopify://collections/skincare",
+            "show_btn2": false,
+            "btn2_label": "",
+            "btn2_link": "",
+            "product_image": "shopify://shop_images/01802814-0280-405f-b8bd-379c46e37188-removebg-preview.png"
+          }
+        },
         "slide_A9DLTc": {
           "type": "slide",
           "disabled": true,
@@ -47,28 +64,11 @@
             "btn2_label": "Shop the System",
             "btn2_link": "shopify://pages/protocols"
           }
-        },
-        "slide_qjjNex": {
-          "type": "slide",
-          "settings": {
-            "heading_line_1": "Take 50% Off All Skincare.",
-            "heading_line_2": "Half Price. Full Glow. The Big Skincare Sale is Here.",
-            "heading_line_3_bold": "",
-            "heading_line_3_regular": "",
-            "subheading": "",
-            "body_text": "High-performance natural formulas designed to restore, hydrate,\n\nand protect your skin’s natural barrier. Elevate your self-care\n\nroutine with up to 50% OFF on every single product.\n\nOffer ends October 31. Shop now—while stocks last.",
-            "btn1_label": "✨ FLAT 50% OFF  ✨",
-            "btn1_link": "shopify://collections/skincare",
-            "show_btn2": false,
-            "btn2_label": "",
-            "btn2_link": "",
-            "product_image": "shopify://shop_images/01802814-0280-405f-b8bd-379c46e37188-removebg-preview.png"
-          }
         }
       },
       "block_order": [
-        "slide_A9DLTc",
-        "slide_qjjNex"
+        "slide_qjjNex",
+        "slide_A9DLTc"
       ],
       "name": "Hero",
       "settings": {
