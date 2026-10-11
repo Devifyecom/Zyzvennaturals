@@ -30,6 +30,27 @@
     },
     "hero_bzCJQ6": {
       "type": "Hero",
+      "blocks": {
+        "slide_qjjNex": {
+          "type": "slide",
+          "settings": {
+            "heading_line_1": "Support Metabolism.",
+            "heading_line_2": "Rebalance Hormones.",
+            "heading_line_3_bold": "Restore Energy",
+            "heading_line_3_regular": "Naturally.",
+            "subheading": "",
+            "body_text": "",
+            "btn1_label": "Shop Now",
+            "btn1_link": "",
+            "show_btn2": false,
+            "btn2_label": "",
+            "btn2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_qjjNex"
+      ],
       "name": "Hero",
       "settings": {
         "heading_line_1": "Support Metabolism.",
@@ -55,7 +76,12 @@
         "heading_color": "#16181c",
         "text_color": "#3c3c3c",
         "padding_top": 72,
-        "padding_bottom": 72
+        "padding_bottom": 72,
+        "slide_autoplay": true,
+        "slide_interval": 6,
+        "slide_transition_ms": 600,
+        "slide_show_arrows": true,
+        "slide_show_dots": true
       }
     },
     "badge_slider_CVQpP8": {
