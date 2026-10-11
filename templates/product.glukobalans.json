@@ -747,29 +747,31 @@
         "step_ygfQrB": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_03_02_34_PM.webp",
+            "image": "shopify://shop_images/Gemini_Generated_Image_z1r9cuz1r9cuz1r9.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
             "image_alt": "Steep the loose leaf tea",
-            "title": "Steep",
-            "desc": "Let the loose leaf tea steep in your mug for 5 minutes."
+            "title": "Follow the Label",
+            "desc": "Take Glukobalans™ as directed on the product label with a glass of water."
           }
         },
         "step_nmNcqE": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ptd6yaptd6yaptd6.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Sip before bed",
-            "title": "Sip",
-            "desc": "Drink before bed. The herbs work gently overnight, no cramps, no urgency."
+            "image_alt": "Build Around Balanced Habits",
+            "title": "Build Around Balanced Habits",
+            "desc": "Pair your daily capsule with a balanced diet and regular activity for a routine that supports itself."
           }
         },
         "step_gwthJd": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c3xa9rc3xa9rc3xa.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Wake up reset, flatter and more regular",
-            "title": "Reset",
-            "desc": "Wake up flatter, lighter, and more regular. Your overnight reset, no cramping, no rushing."
+            "image_alt": "Stay Consistent",
+            "title": "Stay Consistent",
+            "desc": "Like most wellness habits, consistency over time matters more than any single day."
           }
         }
       },
