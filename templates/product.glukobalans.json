@@ -465,6 +465,7 @@
       "blocks": {
         "stat_4ec7XL": {
           "type": "stat",
+          "disabled": true,
           "settings": {
             "number": "61%",
             "label": "of adults have digestive discomfort every week"
@@ -472,6 +473,7 @@
         },
         "stat_dMwcXL": {
           "type": "stat",
+          "disabled": true,
           "settings": {
             "number": "1 in 3",
             "label": "deal with occasional constipation, and it hits women hardest"
