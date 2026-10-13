@@ -389,7 +389,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/4812fff6-6cf1-4e24-817a-595b623e021b.png",
+        "image": "shopify://shop_images/Gemini_Generated_Image_3llpbk3llpbk3llp.jpg",
         "mobile_image": "shopify://shop_images/4812fff6-6cf1-4e24-817a-595b623e021b.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
@@ -499,7 +499,7 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "Menopause is not one symptom. ",
+        "heading": "Menopause is not one symptom.",
         "heading_accent": "Every woman's experience is different.",
         "para_1": "Freja Balance is designed for adult women experiencing perimenopause, menopause or postmenopause who want caffeine-free botanical support for temperature comfort, mood, rest and everyday balance.",
         "para_2": "Freja Balance is a wellness tea. It is not hormone replacement therapy and is not intended to diagnose, treat, cure or prevent any disease.",
@@ -576,7 +576,7 @@
       "type": "balance-banner",
       "name": "Balance banner",
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_xjfyxvxjfyxvxjfy.jpg",
+        "image": "shopify://shop_images/Gemini_Generated_Image_ne57qbne57qbne57_1.jpg",
         "eager_load": false,
         "heading": "",
         "heading_font": "playfair_display_n7",
@@ -680,7 +680,6 @@
     },
     "real_transformations_gBRGrd": {
       "type": "real-transformations",
-      "disabled": true,
       "blocks": {
         "testimonial_fMR7em": {
           "type": "testimonial",
@@ -734,6 +733,7 @@
         "testimonial_HUkF3p",
         "testimonial_YkCAxe"
       ],
+      "disabled": true,
       "name": "Real transformations",
       "settings": {
         "eyebrow": "Real Transformations",
