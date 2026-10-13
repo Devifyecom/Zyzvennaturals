@@ -107,14 +107,14 @@
           "type": "dropdown",
           "settings": {
             "heading": "Benefits",
-            "content": "<ul><li><strong>Supports a regular, balanced menstrual cycle</strong> with myo-inositol and vitex</li><li><strong>Supports ovarian function</strong> and female reproductive wellness</li><li><strong>Helps maintain healthy hormone balance</strong> through every phase of your cycle</li><li><strong>Zinc contributes to normal fertility and reproduction</strong></li><li><strong>Supports healthy carbohydrate metabolism:</strong> chromium contributes to the maintenance of normal blood glucose levels</li><li><strong>Antioxidant support</strong> from NAC and turmeric</li><li><strong>Supports calm and resilience</strong> with the adaptogen holy basil</li><li><strong>Clean label:</strong> vegan, non-GMO, gluten-free, dairy-free and soy-free</li><li><strong>Quality you can trust:</strong> GMP certified and lab tested</li></ul>"
+            "content": "<ul>\n<li>\n<strong>Supports a regular, balanced menstrual cycle</strong> with myo-inositol and vitex</li>\n<li>\n<strong>Supports ovarian function</strong> and female reproductive wellness</li>\n<li>\n<strong>Helps maintain healthy hormone balance</strong> through every phase of your cycle</li>\n<li><strong>Zinc contributes to normal fertility and reproduction</strong></li>\n<li>\n<strong>Supports healthy carbohydrate metabolism:</strong> chromium contributes to the maintenance of normal blood glucose levels</li>\n<li>\n<strong>Antioxidant support</strong> from NAC and turmeric</li>\n<li>\n<strong>Supports calm and resilience</strong> with the adaptogen holy basil</li>\n<li>\n<strong>Clean label:</strong> vegan, non-GMO, gluten-free, dairy-free and soy-free</li>\n<li>\n<strong>Quality you can trust:</strong> GMP certified and lab tested</li>\n</ul>"
           }
         },
         "dropdown_kwbfJF": {
           "type": "dropdown",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<ul><li><strong>Myo-Inositol</strong>: one of the most researched nutrients for women's hormonal health, supporting ovarian function, cycle balance and healthy insulin sensitivity.</li><li><strong>Vitex (Chaste Berry)</strong>: the classic women's botanical, traditionally used to support menstrual cycle regularity and hormonal balance.</li><li><strong>Shatavari</strong>: an Ayurvedic herb whose name means \"she who possesses a hundred husbands\", traditionally used to support female reproductive wellness.</li><li><strong>Maca Root</strong>: a Peruvian root traditionally used to support energy, vitality and reproductive wellness.</li><li><strong>N-Acetyl L-Cysteine (NAC)</strong>: antioxidant support that helps protect normal cellular function.</li><li><strong>Turmeric Extract</strong>: supports antioxidant defences and the body's normal inflammatory response.</li><li><strong>Holy Basil (Tulsi)</strong>: an adaptogen traditionally used to support resilience to everyday stress and emotional wellbeing.</li><li><strong>Ginger Root Extract</strong>: traditionally used to support comfortable digestion.</li><li><strong>Zinc</strong>: contributes to normal fertility and reproduction, immune function and the protection of cells from oxidative stress.</li><li><strong>Chromium</strong>: contributes to normal macronutrient metabolism and the maintenance of normal blood glucose levels.</li><li><strong>Black Pepper Extract</strong>: helps your body absorb the botanicals, especially turmeric.</li></ul>"
+            "content": "<ul>\n<li>\n<strong>Myo-Inositol</strong>: one of the most researched nutrients for women's hormonal health, supporting ovarian function, cycle balance and healthy insulin sensitivity.</li>\n<li>\n<strong>Vitex (Chaste Berry)</strong>: the classic women's botanical, traditionally used to support menstrual cycle regularity and hormonal balance.</li>\n<li>\n<strong>Shatavari</strong>: an Ayurvedic herb whose name means \"she who possesses a hundred husbands\", traditionally used to support female reproductive wellness.</li>\n<li>\n<strong>Maca Root</strong>: a Peruvian root traditionally used to support energy, vitality and reproductive wellness.</li>\n<li>\n<strong>N-Acetyl L-Cysteine (NAC)</strong>: antioxidant support that helps protect normal cellular function.</li>\n<li>\n<strong>Turmeric Extract</strong>: supports antioxidant defences and the body's normal inflammatory response.</li>\n<li>\n<strong>Holy Basil (Tulsi)</strong>: an adaptogen traditionally used to support resilience to everyday stress and emotional wellbeing.</li>\n<li>\n<strong>Ginger Root Extract</strong>: traditionally used to support comfortable digestion.</li>\n<li>\n<strong>Zinc</strong>: contributes to normal fertility and reproduction, immune function and the protection of cells from oxidative stress.</li>\n<li>\n<strong>Chromium</strong>: contributes to normal macronutrient metabolism and the maintenance of normal blood glucose levels.</li>\n<li>\n<strong>Black Pepper Extract</strong>: helps your body absorb the botanicals, especially turmeric.</li>\n</ul>"
           }
         },
         "dropdown_Pn6Edz": {
@@ -493,7 +493,7 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "Irregular cycles. Stubborn cravings. Hormones that feel out of your hands. ",
+        "heading": "Irregular cycles. Stubborn cravings. Hormones that feel out of your hands.",
         "heading_accent": "You deserve support that's built for you.",
         "para_1": "When your hormones are out of sync, everything feels harder: cycles you can't predict, energy that crashes, breakouts, cravings and moods that swing without warning.",
         "para_2": "If you're living with PCOS or planning for a family, generic women's multivitamins rarely go far enough.",
@@ -826,7 +826,7 @@
         "step_ygfQrB": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_03_02_34_PM.webp",
+            "image": "shopify://shop_images/Gemini_Generated_Image_jlbwotjlbwotjlbw.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
             "image_alt": "Freja Advance capsules with a glass of water",
             "title": "Take",
@@ -836,7 +836,7 @@
         "step_nmNcqE": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
+            "image": "shopify://shop_images/de68fec6-4f23-4a8a-a330-10a3cdef024d.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
             "image_alt": "Daily Freja Advance routine",
             "title": "Stay consistent",
@@ -846,7 +846,7 @@
         "step_gwthJd": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
+            "image": "shopify://shop_images/b58d1e00-8064-47f6-a7f9-8dbd44eda31e.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
             "image_alt": "Tracking your cycle",
             "title": "Give it 3 cycles",
