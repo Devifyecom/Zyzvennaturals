@@ -104,39 +104,44 @@
           }
         },
         "dropdown_rg6hCy": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<ul><li><strong>Supports men's vitality</strong> with Tongkat Ali, fenugreek and black maca</li><li><strong>Zinc contributes to the maintenance of normal testosterone levels</strong></li><li><strong>Promotes energy and stamina</strong> with Panax ginseng and cordyceps</li><li><strong>Supports physical performance</strong> and an active lifestyle</li><li><strong>Supports resilience to everyday stress</strong> with the adaptogen ashwagandha</li><li><strong>Built on botanicals, not caffeine</strong>, for steady daily support</li><li><strong>Clean label:</strong> plant-based, vegan, non-GMO, no fillers; free from dairy, soy and gluten</li><li><strong>Quality you can trust:</strong> GMP certified and third-party tested</li></ul>"
+            "content": "<ul><li><strong>Supports men's vitality</strong> with Tongkat Ali, fenugreek and black maca</li><li><strong>Zinc contributes to the maintenance of normal testosterone levels</strong></li><li><strong>Promotes energy and stamina</strong> with Panax ginseng and cordyceps</li><li><strong>Supports physical performance</strong> and an active lifestyle</li><li><strong>Supports resilience to everyday stress</strong> with the adaptogen ashwagandha</li><li><strong>Built on botanicals, not caffeine</strong>, for steady daily support</li><li><strong>Clean label:</strong> plant-based, vegan, non-GMO, no fillers; free from dairy, soy and gluten</li><li><strong>Quality you can trust:</strong> GMP certified and third-party tested</li></ul>",
+            "open_by_default": false
           }
         },
         "dropdown_kwbfJF": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<ul><li><strong>Tongkat Ali</strong>: the Southeast Asian root at the heart of men's vitality formulas.</li><li><strong>Ashwagandha</strong>: an Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery.</li><li><strong>Black Maca Root</strong>: the Peruvian superfood root traditionally used to support vitality and stamina.</li><li><strong>Panax Ginseng</strong>: the classic \"true\" ginseng, valued for supporting energy and performance.</li><li><strong>Cordyceps Mushroom</strong>: a functional mushroom traditionally used to support endurance.</li><li><strong>Fenugreek</strong>: a traditional seed widely used in men's health formulas.</li><li><strong>Shilajit</strong>: a mineral-rich resin used for centuries in Ayurveda to support vitality.</li><li><strong>Moringa</strong>: a nutrient-dense leaf with naturally occurring vitamins, minerals and plant compounds.</li><li><strong>Zinc</strong>: contributes to the maintenance of normal testosterone levels, normal fertility and reproduction, and normal immune function.</li><li><strong>Black Pepper Extract</strong>: helps your body absorb the botanicals.</li></ul>"
+            "content": "<ul><li><strong>Tongkat Ali</strong>: the Southeast Asian root at the heart of men's vitality formulas.</li><li><strong>Ashwagandha</strong>: an Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery.</li><li><strong>Black Maca Root</strong>: the Peruvian superfood root traditionally used to support vitality and stamina.</li><li><strong>Panax Ginseng</strong>: the classic \"true\" ginseng, valued for supporting energy and performance.</li><li><strong>Cordyceps Mushroom</strong>: a functional mushroom traditionally used to support endurance.</li><li><strong>Fenugreek</strong>: a traditional seed widely used in men's health formulas.</li><li><strong>Shilajit</strong>: a mineral-rich resin used for centuries in Ayurveda to support vitality.</li><li><strong>Moringa</strong>: a nutrient-dense leaf with naturally occurring vitamins, minerals and plant compounds.</li><li><strong>Zinc</strong>: contributes to the maintenance of normal testosterone levels, normal fertility and reproduction, and normal immune function.</li><li><strong>Black Pepper Extract</strong>: helps your body absorb the botanicals.</li></ul>",
+            "open_by_default": false
           }
         },
         "dropdown_Pn6Edz": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "How to Use",
-            "content": "<p><strong>Take 2 capsules a day</strong> with a meal and a full glass of water.</p><p>Take it every day. Adaptogens and botanicals build up over time, so give it at least 6 to 8 weeks alongside regular training, good sleep and a balanced diet.</p><p>One bottle = 120 capsules = 60-day supply.</p><p>Do not exceed the recommended daily serving.</p>"
+            "content": "<p><strong>Take 2 capsules a day</strong> with a meal and a full glass of water.</p><p>Take it every day. Adaptogens and botanicals build up over time, so give it at least 6 to 8 weeks alongside regular training, good sleep and a balanced diet.</p><p>One bottle = 120 capsules = 60-day supply.</p><p>Do not exceed the recommended daily serving.</p>",
+            "open_by_default": false
           }
         },
         "dropdown_MnLgFG": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p><strong>How many capsules do I take?</strong><br>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br>60 days (120 capsules at 2 per day).</p><p><strong>Does it contain caffeine?</strong><br>No. The formula is built on botanicals and zinc, not caffeine.</p><p><strong>Is it vegan?</strong><br>Yes. Vegan capsules, no dairy, soy, gluten or fillers.</p><p><strong>Can I take it with medication?</strong><br>Some ingredients, including ashwagandha and ginseng, can interact with medications. Speak to your doctor first.</p>"
+            "content": "<p><strong>How many capsules do I take?</strong><br>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br>60 days (120 capsules at 2 per day).</p><p><strong>Does it contain caffeine?</strong><br>No. The formula is built on botanicals and zinc, not caffeine.</p><p><strong>Is it vegan?</strong><br>Yes. Vegan capsules, no dairy, soy, gluten or fillers.</p><p><strong>Can I take it with medication?</strong><br>Some ingredients, including ashwagandha and ginseng, can interact with medications. Speak to your doctor first.</p>",
+            "open_by_default": false
           }
         },
         "dropdown_MkwwcT": {
-          "type": "dropdown",
+          "type": "info_row",
           "disabled": true,
           "settings": {
             "heading": "Important Information",
-            "content": "<p>For adult men 18+. Food supplements should not replace a varied, balanced diet and a healthy lifestyle.</p><p>Consult your doctor before use if you take any medication (including blood thinners, blood pressure, blood sugar, thyroid or hormone medication), have a medical condition, a hormone-sensitive condition such as prostate concerns, or are scheduled for surgery. Stop use if you experience any adverse reaction.</p><p>Store in a cool, dry place out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
+            "content": "<p>For adult men 18+. Food supplements should not replace a varied, balanced diet and a healthy lifestyle.</p><p>Consult your doctor before use if you take any medication (including blood thinners, blood pressure, blood sugar, thyroid or hormone medication), have a medical condition, a hormone-sensitive condition such as prostate concerns, or are scheduled for surgery. Stop use if you experience any adverse reaction.</p><p>Store in a cool, dry place out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "open_by_default": false
           }
         },
         "recommend_widget_X6bNrg": {

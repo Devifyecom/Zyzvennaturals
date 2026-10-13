@@ -112,39 +112,44 @@
           }
         },
         "dropdown_rg6hCy": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<ul>\n<li>\n<strong>Supports healthy glucose metabolism</strong>, led by 600 mg berberine HCl per serving</li>\n<li><strong>Supports blood sugar levels already within the normal range</strong></li>\n<li>\n<strong>Helps manage sugar and carb cravings</strong> with gymnema and saffron</li>\n<li>\n<strong>Chromium contributes to normal macronutrient metabolism</strong> and the maintenance of normal blood glucose levels</li>\n<li>\n<strong>Adds soluble and prebiotic fibre</strong> from konjac root and chicory root</li>\n<li>\n<strong>Stimulant-free.</strong> No caffeine, no jitters, no crash</li>\n<li>\n<strong>Clean label:</strong> 100% vegan, non-GMO, no artificial ingredients, no proprietary blends</li>\n<li>\n<strong>Quality you can check:</strong> made in a GMP-certified facility, third-party lab tested, heavy-metal tested, COA available</li>\n</ul>"
+            "content": "<ul>\n<li>\n<strong>Supports healthy glucose metabolism</strong>, led by 600 mg berberine HCl per serving</li>\n<li><strong>Supports blood sugar levels already within the normal range</strong></li>\n<li>\n<strong>Helps manage sugar and carb cravings</strong> with gymnema and saffron</li>\n<li>\n<strong>Chromium contributes to normal macronutrient metabolism</strong> and the maintenance of normal blood glucose levels</li>\n<li>\n<strong>Adds soluble and prebiotic fibre</strong> from konjac root and chicory root</li>\n<li>\n<strong>Stimulant-free.</strong> No caffeine, no jitters, no crash</li>\n<li>\n<strong>Clean label:</strong> 100% vegan, non-GMO, no artificial ingredients, no proprietary blends</li>\n<li>\n<strong>Quality you can check:</strong> made in a GMP-certified facility, third-party lab tested, heavy-metal tested, COA available</li>\n</ul>",
+            "open_by_default": false
           }
         },
         "dropdown_kwbfJF": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<p>Per 3-capsule serving. Every dose is on the label, with no proprietary blends.</p><ul>\n<li>\n<strong>Berberine HCl (600 mg)</strong>: the most researched plant compound for healthy glucose metabolism.</li>\n<li>\n<strong>Glucomannan, konjac root fibre (570 mg)</strong>: a soluble fibre that swells with water to add bulk and help you feel satisfied.</li>\n<li>\n<strong>Fenugreek seed extract (300 mg)</strong>: a traditional seed used to support metabolic and digestive wellness.</li>\n<li>\n<strong>Gymnema sylvestre extract (180 mg)</strong>: known in Ayurveda as <em>gurmar</em>, the \"sugar destroyer\", traditionally used to help curb a sweet tooth.</li>\n<li>\n<strong>Inulin, chicory root fibre (135 mg)</strong>: a prebiotic fibre that feeds beneficial gut bacteria.</li>\n<li>\n<strong>Saffron extract (30 mg)</strong>: traditionally used to support mood and balanced eating habits.</li>\n<li>\n<strong>Ceylon cinnamon extract (9 mg)</strong>: \"true\" cinnamon, a classic in glucose wellness formulas.</li>\n<li>\n<strong>Black pepper extract, 95% piperine (6 mg)</strong>: helps your body absorb the botanicals.</li>\n<li>\n<strong>Chromium picolinate (200 mcg, 571% DV)</strong>: contributes to the maintenance of normal blood glucose levels.</li>\n</ul><p><em>Other ingredients: vegetable capsule (HPMC).</em></p>"
+            "content": "<p>Per 3-capsule serving. Every dose is on the label, with no proprietary blends.</p><ul>\n<li>\n<strong>Berberine HCl (600 mg)</strong>: the most researched plant compound for healthy glucose metabolism.</li>\n<li>\n<strong>Glucomannan, konjac root fibre (570 mg)</strong>: a soluble fibre that swells with water to add bulk and help you feel satisfied.</li>\n<li>\n<strong>Fenugreek seed extract (300 mg)</strong>: a traditional seed used to support metabolic and digestive wellness.</li>\n<li>\n<strong>Gymnema sylvestre extract (180 mg)</strong>: known in Ayurveda as <em>gurmar</em>, the \"sugar destroyer\", traditionally used to help curb a sweet tooth.</li>\n<li>\n<strong>Inulin, chicory root fibre (135 mg)</strong>: a prebiotic fibre that feeds beneficial gut bacteria.</li>\n<li>\n<strong>Saffron extract (30 mg)</strong>: traditionally used to support mood and balanced eating habits.</li>\n<li>\n<strong>Ceylon cinnamon extract (9 mg)</strong>: \"true\" cinnamon, a classic in glucose wellness formulas.</li>\n<li>\n<strong>Black pepper extract, 95% piperine (6 mg)</strong>: helps your body absorb the botanicals.</li>\n<li>\n<strong>Chromium picolinate (200 mcg, 571% DV)</strong>: contributes to the maintenance of normal blood glucose levels.</li>\n</ul><p><em>Other ingredients: vegetable capsule (HPMC).</em></p>",
+            "open_by_default": false
           }
         },
         "dropdown_Pn6Edz": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "How to Use",
-            "content": "<p><strong>Take 3 capsules a day</strong> with a full glass of water. For best results, take one capsule before each main meal.</p><p>Take it every day. Most people judge it after 4 to 6 weeks of daily use alongside a balanced diet and regular movement.</p><p>One bottle = 120 capsules = 40-day supply.</p><p>Do not exceed the recommended daily serving.</p>"
+            "content": "<p><strong>Take 3 capsules a day</strong> with a full glass of water. For best results, take one capsule before each main meal.</p><p>Take it every day. Most people judge it after 4 to 6 weeks of daily use alongside a balanced diet and regular movement.</p><p>One bottle = 120 capsules = 40-day supply.</p><p>Do not exceed the recommended daily serving.</p>",
+            "open_by_default": false
           }
         },
         "dropdown_MnLgFG": {
-          "type": "dropdown",
+          "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p><strong>How many capsules do I take?</strong><br>3 per day, ideally one before each main meal.</p><p><strong>How long does a bottle last?</strong><br>40 days (120 capsules at 3 per day).</p><p><strong>Does it contain caffeine or stimulants?</strong><br>No. Glukobalans is completely stimulant-free.</p><p><strong>Is it vegan?</strong><br>Yes. 100% plant-based, non-GMO, in vegetable (HPMC) capsules.</p><p><strong>Can I take it with medication?</strong><br>Berberine can interact with some medications, including glucose-lowering medicines. Speak to your doctor first.</p>"
+            "content": "<p><strong>How many capsules do I take?</strong><br>3 per day, ideally one before each main meal.</p><p><strong>How long does a bottle last?</strong><br>40 days (120 capsules at 3 per day).</p><p><strong>Does it contain caffeine or stimulants?</strong><br>No. Glukobalans is completely stimulant-free.</p><p><strong>Is it vegan?</strong><br>Yes. 100% plant-based, non-GMO, in vegetable (HPMC) capsules.</p><p><strong>Can I take it with medication?</strong><br>Berberine can interact with some medications, including glucose-lowering medicines. Speak to your doctor first.</p>",
+            "open_by_default": false
           }
         },
         "dropdown_MkwwcT": {
-          "type": "dropdown",
+          "type": "info_row",
           "disabled": true,
           "settings": {
             "heading": "Important Information",
-            "content": "<p>Food supplements should not replace a varied, balanced diet and a healthy lifestyle.</p><p>Not suitable for children, or during pregnancy or breastfeeding. If you take any medication (especially for blood sugar or blood pressure) or have a medical condition, consult your doctor before use. Stop use and seek advice if you experience digestive discomfort.</p><p>Take with plenty of water. Store in a cool, dry place out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
+            "content": "<p>Food supplements should not replace a varied, balanced diet and a healthy lifestyle.</p><p>Not suitable for children, or during pregnancy or breastfeeding. If you take any medication (especially for blood sugar or blood pressure) or have a medical condition, consult your doctor before use. Stop use and seek advice if you experience digestive discomfort.</p><p>Take with plenty of water. Store in a cool, dry place out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "open_by_default": false
           }
         },
         "recommend_widget_X6bNrg": {
