@@ -33,7 +33,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "A caffeine-free daily ritual that helps smooth the monthly rollercoaster: steadier moods, easier cycles, less cramping and bloat, with 9 hormone-loving herbs.",
+            "text": "Tongkat Ali, ashwagandha, maca, ginseng, cordyceps and zinc, combined to support:",
             "text_style": "body"
           }
         },
@@ -47,7 +47,7 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Supports men’s</strong> vitality"
+            "text": "<strong>Supports male</strong> vitality & performance"
           }
         },
         "text_with_icon_tFXRJr": {
@@ -61,14 +61,14 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Supports performance</strong> & wellness"
+            "text": "<strong>Supports stress</strong> resilience & recovery"
           }
         },
         "text_with_icon_bNyEzm": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Vegan-friendly</strong> & GMP certified"
+            "text": "<strong>Vegan, non-GMO</strong> & GMP certified"
           }
         },
         "price": {
@@ -107,28 +107,28 @@
           "type": "dropdown",
           "settings": {
             "heading": "Benefits",
-            "content": "test"
+            "content": "<ul><li><strong>Supports men's vitality</strong> with Tongkat Ali, fenugreek and black maca</li><li><strong>Zinc contributes to the maintenance of normal testosterone levels</strong></li><li><strong>Promotes energy and stamina</strong> with Panax ginseng and cordyceps</li><li><strong>Supports physical performance</strong> and an active lifestyle</li><li><strong>Supports resilience to everyday stress</strong> with the adaptogen ashwagandha</li><li><strong>Built on botanicals, not caffeine</strong>, for steady daily support</li><li><strong>Clean label:</strong> plant-based, vegan, non-GMO, no fillers; free from dairy, soy and gluten</li><li><strong>Quality you can trust:</strong> GMP certified and third-party tested</li></ul>"
           }
         },
         "dropdown_kwbfJF": {
           "type": "dropdown",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "Tongkat Ali – A traditional botanical widely used to support men's vitality and wellness.  Ashwagandha – An adaptogenic herb traditionally used to support balance, resilience, and overall wellbeing.Black Maca Root – A nutrient-rich botanical commonly included in men's vitality and performance formulas.Panax Ginseng – A traditional herb valued for supporting energy, vitality, and active lifestyles.Cordyceps Mushroom – Widely used in wellness practices to support energy and performance-focused routines.Fenugreek – A botanical traditionally used in men's health and nutritional wellness supplements.Shilajit – A mineral-rich ingredient long used in traditional wellness systems to support vitality.Moringa – A nutrient-dense plant providing naturally occurring vitamins, minerals, and beneficial plant compounds.Zinc – An essential mineral that contributes to the maintenance of normal testosterone levels in the body.Black Pepper Extract – Included to support nutrient absorption and ingredient bioavailability.{{ product.metafields.custom.benefit_3.value }}"
+            "content": "<ul><li><strong>Tongkat Ali</strong>: the Southeast Asian root at the heart of men's vitality formulas.</li><li><strong>Ashwagandha</strong>: an Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery.</li><li><strong>Black Maca Root</strong>: the Peruvian superfood root traditionally used to support vitality and stamina.</li><li><strong>Panax Ginseng</strong>: the classic \"true\" ginseng, valued for supporting energy and performance.</li><li><strong>Cordyceps Mushroom</strong>: a functional mushroom traditionally used to support endurance.</li><li><strong>Fenugreek</strong>: a traditional seed widely used in men's health formulas.</li><li><strong>Shilajit</strong>: a mineral-rich resin used for centuries in Ayurveda to support vitality.</li><li><strong>Moringa</strong>: a nutrient-dense leaf with naturally occurring vitamins, minerals and plant compounds.</li><li><strong>Zinc</strong>: contributes to the maintenance of normal testosterone levels, normal fertility and reproduction, and normal immune function.</li><li><strong>Black Pepper Extract</strong>: helps your body absorb the botanicals.</li></ul>"
           }
         },
         "dropdown_Pn6Edz": {
           "type": "dropdown",
           "settings": {
             "heading": "How to Use",
-            "content": "How to Use How to Use How to Use How to Use How to Use"
+            "content": "<p><strong>Take 2 capsules a day</strong> with a meal and a full glass of water.</p><p>Take it every day. Adaptogens and botanicals build up over time, so give it at least 6 to 8 weeks alongside regular training, good sleep and a balanced diet.</p><p>One bottle = 120 capsules = 60-day supply.</p><p>Do not exceed the recommended daily serving.</p>"
           }
         },
         "dropdown_MnLgFG": {
           "type": "dropdown",
           "settings": {
             "heading": "FAQ",
-            "content": "FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ"
+            "content": "<p><strong>How many capsules do I take?</strong><br>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br>60 days (120 capsules at 2 per day).</p><p><strong>Does it contain caffeine?</strong><br>No. The formula is built on botanicals and zinc, not caffeine.</p><p><strong>Is it vegan?</strong><br>Yes. Vegan capsules, no dairy, soy, gluten or fillers.</p><p><strong>Can I take it with medication?</strong><br>Some ingredients, including ashwagandha and ginseng, can interact with medications. Speak to your doctor first.</p>"
           }
         },
         "dropdown_MkwwcT": {
@@ -136,13 +136,13 @@
           "disabled": true,
           "settings": {
             "heading": "Important Information",
-            "content": "Important Information"
+            "content": "<p>For adult men 18+. Food supplements should not replace a varied, balanced diet and a healthy lifestyle.</p><p>Consult your doctor before use if you take any medication (including blood thinners, blood pressure, blood sugar, thyroid or hormone medication), have a medical condition, a hormone-sensitive condition such as prostate concerns, or are scheduled for surgery. Stop use if you experience any adverse reaction.</p><p>Store in a cool, dry place out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
           }
         },
         "recommend_widget_X6bNrg": {
           "type": "recommend_widget",
           "settings": {
-            "heading": "Complete the System",
+            "heading": "Build Your Daily Performance Stack",
             "products": [
               "anti-bacterial-lemon-soap-200g",
               "brightening-night-cream",
@@ -154,7 +154,7 @@
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Three days in and my jeans button without a fight. Wild.\", n:\"Priya N.\"},\n    {q:\"I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.\", n:\"Danielle O.\"},\n    {q:\"I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.\", n:\"Bethany C.\"},\n    {q:\"My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.\", n:\"Marisol V.\"},\n    {q:\"Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.\", n:\"Kayleigh S.\"},\n    {q:\"First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.\", n:\"Renata F.\"},\n    {q:\"This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.\", n:\"Simone A.\"},\n    {q:\"Gentle overnight, flatter by morning. That is the whole review.\", n:\"Tovah L.\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
+            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Manthoric Advance customer review here.\", n:\"Customer name\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
           }
         },
         "video_testimonials_9dcyFw": {
@@ -163,23 +163,23 @@
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/40a750d25ded42e5bde0610b09d43985.mp4",
             "sound_button_text": "TAP FOR SOUND",
-            "bottom_text": "See it for yourself",
-            "review_name_1": "Priya N.",
-            "review_text_1": "Three days in and my jeans button without a fight. Wild.",
-            "review_name_2": "Danielle O.",
-            "review_text_2": "I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.",
-            "review_name_3": "Bethany C.",
-            "review_text_3": "I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.",
-            "review_name_4": "Marisol V.",
-            "review_text_4": "My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.",
-            "review_name_5": "Kayleigh S.",
-            "review_text_5": "Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.",
-            "review_name_6": "Renata F.",
-            "review_text_6": "First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.",
-            "review_name_7": "Simone A.",
-            "review_text_7": "This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.",
-            "review_name_8": "Tovah L.",
-            "review_text_8": "Gentle overnight, flatter by morning. That is the whole review."
+            "bottom_text": "Real routines, real results",
+            "review_name_1": "Customer name",
+            "review_text_1": "Add a verified Manthoric Advance customer review here.",
+            "review_name_2": "Customer name",
+            "review_text_2": "Add a verified Manthoric Advance customer review here.",
+            "review_name_3": "Customer name",
+            "review_text_3": "Add a verified Manthoric Advance customer review here.",
+            "review_name_4": "Customer name",
+            "review_text_4": "Add a verified Manthoric Advance customer review here.",
+            "review_name_5": "Customer name",
+            "review_text_5": "Add a verified Manthoric Advance customer review here.",
+            "review_name_6": "Customer name",
+            "review_text_6": "Add a verified Manthoric Advance customer review here.",
+            "review_name_7": "Customer name",
+            "review_text_7": "Add a verified Manthoric Advance customer review here.",
+            "review_name_8": "Customer name",
+            "review_text_8": "Add a verified Manthoric Advance customer review here."
           }
         }
       },
@@ -456,15 +456,15 @@
         "stat_4ec7XL": {
           "type": "stat",
           "settings": {
-            "number": "90%",
-            "label": "of women experience PMS symptoms during their reproductive years"
+            "number": "~1% a year",
+            "label": "the average drop in men's testosterone levels after age 30 to 40 (Mayo Clinic)"
           }
         },
         "stat_dMwcXL": {
           "type": "stat",
           "settings": {
-            "number": "1 in 10",
-            "label": "women of reproductive age live with PCOS"
+            "number": "1 in 3",
+            "label": "US adults don't get enough sleep, the time your body recovers (CDC)"
           }
         }
       },
@@ -474,18 +474,18 @@
       ],
       "name": "ZN Problem",
       "settings": {
-        "eyebrow": "You are not imagining it.",
-        "heading": "So many women suffer from bloating and digestion issues. ",
-        "heading_accent": "You don't have to.",
-        "para_1": "One week you feel like yourself, the next you are tipped off balance: cramps, mood swings, bloating, breakouts, and energy that crashes out of nowhere.",
-        "para_2": "PCOS and perimenopause push the scales even further. It is exhausting, and far more common than anyone talks about.",
+        "eyebrow": "It's not just you.",
+        "heading": "Tired by mid-afternoon. Slow to recover. Running on caffeine. ",
+        "heading_accent": "Your vitality deserves better support.",
+        "para_1": "Long hours, stress, poor sleep and hard training all take their toll. Energy fades, recovery takes longer, and the drive you used to take for granted starts to slip.",
+        "para_2": "Another energy drink isn't the answer. Your body needs steady support it can build on, every day.",
         "image": "shopify://shop_images/CDAB5C96-53BC-4C7A-89A2-E71A1494ED7E.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "",
-        "band_heading": "That's why we created Zyzven Naturals Cleanse",
-        "band_copy": "9 herbs traditionally used to support a steadier cycle, calmer moods, and easier months. Ingredients that work with your body, in one cup you look forward to.",
-        "kicker": "BRING YOUR BALANCE BACK.",
-        "button_label": "BRING YOUR BALANCE BACK",
+        "image_alt": "Manthoric Advance men's vitality capsules",
+        "band_heading": "That's why we created Manthoric Advance",
+        "band_copy": "Tongkat Ali, ashwagandha, black maca, Panax ginseng, cordyceps, shilajit and zinc in one 2-capsule daily serving. Made to support male vitality, energy, stamina and resilience to stress, without relying on caffeine.",
+        "kicker": "STRONGER DAYS START HERE.",
+        "button_label": "UNLOCK MY VITALITY",
         "button_action": "link",
         "product": "",
         "go_to_cart": false,
@@ -578,33 +578,33 @@
         "job_Lqx6dg": {
           "type": "job",
           "settings": {
-            "title": "Eases cramps & PMS",
-            "herbs": "Raspberry Leaf · Ginger · Chamomile",
-            "copy": "Raspberry leaf is the classic women's herb for cycle comfort, ginger eases cramps and nausea, and chamomile relaxes tension. Together they take the edge off the worst days."
+            "title": "Supports male vitality",
+            "herbs": "Tongkat Ali · Fenugreek · Zinc",
+            "copy": "Traditional men's botanicals, plus zinc, which contributes to the maintenance of normal testosterone levels."
           }
         },
         "job_B47xCK": {
           "type": "job",
           "settings": {
-            "title": "Smooths mood & stress",
-            "herbs": "Chamomile · Lemon Verbena · Lemongrass",
-            "copy": "Calming herbs that quiet irritability and that wired, on-edge feeling, so you feel grounded through every phase of your cycle."
+            "title": "Promotes energy & stamina",
+            "herbs": "Panax Ginseng · Cordyceps · Black Maca",
+            "copy": "Three classic energy botanicals traditionally used to support stamina and endurance, from the boardroom to the gym."
           }
         },
         "job_qDbFcE": {
           "type": "job",
           "settings": {
-            "title": "Supports your cycle",
-            "herbs": "Spearmint · Raspberry Leaf · Nettle",
-            "copy": "Spearmint is the herb most reached for by women managing PCOS symptoms, raspberry leaf supports cycle regularity, and nettle replaces the minerals your body burns through every month."
+            "title": "Supports stress resilience",
+            "herbs": "Ashwagandha",
+            "copy": "The Ayurvedic adaptogen traditionally used to help your body handle everyday stress and recover well."
           }
         },
         "job_ybcJnK": {
           "type": "job",
           "settings": {
-            "title": "Calms bloat & digestion",
-            "herbs": "Ginger · Lemongrass · Rose Hip",
-            "copy": "Carminative herbs that settle the gut and ease the cyclical bloat that makes your jeans feel two sizes too small."
+            "title": "Nourishes & boosts absorption",
+            "herbs": "Shilajit · Moringa · Black Pepper",
+            "copy": "Mineral-rich shilajit and nutrient-dense moringa, with black pepper extract to help your body absorb the full formula."
           }
         }
       },
@@ -617,11 +617,11 @@
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
-        "title": "One Cup. Four Jobs.",
-        "lead": "<p>Zyzven Naturals iisn't another capsule you forget on the shelf. It's 9 functional herbs that do four things at once, gently, every day.</p>",
-        "callout": "<p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Zyzven Naturals balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>",
-        "disclaimer": "",
-        "button_label": "Start my relief",
+        "title": "2 Capsules. 4 Jobs.",
+        "lead": "<p>Manthoric Advance isn't a single-herb \"booster\". It's 10 ingredients chosen to work together, so every serving supports your vitality, energy, stress response and nutrition at once.</p>",
+        "callout": "<p><strong>The difference:</strong> many men's performance products lean on caffeine and stimulants for a quick buzz that fades. Manthoric Advance is built on <em>adaptogens, traditional roots and zinc</em>, for steady daily support you can build on.</p>",
+        "disclaimer": "<p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+        "button_label": "Unlock my vitality",
         "button_link": "#",
         "button_arrow": true,
         "accent_color": "#358440",
@@ -649,73 +649,73 @@
         "ingredient_fgjKbm": {
           "type": "ingredient",
           "settings": {
-            "label": "Balance & comfort",
-            "title": "Licorice Root",
-            "text": "A traditional women's herb that rounds out the blend and supports you through hormonal shifts."
+            "label": "Vitality",
+            "title": "Tongkat Ali",
+            "text": "The Southeast Asian root at the heart of men's vitality formulas."
           }
         },
         "ingredient_aAQBKy": {
           "type": "ingredient",
           "settings": {
-            "label": "Cycle & hormone support",
-            "title": "Spearmint ¬∑ Red Raspberry Leaf",
-            "text": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle."
+            "label": "Stress & recovery",
+            "title": "Ashwagandha",
+            "text": "An Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery."
           }
         },
         "ingredient_6H89qA": {
           "type": "ingredient",
           "settings": {
-            "label": "Calm & mood",
-            "title": "Chamomile ¬∑ Lemon Verbena",
-            "text": "Quiet irritability and that wired PMS feeling for a calm, grounded mindset."
+            "label": "Stamina",
+            "title": "Black Maca Root",
+            "text": "The Peruvian superfood root traditionally used to support vitality and stamina."
           }
         },
         "ingredient_qDCxgK": {
           "type": "ingredient",
           "settings": {
-            "label": "Steady energy",
-            "title": "Nettle Leaf",
-            "text": "Mineral-rich support for the weeks when your energy dips before your period."
+            "label": "Energy & performance",
+            "title": "Panax Ginseng",
+            "text": "The classic \"true\" ginseng, valued for supporting energy and performance."
           }
         },
         "ingredient_qM9EE8": {
           "type": "ingredient",
           "settings": {
-            "label": "Cramp relief",
-            "title": "Ginger Root",
-            "text": "Warming support for cramps and a settled stomach on the heaviest days."
+            "label": "Endurance",
+            "title": "Cordyceps Mushroom",
+            "text": "A functional mushroom traditionally used to support endurance and physical vitality."
           }
         },
         "ingredient_FzBjW6": {
           "type": "ingredient",
           "settings": {
-            "label": "Stress & adrenals",
-            "title": "Ashwagandha",
-            "text": "An adaptogen that helps your body handle stress, the thing that throws cycles off most."
+            "label": "Men's health",
+            "title": "Fenugreek",
+            "text": "A traditional seed widely used in men's health and vitality formulas."
           }
         },
         "ingredient_VDNfze": {
           "type": "ingredient",
           "settings": {
-            "label": "Bloat & digestion",
-            "title": "Fennel Seed",
-            "text": "Eases bloating and keeps digestion comfortable through the luteal phase."
+            "label": "Mineral power",
+            "title": "Shilajit",
+            "text": "A mineral-rich resin used for centuries in Ayurveda to support vitality."
           }
         },
         "ingredient_eHLmxJ": {
           "type": "ingredient",
           "settings": {
-            "label": "Skin clarity",
-            "title": "Dandelion Root",
-            "text": "Supports the liver as it clears excess hormones, which shows up in your skin."
+            "label": "Nutrient density",
+            "title": "Moringa",
+            "text": "A nutrient-dense leaf packed with naturally occurring vitamins, minerals and plant compounds."
           }
         },
         "ingredient_JHQTh6": {
           "type": "ingredient",
           "settings": {
-            "label": "Restful sleep",
-            "title": "Rose Petal",
-            "text": "A soft, floral finish that helps you wind down at the end of the day."
+            "label": "Hormone support & absorption",
+            "title": "Zinc · Black Pepper",
+            "text": "Zinc contributes to the maintenance of normal testosterone levels, and black pepper helps your body absorb the botanicals."
           }
         }
       },
@@ -733,9 +733,9 @@
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
-        "heading": "9 ingredients. One balancing ritual.",
-        "subheading": "Swipe or tap a card to spin the ring.",
-        "button_label": "Bring my balance back",
+        "heading": "10 ingredients. One daily edge.",
+        "subheading": "Swipe or tap a card to explore the formula.",
+        "button_label": "Unlock my vitality",
         "button_link": "",
         "show_dots": false,
         "visible_sides": 2,
@@ -763,54 +763,54 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/Red_Clover_Flower.jpg",
-            "label": "Red Clover Flower",
-            "title": "Menopause-focused botanical",
-            "text": "Contains naturally occurring isoflavones and has a long history of use in women's menopause wellness formulas."
+            "label": "Vitality",
+            "title": "Tongkat Ali",
+            "text": "The Southeast Asian root at the heart of men's vitality formulas."
           }
         },
         "ingredient_TzFAcM": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/Shatavari_Root.jpg",
-            "label": "Shatavari Root",
-            "title": "Women's balance and vitality",
-            "text": "A treasured Ayurvedic botanical traditionally used to support women through changing life stages."
+            "label": "Stress & recovery",
+            "title": "Ashwagandha",
+            "text": "An Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery."
           }
         },
         "ingredient_Vne3XR": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/Chaste_Tree_Berry.jpg",
-            "label": "Chaste Tree Berry",
-            "title": "Traditional women's wellness",
-            "text": "Also known as vitex, chaste tree berry has a long history of use in formulas supporting women's cyclical and menopausal wellness."
+            "label": "Energy & stamina",
+            "title": "Black Maca · Panax Ginseng",
+            "text": "Two classic roots traditionally used to support energy, stamina and performance."
           }
         },
         "ingredient_qQcCPX": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/Ashwagandha_Root.jpg",
-            "label": "Ashwagandha Root",
-            "title": "Calm and stress resilience",
-            "text": "An adaptogenic botanical traditionally used to support relaxation, resilience and the body's response to everyday stress."
+            "label": "Endurance",
+            "title": "Cordyceps Mushroom",
+            "text": "A functional mushroom traditionally used to support endurance and physical vitality."
           }
         },
         "ingredient_rxnkDG": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/Lemon_Balm_Leaf.jpg",
-            "label": "Lemon Balm Leaf",
-            "title": "Calm mood and restful evenings",
-            "text": "A gently soothing herb traditionally used to support relaxation, emotional balance and restful sleep."
+            "label": "Men's health",
+            "title": "Fenugreek · Shilajit",
+            "text": "A traditional men's health seed and a mineral-rich Ayurvedic resin for vitality."
           }
         },
         "ingredient_kV4Ct8": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/Nettle.jpg",
-            "label": "Raspberry Leaf + Nettle",
-            "title": "Nourishing herbal support",
-            "text": "Mineral-rich botanicals traditionally used to nourish and support women's everyday wellness."
+            "label": "Nutrition & hormones",
+            "title": "Moringa · Zinc · Black Pepper",
+            "text": "Nutrient-dense moringa, zinc for normal testosterone levels, and black pepper for absorption."
           }
         }
       },
@@ -826,9 +826,9 @@
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
-        "heading": "6 ingredients. One balancing ritual.",
-        "subheading": "Swipe or tap a card to spin the ring.",
-        "button_label": "Bring my balance back",
+        "heading": "10 ingredients. One daily edge.",
+        "subheading": "Swipe or tap a card to explore the formula.",
+        "button_label": "Unlock my vitality",
         "button_link": "",
         "show_dots": false,
         "visible_sides": 2,
@@ -854,7 +854,7 @@
       "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>One Cup. Four Jobs. — preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHY IT WORKS / One Cup. Four Jobs.\n     Scoped to #hg-how so nothing leaks into other .section blocks.\n     Theme variables are used with fallbacks, so if --pink etc. are\n     defined on :root the theme values win.\n     ============================================================ */\n  #hg-how {\n    --hw-pink: var(--pink, #EC3A8C);\n    --hw-pink-soft: var(--pink-soft, #FCE7F1);\n    --hw-line: var(--gray-light, #EDEDF0);\n    --hw-body: var(--gray-text, #6E7075);\n    --hw-ink: var(--charcoal, #17171A);\n    --hw-max: 1160px;\n    --hw-gap: 18px;\n\n    padding: 64px 20px 72px;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  #hg-how .hw-inner {\n    max-width: var(--hw-max);\n    margin: 0 auto;\n  }\n\n  /* ---------- header ---------- */\n  #hg-how .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n    text-align: center;\n  }\n\n  #hg-how .section-h2 {\n    margin: 0 auto 20px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-how .section-lead {\n    margin: 0 auto 34px;\n    max-width: 620px;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: var(--hw-body);\n    text-align: center;\n    text-wrap: pretty;\n  }\n\n  /* ---------- card grid ---------- */\n  #hg-how .hw-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: var(--hw-gap);\n    align-items: stretch;\n    margin: 0 0 18px;\n  }\n\n  #hg-how .hw-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background: #fff;\n    border: 1px solid var(--hw-line);\n    border-radius: 16px;\n    padding: 28px 20px 26px;\n    text-align: center;\n    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);\n    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;\n  }\n\n  #hg-how .hw-card:hover {\n    transform: translateY(-3px);\n    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);\n    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px rgba(236,58,140,.28);\n  }\n\n  #hg-how .hw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 0 0 15px;\n    border-radius: 50%;\n    background: var(--hw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n  }\n\n  #hg-how .hw-card-title {\n    margin: 0 0 8px;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1.3;\n    letter-spacing: -.012em;\n    color: var(--hw-ink);\n  }\n\n  #hg-how .hw-herbs {\n    margin: 0 0 12px;\n    font-size: 11px;\n    font-weight: 800;\n    line-height: 1.4;\n    letter-spacing: .085em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n  }\n\n  #hg-how .hw-copy {\n    margin: 0;\n    font-size: 13px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- callout ---------- */\n  #hg-how .hw-callout {\n    max-width: 720px;\n    margin: 0 auto;\n    padding: 28px 32px;\n    border-radius: 16px;\n    background: var(--hw-pink-soft);\n    text-align: center;\n  }\n\n  #hg-how .hw-callout p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--hw-ink);\n    text-wrap: pretty;\n  }\n\n  #hg-how .hw-callout strong { font-weight: 700; }\n  #hg-how .hw-callout em { font-style: italic; }\n\n  /* ---------- CTA ---------- */\n  #hg-how .hw-cta {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #hg-how .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 300px;\n    min-height: 51px;\n    padding: 15px 28px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--hw-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 8px 24px -6px rgba(236,58,140,.45);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-how .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 14px 30px -8px rgba(236,58,140,.55);\n  }\n\n  #hg-how .atc:active {\n    transform: translateY(0);\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.45);\n  }\n\n  #hg-how .atc:focus-visible {\n    outline: 2px solid var(--hw-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-how .atc svg {\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2.2;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-how .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1080px) {\n    #hg-how { padding: 56px 18px 64px; }\n    #hg-how .hw-grid { gap: 14px; }\n    #hg-how .hw-card { padding: 26px 16px 24px; }\n  }\n\n  @media (max-width: 900px) {\n    #hg-how .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 5vw, 32px); }\n    #hg-how .hw-callout { padding: 26px 24px; }\n  }\n\n  @media (max-width: 560px) {\n    #hg-how {\n      padding: 48px 16px 56px;\n      --hw-gap: 12px;\n    }\n    #hg-how .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }\n    #hg-how .section-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }\n\n    #hg-how .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }\n    #hg-how .hw-card {\n      flex-direction: row;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 20px 20px 21px;\n      text-align: left;\n    }\n    #hg-how .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }\n    #hg-how .hw-card-title { font-size: 17px; margin-bottom: 6px; }\n    #hg-how .hw-herbs { font-size: 11px; margin-bottom: 9px; }\n    #hg-how .hw-copy { font-size: 14px; line-height: 1.55; }\n\n    #hg-how .hw-callout { padding: 22px 20px; border-radius: 14px; }\n    #hg-how .hw-callout p { font-size: 15px; }\n    #hg-how .atc { max-width: none; font-size: 15px; }\n  }\n\n  @media (hover: none) {\n    #hg-how .hw-card:hover { transform: none; border-color: var(--hw-line); box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16); }\n    #hg-how .atc:hover { transform: none; }\n    #hg-how .atc:hover svg { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-how * { transition: none !important; }\n    #hg-how .hw-card:hover, #hg-how .atc:hover { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section\" id=\"hg-how\">\n  <div class=\"hw-inner\">\n\n    <p class=\"section-eyebrow\">Why it works</p>\n    <h2 class=\"section-h2\">One Cup. Four Jobs.</h2>\n    <p class=\"section-lead\">Hey Girl isn't another supplement to choke down. It's functional herbs that do four things at once, gently, while you sleep.</p>\n\n    <ol class=\"hw-grid\" style=\"list-style:none;margin:0 0 18px;padding:0;\">\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">1</div>\n        <div>\n          <h3 class=\"hw-card-title\">Calms bloating &amp; gas</h3>\n          <p class=\"hw-herbs\">Fennel · Ginger · Lemongrass</p>\n          <p class=\"hw-copy\">These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">2</div>\n        <div>\n          <h3 class=\"hw-card-title\">Eases digestion</h3>\n          <p class=\"hw-herbs\">Milk Thistle · Burdock</p>\n          <p class=\"hw-copy\">Milk thistle and burdock support your liver and gut, so food breaks down cleanly and you feel less heavy and off after meals.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">3</div>\n        <div>\n          <h3 class=\"hw-card-title\">Gets you regular</h3>\n          <p class=\"hw-herbs\">Low-dose Senna</p>\n          <p class=\"hw-copy\">A gentle, deliberate dose nudges your bowel overnight, so you wake up regular. No cramping, because the soothing herbs balance it.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">4</div>\n        <div>\n          <h3 class=\"hw-card-title\">Releases water weight</h3>\n          <p class=\"hw-herbs\">Dandelion · Nettle</p>\n          <p class=\"hw-copy\">Natural diuretics that flush the stored water behind the puffiness in your face, fingers, and stomach.</p>\n        </div>\n      </li>\n    </ol>\n\n    <div class=\"hw-callout\">\n      <p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Hey Girl balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>\n    </div>\n\n    <div class=\"hw-cta\">\n      <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n        <span>Start my relief</span>\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n      </button>\n    </div>\n\n  </div>\n</section>\n\n<script>function hgBuy(){ /* theme handler */ }</script>\n\n</body>\n</html>",
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>2 Capsules. 4 Jobs.</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHY IT WORKS / One Cup. Four Jobs.\n     Scoped to #hg-how so nothing leaks into other .section blocks.\n     Theme variables are used with fallbacks, so if --pink etc. are\n     defined on :root the theme values win.\n     ============================================================ */\n  #hg-how {\n    --hw-pink: var(--pink, #EC3A8C);\n    --hw-pink-soft: var(--pink-soft, #FCE7F1);\n    --hw-line: var(--gray-light, #EDEDF0);\n    --hw-body: var(--gray-text, #6E7075);\n    --hw-ink: var(--charcoal, #17171A);\n    --hw-max: 1160px;\n    --hw-gap: 18px;\n\n    padding: 64px 20px 72px;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  #hg-how .hw-inner {\n    max-width: var(--hw-max);\n    margin: 0 auto;\n  }\n\n  /* ---------- header ---------- */\n  #hg-how .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n    text-align: center;\n  }\n\n  #hg-how .section-h2 {\n    margin: 0 auto 20px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-how .section-lead {\n    margin: 0 auto 34px;\n    max-width: 620px;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: var(--hw-body);\n    text-align: center;\n    text-wrap: pretty;\n  }\n\n  /* ---------- card grid ---------- */\n  #hg-how .hw-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: var(--hw-gap);\n    align-items: stretch;\n    margin: 0 0 18px;\n  }\n\n  #hg-how .hw-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background: #fff;\n    border: 1px solid var(--hw-line);\n    border-radius: 16px;\n    padding: 28px 20px 26px;\n    text-align: center;\n    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);\n    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;\n  }\n\n  #hg-how .hw-card:hover {\n    transform: translateY(-3px);\n    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);\n    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px rgba(236,58,140,.28);\n  }\n\n  #hg-how .hw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 0 0 15px;\n    border-radius: 50%;\n    background: var(--hw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n  }\n\n  #hg-how .hw-card-title {\n    margin: 0 0 8px;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1.3;\n    letter-spacing: -.012em;\n    color: var(--hw-ink);\n  }\n\n  #hg-how .hw-herbs {\n    margin: 0 0 12px;\n    font-size: 11px;\n    font-weight: 800;\n    line-height: 1.4;\n    letter-spacing: .085em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n  }\n\n  #hg-how .hw-copy {\n    margin: 0;\n    font-size: 13px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- callout ---------- */\n  #hg-how .hw-callout {\n    max-width: 720px;\n    margin: 0 auto;\n    padding: 28px 32px;\n    border-radius: 16px;\n    background: var(--hw-pink-soft);\n    text-align: center;\n  }\n\n  #hg-how .hw-callout p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--hw-ink);\n    text-wrap: pretty;\n  }\n\n  #hg-how .hw-callout strong { font-weight: 700; }\n  #hg-how .hw-callout em { font-style: italic; }\n\n  /* ---------- CTA ---------- */\n  #hg-how .hw-cta {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #hg-how .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 300px;\n    min-height: 51px;\n    padding: 15px 28px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--hw-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 8px 24px -6px rgba(236,58,140,.45);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-how .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 14px 30px -8px rgba(236,58,140,.55);\n  }\n\n  #hg-how .atc:active {\n    transform: translateY(0);\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.45);\n  }\n\n  #hg-how .atc:focus-visible {\n    outline: 2px solid var(--hw-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-how .atc svg {\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2.2;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-how .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1080px) {\n    #hg-how { padding: 56px 18px 64px; }\n    #hg-how .hw-grid { gap: 14px; }\n    #hg-how .hw-card { padding: 26px 16px 24px; }\n  }\n\n  @media (max-width: 900px) {\n    #hg-how .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 5vw, 32px); }\n    #hg-how .hw-callout { padding: 26px 24px; }\n  }\n\n  @media (max-width: 560px) {\n    #hg-how {\n      padding: 48px 16px 56px;\n      --hw-gap: 12px;\n    }\n    #hg-how .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }\n    #hg-how .section-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }\n\n    #hg-how .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }\n    #hg-how .hw-card {\n      flex-direction: row;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 20px 20px 21px;\n      text-align: left;\n    }\n    #hg-how .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }\n    #hg-how .hw-card-title { font-size: 17px; margin-bottom: 6px; }\n    #hg-how .hw-herbs { font-size: 11px; margin-bottom: 9px; }\n    #hg-how .hw-copy { font-size: 14px; line-height: 1.55; }\n\n    #hg-how .hw-callout { padding: 22px 20px; border-radius: 14px; }\n    #hg-how .hw-callout p { font-size: 15px; }\n    #hg-how .atc { max-width: none; font-size: 15px; }\n  }\n\n  @media (hover: none) {\n    #hg-how .hw-card:hover { transform: none; border-color: var(--hw-line); box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16); }\n    #hg-how .atc:hover { transform: none; }\n    #hg-how .atc:hover svg { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-how * { transition: none !important; }\n    #hg-how .hw-card:hover, #hg-how .atc:hover { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section\" id=\"hg-how\">\n  <div class=\"hw-inner\">\n\n    <p class=\"section-eyebrow\">Why it works</p>\n    <h2 class=\"section-h2\">2 Capsules. 4 Jobs.</h2>\n    <p class=\"section-lead\">Manthoric Advance isn't a single-herb \"booster\". It's 10 ingredients chosen to work together, so every serving supports your vitality, energy, stress response and nutrition at once.</p>\n\n    <ol class=\"hw-grid\" style=\"list-style:none;margin:0 0 18px;padding:0;\">\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">1</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports male vitality</h3>\n          <p class=\"hw-herbs\">Tongkat Ali · Fenugreek · Zinc</p>\n          <p class=\"hw-copy\">Traditional men's botanicals, plus zinc, which contributes to the maintenance of normal testosterone levels.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">2</div>\n        <div>\n          <h3 class=\"hw-card-title\">Promotes energy &amp; stamina</h3>\n          <p class=\"hw-herbs\">Panax Ginseng · Cordyceps · Black Maca</p>\n          <p class=\"hw-copy\">Three classic energy botanicals traditionally used to support stamina and endurance, from the boardroom to the gym.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">3</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports stress resilience</h3>\n          <p class=\"hw-herbs\">Ashwagandha</p>\n          <p class=\"hw-copy\">The Ayurvedic adaptogen traditionally used to help your body handle everyday stress and recover well.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">4</div>\n        <div>\n          <h3 class=\"hw-card-title\">Nourishes &amp; boosts absorption</h3>\n          <p class=\"hw-herbs\">Shilajit · Moringa · Black Pepper</p>\n          <p class=\"hw-copy\">Mineral-rich shilajit and nutrient-dense moringa, with black pepper extract to help your body absorb the full formula.</p>\n        </div>\n      </li>\n    </ol>\n\n    <div class=\"hw-callout\">\n      <p><strong>The difference:</strong> many men's performance products lean on caffeine and stimulants for a quick buzz that fades. Manthoric Advance is built on <em>adaptogens, traditional roots and zinc</em>, for steady daily support you can build on.</p>\n    </div>\n\n    <div class=\"hw-cta\">\n      <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n        <span>Unlock my vitality</span>\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n      </button>\n    </div>\n\n  </div>\n</section>\n\n<script>function hgBuy(){ /* theme handler */ }</script>\n\n</body>\n</html>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -867,11 +867,11 @@
           "type": "testimonial",
           "settings": {
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-18_at_5.39.51_PM_ejrog0.png",
-            "image_alt": "Flatter stomach, side profile",
-            "badge": "Bloating",
+            "image_alt": "Manthoric Advance customer: energy",
+            "badge": "Energy",
             "rating": 5,
-            "quote": "\"My stomach went from puffy to flat. The side profile says it all.\"",
-            "name": "Laura K. · Los Angeles, CA"
+            "quote": "Add a verified Manthoric Advance customer review here.",
+            "name": "Customer name · City, State"
           }
         },
         "testimonial_xF7GgV": {
@@ -879,33 +879,33 @@
           "settings": {
             "image": "shopify://shop_images/manthoric-advance-mens-vitality-performance-support-capsules.jpg",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/v1777656817/Screenshot_2025-12-08_at_4.12.11_PM_mhjwyq.png",
-            "image_alt": "Comfortable after meals, no more heaviness",
-            "badge": "Digestion",
+            "image_alt": "Manthoric Advance customer: stamina",
+            "badge": "Stamina",
             "rating": 5,
-            "quote": "\"No more heaviness or gas after meals. My gut finally feels normal.\"",
-            "name": "Hannah O. · Phoenix, AZ"
+            "quote": "Add a verified Manthoric Advance customer review here.",
+            "name": "Customer name · City, State"
           }
         },
         "testimonial_HUkF3p": {
           "type": "testimonial",
           "settings": {
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-05-01_at_12.38.47_PM_wge0mq.png",
-            "image_alt": "Comfortable, relaxed customer holding cleanse tea",
-            "badge": "Constipation",
+            "image_alt": "Manthoric Advance customer: recovery",
+            "badge": "Recovery",
             "rating": 5,
-            "quote": "\"Regular every morning. My stomach feels normal again.\"",
-            "name": "Amanda R. · Chicago, IL"
+            "quote": "Add a verified Manthoric Advance customer review here.",
+            "name": "Customer name · City, State"
           }
         },
         "testimonial_YkCAxe": {
           "type": "testimonial",
           "settings": {
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-16_at_6.53.03_PM_alhf6p.png",
-            "image_alt": "Reduced facial puffiness",
-            "badge": "Water Retention",
+            "image_alt": "Manthoric Advance customer: routine",
+            "badge": "Routine",
             "rating": 5,
-            "quote": "\"My face stopped looking swollen. My cheekbones are back.\"",
-            "name": "Brittany Collins · Los Angeles, CA"
+            "quote": "Add a verified Manthoric Advance customer review here.",
+            "name": "Customer name · City, State"
           }
         }
       },
@@ -918,10 +918,10 @@
       "disabled": true,
       "name": "Real transformations",
       "settings": {
-        "eyebrow": "Real Transformations",
-        "title": "The results speak for themselves.",
-        "lead": "<p>Across every angle, bloating, digestion, constipation, water retention. All using the same gentle ritual.</p>",
-        "disclaimer": "",
+        "eyebrow": "Real Results",
+        "title": "What steady energy feels like.",
+        "lead": "<p>More energy through the day, better recovery, a routine that sticks. Here's what men say about their daily Manthoric Advance habit.</p>",
+        "disclaimer": "<p>Individual results vary. Manthoric Advance works best alongside regular training, good sleep and a balanced diet.</p>",
         "accent_color": "#358440",
         "badge_text_color": "#ffffff",
         "star_color": "#358440",
@@ -942,7 +942,7 @@
       "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>What's inside — coverflow preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHAT'S INSIDE — coverflow ring\n     Scoped to #hg-inside. The original CSS was scoped to #hg-pdp\n     while the section id is hg-how, so every rule here silently\n     depended on an unrelated ancestor existing.\n     ============================================================ */\n  #hg-inside {\n    --cf-pink: var(--pink, #EC2E8A);\n    --cf-pink-dark: var(--pink-dark, #D01F76);\n    --cf-pink-soft: var(--pink-soft, #FCE4EF);\n    --cf-ink: var(--charcoal, #17171A);\n    --cf-body: var(--gray-text, #5F6166);\n\n    --cf-card-w: 320px;\n    --cf-card-h: 476px;\n    --cf-radius: 20px;\n\n    padding: 40px 20px 0;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* ---------- header ---------- */\n  #hg-inside .cf-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--cf-pink);\n    text-align: center;\n  }\n\n  #hg-inside .cf-heading {\n    margin: 0 auto 10px;\n    max-width: 24ch;\n    font-size: clamp(27px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--cf-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-inside .cf-hint {\n    margin: 0;\n    font-size: 13.5px;\n    line-height: 1.5;\n    color: var(--cf-body);\n    text-align: center;\n  }\n\n  /* ---------- stage ---------- */\n  #hg-inside .hg-cf {\n    position: relative;\n    max-width: 1120px;\n    height: 530px;\n    margin: 22px auto 6px;\n    perspective: 1300px;\n  }\n\n  #hg-inside .hg-cf-stage {\n    position: absolute;\n    top: 26px;\n    left: 50%;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    margin-left: calc(var(--cf-card-w) / -2);\n    transform-style: preserve-3d;\n    transition: transform .85s cubic-bezier(.34, 1, .64, 1);\n  }\n\n  #hg-inside .hg-cf-card {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    background: #fff;\n    border-radius: var(--cf-radius);\n    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);\n    overflow: hidden;\n    cursor: pointer;\n    backface-visibility: hidden;\n    transition: opacity .6s ease;\n  }\n\n  #hg-inside .hg-cf-card img {\n    display: block;\n    width: 100%;\n    height: 240px;\n    object-fit: contain;\n    background: var(--cf-pink-soft);\n  }\n\n  #hg-inside .hg-cf-body {\n    padding: 18px 22px;\n    text-align: center;\n  }\n\n  #hg-inside .hg-cf-tag {\n    font-size: 13.5px;\n    font-weight: 800;\n    letter-spacing: .095em;\n    text-transform: uppercase;\n    line-height: 1.25;\n    color: var(--cf-pink);\n  }\n\n  #hg-inside .hg-cf-name {\n    margin: 6px 0 10px;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1.2;\n    letter-spacing: -.012em;\n    color: var(--cf-ink);\n  }\n\n  #hg-inside .hg-cf-desc {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.55;\n    color: var(--cf-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- arrows ---------- */\n  #hg-inside .hg-cf-arrow {\n    position: absolute;\n    top: 178px;\n    z-index: 60;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 78px;\n    height: 78px;\n    padding: 0;\n    transform: translateY(-50%);\n    border: 3px solid #fff;\n    border-radius: 50%;\n    background: var(--cf-pink);\n    color: #fff;\n    cursor: pointer;\n    box-shadow: 0 12px 28px rgba(236, 46, 138, .55);\n    transition: background .15s ease, box-shadow .15s ease, transform .15s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-inside .hg-cf-arrow:hover {\n    background: var(--cf-pink-dark);\n    transform: translateY(-50%) scale(1.08);\n    box-shadow: 0 14px 34px rgba(236, 46, 138, .65);\n  }\n\n  #hg-inside .hg-cf-arrow:active { transform: translateY(-50%) scale(1.02); }\n\n  #hg-inside .hg-cf-arrow:focus-visible {\n    outline: 3px solid var(--cf-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-inside .hg-cf-arrow.prev { left: 4px; }\n  #hg-inside .hg-cf-arrow.next { right: 4px; }\n\n  #hg-inside .hg-cf-arrow svg {\n    width: 30px;\n    height: 30px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 3.4;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n  }\n\n  /* ---------- CTA ---------- */\n  #hg-inside .cf-cta { margin-top: 26px; text-align: center; }\n\n  #hg-inside .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 320px;\n    min-height: 56px;\n    padding: 16px 30px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--cf-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .055em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 10px 28px -6px rgba(236, 46, 138, .5);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n  }\n\n  #hg-inside .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 16px 34px -8px rgba(236, 46, 138, .6);\n  }\n\n  #hg-inside .atc:focus-visible { outline: 2px solid var(--cf-ink); outline-offset: 3px; }\n\n  #hg-inside .atc svg {\n    width: 17px; height: 17px; flex: 0 0 17px;\n    fill: none; stroke: currentColor; stroke-width: 2.2;\n    stroke-linecap: round; stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-inside .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- tablet ---------- */\n  @media (max-width: 900px) {\n    #hg-inside { --cf-card-w: 280px; --cf-card-h: 456px; }\n    #hg-inside .hg-cf { height: 500px; }\n    #hg-inside .hg-cf-arrow { width: 60px; height: 60px; top: 160px; }\n    #hg-inside .hg-cf-arrow svg { width: 24px; height: 24px; }\n  }\n\n  /* ---------- mobile: flat snap scroller ---------- */\n  @media (max-width: 640px) {\n    #hg-inside { padding: 32px 0 0; }\n    #hg-inside .cf-eyebrow, #hg-inside .cf-heading, #hg-inside .cf-hint { padding-inline: 16px; }\n    #hg-inside .cf-heading { font-size: clamp(26px, 7.4vw, 32px); }\n\n    #hg-inside .hg-cf {\n      height: auto;\n      margin: 18px 0 6px;\n      perspective: none;\n    }\n\n    #hg-inside .hg-cf-stage {\n      position: static;\n      display: flex;\n      gap: 14px;\n      width: auto;\n      height: auto;\n      margin: 0;\n      padding: 6px 16px 18px;\n      overflow-x: auto;\n      scroll-snap-type: x mandatory;\n      scroll-padding-inline: 16px;\n      -webkit-overflow-scrolling: touch;\n      scrollbar-width: none;\n      transform: none !important;\n      touch-action: pan-x pan-y;\n    }\n\n    #hg-inside .hg-cf-stage::-webkit-scrollbar { display: none; }\n\n    #hg-inside .hg-cf-card {\n      position: relative !important;\n      top: auto !important;\n      left: auto !important;\n      flex: 0 0 78%;\n      max-width: 300px;\n      height: auto;\n      transform: none !important;\n      opacity: 1 !important;\n      pointer-events: auto !important;\n      scroll-snap-align: center;\n      cursor: default;\n    }\n\n    #hg-inside .hg-cf-card[data-clone] { display: none; }\n\n    #hg-inside .hg-cf-card img { height: 210px; }\n    #hg-inside .hg-cf-body { padding: 16px 18px 22px; }\n    #hg-inside .hg-cf-tag { font-size: 12.5px; }\n    #hg-inside .hg-cf-name { font-size: 18px; }\n    #hg-inside .hg-cf-desc { font-size: 15px; }\n\n    #hg-inside .hg-cf-arrow {\n      top: 42%;\n      width: 44px;\n      height: 44px;\n      border-width: 2px;\n      box-shadow: 0 6px 16px rgba(236, 46, 138, .45);\n    }\n    #hg-inside .hg-cf-arrow svg { width: 18px; height: 18px; stroke-width: 3.2; }\n\n    #hg-inside .cf-cta { padding-inline: 16px; }\n    #hg-inside .atc { max-width: none; }\n  }\n\n  @media (hover: none) {\n    #hg-inside .hg-cf-arrow:hover { background: var(--cf-pink); transform: translateY(-50%); }\n    #hg-inside .atc:hover { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-inside .hg-cf-stage,\n    #hg-inside .hg-cf-card,\n    #hg-inside .hg-cf-arrow,\n    #hg-inside .atc { transition: none !important; }\n  }\n</style>\n</head>\n<body>\n\n<section id=\"hg-inside\">\n\n  <p class=\"cf-eyebrow\">What's inside</p>\n  <h2 class=\"cf-heading\">9 ingredients. One balancing ritual.</h2>\n  <p class=\"cf-hint\">Swipe or tap a card to spin the ring.</p>\n\n  <div class=\"hg-cf\" id=\"hgCf\" role=\"group\" aria-roledescription=\"carousel\" aria-label=\"Ingredients\">\n\n    <button class=\"hg-cf-arrow prev\" type=\"button\" aria-label=\"Previous ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 4.5 8 12l7 7.5\"/></svg>\n    </button>\n\n    <div class=\"hg-cf-stage\">\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_35_01_PM.png?v=1782157994&width=640\"\n             alt=\"Spearmint and red raspberry leaf\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Cycle &amp; Hormone Support</p>\n          <h3 class=\"hg-cf-name\">Spearmint · Red Raspberry Leaf</h3>\n          <p class=\"hg-cf-desc\">Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_36_25_PM.png?v=1782157996&width=640\"\n             alt=\"Chamomile and lemon verbena\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Calm &amp; Mood</p>\n          <h3 class=\"hg-cf-name\">Chamomile · Lemon Verbena</h3>\n          <p class=\"hg-cf-desc\">Quiet irritability and that wired PMS feeling for a calm, grounded mindset.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_37_38_PM.png?v=1782157998&width=640\"\n             alt=\"Ginger rhizome and lemongrass\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Cramp &amp; Bloat Soothers</p>\n          <h3 class=\"hg-cf-name\">Ginger Rhizome · Lemongrass</h3>\n          <p class=\"hg-cf-desc\">Ease cramps and nausea, and settle the cyclical bloat that makes your jeans feel tight.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_38_48_PM.png?v=1782158006&width=640\"\n             alt=\"Nettle leaf and rose hip\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Mineral &amp; Nutrient Layer</p>\n          <h3 class=\"hg-cf-name\">Nettle Leaf · Rose Hip</h3>\n          <p class=\"hg-cf-desc\">Replace the iron and minerals you lose each cycle, plus a gentle dose of vitamin C.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/0308a96d-e768-4b26-9673-1f88c575f782.png?v=1782157993&width=640\"\n             alt=\"Licorice root\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Balance &amp; Comfort</p>\n          <h3 class=\"hg-cf-name\">Licorice Root</h3>\n          <p class=\"hg-cf-desc\">A traditional women's herb that rounds out the blend and supports you through hormonal shifts.</p>\n        </div>\n      </article>\n\n    </div>\n\n    <button class=\"hg-cf-arrow next\" type=\"button\" aria-label=\"Next ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 4.5 16 12l-7 7.5\"/></svg>\n    </button>\n  </div>\n\n  <div class=\"cf-cta\">\n    <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n      <span>Bring my balance back</span>\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n    </button>\n  </div>\n\n</section>\n\n<script>\n(function () {\n  var root = document.getElementById('hgCf');\n  if (!root) return;\n\n  var stage = root.querySelector('.hg-cf-stage');\n  var prev = root.querySelector('.prev');\n  var next = root.querySelector('.next');\n  var mqMobile = window.matchMedia('(max-width: 640px)');\n  var mqCalm = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n  // Duplicate the real cards once so the ring reads as a full circle.\n  // Clones are hidden from assistive tech and from the mobile scroller.\n  var originals = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  originals.forEach(function (card) {\n    var clone = card.cloneNode(true);\n    clone.setAttribute('data-clone', '');\n    clone.setAttribute('aria-hidden', 'true');\n    stage.appendChild(clone);\n  });\n\n  var cards = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  var n = cards.length;\n  var step = 360 / n;\n  var rot = 0;\n  var active = 0;\n\n  function radius() {\n    return window.innerWidth <= 900 ? 440 : 520;\n  }\n\n  function norm(a) {\n    a %= 360;\n    if (a > 180) a -= 360;\n    if (a < -180) a += 360;\n    return a;\n  }\n\n  function apply() {\n    if (mqMobile.matches) return;\n    var r = radius();\n    stage.style.transform = 'translateZ(-' + r + 'px) rotateY(' + rot + 'deg)';\n    cards.forEach(function (c, i) {\n      var ang = Math.abs(norm(i * step + rot));\n      c.style.transform = 'rotateY(' + (i * step) + 'deg) translateZ(' + r + 'px)';\n      c.style.opacity = ang < 22 ? '1' : (ang < 58 ? '0.9' : (ang < 92 ? '0.45' : '0'));\n      c.style.pointerEvents = ang < 92 ? 'auto' : 'none';\n      c.style.zIndex = String(Math.round(200 - ang));\n      c.setAttribute('aria-hidden', ang < 22 && !c.hasAttribute('data-clone') ? 'false' : 'true');\n    });\n  }\n\n  function go(d) {\n    if (mqMobile.matches) {\n      var card = root.querySelector('.hg-cf-card');\n      var w = card ? card.getBoundingClientRect().width + 14 : 300;\n      stage.scrollBy({ left: d * w, behavior: mqCalm.matches ? 'auto' : 'smooth' });\n      return;\n    }\n    rot -= d * step;\n    active = ((active + d) % n + n) % n;\n    apply();\n  }\n\n  prev.addEventListener('click', function (e) { e.stopPropagation(); go(-1); });\n  next.addEventListener('click', function (e) { e.stopPropagation(); go(1); });\n\n  cards.forEach(function (c, i) {\n    c.addEventListener('click', function () {\n      if (mqMobile.matches) return;\n      var d = ((i - active) % n + n) % n;\n      if (d > n / 2) d -= n;\n      if (d !== 0) go(d);\n    });\n  });\n\n  // Keyboard: left/right when the carousel has focus\n  root.setAttribute('tabindex', '0');\n  root.addEventListener('keydown', function (e) {\n    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }\n    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }\n  });\n\n  // Swipe (desktop ring only; mobile uses native scrolling)\n  var sx = null;\n  root.addEventListener('touchstart', function (e) {\n    if (mqMobile.matches) return;\n    sx = e.touches[0].clientX;\n  }, { passive: true });\n\n  root.addEventListener('touchend', function (e) {\n    if (sx === null || mqMobile.matches) return;\n    var dx = e.changedTouches[0].clientX - sx;\n    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);\n    sx = null;\n  }, { passive: true });\n\n  // Rebuild on breakpoint change so rotating a phone doesn't strand the ring\n  var resizeTimer;\n  window.addEventListener('resize', function () {\n    clearTimeout(resizeTimer);\n    resizeTimer = setTimeout(function () {\n      if (mqMobile.matches) {\n        stage.style.transform = '';\n        cards.forEach(function (c) { c.style.transform = ''; c.style.opacity = ''; c.style.zIndex = ''; });\n      } else {\n        apply();\n      }\n    }, 150);\n  });\n\n  apply();\n})();\n\nfunction hgBuy() { /* theme handler */ }\n</script>\n\n</body>\n</html>",
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>What's inside — coverflow preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHAT'S INSIDE — coverflow ring\n     Scoped to #hg-inside. The original CSS was scoped to #hg-pdp\n     while the section id is hg-how, so every rule here silently\n     depended on an unrelated ancestor existing.\n     ============================================================ */\n  #hg-inside {\n    --cf-pink: var(--pink, #EC2E8A);\n    --cf-pink-dark: var(--pink-dark, #D01F76);\n    --cf-pink-soft: var(--pink-soft, #FCE4EF);\n    --cf-ink: var(--charcoal, #17171A);\n    --cf-body: var(--gray-text, #5F6166);\n\n    --cf-card-w: 320px;\n    --cf-card-h: 476px;\n    --cf-radius: 20px;\n\n    padding: 40px 20px 0;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* ---------- header ---------- */\n  #hg-inside .cf-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--cf-pink);\n    text-align: center;\n  }\n\n  #hg-inside .cf-heading {\n    margin: 0 auto 10px;\n    max-width: 24ch;\n    font-size: clamp(27px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--cf-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-inside .cf-hint {\n    margin: 0;\n    font-size: 13.5px;\n    line-height: 1.5;\n    color: var(--cf-body);\n    text-align: center;\n  }\n\n  /* ---------- stage ---------- */\n  #hg-inside .hg-cf {\n    position: relative;\n    max-width: 1120px;\n    height: 530px;\n    margin: 22px auto 6px;\n    perspective: 1300px;\n  }\n\n  #hg-inside .hg-cf-stage {\n    position: absolute;\n    top: 26px;\n    left: 50%;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    margin-left: calc(var(--cf-card-w) / -2);\n    transform-style: preserve-3d;\n    transition: transform .85s cubic-bezier(.34, 1, .64, 1);\n  }\n\n  #hg-inside .hg-cf-card {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    background: #fff;\n    border-radius: var(--cf-radius);\n    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);\n    overflow: hidden;\n    cursor: pointer;\n    backface-visibility: hidden;\n    transition: opacity .6s ease;\n  }\n\n  #hg-inside .hg-cf-card img {\n    display: block;\n    width: 100%;\n    height: 240px;\n    object-fit: contain;\n    background: var(--cf-pink-soft);\n  }\n\n  #hg-inside .hg-cf-body {\n    padding: 18px 22px;\n    text-align: center;\n  }\n\n  #hg-inside .hg-cf-tag {\n    font-size: 13.5px;\n    font-weight: 800;\n    letter-spacing: .095em;\n    text-transform: uppercase;\n    line-height: 1.25;\n    color: var(--cf-pink);\n  }\n\n  #hg-inside .hg-cf-name {\n    margin: 6px 0 10px;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1.2;\n    letter-spacing: -.012em;\n    color: var(--cf-ink);\n  }\n\n  #hg-inside .hg-cf-desc {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.55;\n    color: var(--cf-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- arrows ---------- */\n  #hg-inside .hg-cf-arrow {\n    position: absolute;\n    top: 178px;\n    z-index: 60;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 78px;\n    height: 78px;\n    padding: 0;\n    transform: translateY(-50%);\n    border: 3px solid #fff;\n    border-radius: 50%;\n    background: var(--cf-pink);\n    color: #fff;\n    cursor: pointer;\n    box-shadow: 0 12px 28px rgba(236, 46, 138, .55);\n    transition: background .15s ease, box-shadow .15s ease, transform .15s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-inside .hg-cf-arrow:hover {\n    background: var(--cf-pink-dark);\n    transform: translateY(-50%) scale(1.08);\n    box-shadow: 0 14px 34px rgba(236, 46, 138, .65);\n  }\n\n  #hg-inside .hg-cf-arrow:active { transform: translateY(-50%) scale(1.02); }\n\n  #hg-inside .hg-cf-arrow:focus-visible {\n    outline: 3px solid var(--cf-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-inside .hg-cf-arrow.prev { left: 4px; }\n  #hg-inside .hg-cf-arrow.next { right: 4px; }\n\n  #hg-inside .hg-cf-arrow svg {\n    width: 30px;\n    height: 30px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 3.4;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n  }\n\n  /* ---------- CTA ---------- */\n  #hg-inside .cf-cta { margin-top: 26px; text-align: center; }\n\n  #hg-inside .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 320px;\n    min-height: 56px;\n    padding: 16px 30px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--cf-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .055em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 10px 28px -6px rgba(236, 46, 138, .5);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n  }\n\n  #hg-inside .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 16px 34px -8px rgba(236, 46, 138, .6);\n  }\n\n  #hg-inside .atc:focus-visible { outline: 2px solid var(--cf-ink); outline-offset: 3px; }\n\n  #hg-inside .atc svg {\n    width: 17px; height: 17px; flex: 0 0 17px;\n    fill: none; stroke: currentColor; stroke-width: 2.2;\n    stroke-linecap: round; stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-inside .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- tablet ---------- */\n  @media (max-width: 900px) {\n    #hg-inside { --cf-card-w: 280px; --cf-card-h: 456px; }\n    #hg-inside .hg-cf { height: 500px; }\n    #hg-inside .hg-cf-arrow { width: 60px; height: 60px; top: 160px; }\n    #hg-inside .hg-cf-arrow svg { width: 24px; height: 24px; }\n  }\n\n  /* ---------- mobile: flat snap scroller ---------- */\n  @media (max-width: 640px) {\n    #hg-inside { padding: 32px 0 0; }\n    #hg-inside .cf-eyebrow, #hg-inside .cf-heading, #hg-inside .cf-hint { padding-inline: 16px; }\n    #hg-inside .cf-heading { font-size: clamp(26px, 7.4vw, 32px); }\n\n    #hg-inside .hg-cf {\n      height: auto;\n      margin: 18px 0 6px;\n      perspective: none;\n    }\n\n    #hg-inside .hg-cf-stage {\n      position: static;\n      display: flex;\n      gap: 14px;\n      width: auto;\n      height: auto;\n      margin: 0;\n      padding: 6px 16px 18px;\n      overflow-x: auto;\n      scroll-snap-type: x mandatory;\n      scroll-padding-inline: 16px;\n      -webkit-overflow-scrolling: touch;\n      scrollbar-width: none;\n      transform: none !important;\n      touch-action: pan-x pan-y;\n    }\n\n    #hg-inside .hg-cf-stage::-webkit-scrollbar { display: none; }\n\n    #hg-inside .hg-cf-card {\n      position: relative !important;\n      top: auto !important;\n      left: auto !important;\n      flex: 0 0 78%;\n      max-width: 300px;\n      height: auto;\n      transform: none !important;\n      opacity: 1 !important;\n      pointer-events: auto !important;\n      scroll-snap-align: center;\n      cursor: default;\n    }\n\n    #hg-inside .hg-cf-card[data-clone] { display: none; }\n\n    #hg-inside .hg-cf-card img { height: 210px; }\n    #hg-inside .hg-cf-body { padding: 16px 18px 22px; }\n    #hg-inside .hg-cf-tag { font-size: 12.5px; }\n    #hg-inside .hg-cf-name { font-size: 18px; }\n    #hg-inside .hg-cf-desc { font-size: 15px; }\n\n    #hg-inside .hg-cf-arrow {\n      top: 42%;\n      width: 44px;\n      height: 44px;\n      border-width: 2px;\n      box-shadow: 0 6px 16px rgba(236, 46, 138, .45);\n    }\n    #hg-inside .hg-cf-arrow svg { width: 18px; height: 18px; stroke-width: 3.2; }\n\n    #hg-inside .cf-cta { padding-inline: 16px; }\n    #hg-inside .atc { max-width: none; }\n  }\n\n  @media (hover: none) {\n    #hg-inside .hg-cf-arrow:hover { background: var(--cf-pink); transform: translateY(-50%); }\n    #hg-inside .atc:hover { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-inside .hg-cf-stage,\n    #hg-inside .hg-cf-card,\n    #hg-inside .hg-cf-arrow,\n    #hg-inside .atc { transition: none !important; }\n  }\n</style>\n</head>\n<body>\n\n<section id=\"hg-inside\">\n\n  <p class=\"cf-eyebrow\">What's inside</p>\n  <h2 class=\"cf-heading\">10 ingredients. One daily edge.</h2>\n  <p class=\"cf-hint\">Swipe or tap a card to explore the formula.</p>\n\n  <div class=\"hg-cf\" id=\"hgCf\" role=\"group\" aria-roledescription=\"carousel\" aria-label=\"Ingredients\">\n\n    <button class=\"hg-cf-arrow prev\" type=\"button\" aria-label=\"Previous ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 4.5 8 12l7 7.5\"/></svg>\n    </button>\n\n    <div class=\"hg-cf-stage\">\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_35_01_PM.png?v=1782157994&width=640\"\n             alt=\"Tongkat Ali, Fenugreek\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Vitality</p>\n          <h3 class=\"hg-cf-name\">Tongkat Ali · Fenugreek</h3>\n          <p class=\"hg-cf-desc\">Two traditional men's botanicals at the heart of the formula, for everyday vitality.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_36_25_PM.png?v=1782157996&width=640\"\n             alt=\"Ashwagandha\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Stress &amp; recovery</p>\n          <h3 class=\"hg-cf-name\">Ashwagandha</h3>\n          <p class=\"hg-cf-desc\">An Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_37_38_PM.png?v=1782157998&width=640\"\n             alt=\"Black Maca, Panax Ginseng\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Energy &amp; stamina</p>\n          <h3 class=\"hg-cf-name\">Black Maca · Panax Ginseng</h3>\n          <p class=\"hg-cf-desc\">Two classic roots traditionally used to support energy, stamina and performance.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_38_48_PM.png?v=1782158006&width=640\"\n             alt=\"Cordyceps, Shilajit\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Endurance</p>\n          <h3 class=\"hg-cf-name\">Cordyceps · Shilajit</h3>\n          <p class=\"hg-cf-desc\">A functional mushroom and a mineral-rich resin traditionally used to support endurance and vitality.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/0308a96d-e768-4b26-9673-1f88c575f782.png?v=1782157993&width=640\"\n             alt=\"Moringa, Zinc, Black Pepper\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Nutrition &amp; hormones</p>\n          <h3 class=\"hg-cf-name\">Moringa · Zinc · Black Pepper</h3>\n          <p class=\"hg-cf-desc\">Nutrient-dense moringa, zinc for normal testosterone levels, and black pepper for absorption.</p>\n        </div>\n      </article>\n\n    </div>\n\n    <button class=\"hg-cf-arrow next\" type=\"button\" aria-label=\"Next ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 4.5 16 12l-7 7.5\"/></svg>\n    </button>\n  </div>\n\n  <div class=\"cf-cta\">\n    <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n      <span>Unlock my vitality</span>\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n    </button>\n  </div>\n\n</section>\n\n<script>\n(function () {\n  var root = document.getElementById('hgCf');\n  if (!root) return;\n\n  var stage = root.querySelector('.hg-cf-stage');\n  var prev = root.querySelector('.prev');\n  var next = root.querySelector('.next');\n  var mqMobile = window.matchMedia('(max-width: 640px)');\n  var mqCalm = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n  // Duplicate the real cards once so the ring reads as a full circle.\n  // Clones are hidden from assistive tech and from the mobile scroller.\n  var originals = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  originals.forEach(function (card) {\n    var clone = card.cloneNode(true);\n    clone.setAttribute('data-clone', '');\n    clone.setAttribute('aria-hidden', 'true');\n    stage.appendChild(clone);\n  });\n\n  var cards = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  var n = cards.length;\n  var step = 360 / n;\n  var rot = 0;\n  var active = 0;\n\n  function radius() {\n    return window.innerWidth <= 900 ? 440 : 520;\n  }\n\n  function norm(a) {\n    a %= 360;\n    if (a > 180) a -= 360;\n    if (a < -180) a += 360;\n    return a;\n  }\n\n  function apply() {\n    if (mqMobile.matches) return;\n    var r = radius();\n    stage.style.transform = 'translateZ(-' + r + 'px) rotateY(' + rot + 'deg)';\n    cards.forEach(function (c, i) {\n      var ang = Math.abs(norm(i * step + rot));\n      c.style.transform = 'rotateY(' + (i * step) + 'deg) translateZ(' + r + 'px)';\n      c.style.opacity = ang < 22 ? '1' : (ang < 58 ? '0.9' : (ang < 92 ? '0.45' : '0'));\n      c.style.pointerEvents = ang < 92 ? 'auto' : 'none';\n      c.style.zIndex = String(Math.round(200 - ang));\n      c.setAttribute('aria-hidden', ang < 22 && !c.hasAttribute('data-clone') ? 'false' : 'true');\n    });\n  }\n\n  function go(d) {\n    if (mqMobile.matches) {\n      var card = root.querySelector('.hg-cf-card');\n      var w = card ? card.getBoundingClientRect().width + 14 : 300;\n      stage.scrollBy({ left: d * w, behavior: mqCalm.matches ? 'auto' : 'smooth' });\n      return;\n    }\n    rot -= d * step;\n    active = ((active + d) % n + n) % n;\n    apply();\n  }\n\n  prev.addEventListener('click', function (e) { e.stopPropagation(); go(-1); });\n  next.addEventListener('click', function (e) { e.stopPropagation(); go(1); });\n\n  cards.forEach(function (c, i) {\n    c.addEventListener('click', function () {\n      if (mqMobile.matches) return;\n      var d = ((i - active) % n + n) % n;\n      if (d > n / 2) d -= n;\n      if (d !== 0) go(d);\n    });\n  });\n\n  // Keyboard: left/right when the carousel has focus\n  root.setAttribute('tabindex', '0');\n  root.addEventListener('keydown', function (e) {\n    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }\n    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }\n  });\n\n  // Swipe (desktop ring only; mobile uses native scrolling)\n  var sx = null;\n  root.addEventListener('touchstart', function (e) {\n    if (mqMobile.matches) return;\n    sx = e.touches[0].clientX;\n  }, { passive: true });\n\n  root.addEventListener('touchend', function (e) {\n    if (sx === null || mqMobile.matches) return;\n    var dx = e.changedTouches[0].clientX - sx;\n    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);\n    sx = null;\n  }, { passive: true });\n\n  // Rebuild on breakpoint change so rotating a phone doesn't strand the ring\n  var resizeTimer;\n  window.addEventListener('resize', function () {\n    clearTimeout(resizeTimer);\n    resizeTimer = setTimeout(function () {\n      if (mqMobile.matches) {\n        stage.style.transform = '';\n        cards.forEach(function (c) { c.style.transform = ''; c.style.opacity = ''; c.style.zIndex = ''; });\n      } else {\n        apply();\n      }\n    }, 150);\n  });\n\n  apply();\n})();\n\nfunction hgBuy() { /* theme handler */ }\n</script>\n\n</body>\n</html>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -955,45 +955,45 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_35_01_PM.webp",
-            "label": "Cycle & hormone support",
-            "title": "Spearmint · Red Raspberry Leaf",
-            "text": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle."
+            "label": "Vitality",
+            "title": "Tongkat Ali · Fenugreek",
+            "text": "Two traditional men's botanicals at the heart of the formula, for everyday vitality."
           }
         },
         "ingredient_eJjUHQ": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_36_25_PM.webp",
-            "label": "Calm & mood",
-            "title": "Chamomile · Lemon Verbena",
-            "text": "Quiet irritability and that wired PMS feeling for a calm, grounded mindset."
+            "label": "Stress & recovery",
+            "title": "Ashwagandha",
+            "text": "An Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery."
           }
         },
         "ingredient_eUHmdc": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/0308a96d-e768-4b26-9673-1f88c575f782.webp",
-            "label": "Balance & Comfort",
-            "title": "Licorice Root",
-            "text": "A traditional women's herb that rounds out the blend and supports you through hormonal shifts."
+            "label": "Energy & stamina",
+            "title": "Black Maca · Panax Ginseng",
+            "text": "Two classic roots traditionally used to support energy, stamina and performance."
           }
         },
         "ingredient_WhXVx9": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_37_38_PM.webp",
-            "label": "Cramp & Bloat Soothers",
-            "title": "Ginger Rhizome · Lemongrass",
-            "text": "Ease cramps and nausea, and settle the cyclical bloat that makes your jeans feel tight."
+            "label": "Endurance",
+            "title": "Cordyceps · Shilajit",
+            "text": "A functional mushroom and a mineral-rich resin traditionally used to support endurance and vitality."
           }
         },
         "ingredient_VK6bah": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_38_48_PM.webp",
-            "label": "Mineral & Nutrient Layer",
-            "title": "Nettle Leaf · Rose Hip",
-            "text": "Replace the iron and minerals you lose each cycle, plus a gentle dose of vitamin C."
+            "label": "Nutrition & hormones",
+            "title": "Moringa · Zinc · Black Pepper",
+            "text": "Nutrient-dense moringa, zinc for normal testosterone levels, and black pepper for absorption."
           }
         }
       },
@@ -1008,9 +1008,9 @@
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
-        "heading": "9 ingredients. One balancing ritual.",
-        "subheading": "Swipe or tap a card to spin the ring.",
-        "button_label": "Bring my balance back",
+        "heading": "10 ingredients. One daily edge.",
+        "subheading": "Swipe or tap a card to explore the formula.",
+        "button_label": "Unlock my vitality",
         "button_link": "",
         "show_dots": false,
         "visible_sides": 2,
@@ -1039,9 +1039,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_03_02_34_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
-            "image_alt": "Steep the loose leaf tea",
-            "title": "Steep",
-            "desc": "Pour 8 oz of just-boiled water over one tea bag and steep for 8 to 15 minutes."
+            "image_alt": "Manthoric Advance capsules with a glass of water",
+            "title": "Take",
+            "desc": "Take 2 capsules a day with a meal and a full glass of water."
           }
         },
         "step_nmNcqE": {
@@ -1049,9 +1049,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Sip before bed",
-            "title": "Sip",
-            "desc": "Enjoy 2 to 3 cups a day, hot or over ice. A few calm minutes that are just yours."
+            "image_alt": "Training and recovery routine",
+            "title": "Train & recover",
+            "desc": "Pair it with regular training, quality sleep and a balanced diet to get the most from every serving."
           }
         },
         "step_gwthJd": {
@@ -1059,9 +1059,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Wake up reset, flatter and more regular",
-            "title": "Balance",
-            "desc": "Stay consistent through your cycle and feel steadier moods, easier periods, and less bloat."
+            "image_alt": "Staying consistent with a daily routine",
+            "title": "Stay consistent",
+            "desc": "Botanicals build up over time. Take it daily for at least 6 to 8 weeks and feel the difference consistency makes."
           }
         }
       },
@@ -1072,7 +1072,7 @@
       ],
       "name": "How it works",
       "settings": {
-        "eyebrow": "How it works",
+        "eyebrow": "How to use",
         "title": "Easy as 1. 2. 3.",
         "use_gradient": true,
         "bg_top": "#ffffff",
@@ -1188,51 +1188,75 @@
           "type": "question",
           "settings": {
             "question": "What is Manthoric Advance designed for?",
-            "answer": "<p>Manthoric Advance is a men's wellness supplement formulated to support daily vitality, energy, nutritional balance, and overall wellbeing. </p>"
+            "answer": "<p>Manthoric Advance is a plant-based men's supplement made to support vitality, energy, stamina, physical performance and resilience to everyday stress, as part of an active lifestyle.</p>"
           }
         },
-        "question_q9riDW": {
+        "question_mJkCMq": {
           "type": "question",
           "settings": {
-            "question": "Does Manthoric Advance contain Zinc?",
-            "answer": "<p>Yes. Manthoric Advance contains Zinc, which contributes to the maintenance of normal testosterone levels in the body. </p>"
+            "question": "How should I take it?",
+            "answer": "<p>Take 2 capsules daily with a meal and a full glass of water. Don't exceed the recommended daily serving.</p>"
           }
         },
         "question_4HF6cx": {
           "type": "question",
           "settings": {
-            "question": "How many capsules are included?",
-            "answer": "<p>Each bottle contains 120 vegan capsules, providing approximately a 60-day supply when taken as directed. </p>"
+            "question": "How many capsules are in a bottle?",
+            "answer": "<p>Each bottle contains 120 vegan capsules, a 60-day supply at 2 capsules a day.</p>"
+          }
+        },
+        "question_time01": {
+          "type": "question",
+          "settings": {
+            "question": "How long until I notice a difference?",
+            "answer": "<p>Everyone is different. Adaptogens and botanicals build up over time, so we recommend taking Manthoric Advance daily for at least 6 to 8 weeks alongside regular training, good sleep and a balanced diet.</p>"
+          }
+        },
+        "question_q9riDW": {
+          "type": "question",
+          "settings": {
+            "question": "What's in it, and does it contain zinc?",
+            "answer": "<p>Tongkat Ali, ashwagandha, black maca root, Panax ginseng, cordyceps mushroom, fenugreek, shilajit, moringa, zinc and black pepper extract. Yes, it contains zinc, which contributes to the maintenance of normal testosterone levels.</p>"
+          }
+        },
+        "question_caff01": {
+          "type": "question",
+          "settings": {
+            "question": "Does it contain caffeine or stimulants?",
+            "answer": "<p>No caffeine. Manthoric Advance is built on adaptogens, traditional roots and zinc for steady daily support, not a short-lived buzz.</p>"
           }
         },
         "question_jtmUPH": {
           "type": "question",
           "settings": {
             "question": "Is Manthoric Advance vegan?",
-            "answer": "<p>Yes. The formula is made with vegan capsules and contains no dairy, soy, gluten, or artificial additives. </p>"
+            "answer": "<p>Yes. It's made with vegan capsules and contains no dairy, soy, gluten, fillers or artificial additives. GMP certified and third-party tested.</p>"
           }
         },
-        "question_mJkCMq": {
+        "question_med01": {
           "type": "question",
           "settings": {
-            "question": "When should I take Manthoric Advance?",
-            "answer": "<p>Adults should take 2 capsules daily with a meal and water. </p>"
+            "question": "Can I take it with medication?",
+            "answer": "<p>Please check with your doctor first. Ingredients such as ashwagandha, ginseng and Tongkat Ali may interact with medications for blood pressure, blood sugar, thyroid, blood thinning or hormones, or with hormone-sensitive conditions.</p>"
           }
         },
         "question_DgrzGL": {
           "type": "question",
           "settings": {
             "question": "Who is this supplement for?",
-            "answer": "<p>Manthoric Advance is ideal for men seeking a plant-based daily wellness supplement featuring traditional botanical ingredients and essential nutrients to support an active lifestyle. </p>"
+            "answer": "<p>Adult men who want plant-based daily support for vitality, energy, stamina and stress resilience, especially those with busy schedules or active training routines.<br/><br/><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
           }
         }
       },
       "block_order": [
         "question_pbgiC8",
-        "question_q9riDW",
-        "question_4HF6cx",
-        "question_jtmUPH",
         "question_mJkCMq",
+        "question_4HF6cx",
+        "question_time01",
+        "question_q9riDW",
+        "question_caff01",
+        "question_jtmUPH",
+        "question_med01",
         "question_DgrzGL"
       ],
       "name": "FAQ accordion",
