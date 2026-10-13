@@ -852,11 +852,20 @@
                           {%- assign r_text = block.settings[review_text_key] -%}
                           {%- assign r_name = block.settings[review_name_key] -%}
                           {%- if r_text != blank -%}
-                            <div class="vt-card">
-                              <div class="vt-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                              <p class="vt-quote">&ldquo;{{ r_text }}&rdquo;</p>
-                              <div class="vt-name">{{ r_name }} <span class="vt-verified">&middot; &#10003; Verified</span></div>
-                            </div>
+                            {%- if block.settings.card_style == 'highlights' -%}
+                              <div class="vt-card vt-card--highlight">
+                                {%- if r_name != blank -%}
+                                  <div class="vt-label">&#10003; {{ r_name }}</div>
+                                {%- endif -%}
+                                <p class="vt-quote">{{ r_text }}</p>
+                              </div>
+                            {%- else -%}
+                              <div class="vt-card">
+                                <div class="vt-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="vt-quote">&ldquo;{{ r_text }}&rdquo;</p>
+                                <div class="vt-name">{{ r_name }} <span class="vt-verified">&middot; &#10003; Verified</span></div>
+                              </div>
+                            {%- endif -%}
                           {%- endif -%}
                         {%- endfor -%}
                       </div>
@@ -1185,6 +1194,18 @@
   .vt-verified {
     color: var(--vt-verified);
     font-weight: 600;
+  }
+  .vt-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--vt-brand);
+    margin-bottom: 6px;
+  }
+  .vt-card--highlight .vt-quote {
+    font-size: 13px;
+    margin: 0;
   }
 
   @media screen and (max-width: 640px) {
@@ -2843,6 +2864,17 @@
           "id": "bottom_text",
           "label": "Bottom text",
           "default": "See it for yourself"
+        },
+        {
+          "type": "select",
+          "id": "card_style",
+          "label": "Card style",
+          "options": [
+            { "value": "reviews", "label": "Customer reviews (stars + Verified)" },
+            { "value": "highlights", "label": "Product highlights (no stars or Verified)" }
+          ],
+          "default": "reviews",
+          "info": "Use Customer reviews only for genuine reviews. In Highlights mode, the name field becomes a short label."
         },
         {
           "type": "header",
