@@ -103,7 +103,7 @@
             "show_gift_card_recipient": true
           }
         },
-        "dropdown_rg6hCy": {
+        "info_row_u8jzPd": {
           "type": "info_row",
           "settings": {
             "heading": "Benefits",
@@ -111,7 +111,7 @@
             "open_by_default": false
           }
         },
-        "dropdown_kwbfJF": {
+        "info_row_e0IgxL": {
           "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
@@ -119,7 +119,7 @@
             "open_by_default": false
           }
         },
-        "dropdown_Pn6Edz": {
+        "info_row_d6Gncf": {
           "type": "info_row",
           "settings": {
             "heading": "How to Use",
@@ -127,15 +127,15 @@
             "open_by_default": false
           }
         },
-        "dropdown_MnLgFG": {
+        "info_row_BAepfJ": {
           "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p><strong>How many capsules do I take?</strong><br>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br>60 days (120 capsules at 2 per day).</p><p><strong>Does it contain caffeine?</strong><br>No. The formula is built on botanicals and zinc, not caffeine.</p><p><strong>Is it vegan?</strong><br>Yes. Vegan capsules, no dairy, soy, gluten or fillers.</p><p><strong>Can I take it with medication?</strong><br>Some ingredients, including ashwagandha and ginseng, can interact with medications. Speak to your doctor first.</p>",
+            "content": "<p><strong>How many capsules do I take?</strong><br/>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br/>60 days (120 capsules at 2 per day).</p><p><strong>Does it contain caffeine?</strong><br/>No. The formula is built on botanicals and zinc, not caffeine.</p><p><strong>Is it vegan?</strong><br/>Yes. Vegan capsules, no dairy, soy, gluten or fillers.</p><p><strong>Can I take it with medication?</strong><br/>Some ingredients, including ashwagandha and ginseng, can interact with medications. Speak to your doctor first.</p>",
             "open_by_default": false
           }
         },
-        "dropdown_MkwwcT": {
+        "info_row_Bd0Kh8": {
           "type": "info_row",
           "disabled": true,
           "settings": {
@@ -203,11 +203,11 @@
         "subscriptions_app_block_LGhKzH",
         "variant_picker",
         "quantity_selector",
-        "dropdown_rg6hCy",
-        "dropdown_kwbfJF",
-        "dropdown_Pn6Edz",
-        "dropdown_MnLgFG",
-        "dropdown_MkwwcT",
+        "info_row_u8jzPd",
+        "info_row_e0IgxL",
+        "info_row_d6Gncf",
+        "info_row_BAepfJ",
+        "info_row_Bd0Kh8",
         "recommend_widget_X6bNrg",
         "custom_liquid_NmcncR",
         "video_testimonials_9dcyFw"

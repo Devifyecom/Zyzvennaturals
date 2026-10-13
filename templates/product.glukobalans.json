@@ -111,23 +111,23 @@
             "show_gift_card_recipient": true
           }
         },
-        "dropdown_rg6hCy": {
+        "info_row_oOOL8d": {
           "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<ul>\n<li>\n<strong>Supports healthy glucose metabolism</strong>, led by 600 mg berberine HCl per serving</li>\n<li><strong>Supports blood sugar levels already within the normal range</strong></li>\n<li>\n<strong>Helps manage sugar and carb cravings</strong> with gymnema and saffron</li>\n<li>\n<strong>Chromium contributes to normal macronutrient metabolism</strong> and the maintenance of normal blood glucose levels</li>\n<li>\n<strong>Adds soluble and prebiotic fibre</strong> from konjac root and chicory root</li>\n<li>\n<strong>Stimulant-free.</strong> No caffeine, no jitters, no crash</li>\n<li>\n<strong>Clean label:</strong> 100% vegan, non-GMO, no artificial ingredients, no proprietary blends</li>\n<li>\n<strong>Quality you can check:</strong> made in a GMP-certified facility, third-party lab tested, heavy-metal tested, COA available</li>\n</ul>",
+            "content": "<ul><li><strong>Supports healthy glucose metabolism</strong>, led by 600 mg berberine HCl per serving</li><li><strong>Supports blood sugar levels already within the normal range</strong></li><li><strong>Helps manage sugar and carb cravings</strong> with gymnema and saffron</li><li><strong>Chromium contributes to normal macronutrient metabolism</strong> and the maintenance of normal blood glucose levels</li><li><strong>Adds soluble and prebiotic fibre</strong> from konjac root and chicory root</li><li><strong>Stimulant-free.</strong> No caffeine, no jitters, no crash</li><li><strong>Clean label:</strong> 100% vegan, non-GMO, no artificial ingredients, no proprietary blends</li><li><strong>Quality you can check:</strong> made in a GMP-certified facility, third-party lab tested, heavy-metal tested, COA available</li></ul>",
             "open_by_default": false
           }
         },
-        "dropdown_kwbfJF": {
+        "info_row_KLzdoc": {
           "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<p>Per 3-capsule serving. Every dose is on the label, with no proprietary blends.</p><ul>\n<li>\n<strong>Berberine HCl (600 mg)</strong>: the most researched plant compound for healthy glucose metabolism.</li>\n<li>\n<strong>Glucomannan, konjac root fibre (570 mg)</strong>: a soluble fibre that swells with water to add bulk and help you feel satisfied.</li>\n<li>\n<strong>Fenugreek seed extract (300 mg)</strong>: a traditional seed used to support metabolic and digestive wellness.</li>\n<li>\n<strong>Gymnema sylvestre extract (180 mg)</strong>: known in Ayurveda as <em>gurmar</em>, the \"sugar destroyer\", traditionally used to help curb a sweet tooth.</li>\n<li>\n<strong>Inulin, chicory root fibre (135 mg)</strong>: a prebiotic fibre that feeds beneficial gut bacteria.</li>\n<li>\n<strong>Saffron extract (30 mg)</strong>: traditionally used to support mood and balanced eating habits.</li>\n<li>\n<strong>Ceylon cinnamon extract (9 mg)</strong>: \"true\" cinnamon, a classic in glucose wellness formulas.</li>\n<li>\n<strong>Black pepper extract, 95% piperine (6 mg)</strong>: helps your body absorb the botanicals.</li>\n<li>\n<strong>Chromium picolinate (200 mcg, 571% DV)</strong>: contributes to the maintenance of normal blood glucose levels.</li>\n</ul><p><em>Other ingredients: vegetable capsule (HPMC).</em></p>",
+            "content": "<p>Per 3-capsule serving. Every dose is on the label, with no proprietary blends.</p><ul><li><strong>Berberine HCl (600 mg)</strong>: the most researched plant compound for healthy glucose metabolism.</li><li><strong>Glucomannan, konjac root fibre (570 mg)</strong>: a soluble fibre that swells with water to add bulk and help you feel satisfied.</li><li><strong>Fenugreek seed extract (300 mg)</strong>: a traditional seed used to support metabolic and digestive wellness.</li><li><strong>Gymnema sylvestre extract (180 mg)</strong>: known in Ayurveda as <em>gurmar</em>, the \"sugar destroyer\", traditionally used to help curb a sweet tooth.</li><li><strong>Inulin, chicory root fibre (135 mg)</strong>: a prebiotic fibre that feeds beneficial gut bacteria.</li><li><strong>Saffron extract (30 mg)</strong>: traditionally used to support mood and balanced eating habits.</li><li><strong>Ceylon cinnamon extract (9 mg)</strong>: \"true\" cinnamon, a classic in glucose wellness formulas.</li><li><strong>Black pepper extract, 95% piperine (6 mg)</strong>: helps your body absorb the botanicals.</li><li><strong>Chromium picolinate (200 mcg, 571% DV)</strong>: contributes to the maintenance of normal blood glucose levels.</li></ul><p><em>Other ingredients: vegetable capsule (HPMC).</em></p>",
             "open_by_default": false
           }
         },
-        "dropdown_Pn6Edz": {
+        "info_row_J2isAj": {
           "type": "info_row",
           "settings": {
             "heading": "How to Use",
@@ -135,15 +135,15 @@
             "open_by_default": false
           }
         },
-        "dropdown_MnLgFG": {
+        "info_row_IhKtJ0": {
           "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p><strong>How many capsules do I take?</strong><br>3 per day, ideally one before each main meal.</p><p><strong>How long does a bottle last?</strong><br>40 days (120 capsules at 3 per day).</p><p><strong>Does it contain caffeine or stimulants?</strong><br>No. Glukobalans is completely stimulant-free.</p><p><strong>Is it vegan?</strong><br>Yes. 100% plant-based, non-GMO, in vegetable (HPMC) capsules.</p><p><strong>Can I take it with medication?</strong><br>Berberine can interact with some medications, including glucose-lowering medicines. Speak to your doctor first.</p>",
+            "content": "<p><strong>How many capsules do I take?</strong><br/>3 per day, ideally one before each main meal.</p><p><strong>How long does a bottle last?</strong><br/>40 days (120 capsules at 3 per day).</p><p><strong>Does it contain caffeine or stimulants?</strong><br/>No. Glukobalans is completely stimulant-free.</p><p><strong>Is it vegan?</strong><br/>Yes. 100% plant-based, non-GMO, in vegetable (HPMC) capsules.</p><p><strong>Can I take it with medication?</strong><br/>Berberine can interact with some medications, including glucose-lowering medicines. Speak to your doctor first.</p>",
             "open_by_default": false
           }
         },
-        "dropdown_MkwwcT": {
+        "info_row_RlgLKO": {
           "type": "info_row",
           "disabled": true,
           "settings": {
@@ -213,11 +213,11 @@
         "subscriptions_app_block_LGhKzH",
         "variant_picker",
         "quantity_selector",
-        "dropdown_rg6hCy",
-        "dropdown_kwbfJF",
-        "dropdown_Pn6Edz",
-        "dropdown_MnLgFG",
-        "dropdown_MkwwcT",
+        "info_row_oOOL8d",
+        "info_row_KLzdoc",
+        "info_row_J2isAj",
+        "info_row_IhKtJ0",
+        "info_row_RlgLKO",
         "recommend_widget_X6bNrg",
         "custom_liquid_NmcncR",
         "video_testimonials_9dcyFw"

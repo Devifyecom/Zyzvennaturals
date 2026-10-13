@@ -103,23 +103,23 @@
             "show_gift_card_recipient": true
           }
         },
-        "dropdown_rg6hCy": {
+        "info_row_mxgJTe": {
           "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<ul>\n<li>\n<strong>Supports a regular, balanced menstrual cycle</strong> with myo-inositol and vitex</li>\n<li>\n<strong>Supports ovarian function</strong> and female reproductive wellness</li>\n<li>\n<strong>Helps maintain healthy hormone balance</strong> through every phase of your cycle</li>\n<li><strong>Zinc contributes to normal fertility and reproduction</strong></li>\n<li>\n<strong>Supports healthy carbohydrate metabolism:</strong> chromium contributes to the maintenance of normal blood glucose levels</li>\n<li>\n<strong>Antioxidant support</strong> from NAC and turmeric</li>\n<li>\n<strong>Supports calm and resilience</strong> with the adaptogen holy basil</li>\n<li>\n<strong>Clean label:</strong> vegan, non-GMO, gluten-free, dairy-free and soy-free</li>\n<li>\n<strong>Quality you can trust:</strong> GMP certified and lab tested</li>\n</ul>",
+            "content": "<ul><li><strong>Supports a regular, balanced menstrual cycle</strong> with myo-inositol and vitex</li><li><strong>Supports ovarian function</strong> and female reproductive wellness</li><li><strong>Helps maintain healthy hormone balance</strong> through every phase of your cycle</li><li><strong>Zinc contributes to normal fertility and reproduction</strong></li><li><strong>Supports healthy carbohydrate metabolism:</strong> chromium contributes to the maintenance of normal blood glucose levels</li><li><strong>Antioxidant support</strong> from NAC and turmeric</li><li><strong>Supports calm and resilience</strong> with the adaptogen holy basil</li><li><strong>Clean label:</strong> vegan, non-GMO, gluten-free, dairy-free and soy-free</li><li><strong>Quality you can trust:</strong> GMP certified and lab tested</li></ul>",
             "open_by_default": false
           }
         },
-        "dropdown_kwbfJF": {
+        "info_row_KdNnFR": {
           "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<ul>\n<li>\n<strong>Myo-Inositol</strong>: one of the most researched nutrients for women's hormonal health, supporting ovarian function, cycle balance and healthy insulin sensitivity.</li>\n<li>\n<strong>Vitex (Chaste Berry)</strong>: the classic women's botanical, traditionally used to support menstrual cycle regularity and hormonal balance.</li>\n<li>\n<strong>Shatavari</strong>: an Ayurvedic herb whose name means \"she who possesses a hundred husbands\", traditionally used to support female reproductive wellness.</li>\n<li>\n<strong>Maca Root</strong>: a Peruvian root traditionally used to support energy, vitality and reproductive wellness.</li>\n<li>\n<strong>N-Acetyl L-Cysteine (NAC)</strong>: antioxidant support that helps protect normal cellular function.</li>\n<li>\n<strong>Turmeric Extract</strong>: supports antioxidant defences and the body's normal inflammatory response.</li>\n<li>\n<strong>Holy Basil (Tulsi)</strong>: an adaptogen traditionally used to support resilience to everyday stress and emotional wellbeing.</li>\n<li>\n<strong>Ginger Root Extract</strong>: traditionally used to support comfortable digestion.</li>\n<li>\n<strong>Zinc</strong>: contributes to normal fertility and reproduction, immune function and the protection of cells from oxidative stress.</li>\n<li>\n<strong>Chromium</strong>: contributes to normal macronutrient metabolism and the maintenance of normal blood glucose levels.</li>\n<li>\n<strong>Black Pepper Extract</strong>: helps your body absorb the botanicals, especially turmeric.</li>\n</ul>",
+            "content": "<ul><li><strong>Myo-Inositol</strong>: one of the most researched nutrients for women's hormonal health, supporting ovarian function, cycle balance and healthy insulin sensitivity.</li><li><strong>Vitex (Chaste Berry)</strong>: the classic women's botanical, traditionally used to support menstrual cycle regularity and hormonal balance.</li><li><strong>Shatavari</strong>: an Ayurvedic herb whose name means \"she who possesses a hundred husbands\", traditionally used to support female reproductive wellness.</li><li><strong>Maca Root</strong>: a Peruvian root traditionally used to support energy, vitality and reproductive wellness.</li><li><strong>N-Acetyl L-Cysteine (NAC)</strong>: antioxidant support that helps protect normal cellular function.</li><li><strong>Turmeric Extract</strong>: supports antioxidant defences and the body's normal inflammatory response.</li><li><strong>Holy Basil (Tulsi)</strong>: an adaptogen traditionally used to support resilience to everyday stress and emotional wellbeing.</li><li><strong>Ginger Root Extract</strong>: traditionally used to support comfortable digestion.</li><li><strong>Zinc</strong>: contributes to normal fertility and reproduction, immune function and the protection of cells from oxidative stress.</li><li><strong>Chromium</strong>: contributes to normal macronutrient metabolism and the maintenance of normal blood glucose levels.</li><li><strong>Black Pepper Extract</strong>: helps your body absorb the botanicals, especially turmeric.</li></ul>",
             "open_by_default": false
           }
         },
-        "dropdown_Pn6Edz": {
+        "info_row_IBXuDL": {
           "type": "info_row",
           "settings": {
             "heading": "How to Use",
@@ -127,15 +127,15 @@
             "open_by_default": false
           }
         },
-        "dropdown_MnLgFG": {
+        "info_row_7DxtpY": {
           "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p><strong>How many capsules do I take?</strong><br>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br>30 days (60 capsules at 2 per day).</p><p><strong>When will I notice a difference?</strong><br>Cycle support takes time. Most women give it at least three cycles of daily use.</p><p><strong>Is it vegan?</strong><br>Yes. Vegan, non-GMO, gluten-free, dairy-free and soy-free.</p><p><strong>Can I take it with birth control or fertility medication?</strong><br>Vitex can interact with hormonal contraceptives, HRT and fertility treatments. Talk to your doctor first.</p>",
+            "content": "<p><strong>How many capsules do I take?</strong><br/>2 per day, with a meal.</p><p><strong>How long does a bottle last?</strong><br/>30 days (60 capsules at 2 per day).</p><p><strong>When will I notice a difference?</strong><br/>Cycle support takes time. Most women give it at least three cycles of daily use.</p><p><strong>Is it vegan?</strong><br/>Yes. Vegan, non-GMO, gluten-free, dairy-free and soy-free.</p><p><strong>Can I take it with birth control or fertility medication?</strong><br/>Vitex can interact with hormonal contraceptives, HRT and fertility treatments. Talk to your doctor first.</p>",
             "open_by_default": false
           }
         },
-        "dropdown_MkwwcT": {
+        "info_row_lSXpfK": {
           "type": "info_row",
           "disabled": true,
           "settings": {
@@ -203,11 +203,11 @@
         "subscriptions_app_block_LGhKzH",
         "variant_picker",
         "quantity_selector",
-        "dropdown_rg6hCy",
-        "dropdown_kwbfJF",
-        "dropdown_Pn6Edz",
-        "dropdown_MnLgFG",
-        "dropdown_MkwwcT",
+        "info_row_mxgJTe",
+        "info_row_KdNnFR",
+        "info_row_IBXuDL",
+        "info_row_7DxtpY",
+        "info_row_lSXpfK",
         "recommend_widget_X6bNrg",
         "custom_liquid_NmcncR",
         "video_testimonials_9dcyFw"
