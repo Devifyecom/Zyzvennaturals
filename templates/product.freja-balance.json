@@ -163,7 +163,6 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/75d81acafb6947709358bcdbfa18e2bf.mp4",
             "sound_button_text": "TAP FOR SOUND",
