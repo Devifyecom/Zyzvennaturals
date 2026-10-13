@@ -480,7 +480,7 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "It's not just you.",
-        "heading": "Tired by mid-afternoon. Slow to recover. Running on caffeine. ",
+        "heading": "Tired by mid-afternoon. Slow to recover. Running on caffeine.",
         "heading_accent": "Your vitality deserves better support.",
         "para_1": "Long hours, stress, poor sleep and hard training all take their toll. Energy fades, recovery takes longer, and the drive you used to take for granted starts to slip.",
         "para_2": "Another energy drink isn't the answer. Your body needs steady support it can build on, every day.",
@@ -755,10 +755,10 @@
         "padding_top": 72,
         "padding_bottom": 72,
         "accent_color": "#358440",
-        "band_color": "#FFFBF4",
+        "band_color": "#fffbf4",
         "heading_color": "#161616",
-        "body_color": "#6B6B6B",
-        "background_color": "#FFFFFF"
+        "body_color": "#6b6b6b",
+        "background_color": "#ffffff"
       }
     },
     "ingredient_carousel_MzCWHJ": {
@@ -1042,8 +1042,8 @@
         "step_ygfQrB": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_22_2026_03_02_34_PM.webp",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
+            "image": "shopify://shop_images/Gemini_Generated_Image_919kha919kha919k.jpg",
+            "image_url": "",
             "image_alt": "Manthoric Advance capsules with a glass of water",
             "title": "Take",
             "desc": "Take 2 capsules a day with a meal and a full glass of water."
@@ -1052,8 +1052,8 @@
         "step_nmNcqE": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
+            "image": "shopify://shop_images/Gemini_Generated_Image_vlkd1kvlkd1kvlkd.jpg",
+            "image_url": "",
             "image_alt": "Training and recovery routine",
             "title": "Train & recover",
             "desc": "Pair it with regular training, quality sleep and a balanced diet to get the most from every serving."
@@ -1062,8 +1062,8 @@
         "step_gwthJd": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
+            "image": "shopify://shop_images/Gemini_Generated_Image_ry6qsmry6qsmry6q.jpg",
+            "image_url": "",
             "image_alt": "Staying consistent with a daily routine",
             "title": "Stay consistent",
             "desc": "Botanicals build up over time. Take it daily for at least 6 to 8 weeks and feel the difference consistency makes."
