@@ -568,7 +568,6 @@
     },
     "zn_how_PJG4fY": {
       "type": "ZN-how",
-      "disabled": true,
       "blocks": {
         "job_Lqx6dg": {
           "type": "job",
@@ -795,7 +794,6 @@
         "ingredient_WhXVx9",
         "ingredient_VK6bah"
       ],
-      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
@@ -861,7 +859,6 @@
         "step_nmNcqE",
         "step_gwthJd"
       ],
-      "disabled": true,
       "name": "How it works",
       "settings": {
         "eyebrow": "How it works",
