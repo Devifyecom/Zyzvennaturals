@@ -654,6 +654,7 @@
         "ingredient_fgjKbm": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Tongkat_Ali.jpg",
             "label": "Vitality",
             "title": "Tongkat Ali",
             "text": "The Southeast Asian root at the heart of men's vitality formulas."
@@ -662,6 +663,7 @@
         "ingredient_aAQBKy": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Ashwagandha.jpg",
             "label": "Stress & recovery",
             "title": "Ashwagandha",
             "text": "An Ayurvedic adaptogen traditionally used to support resilience to stress, energy and recovery."
@@ -670,6 +672,7 @@
         "ingredient_6H89qA": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Black_Maca_Root.avif",
             "label": "Stamina",
             "title": "Black Maca Root",
             "text": "The Peruvian superfood root traditionally used to support vitality and stamina."
@@ -678,6 +681,7 @@
         "ingredient_qDCxgK": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Panax_Ginseng.jpg",
             "label": "Energy & performance",
             "title": "Panax Ginseng",
             "text": "The classic \"true\" ginseng, valued for supporting energy and performance."
@@ -686,6 +690,7 @@
         "ingredient_qM9EE8": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Cordyceps_Mushroom.webp",
             "label": "Endurance",
             "title": "Cordyceps Mushroom",
             "text": "A functional mushroom traditionally used to support endurance and physical vitality."
@@ -694,6 +699,7 @@
         "ingredient_FzBjW6": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/fenugreek.jpg",
             "label": "Men's health",
             "title": "Fenugreek",
             "text": "A traditional seed widely used in men's health and vitality formulas."
@@ -702,6 +708,7 @@
         "ingredient_VDNfze": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/white-bowl-dried-plum-fruits-placed-white-background-high-quality-photo.webp",
             "label": "Mineral power",
             "title": "Shilajit",
             "text": "A mineral-rich resin used for centuries in Ayurveda to support vitality."
@@ -710,6 +717,7 @@
         "ingredient_eHLmxJ": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/Moringa.webp",
             "label": "Nutrient density",
             "title": "Moringa",
             "text": "A nutrient-dense leaf packed with naturally occurring vitamins, minerals and plant compounds."
@@ -718,6 +726,7 @@
         "ingredient_JHQTh6": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/xblack-peppercorns-01.jpg.pagespeed.ic.BoPbwJlxMQ.jpg",
             "label": "Hormone support & absorption",
             "title": "Zinc · Black Pepper",
             "text": "Zinc contributes to the maintenance of normal testosterone levels, and black pepper helps your body absorb the botanicals."
