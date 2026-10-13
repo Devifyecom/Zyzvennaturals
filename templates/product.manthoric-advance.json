@@ -730,7 +730,6 @@
         "ingredient_eHLmxJ",
         "ingredient_JHQTh6"
       ],
-      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
@@ -750,8 +749,8 @@
         "card_height_mobile": 560,
         "padding_top": 72,
         "padding_bottom": 72,
-        "accent_color": "#E8117F",
-        "band_color": "#FBE3EE",
+        "accent_color": "#358440",
+        "band_color": "#FFFBF4",
         "heading_color": "#161616",
         "body_color": "#6B6B6B",
         "background_color": "#FFFFFF"
@@ -823,6 +822,7 @@
         "ingredient_rxnkDG",
         "ingredient_kV4Ct8"
       ],
+      "disabled": true,
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
