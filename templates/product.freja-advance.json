@@ -385,8 +385,8 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/4c01eb7b-3983-4b36-84f2-950548c00494.png",
-        "mobile_image": "shopify://shop_images/4c01eb7b-3983-4b36-84f2-950548c00494.png",
+        "image": "shopify://shop_images/Gemini_Generated_Image_4on9ae4on9ae4on9.jpg",
+        "mobile_image": "shopify://shop_images/Gemini_Generated_Image_4on9ae4on9ae4on9.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
