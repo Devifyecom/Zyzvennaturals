@@ -159,7 +159,7 @@
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"},\n    {q:\"Add a verified Freja Advance customer review here.\", n:\"Customer name\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
+            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://cdn.shopify.com/videos/c/o/v/e5474c1abf674f88b0f2d8c8534a74cc.mp4\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See Freja Advance up close</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"I love everything I have purchased from Zyzven Naturals so and I'm definitely retuning for more!!! Great quality products from a queen who has passion and love for all.\", n:\"Bakiba A.\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
           }
         },
         "video_testimonials_9dcyFw": {
@@ -168,23 +168,23 @@
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/e5474c1abf674f88b0f2d8c8534a74cc.mp4",
             "sound_button_text": "TAP FOR SOUND",
-            "bottom_text": "Real routines, real results",
-            "review_name_1": "Customer name",
-            "review_text_1": "Add a verified Freja Advance customer review here.",
-            "review_name_2": "Customer name",
-            "review_text_2": "Add a verified Freja Advance customer review here.",
-            "review_name_3": "Customer name",
-            "review_text_3": "Add a verified Freja Advance customer review here.",
-            "review_name_4": "Customer name",
-            "review_text_4": "Add a verified Freja Advance customer review here.",
-            "review_name_5": "Customer name",
-            "review_text_5": "Add a verified Freja Advance customer review here.",
-            "review_name_6": "Customer name",
-            "review_text_6": "Add a verified Freja Advance customer review here.",
-            "review_name_7": "Customer name",
-            "review_text_7": "Add a verified Freja Advance customer review here.",
-            "review_name_8": "Customer name",
-            "review_text_8": "Add a verified Freja Advance customer review here."
+            "bottom_text": "See Freja Advance up close",
+            "review_name_1": "Bakiba A.",
+            "review_text_1": "I love everything I have purchased from Zyzven Naturals so and I'm definitely retuning for more!!! Great quality products from a queen who has passion and love for all.",
+            "review_name_2": "",
+            "review_text_2": "",
+            "review_name_3": "",
+            "review_text_3": "",
+            "review_name_4": "",
+            "review_text_4": "",
+            "review_name_5": "",
+            "review_text_5": "",
+            "review_name_6": "",
+            "review_text_6": "",
+            "review_name_7": "",
+            "review_text_7": "",
+            "review_name_8": "",
+            "review_text_8": ""
           }
         }
       },
@@ -660,47 +660,47 @@
           "type": "testimonial",
           "disabled": true,
           "settings": {
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-18_at_5.39.51_PM_ejrog0.png",
-            "image_alt": "Freja Advance customer: cycle",
+            "image_url": "",
+            "image_alt": "",
             "badge": "Cycle",
             "rating": 5,
-            "quote": "Add a verified Freja Advance customer review here.",
-            "name": "Customer name · City, State"
+            "quote": "",
+            "name": ""
           }
         },
         "testimonial_xF7GgV": {
           "type": "testimonial",
           "settings": {
             "image": "shopify://shop_images/A072175C-24B2-4E2D-B2E8-DCCC40AF232A.png",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/v1777656817/Screenshot_2025-12-08_at_4.12.11_PM_mhjwyq.png",
-            "image_alt": "Freja Advance customer: hormones",
+            "image_url": "",
+            "image_alt": "Freja Advance Women's Wellness & Cycle Support capsules",
             "badge": "Hormones",
             "rating": 5,
-            "quote": "Add a verified Freja Advance customer review here.",
-            "name": "Customer name · City, State"
+            "quote": "",
+            "name": ""
           }
         },
         "testimonial_HUkF3p": {
           "type": "testimonial",
           "disabled": true,
           "settings": {
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-05-01_at_12.38.47_PM_wge0mq.png",
-            "image_alt": "Freja Advance customer: energy",
+            "image_url": "",
+            "image_alt": "",
             "badge": "Energy",
             "rating": 5,
-            "quote": "Add a verified Freja Advance customer review here.",
-            "name": "Customer name · City, State"
+            "quote": "",
+            "name": ""
           }
         },
         "testimonial_YkCAxe": {
           "type": "testimonial",
           "settings": {
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-16_at_6.53.03_PM_alhf6p.png",
-            "image_alt": "Freja Advance customer: routine",
+            "image_url": "",
+            "image_alt": "",
             "badge": "Routine",
             "rating": 5,
-            "quote": "Add a verified Freja Advance customer review here.",
-            "name": "Customer name · City, State"
+            "quote": "",
+            "name": ""
           }
         }
       },
