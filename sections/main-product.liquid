@@ -852,11 +852,24 @@
                           {%- assign r_text = block.settings[review_text_key] -%}
                           {%- assign r_name = block.settings[review_name_key] -%}
                           {%- if r_text != blank -%}
-                            <div class="vt-card">
-                              <div class="vt-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                              <p class="vt-quote">&ldquo;{{ r_text }}&rdquo;</p>
-                              <div class="vt-name">{{ r_name }} <span class="vt-verified">&middot; &#10003; Verified</span></div>
-                            </div>
+                            {%- if block.settings.card_style == 'highlights' -%}
+                              <div class="vt-card vt-card--highlight">
+                                <div class="vt-stars vt-leaves">
+                                  <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.5 3.5C11 3.5 4 8 4 15.5c0 1.6.4 3 1.1 4.2C6.6 15.4 10 11.8 15 9.5c-4 3-6.9 6.6-8.4 10.9 1.3.7 2.8 1.1 4.4 1.1 7.5 0 10.5-8 9.5-18z"/></svg>
+                                  <span>Product highlight</span>
+                                </div>
+                                <p class="vt-quote">{{ r_text }}</p>
+                                {%- if r_name != blank -%}
+                                  <div class="vt-name">{{ r_name }} <span class="vt-verified">&middot; &#10003; Product fact</span></div>
+                                {%- endif -%}
+                              </div>
+                            {%- else -%}
+                              <div class="vt-card">
+                                <div class="vt-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p class="vt-quote">&ldquo;{{ r_text }}&rdquo;</p>
+                                <div class="vt-name">{{ r_name }} <span class="vt-verified">&middot; &#10003; Verified</span></div>
+                              </div>
+                            {%- endif -%}
                           {%- endif -%}
                         {%- endfor -%}
                       </div>
@@ -1185,6 +1198,15 @@
   .vt-verified {
     color: var(--vt-verified);
     font-weight: 600;
+  }
+  .vt-leaves {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
   }
 
   @media screen and (max-width: 640px) {
@@ -2843,6 +2865,17 @@
           "id": "bottom_text",
           "label": "Bottom text",
           "default": "See it for yourself"
+        },
+        {
+          "type": "select",
+          "id": "card_style",
+          "label": "Card style",
+          "options": [
+            { "value": "reviews", "label": "Customer reviews (stars + Verified)" },
+            { "value": "highlights", "label": "Product highlights (no stars or Verified)" }
+          ],
+          "default": "reviews",
+          "info": "Use Customer reviews only for genuine reviews. In Highlights mode, the name field becomes a short label."
         },
         {
           "type": "header",
