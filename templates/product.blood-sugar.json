@@ -867,8 +867,7 @@
         "step_ygfQrB": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/fd3c777d-89e0-4805-8285-d6719f8b83ba.png",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
+            "image_url": "",
             "image_alt": "Blood Sugar Support capsules with a glass of water",
             "title": "Take",
             "desc": "Take the serving shown on the bottle with a glass of water, ideally with a meal."
@@ -877,8 +876,7 @@
         "step_nmNcqE": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
+            "image_url": "",
             "image_alt": "A balanced, fibre-rich meal",
             "title": "Balance your plate",
             "desc": "Build meals around vegetables, fibre and protein, and stay active every day, even a short walk after meals."
@@ -887,8 +885,7 @@
         "step_gwthJd": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
+            "image_url": "",
             "image_alt": "Checking blood glucose as part of a daily routine",
             "title": "Stay consistent",
             "desc": "Use it daily and keep checking your readings as your healthcare professional advises."
