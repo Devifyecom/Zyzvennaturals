@@ -33,7 +33,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "A caffeine-free daily ritual that helps smooth the monthly rollercoaster: steadier moods, easier cycles, less cramping and bloat, with 9 hormone-loving herbs.",
+            "text": "10 organic botanicals, including cinnamon, fenugreek, neem and moringa, combined to support:",
             "text_style": "body"
           }
         },
@@ -47,28 +47,28 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Supports healthy</strong> blood sugar balance "
+            "text": "<strong>Supports healthy</strong> blood sugar balance"
           }
         },
         "text_with_icon_tFXRJr": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Supports glucose</strong> metabolism "
+            "text": "<strong>Supports glucose</strong> & carbohydrate metabolism"
           }
         },
         "text_with_icon_JNNb37": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Promotes daily</strong> metabolic wellness"
+            "text": "<strong>10 organic botanicals</strong> in every capsule"
           }
         },
         "text_with_icon_bNyEzm": {
           "type": "text_with_icon",
           "settings": {
             "icon": "heart",
-            "text": "<strong>Vegan, plant</strong>-based formula"
+            "text": "<strong>Vegan, caffeine-free</strong> & GMP certified"
           }
         },
         "price": {
@@ -107,7 +107,7 @@
           "type": "dropdown",
           "settings": {
             "heading": "Benefits",
-            "content": "test"
+            "content": "<ul><li><strong>Supports healthy blood sugar levels</strong> already within the normal range</li><li><strong>Supports healthy glucose and carbohydrate metabolism</strong></li><li><strong>Promotes everyday metabolic wellness</strong> and balanced energy</li><li><strong>Antioxidant support</strong> from amla, moringa and lemon peel</li><li><strong>10 organic botanical powders</strong> in one convenient vegan capsule</li><li><strong>Caffeine-free and plant-based</strong>, GMP certified and third-party tested</li><li><strong>Made to fit your routine</strong> alongside balanced meals, regular activity and ongoing blood-glucose monitoring</li></ul>"
           }
         },
         "dropdown_kwbfJF": {
@@ -115,7 +115,7 @@
           "disabled": true,
           "settings": {
             "heading": "Key Ingredients",
-            "content": "Tongkat Ali – A traditional botanical widely used to support men's vitality and wellness.  Ashwagandha – An adaptogenic herb traditionally used to support balance, resilience, and overall wellbeing.Black Maca Root – A nutrient-rich botanical commonly included in men's vitality and performance formulas.Panax Ginseng – A traditional herb valued for supporting energy, vitality, and active lifestyles.Cordyceps Mushroom – Widely used in wellness practices to support energy and performance-focused routines.Fenugreek – A botanical traditionally used in men's health and nutritional wellness supplements.Shilajit – A mineral-rich ingredient long used in traditional wellness systems to support vitality.Moringa – A nutrient-dense plant providing naturally occurring vitamins, minerals, and beneficial plant compounds.Zinc – An essential mineral that contributes to the maintenance of normal testosterone levels in the body.Black Pepper Extract – Included to support nutrient absorption and ingredient bioavailability.{{ product.metafields.custom.benefit_3.value }}"
+            "content": "<ul><li><strong>Organic Cinnamon</strong>: a classic warming spice traditionally used to support healthy glucose metabolism.</li><li><strong>Organic Fenugreek</strong>: a traditional seed used to support healthy blood sugar levels and digestion.</li><li><strong>Organic Neem</strong>: a traditional Ayurvedic botanical used for blood sugar balance and broad metabolic support.</li><li><strong>Organic Moringa</strong>: a nutrient-rich green superfood traditionally used to support general wellness and antioxidant defence.</li><li><strong>Organic Holy Basil (Tulsi)</strong>: an adaptogenic herb traditionally used to support resilience, balance and metabolic wellness.</li><li><strong>Organic Ashwagandha</strong>: an adaptogen used to support the body's response to everyday stress and overall vitality.</li><li><strong>Organic Ginger</strong>: traditionally used to support comfortable digestion and metabolic balance.</li><li><strong>Organic Amla</strong>: an antioxidant-rich fruit traditionally used to support metabolic and general wellness.</li><li><strong>Organic Nettle</strong>: a mineral-rich herb traditionally used for nutritional and whole-body wellness support.</li><li><strong>Organic Lemon Peel</strong>: provides naturally occurring plant compounds and antioxidant support.</li></ul>"
           }
         },
         "dropdown_Pn6Edz": {
@@ -123,7 +123,7 @@
           "disabled": true,
           "settings": {
             "heading": "How to Use",
-            "content": "How to Use How to Use How to Use How to Use How to Use"
+            "content": "<p><strong>Take the serving shown on the bottle</strong> with a full glass of water, ideally with a meal. Do not exceed the recommended daily amount. One bottle contains 60 capsules.</p><p><strong>For best results:</strong></p><ul><li>Build balanced meals around vegetables, fibre and protein, and watch portions of carbohydrate-rich foods.</li><li>Stay active every day, even a short walk after meals helps.</li><li>Keep checking your blood glucose as advised by your healthcare professional.</li><li>Never stop or change prescribed medication because you've started a supplement.</li></ul>"
           }
         },
         "dropdown_MkwwcT": {
@@ -131,22 +131,22 @@
           "disabled": true,
           "settings": {
             "heading": "Important Information",
-            "content": "Important Information"
+            "content": "<p>For adults 18+. Not for use during pregnancy or breastfeeding. If you have diabetes or prediabetes, take any medication (especially for blood sugar or blood pressure) or have a medical condition, consult your healthcare professional before use and keep monitoring your blood glucose. Stop use and seek advice if you feel shaky, dizzy or unwell.</p><p>Food supplements should not replace a varied, balanced diet and healthy lifestyle. Store tightly closed in a cool, dry place away from heat, sunlight and moisture, and out of reach of children.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
           }
         },
         "dropdown_aMJdzV": {
           "type": "dropdown",
           "disabled": true,
           "settings": {
-            "heading": "faq",
-            "content": "faq"
+            "heading": "FAQ",
+            "content": "<p><strong>What are Blood Sugar Support Capsules designed to do?</strong><br/>Support healthy blood sugar balance, glucose metabolism and everyday metabolic wellness, alongside balanced nutrition, regular movement and appropriate medical care.</p><p><strong>Can people with diabetes or prediabetes take them?</strong><br/>Speak with your doctor or pharmacist first, especially if you take medication or insulin. This supplement is not a diabetes treatment and should not replace prescribed care.</p><p><strong>Can I take them with metformin, insulin or other diabetes medication?</strong><br/>Only with professional guidance. Combining botanical blood sugar support with medication may cause blood glucose to fall too low.</p><p><strong>Can I take them with GLUKOBALANS?</strong><br/>Not unless a healthcare professional has reviewed your routine. The formulas are different but may have overlapping effects on blood glucose.</p><p><strong>Is it caffeine-free and vegan?</strong><br/>Yes. 10 organic botanicals in vegan capsules, with no caffeine.</p>"
           }
         },
         "info_row_CPUyAn": {
           "type": "info_row",
           "settings": {
             "heading": "Benefits",
-            "content": "<p>● Supports healthy blood sugar levels already within the normal range.<br/>● Supports healthy glucose and carbohydrate metabolism.<br/>● Promotes everyday metabolic wellness and balanced energy support.<br/>● Combines 10 organic botanical powders in a convenient daily capsule.<br/>● Fits alongside balanced meals, regular activity and ongoing blood-glucose monitoring<br/><br/><br/></p>",
+            "content": "<ul><li><strong>Supports healthy blood sugar levels</strong> already within the normal range</li><li><strong>Supports healthy glucose and carbohydrate metabolism</strong></li><li><strong>Promotes everyday metabolic wellness</strong> and balanced energy</li><li><strong>Antioxidant support</strong> from amla, moringa and lemon peel</li><li><strong>10 organic botanical powders</strong> in one convenient vegan capsule</li><li><strong>Caffeine-free and plant-based</strong>, GMP certified and third-party tested</li><li><strong>Made to fit your routine</strong> alongside balanced meals, regular activity and ongoing blood-glucose monitoring</li></ul>",
             "open_by_default": false
           }
         },
@@ -154,7 +154,7 @@
           "type": "info_row",
           "settings": {
             "heading": "Key Ingredients",
-            "content": "<p>• <strong>Organic Moringa:</strong> A nutrient-rich botanical traditionally used to support general wellness and antioxidant defence.<br/><br/>• <strong>Organic Holy Basil (Tulsi)<br/></strong>An adaptogenic herb traditionally used to support resilience, balance and metabolic wellness.<br/><br/>• <strong>Organic Ginger </strong>Traditionally used to support digestion and healthy inflammatory balance<br/><br/>• <strong>Organic Ashwagandha<br/></strong>An adaptogenic botanical used to support the body's response to everyday tress and overall vitality.<br/><br/>• <strong>Organic Lemon Peel </strong>Provides naturally occurring plant compounds and antioxidant support.<br/><br/>• <strong>Organic Neem: </strong>A traditional Ayurvedic botanical included for broad metabolic and wellness support.<br/><br/>• <strong>Organic Nettle: </strong>A mineral-rich herb traditionally used for general nutritional and whole-body wellness support.<br/><br/>• <strong>Organic Amla </strong>An antioxidant-rich fruit traditionally used to support metabolic and general wellness.</p>",
+            "content": "<ul><li><strong>Organic Cinnamon</strong>: a classic warming spice traditionally used to support healthy glucose metabolism.</li><li><strong>Organic Fenugreek</strong>: a traditional seed used to support healthy blood sugar levels and digestion.</li><li><strong>Organic Neem</strong>: a traditional Ayurvedic botanical used for blood sugar balance and broad metabolic support.</li><li><strong>Organic Moringa</strong>: a nutrient-rich green superfood traditionally used to support general wellness and antioxidant defence.</li><li><strong>Organic Holy Basil (Tulsi)</strong>: an adaptogenic herb traditionally used to support resilience, balance and metabolic wellness.</li><li><strong>Organic Ashwagandha</strong>: an adaptogen used to support the body's response to everyday stress and overall vitality.</li><li><strong>Organic Ginger</strong>: traditionally used to support comfortable digestion and metabolic balance.</li><li><strong>Organic Amla</strong>: an antioxidant-rich fruit traditionally used to support metabolic and general wellness.</li><li><strong>Organic Nettle</strong>: a mineral-rich herb traditionally used for nutritional and whole-body wellness support.</li><li><strong>Organic Lemon Peel</strong>: provides naturally occurring plant compounds and antioxidant support.</li></ul>",
             "open_by_default": false
           }
         },
@@ -162,7 +162,7 @@
           "type": "info_row",
           "settings": {
             "heading": "How to Use",
-            "content": "<p><strong>For best use:<br/><br/></strong>● Maintain balanced meals and regular physical activity.<br/>● Continue checking your blood glucose as advised by your healthcare professional.<br/>● Do not stop or change prescribed medication because you have started a supplement.<br/>● Review your progress with your healthcare professional, especially if your readings change<br/><br/><br/></p>",
+            "content": "<p><strong>Take the serving shown on the bottle</strong> with a full glass of water, ideally with a meal. Do not exceed the recommended daily amount. One bottle contains 60 capsules.</p><p><strong>For best results:</strong></p><ul><li>Build balanced meals around vegetables, fibre and protein, and watch portions of carbohydrate-rich foods.</li><li>Stay active every day, even a short walk after meals helps.</li><li>Keep checking your blood glucose as advised by your healthcare professional.</li><li>Never stop or change prescribed medication because you've started a supplement.</li></ul>",
             "open_by_default": false
           }
         },
@@ -170,14 +170,14 @@
           "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p>• What are Blood Sugar Support Capsules designed to do?<br/>They are formulated to support healthy blood sugar balance, glucose metabolism and everyday metabolic wellness. They are intended to complement balanced nutrition, regular movement and appropriate medical care.<br/><br/>• Who are these capsules for?<br/>They are intended for adults seeking daily botanical support for healthy blood sugar and metabolic wellness.<br/><br/>• Can people with diabetes or prediabetes take them?<br/>People with diabetes or prediabetes should speak with a doctor, pharmacist or qualified healthcare professional before use, particularly if they take medication or insulin. This supplement is not a diabetes treatment and should not replace prescribed care.<br/><br/>• Will these capsules lower my blood sugar?<br/>Individual responses vary. The formula is designed to support healthy blood sugar and glucose metabolism, but no specific reduction can be guaranteed. Continue monitoring your readings as directed by your healthcare professional.<br/><br/>• How should I take the capsules?<br/>Follow the serving directions printed on the bottle and do not exceed the recommended daily amount.<br/>Consistent use alongside balanced meals and regular activity is recommended.<br/><br/>• How quickly will I notice a difference?<br/>There is no universal timeframe. Food, medication, sleep, stress, activity and individual health can all influence how you feel and what your glucose readings show.<br/><br/>• Can I use them with metformin, insulin or another diabetes medication?<br/>Only with professional guidance. Combining botanical blood-sugar support with medication or insulin may cause blood glucose to fall too low. Continue monitoring your readings and do not change prescribed treatment without medical advice.<br/><br/>• Can I take Blood Sugar Support Capsules with GLUKOBALANS?<br/>Do not combine them unless a qualified healthcare professional has reviewed your medication and wellness routine. The products contain different formulas but may have overlapping effects on blood glucose.<br/><br/>• What is the difference between Blood Sugar Support and GLUKOBALANS?<br/>Blood Sugar Support is a 10-botanical whole-powder formula positioned for daily glucose and metabolic support. GLUKOBALANS is a separate, more specialised formula positioned around appetite, cravings, weight-management support and metabolic wellness. Customers should select the product that best matches their goal rather than automatically taking both.<br/><br/>• Do I still need to watch what I eat?<br/>Yes. Supplements work best as part of a complete routine. Build meals around vegetables, fibre and protein, and pay attention to the portion and preparation of carbohydrate-rich foods. Caribbean staples can still be enjoyed as part of a balanced eating pattern.<br/> <br/>• Can pregnant or breastfeeding women take this product?<br/>Do not use during pregnancy or breastfeeding unless a qualified healthcare professional has reviewed the complete formula and specifically approved it for you.<br/><br/>• How should I store the capsules in a warm climate?<br/>Keep the bottle tightly closed in a cool, dry place away from sunlight, heat and moisture. Avoid bathrooms,<br/>kitchens near the stove and hot vehicles.</p>",
+            "content": "<p><strong>What are Blood Sugar Support Capsules designed to do?</strong><br/>Support healthy blood sugar balance, glucose metabolism and everyday metabolic wellness, alongside balanced nutrition, regular movement and appropriate medical care.</p><p><strong>Can people with diabetes or prediabetes take them?</strong><br/>Speak with your doctor or pharmacist first, especially if you take medication or insulin. This supplement is not a diabetes treatment and should not replace prescribed care.</p><p><strong>Can I take them with metformin, insulin or other diabetes medication?</strong><br/>Only with professional guidance. Combining botanical blood sugar support with medication may cause blood glucose to fall too low.</p><p><strong>Can I take them with GLUKOBALANS?</strong><br/>Not unless a healthcare professional has reviewed your routine. The formulas are different but may have overlapping effects on blood glucose.</p><p><strong>Is it caffeine-free and vegan?</strong><br/>Yes. 10 organic botanicals in vegan capsules, with no caffeine.</p>",
             "open_by_default": false
           }
         },
         "recommend_widget_X6bNrg": {
           "type": "recommend_widget",
           "settings": {
-            "heading": "Complete the System",
+            "heading": "Build Your Blood Sugar Wellness Routine",
             "products": [
               "anti-bacterial-lemon-soap-200g",
               "brightening-night-cream",
@@ -189,7 +189,7 @@
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/v1780603239/VeoOutputMay1203_q8yrjj.mp4\"\n                 poster=\"https://res.cloudinary.com/dss9cf62q/video/upload/q_auto/f_auto/so_0/v1780603239/VeoOutputMay1203_q8yrjj.jpg\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; See it for yourself</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [\n    {q:\"Three days in and my jeans button without a fight. Wild.\", n:\"Priya N.\"},\n    {q:\"I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.\", n:\"Danielle O.\"},\n    {q:\"I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.\", n:\"Bethany C.\"},\n    {q:\"My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.\", n:\"Marisol V.\"},\n    {q:\"Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.\", n:\"Kayleigh S.\"},\n    {q:\"First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.\", n:\"Renata F.\"},\n    {q:\"This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.\", n:\"Simone A.\"},\n    {q:\"Gentle overnight, flatter by morning. That is the whole review.\", n:\"Tovah L.\"}\n  ];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
+            "custom_liquid": "<!-- ============================================================\n     VIDEO + TESTIMONIAL WHEEL SECTION\n     Brand color lives in ONE place: --brand (below).\n     ============================================================ -->\n<style>\n  .hg-section{\n    /* ---- brand tokens ---- */\n    --brand:#358440;          /* Zyzven brand green */\n    --brand-mid:#5faf6b;\n    --brand-soft:#c9e6cf;\n    --charcoal:#2b2b2b;\n    --verified:#29a36a;\n    --card-border:#ececec;\n\n    font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Roboto,Helvetica,Arial,sans-serif;\n    max-width:980px;\n    margin:0 auto;\n    padding:24px 16px;\n    box-sizing:border-box;\n    color:var(--charcoal);\n  }\n  .hg-section *{box-sizing:border-box;}\n\n  .hg-grid{\n    display:grid;\n    grid-template-columns:minmax(200px,200px) 1fr;\n    gap:20px;\n    align-items:start;\n  }\n\n  /* ---------- LEFT: phone / video card ---------- */\n  .hg-phone{\n    padding:5px;\n    border-radius:22px;\n    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 55%,var(--brand-soft) 100%);\n    box-shadow:0 10px 26px rgba(53,132,64,.20);\n    width:100%;\n  }\n  .hg-phone-inner{\n    position:relative;\n    border:3px solid #fff;\n    border-radius:18px;\n    overflow:hidden;\n    background:#000;\n    line-height:0;\n  }\n  .hg-phone-inner video{\n    width:100%;\n    height:auto;\n    display:block;\n    aspect-ratio:9/16;\n    object-fit:cover;\n  }\n  .hg-sound-pill{\n    position:absolute;\n    top:12px;\n    left:50%;\n    transform:translateX(-50%);\n    z-index:3;\n    background:rgba(0,0,0,.62);\n    color:#fff;\n    border:1px solid rgba(255,255,255,.45);\n    border-radius:50px;\n    padding:8px 16px;\n    font-size:12px;\n    font-weight:800;\n    letter-spacing:.6px;\n    line-height:1;\n    white-space:nowrap;\n    cursor:pointer;\n  }\n  .hg-see{\n    text-align:center;\n    font-size:11px;\n    font-weight:800;\n    letter-spacing:1.6px;\n    text-transform:uppercase;\n    color:#fff;\n    padding:9px 0 4px;\n  }\n\n  /* ---------- RIGHT: testimonial wheel ---------- */\n  .hg-wheel{\n    position:relative;\n    overflow:hidden;\n    height:370px;\n    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n            mask-image:linear-gradient(180deg,transparent 0,#000 11%,#000 89%,transparent 100%);\n  }\n  .hg-track{\n    display:flex;\n    flex-direction:column;\n    gap:6px;\n    will-change:transform;\n  }\n  .hg-card{\n    background:#fff;\n    border:1px solid var(--card-border);\n    border-radius:16px;\n    padding:10px 10px;\n    min-height:112px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    text-align:left;\n    box-shadow:0 4px 14px rgba(0,0,0,.05);\n  }\n  .hg-stars{\n    color:var(--brand);\n    font-size:15px;\n    letter-spacing:2px;\n    margin-bottom:8px;\n    line-height:1;\n  }\n  .hg-quote{\n    font-size:12px;\n    line-height:1.5;\n    color:var(--charcoal);\n    margin:0 0 10px;\n  }\n  .hg-name{\n    font-size:13px;\n    font-weight:700;\n    color:var(--charcoal);\n  }\n  .hg-verified{\n    color:var(--verified);\n    font-weight:600;\n  }\n\n  /* ---------- responsive ---------- */\n  @media (max-width:640px){\n    .hg-grid{grid-template-columns:1fr;gap:20px;}\n    .hg-phone{max-width:200px;margin:0 auto;}\n    .hg-wheel{height:440px;}\n  }\n</style>\n\n<section class=\"hg-section\">\n  <div class=\"hg-grid\">\n\n    <!-- LEFT -->\n    <div>\n      <div class=\"hg-phone\">\n        <div class=\"hg-phone-inner\">\n          <video id=\"hgHeroVid\"\n                 src=\"https://cdn.shopify.com/videos/c/o/v/058f93efcee04c998872c22883c77856.mp4\"\n                 autoplay muted loop playsinline controls preload=\"auto\"></video>\n          <button class=\"hg-sound-pill\" type=\"button\" id=\"hgVidSound\">&#9834; TAP FOR SOUND</button>\n        </div>\n        <div class=\"hg-see\">&#9733; What's inside every capsule</div>\n      </div>\n    </div>\n\n    <!-- RIGHT -->\n    <div class=\"hg-wheel\">\n      <div class=\"hg-track\" id=\"hgTrack\"></div>\n    </div>\n\n  </div>\n</section>\n\n<script>\n(function(){\n  var reviews = [];\n\n  function cardHTML(r){\n    return '<div class=\"hg-card\">'\n      + '<div class=\"hg-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'\n      + '<p class=\"hg-quote\">&ldquo;' + r.q + '&rdquo;</p>'\n      + '<div class=\"hg-name\">' + r.n + ' <span class=\"hg-verified\">&middot; &#10003; Verified</span></div>'\n      + '</div>';\n  }\n\n  var track = document.getElementById('hgTrack');\n  track.innerHTML = reviews.map(cardHTML).join('') + reviews.map(cardHTML).join('');\n\n  function measureFirstSet(){\n    var gap = 6;\n    var cards = track.querySelectorAll('.hg-card');\n    var h = 0;\n    for(var i=0;i<reviews.length;i++){ h += cards[i].offsetHeight + gap; }\n    return h;\n  }\n\n  var offset = 0, firstSetH = 0, last = null, speed = 26;\n  function tick(ts){\n    if(last === null) last = ts;\n    var dt = (ts - last)/1000; last = ts;\n    if(!firstSetH) firstSetH = measureFirstSet();\n    offset += speed * dt;\n    if(offset >= firstSetH) offset -= firstSetH;\n    track.style.transform = 'translateY(' + (-offset) + 'px)';\n    requestAnimationFrame(tick);\n  }\n  window.addEventListener('load', function(){ firstSetH = measureFirstSet(); });\n  requestAnimationFrame(tick);\n\n  var vid = document.getElementById('hgHeroVid');\n  var btn = document.getElementById('hgVidSound');\n  btn.addEventListener('click', function(){\n    if(!vid) return;\n    vid.muted = !vid.muted;\n    if(!vid.muted){ vid.play(); btn.style.display='none'; }\n  });\n})();\n</script>"
           }
         },
         "video_testimonials_9dcyFw": {
@@ -197,23 +197,24 @@
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/058f93efcee04c998872c22883c77856.mp4",
             "sound_button_text": "TAP FOR SOUND",
-            "bottom_text": "See it for yourself",
-            "review_name_1": "Priya N.",
-            "review_text_1": "Three days in and my jeans button without a fight. Wild.",
-            "review_name_2": "Danielle O.",
-            "review_text_2": "I was scared it would be one of those teas that has you running to the bathroom. Nope. Gentle, and regular every morning now.",
-            "review_name_3": "Bethany C.",
-            "review_text_3": "I used to feel like a stuffed sausage after dinner. About a week in and I feel light enough to actually go for a walk after.",
-            "review_name_4": "Marisol V.",
-            "review_text_4": "My rings fit again lol. Didn't even realize how puffy I was until the puffiness was gone.",
-            "review_name_5": "Kayleigh S.",
-            "review_text_5": "Tastes way better than I expected for a cleanse tea. Only wish the tin was bigger because I go through it fast.",
-            "review_name_6": "Renata F.",
-            "review_text_6": "First flat-stomach morning I have had in ages. Stood in the mirror kind of shocked.",
-            "review_name_7": "Simone A.",
-            "review_text_7": "This became my little wind-down ritual. A cup at night and by morning everything just moves. No cramps, no drama.",
-            "review_name_8": "Tovah L.",
-            "review_text_8": "Gentle overnight, flatter by morning. That is the whole review."
+            "bottom_text": "What's inside every capsule",
+            "review_name_1": "10 organic botanicals",
+            "review_text_1": "Cinnamon, fenugreek, neem, moringa, holy basil, ashwagandha, ginger, amla, nettle and lemon peel.",
+            "review_name_2": "Cinnamon + Fenugreek",
+            "review_text_2": "Two traditional botanicals used to support healthy glucose metabolism.",
+            "review_name_3": "Neem + Holy Basil",
+            "review_text_3": "Ayurvedic herbs traditionally used for blood sugar balance and resilience.",
+            "review_name_4": "Antioxidant support",
+            "review_text_4": "Amla, moringa and lemon peel bring naturally occurring antioxidants.",
+            "review_name_5": "Caffeine-free",
+            "review_text_5": "Plant-based support for steady daily energy, with no caffeine.",
+            "review_name_6": "Fits your routine",
+            "review_text_6": "Made to work alongside balanced meals, daily movement and regular glucose checks.",
+            "review_name_7": "Vegan capsules",
+            "review_text_7": "60 vegan capsules per bottle. Plant-based, organic botanical powders.",
+            "review_name_8": "Quality you can trust",
+            "review_text_8": "GMP certified and third-party tested.",
+            "card_style": "highlights"
           }
         }
       },
@@ -517,15 +518,15 @@
         "stat_4ec7XL": {
           "type": "stat",
           "settings": {
-            "number": "90%",
-            "label": "of women experience PMS symptoms during their reproductive years"
+            "number": "17 tsp",
+            "label": "of added sugar the average American eats every day (American Heart Association)"
           }
         },
         "stat_dMwcXL": {
           "type": "stat",
           "settings": {
-            "number": "1 in 10",
-            "label": "women of reproductive age live with PCOS"
+            "number": "6–9 tsp",
+            "label": "the daily added-sugar limit the AHA recommends for women and men"
           }
         }
       },
@@ -536,17 +537,17 @@
       "name": "ZN Problem",
       "settings": {
         "eyebrow": "You are not imagining it.",
-        "heading": "Crafted for everyday use, ",
-        "heading_accent": "You don't have to.",
-        "para_1": "One week you feel like yourself, the next you are tipped off balance: cramps, mood swings, bloating, breakouts, and energy that crashes out of nowhere.",
-        "para_2": "PCOS and perimenopause push the scales even further. It is exhausting, and far more common than anyone talks about.",
+        "heading": "Energy that dips after meals. Cravings that won't quit. ",
+        "heading_accent": "Your body deserves steady, daily support.",
+        "para_1": "Busy days, rushed meals, stress and carb-heavy favourites all add up. When your glucose swings, you feel it: the slump after lunch, the 4pm snack attack, the energy that never quite lasts.",
+        "para_2": "Balanced meals and daily movement matter most. A good daily botanical routine can help you stay on track.",
         "image": "shopify://shop_images/6e48c814-c12c-4f43-a037-aea47f0b80a2.png",
         "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/q_auto/f_auto/v1781631394/ChatGPT_Image_Jun_16_2026_12_36_19_PM_ui05tw.png",
-        "image_alt": "",
-        "band_heading": "That's why we created Zyzven Naturals Cleanse",
-        "band_copy": "9 herbs traditionally used to support a steadier cycle, calmer moods, and easier months. Ingredients that work with your body, in one cup you look forward to.",
-        "kicker": "BRING YOUR BALANCE BACK.",
-        "button_label": "BRING YOUR BALANCE BACK",
+        "image_alt": "Zyzven Naturals Blood Sugar Support Capsules",
+        "band_heading": "That's why we created Blood Sugar Support",
+        "band_copy": "10 organic botanicals, including cinnamon, fenugreek, neem, moringa and holy basil, in one vegan, caffeine-free capsule. Made to support healthy blood sugar levels, glucose metabolism and everyday metabolic wellness.",
+        "kicker": "STEADY SUPPORT, EVERY DAY.",
+        "button_label": "START MY DAILY SUPPORT",
         "button_action": "link",
         "product": "",
         "go_to_cart": false,
@@ -615,33 +616,33 @@
         "job_Lqx6dg": {
           "type": "job",
           "settings": {
-            "title": "Eases cramps & PMS",
-            "herbs": "Raspberry Leaf · Ginger · Chamomile",
-            "copy": "Raspberry leaf is the classic women's herb for cycle comfort, ginger eases cramps and nausea, and chamomile relaxes tension. Together they take the edge off the worst days."
+            "title": "Supports glucose metabolism",
+            "herbs": "Cinnamon · Fenugreek · Neem",
+            "copy": "Three traditional botanicals long used to support healthy blood sugar levels and glucose metabolism."
           }
         },
         "job_B47xCK": {
           "type": "job",
           "settings": {
-            "title": "Smooths mood & stress",
-            "herbs": "Chamomile · Lemon Verbena · Lemongrass",
-            "copy": "Calming herbs that quiet irritability and that wired, on-edge feeling, so you feel grounded through every phase of your cycle."
+            "title": "Supports stress resilience",
+            "herbs": "Ashwagandha · Holy Basil",
+            "copy": "Adaptogens traditionally used to help your body handle everyday stress, which plays its own part in metabolic balance."
           }
         },
         "job_qDbFcE": {
           "type": "job",
           "settings": {
-            "title": "Supports your cycle",
-            "herbs": "Spearmint · Raspberry Leaf · Nettle",
-            "copy": "Spearmint is the herb most reached for by women managing PCOS symptoms, raspberry leaf supports cycle regularity, and nettle replaces the minerals your body burns through every month."
+            "title": "Antioxidant & nutrient support",
+            "herbs": "Amla · Moringa · Lemon Peel",
+            "copy": "Antioxidant-rich fruit and nutrient-dense greens that bring naturally occurring vitamins, minerals and plant compounds."
           }
         },
         "job_ybcJnK": {
           "type": "job",
           "settings": {
-            "title": "Calms bloat & digestion",
-            "herbs": "Ginger · Lemongrass · Rose Hip",
-            "copy": "Carminative herbs that settle the gut and ease the cyclical bloat that makes your jeans feel two sizes too small."
+            "title": "Supports digestion & nourishment",
+            "herbs": "Ginger · Nettle",
+            "copy": "Warming ginger for comfortable digestion and mineral-rich nettle for whole-body nutritional support."
           }
         }
       },
@@ -654,11 +655,11 @@
       "name": "ZN How",
       "settings": {
         "eyebrow": "Why it works",
-        "title": "One Cup. Four Jobs.",
-        "lead": "<p>Zyzven Naturals iisn't another capsule you forget on the shelf. It's 9 functional herbs that do four things at once, gently, every day.</p>",
-        "callout": "<p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Zyzven Naturals balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>",
-        "disclaimer": "",
-        "button_label": "Start my relief",
+        "title": "One Capsule. Four Jobs.",
+        "lead": "<p>Blood Sugar Support isn't a single-herb pill. It's 10 organic botanicals chosen to work together, so every capsule supports your metabolism from more than one angle.</p>",
+        "callout": "<p><strong>The difference:</strong> many blood sugar products rely on one or two extracts. Ours combines 10 <em>organic whole-botanical powders</em> in a vegan, caffeine-free capsule, made to fit alongside balanced meals, daily movement and your healthcare professional's advice, not replace them.</p>",
+        "disclaimer": "<p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+        "button_label": "Start my daily support",
         "button_link": "#",
         "button_arrow": true,
         "accent_color": "#358440",
@@ -685,7 +686,7 @@
       "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>One Cup. Four Jobs. — preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHY IT WORKS / One Cup. Four Jobs.\n     Scoped to #hg-how so nothing leaks into other .section blocks.\n     Theme variables are used with fallbacks, so if --pink etc. are\n     defined on :root the theme values win.\n     ============================================================ */\n  #hg-how {\n    --hw-pink: var(--pink, #EC3A8C);\n    --hw-pink-soft: var(--pink-soft, #FCE7F1);\n    --hw-line: var(--gray-light, #EDEDF0);\n    --hw-body: var(--gray-text, #6E7075);\n    --hw-ink: var(--charcoal, #17171A);\n    --hw-max: 1160px;\n    --hw-gap: 18px;\n\n    padding: 64px 20px 72px;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  #hg-how .hw-inner {\n    max-width: var(--hw-max);\n    margin: 0 auto;\n  }\n\n  /* ---------- header ---------- */\n  #hg-how .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n    text-align: center;\n  }\n\n  #hg-how .section-h2 {\n    margin: 0 auto 20px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-how .section-lead {\n    margin: 0 auto 34px;\n    max-width: 620px;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: var(--hw-body);\n    text-align: center;\n    text-wrap: pretty;\n  }\n\n  /* ---------- card grid ---------- */\n  #hg-how .hw-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: var(--hw-gap);\n    align-items: stretch;\n    margin: 0 0 18px;\n  }\n\n  #hg-how .hw-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background: #fff;\n    border: 1px solid var(--hw-line);\n    border-radius: 16px;\n    padding: 28px 20px 26px;\n    text-align: center;\n    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);\n    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;\n  }\n\n  #hg-how .hw-card:hover {\n    transform: translateY(-3px);\n    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);\n    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px rgba(236,58,140,.28);\n  }\n\n  #hg-how .hw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 0 0 15px;\n    border-radius: 50%;\n    background: var(--hw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n  }\n\n  #hg-how .hw-card-title {\n    margin: 0 0 8px;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1.3;\n    letter-spacing: -.012em;\n    color: var(--hw-ink);\n  }\n\n  #hg-how .hw-herbs {\n    margin: 0 0 12px;\n    font-size: 11px;\n    font-weight: 800;\n    line-height: 1.4;\n    letter-spacing: .085em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n  }\n\n  #hg-how .hw-copy {\n    margin: 0;\n    font-size: 13px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- callout ---------- */\n  #hg-how .hw-callout {\n    max-width: 720px;\n    margin: 0 auto;\n    padding: 28px 32px;\n    border-radius: 16px;\n    background: var(--hw-pink-soft);\n    text-align: center;\n  }\n\n  #hg-how .hw-callout p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--hw-ink);\n    text-wrap: pretty;\n  }\n\n  #hg-how .hw-callout strong { font-weight: 700; }\n  #hg-how .hw-callout em { font-style: italic; }\n\n  /* ---------- CTA ---------- */\n  #hg-how .hw-cta {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #hg-how .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 300px;\n    min-height: 51px;\n    padding: 15px 28px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--hw-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 8px 24px -6px rgba(236,58,140,.45);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-how .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 14px 30px -8px rgba(236,58,140,.55);\n  }\n\n  #hg-how .atc:active {\n    transform: translateY(0);\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.45);\n  }\n\n  #hg-how .atc:focus-visible {\n    outline: 2px solid var(--hw-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-how .atc svg {\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2.2;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-how .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1080px) {\n    #hg-how { padding: 56px 18px 64px; }\n    #hg-how .hw-grid { gap: 14px; }\n    #hg-how .hw-card { padding: 26px 16px 24px; }\n  }\n\n  @media (max-width: 900px) {\n    #hg-how .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 5vw, 32px); }\n    #hg-how .hw-callout { padding: 26px 24px; }\n  }\n\n  @media (max-width: 560px) {\n    #hg-how {\n      padding: 48px 16px 56px;\n      --hw-gap: 12px;\n    }\n    #hg-how .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }\n    #hg-how .section-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }\n\n    #hg-how .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }\n    #hg-how .hw-card {\n      flex-direction: row;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 20px 20px 21px;\n      text-align: left;\n    }\n    #hg-how .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }\n    #hg-how .hw-card-title { font-size: 17px; margin-bottom: 6px; }\n    #hg-how .hw-herbs { font-size: 11px; margin-bottom: 9px; }\n    #hg-how .hw-copy { font-size: 14px; line-height: 1.55; }\n\n    #hg-how .hw-callout { padding: 22px 20px; border-radius: 14px; }\n    #hg-how .hw-callout p { font-size: 15px; }\n    #hg-how .atc { max-width: none; font-size: 15px; }\n  }\n\n  @media (hover: none) {\n    #hg-how .hw-card:hover { transform: none; border-color: var(--hw-line); box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16); }\n    #hg-how .atc:hover { transform: none; }\n    #hg-how .atc:hover svg { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-how * { transition: none !important; }\n    #hg-how .hw-card:hover, #hg-how .atc:hover { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section\" id=\"hg-how\">\n  <div class=\"hw-inner\">\n\n    <p class=\"section-eyebrow\">Why it works</p>\n    <h2 class=\"section-h2\">One Cup. Four Jobs.</h2>\n    <p class=\"section-lead\">Hey Girl isn't another supplement to choke down. It's functional herbs that do four things at once, gently, while you sleep.</p>\n\n    <ol class=\"hw-grid\" style=\"list-style:none;margin:0 0 18px;padding:0;\">\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">1</div>\n        <div>\n          <h3 class=\"hw-card-title\">Calms bloating &amp; gas</h3>\n          <p class=\"hw-herbs\">Fennel · Ginger · Lemongrass</p>\n          <p class=\"hw-copy\">These carminative herbs relax your gut and break up the trapped gas that leaves you puffy and heavy after meals.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">2</div>\n        <div>\n          <h3 class=\"hw-card-title\">Eases digestion</h3>\n          <p class=\"hw-herbs\">Milk Thistle · Burdock</p>\n          <p class=\"hw-copy\">Milk thistle and burdock support your liver and gut, so food breaks down cleanly and you feel less heavy and off after meals.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">3</div>\n        <div>\n          <h3 class=\"hw-card-title\">Gets you regular</h3>\n          <p class=\"hw-herbs\">Low-dose Senna</p>\n          <p class=\"hw-copy\">A gentle, deliberate dose nudges your bowel overnight, so you wake up regular. No cramping, because the soothing herbs balance it.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">4</div>\n        <div>\n          <h3 class=\"hw-card-title\">Releases water weight</h3>\n          <p class=\"hw-herbs\">Dandelion · Nettle</p>\n          <p class=\"hw-copy\">Natural diuretics that flush the stored water behind the puffiness in your face, fingers, and stomach.</p>\n        </div>\n      </li>\n    </ol>\n\n    <div class=\"hw-callout\">\n      <p><strong>The difference:</strong> most detox teas use harsh, high-dose senna alone, which is why they cramp. Hey Girl balances it with calming herbs, so it works <em>with</em> your body, not against it. You feel relief, not urgency.</p>\n    </div>\n\n    <div class=\"hw-cta\">\n      <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n        <span>Start my relief</span>\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n      </button>\n    </div>\n\n  </div>\n</section>\n\n<script>function hgBuy(){ /* theme handler */ }</script>\n\n</body>\n</html>",
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>One Capsule. Four Jobs.</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHY IT WORKS / One Cup. Four Jobs.\n     Scoped to #hg-how so nothing leaks into other .section blocks.\n     Theme variables are used with fallbacks, so if --pink etc. are\n     defined on :root the theme values win.\n     ============================================================ */\n  #hg-how {\n    --hw-pink: var(--pink, #EC3A8C);\n    --hw-pink-soft: var(--pink-soft, #FCE7F1);\n    --hw-line: var(--gray-light, #EDEDF0);\n    --hw-body: var(--gray-text, #6E7075);\n    --hw-ink: var(--charcoal, #17171A);\n    --hw-max: 1160px;\n    --hw-gap: 18px;\n\n    padding: 64px 20px 72px;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: optimizeLegibility;\n  }\n\n  #hg-how .hw-inner {\n    max-width: var(--hw-max);\n    margin: 0 auto;\n  }\n\n  /* ---------- header ---------- */\n  #hg-how .section-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n    text-align: center;\n  }\n\n  #hg-how .section-h2 {\n    margin: 0 auto 20px;\n    max-width: 20ch;\n    font-size: clamp(28px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--hw-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-how .section-lead {\n    margin: 0 auto 34px;\n    max-width: 620px;\n    font-size: 17px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: var(--hw-body);\n    text-align: center;\n    text-wrap: pretty;\n  }\n\n  /* ---------- card grid ---------- */\n  #hg-how .hw-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: var(--hw-gap);\n    align-items: stretch;\n    margin: 0 0 18px;\n  }\n\n  #hg-how .hw-card {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background: #fff;\n    border: 1px solid var(--hw-line);\n    border-radius: 16px;\n    padding: 28px 20px 26px;\n    text-align: center;\n    box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16);\n    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;\n  }\n\n  #hg-how .hw-card:hover {\n    transform: translateY(-3px);\n    border-color: color-mix(in srgb, var(--hw-pink) 22%, #fff);\n    box-shadow: 0 2px 4px rgba(18,18,18,.05), 0 20px 40px -18px rgba(236,58,140,.28);\n  }\n\n  #hg-how .hw-num {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 44px;\n    height: 44px;\n    flex: 0 0 44px;\n    margin: 0 0 15px;\n    border-radius: 50%;\n    background: var(--hw-pink);\n    color: #fff;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1;\n    font-variant-numeric: tabular-nums;\n  }\n\n  #hg-how .hw-card-title {\n    margin: 0 0 8px;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1.3;\n    letter-spacing: -.012em;\n    color: var(--hw-ink);\n  }\n\n  #hg-how .hw-herbs {\n    margin: 0 0 12px;\n    font-size: 11px;\n    font-weight: 800;\n    line-height: 1.4;\n    letter-spacing: .085em;\n    text-transform: uppercase;\n    color: var(--hw-pink);\n  }\n\n  #hg-how .hw-copy {\n    margin: 0;\n    font-size: 13px;\n    font-weight: 400;\n    line-height: 1.55;\n    color: var(--hw-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- callout ---------- */\n  #hg-how .hw-callout {\n    max-width: 720px;\n    margin: 0 auto;\n    padding: 28px 32px;\n    border-radius: 16px;\n    background: var(--hw-pink-soft);\n    text-align: center;\n  }\n\n  #hg-how .hw-callout p {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.6;\n    color: var(--hw-ink);\n    text-wrap: pretty;\n  }\n\n  #hg-how .hw-callout strong { font-weight: 700; }\n  #hg-how .hw-callout em { font-style: italic; }\n\n  /* ---------- CTA ---------- */\n  #hg-how .hw-cta {\n    margin-top: 20px;\n    text-align: center;\n  }\n\n  #hg-how .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 300px;\n    min-height: 51px;\n    padding: 15px 28px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--hw-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 15.5px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .06em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 8px 24px -6px rgba(236,58,140,.45);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-how .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 14px 30px -8px rgba(236,58,140,.55);\n  }\n\n  #hg-how .atc:active {\n    transform: translateY(0);\n    box-shadow: 0 6px 16px -6px rgba(236,58,140,.45);\n  }\n\n  #hg-how .atc:focus-visible {\n    outline: 2px solid var(--hw-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-how .atc svg {\n    width: 16px;\n    height: 16px;\n    flex: 0 0 16px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 2.2;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-how .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- responsive ---------- */\n  @media (max-width: 1080px) {\n    #hg-how { padding: 56px 18px 64px; }\n    #hg-how .hw-grid { gap: 14px; }\n    #hg-how .hw-card { padding: 26px 16px 24px; }\n  }\n\n  @media (max-width: 900px) {\n    #hg-how .hw-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 5vw, 32px); }\n    #hg-how .hw-callout { padding: 26px 24px; }\n  }\n\n  @media (max-width: 560px) {\n    #hg-how {\n      padding: 48px 16px 56px;\n      --hw-gap: 12px;\n    }\n    #hg-how .section-eyebrow { font-size: 12.5px; margin-bottom: 15px; }\n    #hg-how .section-h2 { font-size: clamp(28px, 8.4vw, 34px); max-width: 16ch; margin-bottom: 18px; }\n    #hg-how .section-lead { font-size: 16.5px; line-height: 1.55; max-width: 36ch; margin-bottom: 28px; }\n\n    #hg-how .hw-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }\n    #hg-how .hw-card {\n      flex-direction: row;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 20px 20px 21px;\n      text-align: left;\n    }\n    #hg-how .hw-num { width: 40px; height: 40px; flex: 0 0 40px; margin: 2px 0 0; font-size: 17px; }\n    #hg-how .hw-card-title { font-size: 17px; margin-bottom: 6px; }\n    #hg-how .hw-herbs { font-size: 11px; margin-bottom: 9px; }\n    #hg-how .hw-copy { font-size: 14px; line-height: 1.55; }\n\n    #hg-how .hw-callout { padding: 22px 20px; border-radius: 14px; }\n    #hg-how .hw-callout p { font-size: 15px; }\n    #hg-how .atc { max-width: none; font-size: 15px; }\n  }\n\n  @media (hover: none) {\n    #hg-how .hw-card:hover { transform: none; border-color: var(--hw-line); box-shadow: 0 1px 2px rgba(18,18,18,.04), 0 10px 26px -14px rgba(18,18,18,.16); }\n    #hg-how .atc:hover { transform: none; }\n    #hg-how .atc:hover svg { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-how * { transition: none !important; }\n    #hg-how .hw-card:hover, #hg-how .atc:hover { transform: none; }\n  }\n</style>\n</head>\n<body>\n\n<section class=\"section\" id=\"hg-how\">\n  <div class=\"hw-inner\">\n\n    <p class=\"section-eyebrow\">Why it works</p>\n    <h2 class=\"section-h2\">One Capsule. Four Jobs.</h2>\n    <p class=\"section-lead\">Blood Sugar Support isn't a single-herb pill. It's 10 organic botanicals chosen to work together, so every capsule supports your metabolism from more than one angle.</p>\n\n    <ol class=\"hw-grid\" style=\"list-style:none;margin:0 0 18px;padding:0;\">\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">1</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports glucose metabolism</h3>\n          <p class=\"hw-herbs\">Cinnamon · Fenugreek · Neem</p>\n          <p class=\"hw-copy\">Three traditional botanicals long used to support healthy blood sugar levels and glucose metabolism.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">2</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports stress resilience</h3>\n          <p class=\"hw-herbs\">Ashwagandha · Holy Basil</p>\n          <p class=\"hw-copy\">Adaptogens traditionally used to help your body handle everyday stress, which plays its own part in metabolic balance.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">3</div>\n        <div>\n          <h3 class=\"hw-card-title\">Antioxidant &amp; nutrient support</h3>\n          <p class=\"hw-herbs\">Amla · Moringa · Lemon Peel</p>\n          <p class=\"hw-copy\">Antioxidant-rich fruit and nutrient-dense greens that bring naturally occurring vitamins, minerals and plant compounds.</p>\n        </div>\n      </li>\n\n      <li class=\"hw-card\">\n        <div class=\"hw-num\" aria-hidden=\"true\">4</div>\n        <div>\n          <h3 class=\"hw-card-title\">Supports digestion &amp; nourishment</h3>\n          <p class=\"hw-herbs\">Ginger · Nettle</p>\n          <p class=\"hw-copy\">Warming ginger for comfortable digestion and mineral-rich nettle for whole-body nutritional support.</p>\n        </div>\n      </li>\n    </ol>\n\n    <div class=\"hw-callout\">\n      <p><strong>The difference:</strong> many blood sugar products rely on one or two extracts. Ours combines 10 <em>organic whole-botanical powders</em> in a vegan, caffeine-free capsule.</p>\n    </div>\n\n    <div class=\"hw-cta\">\n      <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n        <span>Start my daily support</span>\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n      </button>\n    </div>\n\n  </div>\n</section>\n\n<script>function hgBuy(){ /* theme handler */ }</script>\n\n</body>\n</html>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -697,46 +698,46 @@
         "testimonial_fMR7em": {
           "type": "testimonial",
           "settings": {
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-18_at_5.39.51_PM_ejrog0.png",
-            "image_alt": "Flatter stomach, side profile",
-            "badge": "Bloating",
+            "image_url": "",
+            "image_alt": "",
+            "badge": "Energy",
             "rating": 5,
-            "quote": "\"My stomach went from puffy to flat. The side profile says it all.\"",
-            "name": "Laura K. · Los Angeles, CA"
+            "quote": "",
+            "name": ""
           }
         },
         "testimonial_xF7GgV": {
           "type": "testimonial",
           "settings": {
             "image": "shopify://shop_images/E167162F-8D5E-4AF8-B456-265C8196226B.png",
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/v1777656817/Screenshot_2025-12-08_at_4.12.11_PM_mhjwyq.png",
-            "image_alt": "Comfortable after meals, no more heaviness",
-            "badge": "Digestion",
+            "image_url": "",
+            "image_alt": "Zyzven Naturals Blood Sugar Support Capsules",
+            "badge": "Routine",
             "rating": 5,
-            "quote": "\"No more heaviness or gas after meals. My gut finally feels normal.\"",
-            "name": "Hannah O. · Phoenix, AZ"
+            "quote": "",
+            "name": ""
           }
         },
         "testimonial_HUkF3p": {
           "type": "testimonial",
           "settings": {
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-05-01_at_12.38.47_PM_wge0mq.png",
-            "image_alt": "Comfortable, relaxed customer holding cleanse tea",
-            "badge": "Constipation",
+            "image_url": "",
+            "image_alt": "",
+            "badge": "Balance",
             "rating": 5,
-            "quote": "\"Regular every morning. My stomach feels normal again.\"",
-            "name": "Amanda R. · Chicago, IL"
+            "quote": "",
+            "name": ""
           }
         },
         "testimonial_YkCAxe": {
           "type": "testimonial",
           "settings": {
-            "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_880,h_880/Screenshot_2026-02-16_at_6.53.03_PM_alhf6p.png",
-            "image_alt": "Reduced facial puffiness",
-            "badge": "Water Retention",
+            "image_url": "",
+            "image_alt": "",
+            "badge": "Wellness",
             "rating": 5,
-            "quote": "\"My face stopped looking swollen. My cheekbones are back.\"",
-            "name": "Brittany Collins · Los Angeles, CA"
+            "quote": "",
+            "name": ""
           }
         }
       },
@@ -749,10 +750,10 @@
       "disabled": true,
       "name": "Real transformations",
       "settings": {
-        "eyebrow": "Real Transformations",
-        "title": "The results speak for themselves.",
-        "lead": "<p>Across every angle, bloating, digestion, constipation, water retention. All using the same gentle ritual.</p>",
-        "disclaimer": "",
+        "eyebrow": "Real Routines",
+        "title": "What steady feels like.",
+        "lead": "<p>Balanced meals, daily movement and a simple capsule routine. Add genuine customer stories here as reviews come in.</p>",
+        "disclaimer": "<p>Individual results vary. Keep monitoring your blood glucose as advised by your healthcare professional.</p>",
         "accent_color": "#358440",
         "badge_text_color": "#ffffff",
         "star_color": "#358440",
@@ -773,7 +774,7 @@
       "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>What's inside — coverflow preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHAT'S INSIDE — coverflow ring\n     Scoped to #hg-inside. The original CSS was scoped to #hg-pdp\n     while the section id is hg-how, so every rule here silently\n     depended on an unrelated ancestor existing.\n     ============================================================ */\n  #hg-inside {\n    --cf-pink: var(--pink, #EC2E8A);\n    --cf-pink-dark: var(--pink-dark, #D01F76);\n    --cf-pink-soft: var(--pink-soft, #FCE4EF);\n    --cf-ink: var(--charcoal, #17171A);\n    --cf-body: var(--gray-text, #5F6166);\n\n    --cf-card-w: 320px;\n    --cf-card-h: 476px;\n    --cf-radius: 20px;\n\n    padding: 40px 20px 0;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* ---------- header ---------- */\n  #hg-inside .cf-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--cf-pink);\n    text-align: center;\n  }\n\n  #hg-inside .cf-heading {\n    margin: 0 auto 10px;\n    max-width: 24ch;\n    font-size: clamp(27px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--cf-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-inside .cf-hint {\n    margin: 0;\n    font-size: 13.5px;\n    line-height: 1.5;\n    color: var(--cf-body);\n    text-align: center;\n  }\n\n  /* ---------- stage ---------- */\n  #hg-inside .hg-cf {\n    position: relative;\n    max-width: 1120px;\n    height: 530px;\n    margin: 22px auto 6px;\n    perspective: 1300px;\n  }\n\n  #hg-inside .hg-cf-stage {\n    position: absolute;\n    top: 26px;\n    left: 50%;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    margin-left: calc(var(--cf-card-w) / -2);\n    transform-style: preserve-3d;\n    transition: transform .85s cubic-bezier(.34, 1, .64, 1);\n  }\n\n  #hg-inside .hg-cf-card {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    background: #fff;\n    border-radius: var(--cf-radius);\n    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);\n    overflow: hidden;\n    cursor: pointer;\n    backface-visibility: hidden;\n    transition: opacity .6s ease;\n  }\n\n  #hg-inside .hg-cf-card img {\n    display: block;\n    width: 100%;\n    height: 240px;\n    object-fit: contain;\n    background: var(--cf-pink-soft);\n  }\n\n  #hg-inside .hg-cf-body {\n    padding: 18px 22px;\n    text-align: center;\n  }\n\n  #hg-inside .hg-cf-tag {\n    font-size: 13.5px;\n    font-weight: 800;\n    letter-spacing: .095em;\n    text-transform: uppercase;\n    line-height: 1.25;\n    color: var(--cf-pink);\n  }\n\n  #hg-inside .hg-cf-name {\n    margin: 6px 0 10px;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1.2;\n    letter-spacing: -.012em;\n    color: var(--cf-ink);\n  }\n\n  #hg-inside .hg-cf-desc {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.55;\n    color: var(--cf-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- arrows ---------- */\n  #hg-inside .hg-cf-arrow {\n    position: absolute;\n    top: 178px;\n    z-index: 60;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 78px;\n    height: 78px;\n    padding: 0;\n    transform: translateY(-50%);\n    border: 3px solid #fff;\n    border-radius: 50%;\n    background: var(--cf-pink);\n    color: #fff;\n    cursor: pointer;\n    box-shadow: 0 12px 28px rgba(236, 46, 138, .55);\n    transition: background .15s ease, box-shadow .15s ease, transform .15s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-inside .hg-cf-arrow:hover {\n    background: var(--cf-pink-dark);\n    transform: translateY(-50%) scale(1.08);\n    box-shadow: 0 14px 34px rgba(236, 46, 138, .65);\n  }\n\n  #hg-inside .hg-cf-arrow:active { transform: translateY(-50%) scale(1.02); }\n\n  #hg-inside .hg-cf-arrow:focus-visible {\n    outline: 3px solid var(--cf-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-inside .hg-cf-arrow.prev { left: 4px; }\n  #hg-inside .hg-cf-arrow.next { right: 4px; }\n\n  #hg-inside .hg-cf-arrow svg {\n    width: 30px;\n    height: 30px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 3.4;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n  }\n\n  /* ---------- CTA ---------- */\n  #hg-inside .cf-cta { margin-top: 26px; text-align: center; }\n\n  #hg-inside .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 320px;\n    min-height: 56px;\n    padding: 16px 30px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--cf-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .055em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 10px 28px -6px rgba(236, 46, 138, .5);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n  }\n\n  #hg-inside .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 16px 34px -8px rgba(236, 46, 138, .6);\n  }\n\n  #hg-inside .atc:focus-visible { outline: 2px solid var(--cf-ink); outline-offset: 3px; }\n\n  #hg-inside .atc svg {\n    width: 17px; height: 17px; flex: 0 0 17px;\n    fill: none; stroke: currentColor; stroke-width: 2.2;\n    stroke-linecap: round; stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-inside .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- tablet ---------- */\n  @media (max-width: 900px) {\n    #hg-inside { --cf-card-w: 280px; --cf-card-h: 456px; }\n    #hg-inside .hg-cf { height: 500px; }\n    #hg-inside .hg-cf-arrow { width: 60px; height: 60px; top: 160px; }\n    #hg-inside .hg-cf-arrow svg { width: 24px; height: 24px; }\n  }\n\n  /* ---------- mobile: flat snap scroller ---------- */\n  @media (max-width: 640px) {\n    #hg-inside { padding: 32px 0 0; }\n    #hg-inside .cf-eyebrow, #hg-inside .cf-heading, #hg-inside .cf-hint { padding-inline: 16px; }\n    #hg-inside .cf-heading { font-size: clamp(26px, 7.4vw, 32px); }\n\n    #hg-inside .hg-cf {\n      height: auto;\n      margin: 18px 0 6px;\n      perspective: none;\n    }\n\n    #hg-inside .hg-cf-stage {\n      position: static;\n      display: flex;\n      gap: 14px;\n      width: auto;\n      height: auto;\n      margin: 0;\n      padding: 6px 16px 18px;\n      overflow-x: auto;\n      scroll-snap-type: x mandatory;\n      scroll-padding-inline: 16px;\n      -webkit-overflow-scrolling: touch;\n      scrollbar-width: none;\n      transform: none !important;\n      touch-action: pan-x pan-y;\n    }\n\n    #hg-inside .hg-cf-stage::-webkit-scrollbar { display: none; }\n\n    #hg-inside .hg-cf-card {\n      position: relative !important;\n      top: auto !important;\n      left: auto !important;\n      flex: 0 0 78%;\n      max-width: 300px;\n      height: auto;\n      transform: none !important;\n      opacity: 1 !important;\n      pointer-events: auto !important;\n      scroll-snap-align: center;\n      cursor: default;\n    }\n\n    #hg-inside .hg-cf-card[data-clone] { display: none; }\n\n    #hg-inside .hg-cf-card img { height: 210px; }\n    #hg-inside .hg-cf-body { padding: 16px 18px 22px; }\n    #hg-inside .hg-cf-tag { font-size: 12.5px; }\n    #hg-inside .hg-cf-name { font-size: 18px; }\n    #hg-inside .hg-cf-desc { font-size: 15px; }\n\n    #hg-inside .hg-cf-arrow {\n      top: 42%;\n      width: 44px;\n      height: 44px;\n      border-width: 2px;\n      box-shadow: 0 6px 16px rgba(236, 46, 138, .45);\n    }\n    #hg-inside .hg-cf-arrow svg { width: 18px; height: 18px; stroke-width: 3.2; }\n\n    #hg-inside .cf-cta { padding-inline: 16px; }\n    #hg-inside .atc { max-width: none; }\n  }\n\n  @media (hover: none) {\n    #hg-inside .hg-cf-arrow:hover { background: var(--cf-pink); transform: translateY(-50%); }\n    #hg-inside .atc:hover { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-inside .hg-cf-stage,\n    #hg-inside .hg-cf-card,\n    #hg-inside .hg-cf-arrow,\n    #hg-inside .atc { transition: none !important; }\n  }\n</style>\n</head>\n<body>\n\n<section id=\"hg-inside\">\n\n  <p class=\"cf-eyebrow\">What's inside</p>\n  <h2 class=\"cf-heading\">9 ingredients. One balancing ritual.</h2>\n  <p class=\"cf-hint\">Swipe or tap a card to spin the ring.</p>\n\n  <div class=\"hg-cf\" id=\"hgCf\" role=\"group\" aria-roledescription=\"carousel\" aria-label=\"Ingredients\">\n\n    <button class=\"hg-cf-arrow prev\" type=\"button\" aria-label=\"Previous ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 4.5 8 12l7 7.5\"/></svg>\n    </button>\n\n    <div class=\"hg-cf-stage\">\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_35_01_PM.png?v=1782157994&width=640\"\n             alt=\"Spearmint and red raspberry leaf\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Cycle &amp; Hormone Support</p>\n          <h3 class=\"hg-cf-name\">Spearmint · Red Raspberry Leaf</h3>\n          <p class=\"hg-cf-desc\">Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_36_25_PM.png?v=1782157996&width=640\"\n             alt=\"Chamomile and lemon verbena\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Calm &amp; Mood</p>\n          <h3 class=\"hg-cf-name\">Chamomile · Lemon Verbena</h3>\n          <p class=\"hg-cf-desc\">Quiet irritability and that wired PMS feeling for a calm, grounded mindset.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_37_38_PM.png?v=1782157998&width=640\"\n             alt=\"Ginger rhizome and lemongrass\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Cramp &amp; Bloat Soothers</p>\n          <h3 class=\"hg-cf-name\">Ginger Rhizome · Lemongrass</h3>\n          <p class=\"hg-cf-desc\">Ease cramps and nausea, and settle the cyclical bloat that makes your jeans feel tight.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_38_48_PM.png?v=1782158006&width=640\"\n             alt=\"Nettle leaf and rose hip\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Mineral &amp; Nutrient Layer</p>\n          <h3 class=\"hg-cf-name\">Nettle Leaf · Rose Hip</h3>\n          <p class=\"hg-cf-desc\">Replace the iron and minerals you lose each cycle, plus a gentle dose of vitamin C.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/0308a96d-e768-4b26-9673-1f88c575f782.png?v=1782157993&width=640\"\n             alt=\"Licorice root\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Balance &amp; Comfort</p>\n          <h3 class=\"hg-cf-name\">Licorice Root</h3>\n          <p class=\"hg-cf-desc\">A traditional women's herb that rounds out the blend and supports you through hormonal shifts.</p>\n        </div>\n      </article>\n\n    </div>\n\n    <button class=\"hg-cf-arrow next\" type=\"button\" aria-label=\"Next ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 4.5 16 12l-7 7.5\"/></svg>\n    </button>\n  </div>\n\n  <div class=\"cf-cta\">\n    <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n      <span>Bring my balance back</span>\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n    </button>\n  </div>\n\n</section>\n\n<script>\n(function () {\n  var root = document.getElementById('hgCf');\n  if (!root) return;\n\n  var stage = root.querySelector('.hg-cf-stage');\n  var prev = root.querySelector('.prev');\n  var next = root.querySelector('.next');\n  var mqMobile = window.matchMedia('(max-width: 640px)');\n  var mqCalm = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n  // Duplicate the real cards once so the ring reads as a full circle.\n  // Clones are hidden from assistive tech and from the mobile scroller.\n  var originals = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  originals.forEach(function (card) {\n    var clone = card.cloneNode(true);\n    clone.setAttribute('data-clone', '');\n    clone.setAttribute('aria-hidden', 'true');\n    stage.appendChild(clone);\n  });\n\n  var cards = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  var n = cards.length;\n  var step = 360 / n;\n  var rot = 0;\n  var active = 0;\n\n  function radius() {\n    return window.innerWidth <= 900 ? 440 : 520;\n  }\n\n  function norm(a) {\n    a %= 360;\n    if (a > 180) a -= 360;\n    if (a < -180) a += 360;\n    return a;\n  }\n\n  function apply() {\n    if (mqMobile.matches) return;\n    var r = radius();\n    stage.style.transform = 'translateZ(-' + r + 'px) rotateY(' + rot + 'deg)';\n    cards.forEach(function (c, i) {\n      var ang = Math.abs(norm(i * step + rot));\n      c.style.transform = 'rotateY(' + (i * step) + 'deg) translateZ(' + r + 'px)';\n      c.style.opacity = ang < 22 ? '1' : (ang < 58 ? '0.9' : (ang < 92 ? '0.45' : '0'));\n      c.style.pointerEvents = ang < 92 ? 'auto' : 'none';\n      c.style.zIndex = String(Math.round(200 - ang));\n      c.setAttribute('aria-hidden', ang < 22 && !c.hasAttribute('data-clone') ? 'false' : 'true');\n    });\n  }\n\n  function go(d) {\n    if (mqMobile.matches) {\n      var card = root.querySelector('.hg-cf-card');\n      var w = card ? card.getBoundingClientRect().width + 14 : 300;\n      stage.scrollBy({ left: d * w, behavior: mqCalm.matches ? 'auto' : 'smooth' });\n      return;\n    }\n    rot -= d * step;\n    active = ((active + d) % n + n) % n;\n    apply();\n  }\n\n  prev.addEventListener('click', function (e) { e.stopPropagation(); go(-1); });\n  next.addEventListener('click', function (e) { e.stopPropagation(); go(1); });\n\n  cards.forEach(function (c, i) {\n    c.addEventListener('click', function () {\n      if (mqMobile.matches) return;\n      var d = ((i - active) % n + n) % n;\n      if (d > n / 2) d -= n;\n      if (d !== 0) go(d);\n    });\n  });\n\n  // Keyboard: left/right when the carousel has focus\n  root.setAttribute('tabindex', '0');\n  root.addEventListener('keydown', function (e) {\n    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }\n    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }\n  });\n\n  // Swipe (desktop ring only; mobile uses native scrolling)\n  var sx = null;\n  root.addEventListener('touchstart', function (e) {\n    if (mqMobile.matches) return;\n    sx = e.touches[0].clientX;\n  }, { passive: true });\n\n  root.addEventListener('touchend', function (e) {\n    if (sx === null || mqMobile.matches) return;\n    var dx = e.changedTouches[0].clientX - sx;\n    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);\n    sx = null;\n  }, { passive: true });\n\n  // Rebuild on breakpoint change so rotating a phone doesn't strand the ring\n  var resizeTimer;\n  window.addEventListener('resize', function () {\n    clearTimeout(resizeTimer);\n    resizeTimer = setTimeout(function () {\n      if (mqMobile.matches) {\n        stage.style.transform = '';\n        cards.forEach(function (c) { c.style.transform = ''; c.style.opacity = ''; c.style.zIndex = ''; });\n      } else {\n        apply();\n      }\n    }, 150);\n  });\n\n  apply();\n})();\n\nfunction hgBuy() { /* theme handler */ }\n</script>\n\n</body>\n</html>",
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>What's inside — coverflow preview</title>\n<style>\n  *, *::before, *::after { box-sizing: border-box; }\n  body { margin: 0; background: #fff; }\n\n  /* ============================================================\n     WHAT'S INSIDE — coverflow ring\n     Scoped to #hg-inside. The original CSS was scoped to #hg-pdp\n     while the section id is hg-how, so every rule here silently\n     depended on an unrelated ancestor existing.\n     ============================================================ */\n  #hg-inside {\n    --cf-pink: var(--pink, #EC2E8A);\n    --cf-pink-dark: var(--pink-dark, #D01F76);\n    --cf-pink-soft: var(--pink-soft, #FCE4EF);\n    --cf-ink: var(--charcoal, #17171A);\n    --cf-body: var(--gray-text, #5F6166);\n\n    --cf-card-w: 320px;\n    --cf-card-h: 476px;\n    --cf-radius: 20px;\n\n    padding: 40px 20px 0;\n    background: #fff;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Inter, Helvetica, Arial, sans-serif;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* ---------- header ---------- */\n  #hg-inside .cf-eyebrow {\n    margin: 0 0 14px;\n    font-size: 12px;\n    font-weight: 700;\n    line-height: 1;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: var(--cf-pink);\n    text-align: center;\n  }\n\n  #hg-inside .cf-heading {\n    margin: 0 auto 10px;\n    max-width: 24ch;\n    font-size: clamp(27px, 2.9vw, 34px);\n    font-weight: 800;\n    line-height: 1.15;\n    letter-spacing: -.022em;\n    color: var(--cf-ink);\n    text-align: center;\n    text-wrap: balance;\n  }\n\n  #hg-inside .cf-hint {\n    margin: 0;\n    font-size: 13.5px;\n    line-height: 1.5;\n    color: var(--cf-body);\n    text-align: center;\n  }\n\n  /* ---------- stage ---------- */\n  #hg-inside .hg-cf {\n    position: relative;\n    max-width: 1120px;\n    height: 530px;\n    margin: 22px auto 6px;\n    perspective: 1300px;\n  }\n\n  #hg-inside .hg-cf-stage {\n    position: absolute;\n    top: 26px;\n    left: 50%;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    margin-left: calc(var(--cf-card-w) / -2);\n    transform-style: preserve-3d;\n    transition: transform .85s cubic-bezier(.34, 1, .64, 1);\n  }\n\n  #hg-inside .hg-cf-card {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: var(--cf-card-w);\n    height: var(--cf-card-h);\n    background: #fff;\n    border-radius: var(--cf-radius);\n    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);\n    overflow: hidden;\n    cursor: pointer;\n    backface-visibility: hidden;\n    transition: opacity .6s ease;\n  }\n\n  #hg-inside .hg-cf-card img {\n    display: block;\n    width: 100%;\n    height: 240px;\n    object-fit: contain;\n    background: var(--cf-pink-soft);\n  }\n\n  #hg-inside .hg-cf-body {\n    padding: 18px 22px;\n    text-align: center;\n  }\n\n  #hg-inside .hg-cf-tag {\n    font-size: 13.5px;\n    font-weight: 800;\n    letter-spacing: .095em;\n    text-transform: uppercase;\n    line-height: 1.25;\n    color: var(--cf-pink);\n  }\n\n  #hg-inside .hg-cf-name {\n    margin: 6px 0 10px;\n    font-size: 18px;\n    font-weight: 800;\n    line-height: 1.2;\n    letter-spacing: -.012em;\n    color: var(--cf-ink);\n  }\n\n  #hg-inside .hg-cf-desc {\n    margin: 0;\n    font-size: 15px;\n    line-height: 1.55;\n    color: var(--cf-body);\n    text-wrap: pretty;\n  }\n\n  /* ---------- arrows ---------- */\n  #hg-inside .hg-cf-arrow {\n    position: absolute;\n    top: 178px;\n    z-index: 60;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 78px;\n    height: 78px;\n    padding: 0;\n    transform: translateY(-50%);\n    border: 3px solid #fff;\n    border-radius: 50%;\n    background: var(--cf-pink);\n    color: #fff;\n    cursor: pointer;\n    box-shadow: 0 12px 28px rgba(236, 46, 138, .55);\n    transition: background .15s ease, box-shadow .15s ease, transform .15s ease;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  #hg-inside .hg-cf-arrow:hover {\n    background: var(--cf-pink-dark);\n    transform: translateY(-50%) scale(1.08);\n    box-shadow: 0 14px 34px rgba(236, 46, 138, .65);\n  }\n\n  #hg-inside .hg-cf-arrow:active { transform: translateY(-50%) scale(1.02); }\n\n  #hg-inside .hg-cf-arrow:focus-visible {\n    outline: 3px solid var(--cf-ink);\n    outline-offset: 3px;\n  }\n\n  #hg-inside .hg-cf-arrow.prev { left: 4px; }\n  #hg-inside .hg-cf-arrow.next { right: 4px; }\n\n  #hg-inside .hg-cf-arrow svg {\n    width: 30px;\n    height: 30px;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 3.4;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n  }\n\n  /* ---------- CTA ---------- */\n  #hg-inside .cf-cta { margin-top: 26px; text-align: center; }\n\n  #hg-inside .atc {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n    width: 100%;\n    max-width: 320px;\n    min-height: 56px;\n    padding: 16px 30px;\n    border: 0;\n    border-radius: 999px;\n    background: var(--cf-pink);\n    color: #fff;\n    font-family: inherit;\n    font-size: 16px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: .055em;\n    text-transform: uppercase;\n    cursor: pointer;\n    box-shadow: 0 10px 28px -6px rgba(236, 46, 138, .5);\n    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;\n  }\n\n  #hg-inside .atc:hover {\n    transform: translateY(-2px);\n    filter: brightness(1.04);\n    box-shadow: 0 16px 34px -8px rgba(236, 46, 138, .6);\n  }\n\n  #hg-inside .atc:focus-visible { outline: 2px solid var(--cf-ink); outline-offset: 3px; }\n\n  #hg-inside .atc svg {\n    width: 17px; height: 17px; flex: 0 0 17px;\n    fill: none; stroke: currentColor; stroke-width: 2.2;\n    stroke-linecap: round; stroke-linejoin: round;\n    transition: transform .22s ease;\n  }\n\n  #hg-inside .atc:hover svg { transform: translateX(3px); }\n\n  /* ---------- tablet ---------- */\n  @media (max-width: 900px) {\n    #hg-inside { --cf-card-w: 280px; --cf-card-h: 456px; }\n    #hg-inside .hg-cf { height: 500px; }\n    #hg-inside .hg-cf-arrow { width: 60px; height: 60px; top: 160px; }\n    #hg-inside .hg-cf-arrow svg { width: 24px; height: 24px; }\n  }\n\n  /* ---------- mobile: flat snap scroller ---------- */\n  @media (max-width: 640px) {\n    #hg-inside { padding: 32px 0 0; }\n    #hg-inside .cf-eyebrow, #hg-inside .cf-heading, #hg-inside .cf-hint { padding-inline: 16px; }\n    #hg-inside .cf-heading { font-size: clamp(26px, 7.4vw, 32px); }\n\n    #hg-inside .hg-cf {\n      height: auto;\n      margin: 18px 0 6px;\n      perspective: none;\n    }\n\n    #hg-inside .hg-cf-stage {\n      position: static;\n      display: flex;\n      gap: 14px;\n      width: auto;\n      height: auto;\n      margin: 0;\n      padding: 6px 16px 18px;\n      overflow-x: auto;\n      scroll-snap-type: x mandatory;\n      scroll-padding-inline: 16px;\n      -webkit-overflow-scrolling: touch;\n      scrollbar-width: none;\n      transform: none !important;\n      touch-action: pan-x pan-y;\n    }\n\n    #hg-inside .hg-cf-stage::-webkit-scrollbar { display: none; }\n\n    #hg-inside .hg-cf-card {\n      position: relative !important;\n      top: auto !important;\n      left: auto !important;\n      flex: 0 0 78%;\n      max-width: 300px;\n      height: auto;\n      transform: none !important;\n      opacity: 1 !important;\n      pointer-events: auto !important;\n      scroll-snap-align: center;\n      cursor: default;\n    }\n\n    #hg-inside .hg-cf-card[data-clone] { display: none; }\n\n    #hg-inside .hg-cf-card img { height: 210px; }\n    #hg-inside .hg-cf-body { padding: 16px 18px 22px; }\n    #hg-inside .hg-cf-tag { font-size: 12.5px; }\n    #hg-inside .hg-cf-name { font-size: 18px; }\n    #hg-inside .hg-cf-desc { font-size: 15px; }\n\n    #hg-inside .hg-cf-arrow {\n      top: 42%;\n      width: 44px;\n      height: 44px;\n      border-width: 2px;\n      box-shadow: 0 6px 16px rgba(236, 46, 138, .45);\n    }\n    #hg-inside .hg-cf-arrow svg { width: 18px; height: 18px; stroke-width: 3.2; }\n\n    #hg-inside .cf-cta { padding-inline: 16px; }\n    #hg-inside .atc { max-width: none; }\n  }\n\n  @media (hover: none) {\n    #hg-inside .hg-cf-arrow:hover { background: var(--cf-pink); transform: translateY(-50%); }\n    #hg-inside .atc:hover { transform: none; }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    #hg-inside .hg-cf-stage,\n    #hg-inside .hg-cf-card,\n    #hg-inside .hg-cf-arrow,\n    #hg-inside .atc { transition: none !important; }\n  }\n</style>\n</head>\n<body>\n\n<section id=\"hg-inside\">\n\n  <p class=\"cf-eyebrow\">What's inside</p>\n  <h2 class=\"cf-heading\">10 organic botanicals. One daily capsule.</h2>\n  <p class=\"cf-hint\">Swipe or tap a card to explore the formula.</p>\n\n  <div class=\"hg-cf\" id=\"hgCf\" role=\"group\" aria-roledescription=\"carousel\" aria-label=\"Ingredients\">\n\n    <button class=\"hg-cf-arrow prev\" type=\"button\" aria-label=\"Previous ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 4.5 8 12l7 7.5\"/></svg>\n    </button>\n\n    <div class=\"hg-cf-stage\">\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_35_01_PM.png?v=1782157994&width=640\"\n             alt=\"Cinnamon, Fenugreek\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Glucose support</p>\n          <h3 class=\"hg-cf-name\">Cinnamon · Fenugreek</h3>\n          <p class=\"hg-cf-desc\">Two traditional botanicals used to support healthy glucose metabolism and blood sugar levels.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_36_25_PM.png?v=1782157996&width=640\"\n             alt=\"Neem, Holy Basil\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Traditional balance</p>\n          <h3 class=\"hg-cf-name\">Neem · Holy Basil</h3>\n          <p class=\"hg-cf-desc\">Ayurvedic herbs traditionally used for blood sugar balance, resilience and metabolic wellness.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_37_38_PM.png?v=1782157998&width=640\"\n             alt=\"Moringa, Nettle\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Nutrient-rich greens</p>\n          <h3 class=\"hg-cf-name\">Moringa · Nettle</h3>\n          <p class=\"hg-cf-desc\">A green superfood and a mineral-rich herb for whole-body nutritional support.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/ChatGPT_Image_Jun_19_2026_01_38_48_PM.png?v=1782158006&width=640\"\n             alt=\"Amla, Lemon Peel\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Antioxidant fruits</p>\n          <h3 class=\"hg-cf-name\">Amla · Lemon Peel</h3>\n          <p class=\"hg-cf-desc\">Antioxidant-rich amla and lemon peel bring naturally occurring plant compounds.</p>\n        </div>\n      </article>\n\n      <article class=\"hg-cf-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0483/6183/2598/files/0308a96d-e768-4b26-9673-1f88c575f782.png?v=1782157993&width=640\"\n             alt=\"Ginger, Ashwagandha\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\">\n        <div class=\"hg-cf-body\">\n          <p class=\"hg-cf-tag\">Digestion &amp; resilience</p>\n          <h3 class=\"hg-cf-name\">Ginger · Ashwagandha</h3>\n          <p class=\"hg-cf-desc\">Warming ginger for digestion and an adaptogen for the body's response to everyday stress.</p>\n        </div>\n      </article>\n\n    </div>\n\n    <button class=\"hg-cf-arrow next\" type=\"button\" aria-label=\"Next ingredient\">\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 4.5 16 12l-7 7.5\"/></svg>\n    </button>\n  </div>\n\n  <div class=\"cf-cta\">\n    <button class=\"atc\" type=\"button\" onclick=\"hgBuy()\">\n      <span>Start my daily support</span>\n      <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5.5 19.5 12 13 18.5\"/></svg>\n    </button>\n  </div>\n\n</section>\n\n<script>\n(function () {\n  var root = document.getElementById('hgCf');\n  if (!root) return;\n\n  var stage = root.querySelector('.hg-cf-stage');\n  var prev = root.querySelector('.prev');\n  var next = root.querySelector('.next');\n  var mqMobile = window.matchMedia('(max-width: 640px)');\n  var mqCalm = window.matchMedia('(prefers-reduced-motion: reduce)');\n\n  // Duplicate the real cards once so the ring reads as a full circle.\n  // Clones are hidden from assistive tech and from the mobile scroller.\n  var originals = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  originals.forEach(function (card) {\n    var clone = card.cloneNode(true);\n    clone.setAttribute('data-clone', '');\n    clone.setAttribute('aria-hidden', 'true');\n    stage.appendChild(clone);\n  });\n\n  var cards = [].slice.call(root.querySelectorAll('.hg-cf-card'));\n  var n = cards.length;\n  var step = 360 / n;\n  var rot = 0;\n  var active = 0;\n\n  function radius() {\n    return window.innerWidth <= 900 ? 440 : 520;\n  }\n\n  function norm(a) {\n    a %= 360;\n    if (a > 180) a -= 360;\n    if (a < -180) a += 360;\n    return a;\n  }\n\n  function apply() {\n    if (mqMobile.matches) return;\n    var r = radius();\n    stage.style.transform = 'translateZ(-' + r + 'px) rotateY(' + rot + 'deg)';\n    cards.forEach(function (c, i) {\n      var ang = Math.abs(norm(i * step + rot));\n      c.style.transform = 'rotateY(' + (i * step) + 'deg) translateZ(' + r + 'px)';\n      c.style.opacity = ang < 22 ? '1' : (ang < 58 ? '0.9' : (ang < 92 ? '0.45' : '0'));\n      c.style.pointerEvents = ang < 92 ? 'auto' : 'none';\n      c.style.zIndex = String(Math.round(200 - ang));\n      c.setAttribute('aria-hidden', ang < 22 && !c.hasAttribute('data-clone') ? 'false' : 'true');\n    });\n  }\n\n  function go(d) {\n    if (mqMobile.matches) {\n      var card = root.querySelector('.hg-cf-card');\n      var w = card ? card.getBoundingClientRect().width + 14 : 300;\n      stage.scrollBy({ left: d * w, behavior: mqCalm.matches ? 'auto' : 'smooth' });\n      return;\n    }\n    rot -= d * step;\n    active = ((active + d) % n + n) % n;\n    apply();\n  }\n\n  prev.addEventListener('click', function (e) { e.stopPropagation(); go(-1); });\n  next.addEventListener('click', function (e) { e.stopPropagation(); go(1); });\n\n  cards.forEach(function (c, i) {\n    c.addEventListener('click', function () {\n      if (mqMobile.matches) return;\n      var d = ((i - active) % n + n) % n;\n      if (d > n / 2) d -= n;\n      if (d !== 0) go(d);\n    });\n  });\n\n  // Keyboard: left/right when the carousel has focus\n  root.setAttribute('tabindex', '0');\n  root.addEventListener('keydown', function (e) {\n    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }\n    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }\n  });\n\n  // Swipe (desktop ring only; mobile uses native scrolling)\n  var sx = null;\n  root.addEventListener('touchstart', function (e) {\n    if (mqMobile.matches) return;\n    sx = e.touches[0].clientX;\n  }, { passive: true });\n\n  root.addEventListener('touchend', function (e) {\n    if (sx === null || mqMobile.matches) return;\n    var dx = e.changedTouches[0].clientX - sx;\n    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);\n    sx = null;\n  }, { passive: true });\n\n  // Rebuild on breakpoint change so rotating a phone doesn't strand the ring\n  var resizeTimer;\n  window.addEventListener('resize', function () {\n    clearTimeout(resizeTimer);\n    resizeTimer = setTimeout(function () {\n      if (mqMobile.matches) {\n        stage.style.transform = '';\n        cards.forEach(function (c) { c.style.transform = ''; c.style.opacity = ''; c.style.zIndex = ''; });\n      } else {\n        apply();\n      }\n    }, 150);\n  });\n\n  apply();\n})();\n\nfunction hgBuy() { /* theme handler */ }\n</script>\n\n</body>\n</html>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -786,45 +787,45 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_35_01_PM.webp",
-            "label": "Cycle & hormone support",
-            "title": "Spearmint · Red Raspberry Leaf",
-            "text": "Spearmint is the herb women reach for with PCOS, and raspberry leaf supports a more regular, comfortable cycle."
+            "label": "Glucose support",
+            "title": "Cinnamon · Fenugreek",
+            "text": "Two traditional botanicals used to support healthy glucose metabolism and blood sugar levels."
           }
         },
         "ingredient_eJjUHQ": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_36_25_PM.webp",
-            "label": "Calm & mood",
-            "title": "Chamomile · Lemon Verbena",
-            "text": "Quiet irritability and that wired PMS feeling for a calm, grounded mindset."
+            "label": "Traditional balance",
+            "title": "Neem · Holy Basil",
+            "text": "Ayurvedic herbs traditionally used for blood sugar balance, resilience and metabolic wellness."
           }
         },
         "ingredient_eUHmdc": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/0308a96d-e768-4b26-9673-1f88c575f782.webp",
-            "label": "Balance & Comfort",
-            "title": "Licorice Root",
-            "text": "A traditional women's herb that rounds out the blend and supports you through hormonal shifts."
+            "label": "Nutrient-rich greens",
+            "title": "Moringa · Nettle",
+            "text": "A green superfood and a mineral-rich herb for whole-body nutritional support."
           }
         },
         "ingredient_WhXVx9": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_37_38_PM.webp",
-            "label": "Cramp & Bloat Soothers",
-            "title": "Ginger Rhizome · Lemongrass",
-            "text": "Ease cramps and nausea, and settle the cyclical bloat that makes your jeans feel tight."
+            "label": "Antioxidant fruits",
+            "title": "Amla · Lemon Peel",
+            "text": "Antioxidant-rich amla and lemon peel bring naturally occurring plant compounds."
           }
         },
         "ingredient_VK6bah": {
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_01_38_48_PM.webp",
-            "label": "Mineral & Nutrient Layer",
-            "title": "Nettle Leaf · Rose Hip",
-            "text": "Replace the iron and minerals you lose each cycle, plus a gentle dose of vitamin C."
+            "label": "Digestion & resilience",
+            "title": "Ginger · Ashwagandha",
+            "text": "Warming ginger for digestion and an adaptogen for the body's response to everyday stress."
           }
         }
       },
@@ -838,9 +839,9 @@
       "name": "Ingredient carousel",
       "settings": {
         "eyebrow": "What's inside",
-        "heading": "9 ingredients. One balancing ritual.",
-        "subheading": "Swipe or tap a card to spin the ring.",
-        "button_label": "Bring my balance back",
+        "heading": "10 organic botanicals. One daily capsule.",
+        "subheading": "Swipe or tap a card to explore the formula.",
+        "button_label": "Start my daily support",
         "button_link": "",
         "show_dots": false,
         "visible_sides": 2,
@@ -869,9 +870,9 @@
           "settings": {
             "image": "shopify://shop_images/fd3c777d-89e0-4805-8285-d6719f8b83ba.png",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265157/ChatGPT_Image_May_8_2026_01_28_49_PM_jzjpsg.png",
-            "image_alt": "Steep the loose leaf tea",
-            "title": "Steep",
-            "desc": "Pour 8 oz of just-boiled water over one tea bag and steep for 8 to 15 minutes."
+            "image_alt": "Blood Sugar Support capsules with a glass of water",
+            "title": "Take",
+            "desc": "Take the serving shown on the bottle with a glass of water, ideally with a meal."
           }
         },
         "step_nmNcqE": {
@@ -879,9 +880,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_20_08_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1778265164/ChatGPT_Image_May_8_2026_01_30_52_PM_mmogl6.png",
-            "image_alt": "Sip before bed",
-            "title": "Sip",
-            "desc": "Enjoy 2 to 3 cups a day, hot or over ice. A few calm minutes that are just yours."
+            "image_alt": "A balanced, fibre-rich meal",
+            "title": "Balance your plate",
+            "desc": "Build meals around vegetables, fibre and protein, and stay active every day, even a short walk after meals."
           }
         },
         "step_gwthJd": {
@@ -889,9 +890,9 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_04_19_55_PM.webp",
             "image_url": "https://res.cloudinary.com/dss9cf62q/image/upload/f_auto,q_auto,c_fill,g_auto,w_620,h_620/v1779311225/ChatGPT_Image_May_20_2026_02_42_08_PM_i7afhr.png",
-            "image_alt": "Wake up reset, flatter and more regular",
-            "title": "Balance",
-            "desc": "Stay consistent through your cycle and feel steadier moods, easier periods, and less bloat."
+            "image_alt": "Checking blood glucose as part of a daily routine",
+            "title": "Stay consistent",
+            "desc": "Use it daily and keep checking your readings as your healthcare professional advises."
           }
         }
       },
@@ -902,7 +903,7 @@
       ],
       "name": "How it works",
       "settings": {
-        "eyebrow": "How it works",
+        "eyebrow": "How to use",
         "title": "Easy as 1. 2. 3.",
         "use_gradient": true,
         "bg_top": "#ffffff",
@@ -1018,7 +1019,7 @@
           "type": "question",
           "settings": {
             "question": "What are Blood Sugar Support Capsules designed to do?",
-            "answer": "<p>They are formulated to support healthy blood sugar balance, glucose metabolism and everyday metabolic</p><p>wellness. They are intended to complement balanced nutrition, regular movement and appropriate medical</p><p>care.</p>"
+            "answer": "<p>They are formulated to support healthy blood sugar balance, glucose metabolism and everyday metabolic wellness. They are intended to complement balanced nutrition, regular movement and appropriate medical care.</p>"
           }
         },
         "question_q9riDW": {
@@ -1032,70 +1033,70 @@
           "type": "question",
           "settings": {
             "question": "Can people with diabetes or prediabetes take them?",
-            "answer": "<p>People with diabetes or prediabetes should speak with a doctor, pharmacist or qualified healthcare professional</p><p>before use, particularly if they take medication or insulin. This supplement is not a diabetes treatment and</p><p>should not replace prescribed care.</p>"
+            "answer": "<p>People with diabetes or prediabetes should speak with a doctor, pharmacist or qualified healthcare professional before use, particularly if they take medication or insulin. This supplement is not a diabetes treatment and should not replace prescribed care.</p>"
           }
         },
         "question_jtmUPH": {
           "type": "question",
           "settings": {
             "question": "Will these capsules lower my blood sugar?",
-            "answer": "<p>Individual responses vary. The formula is designed to support healthy blood sugar and glucose metabolism, but</p><p>no specific reduction can be guaranteed. Continue monitoring your readings as directed by your healthcare</p><p>professional.</p>"
+            "answer": "<p>Individual responses vary. The formula is designed to support healthy blood sugar and glucose metabolism, but no specific reduction can be guaranteed. Continue monitoring your readings as directed by your healthcare professional.</p>"
           }
         },
         "question_mJkCMq": {
           "type": "question",
           "settings": {
             "question": "How should I take the capsules?",
-            "answer": "<p>Follow the serving directions printed on the bottle and do not exceed the recommended daily amount.</p><p>Consistent use alongside balanced meals and regular activity is recommended.</p>"
+            "answer": "<p>Follow the serving directions printed on the bottle with a glass of water, ideally with a meal, and do not exceed the recommended daily amount. Consistent daily use alongside balanced meals and regular activity is recommended.</p>"
           }
         },
         "question_DgrzGL": {
           "type": "question",
           "settings": {
             "question": "How quickly will I notice a difference?",
-            "answer": "<p>There is no universal timeframe. Food, medication, sleep, stress, activity and individual health can all influence</p><p>how you feel and what your glucose readings show.</p>"
+            "answer": "<p>There is no universal timeframe. Food, medication, sleep, stress, activity and individual health can all influence how you feel and what your glucose readings show.</p>"
           }
         },
         "question_EWWJWJ": {
           "type": "question",
           "settings": {
             "question": "Can I use them with metformin, insulin or another diabetes medication?",
-            "answer": "<p>Only with professional guidance. Combining botanical blood-sugar support with medication or insulin may</p><p>cause blood glucose to fall too low. Continue monitoring your readings and do not change prescribed treatment</p><p>without medical advice.</p>"
+            "answer": "<p>Only with professional guidance. Combining botanical blood-sugar support with medication or insulin may cause blood glucose to fall too low. Continue monitoring your readings and do not change prescribed treatment without medical advice.</p>"
           }
         },
         "question_mciNmf": {
           "type": "question",
           "settings": {
             "question": "Can I take Blood Sugar Support Capsules with GLUKOBALANS?",
-            "answer": "<p>Do not combine them unless a qualified healthcare professional has reviewed your medication and wellness</p><p>routine. The products contain different formulas but may have overlapping effects on blood glucose.</p>"
+            "answer": "<p>Do not combine them unless a qualified healthcare professional has reviewed your medication and wellness routine. The products contain different formulas but may have overlapping effects on blood glucose.</p>"
           }
         },
         "question_cHCqHm": {
           "type": "question",
           "settings": {
             "question": "What is the difference between Blood Sugar Support and GLUKOBALANS?",
-            "answer": "<p>Blood Sugar Support is a 10-botanical whole-powder formula positioned for daily glucose and metabolic</p><p>support. GLUKOBALANS is a separate, more specialised formula positioned around appetite, cravings,</p><p>weight-management support and metabolic wellness. Customers should select the product that best matches</p><p>their goal rather than automatically taking both.</p>"
+            "answer": "<p>Blood Sugar Support is a 10-botanical whole-powder formula positioned for daily glucose and metabolic support. GLUKOBALANS is a separate, more specialised formula positioned around appetite, cravings, weight-management support and metabolic wellness. Customers should select the product that best matches their goal rather than automatically taking both.</p>"
           }
         },
         "question_G4EJNg": {
           "type": "question",
           "settings": {
             "question": "Do I still need to watch what I eat?",
-            "answer": "<p>es. Supplements work best as part of a complete routine. Build meals around vegetables, fibre and protein,</p><p>and pay attention to the portion and preparation of carbohydrate-rich foods. Caribbean staples can still be</p><p>enjoyed as part of a balanced eating pattern.</p>"
+            "answer": "<p>Yes. Supplements work best as part of a complete routine. Build meals around vegetables, fibre and protein, and pay attention to the portion and preparation of carbohydrate-rich foods. Caribbean staples can still be enjoyed as part of a balanced eating pattern.</p>"
           }
         },
         "question_bqfDCn": {
           "type": "question",
           "settings": {
             "question": "Can pregnant or breastfeeding women take this product?",
-            "answer": "<p>Do not use during pregnancy or breastfeeding unless a qualified healthcare professional has reviewed the</p><p>complete formula and specifically approved it for you.</p>"
+            "answer": "<p>Do not use during pregnancy or breastfeeding unless a qualified healthcare professional has reviewed the complete formula and specifically approved it for you.</p>"
           }
         },
         "question_BGAyMp": {
           "type": "question",
           "settings": {
             "question": "How should I store the capsules in a warm climate?",
-            "answer": "<p>Keep the bottle tightly closed in a cool, dry place away from sunlight, heat and moisture. Avoid bathrooms,</p><p>kitchens near the stove and hot vehicles.</p>"
+            "answer": "<p>Keep the bottle tightly closed in a cool, dry place away from sunlight, heat and moisture. Avoid bathrooms, kitchens near the stove and hot vehicles.</p><p><em>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
           }
         }
       },
