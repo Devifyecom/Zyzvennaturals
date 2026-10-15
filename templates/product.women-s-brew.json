@@ -138,7 +138,7 @@
           "type": "info_row",
           "settings": {
             "heading": "FAQ",
-            "content": "<p>• Is Women's Brew only for women with a hormonal condition? <br/>No. Women's Brew is an everyday women's wellness tea for adult women across life stages. You do not need a diagnosed hormonal condition to enjoy it.<br/><br/>• What does Women's Brew support?<br/> It is formulated to support healthy hormonal balance, menstrual comfort, calm mood, digestion, healthy fluid balance and everyday vitality. Individual experiences vary.<br/><br/>• Can I drink it if I still have regular periods? <br/>Yes. Women's Brew is designed for general adult women's wellness and is not limited to menopause or irregular cycles.<br/><br/>• Is it a menopause tea? <br/>Women's Brew can support general women's wellness during many life stages, but Freja Balance is the Zyzven Naturals tea positioned specifically for perimenopause and menopause.<br/><br/>• Can I drink it every day?The recommended use is one cup daily. Follow the preparation directions and do not exceed the recommended use.<br/><br/>• When is the best time to drink it?<br/>It can be enjoyed morning, afternoon or evening. Choose a time you can maintain consistently.<br/><br/>• Does it contain caffeine? <br/>No. Women's Brew is naturally caffeine-free. <br/><br/>• What does it taste like? <br/>It has a smooth herbal flavor with refreshing spearmint and warm Ceylon cinnamon notes. <br/><br/>• How many servings are in one pouch? <br/>Each 60-gram pouch provides approximately 30 servings when prepared using 2 grams per cup. <br/><br/>• Can I take it with hormonal birth control or HRT? <br/>Speak with your healthcare professional before combining Women's Brew with hormonal birth control, hormone therapy or other medication. <br/><br/>•Can I use it if I have a hormone-sensitive condition? Consult your healthcare professional before use. Chaste berry and other botanicals may not be appropriate for some hormone-sensitive conditions. <br/><br/>• Can I use it during pregnancy or while breastfeeding? Do not use during pregnancy or while breastfeeding unless approved by a qualified healthcare professional.</p>",
+            "content": "<p>• Is Women's Brew only for women with a hormonal condition?&nbsp;<br/>No. Women's Brew is an everyday women's wellness tea for adult women across life stages. You do not need a diagnosed hormonal condition to enjoy it.<br/><br/>• What does Women's Brew support?<br/>&nbsp;It is formulated to support healthy hormonal balance, menstrual comfort, calm mood, digestion, healthy fluid balance and everyday vitality. Individual experiences vary.<br/><br/>• Can I drink it if I still have regular periods?&nbsp;<br/>Yes. Women's Brew is designed for general adult women's wellness and is not limited to menopause or irregular cycles.<br/><br/>• Is it a menopause tea?&nbsp;<br/>Women's Brew can support general women's wellness during many life stages, but Freja Balance is the Zyzven Naturals tea positioned specifically for perimenopause and menopause.<br/><br/>• Can I drink it every day?The recommended use is one cup daily. Follow the preparation directions and do not exceed the recommended use.<br/><br/>• When is the best time to drink it?<br/>It can be enjoyed morning, afternoon or evening. Choose a time you can maintain consistently.<br/><br/>• Does it contain caffeine?&nbsp;<br/>No. Women's Brew is naturally caffeine-free.&nbsp;<br/><br/>• What does it taste like?&nbsp;<br/>It has a smooth herbal flavor with refreshing spearmint and warm Ceylon cinnamon notes.&nbsp;<br/><br/>• How many servings are in one pouch?&nbsp;<br/>Each 60-gram pouch provides approximately 30 servings when prepared using 2 grams per cup.&nbsp;<br/><br/>• Can I take it with hormonal birth control or HRT?&nbsp;<br/>Speak with your healthcare professional before combining Women's Brew with hormonal birth control, hormone therapy or other medication.&nbsp;<br/><br/>•Can I use it if I have a hormone-sensitive condition? Consult your healthcare professional before use. Chaste berry and other botanicals may not be appropriate for some hormone-sensitive conditions.&nbsp;<br/><br/>• Can I use it during pregnancy or while breastfeeding? Do not use during pregnancy or while breastfeeding unless approved by a qualified healthcare professional.</p>",
             "open_by_default": false
           }
         },
@@ -170,7 +170,6 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/6f54340ad1384b73a25d1b5f965e8a24.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -669,7 +668,6 @@
     },
     "real_transformations_gBRGrd": {
       "type": "real-transformations",
-      "disabled": true,
       "blocks": {
         "testimonial_fMR7em": {
           "type": "testimonial",
@@ -723,13 +721,14 @@
         "testimonial_HUkF3p",
         "testimonial_YkCAxe"
       ],
+      "disabled": true,
       "name": "Real transformations",
       "settings": {
         "eyebrow": "Real Transformations",
         "title": "The results speak for themselves.",
         "lead": "<p>Across every angle, bloating, digestion, constipation, water retention. All using the same gentle ritual.</p>",
         "disclaimer": "",
-        "accent_color": "#444A82",
+        "accent_color": "#444a82",
         "badge_text_color": "#ffffff",
         "star_color": "#358440",
         "heading_color": "#121212",
@@ -830,7 +829,7 @@
         "card_height_mobile": 560,
         "padding_top": 72,
         "padding_bottom": 72,
-        "accent_color": "#444A82",
+        "accent_color": "#444a82",
         "band_color": "#fffbf4",
         "heading_color": "#161616",
         "body_color": "#6b6b6b",
@@ -883,7 +882,7 @@
         "use_gradient": true,
         "bg_top": "#ffffff",
         "bg_bottom": "#f8f4ec",
-        "accent_color": "#444A82",
+        "accent_color": "#444a82",
         "number_text_color": "#ffffff",
         "heading_color": "#17171a",
         "body_color": "#5f6166",
@@ -1099,7 +1098,7 @@
         "card_radius": 16,
         "padding_top": 80,
         "padding_bottom": 80,
-        "accent_color": "#444A82",
+        "accent_color": "#444a82",
         "icon_bg_color": "#fffbf4",
         "heading_color": "#121212",
         "question_color": "#1a1a2e",
