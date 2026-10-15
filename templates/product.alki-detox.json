@@ -167,7 +167,6 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/c2dc967b341d4806a08cd96c56672515.mp4",
             "sound_button_text": "TAP FOR SOUND",
@@ -620,7 +619,6 @@
     },
     "real_transformations_gBRGrd": {
       "type": "real-transformations",
-      "disabled": true,
       "blocks": {
         "testimonial_fMR7em": {
           "type": "testimonial",
@@ -674,6 +672,7 @@
         "testimonial_HUkF3p",
         "testimonial_YkCAxe"
       ],
+      "disabled": true,
       "name": "Real transformations",
       "settings": {
         "eyebrow": "Real Transformations",
