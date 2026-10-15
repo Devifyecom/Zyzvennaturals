@@ -867,6 +867,7 @@
         "step_ygfQrB": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_imgc7mimgc7mimgc.jpg",
             "image_url": "",
             "image_alt": "Blood Sugar Support capsules with a glass of water",
             "title": "Take",
@@ -876,6 +877,7 @@
         "step_nmNcqE": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_umd4p5umd4p5umd4.jpg",
             "image_url": "",
             "image_alt": "A balanced, fibre-rich meal",
             "title": "Balance your plate",
@@ -885,6 +887,7 @@
         "step_gwthJd": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_8221he8221he8221.jpg",
             "image_url": "",
             "image_alt": "Checking blood glucose as part of a daily routine",
             "title": "Stay consistent",
