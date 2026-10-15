@@ -854,10 +854,14 @@
                           {%- if r_text != blank -%}
                             {%- if block.settings.card_style == 'highlights' -%}
                               <div class="vt-card vt-card--highlight">
-                                {%- if r_name != blank -%}
-                                  <div class="vt-label">&#10003; {{ r_name }}</div>
-                                {%- endif -%}
+                                <div class="vt-stars vt-leaves">
+                                  <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.5 3.5C11 3.5 4 8 4 15.5c0 1.6.4 3 1.1 4.2C6.6 15.4 10 11.8 15 9.5c-4 3-6.9 6.6-8.4 10.9 1.3.7 2.8 1.1 4.4 1.1 7.5 0 10.5-8 9.5-18z"/></svg>
+                                  <span>Product highlight</span>
+                                </div>
                                 <p class="vt-quote">{{ r_text }}</p>
+                                {%- if r_name != blank -%}
+                                  <div class="vt-name">{{ r_name }} <span class="vt-verified">&middot; &#10003; Product fact</span></div>
+                                {%- endif -%}
                               </div>
                             {%- else -%}
                               <div class="vt-card">
@@ -1195,17 +1199,14 @@
     color: var(--vt-verified);
     font-weight: 600;
   }
-  .vt-label {
+  .vt-leaves {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
-    color: var(--vt-brand);
-    margin-bottom: 6px;
-  }
-  .vt-card--highlight .vt-quote {
-    font-size: 13px;
-    margin: 0;
   }
 
   @media screen and (max-width: 640px) {
