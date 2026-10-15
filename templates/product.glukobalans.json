@@ -172,7 +172,6 @@
         },
         "video_testimonials_9dcyFw": {
           "type": "video_testimonials",
-          "disabled": true,
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/ac4be22776cb47fd825e881e2c7d1961.mp4",
             "poster_image": "shopify://shop_images/Glukobalans_Metabolic_Support_Capsules_Vegan_GMP_Lab-Tested.png",
