@@ -28,6 +28,13 @@
             "link": ""
           }
         },
+        "announcement_MVEmkq": {
+          "type": "announcement",
+          "settings": {
+            "text": "🎉 Join Our Affiliate Program & Start Earning Today! Join Now →",
+            "link": "https://zyzvennaturals.goaffpro.com/"
+          }
+        },
         "announcement_eTELQY": {
           "type": "announcement",
           "disabled": true,
@@ -64,6 +71,7 @@
       "block_order": [
         "announcement_VHwF48",
         "announcement_bjhwy9",
+        "announcement_MVEmkq",
         "announcement_eTELQY",
         "announcement_rjbVRk",
         "announcement_pLqc3U",
