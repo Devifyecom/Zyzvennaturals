@@ -33,6 +33,7 @@
       "blocks": {
         "slide_qjjNex": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "heading_line_1": "Take 50% Off All Skincare.",
             "heading_line_2": "Half Price. Full Glow. The Big Skincare Sale is Here.",

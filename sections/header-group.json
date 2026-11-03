@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_VHwF48": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "✨ FLAT 50% OFF ON ALL SKINCARE PRODUCTS! ✨",
             "link": "shopify://collections/skincare"
