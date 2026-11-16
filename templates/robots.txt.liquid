@@ -1,5 +1,11 @@
-User-agent: GPTBot
-Allow: /
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
 
-User-agent: OAI-SearchBot
-Allow:
+  {% for rule in group.rules %}
+    {{- rule -}}
+  {% endfor %}
+
+  {%- if group.sitemap != blank -%}
+    {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}
