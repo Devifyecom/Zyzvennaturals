@@ -218,6 +218,14 @@
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
         "settings": {}
+      },
+      "6158297803058687402": {
+        "type": "shopify://apps/pai-ai-blog-aeo/blocks/pai-snippets/019f11a7-7fc9-7462-b6a8-b3e7e9681909",
+        "disabled": false,
+        "settings": {
+          "enable_product": true,
+          "enable_collection": true
+        }
       }
     },
     "color_schemes": {
