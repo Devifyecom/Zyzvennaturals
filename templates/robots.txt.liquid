@@ -1,0 +1,30 @@
+{%- comment -%}
+  Zyzven Naturals – robots.txt
+  1) Keeps all of Shopify's default rules (they update automatically).
+  2) Adds explicit groups for AI search crawlers, copying the same
+     protections the default "*" group has (cart, checkout, account, etc.).
+{%- endcomment -%}
+
+{%- for group in robots.default_groups %}
+{{ group.user_agent }}
+{%- for rule in group.rules %}
+{{ rule }}
+{%- endfor %}
+{%- if group.sitemap != blank %}
+{{ group.sitemap }}
+{%- endif %}
+{% endfor %}
+
+{%- comment -%} AI search crawlers – allowed, same protected paths as "*" {%- endcomment -%}
+{%- assign ai_search_bots = 'OAI-SearchBot,ChatGPT-User,PerplexityBot,Claude-SearchBot' | split: ',' -%}
+{%- for group in robots.default_groups -%}
+{%- if group.user_agent.value == '*' -%}
+{%- for bot in ai_search_bots %}
+User-agent: {{ bot }}
+{%- for rule in group.rules %}
+{{ rule }}
+{%- endfor %}
+Allow: /
+{% endfor -%}
+{%- endif -%}
+{%- endfor %}
