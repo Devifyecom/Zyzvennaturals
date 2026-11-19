@@ -63,33 +63,13 @@
             "show_btn2": false,
             "btn2_label": "",
             "btn2_link": "",
-            "product_image": "shopify://shop_images/Gemini_Generated_Image_e8jk2pe8jk2pe8jk.jpg"
-          }
-        },
-        "slide_A9DLTc": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "heading_line_1": "",
-            "heading_line_2": "",
-            "heading_line_3_bold": "",
-            "heading_line_3_regular": "",
-            "subheading": "",
-            "body_text": "",
-            "btn1_label": "",
-            "btn1_link": "shopify://pages/assessment",
-            "show_btn2": false,
-            "btn2_label": "Shop the System",
-            "btn2_link": "shopify://pages/protocols",
-            "product_image": "shopify://shop_images/Gemini_Generated_Image_e8jk2pe8jk2pe8jk.jpg",
-            "background_image": "shopify://shop_images/Gemini_Generated_Image_x8mwt9x8mwt9x8mw.png"
+            "product_image": "shopify://shop_images/Gemini_Generated_Image_wkj40swkj40swkj4.png"
           }
         }
       },
       "block_order": [
         "slide_qjjNex",
-        "slide_zXknc4",
-        "slide_A9DLTc"
+        "slide_zXknc4"
       ],
       "name": "Hero",
       "settings": {
