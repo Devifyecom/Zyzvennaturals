@@ -46,24 +46,25 @@
             "show_btn2": false,
             "btn2_label": "",
             "btn2_link": "",
-            "product_image": "shopify://shop_images/01802814-0280-405f-b8bd-379c46e37188-removebg-preview.png"
+            "product_image": "shopify://shop_images/Gemini_Generated_Image_e8jk2pe8jk2pe8jk.jpg"
           }
         },
         "slide_A9DLTc": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "heading_line_1": "Support Metabolism.",
-            "heading_line_2": "Rebalance Hormones.",
-            "heading_line_3_bold": "Restore Energy",
-            "heading_line_3_regular": "Naturally.",
-            "subheading": "A targeted supplement system for metabolic and hormonal health.",
-            "body_text": "Clinically-informed botanical formulas designed to support metabolism, reduce inflammation, and restore hormonal balance and energy.",
-            "btn1_label": "Take Our 60-Second Assessment",
+            "heading_line_1": "",
+            "heading_line_2": "",
+            "heading_line_3_bold": "",
+            "heading_line_3_regular": "",
+            "subheading": "",
+            "body_text": "",
+            "btn1_label": "",
             "btn1_link": "shopify://pages/assessment",
-            "show_btn2": true,
+            "show_btn2": false,
             "btn2_label": "Shop the System",
-            "btn2_link": "shopify://pages/protocols"
+            "btn2_link": "shopify://pages/protocols",
+            "product_image": "shopify://shop_images/Gemini_Generated_Image_e8jk2pe8jk2pe8jk.jpg",
+            "background_image": "shopify://shop_images/Gemini_Generated_Image_x8mwt9x8mwt9x8mw.png"
           }
         }
       },
