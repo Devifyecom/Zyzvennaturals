@@ -49,8 +49,26 @@
             "product_image": "shopify://shop_images/Gemini_Generated_Image_e8jk2pe8jk2pe8jk.jpg"
           }
         },
+        "slide_zXknc4": {
+          "type": "slide",
+          "settings": {
+            "heading_line_1": "BLACK WEEK",
+            "heading_line_2": "",
+            "heading_line_3_bold": "",
+            "heading_line_3_regular": "",
+            "subheading": "Up to 13% off everything",
+            "body_text": "Mon 23 – Sun 29 November",
+            "btn1_label": "✨ UP TO 13% OFF  ✨",
+            "btn1_link": "shopify://collections/best-sellers",
+            "show_btn2": false,
+            "btn2_label": "",
+            "btn2_link": "",
+            "product_image": "shopify://shop_images/Gemini_Generated_Image_e8jk2pe8jk2pe8jk.jpg"
+          }
+        },
         "slide_A9DLTc": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "heading_line_1": "",
             "heading_line_2": "",
@@ -70,6 +88,7 @@
       },
       "block_order": [
         "slide_qjjNex",
+        "slide_zXknc4",
         "slide_A9DLTc"
       ],
       "name": "Hero",
