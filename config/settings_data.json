@@ -227,10 +227,12 @@
           "enable_collection": true
         }
       },
-      "1793219247286972479": {
-        "type": "shopify://apps/searchpie-seo-speed/blocks/sb-snippets/29f6c508-9bb9-4e93-9f98-b637b62f3552",
+      "184653479620495626": {
+        "type": "shopify://apps/seo-link-internal-linking/blocks/smartlynks-embed/019c6c09-fb85-7966-88fd-89450ce7145f",
         "disabled": false,
-        "settings": {}
+        "settings": {
+          "enabled": true
+        }
       }
     },
     "color_schemes": {
